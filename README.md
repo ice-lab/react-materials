@@ -1,4 +1,4 @@
-# vue-materials
+# react-materials
 
 飞冰（ICE）官方 React 物料（模板/区块/组件），基于 Fusion 组件和 ice-scripts 工程工具。
 
