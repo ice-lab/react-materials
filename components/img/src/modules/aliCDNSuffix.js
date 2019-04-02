@@ -206,8 +206,8 @@ function getBestMatchSize(width, height) {
     const itemHeight = parseInt(splited[1], 10);
     // for retina
     return (
-      itemWidth >= width * currentDevicePixelRatio &&
-      itemHeight >= height * currentDevicePixelRatio
+      itemWidth >= width * currentDevicePixelRatio
+      && itemHeight >= height * currentDevicePixelRatio
     );
   });
 

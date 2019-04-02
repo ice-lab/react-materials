@@ -6,6 +6,8 @@ node_modules/
 coverage/
 
 components/*/lib
+blocks
+scaffolds
 
 # 忽略文件
 **/*-min.js
