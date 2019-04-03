@@ -4,13 +4,13 @@ node_js:
   - '8'
 script:
   - npm run lint
-  - idev -V
-  - LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org npm run generate
 
 deploy:
   provider: script
   skip_cleanup: true # 避免清空已安装的依赖
-  script: npm run generate && npm run upload-oss
+  script:
+    - idev -V
+    - LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org npm run generate && npm run upload-oss
   on:
     all_branches: true
     condition: $TRAVIS_BRANCH =~ ^master|production$
