@@ -4,6 +4,7 @@ node_js:
   - '8'
 env:
   - LOG_LEVEL=verbose
+  - REGISTRY=https://registry.npmjs.org
 script:
   - npm run lint
   - idev -V
