@@ -2,13 +2,10 @@ sudo: required
 language: node_js
 node_js:
   - '8'
-env:
-  - LOG_LEVEL=verbose
-  - REGISTRY=https://registry.npmjs.org
 script:
   - npm run lint
   - idev -V
-  - npm run generate
+  - LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org npm run generate
 
 deploy:
   provider: script
