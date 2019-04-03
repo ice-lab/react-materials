@@ -24,7 +24,7 @@ const ossClient = oss({
   time: '120s',
 });
 
-const materialPath = path.resolve(__dirname, '../build/materials.json');
+const materialPath = path.resolve(__dirname, '../build/react-materials.json');
 const toPath = path.join(assetsPath, 'react-materials.json');
 
 console.log('start upload oss', materialPath, toPath);
