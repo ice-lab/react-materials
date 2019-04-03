@@ -22,5 +22,7 @@
     "ice-scripts": "^1.9.2",
     "request": "^2.88.0"
   },
-  "materialConfig": {}
+  "materialConfig": {
+    "type": "react"
+  }
 }
