@@ -10,7 +10,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true # 避免清空已安装的依赖
-  script: npm run generate && npm run upload-oss
+  script: LOG_LEVEL=verbose npm run generate && npm run upload-oss
   on:
     all_branches: true
     condition: $TRAVIS_BRANCH =~ ^master|production$
