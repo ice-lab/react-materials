@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice/tree/master/react-materials/components/container"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/components/container"
   },
   "license": "MIT",
   "keywords": [

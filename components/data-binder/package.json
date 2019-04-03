@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice/tree/master/react-materials/components/data-binder"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/components/data-binder"
   },
   "license": "MIT",
   "keywords": [
