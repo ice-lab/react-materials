@@ -67,5 +67,9 @@
       "https://img.alicdn.com/tfs/TB1PgGdJAvoK1RjSZFNXXcxMVXa-2860-1580.png",
       "https://img.alicdn.com/tfs/TB16wmkJxjaK1RjSZFAXXbdLFXa-2860-1580.png"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-website-homepage"
   }
 }

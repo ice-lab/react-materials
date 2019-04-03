@@ -74,5 +74,9 @@
       "https://img.alicdn.com/tfs/TB1qrh9Jr2pK1RjSZFsXXaNlXXa-2860-1580.png",
       "https://img.alicdn.com/tfs/TB1Qc1XJpzqK1RjSZFCXXbbxVXa-2860-1580.png"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-yunqi-homepage"
   }
 }

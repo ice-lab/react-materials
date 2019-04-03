@@ -68,5 +68,9 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-light-bootstrap-dashboard"
   }
 }

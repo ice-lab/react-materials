@@ -63,5 +63,9 @@
       "官网模板"
     ],
     "screenshot": "https://img.alicdn.com/tfs/TB1npsvdSzqK1RjSZFpXXakSXXa-2860-1580.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-universal-homepage"
   }
 }

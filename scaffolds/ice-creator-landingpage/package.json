@@ -62,5 +62,9 @@
       "https://img.alicdn.com/tfs/TB1WcWtqMmTBuNjy1XbXXaMrVXa-2840-1596.png",
       "https://img.alicdn.com/tfs/TB1Y5ygJAvoK1RjSZFDXXXY3pXa-2860-1580.png"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-creator-landingpage"
   }
 }

@@ -72,5 +72,9 @@
       "https://img.alicdn.com/tfs/TB1R.aPDSzqK1RjSZFjXXblCFXa-2860-1580.png",
       "https://img.alicdn.com/tfs/TB1p1mTDQvoK1RjSZFNXXcxMVXa-2860-1580.png"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-algorithm-model-admin"
   }
 }

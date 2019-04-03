@@ -58,5 +58,9 @@
       "官网模板"
     ],
     "screenshot": "https://img.alicdn.com/tfs/TB1F3SAuGmWBuNjy1XaXXXCbXXa-2840-1596.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-open-platform-landingpage"
   }
 }
