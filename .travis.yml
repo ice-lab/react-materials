@@ -2,6 +2,8 @@ sudo: required
 language: node_js
 node_js:
   - '8'
+env:
+  - LOG_LEVEL=verbose
 script:
   - npm run lint
   - idev -V
@@ -10,7 +12,7 @@ script:
 deploy:
   provider: script
   skip_cleanup: true # 避免清空已安装的依赖
-  script: LOG_LEVEL=verbose npm run generate && npm run upload-oss
+  script: npm run generate && npm run upload-oss
   on:
     all_branches: true
     condition: $TRAVIS_BRANCH =~ ^master|production$
