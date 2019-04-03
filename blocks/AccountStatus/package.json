@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice/tree/master/react-materials/blocks/AccountStatus"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/AccountStatus"
   },
   "license": "MIT",
   "keywords": [

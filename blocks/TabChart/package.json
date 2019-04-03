@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice/tree/master/react-materials/blocks/TabChart"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/TabChart"
   },
   "license": "MIT",
   "keywords": [
