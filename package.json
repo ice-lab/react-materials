@@ -5,7 +5,8 @@
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
-    "lint": "eslint --cache --ext .js .jsx ./"
+    "lint": "eslint --cache --ext .js .jsx ./",
+    "deploy": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org idev -V & npm run generate && npm run upload-oss"
   },
   "dependencies": {
     "ali-oss": "^6.1.0",
