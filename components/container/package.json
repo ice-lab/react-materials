@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice/tree/master/react-materials/components/container"
+    "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/container"
   },
   "license": "MIT",
   "keywords": [
@@ -35,6 +35,5 @@
     "prop-types": "^15.5.8"
   },
   "typings": "lib/index.d.ts",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

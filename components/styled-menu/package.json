@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alibaba/ice"
+    "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/styled-menu"
   },
   "license": "ISC",
   "keywords": [
@@ -29,8 +29,7 @@
     "prop-types": "^15.5.10",
     "rc-menu": "^5.0.9"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "react": "^16.5.0"
   },
