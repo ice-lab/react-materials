@@ -39,5 +39,14 @@
     "screenshot": "https://unpkg.com/@icedesign/simple-transfer-block/screenshot.png",
     "version-0.x": "1.0.0"
   },
-  "homepage": "https://unpkg.com/@icedesign/simple-transfer-block/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/simple-transfer-block/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.x"
+  }
 }

@@ -9,8 +9,8 @@
     "build/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "author": "ice-team",

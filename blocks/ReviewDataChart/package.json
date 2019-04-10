@@ -44,7 +44,14 @@
     "version-0.x": "1.0.5"
   },
   "devDependencies": {
-    "babel-plugin-transform-remove-strict-mode": "^0.0.2"
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "react-dom": "^16.2.0"
   },
-  "homepage": "https://unpkg.com/@icedesign/review-data-chart-block/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/review-data-chart-block/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
 }

@@ -37,5 +37,14 @@
     ],
     "screenshot": "https://unpkg.com/@icedesign/multi-card-block/screenshot.png",
     "version-0.x": "1.0.3"
+  },
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.2.0"
   }
 }

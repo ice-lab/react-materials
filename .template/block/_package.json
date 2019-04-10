@@ -13,7 +13,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "screenshot": "idev screenshot",
+    "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "dependencies": {

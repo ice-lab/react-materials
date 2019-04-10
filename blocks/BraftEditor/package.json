@@ -43,5 +43,11 @@
   "homepage": "https://unpkg.com/@icedesign/braft-editor-block/build/index.html",
   "devDependencies": {
     "react-dom": "^16.7.0"
+  },
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
   }
 }

@@ -28,7 +28,8 @@
   },
   "devDependencies": {
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "custom-accordion",
@@ -39,5 +40,11 @@
     "screenshot": "https://unpkg.com/@icedesign/custom-accordion-block/screenshot.png",
     "version-0.x": "1.0.3"
   },
-  "homepage": "https://unpkg.com/@icedesign/custom-accordion-block/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/custom-accordion-block/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
 }
