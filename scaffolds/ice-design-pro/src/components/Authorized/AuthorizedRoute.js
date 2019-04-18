@@ -19,7 +19,7 @@ class AuthorizedRoute extends React.Component {
         noMatch={
           <Route
             {...rest}
-            render={() => <Redirect to={{ pathname: redirectPath }} />} 
+            render={() => <Redirect to={{ pathname: redirectPath }} />}
           />
         }
       >
