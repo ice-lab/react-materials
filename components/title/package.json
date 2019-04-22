@@ -22,8 +22,8 @@
     "access": "public"
   },
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build",
     "postinstall": "node ./postinstall.js"
   },

@@ -39,5 +39,11 @@
     ],
     "screenshot": "https://unpkg.com/@icedesign/account-panel-block/screenshot.png",
     "version-0.x": "1.0.0"
+  },
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
   }
 }

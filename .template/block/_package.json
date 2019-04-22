@@ -13,7 +13,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "screenshot": "idev screenshot",
+    "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "dependencies": {
@@ -22,12 +22,6 @@
   "devDependencies": {
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
-  },
-  "buildConfig": {
-    "entry": "demo/index.js",
-    "output": {
-      "publicPath": "./"
-    }
   },
   "publishConfig": {
     "registry": "{{registry}}"
