@@ -46,12 +46,12 @@ const scaffolds = [
   'ice-open-platform-landingpage',
 
   // 社区模板(6)
-  'create-react-app',
-  'light-bootstrap-dashboard',
-  'creative-dashboard',
-  'coreui-admin',
-  'material-dashboard',
-  'opensource-site',
+  // 'create-react-app',
+  // 'light-bootstrap-dashboard',
+  // 'creative-dashboard',
+  // 'coreui-admin',
+  // 'material-dashboard',
+  // 'opensource-site',
 ];
 
 module.exports = scaffolds;
