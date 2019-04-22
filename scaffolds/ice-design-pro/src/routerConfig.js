@@ -1,24 +1,28 @@
 // 以下文件格式为描述路由的协议格式
 // 你可以调整 routerConfig 里的内容
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
-
-import UserLogin from './pages/UserLogin';
-import UserRegister from './pages/UserRegister';
-import Dashboard from './pages/Dashboard';
-import Charts from './pages/Charts';
-import BaiscCharts from './pages/BaiscCharts';
-import Terms from './pages/Terms';
-import Result from './pages/Result';
-import BasicList from './pages/BasicList';
-import ProjectList from './pages/ProjectList';
-import BasicTable from './pages/BasicTable';
-import GeneralTable from './pages/GeneralTable';
-import Profile from './pages/Profile';
-import Setting from './pages/Setting';
-import Fail from './pages/Fail';
-import { Empty, Forbidden, NotFound, ServerError } from './pages/Exception';
+import React from 'react';
 import { getRouterData } from './utils/utils';
 import { asideMenuConfig } from './menuConfig';
+
+const UserLogin = React.lazy(() => import('./pages/UserLogin'));
+const UserRegister = React.lazy(() => import('./pages/UserRegister'));
+const Dashboard = React.lazy(() => import('./pages/Dashboard'));
+const Charts = React.lazy(() => import('./pages/Charts'));
+const BasicCharts = React.lazy(() => import('./pages/BasicCharts'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const Result = React.lazy(() => import('./pages/Result'));
+const BasicList = React.lazy(() => import('./pages/BasicList'));
+const ProjectList = React.lazy(() => import('./pages/ProjectList'));
+const BasicTable = React.lazy(() => import('./pages/BasicTable'));
+const GeneralTable = React.lazy(() => import('./pages/GeneralTable'));
+const Profile = React.lazy(() => import('./pages/Profile'));
+const Setting = React.lazy(() => import('./pages/Setting'));
+const Fail = React.lazy(() => import('./pages/Fail'));
+const Empty = React.lazy(() => import('./pages/Exception/Empty'));
+const Forbidden = React.lazy(() => import('./pages/Exception/Forbidden'));
+const NotFound = React.lazy(() => import('./pages/Exception/NotFound'));
+const ServerError = React.lazy(() => import('./pages/Exception/ServerError'));
 
 const routerConfig = [
   {
@@ -31,7 +35,7 @@ const routerConfig = [
   },
   {
     path: '/chart/basic',
-    component: BaiscCharts,
+    component: BasicCharts,
   },
   {
     path: '/list/basic',

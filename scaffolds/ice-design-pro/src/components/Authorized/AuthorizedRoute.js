@@ -1,12 +1,13 @@
 /* eslint no-confusing-arrow: 0 */
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import PageLoading from '../PageLoading';
 import Authorized from './Authorized';
 
 class AuthorizedRoute extends React.Component {
   render() {
     const {
-      component: Component,
+      component: PageComponent,
       render,
       authority,
       redirectPath,
@@ -24,8 +25,14 @@ class AuthorizedRoute extends React.Component {
       >
         <Route
           {...rest}
-          render={(props) =>
-            Component ? <Component {...props} /> : render(props)
+          render={props =>
+            PageComponent ? (
+              <Suspense fallback={<PageLoading />}>
+                <PageComponent {...props} />
+              </Suspense>
+            ) : (
+              render(props)
+            )
           }
         />
       </Authorized>
