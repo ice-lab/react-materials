@@ -1,0 +1,49 @@
+{
+  "name": "@icedesign/common-selector",
+  "version": "1.0.0",
+  "description": "Example component",
+  "author": "",
+  "files": [
+    "demo/",
+    "lib/",
+    "build/"
+  ],
+  "main": "lib/index.js",
+  "stylePath": "style.js",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "component"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "buildConfig": {
+    "theme": "@icedesign/theme"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.14.0",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@icedesign/theme": "^1.0.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "componentConfig": {
+    "name": "common-selector",
+    "title": "Example component",
+    "categories": [
+      "0"
+    ]
+  }
+}
