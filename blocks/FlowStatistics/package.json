@@ -47,5 +47,11 @@
     "themePackage": "@icedesign/theme",
     "version-0.x": "0.1.7"
   },
-  "homepage": "https://unpkg.com/@icedesign/flow-statistics-block@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/flow-statistics-block@latest/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
 }

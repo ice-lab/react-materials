@@ -49,5 +49,11 @@
     "themePackage": "@icedesign/theme",
     "version-0.x": "0.1.8"
   },
-  "homepage": "https://unpkg.com/@icedesign/content-editor-block/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/content-editor-block/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
 }

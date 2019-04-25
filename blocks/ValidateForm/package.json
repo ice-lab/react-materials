@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "validate-form",
@@ -40,5 +41,11 @@
     ],
     "screenshot": "https://unpkg.com/@icedesign/validate-form-block/screenshot.png",
     "version-0.x": "1.0.3"
+  },
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
   }
 }

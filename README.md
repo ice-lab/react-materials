@@ -13,6 +13,18 @@
 
 ## 开发指南
 
+### 环境准备
+
+```bash
+# 物料管理工具
+$ npm i -g ice-devtools
+$ idev -V
+
+# React 物料开发工具
+$ npm i -g ice-scripts
+$ ice -V
+```
+
 ### 新增物料
 
 ```bash
@@ -32,9 +44,9 @@ $ npm run build
 ### 相关链接
 
 - [issue 反馈](https://github.com/alibaba/ice/issues/new)
-- [开发自定义物料指引](https://alibaba.github.io/ice/docs/materials/devtools)
+- [ice-devtools](https://ice.work/docs/advanced/custom-materials)
 - [Fusion 组件](https://fusion.design/)
-- [ice-scripts](https://alibaba.github.io/ice/docs/advanced/webpackrc)
+- [ice-scripts](https://ice.work/docs/basis/ice-scripts)
 
 ## License
 

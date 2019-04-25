@@ -31,7 +31,8 @@
     "@alifd/next": "^1.x"
   },
   "devDependencies": {
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "columns-table",
@@ -42,5 +43,11 @@
     "screenshot": "https://unpkg.com/@icedesign/columns-table-block/screenshot.png",
     "version-0.x": "1.0.4"
   },
-  "homepage": "https://unpkg.com/@icedesign/columns-table-block/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/columns-table-block/build/index.html",
+  "scripts": {
+    "start": "ice dev",
+    "build": "ice build",
+    "screenshot": "ice-devtools screenshot",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
 }

@@ -13,8 +13,8 @@
     "url": "https://github.com/ice-lab/react-materials/tree/master/components/balloon-confirm"
   },
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
