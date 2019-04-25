@@ -1,0 +1,48 @@
+  @import '~@alifd/next/lib/core/index.scss';
+
+  .ice-icon-stable {
+    display: inline-block;
+    &:before {
+      display: inline-block;
+      speak: none;
+      font-size: $icon-s;
+      line-height: $icon-s;
+      vertical-align: middle;
+      text-align: center;
+    }
+    > img {
+      vertical-align: middle;
+    }
+    > .ice-img-icon-stable-xxs {
+      width: $icon-xxs;
+      height: $icon-xxs;
+    }
+    > .ice-img-icon-stable-xs {
+      width: $icon-xs;
+      height: $icon-xs;
+    }
+    > .ice-img-icon-stable-small {
+      width: $icon-s;
+      height: $icon-s;
+    }
+    > .ice-img-icon-stable-medium {
+      width: $icon-m;
+      height: $icon-m;
+    }
+    > .ice-img-icon-stable-large {
+      width: $icon-l;
+      height: $icon-l;
+    }
+    > .ice-img-icon-stable-xl {
+      width: $icon-xl;
+      height: $icon-xl;
+    }
+    > .ice-img-icon-stable-xxl {
+      width: $icon-xxl;
+      height: $icon-xxl;
+    }
+    > .ice-img-icon-stable-xxxl {
+      width: $icon-xxxl;
+      height: $icon-xxxl;
+    }
+  }
