@@ -2,6 +2,9 @@
   "name": "react-materials",
   "version": "1.0.0",
   "description": "",
+  "files": [
+    "build/"
+  ],
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
