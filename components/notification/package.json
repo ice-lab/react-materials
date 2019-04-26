@@ -5,9 +5,7 @@
   "main": "lib/index.js",
   "files": [
     "lib/",
-    "demo/",
-    "postinstall.js",
-    "build/"
+    "demo/"
   ],
   "repository": {
     "type": "git",
@@ -23,8 +21,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": "^16.5.0"
