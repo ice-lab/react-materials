@@ -131,7 +131,7 @@
 
     &-close-x:after {
       font-size: $font-size-base;
-      content: '\E67A';
+      content: '\E626'; // 0.x 时是 \E67A，1.x 变成了 \E626
       font-family: NextIcon;
       cursor: pointer;
     }
