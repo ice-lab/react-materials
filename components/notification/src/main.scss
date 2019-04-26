@@ -131,7 +131,9 @@
 
     &-close-x:after {
       font-size: $font-size-base;
-      content: '\E626'; // 0.x 时是 \E67A，1.x 变成了 \E626
+      // HACK: 这里需要覆盖 rc 组件里的 DOM 样式，因此必须通过 css 的方式覆盖，无法直接使用 Icon 组件
+      // 0.x 时是 \E67A，1.x 变成了 \E626
+      content: '\E626';
       font-family: NextIcon;
       cursor: pointer;
     }
