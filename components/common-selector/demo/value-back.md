@@ -8,7 +8,7 @@ order: 4
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import CommonSelector from '@icedesign/common-selector';
+import MultiSelector from '@icedesign/multi-selector';
 
 class App extends Component {
 
@@ -37,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CommonSelector
+        <MultiSelector
           value={this.state.value}
           defaultDataSource={[
             {

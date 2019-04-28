@@ -8,7 +8,7 @@ value 受控，同时通过 minx/max 指定个数
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import CommonSelector from '@icedesign/common-selector';
+import MultiSelector from '@icedesign/multi-selector';
 
 class App extends Component {
 
@@ -30,6 +30,9 @@ class App extends Component {
       }, {
         value: 2,
         label: '222' + inputValue,
+      }, {
+        value: 3,
+        label: '333' + inputValue,
       }];
     });
   }
@@ -37,7 +40,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CommonSelector
+        <MultiSelector
+          min={1}
+          max={2}
           value={this.state.value}
           fetchData={this.fetchData}
           onChange={this.onChange}

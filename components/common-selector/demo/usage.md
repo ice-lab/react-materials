@@ -8,7 +8,7 @@ order: 1
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import CommonSelector from '@icedesign/common-selector';
+import MultiSelector from '@icedesign/multi-selector';
 
 class App extends Component {
   fetchData = ({ inputValue }) => {
@@ -36,7 +36,7 @@ class App extends Component {
 
     return (
       <div>
-        <CommonSelector
+        <MultiSelector
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}
           fetchData={this.fetchData}
@@ -44,7 +44,7 @@ class App extends Component {
         />
 
         <div>禁用状态</div>
-        <CommonSelector
+        <MultiSelector
           disabled={true}
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}
@@ -53,21 +53,21 @@ class App extends Component {
         />
 
         <div>不同 size</div>
-        <CommonSelector
+        <MultiSelector
           size="large"
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}
           fetchData={this.fetchData}
           style={style}
         />
-        <CommonSelector
+        <MultiSelector
           size="medium"
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}
           fetchData={this.fetchData}
           style={style}
         />
-        <CommonSelector
+        <MultiSelector
           size="small"
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}
@@ -76,7 +76,7 @@ class App extends Component {
         />
 
         <div>自定义宽度</div>
-        <CommonSelector
+        <MultiSelector
           width={500}
           defaultValue={[1]}
           defaultDataSource={defaultDataSource}

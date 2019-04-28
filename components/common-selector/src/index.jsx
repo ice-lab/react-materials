@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Select } from '@alifd/next';
 
-export default class Container extends Component {
+export default class MultiSelector extends Component {
   static propTypes = {
     defaultDataSource: PropTypes.array,
     defaultValue: PropTypes.array,
@@ -16,6 +16,8 @@ export default class Container extends Component {
     renderOption: PropTypes.func,
     getFillValue: PropTypes.func,
     className: PropTypes.string,
+    min: PropTypes.number,
+    max: PropTypes.number,
   };
 
   static defaultProps = {
@@ -129,6 +131,21 @@ export default class Container extends Component {
 
   // 组件整体 onChange
   onChange = (currentValue) => {
+    const { min, max } = this.props;
+    if ('min' in this.props && currentValue.length < min) {
+      this.setState({
+        errorMessage: `最少不能超过 ${min} 个`,
+      });
+      return;
+    }
+
+    if ('max' in this.props && currentValue.length > max) {
+      this.setState({
+        errorMessage: `最多不能超过 ${max} 个`,
+      });
+      return;
+    }
+
     if (!('value' in this.props)) {
       this.setState({ value: currentValue });
     }
@@ -144,6 +161,7 @@ export default class Container extends Component {
     if (stateVisible !== visible) {
       this.setState({
         visible,
+        errorMessage: null,
       });
     }
   };
@@ -191,7 +209,7 @@ export default class Container extends Component {
     const dataSource = this.getDataSource();
 
     return (
-      <div className={`ice-common-selector ${className}`} style={style}>
+      <div className={`ice-multi-selector ${className}`} style={style}>
         <Select
           style={{
             width,

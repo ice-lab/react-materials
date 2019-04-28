@@ -1,7 +1,7 @@
 {
-  "name": "@icedesign/common-selector",
-  "version": "1.0.0",
-  "description": "Example component",
+  "name": "@icedesign/multi-selector",
+  "version": "0.1.0",
+  "description": "多选组件",
   "author": "",
   "files": [
     "demo/",
@@ -40,10 +40,10 @@
     "react": "^16.3.0"
   },
   "componentConfig": {
-    "name": "common-selector",
-    "title": "Example component",
+    "name": "multi-selector",
+    "title": "通用的多选组件",
     "categories": [
-      "0"
+      "表单"
     ]
   }
 }
