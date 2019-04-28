@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/multi-selector",
-  "version": "0.1.1-0",
+  "version": "0.1.1-1",
   "description": "多选组件",
   "author": "",
   "files": [
@@ -46,5 +46,5 @@
       "表单"
     ]
   },
-  "homepage": "https://unpkg.com/@icedesign/multi-selector@0.1.1-0/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/multi-selector@0.1.1-1/build/index.html"
 }
