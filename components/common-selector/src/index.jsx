@@ -13,8 +13,8 @@ export default class MultiSelector extends Component {
     placeholder: PropTypes.string,
     fetchData: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
-    renderOption: PropTypes.func,
-    getFillValue: PropTypes.func,
+    itemRender: PropTypes.func,
+    fillProps: PropTypes.string,
     className: PropTypes.string,
     min: PropTypes.number,
     max: PropTypes.number,
@@ -28,12 +28,6 @@ export default class MultiSelector extends Component {
     width: 250,
     disabled: false,
     placeholder: '输入关键字搜索',
-    getFillValue: (item) => {
-      return item.value;
-    },
-    renderOption: (item) => {
-      return <Select.Option value={item.value}>{item.label}</Select.Option>;
-    },
   };
 
   constructor(props) {
@@ -130,7 +124,7 @@ export default class MultiSelector extends Component {
   };
 
   // 组件整体 onChange
-  onChange = (currentValue) => {
+  onChange = (currentValue, actionType, dataSource) => {
     const { min, max } = this.props;
     if ('min' in this.props && currentValue.length < min) {
       this.setState({
@@ -150,7 +144,7 @@ export default class MultiSelector extends Component {
       this.setState({ value: currentValue });
     }
     if (currentValue !== this.state.value) {
-      this.props.onChange(currentValue);
+      this.props.onChange(currentValue, actionType, dataSource);
     }
   };
 
@@ -190,12 +184,12 @@ export default class MultiSelector extends Component {
         ];
       }
 
-      const { renderOption, getFillValue } = this.props;
+      const { itemRender } = this.props;
       return dataSource.map((item) => {
         return {
-          label: renderOption(item),
-          fillValue: getFillValue(item),
-          value: item.value,
+          ...item,
+          // 这里不能直接用 Select 的 itemRender，上面两种状态会乱掉
+          label: itemRender ? itemRender(item) : item.label,
         };
       });
     }
@@ -204,7 +198,7 @@ export default class MultiSelector extends Component {
   render() {
     const { visible, errorMessage, value } = this.state;
     const {
-      className, style, width, size, placeholder, disabled,
+      className, style, width, size, placeholder, disabled, fillProps,
     } = this.props;
     const dataSource = this.getDataSource();
 
@@ -224,7 +218,7 @@ export default class MultiSelector extends Component {
           onVisibleChange={this.onVisibleChange}
           visible={visible}
           filterLocal={false}
-          fillProps="fillValue"
+          fillProps={fillProps}
           hasArrow={false}
           hiddenSelected
           mode="tag"

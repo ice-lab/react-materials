@@ -13,10 +13,10 @@
 |defaultValue|默认 value（不受控）|   否   |  array      |         |      |
 |   value    |   value 受控    |   否   |  array       |     |      |
 |defaultDataSource|默认 dataSource|否|array|   |   |
-|   onChange |   回调          |   否   |  func       |     |      |
+|   onChange |   回调  |   否   | func(value, actionType, dataSource) |     |  与Select一致    |
 |   fetchData    |  搜索获取数据 |   是   |  promise    |     |      |
-|   renderOption    | 自定义渲染下拉项  |   否   |  func(item) |     |      |
-|   getFillValue    | 自定义选中态的字符串|   否   |  func(item)| item.value  |      |
+|   itemRender   | 自定义渲染下拉项  |   否   |  func(item) | |与Select一致 |
+|   fillProps    | 自定义选中态的字符串|   否   | string | label |与Select一致 |
 |   min    |   最少个数    |   否   |  number       |     |      |
 |   max    |   最大个数   |   否   |  number       |     |      |
 
@@ -36,7 +36,7 @@
       }
     });
 
-    // dataSource 的单个 item 必须有 value 属性
+    // dataSource 的单个 item 必须有 value&label 属性
     return response.data.data.dataSource || [];
   }}
 />

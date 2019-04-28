@@ -48,7 +48,7 @@ class App extends Component {
           ]}
           fetchData={this.fetchData}
           onChange={this.onChange}
-          renderOption={(item) => {
+          itemRender={(item) => {
             return (
               <div style={{
                 display: 'flex',
@@ -60,9 +60,7 @@ class App extends Component {
               </div>
             )
           }}
-          getFillValue={(item) => {
-            return item.value;
-          }}
+          fillProps="label"
         />
       </div>
     );

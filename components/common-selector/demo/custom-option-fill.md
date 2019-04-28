@@ -3,7 +3,7 @@ title: 自定义渲染
 order: 3
 ---
 
-通过 `renderOption` 属性可以自定义下拉列表选项渲染；通过 `getFillValue` 可以自定义选中态渲染的字符串。
+通过 `itemRender` 属性可以自定义下拉列表选项渲染；通过 `fillProps` 可以自定义选中态渲染的字符串。
 
 ````jsx
 import React, { Component } from 'react';
@@ -41,7 +41,7 @@ class App extends Component {
           value={this.state.value}
           fetchData={this.fetchData}
           onChange={this.onChange}
-          renderOption={(item) => {
+          itemRender={(item) => {
             return (
               <div style={{
                 display: 'flex',
@@ -53,9 +53,7 @@ class App extends Component {
               </div>
             )
           }}
-          getFillValue={(item) => {
-            return item.value;
-          }}
+          fillProps="value"
         />
       </div>
     );
