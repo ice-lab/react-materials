@@ -60,6 +60,8 @@
     "react/prefer-stateless-function": 0,
     "react/jsx-no-bind": 0,
     "no-plusplus": 0,
-    "global-require": 0
+    "global-require": 0,
+    "react/destructuring-assignment": 0,
+    "react/require-default-props": 0,
   }
 }

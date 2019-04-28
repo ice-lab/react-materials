@@ -1,33 +1,20 @@
 ---
-title: Simple Usage
+title: 简单用法
 order: 1
 ---
 
-本 Demo 演示一行文字的用法。
+简单用法
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import CommonSelector from '@icedesign/common-selector';
 
-function later(delay) {
-  return new Promise(function(resolve) {
-    setTimeout(resolve, delay);
-  });
-}
-
 class App extends Component {
-
-  state = {
-    value: []
-  }
-
-  onChange = (value) => {
-    this.setState({value});
-  }
-
   fetchData = ({ inputValue }) => {
-    return later(0.3 * 1000).then(() => {
+    return new Promise(function(resolve) {
+      setTimeout(resolve, 1 * 1000);
+    }).then(() => {
       return [{
         value: 1,
         label: inputValue,
@@ -39,75 +26,62 @@ class App extends Component {
   }
 
   render() {
-    const commonProps = {
-      value: this.state.value,
-      onChange: this.onChange,
-      fetchData: this.fetchData,
-      renderOption: (item) => {
-        return (
-          <span>{item.label}-{item.value}</span>
-        );
-      },
-      getFillValue: (item) => {
-        return `${item.value}-${item.label}`;
-      },
-      style: {
-        margin: '10px 0',
-      },
+    const style = {
+      margin: '10px 0'
     };
+    const defaultDataSource = [{
+      value: 1,
+      label: '1111',
+    }];
 
     return (
       <div>
-        <div>不同 size：</div>
         <CommonSelector
-          {...commonProps}
-          size="small"
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
         />
 
+        <div>禁用状态</div>
         <CommonSelector
-          {...commonProps}
-          size="medium"
-        />
-
-        <CommonSelector
-          {...commonProps}
-          size="large"
-        />
-
-        <div>Focus 时显示下拉列表：</div>
-        <CommonSelector
-          {...commonProps}
-          isFocusShow
-        />
-
-        <div>自定义宽度：</div>
-        <CommonSelector
-          {...commonProps}
-          width={500}
-        />
-
-        <div>自定义 placeholder：</div>
-        <CommonSelector
-          {...commonProps}
-          placeholder="来搜索搜索吧"
-        />
-
-        <div>禁用状态：</div>
-        <CommonSelector
-          {...commonProps}
           disabled={true}
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
         />
 
-        <div>接口出错状态：</div>
+        <div>不同 size</div>
         <CommonSelector
-          {...commonProps}
-          fetchData={({ inputValue }) => {
-            return later(0.3 * 1000).then(() => {
-              return Promise.reject(new Error(
-                `接口出错啦 <a href="https://example.com" target="blank">查看错误</a>`
-              ));
-            });
-          }}
+          size="large"
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
+        />
+        <CommonSelector
+          size="medium"
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
+        />
+        <CommonSelector
+          size="small"
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
+        />
+
+        <div>自定义宽度</div>
+        <CommonSelector
+          width={500}
+          defaultValue={[1]}
+          defaultDataSource={defaultDataSource}
+          fetchData={this.fetchData}
+          style={style}
         />
       </div>
     );

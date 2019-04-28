@@ -4,70 +4,61 @@ import { Select } from '@alifd/next';
 
 export default class Container extends Component {
   static propTypes = {
-    /**
-     * value 数组, 回填值
-     */
+    defaultDataSource: PropTypes.array,
+    defaultValue: PropTypes.array,
     value: PropTypes.array,
-    /**
-     * onChange 当用户有修改时会触发, 回调参数是 value
-     */
     onChange: PropTypes.func,
-    /**
-     * 组件尺寸
-     */
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    /**
-     * focus 的时候是否显示下拉列表
-     */
-    isFocusShow: PropTypes.bool,
-    /**
-     * 自定义组件宽度
-     */
     width: PropTypes.number,
-    /**
-     * 自定义 placeholder
-     */
     placeholder: PropTypes.string,
-    /**
-     * 获取数据
-     */
     fetchData: PropTypes.func.isRequired,
-    /**
-     * 禁止修改数据
-     */
     disabled: PropTypes.bool,
-    valueKey: PropTypes.string,
     renderOption: PropTypes.func,
     getFillValue: PropTypes.func,
     className: PropTypes.string,
   };
 
   static defaultProps = {
-    value: [],
+    defaultDataSource: [],
     onChange: () => {},
     size: 'medium',
-    isFocusShow: false,
     className: '',
     width: 250,
     disabled: false,
     placeholder: '输入关键字搜索',
-    valueKey: 'value',
     getFillValue: (item) => {
-      const { valueKey } = this.props;
-      return item[valueKey];
+      return item.value;
     },
     renderOption: (item) => {
-      const { valueKey } = this.props;
-      return <Select.Option value={item[valueKey]}>{item[valueKey]}</Select.Option>;
+      return <Select.Option value={item.value}>{item.label}</Select.Option>;
     },
   };
 
-  state = {
-    loading: false,
-    dataSource: null,
-    // 下拉列表是否可见
-    visible: false,
-  };
+  constructor(props) {
+    super(props);
+
+    let value = [];
+    if ('value' in props) {
+      value = props.value;
+    } else if ('defaultValue' in props) {
+      value = props.defaultValue;
+    }
+    this.state = {
+      value,
+      loading: false,
+      dataSource: props.defaultDataSource,
+      // 下拉列表是否可见
+      visible: false,
+    };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if ('value' in nextProps) {
+      this.setState({
+        value: nextProps.value,
+      });
+    }
+  }
 
   componentWillUnmount() {
     if (this.timer) {
@@ -137,9 +128,13 @@ export default class Container extends Component {
   };
 
   // 组件整体 onChange
-  onChange = (value) => {
-    const { onChange } = this.props;
-    onChange(value);
+  onChange = (currentValue) => {
+    if (!('value' in this.props)) {
+      this.setState({ value: currentValue });
+    }
+    if (currentValue !== this.state.value) {
+      this.props.onChange(currentValue);
+    }
   };
 
   // 同步 visible: 组件的设计比较奇葩
@@ -154,7 +149,7 @@ export default class Container extends Component {
   };
 
   getDataSource = () => {
-    const { loading, dataSource, visible } = this.state;
+    const { loading, dataSource } = this.state;
 
     if (loading) {
       return [
@@ -166,35 +161,32 @@ export default class Container extends Component {
       ];
     }
 
-    if (!dataSource || !visible) {
-      return [];
-    }
+    if (dataSource) {
+      if (dataSource.length === 0) {
+        return [
+          {
+            label: <span>没有找到匹配项</span>,
+            value: '-2',
+            disabled: true,
+          },
+        ];
+      }
 
-    if (dataSource.length === 0) {
-      return [
-        {
-          label: <span>没有找到匹配项</span>,
-          value: '-2',
-          disabled: true,
-        },
-      ];
+      const { renderOption, getFillValue } = this.props;
+      return dataSource.map((item) => {
+        return {
+          label: renderOption(item),
+          fillValue: getFillValue(item),
+          value: item.value,
+        };
+      });
     }
-
-    const { valueKey, renderOption, getFillValue } = this.props;
-    return dataSource.map((item) => {
-      return {
-        label: renderOption(item),
-        fillValue: getFillValue(item),
-        value: item[valueKey],
-      };
-    });
   };
 
   render() {
-    const { visible, errorMessage } = this.state;
+    const { visible, errorMessage, value } = this.state;
     const {
-      valueKey, renderOption, getFillValue, isFocusShow,
-      className, style, width, fetchData, onChange, ...others
+      className, style, width, size, placeholder, disabled,
     } = this.props;
     const dataSource = this.getDataSource();
 
@@ -206,9 +198,9 @@ export default class Container extends Component {
             display: 'inline-block',
             verticalAlign: 'middle',
           }}
-          mode="tag"
           onChange={this.onChange}
           dataSource={dataSource}
+          value={value}
           onSearch={this.onInputChange}
           onFocus={this.onInputFocus}
           onVisibleChange={this.onVisibleChange}
@@ -217,7 +209,10 @@ export default class Container extends Component {
           fillProps="fillValue"
           hasArrow={false}
           hiddenSelected
-          {...others}
+          mode="tag"
+          size={size}
+          placeholder={placeholder}
+          disabled={disabled}
         />
         {errorMessage ? (
           <span
