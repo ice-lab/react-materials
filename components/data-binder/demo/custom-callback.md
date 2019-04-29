@@ -1,16 +1,9 @@
 ---
 title: 自定义请求 callback
 order: 5
-importStyle: true
 ---
 
 自定义请求成功或者失败的处理逻辑。
-
-DataBinder 默认的请求成功和失败的行为是弹一个 Toast 将接口的 message 字段信息展示一下。如果你需要自定义一些成功失败的行为可以在 DataSource 中配置 success 和 error 来接入。其中第二个参数是 DataBinder 默认的回调处理逻辑（弹 Toast）如果不需要可以不调用。
-
-error 有两类错位，一类是网络中断，请求都没有到后端服务器；另一类是服务器接口报错（即接口返回 success 字段为 false）。两者应该给用户不同的提示和处理逻辑，可以通过其他参数来判断。
-
-此外为了方便在 render 中处理，与 `__loading` 类似，我们针对每个 DataSource 附加了一个 `__error` 属性用来标记当前模块是否有报错，默认值为 null，出错时会变为 `{message: '报错信息'}` 数据。
 
 ````jsx
 import React, {Component} from 'react';

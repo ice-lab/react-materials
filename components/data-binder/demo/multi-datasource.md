@@ -1,14 +1,9 @@
 ---
-title: 自定义加载效果
-order: 4
-importStyle: true
+title: 一个组件多个数据源
+order: 3
 ---
 
-自定义加载效果的 Demo。
-
-在 AJAX 加载过程中，给用户一个加载反馈是非常重要的，DataBinder 针对每个 DataSource 附加了一个私有属性 `__loading` 用来标记当前模块是否在请求中。因此你可以判断这个属性来看是否显示加载效果。
-
-为了方便，我们还提供了一个全局的 `__loading` 属性在 `this.props.bindingData` 上面，当前 Class 注册的任意 DataSource 在请求中，全局都会随之改变。
+某些场景下，一个组件会用到多个数据源，通过 key 来区分即可。
 
 ````jsx
 import React, {Component} from 'react';
@@ -22,14 +17,12 @@ import {
 @DataBinder({
   foo1Data: {
     url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/foo1',
-    // ajax 参数参见：https://github.com/axios/axios
     defaultBindingData: {
       foo: 'bar'
     }
   },
   foo2Data: {
     url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/foo2',
-    // ajax 参数参见：https://github.com/axios/axios
     defaultBindingData: {
       foo: 'bar'
     }

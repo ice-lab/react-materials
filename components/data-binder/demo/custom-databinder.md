@@ -1,21 +1,35 @@
 ---
-title: 实际场景 Demo
-order: 2
-importStyle: true
+title: 自定义 DataBinder
+order: 6
 ---
 
-演示一个实际场景。
+本 Demo 演示自定义 requestClient，使用 jsonp 的方法发送请求
 
 ````jsx
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import DataBinder from '@icedesign/data-binder';
+import jsonp from 'jsonp';
 import { Pagination, Table } from '@alifd/next';
+
+/**
+ * 自定义的 json request client
+ */
+function request(opts) {
+  return new Promise((resolve, reject) => {
+    jsonp(opts.url, { name: 'callback' }, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve({ data });
+      }
+    })
+  });
+}
 
 @DataBinder({
   account: {
-    url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/all',
-    // ajax 参数参见：https://github.com/axios/axios
+    url: 'https://ice.alicdn.com/assets/mock/53141.jsonp.js',
     defaultBindingData: {
       pagination: {
         page: 1,
@@ -25,7 +39,7 @@ import { Pagination, Table } from '@alifd/next';
       table: []
     }
   }
-})
+}, { requestClient: request })
 class App extends Component {
 
   componentDidMount() {
