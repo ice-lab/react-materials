@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/commodity-management-scaffold",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "该模板适用于商家类管理后台，布局方式采用左侧固定，右侧自适应方式，适合大量数据展示和界面操作",
   "author": "ice-admin@alibaba-inc.com",
   "homepage": "https://unpkg.com/@icedesign/commodity-management-scaffold@latest/build/index.html",
@@ -25,6 +25,7 @@
     "@icedesign/theme": "^1.x",
     "bizcharts": "^3.2.2",
     "enquire-js": "^0.1.2",
+    "lodash.clonedeep": "^4.5.0",
     "moment": "^2.23.0",
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
