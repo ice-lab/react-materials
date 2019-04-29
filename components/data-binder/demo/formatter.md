@@ -29,7 +29,7 @@ import { Button, Loading } from '@alifd/next';
     responseFormatter: (responseHandler, body, response) => {
       // 拿到接口返回的 res 数据，做一些格式转换处理，使其符合 DataBinder 的要求
       const newBody = {
-        success: body.code === "0" ? false : true,
+        status: body.code === '1' ? 'SUCCESS' : 'ERROR',
         message: body.msg,
         data: body.content
       };

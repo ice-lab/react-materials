@@ -44,7 +44,7 @@ class ListView extends Component {
 
 * 模块名 key：**必填**，每个 key 代表一个数据源（接口）
 * defaultBindingData: **选填** 该字段配置当前模块数据初始化默认值，如果当前模块有异步接口配置，则模块的字段需要与接口返回的数据字段一一对应。该参数可选，因为有些接口只需要提交成功即可，无需 UI 变化。
-* 其他：**选填**，配置请求相关参数，完成前后端通信，默认基于 [axios](https://github.com/axios/axios)，业务可以自定义其他 request client
+* 其他：**选填**，配置请求相关参数，完成前后端通信，默认基于 [axios](https://github.com/axios/axios)，因此这里可以使用 axios 的任意参数。同时业务可以自定义其他 request client。
 
 ### 2. 请求并使用数据源
 
