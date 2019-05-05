@@ -116,10 +116,7 @@ export default function dataBinder(sourceConfig, opts = {}) {
         initializeRequestStatus(originDatas[dataSourceKey], requestStatus);
         const tmpObj = {};
         if (newData) {
-          if (
-            Object.prototype.toString.call(originDatas[dataSourceKey]) ===
-            '[object Array]'
-          ) {
+          if (Array.isArray(originDatas[dataSourceKey])) {
             tmpObj[dataSourceKey] = initializeRequestStatus(
               newData,
               requestStatus
