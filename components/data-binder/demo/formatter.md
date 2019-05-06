@@ -3,7 +3,7 @@ title: 接口不符合规范
 order: 4
 ---
 
-通过 `responseFormatter` 格式化接口返回适配跟 DataBinder 接口规范不一致的情况。
+通过 responseFormatter 格式化接口返回数据，适配跟 DataBinder 接口规范不一致的情况。
 
 假设业务实际接口格式如下：
 

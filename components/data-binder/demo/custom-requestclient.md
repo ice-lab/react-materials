@@ -3,7 +3,7 @@ title: 自定义请求客户端
 order: 5
 ---
 
-本 Demo 演示自定义 requestClient，使用 jsonp 的方法发送请求
+本 Demo 演示自定义 requestClient：使用 jsonp 的方法发送请求，自定义的 requestClien 必须返回一个 Promise
 
 ````jsx
 import React, {Component} from 'react';

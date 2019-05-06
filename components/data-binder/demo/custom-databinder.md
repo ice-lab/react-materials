@@ -6,8 +6,8 @@ order: 6
 很多场景下，我们会遇到诸如以下 case：
 
 - 业务接口规范跟 DataBinder 默认规范不一致
-- 需要全局处理接口通用规范：比如未登录、无权限、出错
-- 业务上使用非 Ajax 的方式做前后端通信，比如：jsonp
+- 需要全局处理接口通用规范，比如：未登录、无权限、出错等
+- 业务上使用非 AJAX 的方式做前后端通信，比如：jsonp
 
 这些场景我们建议业务上对 DataBinder 包装一层，产出业务自身的一个 DataBinder。
 
@@ -21,7 +21,7 @@ import { Button, Loading, Message } from '@alifd/next';
  * 自定义一个 DataBinder，建议放在 src/components/DataBinder 下。支持以下特性：
  *   - 通过 showSuccessToast/showErrorToast 配置是否要弹 toast
  *   - 通过 responseFormatter 格式化后端接口
- *   - 基于 responseFormatter 的时间点实现未登录、无权限等逻辑
+ *   - 基于 responseFormatter 实现未登录、无权限等逻辑
  */
 const CustomDataBinder = (options) => {
   // 重组 options
