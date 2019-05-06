@@ -24,8 +24,9 @@
     "block"
   ],
   "dependencies": {
-    "react": "^16.2.0",
-    "prop-types": "^15.5.8"
+    "node-sass": "^4.5.3",
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0"
   },
   "blockConfig": {
     "name": "about",

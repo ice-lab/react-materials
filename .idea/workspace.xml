@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae8351c1-30e6-4957-9410-0307d13917cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/AbilityIntroduction/src/AbilityIntroduction.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/About/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/About/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/horizontal.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/horizontal.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/sider-current.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/sider-current.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/sider.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/sider.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/switch-mode.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/switch-mode.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/theme.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/theme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/styled-menu/demo/vertical.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/styled-menu/demo/vertical.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Footer/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Footer/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Sidebar/Sidebar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Tasks/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Tasks/Tasks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Danger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Danger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Info.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Info.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Muted.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Muted.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Primary.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Primary.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Quote.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Quote.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Success.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Success.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Warning.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/components/Typography/Warning.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/layouts/Dashboard/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/layouts/Dashboard/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Dashboard/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Dashboard/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Icons/Icons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Icons/Icons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Notifications/Notifications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Notifications/Notifications.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/TableList/TableList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/TableList/TableList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Typography/Typography.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/Typography/Typography.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/UserProfile/UserProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/pages/UserProfile/UserProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/charts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/charts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/general.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/general.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scaffolds/ice-opensource-site/img/brhtqqzh.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-opensource-site/img/brhtqqzh.jpeg" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-794352825">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.36" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="2" />
+          <entry key="js" value="3" />
+          <entry key="json" value="4" />
+          <entry key="jsx" value="4" />
+          <entry key="md" value="1" />
+          <entry key="png" value="1" />
+          <entry key="scss" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="2" />
+          <entry key="Image" value="1" />
+          <entry key="JSON" value="4" />
+          <entry key="JSX Harmony" value="4" />
+          <entry key="JavaScript" value="3" />
+          <entry key="Markdown" value="1" />
+          <entry key="SCSS" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="ESLintLanguageService" value="1" />
+          <entry key="TypeScriptServerServiceImpl" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="jsx" value="271" />
+          <entry key="scss" value="320" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSX Harmony" value="271" />
+          <entry key="SCSS" value="320" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/demo/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.module.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="610">
+              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-678">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+              <folding>
+                <element signature="e#352#680#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blocks/About/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AblityItems/src/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/AblityItems/src/AblityItems.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>styles</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/blocks/AbilityIntroduction/src/AbilityIntroduction.scss" />
+        <option value="$PROJECT_DIR$/blocks/AbilityIntroduction/src/AbilityIntroduction.jsx" />
+        <option value="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.js" />
+        <option value="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.module.scss" />
+        <option value="$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.jsx" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/blocks/AbilityIntroduction/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AblityItems/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/About/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AccountBadge/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AccountFeatures/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AccountPanel/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AccountStatus/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AddressInfo/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/ApplicationProgress/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AreaStackChart/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/ArticleList/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AssetInfoDisplay/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/AuthorityTable/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/blocks/AbilityIntroduction/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AblityItems/package.json" />
+      <path value="$PROJECT_DIR$/blocks/About/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AccountBadge/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AccountFeatures/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AccountPanel/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AccountStatus/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AddressInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ApplicationProgress/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AreaStackChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ArticleList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AssetInfoDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/AuthorityTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Banner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BarLineChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BasicDetailInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BasicException/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BasicNotFound/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BasicTab/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BlackFooter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BoardList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BraftEditor/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BrandDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BrandList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/BrandShowCase/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CardItems/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CardList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChangePasswordForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartArea/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartBar/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartBox/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartBubbleImage/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartFacet/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartFunnel/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartGauge/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartHeatMap/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartPie/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartRadar/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartRelation/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartStock/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ChartTypeLine/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CircleProgress/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CircularChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Clipboard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CoBranding/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CollapseCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ColumnForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ColumnsTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ComplexDialog/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ComplexFilter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ComplexProgressTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ComplexTabTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CompositeFilter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ConfirmDialog/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ContentEditor/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ContentList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CostOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CreateActivityForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CreativeForgetPassword/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CreativeLogin/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CreativeRegister/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CustomAccordion/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CustomBarChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CustomCodemirror/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CustomPieChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/CustomTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DataDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DataOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DataStatistics/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DetailTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DisplayCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DnD/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DocumentList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DoubleAxesChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/DownloadCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EditableTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EmojiMart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EmptyContent/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EnhanceTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EntryCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Events/package.json" />
+      <path value="$PROJECT_DIR$/blocks/EventsOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ExcellentHomePage/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ExpandedTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FailureDetail/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FeatureDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FeatureIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FeatureList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FeedList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FilterBar/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FilterList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FilterTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FilterWithSearch/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FlowStatistics/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Footer/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FooterInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FooterLinks/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ForgetPasswordForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FrontierContent/package.json" />
+      <path value="$PROJECT_DIR$/blocks/FullFooter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/GaugeCarChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/GeekEvents/package.json" />
+      <path value="$PROJECT_DIR$/blocks/GeneralWidget/package.json" />
+      <path value="$PROJECT_DIR$/blocks/GridLayout/package.json" />
+      <path value="$PROJECT_DIR$/blocks/GroupedForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/HotPostRank/package.json" />
+      <path value="$PROJECT_DIR$/blocks/HotRank/package.json" />
+      <path value="$PROJECT_DIR$/blocks/IndustryBanner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfiniteCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfiniteScrollGrid/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfiniteScrollList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfoDisplayTab/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfoDisplayTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/InfoOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/IntroBanner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/IntroStepInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/IntroTab/package.json" />
+      <path value="$PROJECT_DIR$/blocks/IntroWithBackground/package.json" />
+      <path value="$PROJECT_DIR$/blocks/JoinUs/package.json" />
+      <path value="$PROJECT_DIR$/blocks/JsonView/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LandingIntroBanner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LatestActivity/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LatestNews/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LeftContentDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LineBarChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LiteTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Login/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LoginForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/LoginPanel/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MainData/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MapWithAInfoWindow/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MapWithAMarker/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MarkdownDocs/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Masonry/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MemberList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MessageList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ModelCards/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ModelOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MonacoEditor/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MultiCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MultipleLineChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/MultiplePieChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/NormalFooter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/NotPermission/package.json" />
+      <path value="$PROJECT_DIR$/blocks/NoticeCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/NoticeList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/NoticeSummary/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Notifications/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OperationTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OrderList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OrderStatusChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OurTeam/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewBoard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewChartCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewPieChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/OverviewSatesChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ParetoChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Partners/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PerformanceChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PerformanceIndicator/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PictureTextList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PieDoughnutChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PieLineChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PlatformBlackIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PlatformIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PlatformJoinus/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PlatformLanding/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PlatformToolsIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PostCategory/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PriceCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PriceInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/PrivateMessageForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProductDescription/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProductFeature/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProductFeatureDark/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProductInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProductIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProgressDataList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProgressTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProjectOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ProjectStatus/package.json" />
+      <path value="$PROJECT_DIR$/blocks/QrCode/package.json" />
+      <path value="$PROJECT_DIR$/blocks/QuickNavigation/package.json" />
+      <path value="$PROJECT_DIR$/blocks/QuillRichTextEditor/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RadarChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RealTimeData/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RealTimeOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RealTimeStatistics/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RealTimeTradeChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Register/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RegisterForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ReleaseIntro/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ReviewDataChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ReviewDetailInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ReviewOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ReviewRequestTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RichEditor/package.json" />
+      <path value="$PROJECT_DIR$/blocks/RightContentDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SalesChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SalesStatChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ScoreOverview/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ScrollList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SearchTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SelectableTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ServiceCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SettingsForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SignupForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleBanner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleFluencyForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleFooter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleFormDialog/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleSlider/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleStep/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleTestimonial/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleTimeline/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleTransfer/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SimpleVideoPlayer/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SlideBanner/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SortCardList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SortableTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Speakers/package.json" />
+      <path value="$PROJECT_DIR$/blocks/StackedBarChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/StatisticalCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/StepForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Subscribe/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SuccessDetail/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SuccessDialog/package.json" />
+      <path value="$PROJECT_DIR$/blocks/SystemNoticeList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TabArticle/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TabChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TabDialog/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TabFilterTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TabTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TableChartCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TableContextMenu/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TableFilter/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TagMessageList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TagTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TeamDisplay/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TermsInfo/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Testimonial/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TestimonialCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TextCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TextSearchList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Tickets/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TimeFilterTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TodoList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TopActiveChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TopicCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TreeCardList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TreeTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/TrendChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserData/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserInfoCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserLanding/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserLogin/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserProfileCard/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserStatChart/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserTable/package.json" />
+      <path value="$PROJECT_DIR$/blocks/UserTrafficStastistics/package.json" />
+      <path value="$PROJECT_DIR$/blocks/ValidateForm/package.json" />
+      <path value="$PROJECT_DIR$/blocks/VideoList/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Waterfall/package.json" />
+      <path value="$PROJECT_DIR$/blocks/Workshop/package.json" />
+      <path value="$PROJECT_DIR$/blocks/WysiwygEditor/package.json" />
+      <path value="$PROJECT_DIR$/components/balloon-confirm/package.json" />
+      <path value="$PROJECT_DIR$/components/container/package.json" />
+      <path value="$PROJECT_DIR$/components/data-binder/package.json" />
+      <path value="$PROJECT_DIR$/components/dynamic-icon/package.json" />
+      <path value="$PROJECT_DIR$/components/ellipsis/package.json" />
+      <path value="$PROJECT_DIR$/components/form-binder/package.json" />
+      <path value="$PROJECT_DIR$/components/foundation-symbol/package.json" />
+      <path value="$PROJECT_DIR$/components/img/package.json" />
+      <path value="$PROJECT_DIR$/components/label/package.json" />
+      <path value="$PROJECT_DIR$/components/layout/package.json" />
+      <path value="$PROJECT_DIR$/components/list/package.json" />
+      <path value="$PROJECT_DIR$/components/notification/package.json" />
+      <path value="$PROJECT_DIR$/components/panel/package.json" />
+      <path value="$PROJECT_DIR$/components/qrcode/package.json" />
+      <path value="$PROJECT_DIR$/components/richtext-renderer/package.json" />
+      <path value="$PROJECT_DIR$/components/styled-menu/package.json" />
+      <path value="$PROJECT_DIR$/components/title/package.json" />
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/create-react-app/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-algorithm-model-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-application-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-asset-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-build-platfrom/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-commodity-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-contract-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/layouts/DefaultLayout/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Breadcrumbs/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Cards/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Carousels/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Collapses/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Dropdowns/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Forms/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Jumbotrons/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/ListGroups/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Navbars/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Navs/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Paginations/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Popovers/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/ProgressBar/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Switches/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Tables/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Tabs/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Base/Tooltips/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Buttons/BrandButtons/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Buttons/ButtonDropdowns/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Buttons/ButtonGroups/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Buttons/Buttons/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Charts/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Icons/CoreUIIcons/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Icons/Flags/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Icons/FontAwesome/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Icons/SimpleLineIcons/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Notifications/Alerts/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Notifications/Badges/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Notifications/Modals/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Pages/Login/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Pages/Page404/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Pages/Page500/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Pages/Register/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Theme/Colors/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Theme/Typography/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Users/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/pages/Widgets/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-creative-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-creator-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-creator-landingpage/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-customer-analysis-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-analysis/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-cms/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-ecommerce/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-iceworks/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-lite/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-pro/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-design-schools/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-finance-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-government-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-hr-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-library-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-light-bootstrap-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-material-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-monitor-dashboard/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-open-platform-landingpage/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-opensource-site/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-operation-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-order-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-project-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-reviews-management/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-scroll-screen-homepage/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-task-management-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-typescript-starter/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-universal-homepage/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-usertrack-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-voice-chat-admin/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-website-homepage/package.json" />
+      <path value="$PROJECT_DIR$/scaffolds/ice-yunqi-homepage/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="253" />
+    <option name="y" value="213" />
+    <option name="width" value="1560" />
+    <option name="height" value="752" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/tms_cainiao/mod/wb-bydw-wuliu-jiedai-pc" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="E:\components\react-materials\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="E:\components\react-materials\node_modules\eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="E:\components\react-materials\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\components\react-materials\blocks\AbilityIntroduction\src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae8351c1-30e6-4957-9410-0307d13917cd" name="Default Changelist" comment="" />
+      <created>1557039798232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557039798232</updated>
+      <workItem from="1557039821792" duration="8757000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8757000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="253" y="213" width="1560" height="752" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31057125" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3294893" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31122783" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/blocks/AblityItems/demo/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AblityItems/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/About/src/About.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/demo/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/demo/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AblityItems/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AblityItems/src/AblityItems.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/AbilityIntroduction/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-678">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding>
+            <element signature="e#352#680#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/About/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/About/screenshot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/About/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540" />
+      </provider>
+    </entry>
+  </component>
+</project>
