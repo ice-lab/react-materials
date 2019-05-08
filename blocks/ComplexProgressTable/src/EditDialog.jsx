@@ -6,6 +6,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import CreateFuncDialog from './CreateFuncDialog';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Group: RadioGroup } = Radio;
@@ -41,7 +42,7 @@ class EditDialog extends Component {
   render() {
     return (
       <Dialog
-        style={styles.dialog}
+        className={styles.dialog}
         autoFocus={false}
         footerAlign="center"
         title="修改项目进度"
@@ -57,10 +58,10 @@ class EditDialog extends Component {
           value={this.state.value}
           onChange={this.onFormChange}
         >
-          <div style={styles.dialogContent}>
-            <Row style={styles.formRow}>
+          <div className={styles.dialogContent}>
+            <Row className={styles.formRow}>
               <Col span="4">
-                <label style={styles.formLabel}>项目标题：</label>
+                <label className={styles.formLabel}>项目标题：</label>
               </Col>
               <Col span="16">
                 <IceFormBinder
@@ -70,26 +71,26 @@ class EditDialog extends Component {
                   message="项目标题必填，且最少 2 个字最多 26 个字"
                   name="title"
                 >
-                  <Input style={styles.input} placeholder="项目标题" />
+                  <Input className={styles.input} placeholder="项目标题" />
                 </IceFormBinder>
                 <IceFormError name="title" />
               </Col>
             </Row>
-            <Row style={styles.formRow}>
+            <Row className={styles.formRow}>
               <Col span="4">
-                <label style={styles.formLabel}>项目进度：</label>
+                <label className={styles.formLabel}>项目进度：</label>
               </Col>
               <Col span="16">
-                <div style={styles.progressWrapper}>
+                <div className={styles.progressWrapper}>
                   <IceFormBinder type="number" name="progress">
                     <Range marks={[0, 100]} />
                   </IceFormBinder>
                 </div>
               </Col>
             </Row>
-            <Row style={styles.formRow}>
+            <Row className={styles.formRow}>
               <Col span="4">
-                <label style={styles.formLabel}>优先级：</label>
+                <label className={styles.formLabel}>优先级：</label>
               </Col>
               <Col span="16">
                 <IceFormBinder name="priority">
@@ -119,25 +120,6 @@ class EditDialog extends Component {
   }
 }
 
-const styles = {
-  dialog: {
-    width: '640px',
-  },
-  dialogContent: {},
-  formRow: {
-    marginTop: 20,
-  },
-  input: {
-    width: '100%',
-  },
-  progressWrapper: {
-    marginTop: '10px',
-  },
-  formLabel: {
-    lineHeight: '26px',
-    textAlign: 'right',
-    display: 'inline-block',
-  },
-};
+
 
 export default CreateFuncDialog(EditDialog);

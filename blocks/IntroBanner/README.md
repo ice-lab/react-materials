@@ -1,6 +1,6 @@
 # intro-banner
 
-简介：IntroBanner
+简介：Index
 
 带图的介绍
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Icon, Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -37,58 +38,58 @@ export default class Lists extends Component {
     const data = getData();
     return (
       <IceContainer>
-        <h4 style={styles.cardTitle}>试卷列表</h4>
-        <div style={styles.contentList}>
+        <h4 className={styles.cardTitle}>试卷列表</h4>
+        <div className={styles.contentList}>
           {data.map((item, index) => {
             return (
-              <div style={styles.item} key={index}>
-                <h6 style={styles.title}>{item.title}</h6>
+              <div className={styles.item} key={index}>
+                <h6 className={styles.title}>{item.title}</h6>
                 <Row>
                   <Col l="16">
-                    <div style={styles.metaWrap}>
-                      <div style={styles.meta}>
+                    <div className={styles.metaWrap}>
+                      <div className={styles.meta}>
                         <span>阅卷方式: </span>
                         <span>人工</span>
                       </div>
-                      <div style={styles.meta}>
+                      <div className={styles.meta}>
                         <span>时间: </span>
                         <span>{item.time}</span>
                       </div>
-                      <div style={styles.meta}>
+                      <div className={styles.meta}>
                         <span>引用次数: </span>
                         <span>{item.citation}</span>
                       </div>
-                      <div style={styles.meta}>
+                      <div className={styles.meta}>
                         <span>分值: </span>
                         <span>{item.score}</span>
                       </div>
-                      <div style={styles.meta}>
+                      <div className={styles.meta}>
                         <span>技术方向: </span>
                         <span>{item.subject}</span>
                       </div>
-                      <div style={styles.meta}>
+                      <div className={styles.meta}>
                         <span>题目: </span>
                         <span>{item.count}</span>
                       </div>
                     </div>
                   </Col>
                   <Col l="8">
-                    <div style={styles.operWrap}>
-                      <div style={styles.oper}>
-                        <Icon size="xs" type="edit" style={styles.operIcon} />
-                        <span style={styles.operText}>编辑</span>
+                    <div className={styles.operWrap}>
+                      <div className={styles.oper}>
+                        <Icon size="xs" type="edit" className={styles.operIcon} />
+                        <span className={styles.operText}>编辑</span>
                       </div>
-                      <div style={styles.oper}>
-                        <Icon size="xs" type="ashbin" style={styles.operIcon} />
-                        <span style={styles.operText}>删除</span>
+                      <div className={styles.oper}>
+                        <Icon size="xs" type="ashbin" className={styles.operIcon} />
+                        <span className={styles.operText}>删除</span>
                       </div>
-                      <div style={styles.oper}>
+                      <div className={styles.oper}>
                         <Icon
                           size="xs"
                           type="success"
-                          style={styles.operIcon}
+                          className={styles.operIcon}
                         />
-                        <span style={styles.operText}>归档</span>
+                        <span className={styles.operText}>归档</span>
                       </div>
                     </div>
                   </Col>
@@ -98,7 +99,7 @@ export default class Lists extends Component {
           })}
         </div>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={this.state.current}
           onChange={this.handlePaginationChange}
         />
@@ -107,50 +108,4 @@ export default class Lists extends Component {
   }
 }
 
-const styles = {
-  cardTitle: {
-    height: '16px',
-    lineHeight: '16px',
-    fontSize: '16px',
-    color: 'rgb(51, 51, 51)',
-    fontWeight: 'bold',
-    margin: '0',
-    padding: '0',
-  },
-  item: {
-    position: 'relative',
-    borderBottom: '1px solid #eee',
-    padding: '20px 0',
-  },
-  title: {
-    margin: '0 0 10px',
-  },
-  metaWrap: {
-    display: 'flex',
-    paddingLeft: '15px',
-  },
-  meta: {
-    fontSize: '13px',
-    color: '#999',
-    marginRight: '15px',
-  },
-  operWrap: {
-    position: 'absolute',
-    right: '0',
-    top: '36px',
-    display: 'flex',
-    cursor: 'pointer',
-  },
-  oper: {
-    marginLeft: '15px',
-    fontSize: '13px',
-    color: '#999',
-  },
-  operIcon: {
-    marginRight: '8px',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};
+

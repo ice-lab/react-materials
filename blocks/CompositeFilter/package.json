@@ -28,7 +28,9 @@
     "@alifd/next": "^1.x"
   },
   "devDependencies": {
+    "@alifd/next": "^1.14.2",
     "@icedesign/theme": "^0.x",
+    "moment": "^2.24.0",
     "react": "*",
     "react-dom": "*"
   },

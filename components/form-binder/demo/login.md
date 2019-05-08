@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom';
 import { FormBinderWrapper, FormBinder, FormError } from '@icedesign/form-binder';
 import { Input, Button, Checkbox, Message } from '@alifd/next';
 
-class Login extends Component {
+class Index extends Component {
   constructor(props) {
     super(props);
 
@@ -111,5 +111,5 @@ const styles = {
   }
 }
 
-ReactDOM.render(<Login />, mountNode);
+ReactDOM.render(<Index />, mountNode);
 ````

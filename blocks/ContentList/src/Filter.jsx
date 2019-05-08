@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const data = [
   {
@@ -39,24 +40,25 @@ export default class Filter extends Component {
     const { activeIndex } = this.state;
     return (
       <IceContainer title="精确筛选">
-        <div style={styles.filterContent}>
+        <div className={styles.filterContent}>
           {data.map((item, index) => {
             const lastItem = index === data.length - 1;
             const lastItemStyle = lastItem ? { marginBottom: 0 } : null;
             return (
               <div
-                style={{ ...styles.filterItem, ...lastItemStyle }}
+                style={{...lastItemStyle }}
+                className={styles.filterItem}
                 key={index}
               >
-                <div style={styles.filterLabel}>{item.label}:</div>
-                <div style={styles.filterList}>
+                <div className={styles.filterLabel}>{item.label}:</div>
+                <div className={styles.filterList}>
                   {item.value.map((text, idx) => {
                     const activeStyle =
                       activeIndex === idx ? styles.active : null;
                     return (
                       <span
                         onClick={() => this.handleClick(text)}
-                        style={{ ...styles.filterText, ...activeStyle }}
+                        className={`${styles.filterText} ${activeStyle}`}
                         key={idx}
                       >
                         {text}
@@ -73,28 +75,4 @@ export default class Filter extends Component {
   }
 }
 
-const styles = {
-  filterItem: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '28px',
-    marginBottom: '20px',
-  },
-  filterLabel: {
-    width: '60px',
-    fontSize: '15px',
-    fontWeight: '450',
-  },
-  filterText: {
-    fontSize: '15px',
-    marginRight: '15px',
-    cursor: 'pointer',
-  },
-  active: {
-    minWeight: '60px',
-    borderRadius: '20px',
-    padding: '5px 15px',
-    background: '#2784fc',
-    color: '#fff',
-  },
-};
+

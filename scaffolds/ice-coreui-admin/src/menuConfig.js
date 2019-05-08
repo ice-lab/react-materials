@@ -239,7 +239,7 @@ const defaultMenuConfig = {
       icon: 'icon-star',
       children: [
         {
-          name: 'Login',
+          name: 'Index',
           path: '/login',
           icon: 'icon-star',
         },
