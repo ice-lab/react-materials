@@ -7,6 +7,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import DialogDecorator from './DialogDecorator';
+import styles from './index.module.scss';
 
 const { Col, Row } = Grid;
 
@@ -44,7 +45,7 @@ class FormDialog extends Component {
         afterClose={this.props.afterClose}
         onOk={this.onOkHandler}
         visible={this.state.visible}
-        style={{ width: 400 }}
+        className={styles.dialogWidth}
       >
         <IceFormBinderWrapper
           value={this.state.value}
@@ -53,7 +54,7 @@ class FormDialog extends Component {
           <div>
             <Row>
               <Col span={4}>
-                <span style={styles.label}>标题</span>
+                <span className={styles.label}>标题</span>
               </Col>
               <Col span={18}>
                 <IceFormBinder
@@ -62,18 +63,18 @@ class FormDialog extends Component {
                   name="title"
                   message="当前标题必填"
                 >
-                  <Input style={styles.formField} />
+                  <Input className={styles.formField} />
                 </IceFormBinder>
                 <IceFormError name="title" />
               </Col>
             </Row>
-            <Row style={styles.row}>
+            <Row className={styles.row}>
               <Col span={4}>
-                <span style={styles.label}>类型</span>
+                <span className={styles.label}>类型</span>
               </Col>
               <Col span={18}>
                 <IceFormBinder name="type">
-                  <Select dataSource={typeData} style={styles.formField} />
+                  <Select dataSource={typeData} className={styles.formField} />
                 </IceFormBinder>
               </Col>
             </Row>
@@ -84,16 +85,16 @@ class FormDialog extends Component {
   }
 }
 
-const styles = {
-  row: {
-    marginTop: '10px',
-  },
-  label: {
-    lineHeight: '30px',
-  },
-  formField: {
-    width: '100%',
-  },
-};
+// const styles = {
+//   row: {
+//     marginTop: '10px',
+//   },
+//   label: {
+//     lineHeight: '30px',
+//   },
+//   formField: {
+//     width: '100%',
+//   },
+// };
 
 export default DialogDecorator(FormDialog);

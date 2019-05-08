@@ -2,285 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8351c1-30e6-4957-9410-0307d13917cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blocks/AblityItems/src/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AblityItems/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/About/src/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/About/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AccountBadge/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AccountFeatures/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AccountPanel/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AccountStatus/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AddressInfo/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ApplicationProgress/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ArticleList/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AssetInfoDisplay/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/AuthorityTable/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CardItems/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CardList/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartArea/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartBar/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartBox/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartBubbleImage/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartFacet/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartFunnel/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartGauge/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartHeatMap/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartPie/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartRadar/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartRelation/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartStock/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ChartTypeLine/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CircleProgress/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CircularChart/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/Clipboard/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CoBranding/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CollapseCard/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ColumnForm/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ColumnsTable/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ComplexDialog/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CompositeFilter/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ConfirmDialog/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ContentEditor/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/ContentList/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CostOverview/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CreateActivityForm/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CustomAccordion/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CustomBarChart/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/CustomPieChart/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/IndustryBanner/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/InfiniteCard/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/InfoDisplayTab/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/InfoOverview/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/IntroBanner/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/IntroStepInfo/src/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/IntroStepInfo/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/IntroWithBackground/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/JoinUs/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LandingIntroBanner/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LatestActivity/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LatestNews/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LeftContentDisplay/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LiteTable/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/Login/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LoginForm/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/react-materials.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-materials.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/OperationTable/src/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/OrderList/src/index.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AblityItems/src/AblityItems.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AblityItems/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/About/src/About.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/About/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountBadge/src/AccountBadge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountBadge/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountBadge/src/BadgeItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountBadge/src/BadgeItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountBadge/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountFeatures/src/AccountFeatures.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountFeatures/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountFeatures/src/FeatureItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountFeatures/src/FeatureItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountFeatures/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountPanel/src/AccountPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountPanel/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountPanel/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountStatus/src/AccountStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountStatus/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountStatus/src/StateItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AccountStatus/src/StateItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AccountStatus/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AddressInfo/src/AddressInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AddressInfo/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AddressInfo/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ApplicationProgress/src/ApplicationProgress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ApplicationProgress/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ApplicationProgress/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AreaStackChart/src/AreaStackChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AreaStackChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AreaStackChart/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ArticleList/src/ArticleList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ArticleList/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ArticleList/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AssetInfoDisplay/src/AssetInfoDisplay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AssetInfoDisplay/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AssetInfoDisplay/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AuthorityTable/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AuthorityTable/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AuthorityTable/src/AuthorityTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AuthorityTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AuthorityTable/src/CustomTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AuthorityTable/src/CustomTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AuthorityTable/src/TableFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/AuthorityTable/src/TableFilter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/AuthorityTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CardItems/src/CardItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CardItems/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CardItems/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CardList/src/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CardList/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CardList/src/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CardList/src/Filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CardList/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChangePasswordForm/src/ChangePasswordForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChangePasswordForm/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChangePasswordForm/src/ChangePasswordForm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChangePasswordForm/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChangePasswordForm/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartArea/src/ChartArea.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartArea/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartArea/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBar/src/ChartBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartBar/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBar/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBox/src/ChartBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartBox/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBox/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBubbleImage/src/ChartBubbleImage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartBubbleImage/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartBubbleImage/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartFacet/src/ChartFacet.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartFacet/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartFacet/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartFunnel/src/ChartFunnel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartFunnel/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartFunnel/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartGauge/src/ChartGauge.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartGauge/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartGauge/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartHeatMap/src/ChartHeatMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartHeatMap/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartHeatMap/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartPie/src/ChartPie.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartPie/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartPie/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartRadar/src/ChartRadar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartRadar/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartRadar/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartRelation/src/ChartRelation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartRelation/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartRelation/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartStock/src/ChartStock.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartStock/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartStock/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartTypeLine/src/ChartTypeLine.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ChartTypeLine/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ChartTypeLine/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CircleProgress/src/CircleProgress.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CircleProgress/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CircleProgress/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CircularChart/src/CircularChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CircularChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CircularChart/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/Clipboard/src/Clipboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/Clipboard/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/Clipboard/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CoBranding/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CoBranding/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CoBranding/src/CoBranding.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CoBranding/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CoBranding/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/src/CodeSyntaxHighlight.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CodeSyntaxHighlight/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CollapseCard/src/CollapseCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CollapseCard/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CollapseCard/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ColumnForm/src/ColumnForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ColumnForm/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ColumnForm/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ColumnsTable/src/ColumnsTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ColumnsTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ColumnsTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexDialog/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexDialog/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexDialog/src/ComplexDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexDialog/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexDialog/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexFilter/src/ComplexFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexFilter/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexFilter/src/ComplexFilter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexFilter/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexFilter/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/ComplexProgressTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/EditDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/EditDialog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexProgressTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexTabTable/src/ComplexTabTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexTabTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexTabTable/src/ComplexTabTable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ComplexTabTable/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ComplexTabTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CompositeFilter/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CompositeFilter/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CompositeFilter/src/CompositeFilter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CompositeFilter/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CompositeFilter/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ConfirmDialog/src/ConfirmDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ConfirmDialog/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ConfirmDialog/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentEditor/src/ContentEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentEditor/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentEditor/src/RichEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentEditor/src/RichEditor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentEditor/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentList/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentList/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentList/src/ContentList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentList/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentList/src/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentList/src/Filter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentList/src/Lists.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/ContentList/src/Lists.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/ContentList/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CostOverview/src/CostOverview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CostOverview/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CostOverview/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreateActivityForm/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreateActivityForm/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreateActivityForm/src/CreateActivityForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreateActivityForm/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreateActivityForm/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/CreativeForgetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/CustomButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/ForgetPasswordIntro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/ForgetPasswordIntro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeForgetPassword/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/CreativeLogin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/CustomButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/LoginIntro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeLogin/src/LoginIntro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeLogin/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/CreativeRegister.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/CustomButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/RegisterIntro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CreativeRegister/src/RegisterIntro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CreativeRegister/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomAccordion/src/CustomAccordion.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomAccordion/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomAccordion/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomBarChart/src/CustomBarChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomBarChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomBarChart/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomCodemirror/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomCodemirror/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomCodemirror/src/CustomCodemirror.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomCodemirror/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomCodemirror/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomPieChart/src/CustomPieChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomPieChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomPieChart/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomTable/src/CustomTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomTable/src/CustomTable.scss" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/CustomTable/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/CustomTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IndustryBanner/src/IndustryBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/IndustryBanner/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IndustryBanner/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteCard/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteCard/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteCard/src/InfiniteCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteCard/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteCard/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/src/InfiniteScrollCellMeasurer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollGrid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteScrollGrid/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollGrid/src/InfiniteScrollGrid.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteScrollGrid/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollGrid/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollList/src/InfiniteScrollList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfiniteScrollList/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfiniteScrollList/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoDisplayTab/src/InfoDisplayTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfoDisplayTab/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoDisplayTab/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoDisplayTable/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfoDisplayTable/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoDisplayTable/src/InfoDisplayTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfoDisplayTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoDisplayTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoOverview/src/InfoOverview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/InfoOverview/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/InfoOverview/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroBanner/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/IntroBanner/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroBanner/src/IntroBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/IntroBanner/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroBanner/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroStepInfo/src/IntroStepInfo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroStepInfo/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroTab/src/IntroTab.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/IntroTab/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroTab/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroWithBackground/src/IntroWithBackground.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/IntroWithBackground/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/IntroWithBackground/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/JoinUs/src/JoinUs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/JoinUs/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/JoinUs/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/JsonView/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/JsonView/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/JsonView/src/JsonView.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/JsonView/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/JsonView/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LandingIntroBanner/src/LandingIntroBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LandingIntroBanner/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LandingIntroBanner/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestActivity/src/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LatestActivity/src/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestActivity/src/LatestActivity.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LatestActivity/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestActivity/src/RankList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LatestActivity/src/RankList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestActivity/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestNews/src/LatestNews.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LatestNews/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LatestNews/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LeftContentDisplay/src/LeftContentDisplay.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LeftContentDisplay/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LeftContentDisplay/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LineBarChart/src/LineBarChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LineBarChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LineBarChart/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LiteTable/src/LiteTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LiteTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LiteTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/Login/src/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/Login/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/Login/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginForm/src/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginForm/src/CustomButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginForm/src/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginForm/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/LoginIntro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginForm/src/LoginIntro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginForm/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/AuthForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/AuthForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/CustomButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/CustomInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/LoginIntro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/LoginIntro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/LoginPanel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/LoginPanel/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/LoginPanel/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/form-binder/demo/dynamic.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/form-binder/demo/dynamic.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/form-binder/demo/login.md" beforeDir="false" afterPath="$PROJECT_DIR$/components/form-binder/demo/login.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/menuConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-coreui-admin/src/menuConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/ice-design-pro/src/pages/UserLogin/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-design-pro/src/pages/UserLogin/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/ice-design-pro/src/pages/UserRegister/action.js" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-design-pro/src/pages/UserRegister/action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/ice-light-bootstrap-dashboard/src/components/Tasks/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-light-bootstrap-dashboard/src/components/Tasks/Tasks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/general.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/scaffolds/ice-material-dashboard/src/variables/general.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/OperationTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OperationTable/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OrderList/src/OrderList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderList/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OrderList/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/src/OrderStatusChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -307,12 +40,12 @@
         <counts>
           <entry key="html" value="5" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="46" />
+          <entry key="js" value="49" />
           <entry key="json" value="6" />
-          <entry key="jsx" value="162" />
+          <entry key="jsx" value="168" />
           <entry key="md" value="3" />
           <entry key="png" value="1" />
-          <entry key="scss" value="105" />
+          <entry key="scss" value="109" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
@@ -321,10 +54,10 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="6" />
-          <entry key="JSX Harmony" value="162" />
-          <entry key="JavaScript" value="46" />
+          <entry key="JSX Harmony" value="168" />
+          <entry key="JavaScript" value="49" />
           <entry key="Markdown" value="3" />
-          <entry key="SCSS" value="105" />
+          <entry key="SCSS" value="109" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -337,26 +70,38 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="8" />
-          <entry key="jsx" value="4769" />
-          <entry key="scss" value="3135" />
+          <entry key="jsx" value="4955" />
+          <entry key="scss" value="3183" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSX Harmony" value="4769" />
+          <entry key="JSX Harmony" value="4955" />
           <entry key="JavaScript" value="8" />
-          <entry key="SCSS" value="3135" />
+          <entry key="SCSS" value="3183" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/AreaChart.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/index.jsx">
+        <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+            <state relative-caret-position="92">
+              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -365,59 +110,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/LoginIntro.jsx">
+        <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/CustomInput.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/AuthForm.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#88#129#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/CustomButton.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/index.module.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
+            <state>
+              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -426,11 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editor</find>
-      <find>class</find>
-      <find>filterItem</find>
-      <find>filterLabel</find>
-      <find>filterText</find>
       <find>active</find>
       <find>100px</find>
       <find>formItem</find>
@@ -449,13 +140,18 @@
       <find>input</find>
       <find>button</find>
       <find>buttonCustom</find>
-      <find>,</find>
       <find>container</find>
       <find>mask</find>
       <find>title</find>
       <find>description</find>
       <find>content</find>
+      <find>row</find>
+      <find>label</find>
+      <find>formField</find>
+      <find>con</find>
+      <find>props</find>
       <find>style</find>
+      <find>,</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -468,13 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/blocks/CustomTable/src/index.module.scss" />
-        <option value="$PROJECT_DIR$/blocks/IndustryBanner/src/index.module.scss" />
-        <option value="$PROJECT_DIR$/blocks/IndustryBanner/src/index.jsx" />
-        <option value="$PROJECT_DIR$/blocks/InfiniteCard/src/index.module.scss" />
-        <option value="$PROJECT_DIR$/blocks/InfiniteCard/src/index.jsx" />
-        <option value="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/src/index.jsx" />
-        <option value="$PROJECT_DIR$/blocks/InfiniteScrollCellMeasurer/src/DynamicWidthGrid.jsx" />
         <option value="$PROJECT_DIR$/blocks/InfiniteScrollGrid/src/index.jsx" />
         <option value="$PROJECT_DIR$/blocks/InfiniteScrollList/src/index.jsx" />
         <option value="$PROJECT_DIR$/blocks/InfoDisplayTab/src/index.module.scss" />
@@ -519,6 +208,13 @@
         <option value="$PROJECT_DIR$/blocks/LoginPanel/src/index.jsx" />
         <option value="$PROJECT_DIR$/blocks/LoginPanel/src/index.module.scss" />
         <option value="$PROJECT_DIR$/blocks/LoginPanel/src/LoginIntro.jsx" />
+        <option value="$PROJECT_DIR$/blocks/OperationTable/src/index.jsx" />
+        <option value="$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx" />
+        <option value="$PROJECT_DIR$/blocks/OperationTable/src/index.module.scss" />
+        <option value="$PROJECT_DIR$/blocks/OrderList/src/index.module.scss" />
+        <option value="$PROJECT_DIR$/blocks/OrderList/src/index.jsx" />
+        <option value="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss" />
+        <option value="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.jsx" />
       </list>
     </option>
   </component>
@@ -608,6 +304,9 @@
     <handled-path value="$PROJECT_DIR$/blocks/Login/node_modules" />
     <handled-path value="$PROJECT_DIR$/blocks/LoginForm/node_modules" />
     <handled-path value="$PROJECT_DIR$/blocks/LoginPanel/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/OperationTable/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/OrderList/node_modules" />
+    <handled-path value="$PROJECT_DIR$/blocks/OrderStatusChart/node_modules" />
     <handled-path value="$PROJECT_DIR$/blocks/UserLogin/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
@@ -1315,8 +1014,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="136" />
-    <option name="y" value="105" />
+    <option name="x" value="213" />
+    <option name="y" value="174" />
     <option name="width" value="1560" />
     <option name="height" value="792" />
   </component>
@@ -2239,6 +1938,45 @@
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
               <item name="MapWithAMarker" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OperationTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OperationTable" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderList" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderStatusChart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderStatusChart" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -2266,11 +2004,11 @@
       <recent name="E:\components\react-materials\blocks\About\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\components\react-materials\blocks\OrderStatusChart\src" />
+      <recent name="E:\components\react-materials\blocks\OrderList\src" />
+      <recent name="E:\components\react-materials\blocks\OperationTable\src" />
       <recent name="E:\components\react-materials\blocks\LoginPanel\src" />
       <recent name="E:\components\react-materials\blocks\LoginForm\src" />
-      <recent name="E:\components\react-materials\blocks\Login\src" />
-      <recent name="E:\components\react-materials\blocks\LiteTable\src" />
-      <recent name="E:\components\react-materials\blocks\LeftContentDisplay\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2298,15 +2036,15 @@
       <workItem from="1557039821792" duration="8757000" />
       <workItem from="1557106426414" duration="35791000" />
       <workItem from="1557207308969" duration="163000" />
-      <workItem from="1557207510192" duration="36626000" />
+      <workItem from="1557207510192" duration="39637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81337000" />
+    <option name="totallyTimeSpent" value="84348000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="136" y="105" width="1560" height="792" extended-state="0" />
+    <frame x="213" y="174" width="1560" height="792" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22455679" />
@@ -2358,81 +2096,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/blocks/IntroStepInfo/src/index.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="58" column="15" selection-start-line="58" selection-start-column="15" selection-end-line="58" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroStepInfo/demo/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroStepInfo/src/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroTab/src/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3933" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroWithBackground/src/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroTab/src/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroWithBackground/src/images/TB18Na6iHSYBuNjSspiXXXNzpXa-3800-2026.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroWithBackground/src/index.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/IntroWithBackground/src/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/JoinUs/src/JoinUs.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blocks/JoinUs/src/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/blocks/JoinUs/src/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -2710,7 +2373,7 @@
     <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
-          <caret line="139" column="1" lean-forward="true" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
+          <caret line="139" column="1" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2727,7 +2390,7 @@
     <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/AuthForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
-          <caret line="145" lean-forward="true" selection-start-line="145" selection-end-line="145" />
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#88#129#0" expanded="true" />
@@ -2748,7 +2411,7 @@
     <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/LoginIntro.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -2757,8 +2420,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blocks/LoginPanel/src/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        <state relative-caret-position="277">
+          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OperationTable/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OperationTable/src/DialogDecorator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OperationTable/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2277">
+          <caret line="111" column="10" selection-start-line="111" selection-start-column="10" selection-end-line="111" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#37#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#38#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OperationTable/src/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderList/src/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderList/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/AreaChart.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
