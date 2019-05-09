@@ -24,10 +24,10 @@
     "block"
   ],
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "prop-types": "^15.5.8",
-    "react": "^16.2.0",
-    "@alifd/next": "^1.x"
+    "@alifd/next": "^1.14.2",
+    "@icedesign/container": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.2.0"
   },
   "blockConfig": {
     "name": "document-list",

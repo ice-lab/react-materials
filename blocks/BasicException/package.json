@@ -22,9 +22,11 @@
     "ice-block"
   ],
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "prop-types": "^15.5.8",
-    "@alifd/next": "^1.x"
+    "@alifd/next": "^1.14.2",
+    "@icedesign/container": "^1.0.3",
+    "@icedesign/data-binder": "^1.0.4",
+    "@icedesign/label": "^1.0.2",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Grid, Select, Button, DatePicker } from '@alifd/next';
-
+import styles from '../index.module.scss';
 // form binder 详细用法请参见官方文档
 import {
   FormBinderWrapper as IceFormBinderWrapper,
@@ -21,75 +21,75 @@ export default class Filter extends Component {
       >
         <div>
           <Row wrap>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>所属应用</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>所属应用</label>
               <IceFormBinder name="app">
                 <Input />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>分类ID</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>分类ID</label>
               <IceFormBinder name="id">
                 <Input />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>标签ID</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>标签ID</label>
               <IceFormBinder name="tag">
                 <Input />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>开始时间</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>开始时间</label>
               <IceFormBinder
                 name="startTime"
                 valueFormatter={(date, strValue) => {
                   return strValue;
                 }}
               >
-                <DatePicker style={styles.filterTool} />
+                <DatePicker className={styles.filterTool} />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>结束时间</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>结束时间</label>
               <IceFormBinder
                 name="endTime"
                 valueFormatter={(date, strValue) => {
                   return strValue;
                 }}
               >
-                <DatePicker style={styles.filterTool} />
+                <DatePicker className={styles.filterTool} />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>尺寸</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>尺寸</label>
               <IceFormBinder name="size">
-                <Select placeholder="请选择" style={styles.filterTool}>
+                <Select placeholder="请选择" className={styles.filterTool}>
                   <Option value="small">Small</Option>
                   <Option value="medium">Medium</Option>
                   <Option value="large">Large</Option>
                 </Select>
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>删除状态</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>删除状态</label>
               <IceFormBinder name="status">
-                <Select style={styles.filterTool}>
+                <Select className={styles.filterTool}>
                   <Option value="success">成功</Option>
                   <Option value="failed">失败</Option>
                 </Select>
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>讨论ID</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>讨论ID</label>
               <IceFormBinder name="commentId">
                 <Input />
               </IceFormBinder>
             </Col>
-            <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
-              <label style={styles.filterTitle}>置顶</label>
+            <Col xxs={24} xs={12} l={8} className={styles.filterCol}>
+              <label className={styles.filterTitle}>置顶</label>
               <IceFormBinder name="isStick">
-                <Select placeholder="请选择" style={styles.filterTool}>
+                <Select placeholder="请选择" className={styles.filterTool}>
                   <Option value="all">不限</Option>
                   <Option value="stick">置顶</Option>
                   <Option value="not-stick">不置顶</Option>
@@ -119,22 +119,3 @@ export default class Filter extends Component {
     );
   }
 }
-
-const styles = {
-  filterCol: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-  },
-
-  filterTitle: {
-    width: '68px',
-    textAlign: 'right',
-    marginRight: '12px',
-    fontSize: '14px',
-  },
-
-  filterTool: {
-    width: '200px',
-  },
-};

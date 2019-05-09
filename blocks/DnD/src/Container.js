@@ -3,6 +3,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import SourceBox from './SourceBox';
 import TargetBox from './TargetBox';
+import styles from './index.module.scss';
 
 function generateSource(component, dropback, index) {
   return (
@@ -57,15 +58,15 @@ class Container extends Component {
 
   render() {
     return (
-      <div style={styles.listContainer}>
-        <div style={styles.list}>
-          <div style={styles.listTitle}>List Source</div>
-          <div style={{ minHeight: '15rem', padding: '15px', background: '#fff' }}>
+      <div className={styles.listContainer}>
+        <div className={styles.list}>
+          <div className={styles.listTitle}>List Source</div>
+          <div className={styles.listNoe}>
             {this.renderSource()}
           </div>
         </div>
-        <div style={styles.list}>
-          <div style={styles.listTitle}>List Target</div>
+        <div className={styles.list}>
+          <div className={styles.listTitle}>List Target</div>
           <TargetBox>{this.renderTarget()}</TargetBox>
         </div>
       </div>
@@ -74,21 +75,3 @@ class Container extends Component {
 }
 
 export default DragDropContext(HTML5Backend)(Container);
-
-const styles = {
-  listContainer: {
-    display: 'flex',
-  },
-  list: {
-    margin: '0 7.5px',
-    padding: '15px',
-    background: '#f7f7f7',
-    borderRadius: '4px',
-    flex: 1,
-  },
-  listTitle: {
-    marginBottom: '10px',
-    fontSize: '18px',
-    fontWeight: 'bold',
-  },
-};

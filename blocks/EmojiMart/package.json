@@ -23,8 +23,8 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "emoji-mart": "^2.6.1"
+    "@icedesign/container": "^1.0.3",
+    "emoji-mart": "^2.11.0"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
@@ -47,6 +47,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.8.6",
     "react-dom": "^16.x"
   }
 }

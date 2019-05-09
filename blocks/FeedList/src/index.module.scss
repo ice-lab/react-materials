@@ -1,0 +1,51 @@
+.titleRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+};
+.cardTitle{
+  margin: 0;
+  font-size: 18px;
+  display: inline-flex;
+};
+.title{
+  font-size: 14px;
+  display: inline-flex;
+  line-height: 22px;
+};
+.status{
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 12px;
+};
+.itemRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+};
+.avatar{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+};
+.item{
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  border-bottom: 1px solid #fafafa;
+};
+.message{
+  color: #999;
+  font-size: 12px;
+  padding-left: 34px;
+  margin-bottom: 15px;
+  line-height: 22px;
+};
+.allMessage{
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+};

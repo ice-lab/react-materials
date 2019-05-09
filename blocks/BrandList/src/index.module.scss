@@ -1,0 +1,61 @@
+.wrapper  {
+  display: flex ;
+  flex-direction: column ;
+  align-items: center ;
+  padding-bottom: 60px;
+};
+.titleWrapper {
+  margin-top: 60px;
+};
+.titleLine  {
+  width: 140px;
+  height: 2px;
+  margin-top: 17px;
+  background: #EEEEEE ;
+  border-left: 2px solid #5fb2f8 ;
+};
+.titleHighlightLine  {
+  background:#3080FE ;
+  height: 2px;
+  width: 33px;
+};
+.title  {
+  color:#223C4E ;
+  font-size: 36px;
+};
+.desc  {
+  color:  #6D7A82 ;
+  font-size: 16px;
+  line-height: 1.5px;
+  margin-top: 24px;
+  width: 525px;
+  text-align: center ;
+};
+.brandListWrapper  {
+  margin-top: 75px;
+  display:  flex ;
+  flex-wrap:  wrap ;
+  justify-content:space-around ;
+  width:  100% ;
+  max-width: 1150px;
+};
+.brandItem  {
+  display:  flex ;
+  justify-content: center ;
+  align-items:  center ;
+  max-width: 150px;
+  max-height: 40px;
+  padding: 0 20px ;
+  margin-bottom: 60px;
+};
+.brandImage  {
+  width: auto ;
+  height: auto ;
+  max-width: 150px;
+  max-height: 40px;
+};
+.extraButton  {
+  border-color:#3080FE;
+  background: transparent ;
+  color:#3080FE !important;
+};
