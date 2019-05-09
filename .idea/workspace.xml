@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae8351c1-30e6-4957-9410-0307d13917cd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blocks/OperationTable/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/OrderList/src/index.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OperationTable/src/EditorInfoDialog.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/OperationTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OperationTable/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OperationTable/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OrderList/src/OrderList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderList/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OrderList/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/src/OrderStatusChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blocks/OrderStatusChart/src/index.js" beforeDir="false" />
-    </list>
+    <list default="true" id="ae8351c1-30e6-4957-9410-0307d13917cd" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -28,7 +15,7 @@
     <session id="-794352825">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.45" value="1" />
@@ -113,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -1013,7 +1000,7 @@
       <path value="$PROJECT_DIR$/scaffolds/ice-yunqi-homepage/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="213" />
     <option name="y" value="174" />
     <option name="width" value="1560" />
@@ -1977,6 +1964,12 @@
               <item name="OrderStatusChart" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="react-materials" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-materials" type="462c0819:PsiDirectoryNode" />
+              <item name="blocks" type="462c0819:PsiDirectoryNode" />
+              <item name="WysiwygEditor" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -2036,16 +2029,15 @@
       <workItem from="1557039821792" duration="8757000" />
       <workItem from="1557106426414" duration="35791000" />
       <workItem from="1557207308969" duration="163000" />
-      <workItem from="1557207510192" duration="39637000" />
+      <workItem from="1557207510192" duration="40263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84348000" />
+    <option name="totallyTimeSpent" value="84974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="213" y="174" width="1560" height="792" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22455679" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2503,7 +2495,7 @@
     <entry file="file://$PROJECT_DIR$/blocks/OrderStatusChart/src/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
