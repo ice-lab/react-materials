@@ -1,0 +1,32 @@
+.item {
+    border-bottom: 1px solid #eee;
+    margin: 0 0 20px;
+}
+
+.title {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.datetime {
+    position: absolute;
+    right: 10px;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.message {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.paginationWarp {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}

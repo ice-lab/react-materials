@@ -1,0 +1,65 @@
+.container {
+    margin: 20px;
+}
+
+.createScheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 190px;
+    cursor: pointer;
+}
+
+.card {
+    display-name: flex;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 6px;
+}
+
+.head {
+    position: relative;
+    padding: 16px 16px 8px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.title {
+    margin: 0 0 5px;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .85);
+}
+
+.desc {
+    margin: 0;
+    font-size: 14px;
+}
+
+.body {
+    position: relative;
+    padding: 16px 16px 6px;
+}
+
+.info {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+
+.footer {
+    padding: 10px 16px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+.link {
+    cursor: pointer;
+    color: #a84ef9;
+}
