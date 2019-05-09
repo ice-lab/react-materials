@@ -21,17 +21,17 @@
     "ice-block"
   ],
   "dependencies": {
-    "@icedesign/container": "^1.x",
+    "@alifd/next": "^1.14.2",
+    "@icedesign/container": "^1.0.3",
     "prop-types": "^15.5.8",
     "react-monaco-editor": "^0.13.0",
-    "regenerator-runtime": "^0.11.1",
-    "@alifd/next": "^1.x"
+    "regenerator-runtime": "^0.11.1"
   },
   "devDependencies": {
-    "@icedesign/theme": "^0.x",
-    "react": "*",
+    "@icedesign/theme": "^0.1.4",
+    "react": "^16.8.6",
     "react-copy-to-clipboard": "^4.2.3",
-    "react-dom": "*"
+    "react-dom": "^16.8.6"
   },
   "blockConfig": {
     "name": "monaco-editor",

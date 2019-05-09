@@ -1,0 +1,52 @@
+.hot-rank-item {
+    text-decoration: none;
+    &:link,
+    &:visited {
+        color: #333;
+    }
+    &:hover {
+        background-color: #fafafa;
+        color: #6af;
+    }
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.index {
+    min-width: 22px;
+    height: 22px;
+    padding: 0 4px;
+    border: 2px solid #eee;
+    color: #fff;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 11px;
+    background-color: #c6c6c6;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.keyword {
+    font-size: 14px;
+    flex: auto;
+}
+
+.total {
+    font-size: 12px;
+    padding-left: 10px;
+    width: 40px;
+}
+
+.link {
+    font-size: 12px;
+    padding-left: 10px;
+}

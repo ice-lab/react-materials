@@ -23,7 +23,7 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@icedesign/container": "^1.x",
+    "@icedesign/container": "^1.0.3",
     "react": "^16.2.0",
     "react-amap": "^1.2.7"
   },

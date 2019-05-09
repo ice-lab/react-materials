@@ -1,0 +1,53 @@
+.container {
+    padding: 0;
+}
+
+.title {
+    border-bottom: 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #eee;
+    background: #eee;
+    border-radius: 50px;
+}
+
+.name {
+    margin-left: 15px;
+    color: #314659;
+    font-size: 14px;
+}
+
+.link {
+    cursor: pointer;
+    color: #1890ff;
+}
+
+.edit {
+    margin-right: 5px;
+    cursor: pointer;
+    color: #1890ff;
+}
+
+.container1 {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.title1 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+}

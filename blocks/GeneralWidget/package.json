@@ -25,14 +25,14 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "prop-types": "^15.5.8",
-    "@alifd/next": "^1.x"
+    "@alifd/next": "^1.14.2",
+    "@icedesign/container": "^1.0.3",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "@icedesign/theme": "^0.x",
-    "react": "*",
-    "react-dom": "*"
+    "@icedesign/theme": "^0.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "blockConfig": {
     "name": "general-widget",
