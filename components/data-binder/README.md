@@ -107,4 +107,4 @@ DataBinder 默认的请求成功和失败的行为是弹一个 Toast 将接口�
 
 ### 业务自定义 DataBinder
 
-如果业务里出现类似上述所说的场景，比如：接口规范不一致、需要全局统一处理请求失败成功逻辑、使用非 axios 的方式请求数据（比如 jsonp），推荐基于 DataBinder 封装一个自定义的 DataBinder，然后代码里使用自定义 DataBinder.
+如果业务里出现类似上述所说的场景，比如：接口规范不一致、需要全局统一处理请求失败成功逻辑、使用非 axios 的方式请求数据（比如 jsonp），推荐基于 DataBinder 封装一个自定义的 DataBinder，然后代码里使用自定义 DataBinder，具体请参见组件 demo。

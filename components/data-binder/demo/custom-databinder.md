@@ -57,11 +57,20 @@ const CustomDataBinder = (options) => {
       },
       success: (body, defaultCallback, originResponse) => {
         const {config} = originResponse;
-        if (config.showSuccessToast) {
-          Message.success(body.message);
+
+        if (body.status !== 'SUCCESS') {
+          // 后端返回的状态码错误
+          if (config.showErrorToast) {
+            Message.error(body.message);
+          }
+        } else {
+          if (config.showSuccessToast) {
+            Message.success(body.message);
+          }
         }
       },
       error: (originResponse, defaultCallback, err) => {
+        // 网络异常：404，302 等
         const {config} = originResponse;
         if (config.showErrorToast) {
           Message.error(err.message);

@@ -15,7 +15,7 @@ import {
 
 @DataBinder({
   fooData: {
-    url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/foo1',
+    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/success',
     defaultBindingData: {
       foo: 'bar'
     }

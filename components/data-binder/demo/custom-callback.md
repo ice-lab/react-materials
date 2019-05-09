@@ -13,10 +13,15 @@ import { Button, Loading, Message } from '@alifd/next';
 
 @DataBinder({
   fooData: {
-    url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/foo1',
+    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/success',
     success: (body, defaultCallback, originResponse) => {
-      // 成功不弹 toast
-      console.log('success');
+      if (body.status !== 'SUCCESS') {
+        // 后端返回的状态码错误
+        Message.error(body.message);
+      } else {
+        // // 成功不弹 toast，可以什么都不走
+        console.log('success');
+      }
     },
     // error 有两类错误，一类是网络中断，请求没有发送成功；另一类是服务器接口报错
     error: (originResponse, defaultCallback, err) => {
