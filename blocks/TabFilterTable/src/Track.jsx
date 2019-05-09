@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Table, Pagination } from '@alifd/next';
+import './index.modules.scss'
 
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
@@ -42,9 +43,9 @@ export default class TableFilter extends Component {
   renderOper = () => {
     return (
       <div>
-        <a style={styles.link}>详情</a>
-        <span style={styles.separator} />
-        <a style={styles.link}>申请权限</a>
+        <a className="styleslink">详情</a>
+        <span className="stylesseparator" />
+        <a className="styleslink">申请权限</a>
       </div>
     );
   };
@@ -54,15 +55,15 @@ export default class TableFilter extends Component {
     const { current } = this.state;
 
     return (
-      <div style={styles.container}>
-        <div style={styles.tableHead}>
-          <div style={styles.label}>页面名称:</div>
+      <div className="stylescontainer">
+        <div className="stylestableHead">
+          <div className="styleslabel">页面名称:</div>
           <Input
             placeholder="请输入页面名称"
             hasClear
             onChange={this.onChange}
             size="large"
-            style={{ width: '220px' }}
+            className="input"
           />
         </div>
         <Table dataSource={dataSource} hasBorder={false}>
@@ -76,7 +77,7 @@ export default class TableFilter extends Component {
           <Table.Column title="操作" cell={this.renderOper} width={200} />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className="stylespagination1"
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -84,35 +85,3 @@ export default class TableFilter extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    margin: '10px 0',
-  },
-  tableHead: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-  },
-  label: {
-    marginRight: '10px',
-  },
-  link: {
-    margin: '0 5px',
-    color: 'rgba(49, 128, 253, 0.65)',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  separator: {
-    margin: '0 8px',
-    display: 'inline-block',
-    height: '12px',
-    width: '1px',
-    verticalAlign: 'middle',
-    background: '#e8e8e8',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};

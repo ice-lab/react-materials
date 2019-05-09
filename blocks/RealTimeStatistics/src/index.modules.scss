@@ -1,0 +1,52 @@
+.stylesitemTitle{
+  position: relative;
+}
+.stylestitleText{
+  margin: 0;
+  font-size: 14px;
+}
+.stylestag{
+  position: absolute;
+  right: 0;
+  top:0;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.stylesitemRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.stylesitemNum{
+  margin: 16px 0;
+  font-size: 32px;
+}
+.stylestotal{
+  margin: 0;
+  font-size: 12px;
+}
+.stylesdesc{
+  margin: 0;
+  font-size: 12px;
+}
+.stylesitemBody{
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  color: #fff;
+  height: 158px;
+}
+.green{
+  background: #31B48D;
+}
+.lightBlue{
+  background: #38A1F2;
+}
+.darkBlue{
+  background: #7538C7;
+}
+.navyBlue{
+  background: #3B67A4;
+}

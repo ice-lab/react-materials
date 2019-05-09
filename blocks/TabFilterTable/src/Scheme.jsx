@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Checkbox, Table, Pagination } from '@alifd/next';
+import './index.modules.scss';
 
 const { Group: CheckboxGroup } = Checkbox;
 
@@ -58,20 +59,20 @@ export default class TableFilter extends Component {
   };
 
   renderOper = () => {
-    return <a style={styles.link}>详情</a>;
+    return <a className="styleslink">详情</a>;
   };
 
   renderStat = (value) => {
     console.log(value);
     return (
       <div>
-        <span style={{ ...styles.stat, ...styles.successColor }}>
+        <span className="one">
           {value.success}
         </span>
-        <span style={{ ...styles.stat, ...styles.errorColor }}>
+        <span className="two">
           {value.error}
         </span>
-        <span style={{ ...styles.stat, ...styles.uncoverColor }}>
+        <span className="three">
           {value.uncover}
         </span>
       </div>
@@ -83,11 +84,11 @@ export default class TableFilter extends Component {
     const { current } = this.state;
 
     return (
-      <div style={styles.container}>
-        <div style={styles.tableHead}>
-          <div style={styles.label}>状态:</div>
+      <div className="stylescontainer">
+        <div className="stylestableHead">
+          <div className="styleslabel">状态:</div>
           <CheckboxGroup
-            style={{ marginLeft: '10px' }}
+            className="check"
             defaultValue={['success', 'error']}
             dataSource={checkboxOptions}
             onChange={this.onChange}
@@ -105,7 +106,7 @@ export default class TableFilter extends Component {
           <Table.Column title="操作" cell={this.renderOper} />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className="stylespagination"
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -114,40 +115,3 @@ export default class TableFilter extends Component {
   }
 }
 
-const styles = {
-  container: {
-    margin: '10px 0',
-  },
-  tableHead: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-  },
-  label: {
-    marginRight: '10px',
-  },
-  link: {
-    margin: '0 5px',
-    color: 'rgba(49, 128, 253, 0.65)',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  stat: {
-    padding: '4px 8px',
-    color: '#fff',
-    fontSize: '12px',
-  },
-  successColor: {
-    background: '#00a854',
-  },
-  errorColor: {
-    background: '#f04134',
-  },
-  uncoverColor: {
-    background: '#ffbf00',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};

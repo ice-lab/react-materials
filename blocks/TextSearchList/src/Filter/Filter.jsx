@@ -1,46 +1,29 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
+import '../index.modules.scss'
 
 export default class Filter extends Component {
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <div style={styles.category}>
-          <span style={styles.label}>所属类目：</span>
-          <span style={styles.item}>全部</span>
-          <span style={styles.item}>类目一</span>
-          <span style={styles.item}>类目二</span>
-          <span style={styles.item}>类目三</span>
-          <span style={styles.item}>类目四</span>
+      <IceContainer >
+        <div className="stylescategory">
+          <span className="styleslabel">所属类目：</span>
+          <span className="stylesitem">全部</span>
+          <span className="stylesitem">类目一</span>
+          <span className="stylesitem">类目二</span>
+          <span className="stylesitem">类目三</span>
+          <span className="stylesitem">类目四</span>
         </div>
-        <div style={styles.others}>
-          <span style={styles.label}>其它筛选：</span>
-          <span style={styles.item}>全部</span>
-          <span style={styles.item}>类目一</span>
-          <span style={styles.item}>类目二</span>
-          <span style={styles.item}>类目三</span>
-          <span style={styles.item}>类目四</span>
+        <div className="stylesothers">
+          <span className="styleslabel">其它筛选：</span>
+          <span className="stylesitem">全部</span>
+          <span className="stylesitem">类目一</span>
+          <span className="stylesitem">类目二</span>
+          <span className="stylesitem">类目三</span>
+          <span className="stylesitem">类目四</span>
         </div>
       </IceContainer>
     );
   }
 }
 
-const styles = {
-  container: {},
-  category: {
-    padding: '0 10px 15px',
-    borderBottom: '1px solid #eee',
-  },
-  others: {
-    padding: '15px 10px 0',
-  },
-  label: {
-    color: '#333',
-    fontSize: '14px',
-    marginRight: '10px',
-  },
-  item: {
-    marginRight: '10px',
-  },
-};

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
+import '../index.modules.scss'
 
 export default class ArticleList extends Component {
   static displayName = 'ArticleList';
@@ -12,7 +13,7 @@ export default class ArticleList extends Component {
 
   renderTag = (text, onClick) => {
     return (
-      <Button key={text} size="small" onClick={onClick} style={styles.button}>
+      <Button key={text} size="small" onClick={onClick} className="stylesbutton">
         {text}
       </Button>
     );
@@ -20,24 +21,22 @@ export default class ArticleList extends Component {
 
   renderItem = (data, idx, all) => {
     const isLast = all.length - 1 === idx;
-    const wrapperStyle = { ...styles.item };
-    const informationStyle = { ...styles.information };
-    if (isLast) {
-      delete wrapperStyle.borderBottom;
-      wrapperStyle.marginBottom = '0px';
-      informationStyle.marginBottom = '0px';
-    }
+    // if (isLast) {
+    //   delete wrapperStyle.borderBottom;
+    //   wrapperStyle.marginBottom = '0px';
+    //   informationStyle.marginBottom = '0px';
+    // }
     return (
-      <div key={idx} style={wrapperStyle}>
-        <div style={styles.title}>
+      <div key={idx} className={isLast?"wrapperStyle1":"wrapperStyle"}>
+        <div className="stylestitle">
           {data.title}
-          <span hidden="xxs" style={styles.datetime}>
+          <span hidden="xxs" className="stylesdatetime">
             {data.datetime}
           </span>
         </div>
-        <div style={styles.desc}>{data.description}</div>
-        <div style={informationStyle}>
-          <div style={styles.tagList}>
+        <div className="stylesdesc">{data.description}</div>
+        <div className={isLast?"informationStyle1":"informationStyle"}>
+          <div>
             {data.tags.map((item) => {
               return this.renderTag(
                 item,
@@ -46,10 +45,10 @@ export default class ArticleList extends Component {
               );
             })}
           </div>
-          <div style={styles.operator} hidden={['xxs', 'xs']}>
-            <span style={styles.operatorItem}>点赞: {data.star}</span>
-            <span style={styles.operatorItem}>喜爱: {data.like}</span>
-            <span style={styles.operatorItem}>评论: {data.comment}</span>
+          <div className="stylesoperator" hidden={['xxs', 'xs']}>
+            <span className="stylesoperatorItem">点赞: {data.star}</span>
+            <span className="stylesoperatorItem">喜爱: {data.like}</span>
+            <span className="stylesoperatorItem">评论: {data.comment}</span>
           </div>
         </div>
       </div>
@@ -65,45 +64,3 @@ export default class ArticleList extends Component {
     );
   }
 }
-
-const styles = {
-  item: {
-    borderBottom: '1px solid #F4F4F4',
-    marginBottom: '15px',
-  },
-  title: {
-    color: '#333',
-    fontSize: '16px',
-    marginBottom: '15px',
-    position: 'relative',
-  },
-  datetime: {
-    position: 'absolute',
-    right: '10px',
-    fontSize: '12px',
-    color: '#9B9B9B',
-  },
-  desc: {
-    color: '#999',
-    fontSize: '13px',
-    lineHeight: '24px',
-    paddingBottom: '15px',
-  },
-  information: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: '15px',
-  },
-  button: {
-    marginRight: '10px',
-  },
-  operator: {
-    paddingTop: '8px',
-    fontSize: '12px',
-    color: '#9B9B9B',
-  },
-  operatorItem: {
-    marginRight: '5px',
-  },
-};

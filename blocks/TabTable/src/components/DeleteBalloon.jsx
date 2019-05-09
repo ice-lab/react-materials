@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Balloon } from '@alifd/next';
 import PropTypes from 'prop-types';
+import '../index.modules.scss'
 
 export default class DeleteBalloon extends Component {
   static propTypes = {
@@ -40,13 +41,13 @@ export default class DeleteBalloon extends Component {
 
     const content = (
       <div>
-        <div style={styles.contentText}>确认删除？</div>
+        <div className="stylescontentText">确认删除？</div>
         <Button
           id="confirmBtn"
           size="small"
           type="normal"
           warning
-          style={{ marginRight: '5px' }}
+          className="delbtn"
           onClick={(visible) => this.handleHide(visible, 1)}
         >
           确认
@@ -73,9 +74,3 @@ export default class DeleteBalloon extends Component {
     );
   }
 }
-
-const styles = {
-  contentText: {
-    padding: '5px 0 15px',
-  },
-};
