@@ -1,0 +1,170 @@
+.anchorCard {
+    margin-top: 20px;
+    background: #fff;
+    overflow: hidden;
+    height: 216px;
+    border-radius: 4px;
+    display: flex;
+    min-width: 1080px;
+  }
+
+  .anchorProfileInfo {
+    display: block;
+    height: 216px;
+    margin-right: 24px;
+    position: relative;
+    color: #333;
+  }
+
+  .maskLayer {
+    background-image: url(./images/mask.png);
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    bottom: 45px;
+    height: 170px;
+  }
+
+  .anchorAvatar {
+    display: block;
+  }
+
+  .anchorInfoBody {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .anchorName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 5px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .anchorVflag {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+  }
+
+  .anchorFans {
+    margin-bottom: 8px;
+  }
+
+  .fansText {
+    color: #999;
+  }
+
+  .fansCount {
+    margin-left: 5px;
+    font-size: 16px;
+  }
+
+  .anchorLocation {
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .anchorBaseInfo {
+    margin-right: 20px;
+    padding: 20px 0;
+  }
+
+  .infoItemBody {
+    display: flex;
+    margin: 11px 0;
+  }
+
+  .infoItemTags {
+    margin-top: 12px;
+  }
+
+  .infoItemTag {
+    background: #fdeaee;
+    color: #ff2c54;
+    padding: 4px 8px;
+    border-radius: 10px;
+    margin: 0 4px 4px 0;
+    display: inline-block;
+    font-size: 12px;
+  }
+
+  .infoItemLabel {
+    color: #999;
+    font-size: 12px;
+    margin-right: 2px;
+    min-width: 54px;
+  }
+
+  .infoItemValue {
+    color: #333;
+    font-size: 12px;
+  }
+
+  .anchorLiveInfo {
+    margin: 20px 0;
+  }
+  .liveInfoItem {
+    position: relative;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+    padding: 13px 20px;
+    line-height: 26px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .liveInfoItemLink {
+    color: #333;
+  }
+
+  .customArrorRightIcon {
+    position: absolute;
+    right: 10px;
+    color: #999;
+  }
+
+  .infoItemType {
+    float: left;
+    max-width: 120px;
+    padding-right: 20px;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #666;
+  }
+  .infoItemLine {
+    float: left;
+    position: relative;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background: #999;
+  }
+
+  .infoItemTitle {
+    float: left;
+    max-width: 240px;
+    padding: 0 20px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  };
+
+  .infoItemPrice {
+    float: right;
+    width: 100px;
+    text-align: right;
+    color: #fe5c38;
+    font-size: 20px;
+    margin-right: 10px;
+  }

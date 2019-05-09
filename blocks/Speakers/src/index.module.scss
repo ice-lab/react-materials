@@ -1,0 +1,77 @@
+
+    .container {
+      padding: 50px 0;
+      background: #000;
+    }
+    .content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    .mainTitle {
+      font-size: 60px;
+      color: #fff;
+      letter-spacing: 0.77px;
+      line-clamp: 72px;
+      margin: 0;
+      font-weight: 700;
+    }
+    .mainDesc {
+      font-size: 24px;
+      line-height: 30px;
+      color: #fff;
+      margin-top: 8px;
+      font-weight: 700;
+    }
+    .row {
+      margin-top: 70px;
+    }
+    .item {
+      position: relative;
+      cursor: pointer;
+      margin-top: 20px;
+      overflow: hidden;
+    };
+    .avatar {
+      display: block;
+    //  vertical-align: top;
+      width: 100%;
+    };
+    .mask {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70%;
+      opacity: .75;
+      background-image: linear-gradient(-179deg,transparent 1%,#000);
+      transition: opacity .3s ease-in-out;
+    }
+    .line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 4px;
+      background: #236cff;
+    }
+    .info {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      padding: 0 5%;
+      overflow: hidden;
+    }
+    .name{
+      line-height: 30px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      overflow: hidden;
+    }
+    .job {
+      line-height: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      overflow: hidden;
+    }

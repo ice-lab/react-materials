@@ -1,0 +1,106 @@
+ 
+ .videoListContainer {
+    margin:20px 0;
+  }
+ .videoCate{
+    margin: 0 10px;
+    background:#fff;
+    padding:0 14px;
+    border-radius:4px;
+  }
+  .videoCateItem {
+    display:inline-block;
+    margin:12px 4px;
+    padding:6px 18px;
+    font-size:  16px;
+    color:  #666;
+    cursor:  pointer;
+  }
+ .videoList {
+    margin:  20px 0 0 !important;
+    display:  flex;
+    flex-wrap:  wrap;
+    justify-content:space-around;
+  }
+  .videoCarditem {
+    margin-bottom:  20px;
+    border-radius:  4px;
+    background:  #fff  ;
+  } 
+  .active {
+    color:  #FF5D38  ;
+    border:  1px solid #FF5D38;
+    border-radius:  50px;
+  } 
+  .video {
+    display:  block;
+    width:  100%;
+    cursor:  pointer;
+    border-radius:  4px;
+  }
+  .dialogVideo {
+    width:  600px  ;
+  }
+  .videoInfo {
+    position:  relative  ;
+    padding:  20px  ;
+  } ;
+  .videoTitle {
+    margin:  0 0 10px  ;
+    line-height:  32px  ;
+    font-size:  24px  ;
+  }
+  .videoDesc {
+    padding: 0 0 20px  ;
+    margin:  0 0 20px  ;
+    font-size:  14px  ;
+    color:  #999  ;
+    line-height:  20px  ;
+    height:  120px  ;
+    overflow:  hidden  ;
+  }
+  .videoFee {
+    position:  absolute  ;
+    bottom:  20px  ;
+    font-size:  14px  ;
+  }
+  .fee{
+    font-size:  18px  ;
+  }
+  .videoLink {
+    position:  absolute  ;
+    top:  20px  ;
+    right:  0  ;
+    width:  124px  ;
+    height:  32px  ;
+    line-height:  32px  ;
+    text-align:  center  ;
+    color:  #fff  ;
+    background:  #FF5D38  ;
+  }
+  .start{
+    width: 166px;
+    height: 40px;
+    line-height: 40px;
+    bottom: -60px;
+    top: auto;
+  }
+  .arrowIcon {
+    width:  20px  ;
+    height:  20px  ;
+    vertical-align:  middle  ;
+    margin-left:  4px  ;
+    margin-top:  -2px  ;
+  }
+  .playerIcon{
+    position:  absolute  ;
+    left:  50%  ;
+    top:  50%  ;
+    width:  40px  ;
+    height:  40px  ;
+    margin-left:  -20px  ;
+    margin-top:  -20px  ;
+  }
+  .videoPosition{
+    position: relative
+  }
