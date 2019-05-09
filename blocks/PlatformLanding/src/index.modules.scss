@@ -1,0 +1,50 @@
+.styleswrapper{
+  overflow: hidden;
+  height: 720px;
+  background-image: url('./images/TB1DgSmSpXXXXaJXpXXXXXXXXXX-2760-1480.jpg');
+  position: relative;
+  background-size: cover;
+  background-color: #66ABFF;
+  box-shadow: 0 1px 16px 0 rgba(0,0,0,0.10);
+}
+.stylesbuttons{
+  text-align: center;
+  margin-top: 33px;
+}
+.stylesbody{
+  position: absolute;
+  top:190px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  color: #fff;
+  max-height: 260px;
+  overflow: hidden;
+  text-align: center;
+}
+.stylestitle{
+  font-size: 32px;
+  color: #333;
+  letter-spacing: 1.94px;
+  line-height: 48px;
+  text-align: center;
+}
+.styleswrapper
+.stylesprimaryButton{
+  height: 50px;
+  font-size: 16px;
+  padding: 0 58px;
+  line-height: 50px;
+  color: #fff;
+}
+.styleswrapper
+.stylessecondaryButton{
+  height: 50px;
+  font-size: 16px;
+  padding: 0 58px;
+  line-height: 50px;
+  margin-right: 20px;
+  background-color: transparent;
+  border-color: #5485f7;
+  color: #5485f7 !important;
+}

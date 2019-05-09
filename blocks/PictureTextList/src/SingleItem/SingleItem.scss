@@ -1,6 +1,41 @@
 // SingleItem style
 .single-item {
+  width: 165px;
+  height: 230px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0 auto;
   &:hover {
     background-color: #f4f4f4;
   }
+}
+.title{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #999;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 14px;
+}
+.price{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #999;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 14px;
+}
+.extra{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #C0C0C0;
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0 14px;
+}
+.iceimg{
+  margin: 8px
 }

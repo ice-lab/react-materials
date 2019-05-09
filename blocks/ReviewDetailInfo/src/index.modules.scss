@@ -1,0 +1,75 @@
+.stylescontainer{
+  height: 316px;
+}
+.stylesreviewRatingWrapper{
+  padding: 20px 0;
+}
+.stylesreviewRatingDesc{
+  color: #999;
+  text-align: center;
+}
+.stylesreviewRating{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stylesreviewRatingScore{
+  font-size: 36px;
+  position: absolute;
+  right: calc(100% + 20px);
+}
+.stylesreviewRatingIcon{
+  position: relative;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stylesreviewRatingRatePositive{
+  font-size: 26px;
+  color: #2ecc71;
+  position: absolute;
+  left:calc(100% + 20px)
+}
+.stylesreviewRatingRateNegative{
+  font-size: 26px;
+  color: #e74c3c;
+  position: absolute;
+  left:calc(100% + 20px)
+}
+.stylesreviewRatingIconPositive{
+  color: #2ecc71
+}
+.stylesreviewRatingIconNegative{
+  color: #e74c3c
+}
+.stylesreviewRatingDivideLine{
+  border-top: 1px solid #eee;
+  width: 100px;
+  margin: 0 auto;
+}
+.stylesreviewTargetProgressWrapper{
+  padding:30px 0 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.stylesreviewRatingGoalDesc{
+  text-align: center;
+}
+.stylesreviewLeaderboardItem{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+}
+.stylesreviewLeaderboardItemAvatar{
+  margin-right: 15px;
+}
+.stylesreviewLeaderboardItemAvatarImg{
+  border-radius: 50%;
+  display: block;
+}
+.stylesreviewLeaderboardItemName{
+  flex: 1;
+}

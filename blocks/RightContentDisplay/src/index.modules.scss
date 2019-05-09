@@ -1,0 +1,30 @@
+.stylescontainer{
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding:80px 0;
+}
+.stylescontent{
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+.stylescol{
+  width: 48%;
+  padding: 0 1%;
+}
+.stylestitle{
+  font-size: 28px;
+  font-weight: bold;
+}
+.stylesdescription{
+  color: #999;
+  line-height: 22px;
+}
+.stylesimage{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 360px;
+}

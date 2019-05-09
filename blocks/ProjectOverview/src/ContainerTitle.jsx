@@ -4,8 +4,8 @@ import { Button } from '@alifd/next';
 
 const ContainerTitle = ({ title, style, ...props }) => {
   return (
-    <div style={{ ...styles.container, ...style }}>
-      <h3 style={styles.title}>{title}</h3>
+    <div style={{ ...style }} className="stylescontainer">
+      <h3 className="stylestitle">{title}</h3>
       {props.buttonText ? (
         <Button type="primary" size="large">
           {props.buttonText}
@@ -13,23 +13,6 @@ const ContainerTitle = ({ title, style, ...props }) => {
       ) : null}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    padding: '15px 20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid #f0f0f0',
-  },
-  title: {
-    margin: '0',
-    padding: '0',
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-  },
 };
 
 ContainerTitle.propTypes = {

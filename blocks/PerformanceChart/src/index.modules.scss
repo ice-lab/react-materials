@@ -1,0 +1,22 @@
+.stylestitle{
+  margin: 0;
+  font-size: 16px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.stylesbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.stylestextLabel{
+  margin: 0;
+  color: #666;
+}
+.stylescounterNum{
+  margin: 10px;
+  font-size:28px;
+}

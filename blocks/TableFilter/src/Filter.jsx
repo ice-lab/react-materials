@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DatePicker, Select } from '@alifd/next';
+import './index.modules.scss'
 
 export default class TableFilter extends Component {
   static displayName = 'TableFilter';
@@ -56,9 +57,9 @@ export default class TableFilter extends Component {
   render() {
     const { startValue, endValue, endOpen } = this.state;
     return (
-      <div style={styles.tableFilter}>
-        <div style={styles.filterItem}>
-          <span style={styles.filterLabel}>调价日期：</span>
+      <div className="stylestableFilter">
+        <div className="stylesfilterItem">
+          <span>调价日期：</span>
           <DatePicker
             disabledDate={this.disabledStartDate}
             value={startValue}
@@ -76,15 +77,15 @@ export default class TableFilter extends Component {
             onOpenChange={this.handleEndOpenChange}
           />
         </div>
-        <div style={styles.filterItem}>
-          <span style={styles.filterLabel}>状态：</span>
+        <div className="stylesfilterItem">
+          <span>状态：</span>
           <Select>
             <Select.Option value="all">全部</Select.Option>
             <Select.Option value="checked">已审核</Select.Option>
             <Select.Option value="unCheck">未审核</Select.Option>
           </Select>
         </div>
-        <Button type="primary" style={styles.submitButton}>
+        <Button type="primary" className="stylessubmitButton">
           查询
         </Button>
       </div>
@@ -92,19 +93,3 @@ export default class TableFilter extends Component {
   }
 }
 
-const styles = {
-  tableFilter: {
-    display: 'flex',
-    background: '#fff',
-    padding: '20px 0',
-    marginBottom: '20px',
-  },
-  filterItem: {
-    display: 'flex',
-    alignItems: 'center',
-    marginLeft: '15px',
-  },
-  submitButton: {
-    marginLeft: '15px',
-  },
-};

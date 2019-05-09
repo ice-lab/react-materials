@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
+import './index.modules.scss'
 
 class LineChart extends React.Component {
   render() {

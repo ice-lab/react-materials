@@ -1,0 +1,30 @@
+.stylesdataItem{
+  display: flex;
+  flex-basis: 50%;
+  padding: 20px;
+  align-items: center;
+}
+.stylesdataItemImg{
+  width: 58px;
+  height: 58px;
+  margin-right: 30px;
+}
+.stylesdataItemUnit{
+  height: 72px;
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stylesunitTitle{
+  font-size: 12px;
+  color: #666;
+}
+.stylesunitAmount{
+  font-size: 24px;
+  color: #333;
+}
+.stylesunitFooter{
+  font-size: 12px;
+  color: #999;
+}
