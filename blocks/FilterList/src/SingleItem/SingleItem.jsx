@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceImg from '@icedesign/img';
-import './SingleItem.scss';
+import styles from '../index.module.scss';
 
 export default class SingleItem extends Component {
   static displayName = 'SingleItem';
@@ -17,7 +17,7 @@ export default class SingleItem extends Component {
     } = this.props;
     return (
       <div
-        className={`${className} single-item`}
+        className={`${className} singleItem`}
         style={{
           ...style,
           height: '230px',
@@ -26,7 +26,7 @@ export default class SingleItem extends Component {
           backgroundColor: active ? '#f4f4f4' : undefined,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className={styles.sty4}>
           <IceImg
             src={image}
             width={149}
@@ -34,43 +34,13 @@ export default class SingleItem extends Component {
             style={{ margin: '8px' }}
           />
         </div>
-        <div
-          style={{
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            color: '#999',
-            fontSize: '12px',
-            lineHeight: '18px',
-            margin: '0 14px',
-          }}
-        >
+        <div className={styles.sty1}>
           {title}
         </div>
-        <div
-          style={{
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            color: '#999',
-            lineHeight: '18px',
-            fontSize: '12px',
-            margin: '0 14px',
-          }}
-        >
+        <div className={styles.sty2}>
           {price}
         </div>
-        <div
-          style={{
-            textOverflow: 'ellipsis',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            lineHeight: '18px',
-            color: '#C0C0C0',
-            fontSize: '12px',
-            margin: '0 14px',
-          }}
-        >
+        <div className={styles.sty3}>
           {extra}
         </div>
       </div>

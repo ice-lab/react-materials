@@ -23,9 +23,9 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
+    "@alifd/next": "^1.14.2",
     "prop-types": "^15.5.8",
-    "react": "^16.2.0",
-    "@alifd/next": "^1.x"
+    "react": "^16.2.0"
   },
   "blockConfig": {
     "name": "excellent-home-page",

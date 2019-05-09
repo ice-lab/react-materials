@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { DropTarget } from 'react-dnd';
-
-const style = {
-  minHeight: '15rem',
-  padding: '15px',
-  background: '#fff',
-};
+import styles from './index.module.scss';
 
 const boxTarget = {
   drop() {
@@ -26,7 +21,7 @@ class TargetBox extends Component {
     const { connectDropTarget, children } = this.props;
     return (
       connectDropTarget &&
-      connectDropTarget(<div style={style}>{children}</div>)
+      connectDropTarget(<div className={styles.TargetBox}>{children}</div>)
     );
   }
 }

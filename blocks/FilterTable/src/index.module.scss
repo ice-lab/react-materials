@@ -1,0 +1,38 @@
+.filterTableOperation{
+  line-height: 28px;
+};
+.operationItem{
+  margin-right: 12px;
+  text-decoration: none;
+  color: #5485F7;
+};
+.titleWrapper{
+  display: flex;
+  flex-direction: row;
+};
+.title{
+  margin-left: 10px;
+  line-height: 20px;
+};
+.paginationWrapper{
+  text-align: right;
+  padding-top: 26px;
+};
+
+/*Filter.jsx*/
+.filterCol{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+};
+
+.filterTitle{
+  width: 68px;
+  text-align: right;
+  margin-right: 12px;
+  font-size: 14px;
+};
+
+.filterTool{
+  width: 200px;
+};

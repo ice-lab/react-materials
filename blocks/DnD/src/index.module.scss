@@ -1,0 +1,37 @@
+/*TargetBox.js*/
+.TargetBox{
+  min-height: 15rem;
+  padding: 15px;
+  background: #fff;
+}
+/*SourceBox.js*/
+.SourceBox{
+  border: 1px dashed #ddd;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  cursor: move;
+  width: 100%;
+}
+/*Container.js*/
+.listContainer{
+  display: flex;
+};
+.list{
+  margin: 0 7.5px;
+  padding: 15px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  flex: 1;
+};
+.listTitle{
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+};
+.listNoe{
+  min-height: 15rem;
+  padding: 15px;
+  background: #fff;
+}

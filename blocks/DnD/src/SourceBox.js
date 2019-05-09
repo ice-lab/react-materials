@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
-
+import styles from './index.module.scss';
 const style = {
   border: '1px dashed #ddd',
   backgroundColor: '#fff',
@@ -65,7 +65,7 @@ class SourceBox extends Component {
     return show
       ? connectDragSource &&
           connectDragSource(
-            <div style={{ ...style, opacity }}>{children}</div>,
+            <div style={{ opacity }} className={styles.SourceBox}>{children}</div>,
             { dropEffect }
           )
       : '';

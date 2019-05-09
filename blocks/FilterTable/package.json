@@ -21,18 +21,20 @@
     "ice-block"
   ],
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "@icedesign/data-binder": "^1.x",
-    "@icedesign/form-binder": "^1.x",
-    "@icedesign/img": "^1.x",
-    "@icedesign/label": "^1.x",
-    "@alifd/next": "^1.x"
+    "@alifd/next": "^1.14.2",
+    "@icedesign/container": "^1.0.3",
+    "@icedesign/data-binder": "^1.0.4",
+    "@icedesign/form-binder": "^1.0.6",
+    "@icedesign/img": "^1.0.2",
+    "@icedesign/label": "^1.0.2",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
-    "@icedesign/theme": "^0.x",
-    "react": "*",
-    "react-dom": "*",
-    "prop-types": "^15.5.8"
+    "@icedesign/theme": "^0.1.4",
+    "moment": "^2.24.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "blockConfig": {
     "name": "filter-table",

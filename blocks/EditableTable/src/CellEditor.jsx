@@ -1,7 +1,7 @@
 /* eslint no-unused-expressions: 0 */
 import React, { Component } from 'react';
 import { Icon, Input } from '@alifd/next';
-
+import styles from './index.module.scss';
 export default class CellEditor extends Component {
   static displayName = 'CellEditor';
 
@@ -59,21 +59,21 @@ export default class CellEditor extends Component {
 
     if (editMode) {
       return (
-        <div className="celleditor">
+        <div className={styles.celleditor}>
           <Input
-            style={styles.cellInput}
+            className={styles.cellInput}
             value={value}
             onChange={this.onValueChange}
           />
           <span
-            style={styles.operationIcon}
+            className={styles.operationIcon}
             title="确定"
             onClick={this.updateValue}
           >
             <Icon size="xs" type="select" />
           </span>
           <span
-            style={styles.operationIcon}
+            className={styles.operationIcon}
             title="撤销"
             onClick={this.rollBackThisCell}
           >
@@ -83,11 +83,10 @@ export default class CellEditor extends Component {
       );
     }
     return (
-      <div className="celleditor">
+      <div className={styles.celleditor}>
         <span>{value}</span>
         <span
-          style={styles.operationIcon}
-          className="celleditor-trigger"
+          className={styles.hb}
           title="编辑"
           onClick={this.editThisCell}
         >
@@ -97,14 +96,3 @@ export default class CellEditor extends Component {
     );
   }
 }
-
-const styles = {
-  cellInput: {
-    width: 'calc(100% - 44px)',
-  },
-  operationIcon: {
-    marginLeft: '10px',
-    color: '#999',
-    cursor: 'pointer',
-  },
-};
