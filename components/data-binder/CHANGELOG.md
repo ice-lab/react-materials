@@ -7,4 +7,3 @@
 - [fix] 有数据也需要更新接口状态
 - [fix] 网络异常不返回 data
 - [fix] 网络异常不继续执行数据处理逻辑
-- [fix] customSuccess -> customError
