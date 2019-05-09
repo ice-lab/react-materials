@@ -1,0 +1,28 @@
+
+    .container {
+      background-image: url(./images/banner.jpg);
+      height: 500px;
+      background-size: cover;
+      position: relative;
+    }
+    .content {
+      width: 500px;
+      position: absolute;
+      left: 60%;
+      top: 30%;
+    }
+    .caption {
+      margin-bottom: 30px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #666;
+    }
+    .quickStart {
+      display: inline-block;
+      font-size: 20px;
+      padding: 15px 20px;
+      background: #6ac8f3;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+    }

@@ -10,6 +10,7 @@ import {
   Checkbox,
   Grid,
 } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const CheckboxGroup = Checkbox.Group;
@@ -58,9 +59,9 @@ export default class DeliveryForm extends Component {
         onChange={this.onFormChange}
       >
         <div>
-          <h3 style={styles.formTitle}>商品信息</h3>
-          <Row style={styles.formItem}>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+          <h3 className={styles.formTitle}>商品信息</h3>
+          <Row className={styles.formItem}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               物流公司：
             </Col>
             <Col s="12" l="10">
@@ -78,8 +79,8 @@ export default class DeliveryForm extends Component {
               <IceFormError name="type" />
             </Col>
           </Row>
-          <Row style={styles.formItem}>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+          <Row className={styles.formItem}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               配送费用：
             </Col>
             <Col s="12" l="10">
@@ -93,7 +94,7 @@ export default class DeliveryForm extends Component {
             </Col>
           </Row>
           <Row>
-            <Col offset={3} style={styles.btns}>
+            <Col offset={3} className={styles.btns}>
               <Button onClick={this.submit} type="primary">
                 下一步
               </Button>
@@ -105,23 +106,3 @@ export default class DeliveryForm extends Component {
   }
 }
 
-const styles = {
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    fontSize: '14px',
-    borderBottom: '1px solid #eee',
-  },
-  formItem: {
-    height: '28px',
-    lineHeight: '28px',
-    marginBottom: '25px',
-  },
-  formLabel: {
-    textAlign: 'right',
-  },
-  btns: {
-    marginTop: '25px',
-    marginBottom: '25px',
-  },
-};

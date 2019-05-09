@@ -20,3 +20,43 @@
     font-size: 13px;
   }
 }
+
+  .formContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 40px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #eee;
+  }
+  .formItem {
+    position: relative;
+    margin-bottom: 25px;
+    flex-direction: column;
+  }
+  .formTitle {
+    margin: 0 0 20px;
+    text-align: center;
+    color: #3080fe;
+    letter-spacing: 12px;
+  }
+  .inputIcon {
+    color: #999;
+  }
+  .submitBtn {
+    width: 240px;
+    background: #3080fe;
+  }
+  .tips {
+    text-align: center;
+  }
+  .link {
+    color: #999;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .line {
+    color: #dcd6d6;
+    margin: 0 8px;
+  }

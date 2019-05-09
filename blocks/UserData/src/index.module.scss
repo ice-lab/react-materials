@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.count {
+  margin: 0;
+}
+.desc {
+  margin: 0 0 10px;
+  color: #666;
+}
+.imgWrap{
+  width: 68px;
+  height: 68px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  max-width: 100%;
+  width: 48px;
+}
+.icon {
+  margin-right: 6px;
+}
+.button {
+  margin: 20px 0;
+}

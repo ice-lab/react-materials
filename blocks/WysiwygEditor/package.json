@@ -23,10 +23,11 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
+    "@alifd/next": "^1.x",
     "@icedesign/container": "^1.x",
     "draft-js": "^0.10.5",
-    "react-draft-wysiwyg": "^1.12.13",
-    "@alifd/next": "^1.x"
+    "react": "^16.8.6",
+    "react-draft-wysiwyg": "^1.12.13"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",

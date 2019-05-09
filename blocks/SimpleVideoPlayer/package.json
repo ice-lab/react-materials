@@ -32,6 +32,7 @@
     "@alifd/next": "^1.x"
   },
   "devDependencies": {
+    "@icedesign/img": "^1.0.2",
     "@icedesign/theme": "^0.x",
     "react": "*",
     "react-dom": "*"

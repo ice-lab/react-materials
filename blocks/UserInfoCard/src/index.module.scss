@@ -1,0 +1,50 @@
+.container {
+    padding: 20px 0;
+    text-align: center;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .head{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #eee;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid #eee;
+  }
+  .name{
+    padding: 0 10px;
+    margin: 0;
+  }
+  .deptName {
+    padding: 0 10px;
+    margin: 0;
+    font-size: 12px;
+  }
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+  .profileItem {
+    width: 50%;
+    line-height: 26px;
+  }
+  .itemIcon {
+    color: #8a9099;
+    margin-right: 5px;
+  }
+  .triggerText {
+    color: #108ee9;
+    border-bottom: 1px dashed #108ee9;
+    cursor: pointer;
+  }
+
+  .profileItem{
+      width: 100%;
+  }
