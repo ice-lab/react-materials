@@ -265,8 +265,9 @@ export default function dataBinder(sourceConfig, opts = {}) {
                 };
 
                 // 这里的 success 是请求成功的意思，并不表示业务逻辑执行成功
-                if (customError) {
-                  customError(originResponse, defaultCallback, new Error(responseData.message));
+                // TODO: 设计上不太合理，应该触发 customError 然后通过参数区分网络错误还是状态码错误
+                if (customSuccess) {
+                  customSuccess(responseData, defaultCallback, originResponse);
                 } else {
                   defaultCallback();
                 }
