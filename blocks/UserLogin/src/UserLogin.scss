@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 .user-login {
   .next-input.next-input-single {
     width: 240px;
@@ -8,10 +7,11 @@
     border-right: 0;
     border-color: #dcdcdc;
     border-radius: 0;
-    input {
-      padding-left: 25px;
-      font-size: 13px;
-    }
+    
+  }
+  .input {
+    padding-left: 25px;
+    font-size: 13px;
   }
   .next-checkbox-label {
     color: #999;
@@ -28,14 +28,78 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    .slogan {
-      text-align: center;
-      color: #fff;
-      font-size: 36px;
-      letter-spacing: 2px;
-      line-height: 48px;
-    }
+    
   }
+  .slogan {
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    letter-spacing: 2px;
+    line-height: 48px;
+  }
+ 
+}
+
+
+.userLoginBg{
+  background-image: url(images/TB1zsNhXTtYBeNjy1XdXXXXyVXa-2252-1500.png)}
+.userLogin {
+  position: relative;
+  height: 100vh;
+}
+.userLoginBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+}
+.formContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 40px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px #eee;
+}
+.formItem {
+  position: relative;
+  margin-bottom: 25px;
+  flex-direction: column;
+}
+.formTitle{
+  margin: 0 0 20px;
+  text-align: center;
+  color: #3080fe;
+  letter-spacing: 12px;
+}
+.inputIcon {
+  position: absolute;
+  left: 0px;
+  top: 3px;
+  color: #999;
+}
+.submitBtn {
+  width: 240px;
+  background: #3080fe;
+  border-radius: 28px;
+}
+.checkbox {
+  margin-left: 5px;
+}
+.tips{
+  text-align: center;
+}
+.link {
+  color: #999;
+  text-decoration: none;
+  font-size: 13px;
+}
+.line{
+  color: #dcd6d6;
+  margin: 0 8px;
 }
 
 @media screen and (max-width: 720px) {

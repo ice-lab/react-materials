@@ -1,0 +1,49 @@
+
+  .statisticalCardItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .statisticalCardItem {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+  }
+  .circleWrap {
+    background-color: #FFECB3;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .statisticalCardDesc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .statisticalCardText {
+    position: relative;
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .statisticalCardNumber {
+    color: #333333;
+    font-size: 24px;
+  }
+  .itemHelp {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 1px;
+    right: -15px;
+  }
+  .newWrap{
+    width: 100%;
+  }
