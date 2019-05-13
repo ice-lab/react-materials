@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: bold;
+    margin: 20px 0 10px;
+    font-size: 16px;
+}
+
+.jobTitle {
+    font-weight: 400;
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px 0px;
+}
+
+.socials {
+    margin: 20px 0;
+}
+
+.icon {
+    margin: 0 10px;
+}

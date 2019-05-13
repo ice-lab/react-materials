@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Table, Pagination, Message } from '@alifd/next';
 import { Link } from 'react-router-dom';
 import TableFilter from './TableFilter';
+import styles from './index.module.scss';
 
 const getData = (length = 10) => {
   return Array.from({ length }).map((item, index) => {
@@ -72,11 +73,11 @@ export default class CustomTable extends Component {
   renderOper = () => {
     return (
       <div>
-        <Link to="/" style={styles.link}>
+        <Link to="/" className={styles.link}>
           详情
         </Link>
-        <span style={styles.separator} />
-        <a style={styles.link} onClick={this.handleApply}>
+        <span className={styles.separator} />
+        <a className={styles.link} onClick={this.handleApply}>
           申请权限
         </a>
       </div>
@@ -98,7 +99,7 @@ export default class CustomTable extends Component {
           <Table.Column title="操作" cell={this.renderOper} />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -106,24 +107,3 @@ export default class CustomTable extends Component {
     );
   }
 }
-
-const styles = {
-  link: {
-    margin: '0 5px',
-    color: 'rgba(49, 128, 253, 0.65)',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  separator: {
-    margin: '0 8px',
-    display: 'inline-block',
-    height: '12px',
-    width: '1px',
-    verticalAlign: 'middle',
-    background: '#e8e8e8',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};

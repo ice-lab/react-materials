@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QueueAnim from 'rc-queue-anim';
+import styles from './index.module.scss';
 
 export default class Banner extends Component {
   static displayName = 'Banner';
@@ -15,17 +16,17 @@ export default class Banner extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.content}>
+      <div className={styles.container}>
+        <div className={styles.content}>
           <QueueAnim delay={200} duration={1000} interval={300} type="bottom">
-            <div key="title" style={styles.title}>
+            <div key="title" className={styles.title}>
               云栖极客派
             </div>
-            <div key="logo" style={styles.logo}>
+            <div key="logo" className={styles.logo}>
               <img
                 src={require('./images/logo.png')}
                 alt=""
-                style={styles.image}
+                className={styles.image}
               />
             </div>
           </QueueAnim>
@@ -35,35 +36,3 @@ export default class Banner extends Component {
   }
 }
 
-const styles = {
-  container: {
-    height: '100%',
-    marginTop: '78px',
-    background: `url(${require('./images/bg.png')})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    paddingTop: '240px',
-    width: '100%',
-    zIndex: '10',
-  },
-  title: {
-    fontSize: '110px',
-    lineHeight: '154px',
-    letterSpacing: '24px',
-    fontWeight: '700',
-    color: '#fff',
-  },
-  logo: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  image: {
-    display: 'block',
-    height: '70px',
-  },
-};

@@ -4,6 +4,7 @@ import QueueAnim from 'rc-queue-anim';
 import ScrollAnim from 'rc-scroll-anim';
 
 import Summary from '../Summary';
+import styles from './index.module.scss';
 
 const ScrollOverPack = ScrollAnim.OverPack;
 const { Row, Col } = Grid;
@@ -33,8 +34,8 @@ export default class Sponsorship extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.content}>
+      <div className={styles.container}>
+        <div className={styles.content}>
           <ScrollOverPack>
             <QueueAnim delay={200} duration={1500} type="bottom">
               <Row key="row">
@@ -46,8 +47,8 @@ export default class Sponsorship extends Component {
                     {MOCK_DATA.map((src, index) => {
                       return (
                         <Col l="8" key={index}>
-                          <a href="#" style={styles.itemLink}>
-                            <img src={src} alt="" style={styles.itemLogo} />
+                          <a href="#" className={styles.itemLink}>
+                            <img src={src} alt="" className={styles.itemLogo} />
                           </a>
                         </Col>
                       );
@@ -63,22 +64,3 @@ export default class Sponsorship extends Component {
   }
 }
 
-const styles = {
-  container: {
-    background: '#000',
-    height: '100vh',
-  },
-  content: {
-    position: 'relative',
-    width: '1200px',
-    margin: '0 auto',
-    paddingTop: '180px',
-  },
-  itemLink: {
-    display: 'block',
-    marginBottom: '50px',
-  },
-  itemLogo: {
-    maxWidth: '180px',
-  },
-};
