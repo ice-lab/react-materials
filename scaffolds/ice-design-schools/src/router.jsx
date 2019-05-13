@@ -1,8 +1,8 @@
 /**
  * 定义应用路由
  */
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import React from 'react';
+import { HashRouter, Switch, Route } from '_react-router-dom@4.3.1@react-router-dom';
+import React from '_react@16.8.6@react';
 import UserLayout from './layouts/UserLayout';
 import BasicLayout from './layouts/BasicLayout';
 

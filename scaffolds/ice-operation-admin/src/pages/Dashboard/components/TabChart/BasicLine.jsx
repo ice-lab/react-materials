@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
+import styles from './index.module.scss';
 
 export default class BasicLine extends Component {
   static displayName = 'BasicLine';
@@ -51,17 +52,10 @@ export default class BasicLine extends Component {
             position="year*value"
             size={4}
             shape="circle"
-            style={styles.point}
+            className={styles.point}
           />
         </Chart>
       </div>
     );
   }
 }
-
-const styles = {
-  point: {
-    stroke: '#fff',
-    lineWidth: 1,
-  },
-};

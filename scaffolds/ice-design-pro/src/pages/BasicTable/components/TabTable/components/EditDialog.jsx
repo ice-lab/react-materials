@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
+import styles from './index.module.scss';
 
 const FormItem = Form.Item;
 
@@ -60,7 +61,7 @@ export default class EditDialog extends Component {
     };
 
     return (
-      <div style={styles.editDialog}>
+      <div className={styles.editDialog}>
         <Button type="primary" onClick={() => this.onOpen(index, record)}>
           <FormattedMessage id="app.base.table.btn.edit" />
         </Button>
@@ -111,10 +112,3 @@ export default class EditDialog extends Component {
     );
   }
 }
-
-const styles = {
-  editDialog: {
-    display: 'inline-block',
-    marginRight: '5px',
-  },
-};

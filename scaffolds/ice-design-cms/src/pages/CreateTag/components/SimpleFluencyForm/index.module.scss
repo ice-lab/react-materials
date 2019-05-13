@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.userForm {
+  .nextInput,
+  .nextSelect {
+    width: 100%;
+  }
+}
+
+.formTitle{
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+};
+.formLabel{
+  text-align: right;
+  line-height: 1.7rem;
+  padding-right: 10px;
+};
+.formRow{
+  margin-bottom: 20px;
+};
+.formErrorWrapper{
+  margin-top: 5px;
+};
+.simpleFluencyForm{};

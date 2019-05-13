@@ -1,0 +1,42 @@
+.basicDetailTitle{
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+};
+.infoColumn{
+  margin-left: 16px;
+};
+.infoColumnTitle{
+  margin: 20px 0;
+  height: 22px;
+  line-height: 22px;
+  padding-left: 10px;
+  border-left: 4px solid #2077ff;
+};
+.infoItems{
+  padding: 0 !important;
+  margin-left: 25px !important;
+};
+.infoItem{
+  margin-bottom: 18px !important;
+  list-style: none !important;
+  font-size: 14px !important;
+};
+.infoItemLabel{
+  min-width: 70px;
+  color: #999;
+};
+.infoItemValue{
+  color: #333;
+};
+.attachLabel{
+  min-width: 70px;
+  color: #999;
+  float: left;
+};
+.attachPics{
+  width: 80px;
+  height: 80px;
+  border: 1px solid #eee;
+  margin-right: 10px;
+};
