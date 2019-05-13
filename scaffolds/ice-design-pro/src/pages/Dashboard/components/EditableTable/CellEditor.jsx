@@ -61,19 +61,19 @@ export default class CellEditor extends Component {
       return (
         <div className="celleditor">
           <Input
-            style={styles.cellInput}
+            className='cellInput'
             value={value}
             onChange={this.onValueChange}
           />
           <span
-            style={styles.operationIcon}
+            className='operationIcon'
             title="确定"
             onClick={this.updateValue}
           >
             <Icon size="xs" type="select" />
           </span>
           <span
-            style={styles.operationIcon}
+            className='operationIcon'
             title="撤销"
             onClick={this.rollBackThisCell}
           >
@@ -86,7 +86,7 @@ export default class CellEditor extends Component {
       <div className="celleditor">
         <span>{value}</span>
         <span
-          style={styles.operationIcon}
+          className='operationIcon'
           className="celleditor-trigger"
           title="编辑"
           onClick={this.editThisCell}
@@ -97,14 +97,3 @@ export default class CellEditor extends Component {
     );
   }
 }
-
-const styles = {
-  cellInput: {
-    width: 'calc(100% - 44px)',
-  },
-  operationIcon: {
-    marginLeft: '10px',
-    color: '#999',
-    cursor: 'pointer',
-  },
-};

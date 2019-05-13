@@ -5,7 +5,7 @@ import { Value } from 'slate';
 import { isKeyHotkey } from 'is-hotkey';
 import Plain from 'slate-plain-serializer';
 
-import './RichEditor.scss';
+import './index_module.scss';
 
 // 当前富文本组件使用了 Slate 详细文档请参见 https://docs.slatejs.org/
 
@@ -199,7 +199,8 @@ export default class RichEditor extends Component {
             </div>
             <div className="rich-editor-body">
               <Editor
-                style={styles.editor}
+                // className='editor'
+                style={{'minHeight':'200px'}}
                 placeholder="请编写一些内容..."
                 value={this.state.value}
                 onChange={this.onChange}
@@ -215,9 +216,3 @@ export default class RichEditor extends Component {
     );
   }
 }
-
-const styles = {
-  editor: {
-    minHeight: 200,
-  },
-};

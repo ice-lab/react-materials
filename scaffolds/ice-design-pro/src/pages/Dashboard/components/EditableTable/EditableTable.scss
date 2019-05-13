@@ -10,3 +10,23 @@
     display: none;
   }
 }
+
+.addNewItem {
+  background: #F5F5F5;
+  height: 32;
+  line-height: 32px;
+  margin-top: 20;
+  cursor: pointer;
+  text-align: center;
+}
+
+/*EditableTable.scss*/
+.cellInput{
+  width: calc(100% - 44px);
+}
+.operationIcon{
+  margin-left: 10px;
+  color: #999;
+  cursor: pointer;
+}
+

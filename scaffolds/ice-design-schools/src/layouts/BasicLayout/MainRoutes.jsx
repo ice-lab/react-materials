@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React, { Component } from '_react@16.8.6@react';
+import { Switch, Route, Redirect } from '_react-router-dom@4.3.1@react-router-dom';
 import NotFound from '../../components/NotFound';
 import routerData from '../../routerConfig';
 

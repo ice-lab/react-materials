@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Balloon } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
+import styles from './index.module.scss';
 
 export default class DeleteBalloon extends Component {
   static propTypes = {
@@ -41,7 +42,7 @@ export default class DeleteBalloon extends Component {
 
     const content = (
       <div>
-        <div style={styles.contentText}>确认删除？</div>
+        <div className={styles.contentText}>确认删除？</div>
         <Button
           id="confirmBtn"
           type="normal"
@@ -72,9 +73,3 @@ export default class DeleteBalloon extends Component {
     );
   }
 }
-
-const styles = {
-  contentText: {
-    padding: '5px 0 15px',
-  },
-};

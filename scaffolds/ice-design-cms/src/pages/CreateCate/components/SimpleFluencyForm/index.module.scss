@@ -15,3 +15,10 @@
 .formErrorWrapper {
   margin-top: 5px;
 }
+
+.user-form {
+  .next-input,
+  .next-select {
+    width: 100%;
+  }
+}

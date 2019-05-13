@@ -1,5 +1,5 @@
-const { injectBabelPlugin } = require('react-app-rewired');
-const WebpackPluginImport = require('webpack-plugin-import');
+const { injectBabelPlugin } = require('./node_modules/react-app-rewired');
+const WebpackPluginImport = require('./node_modules/webpack-plugin-import');
 const rewireSass = require('./rewire-scss');
 
 module.exports = function override(config) {

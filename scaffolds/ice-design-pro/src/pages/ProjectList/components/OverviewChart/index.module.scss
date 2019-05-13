@@ -1,0 +1,21 @@
+.container{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column !important;
+};
+.content{
+  padding: 0 20px;
+  text-align: center;
+};
+.value{
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+};
+.title{
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+};

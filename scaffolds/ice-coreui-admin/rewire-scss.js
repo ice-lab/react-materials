@@ -5,7 +5,7 @@ const findFileLoaderRuleFn = rule =>
 const findStyleLoaderRuleFn = rule =>
   rule.test.toString() === /\.css$/.toString();
 
-const pkgJSON = require('package.json');
+const pkgJSON = require('./node_modules/package.json.js.js.js');
 
 const theme = pkgJSON.buildConfig && pkgJSON.buildConfig.theme;
 function rewireSass(config, env, sassOptions = {}) {

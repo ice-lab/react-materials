@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from '_react@16.8.6@react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
-import { DataSet } from '@antv/data-set';
+import { DataSet } from '_@antv_data-set@0.8.9@@antv/data-set/build/data-set';
 
 export default class AreaChart extends Component {
   render() {

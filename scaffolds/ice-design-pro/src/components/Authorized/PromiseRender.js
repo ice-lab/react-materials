@@ -1,6 +1,6 @@
 import React from 'react';
 import { Loading } from '@alifd/next';
-
+import './index.module.scss';
 export default class PromiseRender extends React.PureComponent {
   state = {
     component: null,
@@ -44,15 +44,7 @@ export default class PromiseRender extends React.PureComponent {
       <Component {...this.props} />
     ) : (
       <Loading tip="loading..." color="#333">
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            margin: 'auto',
-            paddingTop: 50,
-            textAlign: 'center',
-          }}
-        />
+        <div className='loading'/>
       </Loading>
     );
   }
