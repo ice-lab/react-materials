@@ -1,0 +1,49 @@
+.wrapper {
+  height: 740px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+};
+.body {
+  text-align: center;
+};
+.title {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 130px;
+};
+.text {
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+};
+.extraBody {
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+};
+.image {
+  display: block;
+  margin: 0 auto;
+};
+.extraText {
+  width: 706px;
+  margin: 0 auto;
+  display: flex;
+  color: #fff;
+};
+.extraTextItemLeft {
+  width: 215px;
+  text-align: center;
+};
+.extraTextItemCenter {
+  width: 275px;
+  text-align: center;
+};
+.extraTextItemRight {
+  width: 215px;
+  text-align: center;
+};

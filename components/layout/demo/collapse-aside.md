@@ -27,7 +27,7 @@ class App extends Component {
             width: collapse ? 60 : 200
           }}
         >
-          <Logo text={collapse ? 'go' : 'your-logo'} />
+          <Index text={collapse ? 'go' : 'your-logo'} />
           <div style={{
             display: 'flex',
             justifyContent: 'center',
@@ -57,7 +57,7 @@ class App extends Component {
           </Nav>
         </Layout.Aside>
         <Layout.Section>
-          <Layout.Header
+          <Layout.Index
             style={{
               height: '60px',
               padding: '0 20px',
@@ -77,7 +77,7 @@ class App extends Component {
               </Nav.SubNav>
               <Nav.Item key="document">Document</Nav.Item>
             </Nav>
-          </Layout.Header>
+          </Layout.Index>
           <Layout.Main
             style={{
               padding: 20,
@@ -87,7 +87,7 @@ class App extends Component {
           >
             Main
           </Layout.Main>
-          <Layout.Footer
+          <Layout.Index
             type="primary"
             style={{
               textAlign: 'center',
@@ -99,15 +99,15 @@ class App extends Component {
               <br />
               由 <a href="https://alibaba.github.io/ice" target="_blank"> ICE </a> 提供技术支持
             </p>
-          </Layout.Footer>
+          </Layout.Index>
         </Layout.Section>
       </Layout>
     );
   }
 }
 
-// 项目内敛 Logo 组件
-class Logo extends Component {
+// 项目内敛 Index 组件
+class Index extends Component {
   render() {
     const { text } = this.props;
     return (

@@ -24,9 +24,9 @@ class App extends Component {
           Aside
         </Layout.Aside>
         <Layout.Section scrollable={true}>
-          <Layout.Header type="primary" style={{
+          <Layout.Index type="primary" style={{
             height: 80
-          }}>&nbsp;&nbsp;&nbsp;&nbsp;Header</Layout.Header>
+          }}>&nbsp;&nbsp;&nbsp;&nbsp;Index</Layout.Index>
           <Layout.Main>
             <p>Main</p>
             <p style={{ height: 200 }}>内容可滚动</p>
@@ -38,9 +38,9 @@ class App extends Component {
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动</p>
           </Layout.Main>
-          <Layout.Footer style={{
+          <Layout.Index style={{
             height: 200
-          }}>Footer</Layout.Footer>
+          }}>Index</Layout.Index>
         </Layout.Section>
       </Layout>
     );

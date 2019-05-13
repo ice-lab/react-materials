@@ -5,6 +5,7 @@ import {
   FormBinderWrapper as IceFormBinderWrapper,
   FormBinder as IceFormBinder,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Option } = Select;
@@ -30,13 +31,13 @@ export default class TableFilter extends Component {
   renderSelect = (item) => {
     return (
       <Col span="8">
-        <div style={styles.formItem}>
-          <span style={styles.formLabel}>{item.label}：</span>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
             <Select
               mode="multiple"
               size="large"
-              style={{ minWidth: '200px' }}
+              className={styles.selectMin}
               {...item.componnetProps}
             >
               {item.options.map((option, index) => {
@@ -56,8 +57,8 @@ export default class TableFilter extends Component {
   renderInput = (item) => {
     return (
       <Col span="8" key={item.formBinderProps.name}>
-        <div style={styles.formItem}>
-          <span style={styles.formLabel}>{item.label}：</span>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
             <Input {...item.componnetProps} />
           </IceFormBinder>
@@ -84,7 +85,7 @@ export default class TableFilter extends Component {
         onChange={this.formChange}
         ref="form"
       >
-        <Row wrap gutter="20" style={styles.formRow}>
+        <Row wrap gutter="20" className={styles.formRow}>
           {config.map(this.renderFormItem)}
         </Row>
       </IceFormBinderWrapper>
@@ -92,31 +93,4 @@ export default class TableFilter extends Component {
   }
 }
 
-const styles = {
-  container: {
-    margin: '20px',
-    padding: '0',
-  },
-  title: {
-    margin: '0',
-    padding: '20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0,0,0,.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #eee',
-  },
-  formRow: {
-    padding: '10px 20px',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-};
+

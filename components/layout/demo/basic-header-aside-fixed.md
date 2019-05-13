@@ -1,5 +1,5 @@
 ---
-title: Header&Aside 固定，Aside 内容可滚动
+title: Index&Aside 固定，Aside 内容可滚动
 order: 5
 iframe: true
 width: 960
@@ -15,9 +15,9 @@ class App extends Component {
   render() {
     return (
       <Layout fixable={true}>
-        <Layout.Header style={{
+        <Layout.Index style={{
           height: 80,
-        }} type="primary">&nbsp;&nbsp;&nbsp;&nbsp;Header</Layout.Header>
+        }} type="primary">&nbsp;&nbsp;&nbsp;&nbsp;Index</Layout.Index>
         <Layout.Section>
           <Layout.Aside style={{
             width: 150,
@@ -40,9 +40,9 @@ class App extends Component {
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动 end</p>
-            <Layout.Footer style={{
+            <Layout.Index style={{
               height: 80,
-            }} type="primary">Footer</Layout.Footer>
+            }} type="primary">Index</Layout.Index>
           </Layout.Main>
         </Layout.Section>
       </Layout>

@@ -1,4 +1,4 @@
-// tasks list for Tasks card in Dashboard view
+// tasks list for Tasks card in Index view
 
 const tasks = [
   {
@@ -48,7 +48,7 @@ const tbody = [
 ];
 
 export {
-  tasks, // tasks list for Tasks card in Dashboard view
+  tasks, // tasks list for Tasks card in Index view
   thead, // data for <thead> of table in TableList view
   tbody, // data for <tbody> of table in TableList view
 };

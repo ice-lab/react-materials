@@ -4,7 +4,7 @@ import { Balloon, Icon, Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import IceImg from '@icedesign/img';
 import { headerMenuConfig } from '../../../../menuConfig';
-import Logo from '../Logo';
+import Logo from '../Logo/index';
 import './index.scss';
 const { SubNav, Item } = Nav;
 @withRouter
@@ -108,12 +108,7 @@ export default class Header extends Component {
           <Balloon
             trigger={
               <div
-                className="ice-design-header-userpannel"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  fontSize: 12,
-                }}
+                className="ice-design-header-userpannel divDisplay"
               >
                 <IceImg
                   height={40}
@@ -123,8 +118,7 @@ export default class Header extends Component {
                 />
                 <div className="user-profile">
                   <span
-                    className="user-name"
-                    style={{ fontSize: '13px', color: '#666' }}
+                    className="user-name spanFont"
                   >
                     淘小宝
                   </span>

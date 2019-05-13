@@ -22,7 +22,7 @@
 │   ├── layouts/           # layouts source
 │   ├── pages/             # pages source
 │   ├── variables/         # global variables
-│   ├── index.js           # entry file
+│   ├── index.jsx           # entry file
 │   ├── menuConfig.js      # sidebar config
 │   └── routerConfig.js    # routes config
 │

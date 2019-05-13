@@ -3,6 +3,7 @@ import { Tab, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Calculate from './Calculate';
 import Memory from './Memory';
+import styles from './index.module.scss';
 
 const tabs = [
   { tab: '计算配额', key: 'calculate', content: <Calculate /> },
@@ -20,10 +21,10 @@ function handleClick(key) {
 export default class BudgetManage extends Component {
   render() {
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container}>
         <Tab
           onChange={handleChange}
-          navStyle={styles.tabHead}
+          navStyle={{fontWeight:'500',fontSize:'14px',color:'rgba(0, 0, 0, 0.85)'}}
         >
           {tabs.map((item) => {
             return (
@@ -42,17 +43,4 @@ export default class BudgetManage extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  tabHead: {
-    fontWeight: '500',
-    fontSize: '14px',
-    color: 'rgba(0, 0, 0, 0.85)',
-  },
-  tabExtra: {
-    // display: 'flex',
-    // alignItems: 'center',
-  },
-};
+

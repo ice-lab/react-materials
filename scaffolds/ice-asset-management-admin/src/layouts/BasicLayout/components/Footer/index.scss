@@ -5,6 +5,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .divFilter{
+    filter: grayscale(100%);
+    opacity: 0.3
+  }
   .copyright {
     color: #666;
     line-height: 1.5;

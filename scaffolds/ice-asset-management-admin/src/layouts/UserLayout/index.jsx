@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Grid } from '@alifd/next';
-import Footer from './components/Footer';
-import Intro from './components/Intro';
+import Footer from './components/Footer/index';
+import Intro from './components/Intro/index';
 import routerData from '../../routerConfig';
 
 const { Row, Col } = Grid;

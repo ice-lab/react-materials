@@ -8,4 +8,4 @@
 
 - 移除通过 theme 定制主题的方式
 - 移除 Aside 的收起展开能力，包含 `collapsed/collapsedWidth/onCollapseChange/trigger/width` 属性
-- `Header/Footer/Aside` 支持通过 type 定制主题
+- `Index/Index/Aside` 支持通过 type 定制主题

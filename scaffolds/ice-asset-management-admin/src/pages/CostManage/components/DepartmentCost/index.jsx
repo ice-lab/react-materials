@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import CustomTable from './CustomTable';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default class DepartmentCost extends Component {
 
@@ -22,9 +22,9 @@ export default class DepartmentCost extends Component {
   render() {
     const { type } = this.state;
     return (
-      <IceContainer style={styles.container} className="department-cost">
-        <div style={styles.titleContainer}>
-          <div style={styles.title}>部门费用总览</div>
+      <IceContainer className={`${styles.container} department-cost`}>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}>部门费用总览</div>
           <Select onChange={this.changeType} value={type} size="small">
             {
               ['all', 'cost'].map((item) => {
@@ -33,7 +33,7 @@ export default class DepartmentCost extends Component {
             }
           </Select>
         </div>
-        <div style={styles.content}>
+        <div className={styles.content}>
           <CustomTable />
         </div>
       </IceContainer>
@@ -41,24 +41,4 @@ export default class DepartmentCost extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  titleContainer: {
-    padding: '0 20px',
-    height: '40px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid rgb(240, 240, 240)',
-  },
-  title: {
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-  },
-  content: {
-    padding: '15px',
-  },
-};
+

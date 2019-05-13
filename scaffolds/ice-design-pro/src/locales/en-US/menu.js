@@ -32,7 +32,7 @@ export default {
   'app.menu.exception.403': 'Not Permission',
   'app.menu.exception.500': 'Server Error',
 
-  // Top Header
+  // Top Index
   'app.header.feedback': 'Feedback',
   'app.header.help': 'Help',
   'app.header.user.name': 'Tao',

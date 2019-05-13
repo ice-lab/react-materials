@@ -1,5 +1,5 @@
 // ##############################
-// // // Tasks for TasksCard - see Dashboard view
+// // // Tasks for TasksCard - see Index view
 // #############################
 
 const bugs = [
@@ -19,7 +19,7 @@ const server = [
 ];
 
 module.exports = {
-  // these 3 are used to create the tasks lists in TasksCard - Dashboard view
+  // these 3 are used to create the tasks lists in TasksCard - Index view
   bugs,
   website,
   server,

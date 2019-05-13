@@ -32,7 +32,7 @@ export default {
   'app.menu.exception.403': '403',
   'app.menu.exception.500': '500',
 
-  // Top Header
+  // Top Index
   'app.header.feedback': '反馈',
   'app.header.help': '帮助',
   'app.header.user.name': '淘小宝',

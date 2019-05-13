@@ -3,7 +3,7 @@
  */
 import { HashRouter, Switch, Route } from 'react-router-dom';
 import React from 'react';
-import BlankLayout from './layouts/BlankLayout';
+import BlankLayout from './layouts/BlankLayout/index';
 
 // 按照 Layout 分组路由
 // BlankLayout 对应的路由：/xxx

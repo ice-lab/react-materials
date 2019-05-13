@@ -3,15 +3,15 @@
  * asideMenuConfig：侧边导航配置
  * {
  *   path: '/dashboard',  // 菜单路径
- *   name: 'Dashboard',   // 菜单名称
- *   navbarName: 'Material Dashboard',  // 二级面包屑导航名称
- *   icon: Dashboard,     // 菜单图标
+ *   name: 'Index',   // 菜单名称
+ *   navbarName: 'Material Index',  // 二级面包屑导航名称
+ *   icon: Index,     // 菜单图标
  * }
  *
  */
 
 // @material-ui/icons
-import Dashboard from '@material-ui/icons/Dashboard';
+import Dashboard from '@material-ui/icons/Index';
 import Person from '@material-ui/icons/Person';
 import ContentPaste from '@material-ui/icons/ContentPaste';
 import LibraryBooks from '@material-ui/icons/LibraryBooks';
@@ -23,7 +23,7 @@ const asideMenuConfig = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    navbarName: 'Material Dashboard',
+    navbarName: 'Material Index',
     icon: Dashboard,
   },
   {

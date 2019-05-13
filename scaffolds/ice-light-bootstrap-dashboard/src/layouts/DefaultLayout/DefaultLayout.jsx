@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NotificationSystem from 'react-notification-system';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Header from 'components/Index';
+import Footer from 'components/Index';
 import Sidebar from 'components/Sidebar';
 
 import { style } from 'variables/Variables.jsx';

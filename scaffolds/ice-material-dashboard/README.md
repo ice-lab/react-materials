@@ -23,7 +23,7 @@
 │    ├── layouts
 │    ├── pages
 │    └── variables
-│    ├── index.js
+│    ├── index.jsx
 │    ├── menuConfig.js
 │    └── routerConfig.jsx
 ├── .env

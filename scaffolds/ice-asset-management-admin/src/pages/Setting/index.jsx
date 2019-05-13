@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BaseSetting from './components/BaseSetting';
+import BaseSetting from './components/BaseSetting/index';
 
 export default class Setting extends Component {
   static displayName = 'Setting';

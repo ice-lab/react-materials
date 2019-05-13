@@ -5,6 +5,7 @@ import PlatformToolsIntro from './components/PlatformToolsIntro';
 import PlatformJoinus from './components/PlatformJoinus';
 import PlatformLanding from './components/PlatformLanding';
 import PlatformBlackIntro from './components/PlatformBlackIntro';
+import styles from './index.module.scss';
 
 export default class Home extends Component {
   static displayName = 'Home';
@@ -16,7 +17,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="home-page" style={{ background: '#fff' }}>
+      <div className={`${styles.background} home-page`}>
         <Header />
         <PlatformLanding />
         <div id="tools">

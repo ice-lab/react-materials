@@ -2,14 +2,14 @@
 // 你可以调整 routerConfig 里的内容
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
-import Dashboard from './pages/Dashboard';
-import PostList from './pages/PostList';
-import NewPost from './pages/NewPost';
-import HotPost from './pages/HotPost';
-import Status from './pages/Status';
-import Settings from './pages/Settings';
+import Dashboard from './pages/Dashboard/index';
+import PostList from './pages/PostList/index';
+import NewPost from './pages/NewPost/index';
+import HotPost from './pages/HotPost/index';
+import Status from './pages/Status/index';
+import Settings from './pages/Settings/index';
 import UserLogin from './pages/UserLogin';
-import UserRegister from './pages/UserRegister';
+import UserRegister from './pages/UserRegister/index';
 
 const routerConfig = [
   {

@@ -6,7 +6,7 @@ export default {
   'app.base.table.tab4': 'Rejected',
   'app.base.table.btn.edit': 'Edit',
   'app.base.table.btn.delete': 'Delete',
-  'app.base.table.title': 'Data Analysis',
+  'app.base.table.title': 'Data Index',
 
   // 通用表格
   'app.general.table.title': 'Contract Center',

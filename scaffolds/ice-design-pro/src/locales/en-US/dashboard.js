@@ -21,7 +21,7 @@ export default {
   'app.dashboard.activity.more': 'More',
 
   'app.dashboard.project.table.title': 'Project List',
-  'app.dashboard.project.pie.title': 'Income Analysis',
+  'app.dashboard.project.pie.title': 'Income Index',
   'app.dashboard.project.line.title': 'Sales Revenue',
 
   'app.dashboard.todo.title': 'Todo List',

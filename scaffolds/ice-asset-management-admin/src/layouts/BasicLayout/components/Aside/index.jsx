@@ -6,7 +6,7 @@ import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
 import React, { Component } from 'react';
 import { asideMenuConfig } from '../../../../menuConfig';
-import Logo from '../Logo';
+import Logo from '../Logo/index';
 import './index.scss';
 
 @withRouter

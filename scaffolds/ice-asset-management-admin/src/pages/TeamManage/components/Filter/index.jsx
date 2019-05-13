@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select, DatePicker } from '@alifd/next';
+import styles from './index.module.scss';
 
 export default class Filter extends Component {
   /**
@@ -19,9 +20,9 @@ export default class Filter extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container}>
         <Select
-          style={{ width: '200px' }}
+          className={styles.selectWidth}
           onChange={this.handleSelectChange}
           defaultValue="frontend"
         >
@@ -36,9 +37,4 @@ export default class Filter extends Component {
   }
 }
 
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-};
+

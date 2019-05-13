@@ -35,7 +35,7 @@
 }
 .blockTitle {
   padding: 6px 0;
-  font-size: $font-size-subhead;
+  font-size: 16px;
 }
 .blockItem {
   display: flex;
@@ -57,4 +57,22 @@
   position: absolute;
   background: #5e83fb;
   border-radius: 3px;
+}
+.imgBlock{
+  width: 140px;
+  display: block;
+}
+.imgMargin{
+  width: 30px;
+  margin-right: 8px;
+}
+.spanStyle{
+  font-size: 12px;
+  color: #999;
+}
+.padding{
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  padding-right: 20px;
 }

@@ -218,7 +218,7 @@ const dashboardPanelChart = {
   },
 };
 
-// Dashboard view - Shipped Products - Card
+// Index view - Shipped Products - Card
 
 const dashboardShippedProductsChart = {
   data: (canvas) => {
@@ -266,7 +266,7 @@ const dashboardShippedProductsChart = {
 };
 
 // ##############################
-// // // Dashboard view - All Products - Card
+// // // Index view - All Products - Card
 // #############################
 
 const dashboardAllProductsChart = {
@@ -302,7 +302,7 @@ const dashboardAllProductsChart = {
 };
 
 // ##############################
-// // // Dashboard view - Bar Chart - Card
+// // // Index view - Bar Chart - Card
 // #############################
 
 const dashboard24HoursPerformanceChart = {
@@ -390,8 +390,8 @@ const dashboard24HoursPerformanceChart = {
 };
 
 module.exports = {
-  dashboardPanelChart, // Chart for Dashboard view - Will be rendered in panel
-  dashboardShippedProductsChart, // Chart for Dashboard view - Shipped Products Card
-  dashboardAllProductsChart, // Chart for Dashboard view - All products Card
-  dashboard24HoursPerformanceChart, // Chart for Dashboard view - 24 Hours Performance Card
+  dashboardPanelChart, // Chart for Index view - Will be rendered in panel
+  dashboardShippedProductsChart, // Chart for Index view - Shipped Products Card
+  dashboardAllProductsChart, // Chart for Index view - All products Card
+  dashboard24HoursPerformanceChart, // Chart for Index view - 24 Hours Performance Card
 };

@@ -1,5 +1,32 @@
 .container {
   display: flex;
+  align-items: center !important;
+  height: 160px !important;
+}
+.containerHeight{
+  height: 160px;
+}
+.page{
+  margin: 0;
+  color: #333;
+}
+.div{
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+  border-bottom: 1px solid #f6f6f6;
+}
+.padding{
+  text-align: center;
+  padding-top: 10px;
+}
+.button{
+  width: 100%;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 4px;
 }
 .avatarWrapper {
   width: 64px;

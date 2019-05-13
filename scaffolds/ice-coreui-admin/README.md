@@ -25,7 +25,7 @@
 │   ├── App.js
 │   ├── App.test.js
 │   ├── index.css
-│   ├── index.js
+│   ├── index.jsx
 │   ├── menuConfig.js      # sidebar config
 │   └── routerConfig.js    # routes config
 │

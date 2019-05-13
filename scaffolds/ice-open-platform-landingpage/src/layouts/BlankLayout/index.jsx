@@ -4,7 +4,7 @@ import Layout from '@icedesign/layout';
 import Footer from '../../components/Footer';
 import routerData from '../../routerConfig';
 import NotFound from '../../components/NotFound';
-
+import './index.module.scss';
 export default class BlankLayout extends Component {
   static propTypes = {};
 
@@ -12,7 +12,7 @@ export default class BlankLayout extends Component {
 
   render() {
     return (
-      <Layout style={{ minHeight: '100vh' }} className="ice-blank-layout">
+      <Layout className="ice-blank-layout minHeight">
         <Switch>
           {routerData.map((item, index) => {
             return item.component ? (

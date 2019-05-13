@@ -5,7 +5,7 @@ importStyle: true
 iframe: false
 ---
 
-基础组件 `Header` `Main` `Footer`，默认宽度都是 100%。当需要侧边栏 `Aside` 组件，需要使用辅助布局组件 `Section` 包裹起来。
+基础组件 `Index` `Main` `Index`，默认宽度都是 100%。当需要侧边栏 `Aside` 组件，需要使用辅助布局组件 `Section` 包裹起来。
 
 通过各组件的先后顺序实现多样性布局。
 
@@ -19,55 +19,55 @@ class App extends Component {
     return (
       <div>
         <Layout>
-          <Layout.Header style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">header</Layout.Header>
+          }} type="secondary">header</Layout.Index>
           <Layout.Main style={{height: 200, background: '#fff'}}>Main</Layout.Main>
-          <Layout.Footer style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">Footer</Layout.Footer>
+          }} type="secondary">Index</Layout.Index>
         </Layout>
 
         <div style={{height: 20}}></div>
 
         <Layout>
-          <Layout.Header style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">header</Layout.Header>
+          }} type="secondary">header</Layout.Index>
           <Layout.Section>
             <Layout.Aside style={{
               width: 80,
             }} type="secondary">Aside</Layout.Aside>
             <Layout.Main style={{height: 200, background: '#fff'}}>Main</Layout.Main>
           </Layout.Section>
-          <Layout.Footer style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">Footer</Layout.Footer>
+          }} type="secondary">Index</Layout.Index>
         </Layout>
 
         <div style={{height: 20}}></div>
 
         <Layout>
-          <Layout.Header style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">header</Layout.Header>
+          }} type="secondary">header</Layout.Index>
           <Layout.Section style={{ padding: '20px 40px' }}>
             <Layout.Aside style={{
               width: 80,
             }} type="secondary" >Aside</Layout.Aside>
             <Layout.Main style={{height: 200, background: '#fff'}}>Main</Layout.Main>
           </Layout.Section>
-          <Layout.Footer style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">Footer</Layout.Footer>
+          }} type="secondary">Index</Layout.Index>
         </Layout>
 
         <div style={{height: 20}}></div>
 
         <Layout>
-          <Layout.Header style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">header</Layout.Header>
+          }} type="secondary">header</Layout.Index>
           <Layout.Section>
             <Layout.Aside style={{
               width: 80,
@@ -77,9 +77,9 @@ class App extends Component {
               width: 80,
             }} type="secondary">Aside</Layout.Aside>
           </Layout.Section>
-          <Layout.Footer style={{
+          <Layout.Index style={{
             height: 80,
-          }} type="secondary">Footer</Layout.Footer>
+          }} type="secondary">Index</Layout.Index>
         </Layout>
 
         <div style={{height: 20}}></div>
@@ -89,15 +89,15 @@ class App extends Component {
             width: 80,
           }} type="secondary">Aside</Layout.Aside>
           <Layout.Section>
-            <Layout.Header style={{
+            <Layout.Index style={{
               height: 80,
-            }} type="secondary">header</Layout.Header>
+            }} type="secondary">header</Layout.Index>
             <Layout.Main style={{
               height: 200, background: '#fff'
             }}>Main</Layout.Main>
-            <Layout.Footer style={{
+            <Layout.Index style={{
               height: 80,
-            }} type="secondary">Footer</Layout.Footer>
+            }} type="secondary">Index</Layout.Index>
           </Layout.Section>
         </Layout>
       </div>
