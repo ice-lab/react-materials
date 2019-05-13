@@ -5,6 +5,7 @@ import Feature from './components/Feature';
 import Data from './components/Data';
 import Solution from './components/Solution';
 import Resource from './components/Resource';
+import styles from './index.module.scss'
 
 export default class HomePage extends Component {
   static displayName = 'HomePage';

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import routerData from '../../routerConfig';
 import NotFound from '../../components/NotFound';
+import styles from './index.module.scss'
 
 export default class NormalLayout extends Component {
   static displayName = 'NormalLayout';

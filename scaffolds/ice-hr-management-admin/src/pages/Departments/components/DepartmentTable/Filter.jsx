@@ -7,6 +7,8 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import styles from './index.module.scss'
+
 const { Row, Col } = Grid;
 
 export default class Filter extends Component {
@@ -25,36 +27,36 @@ export default class Filter extends Component {
         onChange={this.formChange}
         ref="form"
       >
-        <Row wrap gutter="20" style={styles.formRow}>
+        <Row wrap gutter="20" className={styles.formRow}>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>部门名称：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>部门名称：</span>
               <IceFormBinder triggerType="onBlur" name="department">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="department" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>部门主管：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>部门主管：</span>
               <IceFormBinder triggerType="onBlur" name="lead">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="lead" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>成立时间：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>成立时间：</span>
               <IceFormBinder triggerType="onBlur" name="createTime">
                 <DatePicker />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="createTime" />
               </div>
             </div>
@@ -64,28 +66,3 @@ export default class Filter extends Component {
     );
   }
 }
-
-const styles = {
-  title: {
-    margin: '0',
-    padding: '20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0,0,0,.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #eee',
-  },
-  formRow: {
-    padding: '10px 20px',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-};

@@ -9,6 +9,8 @@ import {
 } from '@icedesign/form-binder';
 import IceIcon from '@icedesign/foundation-symbol';
 
+import './index.modules.scss'
+
 const { Row, Col } = Grid;
 
 @withRouter
@@ -100,7 +102,7 @@ class UserLogin extends Component {
                 登 录
               </Button>
               <p className="account">
-                <span className="tips-text" style={{ marginRight: '20px' }}>
+                <span className="tips-text stylesltn">
                   管理员登录：admin/admin
                 </span>
                 <span className="tips-text">学生登录：user/user</span>

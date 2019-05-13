@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import ContractTable from '../../components/ContractTable';
+import styles from './index.module.scss'
 
 export default class ContractSearch extends Component {
   static displayName = 'ContractSearch';

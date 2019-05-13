@@ -4,6 +4,7 @@ import IceContainer from '@icedesign/container';
 import ContainerTitle from '../../components/ContainerTitle';
 import ContractTable from '../../components/ContractTable';
 import SearchHistory from './components/SearchHistory';
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -22,9 +23,9 @@ export default class ContractCenter extends Component {
     return (
       <Row gutter={20} wrap>
         <Col l="18">
-          <IceContainer style={{ padding: '0' }}>
+          <IceContainer className={styles.icerow}>
             <ContainerTitle title="合同中心" />
-            <div style={{ padding: '20px' }}>
+            <div className={styles.icerowdiv} >
               <ContractTable searchQueryHistory={this.state.searchQueryHistory} />
             </div>
           </IceContainer>
