@@ -3,6 +3,7 @@ import QueueAnim from 'rc-queue-anim';
 import ScrollAnim from 'rc-scroll-anim';
 
 import Summary from '../Summary';
+import styles from './index.module.scss';
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -20,11 +21,11 @@ export default class Events extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.contentLeft} />
-        <div style={styles.contentRight} />
+      <div className={styles.container}>
+        <div className={styles.contentLeft} />
+        <div className={styles.contentRight} />
         <ScrollOverPack>
-          <div style={styles.content}>
+          <div className={styles.content}>
             <QueueAnim
               key="queueAnim1"
               delay={200}
@@ -46,11 +47,11 @@ export default class Events extends Component {
               interval={500}
               type="top"
             >
-              <div key="image" style={styles.imageWrap}>
+              <div key="image" className={styles.imageWrap}>
                 <img
                   src={require('./images/TB1q7_6A41YBuNjy1zcXXbNcXXa-1440-900.png')}
                   alt=""
-                  style={styles.image}
+                  className={styles.image}
                 />
               </div>
             </QueueAnim>
@@ -62,18 +63,18 @@ export default class Events extends Component {
               interval={500}
               type="bottom"
             >
-              <div key="introWrap" style={styles.introWrap}>
-                <div style={styles.introNum}>02.1</div>
-                <div style={styles.introTitle}>阿里云IoT极客创新挑战赛2018</div>
-                <div style={styles.introDesc}>
-                  <div style={styles.introLine} />
-                  <p style={styles.introText}>
+              <div key="introWrap" className={styles.introWrap}>
+                <div className={styles.introNum}>02.1</div>
+                <div className={styles.introTitle}>阿里云IoT极客创新挑战赛2018</div>
+                <div className={styles.introDesc}>
+                  <div className={styles.introLine} />
+                  <p className={styles.introText}>
                     美好生活是人类乃至地球所有物种的终极追求之一，接下来的智联网时代，又有什么惊喜在等着我们？
                     阿里云IoT事业部联合淘宝极有家、桃花源基金会和上海诺行发起了2018极客创新挑战赛。加入这场创新挑战，为自己，为地球上的其他物种，创出更美好的未来
                   </p>
                 </div>
-                <div style={styles.linkButton}>
-                  <a style={styles.link}>了解更多</a>
+                <div className={styles.linkButton}>
+                  <a className={styles.link}>了解更多</a>
                 </div>
               </div>
             </QueueAnim>
@@ -83,106 +84,3 @@ export default class Events extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    height: '100%',
-    background: '#000',
-  },
-  contentLeft: {
-    background: '#000',
-    height: '100%',
-    position: 'relative',
-    float: 'left',
-    width: '50%',
-  },
-  contentRight: {
-    backgroundImage: 'linear-gradient(-180deg,#3b2da6,#000)',
-    height: '100%',
-    position: 'relative',
-    float: 'right',
-    width: '50%',
-  },
-  content: {
-    position: 'absolute',
-    left: '0',
-    right: '0',
-    width: '1200px',
-    margin: '0 auto',
-    paddingTop: '180px',
-    zIndex: '10',
-  },
-  imageWrap: {
-    float: 'left',
-  },
-  image: {
-    height: '450px',
-    margin: '0 auto',
-    borderLeft: '8px solid #df4',
-  },
-  introWrap: {
-    position: 'absolute',
-    left: '58%',
-    top: '45%',
-    width: '520px',
-    padding: '30px 20px 20px',
-    background: '#5a44ff',
-    boxShadow: '0 4px 9px 0 rgba(0, 0, 0, .5)',
-  },
-  introNum: {
-    fontSize: '18px',
-    color: '#fff',
-    letterSpacing: '.83px',
-    paddingBottom: '10px',
-    fontWeight: '700',
-  },
-  introTitle: {
-    fontSize: '31px',
-    color: '#fff',
-    letterSpacing: '1.5px',
-    lineHeight: '42px',
-    paddingBottom: '6px',
-    fontWeight: '700',
-  },
-  introDesc: {
-    marginTop: '20px',
-    fontSize: '14px',
-    color: '#777f84',
-    paddingTop: '0',
-    float: 'left',
-  },
-  introLine: {
-    width: '30px',
-    height: '2px',
-    background: '#fff',
-    display: 'inline-block',
-    float: 'left',
-    marginRight: '10px',
-  },
-  introText: {
-    textAlign: 'justify',
-    float: 'left',
-    width: '90%',
-    marginTop: '-10px',
-    color: '#fff',
-    letterSpacing: '.35px',
-  },
-  linkButton: {
-    width: '140px',
-    height: '40px',
-    lineHeight: '40px',
-    background: '#000',
-    textAlign: 'center',
-    float: 'left',
-    marginTop: '25px',
-  },
-  link: {
-    width: '140px',
-    height: '40px',
-    lineHeight: '40px',
-    display: 'inline-block',
-    textDecoration: 'none',
-    color: '#fff',
-    fontSize: '14px',
-  },
-};

@@ -1,0 +1,47 @@
+.container {
+    height: 100%;
+    background: url(./images/bg.png);
+    background-size: contain;
+}
+
+.content {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 180px;
+    display: flex;
+}
+
+.contentLeft {
+    width: 50%;
+}
+
+.contentRight {
+    width: 50%;
+}
+
+.item {
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.itemNum {
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background: #d1ff00;
+    border-radius: 50%;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    font-weight: 700;
+}
+
+.itemTitle {
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    font-weight: 700;
+}

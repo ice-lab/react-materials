@@ -32,16 +32,3 @@ export default class BasicNotFound extends Component {
   }
 }
 
-const styles = {
-  exceptionContent: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    color: '#333',
-  },
-  description: {
-    color: '#666',
-  },
-};

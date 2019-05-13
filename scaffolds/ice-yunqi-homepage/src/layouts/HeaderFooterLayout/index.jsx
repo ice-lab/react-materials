@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import routerData from '../../routerConfig';
 import NotFound from '../../components/NotFound';
+import styles from './index.module.scss';
 
 export default class HeaderFooterLayout extends Component {
   static propTypes = {};
@@ -13,7 +14,7 @@ export default class HeaderFooterLayout extends Component {
 
   render() {
     return (
-      <Layout style={styles.container}>
+      <Layout className={styles.container}>
         <Header />
         <Switch>
           {routerData.map((item, index) => {
@@ -35,9 +36,3 @@ export default class HeaderFooterLayout extends Component {
   }
 }
 
-const styles = {
-  container: {
-    minWidth: '1200px',
-    background: '#fff',
-  },
-};

@@ -3,7 +3,7 @@ import { Button } from '@alifd/next';
 
 const Guide = () => {
   return (
-    <div style={{ width: '400px', margin: '40px auto' }}>
+    <div style={{ width: '470px', margin: '40px auto' }}>
       <h2 style={{ textAlign: 'center' }}>使用指南</h2>
       <ul>
         <li style={styles.item}>

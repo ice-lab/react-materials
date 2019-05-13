@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Input } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -10,9 +11,9 @@ export default class TableFilter extends Component {
 
   render() {
     return (
-      <Row style={styles.row}>
+      <Row className={styles.row}>
         <Col l="2">
-          <div style={styles.label}>数据过滤:</div>
+          <div className={styles.label}>数据过滤:</div>
         </Col>
         <Col>
           <Input
@@ -26,14 +27,3 @@ export default class TableFilter extends Component {
     );
   }
 }
-
-const styles = {
-  row: {
-    margin: '4px 0 20px',
-  },
-  label: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '32px',
-  },
-};

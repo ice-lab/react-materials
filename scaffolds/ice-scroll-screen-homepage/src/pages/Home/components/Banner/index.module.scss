@@ -1,0 +1,34 @@
+.container {
+    height: 100%;
+    margin-top: 78px;
+    background: url(./images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 240px;
+    width: 100%;
+    z-index: 10;
+}
+
+.title {
+    font-size: 110px;
+    line-height: 154px;
+    letter-spacing: 24px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    display: block;
+    height: 70px;
+}
