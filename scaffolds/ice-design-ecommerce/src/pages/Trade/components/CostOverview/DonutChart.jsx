@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart, Geom, Axis, Tooltip, Coord, Legend, Guide } from 'bizcharts';
 import DataSet from '@antv/data-set';
 
+
 export default class DonutChart extends Component {
   render() {
     const { DataView } = DataSet;
@@ -65,7 +66,7 @@ export default class DonutChart extends Component {
                 };
               },
             ]}
-            style={{
+            style={ {
               lineWidth: 1,
               stroke: '#fff',
             }}

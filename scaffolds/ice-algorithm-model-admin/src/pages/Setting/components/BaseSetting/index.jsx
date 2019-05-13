@@ -9,6 +9,7 @@ import {
 } from '@icedesign/form-binder';
 import styles from './index.module.scss';
 
+
 const { Row, Col } = Grid;
 const { Group: RadioGroup } = Radio;
 
@@ -175,7 +176,7 @@ export default class BaseSetting extends Component {
                   />
                 </IceFormBinder>
                 <IceFormError
-                  className={styles.iceFormError}
+                  style={{ marginLeft: 10 }}
                   name="siteUrl"
                   required
                   message="请输入正确的网站地址"
@@ -240,7 +241,7 @@ export default class BaseSetting extends Component {
           </div>
         </IceFormBinderWrapper>
 
-        <Row className={styles.row}>
+        <Row style={{ marginTop: 20 }}>
           <Col offset="3">
             <Button
               type="primary"
@@ -255,3 +256,5 @@ export default class BaseSetting extends Component {
     );
   }
 }
+
+

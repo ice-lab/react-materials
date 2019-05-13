@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MainRoutes from './MainRoutes';
 
-import styles from './index.module.scss';
+import './index.scss';
 
 export default class BasicLayout extends Component {
   static propTypes = {};
@@ -13,9 +13,9 @@ export default class BasicLayout extends Component {
 
   render() {
     return (
-      <Layout className={styles.basicLayout}>
+      <Layout className="basic-layout">
         <Header />
-        <div className={styles.mainContent}>
+        <div className="mainContent">
           <MainRoutes />
         </div>
         <Footer />
@@ -23,3 +23,4 @@ export default class BasicLayout extends Component {
     );
   }
 }
+

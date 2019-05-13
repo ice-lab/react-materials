@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import PropTypes from 'prop-types';
-import styles from './index.module.scss';
+import './CustomTable.scss';
 
 export default class Home extends Component {
   static displayName = 'Home';
@@ -37,7 +37,7 @@ export default class Home extends Component {
         <Table
           dataSource={dataSource}
           hasBorder={false}
-          className={styles.customTable}
+          className="custom-table"
         >
           {columns.map((item) => {
             return (
@@ -52,7 +52,7 @@ export default class Home extends Component {
           })}
         </Table>
         <Pagination
-          className={styles.pagination}
+          className="pagination"
           current={this.state.current}
           onChange={this.handlePagination}
         />
@@ -60,3 +60,5 @@ export default class Home extends Component {
     );
   }
 }
+
+

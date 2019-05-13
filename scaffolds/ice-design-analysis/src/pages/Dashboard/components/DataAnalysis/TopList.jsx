@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextLoop from 'react-text-loop';
 import Title from './Title';
+import styles from './index.module.scss';
 
 export default class TopList extends Component {
   static displayName = 'TopList';
@@ -18,13 +19,13 @@ export default class TopList extends Component {
     return (
       <div style={{ height: '33%' }}>
         <Title data={this.props.title} />
-        <ul style={styles.list}>
+        <ul className={styles.list}>
           {this.props.data.map((data, index) => {
             return (
               <TextLoop key={index}>
-                <li style={styles.item}>
-                  <span style={styles.idx}>No.{index + 1}</span>
-                  <span style={styles.name}>{data.name}</span>
+                <li className={styles.item}>
+                  <span className={styles.idx}>No.{index + 1}</span>
+                  <span className={styles.name}>{data.name}</span>
                 </li>
               </TextLoop>
             );
@@ -35,20 +36,3 @@ export default class TopList extends Component {
   }
 }
 
-const styles = {
-  list: {
-    color: '#fff',
-    lineHeight: '36px',
-    marginTop: '20px',
-  },
-  item: {
-    borderBottom: '1px solid #00F0FF',
-    width: '300px',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-  },
-  name: {
-    marginLeft: '10px',
-  },
-};

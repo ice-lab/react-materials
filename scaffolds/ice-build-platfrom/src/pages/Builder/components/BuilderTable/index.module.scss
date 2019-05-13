@@ -1,0 +1,28 @@
+
+    .tableHead {
+      margin: 0 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tableTitle {
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+      padding-left: 12px;
+      border-left: 4px solid #666;
+    }
+    .circle {
+      display: inline-block;
+      background: #28a745;
+      width: 8px;
+      height: 8px;
+      border-radius: 50px;
+      margin-right: 4px;
+    }
+    .stateText {
+      color: #28a745;
+    }
+ 

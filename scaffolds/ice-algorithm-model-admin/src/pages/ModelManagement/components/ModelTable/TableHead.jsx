@@ -8,6 +8,8 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import styles from './table.module.scss';
+
 const { Row, Col } = Grid;
 
 export default class TableHead extends Component {
@@ -37,7 +39,7 @@ export default class TableHead extends Component {
                   <Select.Option value="option3">监督学习</Select.Option>
                 </Select>
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="modelname" />
               </div>
             </div>
@@ -48,7 +50,7 @@ export default class TableHead extends Component {
               <IceFormBinder name="creator" triggerType="onBlur">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="creator" />
               </div>
             </div>
@@ -59,7 +61,7 @@ export default class TableHead extends Component {
               <IceFormBinder name="state" triggerType="onBlur">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="state" />
               </div>
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table, Pagination, Dialog, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableHead from './TableHead';
-import styles from './index.module.scss';
+import styles from './table.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const getData = (length = 10) => {

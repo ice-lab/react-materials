@@ -36,11 +36,11 @@ export default class ModelList extends Component {
   render() {
     const mockData = getData();
     return (
-      <div className='wrap'>
+      <div className={styles.wrap}>
         <IceContainer>
           <Input
             size="large"
-            className={styles.width}
+            style={{ width: '100%' }}
             placeholder="输入关键字搜索"
             onChange={this.handleChange}
           />
@@ -62,3 +62,4 @@ export default class ModelList extends Component {
     );
   }
 }
+

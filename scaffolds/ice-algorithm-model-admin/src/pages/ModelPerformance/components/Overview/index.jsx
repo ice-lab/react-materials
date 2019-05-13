@@ -41,10 +41,8 @@ export default class Overview extends Component {
             <Col l="6" key={index}>
               <div className={styles.box}>
                 <div
-                  style={{
-                    background: `${item.symbolBgColor}`,
-                  }}
-                  className={styles.symbol}
+                  className={styles.symbol }
+                  style={{background: `${item.symbolBgColor}`,}}
                 >
                   <FoundationSymbol size="xl" type={item.symbol} />
                 </div>
@@ -60,3 +58,4 @@ export default class Overview extends Component {
     );
   }
 }
+

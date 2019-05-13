@@ -10,6 +10,7 @@ import {
 import IceIcon from '@icedesign/foundation-symbol';
 import styles from './index.module.scss';
 
+
 @withRouter
 class UserLogin extends Component {
   static displayName = 'UserLogin';
@@ -86,11 +87,11 @@ class UserLogin extends Component {
 
             <div className={styles.formItem}>
               <IceFormBinder name="checkbox">
-                <Checkbox>记住账号</Checkbox>
+                <Checkbox className={styles.checkbox}>记住账号</Checkbox>
               </IceFormBinder>
             </div>
 
-            <div className='footer'>
+            <div className={styles.footer}>
               <Button
                 type="primary"
                 size="large"
@@ -109,5 +110,7 @@ class UserLogin extends Component {
     );
   }
 }
+
+
 
 export default UserLogin;

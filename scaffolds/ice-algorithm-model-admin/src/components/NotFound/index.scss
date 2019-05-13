@@ -1,0 +1,88 @@
+@media screen and (max-width: 720px) {
+  .exception-content {
+    min-height: 200px;
+    .imgException {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+    .title {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+    .description {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1199px) {
+  .exception-content {
+    min-height: 300px;
+    .imgException {
+      max-width: 180px;
+      margin-right: 30px;
+    }
+    .title {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    .description {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .exception-content {
+    min-height: 500px;
+    .imgException {
+      max-width: 260px;
+      margin-right: 50px;
+    }
+    .title {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    .description {
+      font-size: 16px;
+    }
+  }
+}
+
+.exceptionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  color: #333;
+}
+.description {
+  color: #666
+}
+.container {
+  margin: 20px;
+  padding: 0;
+}
+.title {
+  margin: 0;
+  padding: 20px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.85);
+  font-size: 500;
+  border-bottom: 1px solid #eee;
+}
+.formRow {
+  padding: 10px 20px;
+}
+.formItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.formLabel{
+  min-width: 70px;
+}

@@ -4,7 +4,6 @@ import { Grid } from '@alifd/next';
 import ContainerTitle from '../../../../components/ContainerTitle';
 import RadarChart from './RadarChart';
 import HistogramChart from './HistogramChart';
-import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -24,7 +23,7 @@ export default class Performance extends Component {
     return (
       <IceContainer style={{ padding: 0 }}>
         <ContainerTitle title="性能指标" />
-        <Row wrap gutter="20" className={styles.width}>
+        <Row wrap gutter="20" style={{ paddingTop: '30px' }}>
           <Col l="12">
             <RadarChart />
           </Col>

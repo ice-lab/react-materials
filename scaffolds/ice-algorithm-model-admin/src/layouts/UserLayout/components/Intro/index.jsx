@@ -12,5 +12,4 @@ const LoginIntro = () => {
     </div>
   );
 };
-
 export default LoginIntro;
