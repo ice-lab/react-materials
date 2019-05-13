@@ -4,6 +4,7 @@ import cloneDeep from 'lodash.clonedeep';
 import PropTypes from 'prop-types';
 import { Table, Pagination } from '@alifd/next';
 import SearchFilter from './SearchFilter';
+import styles from './index.module.scss';
 
 export default class CustomTable extends Component {
   static displayName = 'CustomTable';
@@ -127,7 +128,7 @@ export default class CustomTable extends Component {
           })}
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={pageIndex}
           onChange={this.onPaginationChange}
         />
@@ -136,9 +137,4 @@ export default class CustomTable extends Component {
   }
 }
 
-const styles = {
-  pagination: {
-    margin: '20px 0',
-    textAlign: 'center',
-  },
-};
+

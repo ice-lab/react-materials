@@ -40,7 +40,9 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "ice-scripts": "^1.7.1"
+    "ice-scripts": "^1.7.1",
+    "request": "^2.88.0",
+    "webpack": "^4.31.0"
   },
   "scripts": {
     "start": "ice dev",

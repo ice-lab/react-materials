@@ -48,3 +48,41 @@
     }
   }
 }
+
+.exceptionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title{
+  color: #333;
+}
+.description {
+  color: #666
+}
+.container {
+  margin: 20px;
+  padding: 0;
+}
+.title {
+  margin: 0;
+  padding: 20px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(0,0,0,0.85);
+  font-size: 500;
+  border-bottom: 1px solid #eee;
+}
+.formRow {
+  padding: 10px 20px;
+}
+.formItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.formLabel{
+  min-width: 70px;
+}

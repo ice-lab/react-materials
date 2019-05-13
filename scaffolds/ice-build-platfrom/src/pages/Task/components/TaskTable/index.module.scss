@@ -1,0 +1,26 @@
+
+    .tableHead {
+      height: 32px;
+      line-height: 32px;
+      margin: 0 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tableTitle {
+      height: 20px;
+      line-height: 20px;
+      color: #333;
+      font-size: 18px;
+      font-weight: bold;
+      padding-left: 12px;
+      border-left: 4px solid #666;
+    }
+    .stateText{
+      display: inline-block;
+      padding: 5px 10px;
+      color: #52c41a;
+      background: #f6ffed;
+      border: 1px solid #b7eb8f;
+      border-radius: 4px;
+    }

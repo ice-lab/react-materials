@@ -36,7 +36,7 @@
     }
     .icon-down {
       margin-left: 2px;
-      color: #fff;
+      color: #fff !important;
     }
   }
 }
@@ -58,4 +58,14 @@
       margin-right: 5px;
     }
   }
+}
+
+.ice-dedign{
+  display: flex;
+  align-items: center;
+   font-size: 12px;
+}
+.user-name{
+  font-size: 13px;
+   color: #fff;
 }

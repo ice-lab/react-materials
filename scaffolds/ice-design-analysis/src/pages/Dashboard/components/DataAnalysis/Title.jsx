@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './index.module.scss';
 
 export default class Title extends Component {
   static displayName = 'Title';
@@ -13,19 +14,7 @@ export default class Title extends Component {
   }
 
   render() {
-    return <p style={styles.title}>{this.props.data}</p>;
+    return <p className={styles.title}>{this.props.data}</p>;
   }
 }
 
-const styles = {
-  title: {
-    maxWidth: '340px',
-    margin: '0 auto',
-    padding: '4px 2px',
-    borderRadius: '2px',
-    fontSize: '16px',
-    backgroundColor: 'rgba(26, 72, 78, 0.6)',
-    color: '#f7d947',
-    textAlign: 'center',
-  },
-};

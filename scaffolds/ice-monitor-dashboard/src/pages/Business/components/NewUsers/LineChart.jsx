@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 
+
 class Gradient extends React.Component {
   render() {
     const data = [

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 // Random Numbers
 const random = (min, max) => {
@@ -77,7 +78,7 @@ export default class OrderTable extends Component {
     const { isLoading, data, current } = this.state;
 
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Table loading={isLoading} dataSource={data} hasBorder={false}>
           <Table.Column title="流水号" dataIndex="serialNumber" />
           <Table.Column title="订单号" dataIndex="orderNumber" />
@@ -90,7 +91,7 @@ export default class OrderTable extends Component {
           <Table.Column title="已发货商品金额" dataIndex="amount" />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -99,12 +100,4 @@ export default class OrderTable extends Component {
   }
 }
 
-const styles = {
-  container: {
-    marginTop: '20px',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};
+
