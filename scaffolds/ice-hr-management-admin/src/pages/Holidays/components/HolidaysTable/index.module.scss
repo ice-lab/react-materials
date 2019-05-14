@@ -1,0 +1,40 @@
+.container{
+  padding: 0 0 20px;
+}
+.title{
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(0,0,0,.85);
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+}
+.pagination{
+  text-align: center
+}
+.table{
+  padding: 0 20px 20px;
+}
+.renderState{
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.formRow{
+  padding: 10px 20px;
+}
+.formItem{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.formLabel{
+  min-width: 70px;
+}
+.select{
+  width: 200px
+}

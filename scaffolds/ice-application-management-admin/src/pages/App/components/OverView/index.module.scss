@@ -1,0 +1,100 @@
+.box {
+  min-height: 124px;
+  min-width: 30px;
+  background: #f7f8fa;
+  border-radius: 4px;
+  padding: 12px;
+
+  .boxtitle {
+    span {
+      display: inline-block;
+      line-height: 20px;
+      font-size: 14px;
+      color: #333;
+      margin-left: 8px;
+    }
+
+    .boxicon {
+      text-align: center;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 4px;
+      margin-left: 0;
+      background-color: #4cb587;
+      .icon {
+        color: #fff;
+      }
+    }
+    .boxicon2 {
+      text-align: center;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 4px;
+      margin-left: 0;
+      background-color: #ec7a0e;
+      .icon {
+        color: #fff;
+      }
+    }
+    .boxicon3 {
+      text-align: center;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 4px;
+      margin-left: 0;
+      background-color: #5485F7;
+      .icon {
+        color: #fff;
+      }
+    }
+    .boxicon4 {
+      text-align: center;
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      border-radius: 4px;
+      margin-left: 0;
+      background-color: #f7da47;
+
+      .icon {
+        color: #fff;
+      }
+    }
+  }
+
+  .boxlist {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .boxcontent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .boxvalue {
+      font-size: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .boxlable {
+      font-size: 12px;
+      color: #333;
+      margin-left: 4px;
+    }
+
+    .boxkey {
+      font-size: 12px;
+      color: $color-text1-2;
+    }
+  }
+}

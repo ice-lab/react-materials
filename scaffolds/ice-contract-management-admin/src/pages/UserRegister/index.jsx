@@ -9,6 +9,7 @@ import {
 } from '@icedesign/form-binder';
 import IceIcon from '@icedesign/foundation-symbol';
 
+import './index.modules.scss';
 const { Row, Col } = Grid;
 
 @withRouter

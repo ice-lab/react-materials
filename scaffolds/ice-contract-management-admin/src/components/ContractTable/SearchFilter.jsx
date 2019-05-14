@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from '@alifd/next';
 import CustomForm from '../CustomForm';
+import styles from './index.module.scss'
 
 const formConfig = [
   {
@@ -201,7 +202,7 @@ export default class SearchFilter extends Component {
    */
   renderExtraContent = () => {
     return (
-      <Button text style={styles.extraContent} onClick={this.handleAdvancedSearch}>
+      <Button text className={styles.extraContent} onClick={this.handleAdvancedSearch}>
         高级搜索{' '}
         <Icon
           size="xs"
@@ -231,11 +232,3 @@ export default class SearchFilter extends Component {
     );
   }
 }
-
-const styles = {
-  extraContent: {
-    position: 'absolute',
-    right: '0',
-    bottom: '0',
-  },
-};

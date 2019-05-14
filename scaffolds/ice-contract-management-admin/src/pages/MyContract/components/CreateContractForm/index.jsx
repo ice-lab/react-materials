@@ -8,6 +8,8 @@ import {
   FormBinderWrapper, FormBinder, FormError,
 } from '@icedesign/form-binder';
 
+import styles from './index.module.scss'
+
 export default class CreateFrom extends React.Component {
   static defaultProps = {
     onCreateSubmitSuccess: () => {},
@@ -67,9 +69,9 @@ export default class CreateFrom extends React.Component {
           });
         }}
       >
-        <div style={styles.formContainer}>
-          <div style={styles.formItem}>
-            <label htmlFor="id" style={styles.formLabel}>编号：<span style={{ color: 'red' }}>*</span></label>
+        <div className={styles.formContainer}>
+          <div className={styles.formItem}>
+            <label htmlFor="id" className={styles.formLabel}>编号：<span style={{ color: 'red' }}>*</span></label>
             <FormBinder name="id" required message="请选择编号">
               <Select
                 id="id"
@@ -82,23 +84,23 @@ export default class CreateFrom extends React.Component {
             </FormBinder>
             <FormError name="id" />
           </div>
-          <div style={styles.formItem}>
-            <label htmlFor="name" style={styles.formLabel}>合同名称：</label>
+          <div className={styles.formItem}>
+            <label htmlFor="name" className={styles.formLabel}>合同名称：</label>
             <FormBinder name="name">
               <Input id="name" placeholder="请输入合同名称" />
             </FormBinder>
             <FormError name="name" />
           </div>
-          <div style={styles.formItem}>
-            <label htmlFor="ourCompany" style={styles.formLabel}>我方公司：</label>
+          <div className={styles.formItem}>
+            <label htmlFor="ourCompany" className={styles.formLabel}>我方公司：</label>
             <FormBinder name="ourCompany">
               <Input id="ourCompany" placeholder="请输入" />
             </FormBinder>
             <FormError name="ourCompany" />
           </div>
 
-          <div style={styles.formActions}>
-            <Button onClick={this.onCancel} style={{ marginRight: 10 }}>取消</Button>
+          <div className={styles.formActions}>
+            <Button onClick={this.onCancel} className={styles.lbtn}>取消</Button>
             <Button onClick={this.onSubmit} type="primary" loading={this.state.submitting}>提交</Button>
           </div>
         </div>
@@ -106,23 +108,3 @@ export default class CreateFrom extends React.Component {
     );
   }
 }
-
-const styles = {
-  formContainer: {
-    padding: '0 40px',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    height: 40,
-  },
-  formLabel: {
-    width: 100,
-  },
-  formActions: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    marginTop: 20,
-  },
-};

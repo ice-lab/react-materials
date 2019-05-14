@@ -15,6 +15,8 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import styles from './index.module.scss'
+
 const { Row, Col } = Grid;
 const { RangePicker } = DatePicker;
 
@@ -51,12 +53,12 @@ class CustomForm extends Component {
   renderInput = (item) => {
     return (
       <Col l="8" key={item.label}>
-        <div style={styles.formItem}>
-          <span style={styles.formLabel}>{item.label}：</span>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
-            <Input {...item.componentProps} style={{ width: '100%' }} />
+            <Input {...item.componentProps} className={styles.inputw}/>
           </IceFormBinder>
-          <div style={styles.formError}>
+          <div className={styles.formError}>
             <IceFormError name={item.formBinderProps.name} />
           </div>
         </div>
@@ -67,7 +69,7 @@ class CustomForm extends Component {
   renderCheckbox = (item) => {
     return (
       <Col l="8" key={item.label}>
-        <div style={styles.formItem}>
+        <div className={styles.formItem}>
           <IceFormBinder {...item.formBinderProps}>
             <Checkbox {...item.componentProps}>{item.label}</Checkbox>
           </IceFormBinder>
@@ -79,10 +81,10 @@ class CustomForm extends Component {
   renderDatePicker = (item) => {
     return (
       <Col l="8" key={item.label}>
-        <div style={styles.formItem}>
-          <span style={styles.formLabel}>{item.label}：</span>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
-            <RangePicker {...item.componentProps} style={{ width: '100%' }} />
+            <RangePicker {...item.componentProps} className={styles.inputw}/>
           </IceFormBinder>
         </div>
       </Col>
@@ -92,8 +94,8 @@ class CustomForm extends Component {
   renderSelect = (item) => {
     return (
       <Col l="8" key={item.label}>
-        <div style={styles.formItem}>
-          <span style={styles.formLabel}>{item.label}：</span>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
             <Select {...item.componentProps} style={{ width: '100%' }} />
           </IceFormBinder>
@@ -120,21 +122,21 @@ class CustomForm extends Component {
     const { value, config, extraContent, handleReset } = this.props;
 
     return (
-      <div style={styles.formContainer}>
+      <div className={styles.formContainer}>
         <IceFormBinderWrapper
           value={value}
           onChange={this.formChange}
           ref="form"
         >
-          <div style={styles.formItems}>
+          <div className={styles.formItems}>
             <Row wrap gutter={40}>
               {this.renderFromItem(config)}
             </Row>
-            <div style={styles.buttons}>
+            <div className={styles.buttons}>
               <Button
                 type="primary"
-                style={{ marginRight: '10px' }}
                 onClick={this.handleSubmit}
+                className={styles.leftbtn}
               >
                 搜 索
               </Button>
@@ -149,24 +151,5 @@ class CustomForm extends Component {
     );
   }
 }
-
-const styles = {
-  formContainer: {
-    position: 'relative',
-    background: '#fff',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-  buttons: {
-    margin: '10px 0 20px',
-    textAlign: 'center',
-  },
-};
 
 export default CustomForm;

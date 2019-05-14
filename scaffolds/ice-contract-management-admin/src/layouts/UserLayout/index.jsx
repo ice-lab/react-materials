@@ -3,7 +3,7 @@ import Layout from '@icedesign/layout';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Footer from './Footer';
 import routerConfig from '../../routerConfig';
-import './index.scss';
+import './index.modules.scss';
 
 export default class UserLayout extends Component {
   render() {

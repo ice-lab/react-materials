@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -40,14 +41,14 @@ export default class Feature extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <Row wrap style={styles.content}>
+      <div className={styles.container}>
+        <Row wrap className={styles.content}>
           {dataSource.map((item, index) => {
             return (
-              <Col xxs="12" s="6" l="6" key={index} style={styles.item}>
-                <img src={item.pic} style={styles.pic} alt="" />
-                <h3 style={styles.title}>{item.title}</h3>
-                <p style={styles.desc}>{item.desc}</p>
+              <Col xxs="12" s="6" l="6" key={index} className={styles.item}>
+                <img src={item.pic} className={styles.pic} alt="" />
+                <h3 className={styles.title}>{item.title}</h3>
+                <p className={styles.desc}>{item.desc}</p>
               </Col>
             );
           })}
@@ -56,29 +57,3 @@ export default class Feature extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    padding: '80px 0',
-    background: '#F6F7F9',
-  },
-  content: {
-    width: '1200px',
-    margin: '0 auto',
-  },
-  item: {
-    textAlign: 'center',
-    padding: '10px 20px',
-  },
-  pic: {
-    width: '80px',
-    marginBottom: '30px',
-  },
-  title: {
-    fontWeight: 'bold',
-  },
-  desc: {
-    lineHeight: '22px',
-    color: '#999',
-  },
-};
