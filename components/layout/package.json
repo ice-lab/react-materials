@@ -40,7 +40,7 @@
   },
   "componentConfig": {
     "name": "layout",
-    "titlle": "提供页面框架性的 layout 组件"
+    "title": "提供页面框架性的 layout 组件"
   },
   "homepage": "https://unpkg.com/@icedesign/layout@0.1.8/build/index.html"
 }

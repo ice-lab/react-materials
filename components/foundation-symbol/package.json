@@ -38,7 +38,7 @@
   },
   "componentConfig": {
     "name": "foundation-symbol",
-    "titlle": "基础符号表"
+    "title": "基础符号表"
   },
   "homepage": "https://unpkg.com/@icedesign/foundation-symbol@0.1.2/build/index.html"
 }

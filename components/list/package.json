@@ -33,7 +33,7 @@
   },
   "componentConfig": {
     "name": "list",
-    "titlle": "列表组件"
+    "title": "列表组件"
   },
   "homepage": "https://unpkg.com/@icedesign/list@0.1.10/build/index.html"
 }

@@ -41,7 +41,7 @@
   },
   "componentConfig": {
     "name": "data-binder",
-    "titlle": "ICE 前后端数据绑定、交互方案"
+    "title": "ICE 前后端数据绑定、交互方案"
   },
   "homepage": "https://unpkg.com/@icedesign/data-binder@0.1.12/build/index.html"
 }

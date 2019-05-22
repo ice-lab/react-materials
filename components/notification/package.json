@@ -34,7 +34,7 @@
   },
   "componentConfig": {
     "name": "notification",
-    "titlle": "全局展示通知提醒信息。"
+    "title": "全局展示通知提醒信息。"
   },
   "homepage": "https://unpkg.com/@icedesign/notification@0.2.3/build/index.html"
 }

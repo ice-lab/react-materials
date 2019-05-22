@@ -37,7 +37,7 @@
   },
   "componentConfig": {
     "name": "ellipsis",
-    "titlle": "多行文字控制展示组件"
+    "title": "多行文字控制展示组件"
   },
   "homepage": "https://unpkg.com/@icedesign/ellipsis@0.1.7/build/index.html"
 }

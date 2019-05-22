@@ -33,7 +33,7 @@
   },
   "componentConfig": {
     "name": "panel",
-    "titlle": "面板组件"
+    "title": "面板组件"
   },
   "devDependencies": {
     "react": "^16.5.0",

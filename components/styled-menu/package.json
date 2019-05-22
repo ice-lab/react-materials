@@ -38,6 +38,6 @@
   "typings": "lib/index.d.ts",
   "componentConfig": {
     "name": "styled-menu",
-    "titlle": "ICE 导航组件体验版"
+    "title": "ICE 导航组件体验版"
   }
 }

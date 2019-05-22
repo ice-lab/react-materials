@@ -34,7 +34,7 @@
   },
   "componentConfig": {
     "name": "richtext-renderer",
-    "titlle": "富文本组件 HTML 渲染器"
+    "title": "富文本组件 HTML 渲染器"
   },
   "homepage": "https://unpkg.com/@icedesign/richtext-renderer@0.1.4/build/index.html"
 }
