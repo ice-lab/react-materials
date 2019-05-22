@@ -8,11 +8,10 @@
     "demo/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
-  "author": "ice-team",
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/form-binder"
@@ -22,9 +21,6 @@
     "ice",
     "ice-component"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"

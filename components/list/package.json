@@ -12,8 +12,8 @@
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/list"
   },
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
@@ -22,9 +22,6 @@
     "react",
     "component"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": "^16.5.0"
   },

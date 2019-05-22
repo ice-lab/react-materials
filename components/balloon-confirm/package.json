@@ -7,17 +7,13 @@
     "lib/",
     "demo/"
   ],
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/balloon-confirm"
   },
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
@@ -26,9 +22,6 @@
     "react",
     "component"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": "^16.5.0"
   },
@@ -36,7 +29,5 @@
     "@icedesign/base": "^0.2.0",
     "prop-types": "^15.5.8"
   },
-  "devDependencies": {
-    "ice-devtools": "^1.1.12"
-  }
+  "devDependencies": {}
 }

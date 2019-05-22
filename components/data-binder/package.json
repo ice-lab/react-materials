@@ -8,13 +8,9 @@
     "demo/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
-  },
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
   },
   "repository": {
     "type": "git",
@@ -38,7 +34,6 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
-    "ice-devtools": "^1.1.12",
     "jsonp": "^0.2.1"
   }
 }

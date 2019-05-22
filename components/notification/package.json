@@ -11,16 +11,13 @@
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/notification"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "ice",
     "ice-component"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {

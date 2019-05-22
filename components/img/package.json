@@ -8,13 +8,9 @@
     "demo/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
-  },
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
   },
   "repository": {
     "type": "git",
@@ -33,9 +29,5 @@
   },
   "peerDependencies": {
     "react": "^16.5.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
   }
 }

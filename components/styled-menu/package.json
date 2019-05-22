@@ -8,8 +8,8 @@
     "demo/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -31,8 +31,5 @@
   "peerDependencies": {
     "react": "^16.5.0"
   },
-  "typings": "lib/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  }
+  "typings": "lib/index.d.ts"
 }
