@@ -36,7 +36,8 @@
     "@icedesign/styled-menu": "^0.1.1",
     "@icedesign/title": "^0.1.0",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "ice-scripts": "^1.10.1"
   },
   "componentConfig": {
     "name": "layout",
