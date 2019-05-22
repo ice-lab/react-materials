@@ -6,14 +6,12 @@
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js",
     "build/"
   ],
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "ice",

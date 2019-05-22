@@ -6,7 +6,6 @@
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js",
     "build/"
   ],
   "keywords": [
@@ -24,8 +23,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
