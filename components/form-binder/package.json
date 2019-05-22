@@ -30,6 +30,13 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "@icedesign/base": "^0.2.0"
-  }
+    "@icedesign/base": "^0.2.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "form-binder",
+    "titlle": "ICE 表单数据获取方案"
+  },
+  "homepage": "https://unpkg.com/@icedesign/form-binder@1.0.3/build/index.html"
 }

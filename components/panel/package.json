@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/panel",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "面板组件",
   "main": "lib/index.js",
   "files": [
@@ -29,5 +29,14 @@
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
-  }
+  },
+  "componentConfig": {
+    "name": "panel",
+    "titlle": "面板组件"
+  },
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "homepage": "https://unpkg.com/@icedesign/panel@0.1.9/build/index.html"
 }

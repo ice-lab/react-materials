@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/foundation-symbol",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "基础符号表",
   "main": "lib/index.js",
   "files": [
@@ -23,7 +23,9 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
-    "react-copy-to-clipboard": "^5.0.1"
+    "react-copy-to-clipboard": "^5.0.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
   },
   "peerDependencies": {
     "react": "^16.5.0",
@@ -32,5 +34,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/foundation-symbol"
-  }
+  },
+  "componentConfig": {
+    "name": "foundation-symbol",
+    "titlle": "基础符号表"
+  },
+  "homepage": "https://unpkg.com/@icedesign/foundation-symbol@0.1.2/build/index.html"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/layout",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "提供页面框架性的 layout 组件",
   "main": "lib/index.js",
   "files": [
@@ -33,6 +33,13 @@
   "devDependencies": {
     "@icedesign/img": "^0.1.0",
     "@icedesign/styled-menu": "^0.1.1",
-    "@icedesign/title": "^0.1.0"
-  }
+    "@icedesign/title": "^0.1.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "layout",
+    "titlle": "提供页面框架性的 layout 组件"
+  },
+  "homepage": "https://unpkg.com/@icedesign/layout@0.1.8/build/index.html"
 }

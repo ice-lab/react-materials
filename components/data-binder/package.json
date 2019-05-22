@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/data-binder",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "ICE 前后端数据绑定、交互方案",
   "main": "lib/index.js",
   "files": [
@@ -34,6 +34,13 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
-    "jsonp": "^0.2.1"
-  }
+    "jsonp": "^0.2.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "data-binder",
+    "titlle": "ICE 前后端数据绑定、交互方案"
+  },
+  "homepage": "https://unpkg.com/@icedesign/data-binder@0.1.12/build/index.html"
 }

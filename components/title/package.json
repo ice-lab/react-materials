@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/title",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "标题组件",
   "main": "lib/index.js",
   "files": [
@@ -26,9 +26,16 @@
     "prop-types": "^15.5.10",
     "@icedesign/base": "^0.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "title",
+    "titlle": "标题组件"
   }
 }

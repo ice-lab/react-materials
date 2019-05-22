@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/container",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "",
   "main": "lib/index.js",
   "files": [
@@ -29,5 +29,13 @@
     "prop-types": "^15.5.8"
   },
   "typings": "lib/index.d.ts",
-  "devDependencies": {}
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "container",
+    "titlle": ""
+  },
+  "homepage": "https://unpkg.com/@icedesign/container@0.1.10/build/index.html"
 }
