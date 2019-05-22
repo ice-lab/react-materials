@@ -1,11 +1,12 @@
 {
   "name": "@icedesign/balloon-confirm",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "ICE 气泡确认框",
   "main": "lib/index.js",
   "files": [
     "lib/",
-    "demo/"
+    "demo/",
+    "build/"
   ],
   "repository": {
     "type": "git",
