@@ -5,14 +5,14 @@
   "main": "lib/index.js",
   "files": [
     "lib/",
-    "demo/"
+    "demo/",
+    "build/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
-  "author": "ice-team",
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/form-binder"
@@ -22,9 +22,6 @@
     "ice",
     "ice-component"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
@@ -34,6 +31,14 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "@icedesign/base": "^0.2.0"
-  }
+    "@icedesign/base": "^0.2.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "ice-scripts": "^1.10.1"
+  },
+  "componentConfig": {
+    "name": "form-binder",
+    "title": "ICE 表单数据获取方案"
+  },
+  "homepage": "https://unpkg.com/@icedesign/form-binder@1.0.3/build/index.html"
 }

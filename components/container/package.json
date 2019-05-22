@@ -1,22 +1,17 @@
 {
   "name": "@icedesign/container",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "",
   "main": "lib/index.js",
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js"
+    "build/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
-  },
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
+    "start": "ice dev",
+    "build": "ice build",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -35,5 +30,14 @@
     "prop-types": "^15.5.8"
   },
   "typings": "lib/index.d.ts",
-  "devDependencies": {}
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "ice-scripts": "^1.10.1"
+  },
+  "componentConfig": {
+    "name": "container",
+    "title": ""
+  },
+  "homepage": "https://unpkg.com/@icedesign/container@0.1.10/build/index.html"
 }

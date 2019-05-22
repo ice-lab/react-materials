@@ -1,22 +1,17 @@
 {
   "name": "@icedesign/panel",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "面板组件",
   "main": "lib/index.js",
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js"
+    "build/"
   ],
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
-  },
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
+    "start": "ice dev",
+    "build": "ice build",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -35,5 +30,15 @@
   "peerDependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
-  }
+  },
+  "componentConfig": {
+    "name": "panel",
+    "title": "面板组件"
+  },
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "ice-scripts": "^1.10.1"
+  },
+  "homepage": "https://unpkg.com/@icedesign/panel@0.1.9/build/index.html"
 }

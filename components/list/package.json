@@ -5,15 +5,16 @@
   "main": "lib/index.js",
   "files": [
     "lib/",
-    "demo/"
+    "demo/",
+    "build/"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/stable/components-0.x/components/list"
   },
   "scripts": {
-    "start": "ice-devtools start",
-    "build": "ice-devtools build",
+    "start": "ice dev",
+    "build": "ice build",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
@@ -22,15 +23,18 @@
     "react",
     "component"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "react": "^16.5.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0"
-  }
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "ice-scripts": "^1.10.1"
+  },
+  "componentConfig": {
+    "name": "list",
+    "title": "列表组件"
+  },
+  "homepage": "https://unpkg.com/@icedesign/list@0.1.10/build/index.html"
 }
