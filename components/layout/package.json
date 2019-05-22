@@ -1,12 +1,11 @@
 {
   "name": "@icedesign/layout",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "提供页面框架性的 layout 组件",
   "main": "lib/index.js",
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js",
     "build/"
   ],
   "repository": {
@@ -22,8 +21,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -42,5 +40,5 @@
     "name": "layout",
     "title": "提供页面框架性的 layout 组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/layout@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/layout@1.0.8/build/index.html"
 }
