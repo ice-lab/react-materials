@@ -37,5 +37,6 @@
   "componentConfig": {
     "name": "title",
     "titlle": "标题组件"
-  }
+  },
+  "homepage": "https://unpkg.com/@icedesign/title@0.1.6/build/index.html"
 }
