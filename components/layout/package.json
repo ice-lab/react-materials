@@ -5,8 +5,7 @@
   "main": "lib/index.js",
   "files": [
     "lib/",
-    "demo/",
-    "postinstall.js"
+    "demo/"
   ],
   "author": {
     "name": "ICE Team",
@@ -19,14 +18,12 @@
   "license": "MIT",
   "keywords": [
     "ice",
-    "ice-components",
-    "postinstall.js"
+    "ice-components"
   ],
   "scripts": {
     "start": "ice-devtools start",
     "build": "ice-devtools build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@icedesign/base": "^0.2.0",
