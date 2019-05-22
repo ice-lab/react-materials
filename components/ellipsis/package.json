@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/ellipsis",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "多行文字控制展示组件",
   "main": "lib/index.js",
   "files": [
@@ -39,5 +39,5 @@
     "name": "ellipsis",
     "title": "多行文字控制展示组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/ellipsis@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/ellipsis@1.0.4/build/index.html"
 }

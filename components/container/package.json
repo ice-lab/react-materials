@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/container",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "lib/index.js",
   "files": [
@@ -37,5 +37,5 @@
     "name": "container",
     "title": "基础容器"
   },
-  "homepage": "https://unpkg.com/@icedesign/container@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/container@1.0.4/build/index.html"
 }
