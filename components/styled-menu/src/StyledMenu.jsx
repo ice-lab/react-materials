@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 // import for the iconfont arrow-down
 // do not delete this because of the css iconfont
-import FoundationSymbol from 'foundation-symbol'; // eslint-disable-line
+import FoundationSymbol from '@icedesign/foundation-symbol'; // eslint-disable-line
 
 // selectedKeys openKeys props 不要随便设置默认值，否则可能会触发一些值获取逻辑从而出现问题
 
@@ -147,7 +147,7 @@ export default class IceMenu extends Component {
     }
   };
 
-  handleOpenChange = (openKeys: string[]) => {
+  handleOpenChange = (openKeys) => {
     this.setOpenKeys(openKeys);
 
     const { onOpenChange } = this.props;

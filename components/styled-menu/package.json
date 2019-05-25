@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "@icedesign/base": "^0.2.0",
-    "foundation-symbol": "^0.1.0",
+    "@icedesign/foundation-symbol": "^0.1.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
     "rc-menu": "^5.0.9"
