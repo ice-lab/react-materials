@@ -82,6 +82,8 @@ class App extends Component {
                 <Select.Option value="option2">option2</Select.Option>
                 <Select.Option value="option3" disabled>disabled</Select.Option>
               </Field>
+              <Field label="单个CheckBox：" name="oneCheckbox" component={Checkbox} />
+              <Field label="单个Radio：" name="oneRadio" component={Radio} />
               <Button htmlType="submit">Submit</Button>
             </div>
           )}

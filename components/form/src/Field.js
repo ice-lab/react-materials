@@ -14,8 +14,28 @@ class Field extends Component {
     !!rules && store.addRules(name, rules);
     !!linkages && store.addLinkages(name, linkages);
     !!status && store.setStatus(name, status, false);
-    !!value && store.setValueWithoutNotify(name, value);
 
+    const isCheckbox = props.type && props.type === 'checkbox';
+    const isRadio = props.type && props.type === 'radio';
+    if (value) {
+      if (isCheckbox) {
+        if (!value) {
+          throw new Error('value prop is required for checkbox');
+        }
+        const currentValue = store.getValue(name) || [];
+        if (props.checked) {
+          currentValue.push(value)
+        }
+        store.setValueWithoutNotify(name, currentValue);
+      } else if (isRadio) {
+        if (props.checked) {
+          store.setValueWithoutNotify(name, value);
+        }
+      } else {
+        store.setValueWithoutNotify(name, value);
+      }
+    }
+    
     this.state = {
       value: this.format? this.format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
@@ -45,41 +65,28 @@ class Field extends Component {
     }
   }
 
-  getValue(e) {
-    const target = e.target,
-          type = target.type,
-          value = target.value,
-          checked = target.checked;
-
-    if (type === 'checkbox') {
-      if (!value) {
-        throw new Error('value prop is required for checkbox');
-      }
-      let currentValue = this.context.getValue(this.props.name);
-      if (checked) {
-        return Array.isArray(currentValue) ? currentValue.concat(value) : [value];
-      } else {
-        if (!Array.isArray(currentValue)) {
-          return currentValue;
-        }
-        const index = currentValue.indexOf(value);
-        if (index < 0) {
-          return currentValue;
-        } else {
-          return currentValue.slice(0, index).concat(currentValue.slice(index + 1));
-        }
-      }
-    } else {
-      return value
-    }
-  }
-
   handleChange = e => {
     const store = this.context;
-    const value = e && e.target
-                    ? this.getValue(e)
+
+    if (e && e.target && e.target.type === 'checkbox') {
+      const checked = e.target.checked;
+      const value = e.target.value;
+      let currentValue = store.getValue(this.props.name) || [];
+      if (checked) {
+        currentValue.push(value);
+      } else {
+        const index = currentValue.indexOf(value);
+        if (index !== -1) {
+          currentValue = currentValue.slice(0, index).concat(currentValue.slice(index + 1));
+        }
+      }
+      store.setValue(this.props.name, currentValue);
+    } else {
+      const value = e && e.target
+                    ? e.target.value
                     : e;
-    store.setValue(this.props.name, value, store);
+      store.setValue(this.props.name, value, store);
+    }
   } 
 
   render() {
@@ -90,6 +97,8 @@ class Field extends Component {
       )
       return null;
     }
+    const isCheckbox = this.props.type && (this.props.type === 'checkbox')
+    const isRadio = this.props.type && (this.props.type === 'radio')
     const renderField = this.context.getRenderField();
     let renderProps = {
       name,
@@ -99,9 +108,17 @@ class Field extends Component {
       renderField,
       error: this.state.error,
       status: this.state.status,
-      value: this.state.value || '',
+      value: (isCheckbox || isRadio) ? value : (this.state.value || ''),
       ...rest
     };
+    if (isCheckbox) {
+      const index = this.state.value.indexOf(value);
+      if (index < 0) {
+        renderProps = {...renderProps, checked: false}
+      } else {
+        renderProps = {...renderProps, checked: true}
+      }
+    }
     if (component || (children && !children.props.onChange)) {
       renderProps = Object.assign({}, renderProps, { onChange: this.handleChange })
     }

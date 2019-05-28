@@ -47,7 +47,7 @@ export default class FormCore {
 
   addRules(name, rules) {
     if (!this.rules[name]) {
-      this.rules[name] = rules;
+      this.rules[name] = Array.isArray(rules) ? rules : [rules];
     } else {
       this.rules[name] = this.rules[name].concat(rules)
     }

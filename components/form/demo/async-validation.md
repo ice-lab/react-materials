@@ -42,7 +42,10 @@ class App extends Component {
                   }} />
                 <Field name="age" label="年龄: " component="input" />
                 <Field name="desc" label="描述: " component="textarea" />
-                <Field name="open" label="是否打开: " component="input" value="option1" type="checkbox" />
+                <Field name="open" label="是否打开: " component="input" value="option1" type="checkbox" checked />
+                <Field name="open" label="是否打开: " component="input" value="option2" type="checkbox" checked />
+                <Field name="radio" label="是否打开2: " component="input" value="radio1" type="radio" />
+                <Field name="radio" label="是否打开2: " component="input" value="radio2" type="radio" />
                 <button type="submit">提交</button>
               </div>
             );
