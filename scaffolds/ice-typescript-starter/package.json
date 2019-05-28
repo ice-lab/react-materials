@@ -33,23 +33,17 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "ice-scripts": "^1.8.3"
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4"
   },
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
     "access": "public"
-  },
-  "buildConfig": {
-    "theme": "@icedesign/theme",
-    "entry": "src/index.tsx",
-    "output": {
-      "publicPath": "./"
-    }
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
