@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/yunqi-homepage-scaffold",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "云栖大会官方首页模板，适用于信息展示类的场景",
   "homepage": "https://unpkg.com/@icedesign/yunqi-homepage-scaffold@latest/build/index.html",
   "files": [
@@ -23,7 +23,6 @@
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "dependencies": {
