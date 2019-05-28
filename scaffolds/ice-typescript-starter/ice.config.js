@@ -5,5 +5,8 @@ module.exports = {
     ['ice-plugin-fusion', {
       theme: '@icedesign/theme',
     }],
+    ['ice-plugin-moment-locales', {
+      locales: ['zh-cn'],
+    }],
   ],
 };
