@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/algorithm-model-admin-scaffold",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "该模板适用于数据模型类的管理类后台，内置通用的介绍页和丰富的区块，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/algorithm-model-admin-scaffold@latest/build/index.html",
   "files": [
@@ -17,13 +17,12 @@
     "ice-scaffold"
   ],
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "dependencies": {
@@ -51,15 +50,9 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "ice-scripts": "^1.6.0-next.3"
-  },
-  "buildConfig": {
-    "theme": "@icedesign/theme",
-    "entry": "src/index.js",
-    "localization": false,
-    "output": {
-      "publicPath": "./"
-    }
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
