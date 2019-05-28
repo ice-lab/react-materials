@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/builder-platfrom-scaffold",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "该模板适用于云构建类的数据展示和管理后台",
   "homepage": "https://unpkg.com/@icedesign/builder-platfrom-scaffold@latest/build/index.html",
   "files": [
@@ -23,7 +23,6 @@
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "dependencies": {

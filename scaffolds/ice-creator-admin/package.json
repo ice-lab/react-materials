@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/creator-admin-scaffold",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "该模板适用于创作者发布文章，帖子类的管理后台",
   "homepage": "https://unpkg.com/@icedesign/creator-admin-scaffold@latest/build/index.html",
   "author": "noyobo <nongyoubao@alibaba-inc.com>",
@@ -66,7 +66,6 @@
     ]
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "repository": {
