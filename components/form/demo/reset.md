@@ -36,13 +36,13 @@ class App extends Component {
             }]
           }}
         >
-          {store => (
+          {(store) => (
             <div>
               <div>Hello Form</div>
               <Field label="姓名：" name="username" component="input" type="text" />
               <Field label="年龄：" name="age" component="input" type="number" />
               <button type="submit">Submit</button>
-              <button onClick={() => store.reset()}>Reset</button>
+              <button onClick={(e) => store.reset(e)}>Reset</button>
             </div>
           )}
         </Form>

@@ -1,6 +1,6 @@
 ---
 title: Custom Error
-order: 11
+order: 10000
 ---
 
 自定义错误组件

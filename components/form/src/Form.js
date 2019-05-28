@@ -14,19 +14,7 @@ class Form extends React.Component {
     }
   }
 
-  handleSubmit = event => {
-    if (event) {
-      // sometimes not true, e.g. React Native
-      if (typeof event.preventDefault === 'function') {
-        event.preventDefault()
-      }
-      if (typeof event.stopPropagation === 'function') {
-        // prevent any outer forms from receiving the event too
-        event.stopPropagation()
-      }
-    }
-    return this.store.submit();
-  }
+  handleSubmit = event => this.store.submit(event);
 
   componentDidUpdate(prevProps) {
     if (prevProps.initialValues !== this.props.initialValues) {
@@ -43,7 +31,7 @@ class Form extends React.Component {
           {...rest}
         >
           { typeof children === 'function' 
-              ? children({...this.store, handleSubmit: this.handleSubmit})
+              ? children(this.store)
               : children
           }
         </form>

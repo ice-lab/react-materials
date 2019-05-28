@@ -1,6 +1,6 @@
 ---
 title: Async Validation
-order: 12
+order: 11
 ---
 
 异步校验
@@ -25,18 +25,21 @@ class App extends Component {
           {(formCore) => {
             return (
               <div>
-                <Field name="name" label="名称: " component="input" rules={{
-                  async asyncValidator(rule, value, callback) {
-                    if (!value) {
-                      return callback(new Error('名称必填'));
+                <Field name="name" label="名称: " component="input" autoComplete="off" rules={{
+                    async asyncValidator(rule, value, callback) {
+                      if (!value) {
+                        callback('名称必填');
+                      } else {
+                        await sleep(500);
+
+                        if (~['john', 'paul', 'george', 'ringo'].indexOf(value)) {
+                          callback('名称已存在');
+                        } else {
+                          callback(undefined)
+                        }
+                      }
                     }
-                    await sleep(500);
-      
-                    if (~['john', 'paul', 'george', 'ringo'].indexOf(value)) {
-                      return callback(new Error('名称已存在'));
-                    }
-                  }
-                }} />
+                  }} />
                 <Field name="age" label="年龄: " component="input" />
                 <Field name="desc" label="描述: " component="textarea" />
                 <Field name="open" label="是否打开: " component="input" value="option1" type="checkbox" />

@@ -50,7 +50,7 @@ class Field extends Component {
           type = target.type,
           value = target.value,
           checked = target.checked;
-    
+
     if (type === 'checkbox') {
       if (!value) {
         throw new Error('value prop is required for checkbox');
@@ -76,11 +76,9 @@ class Field extends Component {
 
   handleChange = e => {
     const store = this.context;
-    // TODO checkbox multi-select
     const value = e && e.target
                     ? this.getValue(e)
                     : e;
-
     store.setValue(this.props.name, value, store);
   } 
 

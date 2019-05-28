@@ -32,8 +32,8 @@ class App extends Component {
     });
   };
 
-  onOk = () => {
-    this.handleSubmit();
+  onOk = (e) => {
+    this.handleSubmit(e);
   };
 
   async onSubmit(values) {
@@ -56,13 +56,13 @@ class App extends Component {
         >
           <Form onSubmit={this.onSubmit}>
             {store => {
-              this.handleSubmit = store.handleSubmit;
+              this.handleSubmit = store.submit.bind(store);
               return (
                 <div>
                   <Field name="name" label="名称: " component="input" />
                   <Field name="age" label="年龄: " component="input" />
                   <Field name="desc" label="描述: " component="textarea" />
-                  <Field name="open" label="是否打开: " component="input" type="checkbox" />
+                  <Field name="open" label="是否打开: " value="opt1" component="input" type="checkbox" />
                   <Field name="openDesc" label="打开时的描述: " component="input" />
                   <Field name="closeDesc" label="关闭时的描述: " component="input" />
                 </div>

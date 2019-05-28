@@ -1,6 +1,6 @@
 ---
 title: 飞猪联动 Demo
-order: 14
+order: 13
 ---
 
 ````jsx
@@ -34,9 +34,9 @@ class App extends Component {
               const value1 = formCore.getValue('number1');
               const value2 = formCore.getValue('number2');
               if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', '11111number1不能小于number2', true);
+                formCore.setError('number2', '11111number1不能小于number2');
               } else {
-                formCore.setError('number2', undefined, true);
+                formCore.setError('number2', undefined);
               }
             }
           }} />
@@ -45,9 +45,9 @@ class App extends Component {
               const value1 = formCore.getValue('number1');
               const value2 = formCore.getValue('number2');
               if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', '22222number1不能小于number2', true);
+                formCore.setError('number2', '22222number1不能小于number2');
               } else {
-                formCore.setError('number2', undefined, true);
+                formCore.setError('number2', undefined);
               }
             }
           }} />

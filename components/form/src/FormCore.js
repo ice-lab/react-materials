@@ -118,7 +118,7 @@ export default class FormCore {
     // set field errorMsg
     if (typeof name === 'string') {
       this.errors[name] = errorMsg;
-      notify && this.notify(name);
+      !notify && this.notify(name);
     } 
     // set form values
     else if (Object.prototype.toString.call(name) === '[object Object]') {
@@ -127,13 +127,31 @@ export default class FormCore {
     }
   }
 
-  reset() {
+  reset(event) {
+    if (event) {
+      if (typeof event.preventDefault === 'function') {
+        event.preventDefault()
+      }
+      if (typeof event.stopPropagation === 'function') {
+        event.stopPropagation()
+      }
+    }
     this.values = Object.assign({}, this.initialValues);
     this.errors = {};
     this.notify('*');
   }
 
-  submit() {
+  submit(event) {
+    if (event) {
+      // sometimes not true, e.g. React Native
+      if (typeof event.preventDefault === 'function') {
+        event.preventDefault()
+      }
+      if (typeof event.stopPropagation === 'function') {
+        // prevent any outer forms from receiving the event too
+        event.stopPropagation()
+      }
+    }
     const values = this.getValue();
     this.validate();
     const errors = this.getError();
@@ -144,10 +162,14 @@ export default class FormCore {
     if (!name) {
       Object.keys(this.rules).forEach(name => this.validate(name));
       this.notify('*');
+      return;
     }
 
     // 不存在的 Field 不做检验
     if (this.status[name] === 'hide') return;
+
+    // 没有 rules 的不需校验
+    if (!this.rules[name]) return;
 
     if (!this.validators[name]) {
       const descriptor = { [name]: this.rules[name] };
