@@ -53,5 +53,9 @@
     "categories": [
       "其他"
     ]
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://unpkg.com/@ice/form@0.1.0-0/build/index.html"
 }
