@@ -8,7 +8,7 @@ order: 6
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Field } from '@icedesign/form';
+import { Form, Field } from '@ice/form';
 import { Button, Input, Radio, Select, Checkbox, Switch } from '@alifd/next';
 import { Checkbox as ACheckbox, Radio as ARadio } from 'antd';
 import 'antd/dist/antd.css';
@@ -24,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form 
-          onSubmit={this.onSubmit} 
+        <Form
+          onSubmit={this.onSubmit}
           rules={{
             username: [{
               required: true,

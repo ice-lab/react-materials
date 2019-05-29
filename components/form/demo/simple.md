@@ -8,7 +8,7 @@ order: 1
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Field } from '@icedesign/form';
+import { Form, Field } from '@ice/form';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -21,8 +21,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form 
-          onSubmit={this.onSubmit} 
+        <Form
+          onSubmit={this.onSubmit}
           style={{color: '#ee7893'}}
         >
           <div>Hello Form</div>

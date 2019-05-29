@@ -8,7 +8,7 @@ order: 8
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Field } from '@icedesign/form';
+import { Form, Field } from '@ice/form';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 

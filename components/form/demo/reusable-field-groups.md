@@ -8,7 +8,7 @@ order: 7
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Field } from '@icedesign/form';
+import { Form, Field } from '@ice/form';
 
 const Address = ({ name, label }) => (
   <React.Fragment>
