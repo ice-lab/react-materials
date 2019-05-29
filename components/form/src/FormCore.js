@@ -1,6 +1,6 @@
 import Schema from 'async-validator';
 import find from 'lodash.find';
-import isEqual from "lodash.isequal";
+import isEqual from 'lodash.isequal';
 import { getField, hasAnyError } from './utils';
 
 export default class FormCore {
