@@ -1,26 +1,7 @@
 import Schema from 'async-validator';
 import find from 'lodash.find';
+import { getField, hasAnyError } from './utils';
 
-const getField = linkages => {
-  if (linkages.length === 0) return [];
-  const fields = [];
-  linkages.forEach(item => {
-    fields.push(item.field);
-  });
-  return fields;
-};
-
-const hasAnyError = errors => {
-  return Object.keys(errors).some((key) => {
-    const value = errors[key];
-
-    if (value && typeof value === 'object') {
-      return hasAnyError(value);
-    }
-
-    return typeof value !== 'undefined';
-  });
-};
 export default class FormCore {
   constructor({ initialValues = {}, rules = {}, linkages = [], onSubmit }) {
     this.onSubmit = onSubmit;
@@ -28,21 +9,22 @@ export default class FormCore {
     this.values = { ...this.initialValues };
     this.errors = {};
     this.status = {}; // field 显示/隐藏
+    this.props = {};
 
     this.rules = rules;
     this.linkages = linkages;
     this.linkageField = getField(linkages); // 联动监听的 field 列表
     this.listeners = [];
     this.validators = {};
-    this.renderField = null;
+    this.fieldLayout = null;
   }
 
-  getRenderField() {
-    return this.renderField;
+  getFieldLayout() {
+    return this.fieldLayout;
   }
 
-  setRenderField(layout) {
-    this.renderField = layout;
+  setFieldLayout(layout) {
+    this.fieldLayout = layout;
   }
 
   addRules(name, rules) {
@@ -68,6 +50,18 @@ export default class FormCore {
 
   getStatus(name) {
     return name && this.status[name];
+  }
+
+  getProps(name) {
+    return name && (this.props[name] || {});
+  }
+
+  setProps(name, prop) {
+    if (!this.props[name]) {
+      this.props[name] = {};
+    }
+    this.props[name] = { ...this.props[name], ...prop };
+    this.notify(name);
   }
 
   subscribe(listener) {

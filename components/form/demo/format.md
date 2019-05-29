@@ -26,7 +26,7 @@ class App extends Component {
           <Field name="name" label="名称: " component="input" format={value => value && value.toLowerCase()} />
           <Field name="age" label="年龄: " component="input" />
           <Field name="desc" label="描述: " component="textarea" />
-          <Field name="open" label="是否打开: " component="input" type="checkbox" />
+          <Field name="open" label="是否打开: " component="input" type="checkbox" value="yes" />
           <button type="submit">Submit</button>
         </Form>
       </div>

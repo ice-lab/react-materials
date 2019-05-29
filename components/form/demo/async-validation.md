@@ -9,6 +9,7 @@ order: 11
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@icedesign/form';
+import { Radio } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -46,6 +47,7 @@ class App extends Component {
                 <Field name="open" label="是否打开: " component="input" value="option2" type="checkbox" checked />
                 <Field name="radio" label="是否打开2: " component="input" value="radio1" type="radio" />
                 <Field name="radio" label="是否打开2: " component="input" value="radio2" type="radio" />
+                <Field name="radio" label="是否打开2: " component={Radio} />
                 <button type="submit">提交</button>
               </div>
             );

@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 
-function renderComponent(props) {
-  const { label, component, error, status, children, renderField, ...rest } = props;
+function renderField(props) {
+  const { label, component, error, status, children, fieldLayout, ...rest } = props;
 
   if (status === 'hide') return null;
 
@@ -13,17 +13,17 @@ function renderComponent(props) {
     child = React.cloneElement(children, { ...rest });
   }
 
-  if (renderField) {
-    return renderField(label, child, error);
+  if (fieldLayout) {
+    return fieldLayout(label, child, error);
   }
 
   return (
     <div>
-      <div>{label}</div>
-      <div>{child}</div>
-      <div>{error}</div>
+      <span>{label}</span>
+      <span>{child}</span>
+      <span>{error}</span>
     </div>
   );
 }
 
-export default renderComponent;
+export default renderField;

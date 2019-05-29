@@ -21,7 +21,7 @@ class App extends Component {
       <div>
         <Form 
           onSubmit={this.onSubmit} 
-          renderField={(label, component, error) => (
+          fieldLayout={(label, component, error) => (
             <div>
               <span>{label}</span>
               <span>{component}</span>

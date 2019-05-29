@@ -1,6 +1,7 @@
 import React from 'react';
 import FormContext from './context';
-import renderComponent from './renderComponent';
+import renderField from './renderField';
+import { getDynamicProps } from './utils';
 
 class Field extends React.Component {
   constructor(props, context) {
@@ -11,17 +12,21 @@ class Field extends React.Component {
 
     this.format = format;
 
+    const dynamicProps = getDynamicProps(props);
+    store.setProps(name, dynamicProps);
     !!rules && store.addRules(name, rules);
     !!linkages && store.addLinkages(name, linkages);
     !!status && store.setStatus(name, status, false);
 
     const isCheckbox = props.type && props.type === 'checkbox';
     const isRadio = props.type && props.type === 'radio';
+    if (isCheckbox || isRadio) {
+      if (!value) {
+        throw new Error("'value' prop is required for type='checkbox' and type='radio'.");
+      }
+    }
     if (value) {
       if (isCheckbox) {
-        if (!value) {
-          throw new Error('value prop is required for checkbox');
-        }
         const currentValue = store.getValue(name) || [];
         if (props.checked) {
           currentValue.push(value);
@@ -40,6 +45,7 @@ class Field extends React.Component {
       value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
       status: store.getStatus(name),
+      dynamicProps: store.getProps(name),
     };
   }
 
@@ -52,6 +58,7 @@ class Field extends React.Component {
           value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
           error: store.getError(name),
           status: store.getStatus(name),
+          dynamicProps: store.getProps(name),
         });
       }
     });
@@ -90,7 +97,7 @@ class Field extends React.Component {
   }
 
   render() {
-    const { name, label, component, children, status, linkages, rules, value, format, type, ...rest } = this.props;
+    const { name, value, type, component, onChange, children } = this.props;
     if (!name) {
       console.error(
         'Warning: Must specify a name prop to a Field.'
@@ -101,18 +108,13 @@ class Field extends React.Component {
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
-    const renderField = store.getRenderField();
+    const fieldLayout = store.getFieldLayout();
     let renderProps = {
-      name,
-      label,
-      component,
-      children,
-      renderField,
+      ...state.dynamicProps,
+      fieldLayout,
       error: state.error,
       status: state.status,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
-      type,
-      ...rest,
     };
     if (isCheckbox) {
       const index = state.value.indexOf(value);
@@ -123,9 +125,14 @@ class Field extends React.Component {
       }
     }
     if (component || (children && !children.props.onChange)) {
-      renderProps = Object.assign({}, renderProps, { onChange: this.handleChange });
+      if (onChange) {
+        renderProps = Object.assign({}, renderProps, { onChange: v => onChange(v, store) });
+      } else {
+        renderProps = Object.assign({}, renderProps, { onChange: this.handleChange });
+      }
     }
-    return renderComponent(renderProps);
+
+    return renderField(renderProps);
   }
 }
 

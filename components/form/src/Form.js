@@ -9,8 +9,8 @@ class Form extends React.Component {
     this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
 
     // 自定义 Field 布局
-    if (props.renderField) {
-      this.store.setRenderField(props.renderField);
+    if (props.fieldLayout) {
+      this.store.setFieldLayout(props.fieldLayout);
     }
   }
 
@@ -24,7 +24,7 @@ class Form extends React.Component {
   }
 
   render() {
-    const { initialValues, onSubmit, children, rules, linkages, renderField, ...rest } = this.props;
+    const { initialValues, onSubmit, children, rules, linkages, fieldLayout, ...rest } = this.props;
     return (
       <FormContext.Provider value={this.store}>
         <form
