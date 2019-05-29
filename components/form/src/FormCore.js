@@ -1,5 +1,6 @@
 import Schema from 'async-validator';
 import find from 'lodash.find';
+import isEqual from "lodash.isequal";
 import { getField, hasAnyError } from './utils';
 
 export default class FormCore {
@@ -17,6 +18,10 @@ export default class FormCore {
     this.listeners = [];
     this.validators = {};
     this.fieldLayout = null;
+  }
+
+  get pristine() {
+    return isEqual(this.initialValues, this.values);
   }
 
   getFieldLayout() {
