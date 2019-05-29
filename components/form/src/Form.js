@@ -4,8 +4,8 @@ import FormCore from './FormCore';
 
 class Form extends React.Component {
   constructor(props) {
-    super(props)
-    const {initialValues, rules, linkages, onSubmit} = props
+    super(props);
+    const { initialValues, rules, linkages, onSubmit } = props;
     this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
 
     // 自定义 Field 布局
@@ -17,26 +17,27 @@ class Form extends React.Component {
   handleSubmit = event => this.store.submit(event);
 
   componentDidUpdate(prevProps) {
-    if (prevProps.initialValues !== this.props.initialValues) {
-      this.store.setValue(this.props.initialValues);
+    const { initialValues } = this.props;
+    if (prevProps.initialValues !== initialValues) {
+      this.store.setValue(initialValues);
     }
   }
 
   render() {
-    const {initialValues, onSubmit, children, rules, linkages, renderField, ...rest} = this.props;
+    const { initialValues, onSubmit, children, rules, linkages, renderField, ...rest } = this.props;
     return (
       <FormContext.Provider value={this.store}>
-        <form 
+        <form
           onSubmit={this.handleSubmit}
           {...rest}
         >
-          { typeof children === 'function' 
-              ? children(this.store)
-              : children
+          { typeof children === 'function'
+            ? children(this.store)
+            : children
           }
         </form>
       </FormContext.Provider>
-    )
+    );
   }
 }
 

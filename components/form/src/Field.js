@@ -1,13 +1,13 @@
-import React, {Component, useRef, useState, useEffect, useCallback} from 'react';
+import React from 'react';
 import FormContext from './context';
 import renderComponent from './renderComponent';
 
-class Field extends Component {
+class Field extends React.Component {
   constructor(props, context) {
     super(props, context);
     const store = context;
 
-    const {name, rules, linkages, status, value, format} = props;
+    const { name, rules, linkages, status, value, format } = props;
 
     this.format = format;
 
@@ -24,7 +24,7 @@ class Field extends Component {
         }
         const currentValue = store.getValue(name) || [];
         if (props.checked) {
-          currentValue.push(value)
+          currentValue.push(value);
         }
         store.setValueWithoutNotify(name, currentValue);
       } else if (isRadio) {
@@ -35,9 +35,9 @@ class Field extends Component {
         store.setValueWithoutNotify(name, value);
       }
     }
-    
+
     this.state = {
-      value: this.format? this.format(store.getValue(name)) : store.getValue(name),
+      value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
       status: store.getStatus(name),
     };
@@ -47,15 +47,14 @@ class Field extends Component {
     const store = this.context;
     const { name } = this.props;
     this.unsubscribe = store.subscribe(n => {
-      const name = this.props.name;
       if (n === name || n === '*') {
         this.setState({
-          value: this.format? this.format(store.getValue(name)) : store.getValue(name),
+          value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
           error: store.getError(name),
-          status: store.getStatus(name)
-        })
+          status: store.getStatus(name),
+        });
       }
-    })
+    });
   }
 
   componentWillUnmount() {
@@ -67,11 +66,12 @@ class Field extends Component {
 
   handleChange = e => {
     const store = this.context;
+    const { name } = this.props;
 
     if (e && e.target && e.target.type === 'checkbox') {
       const checked = e.target.checked;
       const value = e.target.value;
-      let currentValue = store.getValue(this.props.name) || [];
+      let currentValue = store.getValue(name) || [];
       if (checked) {
         currentValue.push(value);
       } else {
@@ -80,47 +80,50 @@ class Field extends Component {
           currentValue = currentValue.slice(0, index).concat(currentValue.slice(index + 1));
         }
       }
-      store.setValue(this.props.name, currentValue);
+      store.setValue(name, currentValue);
     } else {
       const value = e && e.target
-                    ? e.target.value
-                    : e;
-      store.setValue(this.props.name, value, store);
+        ? e.target.value
+        : e;
+      store.setValue(name, value, store);
     }
-  } 
+  }
 
   render() {
-    const {name, label, component, children, status, linkages, rules, value, format, ...rest} = this.props;
+    const { name, label, component, children, status, linkages, rules, value, format, type, ...rest } = this.props;
     if (!name) {
       console.error(
-        `Warning: Must specify a name prop to a Field.`
-      )
+        'Warning: Must specify a name prop to a Field.'
+      );
       return null;
     }
-    const isCheckbox = this.props.type && (this.props.type === 'checkbox')
-    const isRadio = this.props.type && (this.props.type === 'radio')
-    const renderField = this.context.getRenderField();
+    const isCheckbox = type && (type === 'checkbox');
+    const isRadio = type && (type === 'radio');
+    const store = this.context;
+    const state = this.state;
+    const renderField = store.getRenderField();
     let renderProps = {
       name,
       label,
       component,
       children,
       renderField,
-      error: this.state.error,
-      status: this.state.status,
-      value: (isCheckbox || isRadio) ? value : (this.state.value || ''),
-      ...rest
+      error: state.error,
+      status: state.status,
+      value: (isCheckbox || isRadio) ? value : (state.value || ''),
+      type,
+      ...rest,
     };
     if (isCheckbox) {
-      const index = this.state.value.indexOf(value);
+      const index = state.value.indexOf(value);
       if (index < 0) {
-        renderProps = {...renderProps, checked: false}
+        renderProps = { ...renderProps, checked: false };
       } else {
-        renderProps = {...renderProps, checked: true}
+        renderProps = { ...renderProps, checked: true };
       }
     }
     if (component || (children && !children.props.onChange)) {
-      renderProps = Object.assign({}, renderProps, { onChange: this.handleChange })
+      renderProps = Object.assign({}, renderProps, { onChange: this.handleChange });
     }
     return renderComponent(renderProps);
   }

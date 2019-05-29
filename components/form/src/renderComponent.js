@@ -1,16 +1,16 @@
 import React, { createElement } from 'react';
 
 function renderComponent(props) {
-  const { label, component, error, status, children, renderField, ...rest} = props;
+  const { label, component, error, status, children, renderField, ...rest } = props;
 
   if (status === 'hide') return null;
 
   let child;
 
   if (component) {
-    child = createElement(component, {children, ...rest})
+    child = createElement(component, { children, ...rest });
   } else if (children) {
-    child = React.cloneElement(children, {...rest})
+    child = React.cloneElement(children, { ...rest });
   }
 
   if (renderField) {
@@ -23,7 +23,7 @@ function renderComponent(props) {
       <div>{child}</div>
       <div>{error}</div>
     </div>
-  )
+  );
 }
 
 export default renderComponent;
