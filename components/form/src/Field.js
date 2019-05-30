@@ -1,7 +1,7 @@
 import React from 'react';
 import FormContext from './context';
 import renderField from './renderField';
-import { getDynamicProps } from './utils';
+import getComponentProps from './getComponentProps';
 
 class Field extends React.Component {
   constructor(props, context) {
@@ -10,8 +10,8 @@ class Field extends React.Component {
 
     const { name, rules, linkages, value, format } = props;
 
-    const dynamicProps = getDynamicProps(props);
-    store.setProps(name, dynamicProps);
+    const componentProps = getComponentProps(props);
+    store.setProps(name, componentProps);
     !!rules && store.addRules(name, rules);
     !!linkages && store.addLinkages(name, linkages);
     !!status && store.setStatus(name, status, false);
@@ -42,7 +42,7 @@ class Field extends React.Component {
     this.state = {
       value: format ? format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
-      dynamicProps: store.getProps(name),
+      componentProps: store.getProps(name),
     };
   }
 
@@ -54,7 +54,7 @@ class Field extends React.Component {
         this.setState({
           value: format ? format(store.getValue(name)) : store.getValue(name),
           error: store.getError(name),
-          dynamicProps: store.getProps(name),
+          componentProps: store.getProps(name),
         });
       }
     });
@@ -106,7 +106,7 @@ class Field extends React.Component {
     const state = this.state;
     const fieldLayout = store.getFieldLayout();
     let renderProps = {
-      ...state.dynamicProps,
+      ...state.componentProps,
       fieldLayout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),

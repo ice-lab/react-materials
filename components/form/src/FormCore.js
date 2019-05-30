@@ -1,19 +1,16 @@
 import Schema from 'async-validator';
-import find from 'lodash.find';
 import isEqual from 'lodash.isequal';
-import { getField, hasAnyError } from './utils';
 
 export default class FormCore {
   constructor({ initialValues = {}, rules = {}, linkages = [], onSubmit }) {
     this.onSubmit = onSubmit;
-    this.initialValues = Object.keys(initialValues).length > 0 ? { ...initialValues } : {};
+    this.initialValues = { ...initialValues };
     this.values = { ...this.initialValues };
     this.errors = {};
     this.props = {};
 
     this.rules = rules;
     this.linkages = linkages;
-    this.linkageField = getField(linkages); // 联动监听的 field 列表
     this.listeners = [];
     this.validators = {};
     this.fieldLayout = null;
@@ -39,20 +36,17 @@ export default class FormCore {
     }
   }
 
-  addLinkages(name, linkages) {
-    if (find(this.linkages, { field: name })) return;
-    linkages.field = name;
-    this.linkages.push(linkages);
+  addLinkages(name, linkage) {
+    if (this.linkages.find(item => item.field === name)) return;
+    linkage.field = name;
+    this.linkages.push(linkage);
   }
 
   getProps(name) {
-    return name && (this.props[name] || {});
+    return this.props[name] || {};
   }
 
   setProps(name, prop) {
-    if (!this.props[name]) {
-      this.props[name] = {};
-    }
     this.props[name] = { ...this.props[name], ...prop };
     this.notify(name);
   }
@@ -85,9 +79,9 @@ export default class FormCore {
       }
 
       // linkage
-      const linkage = find(this.linkages, { field: name });
-      if (linkage) {
-        store && linkage.handler(store);
+      const linkage = this.linkages.find(item => item.field === name);
+      if (linkage && store) {
+        linkage.handler(store);
       }
     } else if (Object.prototype.toString.call(name) === '[object Object]') {
       const values = name;
@@ -96,7 +90,7 @@ export default class FormCore {
   }
 
   setValueWithoutNotify(name, value) {
-    name && (this.values[name] = value);
+    this.values[name] = value;
   }
 
   getError(name) {
@@ -140,8 +134,10 @@ export default class FormCore {
       }
     }
     const result = await this.validate();
-
-    if (!hasAnyError(result)) {
+    const hasAnyError = result.some(item => {
+      return item !== 'success';
+    });
+    if (!hasAnyError) {
       // result = ['success', 'success', 'success']
       this.onSubmit(this.getValue());
     } else {
