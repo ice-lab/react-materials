@@ -26,20 +26,6 @@ class App extends Component {
     window.alert(JSON.stringify(values, 0, 2))
   }
 
-  handleProvinceChange(value, store) {
-    store.setValue('province', value)
-    store.setProps('city', {dataSource: cityData[value]})
-  }
-
-  handleCityChange(value, store) {
-    store.setValue('city', value);
-    if (value === 'Suzhou') {
-      store.setProps('age', {disabled: true})
-    } else {
-      store.setProps('age', {disabled: false})
-    }
-  }
-
   render() {
     return (
       <div>
@@ -49,8 +35,24 @@ class App extends Component {
         >
           <div>当城市为“武汉”，则 disabled 年龄</div>
           <Field label="年龄" name="age" component="input" type="number" />
-          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} type="text" onChange={(value, store) => this.handleProvinceChange(value, store)} />
-          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} type="text" onChange={(value, store) => this.handleCityChange(value, store)} />
+          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} type="text" linkages={{
+            handler: formCore => {
+              const value = formCore.getValue('province')
+              formCore.setValue('province', value)
+              formCore.setProps('city', {dataSource: cityData[value]})
+            }
+          }} />
+          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} type="text" linkages={{
+            handler: formCore => {
+              const value = formCore.getValue('city')
+              formCore.setValue('city', value);
+              if (value === 'Suzhou') {
+                formCore.setProps('age', {disabled: true})
+              } else {
+                formCore.setProps('age', {disabled: false})
+              }
+            }
+          }} />
           <button type="submit">Submit</button>
         </Form>
       </div>
