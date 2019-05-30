@@ -141,6 +141,7 @@ ReactDOM.render((
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | linkages |  联动规则   |  N    |   object   |    -    |   -   |
 | status |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
+| format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
 
 其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
 `Field` 的 `rules` 和 `linkages` 不需要 `name` 作为 key 了，写法如下：

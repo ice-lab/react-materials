@@ -10,8 +10,6 @@ class Field extends React.Component {
 
     const { name, rules, linkages, status, value, format } = props;
 
-    this.format = format;
-
     const dynamicProps = getDynamicProps(props);
     store.setProps(name, dynamicProps);
     !!rules && store.addRules(name, rules);
@@ -42,7 +40,7 @@ class Field extends React.Component {
     }
 
     this.state = {
-      value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
+      value: format ? format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
       status: store.getStatus(name),
       dynamicProps: store.getProps(name),
@@ -51,11 +49,11 @@ class Field extends React.Component {
 
   componentDidMount() {
     const store = this.context;
-    const { name } = this.props;
+    const { name, format } = this.props;
     this.unsubscribe = store.subscribe(n => {
       if (n === name || n === '*') {
         this.setState({
-          value: this.format ? this.format(store.getValue(name)) : store.getValue(name),
+          value: format ? format(store.getValue(name)) : store.getValue(name),
           error: store.getError(name),
           status: store.getStatus(name),
           dynamicProps: store.getProps(name),
@@ -126,7 +124,7 @@ class Field extends React.Component {
     }
     if (component || (children && !children.props.onChange)) {
       if (onChange) {
-        renderProps = Object.assign({}, renderProps, { onChange: v => onChange(v, store) });
+        renderProps = Object.assign({}, renderProps, { onChange });
       } else {
         renderProps = Object.assign({}, renderProps, { onChange: this.handleChange });
       }

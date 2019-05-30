@@ -1,14 +1,15 @@
 ---
-title: Simple Usage
+title: 基本用法
 order: 1
 ---
 
-简单 Form 的用法
+Form 的基本用法
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,18 +24,12 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          style={{color: '#ee7893'}}
         >
-          <div>Hello Form</div>
-          <Field label="姓名：" name="username" component="input" type="text" />
-          <Field label="年龄：" name="age" component='input' type="number" />
-          <Field label="爱好：" name="hobby" component='select'>
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Dog</option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-          </Field>
-          <button type="submit">Submit</button>
+          <h2>个人资料</h2>
+          <Field label="姓名：" name="username" component={Input} />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" />
+          <Field label="简介：" name="introduction" component={Input.TextArea} />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );
