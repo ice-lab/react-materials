@@ -85,11 +85,15 @@ export default class FormCore {
     return name ? this.values[name] : this.values;
   }
 
-  setValue(name, value, store) {
-    // set field value
+  async setValue(name, value, store) {
     if (typeof name === 'string') {
       this.values[name] = value;
-      this.validate(name);
+      const result = await this.validate(name);
+      if (result === 'success') {
+        this.setError(name, undefined);
+      } else {
+        this.setError(name, result[0].message);
+      }
       this.notify(name);
 
       // linkage
@@ -136,7 +140,7 @@ export default class FormCore {
     this.notify('*');
   }
 
-  submit(event) {
+  async submit(event) {
     if (event) {
       // sometimes not true, e.g. React Native
       if (typeof event.preventDefault === 'function') {
@@ -147,24 +151,37 @@ export default class FormCore {
         event.stopPropagation();
       }
     }
-    const values = this.getValue();
-    this.validate();
-    const errors = this.getError();
-    if (!hasAnyError(errors)) return this.onSubmit(values);
+    const result = await this.validate();
+
+    if (!hasAnyError(result)) {
+      // result = ['success', 'success', 'success']
+      this.onSubmit(this.getValue());
+    } else {
+      result.forEach(res => {
+        if (res !== 'success') {
+          const field = res[0].field;
+          const errMsg = res[0].message;
+          this.setError(field, errMsg);
+        }
+      });
+    }
   }
 
   validate(name) {
     if (!name) {
-      Object.keys(this.rules).forEach(field => this.validate(field));
-      this.notify('*');
-      return;
+      return Promise.all(
+        Object.keys(this.rules).map(async field => {
+          const res = await this.validate(field);
+          return res;
+        })
+      );
     }
 
     // 不存在的 Field 不做检验
-    if (this.status[name] === 'hide') return;
+    if (this.status[name] === 'hide') return new Promise(resolve => resolve('success'));
 
     // 没有 rules 的不需校验
-    if (!this.rules[name]) return;
+    if (!this.rules[name]) return new Promise(resolve => resolve('success'));
 
     if (!this.validators[name]) {
       const descriptor = { [name]: this.rules[name] };
@@ -175,20 +192,12 @@ export default class FormCore {
     const value = this.getValue(name);
 
     try {
-      this.validators[name].validate({ [name]: value }, (errors, fields) => {
-        if (errors) {
-          // validation failed, errors is an array of all errors
-          // fields is an object keyed by field name with an array of
-          // errors per field
-          // console.error(errors, fields);
-          this.setError(name, fields[name][0].message);
-        } else {
-          // validation passed
-          this.setError(name, undefined);
-        }
-      });
+      return this.validators[name].validate({ [name]: value }, () => {})
+        .then(() => 'success')
+        .catch(({ errors }) => {
+          return errors;
+        });
     } catch (e) {
-      // validation failed
       console.error(e);
     }
   }

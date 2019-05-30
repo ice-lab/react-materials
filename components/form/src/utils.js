@@ -26,13 +26,7 @@ export const getField = linkages => {
 };
 
 export const hasAnyError = errors => {
-  return Object.keys(errors).some((key) => {
-    const value = errors[key];
-
-    if (value && typeof value === 'object') {
-      return hasAnyError(value);
-    }
-
-    return typeof value !== 'undefined';
+  return errors.some(item => {
+    return item !== 'success';
   });
 };

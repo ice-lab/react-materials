@@ -13,9 +13,9 @@
 
 ## 架构方案
 
-![](https://img.alicdn.com/tfs/TB15QS8aL1H3KVjSZFHXXbKppXa-1024-768.jpg)
+![](https://img.alicdn.com/tfs/TB1gFAvaUGF3KVjSZFoXXbmpFXa-1024-768.jpg)
 
-如上图所示，整个表单的数据都放在 FormCore 这一层，同时 FormCore 会暴露一些 API，以便获取、设置、处理数据。Form、Field 组件通过 Sub/Pub 模式与 FormCore 通信，FormCore 通知组件何时需要重新渲染。在组件的上层，可以结合 Fusion、Antd 等三方组件库使用。
+如上图所示，整个表单的数据都放在 FormCore 这一层，同时 FormCore 会暴露一些 API，以便获取、设置、处理数据。Form、Field 组件通过 Sub/Pub 模式与 FormCore 通信，FormCore 通知组件何时需要重新渲染。表单提供了校验、联动以及结合 Fusion、Antd 三方组件库使用等能力。
 
 ## 为什么不？
 
