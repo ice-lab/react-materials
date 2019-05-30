@@ -1,14 +1,15 @@
 ---
-title: Reset Form
+title: 重置表单
 order: 2
 ---
 
-调用 store 中的方法，Form 子组件使用 function 渲染
+`Form` 子组件使用 `function` 渲染时，可以调用 `FormCore` 中的 `API`
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,26 +24,15 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          style={{color: '#ee7893'}}
-          rules={{
-            username: [{
-              required: true,
-              min: 5,
-              message: '姓名至少5个字符'
-            }],
-            age:  [{
-              required: true,
-              message: '年龄必填'
-            }]
-          }}
         >
-          {(store) => (
+          {formCore => (
             <div>
-              <div>Hello Form</div>
-              <Field label="姓名：" name="username" component="input" type="text" />
-              <Field label="年龄：" name="age" component="input" type="number" />
-              <button type="submit">Submit</button>
-              <button onClick={(e) => store.reset(e)}>Reset</button>
+              <h2>个人资料</h2>
+              <Field label="姓名：" name="username" component={Input} />
+              <Field label="年龄：" name="age" component={Input} htmlType="number" />
+              <Field label="简介：" name="intro" component={Input.TextArea} />
+              <Button htmlType="submit">Submit</Button>
+              <Button onClick={(e) => formCore.reset(e)}>Reset</Button>
             </div>
           )}
         </Form>

@@ -1,15 +1,15 @@
 ---
 title: 省市联动
-order: 14
+order: 6
 ---
 
-联动
+省市联动
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Select } from '@alifd/next';
+import { Input, Button, Select } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -31,29 +31,33 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          style={{color: '#ee7893'}}
         >
-          <div>当城市为“武汉”，则 disabled 年龄</div>
-          <Field label="年龄" name="age" component="input" type="number" />
-          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} type="text" linkages={{
+          <div>当城市为“苏州”，则 disabled 人口</div>
+          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} linkages={{
             handler: formCore => {
-              const value = formCore.getValue('province')
-              formCore.setValue('province', value)
-              formCore.setProps('city', {dataSource: cityData[value]})
+              const province = formCore.getValue('province')
+              formCore.setValue({
+                province,
+                city: '',
+                population: 0
+              })
+              formCore.setProps('city', {dataSource: cityData[province]})
             }
           }} />
-          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} type="text" linkages={{
+          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} linkages={{
             handler: formCore => {
-              const value = formCore.getValue('city')
-              formCore.setValue('city', value);
-              if (value === 'Suzhou') {
-                formCore.setProps('age', {disabled: true})
+              const city = formCore.getValue('city')
+              formCore.setValue('city', city);
+              if (city === 'Suzhou') {
+                formCore.setProps('population', {disabled: true})
+                formCore.setValue('population', 0)
               } else {
-                formCore.setProps('age', {disabled: false})
+                formCore.setProps('population', {disabled: false})
               }
             }
           }} />
-          <button type="submit">Submit</button>
+          <Field label="人口：" name="population" placeholder="The population of the city" component={Input} htmlType="number" />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

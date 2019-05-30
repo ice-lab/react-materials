@@ -1,15 +1,15 @@
 ---
-title: Async Validation
-order: 11
+title: 异步校验
+order: 4
 ---
 
-异步校验
+异步校验，校验结果的 `message` 直接 `callback` 即可
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Radio } from '@alifd/next';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,35 +23,29 @@ class App extends Component {
     return (
       <div>
         <Form onSubmit={this.onSubmit}>
-          {(formCore) => {
-            return (
-              <div>
-                <Field name="name" label="名称: " component="input" autoComplete="off" rules={{
-                    async asyncValidator(rule, value, callback) {
-                      if (!value) {
-                        callback('名称必填');
-                      } else {
-                        await sleep(500);
+          <h2>个人资料</h2>
+          <Field name="name" label="名称：" component={Input} autoComplete="off" rules={{
+              async asyncValidator(rule, value, callback) {
+                if (!value) {
+                  callback('名称必填');
+                } else {
+                  await sleep(500);
 
-                        if (~['john', 'paul', 'george', 'ringo'].indexOf(value)) {
-                          callback('名称已存在');
-                        } else {
-                          callback(undefined)
-                        }
-                      }
-                    }
-                  }} />
-                <Field name="age" label="年龄: " component="input" />
-                <Field name="desc" label="描述: " component="textarea" />
-                <Field name="open" label="是否打开: " component="input" value="option1" type="checkbox" checked />
-                <Field name="open" label="是否打开: " component="input" value="option2" type="checkbox" checked />
-                <Field name="radio" label="是否打开2: " component="input" value="radio1" type="radio" />
-                <Field name="radio" label="是否打开2: " component="input" value="radio2" type="radio" />
-                <Field name="radio" label="是否打开2: " component={Radio} />
-                <button type="submit">提交</button>
-              </div>
-            );
-          }}
+                  if (~['john', 'paul', 'george', 'ringo'].indexOf(value)) {
+                    callback('名称已存在');
+                  } else {
+                    callback(undefined)
+                  }
+                }
+              }
+            }} />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" rules={[{
+            message: '年龄必填且大于18岁',
+            required: true,
+            validator: (rule, value) => value > 18
+          }]} />
+          <Field label="简介：" name="intro" component={Input.TextArea} />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

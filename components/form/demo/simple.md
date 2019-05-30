@@ -3,7 +3,7 @@ title: 基本用法
 order: 1
 ---
 
-Form 的基本用法
+`Form` 的基本用法
 
 ````jsx
 import React, { Component } from 'react';
@@ -28,7 +28,7 @@ class App extends Component {
           <h2>个人资料</h2>
           <Field label="姓名：" name="username" component={Input} />
           <Field label="年龄：" name="age" component={Input} htmlType="number" />
-          <Field label="简介：" name="introduction" component={Input.TextArea} />
+          <Field label="简介：" name="intro" component={Input.TextArea} />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>

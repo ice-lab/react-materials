@@ -1,14 +1,15 @@
 ---
-title: Format
-order: 8
+title: 格式化 Field 值
+order: 9
 ---
 
-简单 Form 的用法
+Format Feild's value
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,11 +24,12 @@ class App extends Component {
       <div>
         <Form onSubmit={this.onSubmit}>
           <h1>Field Format</h1>
-          <Field name="name" label="名称: " component="input" format={value => value && value.toLowerCase()} />
-          <Field name="age" label="年龄: " component="input" />
-          <Field name="desc" label="描述: " component="textarea" />
-          <Field name="open" label="是否打开: " component="input" type="checkbox" value="yes" />
-          <button type="submit">Submit</button>
+          <Field name="name" label="名称: " component={Input} format={
+            value => value && value.toLowerCase()
+          } />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" />
+          <Field label="简介：" name="intro" component={Input.TextArea} />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

@@ -1,14 +1,15 @@
 ---
-title: Loading Value
-order: 9
+title: 异步加载数据渲染
+order: 11
 ---
 
-加载数据
+异步加载数据进行首屏渲染
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -39,17 +40,16 @@ class App extends Component {
     const Age = (<span style={{color: 'green'}}>年龄：</span>);
     return (
       <div>
-        <h1>加载表单数据并且初始化</h1>
+        <h2>加载表单数据并且初始化</h2>
         <Form
           initialValues={this.state.data}
           onSubmit={this.onSubmit}
         >
           {this.state.loading && <div className="loading">loading...</div>}
-          <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component="input" />
-          <Field name="age" label={Age} component="input" />
-          <Field name="desc" label="描述: " component="textarea" />
-          <Field name="open" label="是否打开: " component="input" type="checkbox" value="option1" />
-          <button type="submit">Submit</button>
+          <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component={Input} />
+          <Field name="age" label={Age} component={Input} />
+          <Field name="desc" label="描述: " component={Input.TextArea} />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

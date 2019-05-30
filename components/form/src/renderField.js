@@ -1,9 +1,9 @@
 import React, { createElement } from 'react';
 
 function renderField(props) {
-  const { label, component, error, status, children, fieldLayout, ...rest } = props;
+  const { label, component, error, display, children, fieldLayout, ...rest } = props;
 
-  if (status === 'hide') return null;
+  if (display === 'hide') return null;
 
   let child;
 

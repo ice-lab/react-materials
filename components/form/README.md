@@ -140,7 +140,7 @@ ReactDOM.render((
 | component |  表单类型，原生 html 标签或者三方组件   |  N    |     |    -    | 'input' 'textarea' Input Radio   |
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | linkages |  联动规则   |  N    |   object   |    -    |   -   |
-| status |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
+| display |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
 | format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
 
 其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
@@ -152,9 +152,9 @@ ReactDOM.render((
   <Field label="昵称：" name="nickname" component="input" type="text" linkages={{
     handler: formCore => {
       if (formCore.getValue('nickname') === 'snow') {
-        formCore.setStatus('age', 'show');
+        formCore.setProps('age', {display: 'show'});
       } else {
-        formCore.setStatus('age', 'hide');
+        formCore.setProps('age', {display: 'hide'});
       }
     }
   }} />
@@ -178,10 +178,6 @@ ReactDOM.render((
   获取某一 `Field` 的 error 信息
 - `setError(name, errMsg)`
   设置某一 `Field` 的 error 信息
-- `getStatus(name)`
-  获取某一 `Field` 的值
-- `setStatus(name, status)`
-  设置某一 `Field` 的值
 - `getProps(name)`
   获取某一 `Field` 的属性值
 - `setProps(name, prop)`

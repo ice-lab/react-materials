@@ -1,38 +1,37 @@
 ---
-title: 复用的 Field 组
-order: 7
+title: 复用 Field 组
+order: 10
 ---
-
-简单 Form 的用法
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const Address = ({ name, label }) => (
   <React.Fragment>
     <div>
       <Field
         name={`${name}.street`}
-        component="input"
-        label={`${label} Street`}
+        component={Input}
+        label={`${label} Street：`}
         placeholder={`${label} Street`}
       />
     </div>
     <div>
       <Field
         name={`${name}.city`}
-        label={`${label} City`}
-        component="input"
+        label={`${label} City：`}
+        component={Input}
         placeholder={`${label} City`}
       />
     </div>
     <div>
       <Field
         name={`${name}.postalCode`}
-        label={`${label} Postal Code`}
-        component="input"
+        label={`${label} Postal Code：`}
+        component={Input}
         placeholder={`${label} Postal Code`}
       />
     </div>
@@ -54,7 +53,7 @@ class App extends Component {
           <h1>可复用的 Field Group</h1>
           <Address name="billing" label="Billing" />
           <Address name="shipping" label="Shipping" />
-          <button type="submit">Submit</button>
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

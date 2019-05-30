@@ -1,15 +1,15 @@
 ---
-title: Dialog Form
-order: 10
+title: Dialog 表单
+order: 12
 ---
 
-form 结合对话框
+Form 结合对话框
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Button, Dialog } from '@alifd/next';
+import { Input, Button, Dialog, Radio } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -55,16 +55,16 @@ class App extends Component {
           onClose={this.onClose}
         >
           <Form onSubmit={this.onSubmit}>
-            {store => {
-              this.handleSubmit = store.submit.bind(store);
+            {formCore => {
+              this.handleSubmit = formCore.submit.bind(formCore);
               return (
                 <div>
-                  <Field name="name" label="名称: " component="input" />
-                  <Field name="age" label="年龄: " component="input" />
-                  <Field name="desc" label="描述: " component="textarea" />
-                  <Field name="open" label="是否打开: " value="opt1" component="input" type="checkbox" />
-                  <Field name="openDesc" label="打开时的描述: " component="input" />
-                  <Field name="closeDesc" label="关闭时的描述: " component="input" />
+                  <Field name="name" label="名称：" component={Input} />
+                  <Field name="age" label="年龄：" component={Input} />
+                  <Field name="desc" label="描述：" component={Input.TextArea} />
+                  <Field name="open" label="是否打开：" component={Radio} />
+                  <Field name="openDesc" label="打开时的描述：" component={Input} />
+                  <Field name="closeDesc" label="关闭时的描述：" component={Input} />
                 </div>
               )
             }}

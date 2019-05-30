@@ -1,12 +1,14 @@
 ---
 title: 飞猪联动 Demo
-order: 13
+order: 7
 ---
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
+
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -29,29 +31,29 @@ class App extends Component {
             </div>
           )}
         >
-          <Field label="Number1：" name="number1" component="input" type="number" linkages={{
+          <Field label="Number1：" name="number1" component={Input} htmlType="number" linkages={{
             handler: formCore => {
               const value1 = formCore.getValue('number1');
               const value2 = formCore.getValue('number2');
               if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', '11111number1不能小于number2');
+                formCore.setError('number2', 'number1不能小于number2');
               } else {
                 formCore.setError('number2', undefined);
               }
             }
           }} />
-          <Field label="Number2：" name="number2" component='input' type="number" linkages={{
+          <Field label="Number2：" name="number2" component={Input} htmlType="number" linkages={{
             handler: formCore => {
               const value1 = formCore.getValue('number1');
               const value2 = formCore.getValue('number2');
               if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', '22222number1不能小于number2');
+                formCore.setError('number2', 'number1不能小于number2');
               } else {
                 formCore.setError('number2', undefined);
               }
             }
           }} />
-          <button type="submit">Submit</button>
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

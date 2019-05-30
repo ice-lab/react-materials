@@ -8,7 +8,7 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, linkages, status, value, format } = props;
+    const { name, rules, linkages, value, format } = props;
 
     const dynamicProps = getDynamicProps(props);
     store.setProps(name, dynamicProps);
@@ -42,7 +42,6 @@ class Field extends React.Component {
     this.state = {
       value: format ? format(store.getValue(name)) : store.getValue(name),
       error: store.getError(name),
-      status: store.getStatus(name),
       dynamicProps: store.getProps(name),
     };
   }
@@ -55,7 +54,6 @@ class Field extends React.Component {
         this.setState({
           value: format ? format(store.getValue(name)) : store.getValue(name),
           error: store.getError(name),
-          status: store.getStatus(name),
           dynamicProps: store.getProps(name),
         });
       }
@@ -111,7 +109,6 @@ class Field extends React.Component {
       ...state.dynamicProps,
       fieldLayout,
       error: state.error,
-      status: state.status,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
     if (isCheckbox) {

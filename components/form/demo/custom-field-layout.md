@@ -1,14 +1,15 @@
 ---
-title: 自定义Field布局
-order: 12
+title: 自定义 Field 布局
+order: 8
 ---
 
-简单 Form 的用法
+通过 Form 的 fieldLayout 自定义 Field 布局
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
+import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -38,10 +39,9 @@ class App extends Component {
             }]
           }}
         >
-          <div>Hello Form</div>
-          <Field label="姓名：" name="username" component="input" type="text" />
-          <Field label="年龄：" name="age" component='input' type="number" />
-          <button type="submit">Submit</button>
+          <Field label="姓名：" name="username" component={Input} />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" />
+          <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
     );

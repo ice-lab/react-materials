@@ -1,15 +1,14 @@
 ---
-title: 基础校验
-order: 3
+title: 原生 html 标签
+order: 14
 ---
 
-校验规则可以写在 `Form` 属性上或者 `Field` 属性上
+使用原生 html 标签
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Button, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -33,14 +32,16 @@ class App extends Component {
           }}
         >
           <h2>个人资料</h2>
-          <Field label="姓名：" name="username" component={Input} />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" rules={[{
-            message: '年龄必填且大于18岁',
-            required: true,
-            validator: (rule, value) => value > 18
-          }]} />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="姓名：" name="username" component="input" />
+          <Field label="年龄：" name="age" component="input" type="number" />
+          <Field label="简介：" name="intro" component="textarea" />
+          <Field label="框架：" name="framework" component="select" value="react">
+            <option value="vue">Vue</option> 
+            <option value="react">React</option>
+            <option value="angular">Angular</option>
+          </Field>
+          <Field label="ICE背景：" name="ice" component="input" value="yes" type="radio" />
+          <button type="submit">Submit</button>
         </Form>
       </div>
     );

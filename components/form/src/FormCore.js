@@ -9,7 +9,6 @@ export default class FormCore {
     this.initialValues = Object.keys(initialValues).length > 0 ? { ...initialValues } : {};
     this.values = { ...this.initialValues };
     this.errors = {};
-    this.status = {}; // field 显示/隐藏
     this.props = {};
 
     this.rules = rules;
@@ -44,17 +43,6 @@ export default class FormCore {
     if (find(this.linkages, { field: name })) return;
     linkages.field = name;
     this.linkages.push(linkages);
-  }
-
-  setStatus(name, status, notify) {
-    this.status[name] = status;
-    if (notify !== false) {
-      this.notify(name);
-    }
-  }
-
-  getStatus(name) {
-    return name && this.status[name];
   }
 
   getProps(name) {
@@ -178,7 +166,7 @@ export default class FormCore {
     }
 
     // 不存在的 Field 不做检验
-    if (this.status[name] === 'hide') return new Promise(resolve => resolve('success'));
+    if (this.props[name] && (this.props[name] === 'hide')) return new Promise(resolve => resolve('success'));
 
     // 没有 rules 的不需校验
     if (!this.rules[name]) return new Promise(resolve => resolve('success'));

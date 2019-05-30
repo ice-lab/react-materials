@@ -1,7 +1,6 @@
 const whiteListProps = [
   'rules',
   'linkages',
-  'status',
   'format',
 ];
 
