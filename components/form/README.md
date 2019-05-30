@@ -30,7 +30,7 @@ NoForm 是一个表单操作(比如说校验、提交、联动等)抽象到上�
 ## 安装
 
 ```bash
-$ npm i @icedesign/form --save
+$ npm i @ice/form --save
 ```
 
 ## 快速上手
@@ -40,7 +40,7 @@ $ npm i @icedesign/form --save
 ```js
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Field } from '@icedesign/form';
+import { Form, Field } from '@ice/form';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -87,8 +87,8 @@ ReactDOM.render((
 `rules` 是一个 Object，`key` 是 `<Field>` 的 `name` 属性值，`value` 是个数组，数组里面的每一项是一个校验规则，参考 [async-validator](https://github.com/yiminghe/async-validator)。
 
 ```js
-<Form 
-  onSubmit={this.onSubmit} 
+<Form
+  onSubmit={this.onSubmit}
   style={{color: '#ee7893'}}
   rules={{
     username: [{
@@ -110,7 +110,7 @@ ReactDOM.render((
 `linkages` 是个数组，写法如下：
 
 ```js
-<Form 
+<Form
   onSubmit={this.onSubmit}
   linkages={[
     {
@@ -142,7 +142,7 @@ ReactDOM.render((
 | linkages |  联动规则   |  N    |   object   |    -    |   -   |
 | status |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
 
-其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。  
+其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
 `Field` 的 `rules` 和 `linkages` 不需要 `name` 作为 key 了，写法如下：
 
 ```js
@@ -169,33 +169,33 @@ ReactDOM.render((
 
 `formCore` 会暴露一些 API，使用这些 API 可以获取、设置表单的数据。
 
-- `getValue(name)`  
+- `getValue(name)`
   获取某一 `Field` 的值，如果不传 `name`，则获取全部表单值
-- `setValue(name, value)`  
+- `setValue(name, value)`
   设置某一 `Field` 的值
-- `getError(name)`  
+- `getError(name)`
   获取某一 `Field` 的 error 信息
-- `setError(name, errMsg)`  
+- `setError(name, errMsg)`
   设置某一 `Field` 的 error 信息
-- `getStatus(name)`  
+- `getStatus(name)`
   获取某一 `Field` 的值
-- `setStatus(name, status)`  
+- `setStatus(name, status)`
   设置某一 `Field` 的值
-- `getProps(name)`  
+- `getProps(name)`
   获取某一 `Field` 的属性值
-- `setProps(name, prop)`  
+- `setProps(name, prop)`
   设置某一 `Field` 的属性值
-- `submit`  
+- `submit`
   提交表单
-- `reset()`  
+- `reset()`
   重置表单
 
 也可以通过属性的方式获取到一些数据：
-- `formCore.values`  
+- `formCore.values`
   获取表单的所有值
-- `formCore.errors`  
+- `formCore.errors`
   获取表单校验的错误信息
-- `formCore.pristine`  
+- `formCore.pristine`
   表单当前的 `values` 是否与 `initialValues` 相等
 
 ## 相关链接

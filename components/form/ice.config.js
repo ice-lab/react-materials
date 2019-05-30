@@ -4,6 +4,8 @@ module.exports = {
   plugins: [
     'ice-plugin-antd',
     'ice-plugin-fusion',
-    'ice-plugin-component',
+    ['ice-plugin-component', {
+      type: 'component',
+    }],
   ],
 };

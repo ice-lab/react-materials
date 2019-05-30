@@ -8,7 +8,6 @@
     "build/"
   ],
   "main": "lib/index.js",
-  "stylePath": "style.js",
   "scripts": {
     "start": "ice-scripts dev",
     "build": "ice-scripts build",
