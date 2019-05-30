@@ -88,13 +88,13 @@ export default class FormCore {
   async setValue(name, value, store) {
     if (typeof name === 'string') {
       this.values[name] = value;
+      this.notify(name);
       const result = await this.validate(name);
       if (result === 'success') {
         this.setError(name, undefined);
       } else {
         this.setError(name, result[0].message);
       }
-      this.notify(name);
 
       // linkage
       const linkage = find(this.linkages, { field: name });
