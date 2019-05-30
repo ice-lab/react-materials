@@ -2,8 +2,8 @@ module.exports = {
   injectBabel: 'runtime',
   publicPath: './',
   plugins: [
-    ['ice-plugin-fusion', {}],
-    ['ice-plugin-antd', {}],
+    'ice-plugin-antd',
+    'ice-plugin-fusion',
     'ice-plugin-component',
   ],
 };
