@@ -41,7 +41,7 @@ class App extends Component {
                   city: '',
                   population: 0
                 })
-                formCore.setProps('city', {dataSource: cityData[province]})
+                formCore.setFieldProps('city', {dataSource: cityData[province]})
               }
             },
             {
@@ -50,10 +50,10 @@ class App extends Component {
                 const city = formCore.getFieldValue('city')
                 formCore.setFieldValue('city', city);
                 if (city === 'Suzhou') {
-                  formCore.setProps('population', {disabled: true})
+                  formCore.setFieldProps('population', {disabled: true})
                   formCore.setFieldValue('population', 0)
                 } else {
-                  formCore.setProps('population', {disabled: false})
+                  formCore.setFieldProps('population', {disabled: false})
                 }
               }
             }

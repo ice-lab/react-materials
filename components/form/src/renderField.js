@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React, { createElement, cloneElement } from 'react';
 
 function renderField(props) {
   const { label, component, error, display, children, renderFieldLayout, ...rest } = props;
@@ -10,7 +10,7 @@ function renderField(props) {
   if (component) {
     child = createElement(component, { children, ...rest });
   } else if (children) {
-    child = React.cloneElement(children, { ...rest });
+    child = cloneElement(children, { ...rest });
   }
 
   if (renderFieldLayout) {
@@ -18,10 +18,10 @@ function renderField(props) {
   }
 
   return (
-    <div>
-      <span>{label}</span>
-      <span>{child}</span>
-      <span>{error}</span>
+    <div className="ice-field">
+      <span className="ice-field-label">{label}</span>
+      <span className="ice-field-content">{child}</span>
+      <span className="ice-field-error">{error}</span>
     </div>
   );
 }

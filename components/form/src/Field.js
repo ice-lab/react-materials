@@ -11,7 +11,7 @@ class Field extends React.Component {
     const { name, rules, linkages, value, format } = props;
 
     const componentProps = getComponentProps(props);
-    store.setProps(name, componentProps);
+    store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
     !!linkages && store.addLinkages(name, linkages);
     !!status && store.setStatus(name, status, false);
@@ -40,7 +40,7 @@ class Field extends React.Component {
     this.state = {
       value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
       error: store.getFieldError(name),
-      componentProps: store.getProps(name),
+      componentProps: store.getFieldProps(name),
     };
   }
 
@@ -52,7 +52,7 @@ class Field extends React.Component {
         this.setState({
           value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
           error: store.getFieldError(name),
-          componentProps: store.getProps(name),
+          componentProps: store.getFieldProps(name),
         });
       }
     });

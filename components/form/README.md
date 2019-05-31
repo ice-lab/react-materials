@@ -152,9 +152,9 @@ ReactDOM.render((
   <Field label="昵称：" name="nickname" component="input" type="text" linkages={{
     handler: formCore => {
       if (formCore.getFieldValue('nickname') === 'snow') {
-        formCore.setProps('age', {display: 'show'});
+        formCore.setFieldProps('age', {display: 'show'});
       } else {
-        formCore.setProps('age', {display: 'hide'});
+        formCore.setFieldProps('age', {display: 'hide'});
       }
     }
   }} />
@@ -186,9 +186,9 @@ ReactDOM.render((
   设置某一 `Field` 的 error 信息
 - `setErrors(errors)`
   设置某些 `Field` 的 error 信息
-- `getProps(name)`
+- `getFieldProps(name)`
   获取某一 `Field` 的属性值
-- `setProps(name, prop)`
+- `setFieldProps(name, prop)`
   设置某一 `Field` 的属性值
 - `submit`
   提交表单

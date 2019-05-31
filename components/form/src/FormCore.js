@@ -42,11 +42,11 @@ export default class FormCore {
     this.linkages.push(linkage);
   }
 
-  getProps(name) {
+  getFieldProps(name) {
     return this.props[name] || {};
   }
 
-  setProps(name, prop) {
+  setFieldProps(name, prop) {
     this.props[name] = { ...this.props[name], ...prop };
     this.notify(name);
   }
@@ -76,7 +76,7 @@ export default class FormCore {
       this.values[name] = value;
       this.notify(name);
       const result = await this.validate(name);
-      if (result === 'success') {
+      if (result.status === 'success') {
         this.setFieldError(name, undefined);
 
         // linkage
@@ -85,7 +85,7 @@ export default class FormCore {
           linkage.handler(store);
         }
       } else {
-        this.setFieldError(name, result[0].message);
+        this.setFieldError(name, result.errors[0].message);
       }
     }
   }
@@ -127,15 +127,7 @@ export default class FormCore {
     Object.keys(errors).forEach(key => this.setFieldError(key, errors[key]));
   }
 
-  reset(event) {
-    if (event) {
-      if (typeof event.preventDefault === 'function') {
-        event.preventDefault();
-      }
-      if (typeof event.stopPropagation === 'function') {
-        event.stopPropagation();
-      }
-    }
+  reset() {
     this.values = Object.assign({}, this.initialValues);
     this.errors = {};
     this.notify('*');
@@ -156,7 +148,7 @@ export default class FormCore {
 
     // 校验值导致的 error
     const hasAnyValidatingError = result.some(item => {
-      return item !== 'success';
+      return item.status !== 'success';
     });
     // setFieldError()，sometimes not included in validatingError
     const hasAnySettingError = Object.keys(this.errors).some(field => {
@@ -165,13 +157,12 @@ export default class FormCore {
     });
 
     if (!hasAnyValidatingError && !hasAnySettingError) {
-      // result = ['success', 'success', 'success']
       this.onSubmit(this.getValues());
     } else {
       result.forEach(res => {
-        if (res !== 'success') {
-          const field = res[0].field;
-          const errMsg = res[0].message;
+        if (res.status === 'fail') {
+          const field = res.errors[0].field;
+          const errMsg = res.errors[0].message;
           this.setFieldError(field, errMsg);
         }
       });
@@ -189,10 +180,10 @@ export default class FormCore {
     }
 
     // 不存在的 Field 不做检验
-    if (this.props[name] && (this.props[name] === 'hide')) return new Promise(resolve => resolve('success'));
+    if (this.props[name] && (this.props[name].display === 'hide')) return new Promise(resolve => resolve({ status: 'success' }));
 
     // 没有 rules 的不需校验
-    if (!this.rules[name]) return new Promise(resolve => resolve('success'));
+    if (!this.rules[name]) return new Promise(resolve => resolve({ status: 'success' }));
 
     if (!this.validators[name]) {
       const descriptor = { [name]: this.rules[name] };
@@ -202,14 +193,15 @@ export default class FormCore {
 
     const value = this.getFieldValue(name);
 
-    try {
-      return this.validators[name].validate({ [name]: value }, () => {})
-        .then(() => 'success')
-        .catch(({ errors }) => {
-          return errors;
-        });
-    } catch (e) {
-      console.error(e);
-    }
+    return this.validators[name].validate({ [name]: value }, () => {})
+      .then(() => {
+        return { status: 'success' };
+      })
+      .catch(({ errors }) => {
+        return {
+          status: 'fail',
+          errors,
+        };
+      });
   }
 }

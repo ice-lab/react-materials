@@ -46,9 +46,9 @@ class App extends Component {
               handler: formCore => {
                 const gender = formCore.getFieldValue('gender');
                 if (gender === 'female') {
-                  formCore.setProps('age', {display: 'hide'});
+                  formCore.setFieldProps('age', {display: 'hide'});
                 } else {
-                  formCore.setProps('age', {display: 'show'});
+                  formCore.setFieldProps('age', {display: 'show'});
                 }
               }
             }

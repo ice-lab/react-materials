@@ -32,7 +32,7 @@ class App extends Component {
               <Field label="年龄：" name="age" component={Input} htmlType="number" />
               <Field label="简介：" name="intro" component={Input.TextArea} />
               <Button htmlType="submit">Submit</Button>
-              <Button onClick={(e) => formCore.reset(e)}>Reset</Button>
+              <Button onClick={() => formCore.reset()}>Reset</Button>
             </div>
           )}
         </Form>
