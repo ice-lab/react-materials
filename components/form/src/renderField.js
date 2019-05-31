@@ -1,7 +1,7 @@
 import React, { createElement } from 'react';
 
 function renderField(props) {
-  const { label, component, error, display, children, fieldLayout, ...rest } = props;
+  const { label, component, error, display, children, renderFieldLayout, ...rest } = props;
 
   if (display === 'hide') return null;
 
@@ -13,8 +13,8 @@ function renderField(props) {
     child = React.cloneElement(children, { ...rest });
   }
 
-  if (fieldLayout) {
-    return fieldLayout(label, child, error);
+  if (renderFieldLayout) {
+    return renderFieldLayout(label, child, error);
   }
 
   return (

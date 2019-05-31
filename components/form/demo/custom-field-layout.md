@@ -3,7 +3,7 @@ title: 自定义 Field 布局
 order: 8
 ---
 
-通过 Form 的 fieldLayout 自定义 Field 布局
+通过 Form 的 renderField 自定义 Field 布局
 
 ````jsx
 import React, { Component } from 'react';
@@ -24,7 +24,7 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          fieldLayout={(label, component, error) => (
+          renderField={(label, component, error) => (
             <div>
               <div>{label}</div>
               <span>{component}</span>

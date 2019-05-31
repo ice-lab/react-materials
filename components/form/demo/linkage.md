@@ -35,16 +35,16 @@ class App extends Component {
             {
               field: 'username',
               handler: formCore => {
-                const name = formCore.getValue('username');
+                const name = formCore.getFieldValue('username');
                 if (name === 'Khaleesi') {
-                  formCore.setValue('age', 28)
+                  formCore.setFieldValue('age', 28)
                 }
               }
             },
             {
               field: 'gender',
               handler: formCore => {
-                const gender = formCore.getValue('gender');
+                const gender = formCore.getFieldValue('gender');
                 if (gender === 'female') {
                   formCore.setProps('age', {display: 'hide'});
                 } else {

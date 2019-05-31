@@ -31,31 +31,37 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-        >
-          <div>当城市为“苏州”，则 disabled 人口</div>
-          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} linkages={{
-            handler: formCore => {
-              const province = formCore.getValue('province')
-              formCore.setValue({
-                province,
-                city: '',
-                population: 0
-              })
-              formCore.setProps('city', {dataSource: cityData[province]})
-            }
-          }} />
-          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} linkages={{
-            handler: formCore => {
-              const city = formCore.getValue('city')
-              formCore.setValue('city', city);
-              if (city === 'Suzhou') {
-                formCore.setProps('population', {disabled: true})
-                formCore.setValue('population', 0)
-              } else {
-                formCore.setProps('population', {disabled: false})
+          linkages={[
+            {
+              field: 'province',
+              handler: formCore => {
+                const province = formCore.getFieldValue('province')
+                formCore.setValues({
+                  province,
+                  city: '',
+                  population: 0
+                })
+                formCore.setProps('city', {dataSource: cityData[province]})
+              }
+            },
+            {
+              field: 'city',
+              handler: formCore => {
+                const city = formCore.getFieldValue('city')
+                formCore.setFieldValue('city', city);
+                if (city === 'Suzhou') {
+                  formCore.setProps('population', {disabled: true})
+                  formCore.setFieldValue('population', 0)
+                } else {
+                  formCore.setProps('population', {disabled: false})
+                }
               }
             }
-          }} />
+          ]}
+        >
+          <div>当城市为“苏州”，则 disabled 人口</div>
+          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} />
+          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} />
           <Field label="人口：" name="population" placeholder="The population of the city" component={Input} htmlType="number" />
           <Button htmlType="submit">Submit</Button>
         </Form>

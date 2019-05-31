@@ -13,19 +13,19 @@ export default class FormCore {
     this.linkages = linkages;
     this.listeners = [];
     this.validators = {};
-    this.fieldLayout = null;
+    this.renderField = null;
   }
 
   get pristine() {
     return isEqual(this.initialValues, this.values);
   }
 
-  getFieldLayout() {
-    return this.fieldLayout;
+  getRenderFieldLayout() {
+    return this.renderField;
   }
 
-  setFieldLayout(layout) {
-    this.fieldLayout = layout;
+  setRenderFieldLayout(layout) {
+    this.renderField = layout;
   }
 
   addRules(name, rules) {
@@ -63,49 +63,68 @@ export default class FormCore {
     this.listeners.forEach(listener => listener(name));
   }
 
-  getValue(name) {
-    return name ? this.values[name] : this.values;
+  getFieldValue(name) {
+    return this.values[name];
   }
 
-  async setValue(name, value, store) {
+  getValues() {
+    return this.values;
+  }
+
+  async setFieldValue(name, value, store) {
     if (typeof name === 'string') {
       this.values[name] = value;
       this.notify(name);
       const result = await this.validate(name);
       if (result === 'success') {
-        this.setError(name, undefined);
-      } else {
-        this.setError(name, result[0].message);
-      }
+        this.setFieldError(name, undefined);
 
-      // linkage
-      const linkage = this.linkages.find(item => item.field === name);
-      if (linkage && store) {
-        linkage.handler(store);
+        // linkage
+        const linkage = this.linkages.find(item => item.field === name);
+        if (linkage && store) {
+          linkage.handler(store);
+        }
+      } else {
+        this.setFieldError(name, result[0].message);
       }
-    } else if (Object.prototype.toString.call(name) === '[object Object]') {
-      const values = name;
-      Object.keys(values).forEach(key => this.setValue(key, values[key]));
     }
   }
 
-  setValueWithoutNotify(name, value) {
+  setValues(values) {
+    if (Object.prototype.toString.call(values) !== '[object Object]') {
+      throw new Error(
+        'values should be an object for setValues(values)'
+      );
+    }
+    Object.keys(values).forEach(key => this.setFieldValue(key, values[key]));
+  }
+
+  setFieldValueWithoutNotify(name, value) {
     this.values[name] = value;
   }
 
-  getError(name) {
-    return name ? this.errors[name] : this.errors;
+  getFieldError(name) {
+    return this.errors[name];
   }
 
-  setError(name, errorMsg, notify) {
-    // set field errorMsg
+  getErrors() {
+    return this.errors;
+  }
+
+  setFieldError(name, errorMsg, notify = true) {
     if (typeof name === 'string') {
       this.errors[name] = errorMsg;
-      !notify && this.notify(name);
-    } else if (Object.prototype.toString.call(name) === '[object Object]') {
-      const errors = name;
-      Object.keys(errors).forEach(key => this.setError(key, errors[key]));
+      notify && this.notify(name);
     }
+  }
+
+  setErrors(errors) {
+    if (Object.prototype.toString.call(errors) !== '[object Object]') {
+      throw new Error(
+        'errors should be an object for setErrors(errors)'
+      );
+    }
+    Object.keys(errors).forEach(key => this.setFieldError(key, errors[key]));
   }
 
   reset(event) {
@@ -134,18 +153,26 @@ export default class FormCore {
       }
     }
     const result = await this.validate();
-    const hasAnyError = result.some(item => {
+
+    // 校验值导致的 error
+    const hasAnyValidatingError = result.some(item => {
       return item !== 'success';
     });
-    if (!hasAnyError) {
+    // setFieldError()，sometimes not included in validatingError
+    const hasAnySettingError = Object.keys(this.errors).some(field => {
+      const error = this.errors[field];
+      return !!error;
+    });
+
+    if (!hasAnyValidatingError && !hasAnySettingError) {
       // result = ['success', 'success', 'success']
-      this.onSubmit(this.getValue());
+      this.onSubmit(this.getValues());
     } else {
       result.forEach(res => {
         if (res !== 'success') {
           const field = res[0].field;
           const errMsg = res[0].message;
-          this.setError(field, errMsg);
+          this.setFieldError(field, errMsg);
         }
       });
     }
@@ -173,7 +200,7 @@ export default class FormCore {
       this.validators[name] = validator;
     }
 
-    const value = this.getValue(name);
+    const value = this.getFieldValue(name);
 
     try {
       return this.validators[name].validate({ [name]: value }, () => {})

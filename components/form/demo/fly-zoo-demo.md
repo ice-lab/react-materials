@@ -1,7 +1,9 @@
 ---
-title: 飞猪联动 Demo
+title: 复杂联动
 order: 7
 ---
+
+同时监听两个 Field 
 
 ````jsx
 import React, { Component } from 'react';
@@ -23,36 +25,42 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          fieldLayout={(label, component, error) => (
+          renderField={(label, component, error) => (
             <div>
               <span>{label}</span>
               <span>{component}</span>
               <span style={{color: '#ee7893'}}>{error}</span>
             </div>
           )}
+          linkages={[
+            {
+              field: 'number1',
+              handler: formCore => {
+                const value1 = formCore.getFieldValue('number1');
+                const value2 = formCore.getFieldValue('number2');
+                if (Number(value1) < Number(value2)) {
+                  formCore.setFieldError('number2', 'number1不能小于number2');
+                } else {
+                  formCore.setFieldError('number2', undefined);
+                }
+              }
+            },
+            {
+              field: 'number2',
+              handler: formCore => {
+                const value1 = formCore.getFieldValue('number1');
+                const value2 = formCore.getFieldValue('number2');
+                if (Number(value1) < Number(value2)) {
+                  formCore.setFieldError('number2', 'number1不能小于number2');
+                } else {
+                  formCore.setFieldError('number2', undefined);
+                }
+              }
+            }
+          ]}
         >
-          <Field label="Number1：" name="number1" component={Input} htmlType="number" linkages={{
-            handler: formCore => {
-              const value1 = formCore.getValue('number1');
-              const value2 = formCore.getValue('number2');
-              if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', 'number1不能小于number2');
-              } else {
-                formCore.setError('number2', undefined);
-              }
-            }
-          }} />
-          <Field label="Number2：" name="number2" component={Input} htmlType="number" linkages={{
-            handler: formCore => {
-              const value1 = formCore.getValue('number1');
-              const value2 = formCore.getValue('number2');
-              if (Number(value1) < Number(value2)) {
-                formCore.setError('number2', 'number1不能小于number2');
-              } else {
-                formCore.setError('number2', undefined);
-              }
-            }
-          }} />
+          <Field label="Number1：" name="number1" component={Input} htmlType="number" />
+          <Field label="Number2：" name="number2" component={Input} htmlType="number" />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>

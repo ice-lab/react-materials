@@ -18,30 +18,28 @@ class Field extends React.Component {
 
     const isCheckbox = props.type && props.type === 'checkbox';
     const isRadio = props.type && props.type === 'radio';
-    if (isCheckbox || isRadio) {
-      if (!value) {
-        throw new Error("'value' prop is required for type='checkbox' and type='radio'.");
-      }
+    if (isCheckbox || isRadio && !value) {
+      throw new Error("'value' prop is required for type='checkbox' and type='radio'.");
     }
     if (value) {
       if (isCheckbox) {
-        const currentValue = store.getValue(name) || [];
+        const currentValue = store.getFieldValue(name) || [];
         if (props.checked) {
           currentValue.push(value);
         }
-        store.setValueWithoutNotify(name, currentValue);
+        store.setFieldValueWithoutNotify(name, currentValue);
       } else if (isRadio) {
         if (props.checked) {
-          store.setValueWithoutNotify(name, value);
+          store.setFieldValueWithoutNotify(name, value);
         }
       } else {
-        store.setValueWithoutNotify(name, value);
+        store.setFieldValueWithoutNotify(name, value);
       }
     }
 
     this.state = {
-      value: format ? format(store.getValue(name)) : store.getValue(name),
-      error: store.getError(name),
+      value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
+      error: store.getFieldError(name),
       componentProps: store.getProps(name),
     };
   }
@@ -52,8 +50,8 @@ class Field extends React.Component {
     this.unsubscribe = store.subscribe(n => {
       if (n === name || n === '*') {
         this.setState({
-          value: format ? format(store.getValue(name)) : store.getValue(name),
-          error: store.getError(name),
+          value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
+          error: store.getFieldError(name),
           componentProps: store.getProps(name),
         });
       }
@@ -67,14 +65,14 @@ class Field extends React.Component {
     }
   }
 
-  handleChange = e => {
+  onChange = e => {
     const store = this.context;
     const { name } = this.props;
 
     if (e && e.target && e.target.type === 'checkbox') {
       const checked = e.target.checked;
       const value = e.target.value;
-      let currentValue = store.getValue(name) || [];
+      let currentValue = store.getFieldValue(name) || [];
       if (checked) {
         currentValue.push(value);
       } else {
@@ -83,12 +81,12 @@ class Field extends React.Component {
           currentValue = currentValue.slice(0, index).concat(currentValue.slice(index + 1));
         }
       }
-      store.setValue(name, currentValue);
+      store.setFieldValue(name, currentValue, store);
     } else {
       const value = e && e.target
         ? e.target.value
         : e;
-      store.setValue(name, value, store);
+      store.setFieldValue(name, value, store);
     }
   }
 
@@ -104,10 +102,10 @@ class Field extends React.Component {
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
-    const fieldLayout = store.getFieldLayout();
+    const renderFieldLayout = store.getRenderFieldLayout();
     let renderProps = {
       ...state.componentProps,
-      fieldLayout,
+      renderFieldLayout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
@@ -123,7 +121,7 @@ class Field extends React.Component {
       if (onChange) {
         renderProps = Object.assign({}, renderProps, { onChange });
       } else {
-        renderProps = Object.assign({}, renderProps, { onChange: this.handleChange });
+        renderProps = Object.assign({}, renderProps, { onChange: this.onChange });
       }
     }
 

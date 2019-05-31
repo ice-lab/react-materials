@@ -116,8 +116,8 @@ ReactDOM.render((
     {
       field: 'username',
       handler: formCore => {
-        if (formCore.getValue('username') === 'ice') {
-          formCore.setValue('age', 2)
+        if (formCore.getFieldValue('username') === 'ice') {
+          formCore.setFieldValue('age', 2)
         }
       }
     }
@@ -151,7 +151,7 @@ ReactDOM.render((
   <Field label="姓名：" name="username" component="input" type="text" />
   <Field label="昵称：" name="nickname" component="input" type="text" linkages={{
     handler: formCore => {
-      if (formCore.getValue('nickname') === 'snow') {
+      if (formCore.getFieldValue('nickname') === 'snow') {
         formCore.setProps('age', {display: 'show'});
       } else {
         formCore.setProps('age', {display: 'hide'});
@@ -170,14 +170,22 @@ ReactDOM.render((
 
 `formCore` 会暴露一些 API，使用这些 API 可以获取、设置表单的数据。
 
-- `getValue(name)`
-  获取某一 `Field` 的值，如果不传 `name`，则获取全部表单值
-- `setValue(name, value)`
+- `getFieldValue(name)`
+  获取某一 `Field` 的值
+- `getValues()`
+  获取表单的 values
+- `setFieldValue(name, value)`
   设置某一 `Field` 的值
-- `getError(name)`
+- `setValues(values)`
+  设置某些 `Field` 的值
+- `getFieldError(name)`
   获取某一 `Field` 的 error 信息
-- `setError(name, errMsg)`
+- `getErrors()`
+  获取表单的 errors
+- `setFieldError(name, errMsg)`
   设置某一 `Field` 的 error 信息
+- `setErrors(errors)`
+  设置某些 `Field` 的 error 信息
 - `getProps(name)`
   获取某一 `Field` 的属性值
 - `setProps(name, prop)`
