@@ -8,13 +8,8 @@ class Form extends React.Component {
     const { initialValues, rules, linkages, onSubmit } = props;
     this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
 
-    // 自定义 Field 布局
-    if (props.renderField) {
-      this.store.setRenderFieldLayout(props.renderField);
-    }
-
     this.state = {
-      renderField: null,
+      renderField: undefined,
       store: this.store,
     };
   }

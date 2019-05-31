@@ -31,10 +31,6 @@ export default class FormCore {
     return this.renderField;
   }
 
-  setRenderFieldLayout(layout) {
-    this.renderField = layout;
-  }
-
   addRules(name, rules) {
     if (!this.rules[name]) {
       this.rules[name] = Array.isArray(rules) ? rules : [rules];

@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   state = {
-    renderField: null,
+    renderField: undefined,
     data: {},
     rules: {
       username: [{
