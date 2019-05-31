@@ -12,12 +12,35 @@ class Form extends React.Component {
     if (props.renderField) {
       this.store.setRenderFieldLayout(props.renderField);
     }
+
+    this.state = {
+      renderField: null,
+      store: this.store,
+    };
   }
 
   onSubmit = event => this.store.submit(event);
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    // set renderField before render
+    if (nextProps.renderField !== prevState.renderField) {
+      prevState.store.setConfig('renderField', nextProps.renderField);
+      return { renderField: nextProps.someValue };
+    }
+    return null;
+  }
+
   componentDidUpdate(prevProps) {
-    const { initialValues } = this.props;
+    const { initialValues, rules, linkages, onSubmit } = this.props;
+    if (prevProps.rules !== rules) {
+      this.store.setConfig('rules', rules);
+    }
+    if (prevProps.linkages !== linkages) {
+      this.store.setConfig('linkages', linkages);
+    }
+    if (prevProps.onSubmit !== onSubmit) {
+      this.store.setConfig('onSubmit', onSubmit);
+    }
     if (prevProps.initialValues !== initialValues) {
       this.store.setValues(initialValues);
     }

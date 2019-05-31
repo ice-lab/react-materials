@@ -20,6 +20,13 @@ export default class FormCore {
     return isEqual(this.initialValues, this.values);
   }
 
+  setConfig(prop, value) {
+    this[prop] = value;
+    if (prop === 'rules') {
+      this.validators = {};
+    }
+  }
+
   getRenderFieldLayout() {
     return this.renderField;
   }
