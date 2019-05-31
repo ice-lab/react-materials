@@ -29,6 +29,11 @@ class App extends Component {
               required: true,
               min: 5,
               message: '姓名至少5个字符'
+            }],
+            age: [{
+              required: true,
+              message: '大于18岁',
+              validator: (rule, value) => value > 18
             }]
           }}
           linkages={[
