@@ -14,7 +14,7 @@ class Form extends React.Component {
     }
   }
 
-  handleSubmit = event => this.store.submit(event);
+  onSubmit = event => this.store.submit(event);
 
   componentDidUpdate(prevProps) {
     const { initialValues } = this.props;
@@ -28,7 +28,7 @@ class Form extends React.Component {
     return (
       <FormContext.Provider value={this.store}>
         <form
-          onSubmit={this.handleSubmit}
+          onSubmit={this.onSubmit}
           {...rest}
         >
           { typeof children === 'function'
