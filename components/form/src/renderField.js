@@ -1,4 +1,4 @@
-import React, { createElement, cloneElement, Fragment } from 'react';
+import React, { createElement, cloneElement } from 'react';
 import cs from 'classnames';
 
 function renderField(props) {
@@ -11,12 +11,7 @@ function renderField(props) {
   if (component) {
     child = createElement(component, { children, ...rest, className: (error && !errorRender) ? 'next-error' : null });
   } else if (children) {
-    const fragment = (
-      <Fragment>
-        {children}
-      </Fragment>
-    );
-    child = cloneElement(fragment, { ...rest });
+    child = cloneElement(children, { ...rest });
   }
 
   if (renderFieldLayout) {

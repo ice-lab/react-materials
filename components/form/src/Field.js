@@ -8,7 +8,7 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, linkages, value, format } = props;
+    const { name, rules, linkages, value, defaultValue, format } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
@@ -35,6 +35,9 @@ class Field extends React.Component {
       } else {
         store.setFieldValueWithoutNotify(name, value);
       }
+    }
+    if (defaultValue) {
+      store.setFieldValueWithoutNotify(name, defaultValue);
     }
 
     this.state = {

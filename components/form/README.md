@@ -155,6 +155,9 @@ ReactDOM.render((
 | display |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
 | format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
 | fieldLayout |  设置当前 Field 的布局   |  N    |   object   |   同 formLayout   |  Field 的 fieldLayout 设置会覆盖 formLayout 设置|
+| tips |  提示信息   |  N    |   string   |    |    |
+| errorRender |  自定义 error 渲染   |  N    |   function(error) {}   |    |   |
+| onChange |  自定义 onChange 函数   |  N    |   function() {}   |    | 默认情况下已处理表单的 onChange(eventOrValue) 事件，如果接入的三方表单 onChange 的第一个参数不是 event 或者 value，用户可以主动设置对应的值。比如，接入表单的 onChange(xxx, value) 第二个参数才是 value，则可以手动设置 `formCore.setValue(fieldname, value)`  |
 
 其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
 `Field` 的 `rules` 和 `linkages` 不需要 `name` 作为 key 了，写法如下：
@@ -203,7 +206,7 @@ ReactDOM.render((
   获取某一 `Field` 的属性值
 - `setFieldProps(name, prop)`
   设置某一 `Field` 的属性值
-- `submit`
+- `submit()`
   提交表单
 - `reset()`
   重置表单
