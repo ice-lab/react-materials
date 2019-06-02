@@ -60,10 +60,12 @@ class App extends Component {
           ]}
         >
           <div>当城市为“苏州”，则 disabled 人口</div>
-          <Field label="省：" name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} />
-          <Field label="市：" name="city" placeholder="Select City" dataSource={[]} component={Select} />
+          <Field label="省：" fieldLayout={{wrapperCol: 1}} name="province" placeholder="Select Province"  dataSource={provinceData} component={Select} />
+          <Field label="市：" fieldLayout={{wrapperCol: 1}} name="city" placeholder="Select City" dataSource={[]} component={Select} />
           <Field label="人口：" name="population" placeholder="The population of the city" component={Input} htmlType="number" />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

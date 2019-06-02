@@ -10,6 +10,7 @@ class Form extends React.Component {
 
     this.state = {
       renderField: undefined,
+      formLayout: undefined,
       store: this.store,
     };
   }
@@ -17,10 +18,16 @@ class Form extends React.Component {
   onSubmit = event => this.store.submit(event);
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    // set renderField before render
-    if (nextProps.renderField !== prevState.renderField) {
+    // set renderField、formLayout before render
+    const isRenderFieldChanged = nextProps.renderField !== prevState.renderField;
+    const isFormLayoutChanged = nextProps.formLayout !== prevState.formLayout;
+    if (isRenderFieldChanged || isFormLayoutChanged) {
       prevState.store.setConfig('renderField', nextProps.renderField);
-      return { renderField: nextProps.someValue };
+      prevState.store.setConfig('formLayout', nextProps.formLayout);
+      return {
+        renderField: nextProps.someValue,
+        formLayout: nextProps.formLayout,
+      };
     }
     return null;
   }
@@ -42,10 +49,11 @@ class Form extends React.Component {
   }
 
   render() {
-    const { initialValues, onSubmit, children, rules, linkages, renderField, ...rest } = this.props;
+    const { initialValues, onSubmit, children, rules, linkages, renderField, formLayout, ...rest } = this.props;
     return (
       <FormContext.Provider value={this.store}>
         <form
+          className="ice-form"
           onSubmit={this.onSubmit}
           {...rest}
         >

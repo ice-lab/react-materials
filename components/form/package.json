@@ -22,6 +22,7 @@
   ],
   "dependencies": {
     "async-validator": "^1.11.2",
+    "classnames": "^2.2.6",
     "lodash.isequal": "^4.5.0",
     "prop-types": "^15.5.8"
   },

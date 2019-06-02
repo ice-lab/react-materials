@@ -40,7 +40,7 @@ class App extends Component {
     const Age = (<span style={{color: 'green'}}>年龄：</span>);
     return (
       <div>
-        <h2>加载表单数据并且初始化</h2>
+        <h2>加载表单数据并且初始化（label支持自定义jsx）</h2>
         <Form
           initialValues={this.state.data}
           onSubmit={this.onSubmit}
@@ -48,8 +48,10 @@ class App extends Component {
           {this.state.loading && <div className="loading">loading...</div>}
           <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component={Input} />
           <Field name="age" label={Age} component={Input} />
-          <Field name="desc" label="描述: " component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
+          <Field name="desc" label="描述：" component={Input.TextArea} />
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

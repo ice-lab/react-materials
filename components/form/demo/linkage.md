@@ -68,7 +68,9 @@ class App extends Component {
           </Field>
           <Field label="年龄：" name="age" component={Input} htmlType="number" />
           <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

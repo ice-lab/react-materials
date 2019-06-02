@@ -69,6 +69,12 @@ class Field extends React.Component {
     const store = this.context;
     const { name } = this.props;
 
+    if (!name) {
+      throw new Error(
+        'Must specify a name prop to a Field whose value is changeable.'
+      );
+    }
+
     if (e && e.target && e.target.type === 'checkbox') {
       const checked = e.target.checked;
       const value = e.target.value;
@@ -91,21 +97,17 @@ class Field extends React.Component {
   }
 
   render() {
-    const { name, value, type, component, onChange, children } = this.props;
-    if (!name) {
-      console.error(
-        'Warning: Must specify a name prop to a Field.'
-      );
-      return null;
-    }
+    const { value, type, component, onChange, children } = this.props;
     const isCheckbox = type && (type === 'checkbox');
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
     const renderFieldLayout = store.getRenderFieldLayout();
+    const formLayout = store.getFormLayout();
     let renderProps = {
       ...state.componentProps,
       renderFieldLayout,
+      formLayout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
@@ -117,7 +119,7 @@ class Field extends React.Component {
         renderProps = { ...renderProps, checked: true };
       }
     }
-    if (component || (children && !children.props.onChange)) {
+    if (component || (children && children.props && !children.props.onChange)) {
       if (onChange) {
         renderProps = Object.assign({}, renderProps, { onChange });
       } else {

@@ -53,7 +53,9 @@ class App extends Component {
           <h1>可复用的 Field Group</h1>
           <Address name="billing" label="Billing" />
           <Address name="shipping" label="Shipping" />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

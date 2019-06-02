@@ -81,8 +81,20 @@ ReactDOM.render((
 | initialValues |  表单初始值    |  N    |   object   |    {}    |   -   |
 | onSubmit |  submit函数   |  Y    |   function   |    -    |   -   |
 | rules |  校验规则   |  N    |   object   |    {}    |   -   |
-| linkages |  联动规则   |  N    |   Array   |    []    |   -   |
+| linkages |  联动规则   |  N    |   array   |    []    |   -   |
+| formLayout |  表单布局   |  N    |   object   |      |   -   |
 其他属性比如 `style`、`className` 等均会传递到 `form` 标签上。
+
+```js
+// formLayout
+{
+  labelAlign: 'left', // label 的位置，'left'、'top'，默认 'left'
+  labelTextAlign: 'right', // label 文字左对齐右对齐，默认 'right' 右对齐
+  labelCol: 1, // label 占的栅格宽度，共 6 等分，默认 1
+  wrapperCol: 3, // 输入控件占的栅格宽度，共 6 等分，默认 3
+  tipsCol: 1 // 提示信息占的栅格宽度，共 6 等分，默认 1
+}
+```
 
 `rules` 是一个 Object，`key` 是 `<Field>` 的 `name` 属性值，`value` 是个数组，数组里面的每一项是一个校验规则，参考 [async-validator](https://github.com/yiminghe/async-validator)。
 
@@ -135,13 +147,14 @@ ReactDOM.render((
 ## Field 组件
 | 参数名 | 说明 | 必填 | 类型 | 默认值 | 备注 |
 | ------ | ---- | ---- | ---- | ------ | ---- |
-| label |  表单项的 label    |  N    |   string   |    -    |   -   |
+| label |  表单项的 label    |  N    |   string 或者 React Element   |    -    |   -   |
 | name |  表单项的 name   |  Y    |   string   |    -    |   -   |
 | component |  表单类型，原生 html 标签或者三方组件   |  N    |     |    -    | 'input' 'textarea' Input Radio   |
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | linkages |  联动规则   |  N    |   object   |    -    |   -   |
 | display |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
 | format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
+| fieldLayout |  设置当前 Field 的布局   |  N    |   object   |   同 formLayout   |  Field 的 fieldLayout 设置会覆盖 formLayout 设置|
 
 其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
 `Field` 的 `rules` 和 `linkages` 不需要 `name` 作为 key 了，写法如下：

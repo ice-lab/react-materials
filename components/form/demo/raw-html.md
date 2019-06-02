@@ -41,7 +41,9 @@ class App extends Component {
             <option value="angular">Angular</option>
           </Field>
           <Field label="ICE背景：" name="ice" component="input" value="yes" type="radio" />
-          <button type="submit">Submit</button>
+          <Field label="">
+            <button type="submit">Submit</button>
+          </Field>
         </Form>
       </div>
     );

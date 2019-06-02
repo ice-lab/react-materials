@@ -51,7 +51,9 @@ class App extends Component {
                 <Select.Option value="p7">P7</Select.Option>
                 <Select.Option value="p8" disabled>P8</Select.Option>
               </Field>
-              <Button htmlType="submit">Submit</Button>
+              <Field label="">
+                <Button htmlType="submit">Submit</Button>
+              </Field>
             </div>
           )}
         </Form>

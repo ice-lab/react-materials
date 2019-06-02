@@ -25,13 +25,6 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          renderField={(label, component, error) => (
-            <div>
-              <span>{label}</span>
-              <span>{component}</span>
-              <span style={{color: '#ee7893'}}>{error}</span>
-            </div>
-          )}
           linkages={[
             {
               field: 'number1',
@@ -61,7 +54,9 @@ class App extends Component {
         >
           <Field label="Number1：" name="number1" component={Input} htmlType="number" />
           <Field label="Number2：" name="number2" component={Input} htmlType="number" />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

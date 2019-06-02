@@ -14,6 +14,7 @@ export default class FormCore {
     this.listeners = [];
     this.validators = {};
     this.renderField = null;
+    this.formLayout = {};
   }
 
   get pristine() {
@@ -29,6 +30,10 @@ export default class FormCore {
 
   getRenderFieldLayout() {
     return this.renderField;
+  }
+
+  getFormLayout() {
+    return this.formLayout;
   }
 
   addRules(name, rules) {

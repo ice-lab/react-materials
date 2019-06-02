@@ -25,7 +25,7 @@ class App extends Component {
         <Form
           onSubmit={this.onSubmit}
           renderField={(label, component, error) => (
-            <div>
+            <div style={{marginBottom: '10px'}}>
               <div>{label}</div>
               <span>{component}</span>
               <span style={{color: '#ee7893'}}>{error}</span>

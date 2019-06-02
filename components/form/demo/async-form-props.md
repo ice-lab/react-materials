@@ -33,10 +33,10 @@ class App extends Component {
     await sleep(1000);
     this.setState({
       renderField: (label, component, error) => (
-        <div>
+        <div style={{marginBottom: '15px'}}>
           <div>{label}</div>
           <span>{component}</span>
-          <span style={{color: '#ee7893'}}>{error}</span>
+          <span style={{marginLeft: '10px', color: '#ee7893'}}>{error}</span>
         </div>
       ),
       data: {
@@ -66,7 +66,9 @@ class App extends Component {
           <Field label="姓名：" name="username" component={Input} />
           <Field label="年龄：" name="age" component={Input} htmlType="number" />
           <Field label="描述: " name="desc" component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );

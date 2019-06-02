@@ -31,8 +31,10 @@ class App extends Component {
               <Field label="姓名：" name="username" component={Input} />
               <Field label="年龄：" name="age" component={Input} htmlType="number" />
               <Field label="简介：" name="intro" component={Input.TextArea} />
-              <Button htmlType="submit">Submit</Button>
-              <Button onClick={() => formCore.reset()}>Reset</Button>
+              <Field label="">
+                <Button htmlType="submit" style={{marginRight: '20px'}}>Submit</Button>
+                <Button onClick={() => formCore.reset()}>Reset</Button>
+              </Field>
             </div>
           )}
         </Form>

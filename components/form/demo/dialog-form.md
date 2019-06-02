@@ -54,7 +54,12 @@ class App extends Component {
           onCancel={this.onClose.bind(this, 'cancelClick')}
           onClose={this.onClose}
         >
-          <Form onSubmit={this.onSubmit}>
+          <Form 
+            onSubmit={this.onSubmit}
+            formLayout={{
+              labelCol: 3
+            }}
+          >
             {formCore => {
               this.handleSubmit = formCore.submit.bind(formCore);
               return (

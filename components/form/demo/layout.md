@@ -1,9 +1,9 @@
 ---
-title: 基础校验
-order: 3
+title: 表单布局
+order: 16
 ---
 
-校验规则可以写在 `Form` 属性上或者 `Field` 属性上
+表单布局
 
 ````jsx
 import React, { Component } from 'react';
@@ -20,9 +20,15 @@ class App extends Component {
   }
 
   render() {
+    const formLayout = {
+      labelCol: 1,
+      wrapperCol: 3,
+      labelTextAlign: 'right'
+    }
     return (
       <div>
         <Form
+          formLayout = {formLayout}
           onSubmit={this.onSubmit}
           rules={{
             username: [{
@@ -33,14 +39,12 @@ class App extends Component {
           }}
         >
           <h2>个人资料</h2>
-          <Field label="姓名：" name="username" component={Input} />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" rules={[{
-            message: '年龄必填且大于18岁',
-            required: true,
-            validator: (rule, value) => value > 18
-          }]} />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Field label="">
+          <Field label="姓名：" name="username" component={Input} errorRender={ 
+            error => <span style={{color: 'blue'}}>{error}</span>
+          } />
+          <Field label="年龄：" name="age" component={Input} tips="身份证上的年龄" />
+          <Field label="简介：" name="intro" fieldLayout={{tipsCol: 2}} component={Input.TextArea} tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
+          <Field label="" name="submit">
             <Button htmlType="submit">Submit</Button>
           </Field>
         </Form>

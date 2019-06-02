@@ -45,7 +45,9 @@ class App extends Component {
             validator: (rule, value) => value > 18
           }]} />
           <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
+          <Field label="">
+            <Button htmlType="submit">Submit</Button>
+          </Field>
         </Form>
       </div>
     );
