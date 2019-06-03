@@ -9,7 +9,7 @@ Form 结合对话框
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Input, Button, Dialog, Radio } from '@alifd/next';
+import { Input, Button, Dialog, Switch } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -53,11 +53,14 @@ class App extends Component {
           onOk={this.onOk.bind(this)}
           onCancel={this.onClose.bind(this, 'cancelClick')}
           onClose={this.onClose}
+          style={{
+            width: 600,
+          }}
         >
           <Form 
             onSubmit={this.onSubmit}
             formLayout={{
-              labelCol: 3
+              labelCol: 2
             }}
           >
             {formCore => {
@@ -67,7 +70,7 @@ class App extends Component {
                   <Field name="name" label="名称：" component={Input} />
                   <Field name="age" label="年龄：" component={Input} />
                   <Field name="desc" label="描述：" component={Input.TextArea} />
-                  <Field name="open" label="是否打开：" component={Radio} />
+                  <Field name="open" label="是否打开：" component={Switch} />
                   <Field name="openDesc" label="打开时的描述：" component={Input} />
                   <Field name="closeDesc" label="关闭时的描述：" component={Input} />
                 </div>
