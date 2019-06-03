@@ -9,8 +9,8 @@ class Form extends React.Component {
     this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
 
     this.state = {
-      renderField: undefined,
-      formLayout: undefined,
+      renderField: () => {},
+      layout: undefined,
       store: this.store,
     };
   }
@@ -18,15 +18,15 @@ class Form extends React.Component {
   onSubmit = event => this.store.submit(event);
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    // set renderField、formLayout before render
+    // set renderField、layout before render
     const isRenderFieldChanged = nextProps.renderField !== prevState.renderField;
-    const isFormLayoutChanged = nextProps.formLayout !== prevState.formLayout;
-    if (isRenderFieldChanged || isFormLayoutChanged) {
+    const isLayoutChanged = nextProps.layout !== prevState.layout;
+    if (isRenderFieldChanged || isLayoutChanged) {
       prevState.store.setConfig('renderField', nextProps.renderField);
-      prevState.store.setConfig('formLayout', nextProps.formLayout);
+      prevState.store.setConfig('layout', nextProps.layout);
       return {
         renderField: nextProps.someValue,
-        formLayout: nextProps.formLayout,
+        layout: nextProps.layout,
       };
     }
     return null;
@@ -49,7 +49,7 @@ class Form extends React.Component {
   }
 
   render() {
-    const { initialValues, onSubmit, children, rules, linkages, renderField, formLayout, ...rest } = this.props;
+    const { initialValues, onSubmit, children, rules, linkages, renderField, layout, ...rest } = this.props;
     return (
       <FormContext.Provider value={this.store}>
         <form

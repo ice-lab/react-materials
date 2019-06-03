@@ -105,12 +105,12 @@ class Field extends React.Component {
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
-    const renderFieldLayout = store.getRenderFieldLayout();
-    const formLayout = store.getFormLayout();
+    const renderFieldLayout = store.getRenderField();
+    const layout = store.getLayout();
     let renderProps = {
       ...state.componentProps,
       renderFieldLayout,
-      formLayout,
+      layout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
