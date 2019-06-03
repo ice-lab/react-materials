@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const formLayout = {
+    const layout = {
       labelCol: 1,
       wrapperCol: 3,
       labelTextAlign: 'right'
@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <div>
         <Form
-          formLayout = {formLayout}
+          layout = {layout}
           onSubmit={this.onSubmit}
           rules={{
             username: [{

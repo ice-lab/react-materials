@@ -106,11 +106,11 @@ class Field extends React.Component {
     const store = this.context;
     const state = this.state;
     const renderFieldLayout = store.getRenderField();
-    const formLayout = store.getFormLayout();
+    const layout = store.getLayout();
     let renderProps = {
       ...state.componentProps,
       renderFieldLayout,
-      formLayout,
+      layout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
