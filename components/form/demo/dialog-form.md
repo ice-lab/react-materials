@@ -57,7 +57,8 @@ class App extends Component {
           <Form 
             onSubmit={this.onSubmit}
             layout={{
-              labelCol: 3
+              labelCol: 2,
+              wrapperCol: 4
             }}
           >
             {formCore => {
