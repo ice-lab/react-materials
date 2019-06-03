@@ -24,7 +24,7 @@ class App extends Component {
       labelCol: 1,
       wrapperCol: 3,
       labelTextAlign: 'right'
-    }
+    };
     return (
       <div>
         <Form
