@@ -37,7 +37,8 @@ class App extends Component {
         </Form>
         <Form
           layout = {{
-            labelAlign: 'top'
+            labelAlign: 'top',
+            labelTextAlign: 'left'
           }}
         >
           <h2>标签在上面(labelAlign: top)</h2>
