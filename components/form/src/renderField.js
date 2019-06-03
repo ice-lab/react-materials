@@ -24,7 +24,6 @@ function renderField(props) {
     labelTextAlign = 'right',
     labelCol = 1,
     wrapperCol = 3,
-    tipsCol = 1,
   } = { ...formLayout, ...fieldLayout };
 
   const fieldLabelClass = cs({
@@ -39,16 +38,12 @@ function renderField(props) {
     [`ice-col-${wrapperCol}`]: true,
   });
 
-  const fieldTipsClass = cs({
-    'ice-field-tips': true,
-    [`ice-col-${tipsCol}`]: true,
-  });
-
   return (
     <div className="ice-field">
       <div className={fieldLabelClass}>{label}</div>
       <div className={fieldControlClass}>
         <div>{child}</div>
+        { tips && <div className="ice-field-tips">{tips}</div> }
         { error
           && (
             <div className="ice-field-error">
@@ -57,7 +52,6 @@ function renderField(props) {
           )
         }
       </div>
-      { tips && <div className={fieldTipsClass}>{tips}</div> }
     </div>
   );
 }

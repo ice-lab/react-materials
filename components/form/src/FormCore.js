@@ -28,7 +28,7 @@ export default class FormCore {
     }
   }
 
-  getRenderFieldLayout() {
+  getRenderField() {
     return this.renderField;
   }
 

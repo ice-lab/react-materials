@@ -9,7 +9,7 @@ class Form extends React.Component {
     this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
 
     this.state = {
-      renderField: undefined,
+      renderField: () => {},
       formLayout: undefined,
       store: this.store,
     };

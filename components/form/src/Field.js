@@ -105,7 +105,7 @@ class Field extends React.Component {
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
-    const renderFieldLayout = store.getRenderFieldLayout();
+    const renderFieldLayout = store.getRenderField();
     const formLayout = store.getFormLayout();
     let renderProps = {
       ...state.componentProps,
