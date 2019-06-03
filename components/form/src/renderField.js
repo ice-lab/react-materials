@@ -2,7 +2,7 @@ import React, { createElement, cloneElement } from 'react';
 import cs from 'classnames';
 
 function renderField(props) {
-  const { label, component, error, display, children, renderFieldLayout, errorRender, layout, fieldLayout, tips, ...rest } = props;
+  const { label, component, error, display, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, ...rest } = props;
 
   if (display === 'hide') return null;
 
@@ -24,18 +24,18 @@ function renderField(props) {
     labelTextAlign = 'right',
     labelCol = 1,
     wrapperCol = 3,
-  } = { ...layout, ...fieldLayout };
+  } = { ...formLevelLayout, ...layout };
 
   const fieldLabelClass = cs({
     'ice-field-label': true,
-    'ice-field-label-top': labelAlign === 'top',
     'ice-field-label-text-right': labelTextAlign === 'right',
     [`ice-col-${labelCol}`]: true,
+    'ice-field-label-top': labelAlign === 'top',
   });
 
   const fieldControlClass = cs({
-    'ice-field-control': true,
     [`ice-col-${wrapperCol}`]: true,
+    'ice-field-control': true,
   });
 
   return (

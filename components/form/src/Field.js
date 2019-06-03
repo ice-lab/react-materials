@@ -110,7 +110,7 @@ class Field extends React.Component {
     let renderProps = {
       ...state.componentProps,
       renderFieldLayout,
-      layout,
+      formLevelLayout: layout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };
