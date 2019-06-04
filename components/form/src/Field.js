@@ -8,12 +8,12 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, linkages, value, defaultValue, format } = props;
+    const { name, rules, effects, value, defaultValue, format } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
-    !!linkages && store.addLinkages(name, linkages);
+    !!effects && store.addEffects(name, effects);
     !!status && store.setStatus(name, status, false);
 
     const isCheckbox = props.type && props.type === 'checkbox';

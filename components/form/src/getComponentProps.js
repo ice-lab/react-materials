@@ -1,6 +1,6 @@
 const fieldPropWhiteList = [
   'rules',
-  'linkages',
+  'effects',
   'format',
 ];
 

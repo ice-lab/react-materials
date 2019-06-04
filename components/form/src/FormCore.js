@@ -2,7 +2,7 @@ import Schema from 'async-validator';
 import isEqual from 'lodash.isequal';
 
 export default class FormCore {
-  constructor({ initialValues = {}, rules = {}, linkages = [], onSubmit }) {
+  constructor({ initialValues = {}, rules = {}, effects = [], onSubmit }) {
     this.onSubmit = onSubmit;
     this.initialValues = { ...initialValues };
     this.values = { ...this.initialValues };
@@ -10,7 +10,7 @@ export default class FormCore {
     this.props = {};
 
     this.rules = rules;
-    this.linkages = linkages;
+    this.effects = effects;
     this.listeners = [];
     this.validators = {};
     this.renderField = null;
@@ -44,10 +44,10 @@ export default class FormCore {
     }
   }
 
-  addLinkages(name, linkage) {
-    if (this.linkages.find(item => item.field === name)) return;
+  addEffects(name, linkage) {
+    if (this.effects.find(item => item.field === name)) return;
     linkage.field = name;
-    this.linkages.push(linkage);
+    this.effects.push(linkage);
   }
 
   getFieldProps(name) {
@@ -87,10 +87,9 @@ export default class FormCore {
       if (result.status === 'success') {
         this.setFieldError(name, undefined);
 
-        // linkage
-        const linkage = this.linkages.find(item => item.field === name);
-        if (linkage && store) {
-          linkage.handler(store);
+        const effects = this.effects.find(item => item.field === name);
+        if (effects && store) {
+          effects.handler(store);
         }
       } else {
         this.setFieldError(name, result.errors[0].message);

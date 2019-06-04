@@ -3,6 +3,16 @@ title: 大表单
 order: 19
 ---
 
+150 个 Field，测试 onChange 的渲染性能。
+
+form：在某一个 Field 依次输入'表单性能测试'六个字，只渲染当前的 Field，每一个 commit 渲染时间 1ms 左右；
+
+![form](https://img.alicdn.com/tfs/TB1u9fWbrys3KVjSZFnXXXFzpXa-732-169.jpg)
+
+formBinder：在某一个 Field 输入'表单性能测试'六个字，所有 Field 均重复渲染，每一个 commit 渲染时间 70ms 左右；
+
+![formBinder](https://img.alicdn.com/tfs/TB1Rf6MbwKG3KVjSZFLXXaMvXXa-714-178.jpg)
+
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
@@ -31,10 +41,6 @@ class App extends Component {
       password: '',
     },
     isFormBinder: false
-  };
-
-  formChange = value => {
-    this.setState({ value });
   };
 
   toggle = () => {
@@ -69,13 +75,12 @@ class App extends Component {
             <div>
               <FormBinderWrapper
                 value={this.state.value}
-                onChange={this.formChange}
                 ref="form"
               >
                 {
                   dataSource.map(field => (
-                    <div>
-                      <span>名称：</span>
+                    <div key={field.name}>
+                      <span>{field.label}：</span>
                       <FormBinder name={field.name} require >
                         <Input placeholder={`formBinder ${field.placeholder}`} />
                       </FormBinder>

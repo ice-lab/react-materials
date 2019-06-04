@@ -36,7 +36,7 @@ class App extends Component {
               validator: (rule, value) => value > 18
             }]
           }}
-          linkages={[
+          effects={[
             {
               field: 'username',
               handler: formCore => {

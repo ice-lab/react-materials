@@ -25,7 +25,7 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
-          linkages={[
+          effects={[
             {
               field: 'number1',
               handler: formCore => {
