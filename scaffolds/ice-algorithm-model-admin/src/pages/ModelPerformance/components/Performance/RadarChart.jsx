@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Coord, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
+
 class Withline extends React.Component {
   render() {
     const { DataView } = DataSet;
