@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/order-management-scaffold",
-  "version": "2.0.5",
+  "version": "2.0.9",
   "description": "该模板适用于订单类管理后台，布局方式采用左侧固定，右侧自适应方式，适合大量数据展示和界面操作",
   "author": "ice-admin@alibaba-inc.com",
   "homepage": "https://unpkg.com/@icedesign/order-management-scaffold@latest/build/index.html",
@@ -12,7 +12,8 @@
     "_gitignore",
     ".editorconfig",
     ".eslintignore",
-    ".eslintrc"
+    ".eslintrc",
+    "ice.config.js"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
@@ -25,6 +26,7 @@
     "@icedesign/theme": "^1.x",
     "bizcharts": "^3.2.2",
     "enquire-js": "^0.1.2",
+    "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
@@ -32,7 +34,6 @@
     "react-router-dom": "^4.2.2"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "devDependencies": {
@@ -43,21 +44,20 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
+<<<<<<< HEAD
     "ice-scripts": "^1.8.9",
     "lodash.clonedeep": "^4.5.0"
+=======
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
+>>>>>>> a8403e35e233346b4c2977fd9f1d052e8aa73040
   },
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
-  },
-  "buildConfig": {
-    "theme": "@icedesign/theme",
-    "entry": "src/index.js",
-    "localization": false,
-    "output": {
-      "publicPath": "./"
-    }
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",

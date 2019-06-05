@@ -1,12 +1,11 @@
 {
   "name": "@icedesign/title",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "标题组件",
   "main": "lib/index.js",
   "files": [
     "lib/",
     "demo/",
-    "postinstall.js",
     "build/"
   ],
   "keywords": [
@@ -24,8 +23,7 @@
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build",
-    "postinstall": "node ./postinstall.js"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -44,5 +42,5 @@
     "name": "title",
     "title": "标题组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/title@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/title@1.0.3/build/index.html"
 }

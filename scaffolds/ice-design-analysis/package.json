@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/analysis-scaffold",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "该模板适用于可视化实时数据的大屏展示，默认只有一个页面，内置饼图、柱状图等图形",
   "homepage": "https://unpkg.com/@icedesign/analysis-scaffold@latest/build/index.html",
   "files": [
@@ -11,7 +11,8 @@
     "_gitignore",
     ".editorconfig",
     ".eslintignore",
-    ".eslintrc"
+    ".eslintrc",
+    "ice.config.js"
   ],
   "dependencies": {
     "@alifd/next": "^1.11.8",
@@ -34,24 +35,18 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "ice-scripts": "^1.6.0-next.3"
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
   },
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
-  },
-  "buildConfig": {
-    "theme": "@icedesign/theme",
-    "entry": "src/index.js",
-    "localization": false,
-    "output": {
-      "publicPath": "./"
-    }
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",

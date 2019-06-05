@@ -44,14 +44,6 @@ const scaffolds = [
   'ice-website-homepage',
   'ice-creator-landingpage',
   'ice-open-platform-landingpage',
-
-  // 社区模板(6)
-  // 'create-react-app',
-  // 'light-bootstrap-dashboard',
-  // 'creative-dashboard',
-  // 'coreui-admin',
-  // 'material-dashboard',
-  // 'opensource-site',
 ];
 
 module.exports = scaffolds;

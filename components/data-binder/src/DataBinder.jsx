@@ -116,10 +116,7 @@ export default function dataBinder(sourceConfig, opts = {}) {
         initializeRequestStatus(originDatas[dataSourceKey], requestStatus);
         const tmpObj = {};
         if (newData) {
-          if (
-            Object.prototype.toString.call(originDatas[dataSourceKey]) ===
-            '[object Array]'
-          ) {
+          if (Array.isArray(originDatas[dataSourceKey])) {
             tmpObj[dataSourceKey] = initializeRequestStatus(
               newData,
               requestStatus
@@ -129,7 +126,7 @@ export default function dataBinder(sourceConfig, opts = {}) {
             tmpObj[dataSourceKey] = initializeRequestStatus({
               ...originDatas[dataSourceKey],
               ...newData,
-            });
+            }, requestStatus);
           }
         }
         this.setState({
@@ -203,13 +200,13 @@ export default function dataBinder(sourceConfig, opts = {}) {
           .catch((err) => {
             // eslint-disable-next-line
             const __error = {
-              message: '网络问题，请稍后重试！',
+              message: err.message || '网络问题，请稍后重试！',
             };
 
             this.updateStateWithDataSource(
               dataSourceKey,
               defaultBindingDatas,
-              (err.response || {}).data,
+              null,
               { __loading: false, __error }
             );
 
@@ -225,6 +222,11 @@ export default function dataBinder(sourceConfig, opts = {}) {
             }
           })
           .then((res) => {
+            if (!res) {
+              // 接口报错
+              return;
+            }
+
             const responseHandler = (responseData, originResponse) => {
               if (!responseData.data) {
                 // eslint-disable-next-line no-console
@@ -236,7 +238,6 @@ export default function dataBinder(sourceConfig, opts = {}) {
 
               // eslint-disable-next-line
               let __error = null;
-
               // 兼容 status: "SUCCESS" 和 success: true 的情况
               if (responseData.status === 'SUCCESS' || responseData.success) {
                 const defaultCallback = () => {
@@ -264,6 +265,7 @@ export default function dataBinder(sourceConfig, opts = {}) {
                 };
 
                 // 这里的 success 是请求成功的意思，并不表示业务逻辑执行成功
+                // TODO: 设计上不太合理，应该触发 customError 然后通过参数区分网络错误还是状态码错误
                 if (customSuccess) {
                   customSuccess(responseData, defaultCallback, originResponse);
                 } else {

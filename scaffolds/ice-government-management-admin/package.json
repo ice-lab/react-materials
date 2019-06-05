@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/government-management-admin",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "description": "该模板内置了丰富的区块，适用于政府类风格的管理类系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/government-management-admin@latest/build/index.html",
   "files": [
@@ -11,7 +11,8 @@
     "_gitignore",
     ".editorconfig",
     ".eslintignore",
-    ".eslintrc"
+    ".eslintrc",
+    "ice.config.js"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
@@ -40,26 +41,24 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
+<<<<<<< HEAD
     "ice-scripts": "^1.7.1",
     "request": "^2.88.0",
     "webpack": "^4.31.0"
+=======
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
+>>>>>>> a8403e35e233346b4c2977fd9f1d052e8aa73040
   },
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
   },
   "publishConfig": {
-    "registry": "http://registry.npmjs.com",
     "access": "public"
-  },
-  "buildConfig": {
-    "theme": "@icedesign/theme",
-    "entry": "src/index.js",
-    "localization": false,
-    "output": {
-      "publicPath": "./"
-    }
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",

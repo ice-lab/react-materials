@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { Message } from '@alifd/next';
 import AuthForm from './AuthForm';
 
-export default class LoginFrom extends Component {
-  static displayName = 'LoginFrom';
+export default class LoginForm extends Component {
+  static displayName = 'LoginForm';
 
   static propTypes = {};
 
