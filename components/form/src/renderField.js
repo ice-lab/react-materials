@@ -27,10 +27,10 @@ function renderField(props) {
   } = { ...formLevelLayout, ...layout };
 
   const fieldLabelClass = cs({
-    'ice-field-label': true,
     'ice-field-label-text-right': labelTextAlign === 'right',
     [`ice-col-${labelCol}`]: true,
     'ice-field-label-top': labelAlign === 'top',
+    'ice-field-label': true,
   });
 
   const fieldControlClass = cs({
