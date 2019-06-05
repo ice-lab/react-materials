@@ -3,15 +3,8 @@ title: 大表单
 order: 19
 ---
 
-150 个 Field，测试 onChange 的渲染性能。
-
-form：在某一个 Field 依次输入'表单性能测试'六个字，只渲染当前的 Field，每一个 commit 渲染时间 1ms 左右；
-
-![form](https://img.alicdn.com/tfs/TB1u9fWbrys3KVjSZFnXXXFzpXa-732-169.jpg)
-
-formBinder：在某一个 Field 输入'表单性能测试'六个字，所有 Field 均重复渲染，每一个 commit 渲染时间 70ms 左右；
-
-![formBinder](https://img.alicdn.com/tfs/TB1Rf6MbwKG3KVjSZFLXXaMvXXa-714-178.jpg)
+输入框后面的数字代表每个 Field 渲染的次数。
+当在某个 Field 输入内容时，可以看到 form 组件，只有当前的 Field 会重新渲染，而 formBinder 则是所有的 Field 都会重新渲染。form 渲染性能优于 formBinder。
 
 ````jsx
 import React, { Component } from 'react';
@@ -19,6 +12,28 @@ import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
 import { Button, Input } from '@alifd/next';
 import { FormBinderWrapper, FormBinder } from '@icedesign/form-binder';
+
+const renderCountStyles = {
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  fontStyle: 'normal',
+  textAlign: 'center',
+  height: '26px',
+  width: '26px',
+  lineHeight: '26px',
+  borderRadius: '13px',
+  border: '1px solid #ddd',
+  background: '#eee'
+};
+
+class RenderCount extends Component {
+  renders = 0
+
+  render() {
+    return <span style={renderCountStyles}>{++this.renders}</span>
+  }
+}
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -62,8 +77,21 @@ class App extends Component {
         {!this.state.isFormBinder && (
           <Form
             onSubmit={this.onSubmit}
+            renderField={(label, component, error) => (
+              <div style={{marginBottom: '10px'}}>
+                <div>{label}</div>
+                <div style={{position: 'relative', display: 'inline-block'}}>
+                  <span>{component}</span>
+                  <RenderCount />
+                </div>
+                <RenderCount />
+                <span style={{color: '#ee7893'}}>{error}</span>
+              </div>
+            )}
           >
-            {dataSource.map(field => <Field key={field.name} name={field.name} placeholder={`new form ${field.placeholder}`} label={field.label} component={Input} />)}
+            {
+              dataSource.map(field => <Field key={field.name} name={field.name} placeholder={`new form ${field.placeholder}`} label={field.label} component={Input} /> )
+            }
             <Field label="">
               <Button htmlType="submit">Submit</Button>
             </Field>
@@ -82,7 +110,10 @@ class App extends Component {
                     <div key={field.name}>
                       <span>{field.label}：</span>
                       <FormBinder name={field.name} require >
-                        <Input placeholder={`formBinder ${field.placeholder}`} />
+                        <div style={{position: 'relative', display: 'inline'}}>
+                          <RenderCount />
+                          <Input placeholder={`formBinder ${field.placeholder}`} />
+                        </div>
                       </FormBinder>
                     </div>
                   ))

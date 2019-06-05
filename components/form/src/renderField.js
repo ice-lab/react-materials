@@ -2,7 +2,7 @@ import React, { createElement, cloneElement } from 'react';
 import cs from 'classnames';
 
 function renderField(props) {
-  const { label, component, error, display, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, ...rest } = props;
+  const { label, component, error, display, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, className, style, ...rest } = props;
 
   if (display === 'hide') return null;
 
@@ -39,7 +39,7 @@ function renderField(props) {
   });
 
   return (
-    <div className="ice-field">
+    <div className={className ? `ice-field ${className}` : 'ice-field'} style={style}>
       <div className={fieldLabelClass}>{label}</div>
       <div className={fieldControlClass}>
         <div>{child}</div>

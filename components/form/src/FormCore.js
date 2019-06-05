@@ -85,7 +85,8 @@ export default class FormCore {
       this.notify(name);
       const result = await this.validate(name);
       if (result.status === 'success') {
-        this.setFieldError(name, undefined);
+        const errorIsNotUndefined = this.getFieldError(name);
+        errorIsNotUndefined && this.setFieldError(name, undefined);
 
         const effects = this.effects.find(item => item.field === name);
         if (effects && store) {
