@@ -73,13 +73,13 @@ class App extends Component {
     return (
       <div>
         <h3>表单性能测试 form vs formBinder</h3>
-        <Button onClick={this.toggle}>Toggle Form</Button>
+        <Button onClick={this.toggle} style={{marginBottom: '10px'}}>Toggle Form</Button>
         {!this.state.isFormBinder && (
           <Form
             onSubmit={this.onSubmit}
             renderField={(label, component, error) => (
               <div style={{marginBottom: '10px'}}>
-                <div>{label}</div>
+                <span style={{display: 'inline-block', width: '80px'}}>{label}</span>
                 <div style={{position: 'relative', display: 'inline-block'}}>
                   <span>{component}</span>
                   <RenderCount />
@@ -92,9 +92,7 @@ class App extends Component {
             {
               dataSource.map(field => <Field key={field.name} name={field.name} placeholder={`new form ${field.placeholder}`} label={field.label} component={Input} /> )
             }
-            <Field label="">
-              <Button htmlType="submit">Submit</Button>
-            </Field>
+            <Button htmlType="submit">Submit</Button>
           </Form>
         )}
 
@@ -107,8 +105,8 @@ class App extends Component {
               >
                 {
                   dataSource.map(field => (
-                    <div key={field.name}>
-                      <span>{field.label}：</span>
+                    <div key={field.name} style={{marginBottom: '10px'}}>
+                      <span style={{display: 'inline-block', width: '80px'}}>{field.label}：</span>
                       <FormBinder name={field.name} require >
                         <div style={{position: 'relative', display: 'inline'}}>
                           <RenderCount />

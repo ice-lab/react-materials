@@ -30,9 +30,9 @@ class App extends Component {
           }}
         >
           <h2>个人资料</h2>
-          <div style={{overflow: 'hidden'}}>
-            <Field style={{float: 'left', width: '33%'}} label="姓名：" name="username" component={Input} />
-            <Field style={{float: 'left', width: '34%'}} label="年龄：" name="age" component={Input} htmlType="number" />
+          <div style={{display: 'flex'}}>
+            <Field style={{flexBasis: '35%'}} label="姓名：" name="username" component={Input} />
+            <Field style={{flexBasis: '30%'}} label="年龄：" name="age" component={Input} htmlType="number" />
           </div>
           <Field label="地址：" name="address" component={Input} />
           <Field label="手机：" name="tel" component={Input} htmlType="number" />
