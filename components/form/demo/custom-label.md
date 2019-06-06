@@ -20,7 +20,6 @@ function renderLabel(name) {
     <span>
       <span style={{
         color: 'red',
-        marginRight: 5,
       }}>*</span>
       {name}
     </span>

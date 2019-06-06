@@ -1,14 +1,22 @@
 ---
 title: 第一行两个 Field
 order: 21
+importStyle: true
 ---
+
+```css
+.ice-first-inline-form .ice-field .ice-field-label {
+  display: inline;
+  width: auto ;
+}
+
+```
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
 import { Button, Input, Switch, Select, Checkbox } from '@alifd/next';
-import './layout-first-line-two-fields.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -28,6 +36,7 @@ class App extends Component {
           layout={{
             labelTextAlign: 'left'
           }}
+          className="ice-first-inline-form"
         >
           <h2>个人资料</h2>
           <div style={{display: 'flex'}}>

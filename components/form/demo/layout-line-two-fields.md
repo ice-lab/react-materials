@@ -1,14 +1,34 @@
 ---
 title: 一行两个 Field
 order: 20
+importStyle: true
 ---
+
+```css
+.ice-inline-form .field-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.ice-inline-form .ice-field {
+  width: 50%;
+  height: 40px;
+}
+.ice-inline-form .field-wrapper {
+  overflow: hidden;
+  background-color: #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.ice-inline-form .btn {
+  margin-top: 20px;
+}
+```
 
 ````jsx
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
 import { Button, Input, Switch, Select, Checkbox } from '@alifd/next';
-import './layout-line-two-fields.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
