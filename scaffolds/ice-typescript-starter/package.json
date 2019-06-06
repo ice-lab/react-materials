@@ -16,10 +16,10 @@
     "ice.config.js"
   ],
   "dependencies": {
-    "@alifd/next": "^1.14.3",
-    "@icedesign/theme": "^1.0.0",
+    "@alifd/next": "^1.x",
     "@types/react": "^16.8.3",
     "@types/react-dom": "^16.8.2",
+    "@icedesign/theme": "^1.x",
     "moment": "^2.23.0",
     "prop-types": "^15.5.8",
     "react": "^16.4.1",

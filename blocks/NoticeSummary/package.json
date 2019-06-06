@@ -23,7 +23,7 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.14.2"
+    "@alifd/next": "^1.x"
   },
   "peerDependencies": {
     "react": "^16.2.0",
@@ -46,7 +46,6 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.x"
   }
 }

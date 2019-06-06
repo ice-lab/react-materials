@@ -1,7 +1,7 @@
-# forget-password-form
+# footer-links
 
-简介：忘记密码
+简介：底部链接
 
-忘记密码
+通用的底部链接区块
 
-![截图](https://unpkg.com/@icedesign/forget-password-form-block/screenshot.png)
+![截图](https://unpkg.com/@icedesign/footer-links-block/screenshot.png)

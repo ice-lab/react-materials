@@ -23,10 +23,10 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
+    "@icedesign/container": "^1.x",
     "highcharts": "^6.1.1",
-    "react-highcharts": "^16.0.2"
+    "react-highcharts": "^16.0.2",
+    "@alifd/next": "^1.x"
   },
   "peerDependencies": {
     "react": "^16.2.0",
@@ -49,7 +49,6 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.x"
   }
 }
