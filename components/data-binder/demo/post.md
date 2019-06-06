@@ -1,9 +1,14 @@
 ---
-title: 简单的用法
-order: 1
+title: POST 请求获取数据
+order: 2
 ---
 
-通过 GET 方式请求数据，基于 `__loading` 属性可以区分请求的不同状态，基于 `__error` 属性可以区分接口是否报错。
+通过 POST 请求获取数据，POST 请求数据时，请求参数可以放在 url query 或者 body 上，具体由接口实现决定：
+
+- url query: 通过 params 参数指定
+- body: 通过 data 参数指定
+
+具体可参考 axios 的文档说明。
 
 ````jsx
 import React, {Component} from 'react';
@@ -15,7 +20,8 @@ import {
 
 @DataBinder({
   fooData: {
-    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/success',
+    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/post',
+    method: 'POST',
     defaultBindingData: {
       foo: 'bar'
     }
@@ -24,18 +30,17 @@ import {
 class App extends Component {
   componentDidMount() {
     this.props.updateBindingData('fooData', {
+      // 参数放在 query 上
       params: {
         key: 'init'
       }
-    }, (response) => {
-      // 请求回调，可按需使用
-      console.log('数据加载完成啦', response);
     });
   }
 
   refreshFoo = () => {
     this.props.updateBindingData('fooData', {
-      params: {
+      // 参数放在 body 上
+      data: {
         bar: 'foo'
       }
     });
@@ -52,8 +57,6 @@ class App extends Component {
         <div style={{marginTop: 10}}>
           <Button onClick={this.refreshFoo}>主动获取新数据</Button>
         </div>
-        <h3>数据加载中：{fooData.__loading ? '是' : '否'}</h3>
-        <h3>接口是否报错：{fooData.__error ? fooData.__error.message : '无'}</h3>
       </div>
     );
   }

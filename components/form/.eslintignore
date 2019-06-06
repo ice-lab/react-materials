@@ -1,0 +1,7 @@
+# 忽略目录
+build/
+demo/
+
+# 忽略文件
+**/*-min.js
+**/*.min.js
