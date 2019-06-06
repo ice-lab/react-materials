@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",
-    "react": "^16.8.6",
+    "react": "*",
     "react-dom": "*"
   },
   "blockConfig": {
