@@ -35,10 +35,10 @@
 
 ## 页面
 
-> 按照 Index 综合页和 Block 分类进行展示
+> 按照 Dashboard 综合页和 Block 分类进行展示
 
 ```
-- Index
+- Dashboard
 - 图表页
   - 图表列表
 - 表格页
@@ -74,7 +74,7 @@ ice-design-pro
 │   ├── layouts      // 通用布局
 │   ├── locales      // i18n
 │   ├── pages        // 页面
-│   ├── index.jsx     // 应用入口
+│   ├── index.js     // 应用入口
 │   ├── menuConfig   // 导航配置
 │   ├── routerConfig // 路由配置
 │   └── router.jsx   // 路由配置
