@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",
-    "enquire-js": "^0.2.1",
     "react": "*",
     "react-dom": "*"
   },

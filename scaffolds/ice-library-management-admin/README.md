@@ -8,7 +8,7 @@
 ## 目录结构
 
 - react-router @4.x 默认采用 hashHistory 的单页应用
-- 入口文件: `src/index.jsx`
+- 入口文件: `src/index.js`
 - 导航配置: `src/menuConfig.js`
 - 路由配置: `src/routerConfig.js`
 - 路由入口: `src/router.jsx`

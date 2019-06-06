@@ -1,4 +1,4 @@
-# Index
+# InfoDisplayTable
 
 简介：两栏信息展示型表格 
 
