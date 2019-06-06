@@ -23,9 +23,9 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
-    "react-masonry-component": "^6.2.1"
+    "@icedesign/container": "^1.x",
+    "react-masonry-component": "^6.2.1",
+    "@alifd/next": "^1.x"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",
@@ -48,7 +48,6 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.x"
   }
 }

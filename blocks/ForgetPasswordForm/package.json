@@ -1,55 +1,49 @@
 {
-  "name": "@icedesign/forget-password-form-block",
-  "version": "2.0.1",
-  "description": "忘记密码",
+  "name": "@icedesign/footer-links-block",
+  "version": "2.0.0",
+  "description": "通用的底部链接区块",
+  "author": "muchen <tao360907796@gmail.com>",
   "files": [
     "src/",
     "build/",
     "screenshot.png"
   ],
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/ForgetPasswordForm"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/FooterLinks"
   },
   "license": "MIT",
   "keywords": [
     "ice",
-    "ice-block"
+    "react",
+    "block"
   ],
-  "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
-    "@icedesign/form-binder": "^1.0.6"
-  },
-  "devDependencies": {
-    "@icedesign/theme": "^0.1.4",
-    "prop-types": "^15.5.8",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
-  },
-  "blockConfig": {
-    "name": "forget-password-form",
-    "screenshot": "https://unpkg.com/@icedesign/forget-password-form-block/screenshot.png",
-    "themePackage": "@icedesign/theme",
-    "title": "忘记密码",
-    "categories": [
-      "表单"
-    ],
-    "version-0.x": "0.1.14"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
   },
-  "homepage": "https://unpkg.com/@icedesign/forget-password-form-block/build/index.html",
+  "dependencies": {
+    "react": "^16.2.0",
+    "prop-types": "^15.5.8"
+  },
+  "blockConfig": {
+    "name": "footer-links",
+    "title": "底部链接",
+    "categories": [
+      "信息展示",
+      "欢迎页"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/footer-links-block/screenshot.png",
+    "version-0.x": "1.0.0"
+  },
+  "homepage": "https://unpkg.com/@icedesign/footer-links-block/build/index.html",
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.2.0"
   }
 }
