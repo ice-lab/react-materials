@@ -40,7 +40,7 @@ cols: 1
 |:-----------|:------------------------------------------|:--------|:--------|
 | scrollable | 区域可滚动 *(`<Layout fixable={true} />` 下可用)* | boolean | `false` |
 
-## Layout.Index
+## Layout.Header
 
 顶部布局，默认 flex 布局，并且内部元素垂直居中对齐，可通过 style 属性修改。
 
@@ -72,7 +72,7 @@ cols: 1
 
 主体内容。
 
-## Layout.Index
+## Layout.Footer
 
 页脚布局。
 

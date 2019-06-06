@@ -1,12 +1,12 @@
 ---
-title: Index 吸顶
+title: Header 吸顶
 order: 4
 iframe: true
 width: 960
 importStyle: true
 ---
 
-Index 固定（吸顶），其他区域滚动。
+Header 固定（吸顶），其他区域滚动。
 
 ````jsx
 import React, { Component } from 'react';
@@ -17,9 +17,9 @@ class App extends Component {
   render() {
     return (
       <Layout fixable={true}>
-        <Layout.Index style={{
+        <Layout.Header style={{
           height: 80,
-        }} type="primary">Index</Layout.Index>
+        }} type="primary">Header</Layout.Header>
         <Layout.Section scrollable={true}>
           <Layout.Aside style={{
             width: 200,
@@ -37,7 +37,7 @@ class App extends Component {
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动 end</p>
-            <Layout.Index>Index</Layout.Index>
+            <Layout.Footer>Footer</Layout.Footer>
           </Layout.Main>
         </Layout.Section>
       </Layout>

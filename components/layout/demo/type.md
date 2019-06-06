@@ -6,7 +6,7 @@ width: 960
 importStyle: true
 ---
 
-通过 type 属性可以定制组件的样式，Index/Index/Aside 支持 type 属性，并且与 Nav 组件保持一致
+通过 type 属性可以定制组件的样式，Header/Footer/Aside 支持 type 属性，并且与 Nav 组件保持一致
 
 ````jsx
 import React, { Component, PropTypes } from 'react';
@@ -25,7 +25,7 @@ class App extends Component {
         <Layout.Aside
           type={this.state.type}
         >
-          <Index />
+          <Logo />
           <Nav type={this.state.type}>
             <Nav.Group label="需求">
               <Nav.Item icon="account">需求1</Nav.Item>
@@ -40,7 +40,7 @@ class App extends Component {
           </Nav>
         </Layout.Aside>
         <Layout.Section>
-          <Layout.Index
+          <Layout.Header
             style={{
               height: '60px',
               padding: '0 20px',
@@ -61,7 +61,7 @@ class App extends Component {
               <Nav.Item key="document">Document</Nav.Item>
             </Nav>
             <div>ICE</div>
-          </Layout.Index>
+          </Layout.Header>
           <Layout.Main
             style={{
               padding: 20,
@@ -84,7 +84,7 @@ class App extends Component {
               <Radio value="line">type="none"</Radio>
             </Radio.Group>
           </Layout.Main>
-          <Layout.Index
+          <Layout.Footer
             type={this.state.type}
             style={{
               textAlign: 'center',
@@ -96,15 +96,15 @@ class App extends Component {
               <br />
               由 <a href="https://alibaba.github.io/ice" target="_blank"> ICE </a> 提供技术支持
             </p>
-          </Layout.Index>
+          </Layout.Footer>
         </Layout.Section>
       </Layout>
     );
   }
 }
 
-// 项目内敛 Index 组件
-class Index extends Component {
+// 项目内敛 Logo 组件
+class Logo extends Component {
   render() {
     return (
       <div
@@ -125,7 +125,7 @@ class Index extends Component {
             ...this.props.style
           }}
         >
-          Your Index
+          Your Logo
         </div>
       </div>
     );

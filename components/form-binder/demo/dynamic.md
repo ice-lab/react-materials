@@ -70,7 +70,7 @@ class App extends Component {
           onChange={this.formChange}
           ref="form"
         >
-          <Index
+          <ArticleList
             items={this.state.value.items}
             addItem={this.addItem}
             removeItem={this.removeItem}
@@ -87,7 +87,7 @@ class App extends Component {
   }
 }
 
-class Index extends Component {
+class ArticleList extends Component {
   render() {
     return (
       <div>

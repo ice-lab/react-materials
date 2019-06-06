@@ -1,12 +1,12 @@
 ---
-title: Aside&Index 固定
+title: Aside&Header 固定
 order: 6
 iframe: true
 width: 960
 importStyle: true
 ---
 
-Aside Index 固定位置布局，将 Index 放在 Main 里一同滚动。
+Aside Header 固定位置布局，将 Footer 放在 Main 里一同滚动。
 
 ````jsx
 import React, { Component } from 'react';
@@ -24,9 +24,9 @@ class App extends Component {
           Aside
         </Layout.Aside>
         <Layout.Section>
-          <Layout.Index style={{
+          <Layout.Header style={{
             height: 80,
-          }} type="primary">&nbsp;&nbsp;&nbsp;&nbsp;Index</Layout.Index>
+          }} type="primary">&nbsp;&nbsp;&nbsp;&nbsp;Header</Layout.Header>
           <Layout.Main scrollable={true}>
             <p>Main</p>
             <p style={{ height: 200 }}>内容可滚动</p>
@@ -37,9 +37,9 @@ class App extends Component {
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动</p>
             <p style={{ height: 200 }}>内容可滚动</p>
-            <Layout.Index style={{
+            <Layout.Footer style={{
               height: 80,
-            }} type="primary">Index</Layout.Index>
+            }} type="primary">Footer</Layout.Footer>
           </Layout.Main>
         </Layout.Section>
       </Layout>

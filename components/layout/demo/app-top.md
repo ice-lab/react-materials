@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <Layout>
-        <Layout.Index style={{ padding: '12px 50px' }} type="primary">
+        <Layout.Header style={{ padding: '12px 50px' }} type="primary">
           <Nav
             type="primary"
             direction="hoz"
@@ -29,7 +29,7 @@ class App extends Component {
             </Nav.SubNav>
             <Nav.Item key="document">Document</Nav.Item>
           </Nav>
-        </Layout.Index>
+        </Layout.Header>
         <Layout.Section style={{ padding: '0 50px' }}>
           <Layout.Main
             style={{
@@ -41,7 +41,7 @@ class App extends Component {
             Main
           </Layout.Main>
         </Layout.Section>
-        <Layout.Index
+        <Layout.Footer
           type="secondary"
           style={{
             textAlign: 'center',
@@ -57,7 +57,7 @@ class App extends Component {
             {' '}
             提供技术支持
           </p>
-        </Layout.Index>
+        </Layout.Footer>
       </Layout>
     );
   }
