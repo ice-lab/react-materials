@@ -1,5 +1,5 @@
 ---
-title: inline 布局2
+title: 第一行两个 Field
 order: 21
 ---
 
@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
 import { Button, Input, Switch, Select, Checkbox } from '@alifd/next';
-import './layout-inline2.scss';
+import './layout-first-line-two-fields.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 

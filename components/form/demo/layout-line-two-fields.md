@@ -1,5 +1,5 @@
 ---
-title: inline 布局
+title: 一行两个 Field
 order: 20
 ---
 
@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
 import { Button, Input, Switch, Select, Checkbox } from '@alifd/next';
-import './layout-inline.scss';
+import './layout-line-two-fields.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -25,6 +25,7 @@ class App extends Component {
       <div>
         <Form
           onSubmit={this.onSubmit}
+          className="ice-inline-form"
         >
           <h2>个人资料</h2>
           <div className="field-wrapper">
