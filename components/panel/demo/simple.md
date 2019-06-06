@@ -24,9 +24,9 @@ class App extends Component {
         </IcePanel>
 
         <IcePanel>
-          <IcePanel.Index>
+          <IcePanel.Header>
             将进酒
-          </IcePanel.Index>
+          </IcePanel.Header>
           <IcePanel.Body>
             <p>君不见，黄河之水天上来，奔流到海不复回。</p>
             <p>君不见，高堂明镜悲白发，朝如青丝暮成雪。</p>
@@ -37,9 +37,9 @@ class App extends Component {
             <p>与君歌一曲，请君为我侧耳听。</p>
             <p>钟鼓馔玉不足贵，但愿长醉不愿醒。</p>
           </IcePanel.Body>
-          <IcePanel.Index>
+          <IcePanel.Footer>
             诗仙李白
-          </IcePanel.Index>
+          </IcePanel.Footer>
         </IcePanel>
       </div>
     );

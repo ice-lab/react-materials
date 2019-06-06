@@ -17,7 +17,7 @@ npm i @icedesign/img -S
 | 参数名             | 说明                                      | 必填  | 类型     | 默认值 | 可选值                 | 备注                                                           |
 | ------------------ | ----------------------------------------- | ----- | -------- | ------ | ---------------------- | -------------------------------------------------------------- |
 | type               | 图片显示模式                              | false | string   | cover  | cover、contain         |                                                                |
-| src                | 图片 url                                  | true  | string |        |                        |                                                                |
+| src                | 图片 url                                  | true  | boolean  | false  |                        |                                                                |
 | shape              | 形状展现                                  | false | string   | sharp  | circle、sharp、rounded |                                                                |
 | title              | 图片的 title，hover 上去会显示出来        | false | string   | ''     |                        |                                                                |
 | alt                | 图片的 alt 通常用于屏幕阅读器（盲人）识别 | false | string   | ''     |                        |                                                                |

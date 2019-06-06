@@ -1,17 +1,19 @@
 {
   "name": "@icedesign/styled-menu",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "description": "ICE 导航组件体验版",
   "main": "lib/index.js",
   "files": [
     "lib/",
     "demo/",
+    "postinstall.js",
     "build/"
   ],
   "scripts": {
     "start": "ice dev",
     "build": "ice build",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postinstall": "node ./postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -42,5 +44,5 @@
     "name": "styled-menu",
     "title": "导航组件体验版"
   },
-  "homepage": "https://unpkg.com/@icedesign/styled-menu@1.0.6/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/styled-menu@latest/build/index.html"
 }
