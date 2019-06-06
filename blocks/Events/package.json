@@ -25,8 +25,8 @@
   ],
   "dependencies": {
     "prop-types": "^15.5.8",
-    "rc-queue-anim": "^1.6.12",
-    "rc-scroll-anim": "^2.5.7",
+    "rc-queue-anim": "^1.6.5",
+    "rc-scroll-anim": "^2.5.5",
     "react": "^16.2.0"
   },
   "blockConfig": {
