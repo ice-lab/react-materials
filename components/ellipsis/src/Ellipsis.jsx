@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
@@ -34,6 +32,7 @@ export default class IceEllipsis extends Component {
   };
 
   static defaultProps = {
+    style: {},
     className: '',
     lineLimit: 1,
     showTooltip: false,
@@ -49,8 +48,8 @@ export default class IceEllipsis extends Component {
     const node = document.createElement('div');
 
     if ('WebkitLineClamp' in node.style) {
-      node.style['WebkitLineClamp'] = 3;
-      if (node.style['WebkitLineClamp'] != 3) {
+      node.style.WebkitLineClamp = '3';
+      if (node.style.WebkitLineClamp !== '3') {
         isSupportLineClamp = false;
       }
     } else {
@@ -65,32 +64,30 @@ export default class IceEllipsis extends Component {
   }
 
   componentDidMount() {
-    let wrapDOM = ReactDOM.findDOMNode(this).parentNode;
-    let wrapWidth = getWidthFromDOM(wrapDOM);
+    const wrapDOM = ReactDOM.findDOMNode(this).parentNode;
+    const wrapWidth = getWidthFromDOM(wrapDOM);
     // 拿到父结构的 font-size 用于自动计算宽度
-    let fontSize = parseInt(
-      window.getComputedStyle(wrapDOM, null).getPropertyValue('font-size')
+    const fontSize = parseInt(
+      window.getComputedStyle(wrapDOM, null).getPropertyValue('font-size'), 10
     );
 
     this.setState({
-      wrapWidth: wrapWidth,
-      fontSize: fontSize,
+      wrapWidth,
+      fontSize,
     });
   }
 
   render() {
     let content = null;
-    let { lineLimit, text, ...others } = this.props;
+    const { lineLimit, text, style, className, showTooltip, tooltipProps } = this.props;
+    const { isSupportLineClamp } = this.state;
 
     const cls = classnames({
-      ['ice-ellipsis']: true,
-      [this.props.className]: this.props.className,
+      'ice-ellipsis': true,
+      [className]: className,
     });
-    const style = {
-      ...this.props.style,
-    };
 
-    const { wrapWidth, isSupportLineClamp, fontSize } = this.state;
+    const { wrapWidth, fontSize } = this.state;
 
     if (lineLimit === 1) {
       content = (
@@ -109,14 +106,13 @@ export default class IceEllipsis extends Component {
         </span>
       );
     } else if (lineLimit > 1) {
-      if (this.state.isSupportLineClamp) {
+      if (isSupportLineClamp) {
         content = (
           <span
             className={cls}
             style={{
               width: wrapWidth,
               textOverflow: 'ellipsis',
-              display: 'inline-block',
               overflow: 'hidden',
               display: '-webkit-box',
               WebkitLineClamp: lineLimit,
@@ -134,11 +130,11 @@ export default class IceEllipsis extends Component {
         }
         lineCount = Math.floor(lineCount);
 
-        let textArr = getTextArr(text, lineCount, lineLimit);
+        const textArr = getTextArr(text, lineCount, lineLimit);
 
         const textList = textArr.map((item, index) => {
           // 最后一个超过一行长度的裁切一下加下省略号
-          if (index == lineLimit - 1 && item.length === lineCount) {
+          if (index === lineLimit - 1 && item.length === lineCount) {
             return <span key={index}>{setEllipsis(item)}</span>;
           }
 
@@ -159,23 +155,23 @@ export default class IceEllipsis extends Component {
       }
     }
 
-    if (this.props.showTooltip) {
+    if (showTooltip) {
       return (
         <Tooltip
           trigger={content}
           align="b"
-          {...this.props.tooltipProps}>
+          {...tooltipProps}
+        >
           {text}
         </Tooltip>
       );
-    } else {
-      return <span title={text}>{content}</span>;
     }
+    return <span title={text}>{content}</span>;
   }
 }
 
 function getTextArr(text, lineTextLength, lineLimit) {
-  let result = [];
+  const result = [];
 
   for (let i = 1; i <= Math.ceil(text.length / lineTextLength); i++) {
     const start = lineTextLength * (i - 1);
@@ -191,7 +187,7 @@ function getTextArr(text, lineTextLength, lineLimit) {
   return result;
 }
 function setEllipsis(text) {
-  let textArr = text.split('');
+  const textArr = text.split('');
   textArr.splice(textArr.length - 1, 3, '...');
   return textArr.join('');
 }
