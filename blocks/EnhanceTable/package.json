@@ -22,18 +22,18 @@
     "ice-block"
   ],
   "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
-    "@icedesign/data-binder": "^1.0.4",
+    "@icedesign/container": "^1.x",
+    "@icedesign/data-binder": "^1.x",
     "@icedesign/img": "^0.1.0",
-    "@icedesign/label": "^1.0.2",
+    "@icedesign/label": "^1.x",
     "enquire-js": "^0.1.2",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "@alifd/next": "^1.x"
   },
   "devDependencies": {
-    "@icedesign/theme": "^0.1.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@icedesign/theme": "^0.x",
+    "react": "*",
+    "react-dom": "*"
   },
   "blockConfig": {
     "name": "enhance-table",
