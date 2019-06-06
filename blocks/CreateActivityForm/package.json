@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",
-    "moment": "^2.24.0",
     "react": "*",
     "react-dom": "*"
   },

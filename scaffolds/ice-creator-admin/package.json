@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/creator-admin-scaffold",
-  "version": "2.0.3",
+  "version": "2.0.1",
   "description": "该模板适用于创作者发布文章，帖子类的管理后台",
   "homepage": "https://unpkg.com/@icedesign/creator-admin-scaffold@latest/build/index.html",
   "author": "noyobo <nongyoubao@alibaba-inc.com>",
@@ -12,8 +12,7 @@
     "_gitignore",
     ".editorconfig",
     ".eslintignore",
-    ".eslintrc",
-    "ice.config.js"
+    ".eslintrc"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
@@ -43,15 +42,19 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "ice-scripts": "^2.0.0",
-    "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0"
+    "ice-scripts": "^1.1.1"
   },
   "scripts": {
-    "start": "ice-scripts dev",
-    "build": "ice-scripts build",
-    "prepublishOnly": "npm run build",
+    "start": "ice dev",
+    "build": "ice build",
     "lint": "eslint . --ext '.js,.jsx' --fix"
+  },
+  "buildConfig": {
+    "theme": "@icedesign/theme",
+    "entry": "src/index.js",
+    "output": {
+      "publicPath": "./"
+    }
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
@@ -67,6 +70,7 @@
     ]
   },
   "publishConfig": {
+    "registry": "http://registry.npmjs.com",
     "access": "public"
   },
   "repository": {

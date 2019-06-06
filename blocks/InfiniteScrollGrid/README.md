@@ -1,6 +1,6 @@
 # infinite-scroll-grid
 
-简介：Index
+简介：InfiniteScrollGrid
 
 无限滚动的栅格列表
 
