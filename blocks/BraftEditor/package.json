@@ -23,9 +23,9 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
-    "braft-editor": "^1.9.8"
+    "@icedesign/container": "^1.x",
+    "braft-editor": "^1.9.8",
+    "@alifd/next": "^1.x"
   },
   "peerDependencies": {
     "prop-types": "^15.5.8",

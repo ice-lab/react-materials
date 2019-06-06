@@ -22,20 +22,14 @@
     "ice-block"
   ],
   "dependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
-    "core-js": "^3.0.1",
+    "@icedesign/container": "^1.x",
     "prop-types": "^15.5.8",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@alifd/next": "^1.x"
   },
   "devDependencies": {
-    "@alifd/next": "^1.14.2",
-    "@icedesign/container": "^1.0.3",
     "@icedesign/theme": "^0.x",
-    "core-js": "^3.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "*",
+    "react-dom": "*"
   },
   "blockConfig": {
     "name": "basic-not-found",

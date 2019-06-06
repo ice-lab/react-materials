@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "prop-types": "^15.5.8",
-    "rc-queue-anim": "^1.6.12",
+    "rc-queue-anim": "^1.6.5",
     "react": "^16.2.0"
   },
   "blockConfig": {
