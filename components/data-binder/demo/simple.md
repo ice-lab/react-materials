@@ -1,40 +1,34 @@
 ---
 title: 简单的用法
 order: 1
+importStyle: true
 ---
 
-通过 GET 方式请求数据，基于 `__loading` 属性可以区分请求的不同状态，基于 `__error` 属性可以区分接口是否报错。
+本 Demo 演示最基础的用法。
 
 ````jsx
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import DataBinder from '@icedesign/data-binder';
 import {
-  Button, Loading
+  Button
 } from '@alifd/next';
 
 @DataBinder({
   fooData: {
-    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/success',
+    url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/foo1',
+    // ajax 参数参见：https://github.com/axios/axios
     defaultBindingData: {
       foo: 'bar'
     }
   }
 })
 class App extends Component {
-  componentDidMount() {
-    this.props.updateBindingData('fooData', {
-      params: {
-        key: 'init'
-      }
-    }, (response) => {
-      // 请求回调，可按需使用
-      console.log('数据加载完成啦', response);
-    });
-  }
 
   refreshFoo = () => {
     this.props.updateBindingData('fooData', {
+      // ajax 参数参见：https://github.com/axios/axios
+      // 当前接口不需要参数，在这里只是演示，可以打开 Devtool 的 network 面板查看做了什么
       params: {
         bar: 'foo'
       }
@@ -46,14 +40,12 @@ class App extends Component {
 
     return (
       <div>
-        <Loading visible={fooData.__loading}>
+        <div>
           foo 的值： {fooData.foo}
-        </Loading>
-        <div style={{marginTop: 10}}>
-          <Button onClick={this.refreshFoo}>主动获取新数据</Button>
         </div>
-        <h3>数据加载中：{fooData.__loading ? '是' : '否'}</h3>
-        <h3>接口是否报错：{fooData.__error ? fooData.__error.message : '无'}</h3>
+        <div style={{marginTop: 10}}>
+          <Button onClick={this.refreshFoo}>请求获取新数据</Button>
+        </div>
       </div>
     );
   }

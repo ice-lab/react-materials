@@ -1,39 +1,36 @@
 ---
-title: 接口不符合规范
-order: 4
+title: 格式化接口返回
+order: 3
+importStyle: true
 ---
 
-通过 responseFormatter 格式化接口返回数据，适配跟 DataBinder 接口规范不一致的情况。
+格式化接口返回的 Demo 适配老接口。
 
-假设业务实际接口格式如下：
+由于 DataBinder 方案对于接口有一定的规范，因此在接入老接口或者其他人的接口时，可能会有一些数据不兼容的问题，此时可以使用 `resposeFormatter` 配置来做数据格式兼容。
 
-```json
-{
-  "code": 0,
-  "msg": "OK",
-  "content": {
-    "foo": ""
-  }
-}
-```
+打开 Network 面板可以看到当前 Mock 接口的数据格式不符合 DataBinder 的数据要求。
 
 ````jsx
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import DataBinder from '@icedesign/data-binder';
-import { Button, Loading } from '@alifd/next';
+import { Button } from '@alifd/next';
 
 @DataBinder({
   fooData: {
-    url: 'https://www.easy-mock.com/mock/5cc669767a9a541c744c9be7/databinder/custom',
-    responseFormatter: (responseHandler, body, response) => {
+    url: 'https://www.easy-mock.com/mock/5c7c9334869f506acc184ff7/ice/formatter',
+    // ajax 参数参见：https://github.com/axios/axios
+    responseFormatter: (responseHandler, res, originResponse) => {
       // 拿到接口返回的 res 数据，做一些格式转换处理，使其符合 DataBinder 的要求
-      const newBody = {
-        status: body.code === '1' ? 'SUCCESS' : 'ERROR',
-        message: body.msg,
-        data: body.content
+      // 最后再按照顺序丢到 responseHandler 方法里继续执行
+      res = {
+        success: res.code === "0" ? false : true,
+        message: res.msg,
+        params: {
+          ...res.content
+        }
       };
-      responseHandler(newBody, response);
+      responseHandler(res, originResponse);
     },
     defaultBindingData: {
       foo: 'bar'
@@ -41,17 +38,25 @@ import { Button, Loading } from '@alifd/next';
   }
 })
 class App extends Component {
+
   refreshFoo = () => {
-    this.props.updateBindingData('fooData');
+    this.props.updateBindingData('fooData', {
+      // ajax 参数参见：https://github.com/axios/axios
+      // 当前接口不需要参数，在这里只是演示，可以打开 Devtool 的 network 面板查看做了什么
+      params: {
+        bar: 'foo'
+      }
+    });
   };
 
   render() {
     const {fooData} = this.props.bindingData;
+
     return (
       <div>
-        <Loading visible={fooData.__loading}>
+        <div>
           foo 的值： {fooData.foo}
-        </Loading>
+        </div>
         <div style={{marginTop: 10}}>
           <Button onClick={this.refreshFoo}>请求获取新数据</Button>
         </div>
