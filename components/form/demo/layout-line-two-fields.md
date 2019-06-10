@@ -4,7 +4,7 @@ order: 20
 importStyle: true
 ---
 
-```css
+````css
 .ice-inline-form .field-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +22,7 @@ importStyle: true
 .ice-inline-form .btn {
   margin-top: 20px;
 }
-```
+````
 
 ````jsx
 import React, { Component } from 'react';

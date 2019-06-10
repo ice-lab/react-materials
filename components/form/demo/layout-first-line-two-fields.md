@@ -4,13 +4,12 @@ order: 21
 importStyle: true
 ---
 
-```css
+````css
 .ice-first-inline-form .ice-field .ice-field-label {
   display: inline;
   width: auto ;
 }
-
-```
+````
 
 ````jsx
 import React, { Component } from 'react';
