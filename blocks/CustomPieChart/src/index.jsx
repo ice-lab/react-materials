@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
-
+import styles from './index.module.scss';
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xBJSFJgFFf
  */
@@ -472,7 +472,7 @@ export default class CustomPieChart extends Component {
     return (
       <div className="custom-pie-chart">
         <IceContainer>
-          <ReactEcharts option={this.getOption()} style={{ height: '500px' }} />
+          <ReactEcharts option={this.getOption()} className={styles.echartsHeight} />
         </IceContainer>
       </div>
     );

@@ -1,6 +1,6 @@
 import Container from '@icedesign/container';
 import React, { Component } from 'react';
-
+import styles from './index.module.scss';
 class DataOverview extends Component {
   state = {
     dataSource: [
@@ -48,23 +48,16 @@ class DataOverview extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <Container className={styles.container}>
         {this.state.dataSource.map((data, index) => {
           return (
-            <div key={index} style={styles.overviewItem}>
-              <div style={styles.overviewItemIcon}>
-                <img alt={data.title} src={data.icon} style={{ width: 70 }} />
+            <div key={index} className={styles.overviewItem}>
+              <div className={styles.overviewItemIcon}>
+                <img alt={data.title} src={data.icon} className={styles.width} />
               </div>
-              <div
-                style={{
-                  paddingLeft: 10,
-                  display: 'flex',
-                  justifyContent: 'center',
-                  flexDirection: 'column',
-                }}
-              >
-                <div style={styles.overviewItemTitle}>{data.title}</div>
-                <div style={styles.overviewItemTotal}>{data.total}</div>
+              <div className={styles.sy}>
+                <div className={styles.overviewItemTitle}>{data.title}</div>
+                <div className={styles.overviewItemTotal}>{data.total}</div>
               </div>
             </div>
           );
@@ -73,28 +66,5 @@ class DataOverview extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  overviewItem: {
-    flex: '0 0 25%',
-    display: 'flex',
-    padding: '10px 0',
-  },
-  overviewItemTitle: {
-    fontSize: 12,
-    lineHeight: '20px',
-    color: '#999',
-  },
-  overviewItemTotal: {
-    fontSize: 24,
-    lineHeight: '30px',
-    color: '#333',
-  },
-};
 
 export default DataOverview;

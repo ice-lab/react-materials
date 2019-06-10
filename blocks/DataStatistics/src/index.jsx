@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
-import './DataStatistics.scss';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -67,9 +67,9 @@ export default class DataStatistics extends Component {
     };
 
     return (
-      <div className="data-statistics">
+      <div className={styles.dataStatistics}>
         <IceContainer>
-          <h4 style={styles.title}>用户活跃趋势</h4>
+          <h4 className={styles.title}>用户活跃趋势</h4>
           <Row wrap>
             <Col xxs="24" s="14" l="16">
               <Chart
@@ -86,20 +86,19 @@ export default class DataStatistics extends Component {
               </Chart>
             </Col>
             <Col xxs="24" s="10" l="8">
-              <ul style={styles.items}>
+              <ul className={styles.items}>
                 {dataSource.statisticData.map((item, index) => {
                   return (
-                    <li key={index} className="item-box" style={styles.itemBox}>
-                      <div style={styles.itemIcon}>
+                    <li key={index} className={styles.itemBox}>
+                      <div className={styles.itemIcon}>
                         <Icon
                           type="account-filling"
-                          style={styles.icon}
-                          className="itemIcon"
+                          className={styles.icon}
                         />
                       </div>
-                      <div style={styles.itemText}>
-                        <div style={styles.name}>{item.name}</div>
-                        <div style={styles.value}>{item.value}</div>
+                      <div className={styles.itemText}>
+                        <div className={styles.name}>{item.name}</div>
+                        <div className={styles.value}>{item.value}</div>
                       </div>
                     </li>
                   );
@@ -112,41 +111,3 @@ export default class DataStatistics extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    width: '100%',
-  },
-  title: {
-    margin: 0,
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-  items: {
-    display: 'flex',
-    flexDeriction: 'row',
-    flexWrap: 'wrap',
-    marginLeft: '30px',
-  },
-  itemBox: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '50%',
-    marginTop: '50px',
-  },
-  itemIcon: {
-    marginRight: '10px',
-  },
-  icon: {
-    color: '#3FA1FF',
-  },
-  value: {
-    color: '#1F82FF',
-    fontSize: '20px',
-  },
-  name: {
-    fontSize: '12px',
-  },
-};

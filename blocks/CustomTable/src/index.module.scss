@@ -1,4 +1,18 @@
-.custom-table {
+.title{
+  margin: 0;
+  padding: 15px 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0 !important;
+}
+.divPaddingOne{
+  padding: 0 !important;
+}
+.divPaddingTwo{
+  padding: 20px;
+}
+
+.customTable {
   width: 100%;
   tr {
     border: 1px solid #eee;

@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Label, Shape, Util, PathUtil } from 'bizcharts';
+import styles from './index.module.scss';
 
-export default class CustomBarChart extends Component {
-  static displayName = 'CustomBarChart';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -123,7 +124,7 @@ export default class CustomBarChart extends Component {
                   return (
                     '<div style="color:' +
                     COLORS[index] +
-                    ';font-size:10px;width:45px;position:relative;left:15px;">' +
+                    '" class={styles.divText}>' +
                     text +
                     '</div>'
                   );
@@ -144,7 +145,7 @@ export default class CustomBarChart extends Component {
                     // 3 替换成Min
                     const topOffset = val === 3 ? -30 : 0;
                     return (
-                      '<div style="color:#999;font-size:10px;position:relative;left:15px;top:' +
+                      '<div class={styles.divVal}  style="top:' +
                       topOffset +
                       'px">' +
                       val +

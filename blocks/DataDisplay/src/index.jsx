@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-
+import styles from './index.module.scss';
 const data = [
   {
     count: 100,
@@ -32,13 +32,13 @@ export default class DataDisplay extends Component {
     return (
       <div className="data-display">
         <IceContainer>
-          <div style={styles.items}>
+          <div className={styles.items}>
             {data.map((item, index) => {
               return (
-                <div style={styles.item} key={index}>
-                  <h5 style={styles.count}>{item.count}</h5>
-                  <span style={styles.splitLine} />
-                  <p style={styles.title}>{item.title}</p>
+                <div className={styles.item} key={index}>
+                  <h5 className={styles.count}>{item.count}</h5>
+                  <span className={styles.splitLine} />
+                  <p className={styles.title}>{item.title}</p>
                 </div>
               );
             })}
@@ -48,31 +48,3 @@ export default class DataDisplay extends Component {
     );
   }
 }
-
-const styles = {
-  items: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  item: {
-    width: '33.3333%',
-    margin: '5px 0',
-    textAlign: 'center',
-  },
-  count: {
-    margin: '12px 0',
-    fontWeight: 'bold',
-    fontSize: '32px',
-    color: '#15A0FF',
-  },
-  title: {
-    color: '#999',
-  },
-  splitLine: {
-    display: 'block',
-    margin: '0 auto',
-    width: '24px',
-    height: '1px',
-    background: '#9B9B9B',
-  },
-};

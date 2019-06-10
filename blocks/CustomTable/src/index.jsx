@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './CustomTable.scss';
+import styles from './index.module.scss';
 
-export default class CustomTable extends Component {
-  static displayName = 'CustomTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -16,10 +16,10 @@ export default class CustomTable extends Component {
 
   render() {
     return (
-      <IceContainer style={{ padding: 0 }}>
-        <h3 style={styles.title}>模型服务信息</h3>
-        <div style={{ padding: '20px' }}>
-          <table className="custom-table">
+      <IceContainer className={styles.divPaddingOne}>
+        <h3 className={styles.title}>模型服务信息</h3>
+        <div className={styles.divPaddingTwo}>
+          <table className={styles.customTable}>
             <tbody>
               <tr>
                 <td>名称</td>
@@ -59,13 +59,4 @@ export default class CustomTable extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0',
-    padding: '15px 20px',
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #f0f0f0',
-  },
-};
+
