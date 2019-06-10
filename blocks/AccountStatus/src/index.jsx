@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Container from '@icedesign/container';
-
+import styles from './index.module.scss';
 import StateItem from './StateItem';
 
-export default class AccountStatus extends Component {
-  static displayName = 'AccountStatus';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
@@ -23,13 +23,13 @@ export default class AccountStatus extends Component {
   render() {
     return (
       <Container>
-        <div style={styles.header}>
-          <h2 style={{ margin: 0, fontSize: 16 }}>我的角色</h2>
-          <span style={{ fontSize: 12, color: '#999', paddingLeft: 20 }}>
+        <div className={styles.header}>
+          <h2 className={styles.titles}>我的角色</h2>
+          <span className={styles.contents} >
             角色认证通过后，角色标识及认证信息将显示在账号主页，拥有个性化的玩法，如渠道快速合作等
           </span>
         </div>
-        <div style={styles.body}>
+        <div>
           {this.state.dataSource.map((item, index) => {
             return <StateItem data={item} key={index} />;
           })}
@@ -39,9 +39,3 @@ export default class AccountStatus extends Component {
   }
 }
 
-const styles = {
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-};

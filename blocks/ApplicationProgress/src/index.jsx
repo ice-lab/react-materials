@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Step, Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
-
+import styles from './index.module.scss';
 const dataSource = () => {
   return [
     {
@@ -50,8 +50,8 @@ const dataSource = () => {
 
 const { Row, Col } = Grid;
 
-export default class ApplicationProgress extends Component {
-  static displayName = 'ApplicationProgress';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -93,12 +93,12 @@ export default class ApplicationProgress extends Component {
           <div>
             {data.map((item, index) => {
               return (
-                <div style={styles.row} key={index}>
+                <div className={styles.row} key={index}>
                   <Row wrap>
                     <Col xxs="24" s="4">
-                      <div style={styles.imageWrap}>
+                      <div className={styles.imageWrap}>
                         <img
-                          style={styles.image}
+                          className={styles.image}
                           src={item.url}
                           alt="condition"
                         />
@@ -109,34 +109,28 @@ export default class ApplicationProgress extends Component {
                     <Col
                       xxs="24"
                       s="16"
-                      style={{
-                        ...styles.itemBody,
-                        ...(isMobile && styles.mobileContentCenter),
-                      }}
+                      className={`${styles.itemBody} ${isMobile && styles.mobileContentCenter}`}
                     >
                       <span
-                        style={
+                        className={
                           item.validate
                             ? styles.itemStatusSuccess
                             : styles.itemStatusFail
                         }
                       >
                         <Icon type={item.validate ? 'success' : 'error'} />
-                        <span style={styles.itemStatusText}>
+                        <span className={styles.itemStatusText}>
                           {item.validate ? '符合文案' : '不符合文案'}
                         </span>
                       </span>
                       <div
-                        style={{
-                          ...styles.itemDescription,
-                          ...(isMobile && styles.removeContentWidth),
-                        }}
+                        className={`${styles.itemDescription} ${(isMobile && styles.removeContentWidth)}`}
                       >
                         {item.description}
                       </div>
                     </Col>
                     <Col xxs="24" s="4">
-                      <div style={styles.operationWrap}>
+                      <div className={styles.operationWrap}>
                         <a href={item.url} target="_blank">
                           {item.operation}
                         </a>
@@ -147,9 +141,9 @@ export default class ApplicationProgress extends Component {
               );
             })}
           </div>
-          <div style={styles.itemFooter}>
+          <div className={styles.itemFooter}>
             <p>亲，您需要通过全部校验条件，才可以开通账号！</p>
-            <Button style={styles.nextBtn} size="large" disabled>
+            <Button className={styles.nextBtn} size="large" disabled>
               下一步
             </Button>
           </div>
@@ -158,57 +152,3 @@ export default class ApplicationProgress extends Component {
     );
   }
 }
-
-const styles = {
-  row: {
-    backgroundColor: '#f9f9f9',
-    marginTop: '32px',
-    padding: '20px 40px',
-  },
-  imageWrap: {
-    textAlign: 'center',
-  },
-  image: {
-    width: '64px',
-    height: '64px',
-    borderRadius: '50',
-    marginBottom: '12px',
-  },
-  itemBody: {
-    padding: '10px 50px 0',
-  },
-  itemDescription: {
-    color: '#666',
-    marginTop: '20px',
-    maxWidth: '309px',
-  },
-  operationWrap: {
-    marginTop: '40px',
-    textAlign: 'center',
-  },
-  itemFooter: {
-    textAlign: 'center',
-    color: '#666',
-    marginTop: '40px',
-  },
-  nextBtn: {
-    marginTop: '40px',
-  },
-  itemStatusSuccess: {
-    color: '#1be25c',
-  },
-  itemStatusFail: {
-    color: '#f33',
-    fontSize: '16px',
-  },
-  itemStatusText: {
-    marginLeft: '10px',
-  },
-  mobileContentCenter: {
-    textAlign: 'center',
-    padding: '20px 0 0 0',
-  },
-  removeContentWidth: {
-    maxWidth: 'none',
-  },
-};
