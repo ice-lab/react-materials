@@ -22,10 +22,11 @@
     "ice-block"
   ],
   "dependencies": {
+    "@alifd/next": "^1.x",
     "@icedesign/container": "^1.x",
     "enquire-js": "^0.1.2",
-    "prop-types": "^15.5.8",
-    "@alifd/next": "^1.x"
+    "moment": "^2.24.0",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",

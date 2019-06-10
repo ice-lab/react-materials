@@ -3,13 +3,14 @@ import IceContainer from '@icedesign/container';
 import { Table, Pagination, Progress, Button } from '@alifd/next';
 import EditDialog from './EditDialog';
 import data from './data';
+import styles from './index.module.scss';
 
-export default class ComplexProgressTable extends Component {
+export default class Index extends Component {
   renderTitle = (value, index, record) => {
     return (
       <div>
-        <div style={styles.title}>{record.title}</div>
-        <div style={styles.subTitle}>创建时间 {record.createTime}</div>
+        <div>{record.title}</div>
+        <div className={styles.subTitle}>创建时间 {record.createTime}</div>
       </div>
     );
   };
@@ -31,15 +32,15 @@ export default class ComplexProgressTable extends Component {
 
   renderOperations = (value, index, record) => {
     return (
-      <div style={styles.operations}>
+      <div className={styles.operations}>
         <Button
-          style={styles.operationButton}
+          className={styles.operationButton}
           onClick={() => this.editItem(index, record)}
           text
         >
           编辑
         </Button>
-        <Button style={styles.operationButton} text>
+        <Button className={styles.operationButton} text>
           删除
         </Button>
       </div>
@@ -53,11 +54,11 @@ export default class ComplexProgressTable extends Component {
   render() {
     return (
       <div className="complex-progress-table">
-        <IceContainer style={styles.tableCard}>
+        <IceContainer className={styles.tableCard}>
           <Table
             dataSource={data}
             className="basic-table"
-            style={styles.basicTable}
+            // className={styles.basicTable}
             hasBorder={false}
           >
             <Table.Column
@@ -75,7 +76,7 @@ export default class ComplexProgressTable extends Component {
               title="优先级"
               dataIndex="priority"
               width={60}
-              style={styles.priority}
+              className={styles.priority}
             />
             <Table.Column
               title="操作"
@@ -83,7 +84,7 @@ export default class ComplexProgressTable extends Component {
               cell={this.renderOperations}
             />
           </Table>
-          <div style={styles.pagination}>
+          <div className={styles.pagination}>
             <Pagination />
           </div>
         </IceContainer>
@@ -92,27 +93,3 @@ export default class ComplexProgressTable extends Component {
   }
 }
 
-const styles = {
-  tableCard: {
-    padding: '10px',
-  },
-  subTitle: {
-    marginTop: '4px',
-    fontSize: '12px',
-    color: '#999999',
-  },
-  operationButton: {
-    marginRight: '10px',
-  },
-  priority: {
-    width: '70px',
-    textAlign: 'center',
-  },
-  operations: {
-    lineHeight: '28px',
-  },
-  pagination: {
-    textAlign: 'right',
-    paddingTop: '26px',
-  },
-};

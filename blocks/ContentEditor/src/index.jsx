@@ -3,12 +3,12 @@ import IceContainer from '@icedesign/container';
 import { Input, Grid, Form, Button, Select, SplitButton } from '@alifd/next';
 
 import RichEditor from './RichEditor';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const FormItem = Form.Item;
 
-export default class ContentEditor extends Component {
-  static displayName = 'ContentEditor';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   handleSubmit = (values, errors) => {
     console.log('errors', errors, 'values', values);
@@ -23,7 +23,7 @@ export default class ContentEditor extends Component {
     return (
       <div className="content-editor">
         <IceContainer title="文章发布">
-          <Form labelAlign="top" style={styles.form} >
+          <Form labelAlign="top" className={styles.form} >
             <Row>
               <Col span="11">
                 <FormItem label="标题" required requiredMessage="标题必填">
@@ -41,7 +41,7 @@ export default class ContentEditor extends Component {
                 <FormItem label="分类" required requiredMessage="分类必填支持多个" help="">
                   <Select
                     name="cats"
-                    style={styles.cats}
+                    className={styles.cats}
                     mode="multiple"
                     placeholder="请选择分类"
                     dataSource={[
@@ -54,10 +54,10 @@ export default class ContentEditor extends Component {
                     {
                       (errors) => {
                         return  errors.length? <div>
-                          <span style={{ color: 'red' }}>
+                          <span className={styles.spanColor}>
                             {errors.map((item) => item).join(',')}
                           </span>
-                          <span style={{ marginLeft: 10 }}>
+                          <span className={styles.spanMarginLeft}>
                             不知道选择什么分类？请 <a href="#">点击这里</a>{' '}
                             查看
                             </span>
@@ -86,11 +86,4 @@ export default class ContentEditor extends Component {
   }
 }
 
-const styles = {
-  form: {
-    marginTop: 30,
-  },
-  cats: {
-    width: '100%',
-  },
-};
+

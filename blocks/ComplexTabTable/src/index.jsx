@@ -6,10 +6,10 @@ import IceImg from '@icedesign/img';
 import IceLabel from '@icedesign/label';
 import SubCategoryItem from './SubCategoryItem';
 import data from './data';
-import './ComplexTabTable.scss';
+import styles from  './index.module.scss';
 
-export default class ComplexTabTable extends Component {
-  static displayName = 'ComplexTabTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static defaultProps = {};
 
@@ -93,11 +93,11 @@ export default class ComplexTabTable extends Component {
 
   renderTitle = (value, index, record) => {
     return (
-      <div style={styles.titleWrapper}>
+      <div className={styles.titleWrapper}>
         <div>
           <IceImg src={record.cover} width={48} height={48} />
         </div>
-        <span style={styles.title}>{record.title}</span>
+        <span className={styles.title}>{record.title}</span>
       </div>
     );
   };
@@ -109,19 +109,19 @@ export default class ComplexTabTable extends Component {
 
   renderOperations = (value, index, record) => {
     return (
-      <div style={styles.complexTabTableOperation}>
+      <div className={styles.complexTabTableOperation}>
         <a
           href="#"
-          style={styles.operation}
+          className={styles.operation}
           target="_blank"
           onClick={this.editItem.bind(this, record)}
         >
           解决
         </a>
-        <a href="#" style={styles.operation} target="_blank">
+        <a href="#" className={styles.operation} target="_blank">
           详情
         </a>
-        <a href="#" style={styles.operation} target="_blank">
+        <a href="#" className={styles.operation} target="_blank">
           分类
         </a>
       </div>
@@ -165,9 +165,9 @@ export default class ComplexTabTable extends Component {
 
   renderTabBarExtraContent = () => {
     return (
-      <div style={styles.tabExtra}>
+      <div className={styles.tabExtra}>
         <Search
-          style={styles.search}
+          className={styles.search}
           type="secondary"
           placeholder="搜索"
           searchText=""
@@ -181,7 +181,7 @@ export default class ComplexTabTable extends Component {
     const { tabList } = this.state;
 
     return (
-      <div className="complex-tab-table">
+      <div className={styles.complexTabTable}>
         <IceContainer>
           <Tab
             onChange={this.onTabChange}
@@ -202,7 +202,7 @@ export default class ComplexTabTable extends Component {
                       title={
                         <span>
                           {tab.text}
-                          <span style={styles.tabCount}>{tab.count}</span>
+                          <span className={styles.tabCount}>{tab.count}</span>
                         </span>
                       }
                     >
@@ -229,8 +229,7 @@ export default class ComplexTabTable extends Component {
         <IceContainer>
           <Table
             dataSource={data}
-            className="basic-table"
-            style={styles.basicTable}
+            className={`basic-table ${styles.basicTable}`}
             hasBorder={false}
           >
             <Table.Column
@@ -257,7 +256,7 @@ export default class ComplexTabTable extends Component {
               cell={this.renderOperations}
             />
           </Table>
-          <div style={styles.pagination}>
+          <div className={styles.pagination}>
             <Pagination />
           </div>
         </IceContainer>
@@ -266,35 +265,3 @@ export default class ComplexTabTable extends Component {
   }
 }
 
-const styles = {
-  complexTabTableOperation: {
-    lineHeight: '28px',
-  },
-  titleWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  title: {
-    marginLeft: '10px',
-    lineHeight: '20px',
-  },
-  operation: {
-    marginRight: '12px',
-    textDecoration: 'none',
-  },
-  tabExtra: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  search: {
-    marginLeft: 10,
-  },
-  tabCount: {
-    marginLeft: '5px',
-    color: '#3080FE',
-  },
-  pagination: {
-    textAlign: 'right',
-    paddingTop: '26px',
-  },
-};

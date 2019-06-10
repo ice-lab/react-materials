@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Filter from './Filter';
 import Lists from './Lists';
 
-export default class ContentList extends Component {
-  static displayName = 'ContentList';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Search, Tab, Tag, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
+import styles from './index.module.scss';
 
 const TabItem = Tab.Item;
 
@@ -29,8 +30,8 @@ const tagList = [
   },
 ];
 
-export default class CompositeFilter extends Component {
-  static displayName = 'CompositeFilter';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -75,7 +76,7 @@ export default class CompositeFilter extends Component {
 
   renderTabBarExtraContent = () => {
     return (
-      <div style={styles.extraFilter}>
+      <div className={styles.extraFilter}>
         <DatePicker
           locale={{ datePlaceholder: '发布日期' }}
           onChange={this.onDateChange}
@@ -84,7 +85,7 @@ export default class CompositeFilter extends Component {
           placeholder="搜索"
           searchText=""
           onSearch={this.onSearch}
-          style={styles.search}
+          className={styles.search}
           shape="simple"
         />
       </div>
@@ -94,7 +95,7 @@ export default class CompositeFilter extends Component {
   render() {
     return (
       <div className="composite-filter">
-        <IceContainer style={styles.filterCard}>
+        <IceContainer className={styles.filterCard}>
           <Tab
             shape="text"
             onChange={this.onTabChange}
@@ -110,13 +111,13 @@ export default class CompositeFilter extends Component {
             <TabItem title="短视频" key="video" />
           </Tab>
 
-          <div style={styles.tagList}>
+          <div className={styles.tagList}>
             {tagList.map((tag, index) => {
               return (
                 <Tag.Selectable
                   type="normal"
                   key={index}
-                  style={styles.tag}
+                  className={styles.tag}
                   onChange={this.onTagChange.bind(this, tag.key)}
                 >
                   {tag.name}
@@ -130,24 +131,4 @@ export default class CompositeFilter extends Component {
   }
 }
 
-const styles = {
-  filterCard: {
-    position: 'relative',
-    padding: 10,
-  },
-  tagList: {
-    marginTop: '10px',
-  },
-  tag: {
-    margin: 8,
-  },
-  extraFilter: {
-    marginTop: '8px',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  search: {
-    marginLeft: '12px',
-    width: 150,
-  },
-};
+

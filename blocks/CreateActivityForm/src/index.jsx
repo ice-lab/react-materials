@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 import {
   Input,
   Button,
@@ -26,8 +27,8 @@ const formItemLayout = {
   wrapperCol: { s: "12", l: "10", }
 };
 
-export default class CreateActivityForm extends Component {
-  static displayName = 'CreateActivityForm';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static defaultProps = {};
 
@@ -67,7 +68,7 @@ export default class CreateActivityForm extends Component {
   render() {
     return (
       <div className="create-activity-form">
-        <IceContainer title="活动发布" style={styles.container}>
+        <IceContainer title="活动发布" className={styles.container}>
           <Form
             value={this.state.value}
             onChange={this.onFormChange}
@@ -76,7 +77,7 @@ export default class CreateActivityForm extends Component {
                 required
                 requiredMessage="活动名称必须填写"
               >
-                <Input name="name" style={{ width: '100%' }} />
+                <Input name="name" className={styles.inputWidth} />
               </FormItem>
 
               <FormItem {...formItemLayout} label="活动区域：">
@@ -120,14 +121,14 @@ export default class CreateActivityForm extends Component {
               </FormItem>
 
               <FormItem {...formItemLayout} label="活动形式：">
-                <Input.TextArea name="extra" style={{ width: '100%' }} />
+                <Input.TextArea name="extra" className={styles.inputWidth} />
               </FormItem>
 
               <FormItem {...formItemLayout} label=" ">
                 <Form.Submit type="primary" validate onClick={this.submit}>
                   立即创建
                   </Form.Submit>
-                <Form.Reset style={styles.resetBtn} onClick={this.reset}>
+                <Form.Reset className={styles.resetBtn} onClick={this.reset}>
                   重置
                   </Form.Reset>
               </FormItem>
@@ -138,22 +139,4 @@ export default class CreateActivityForm extends Component {
   }
 }
 
-const styles = {
-  container: {
-    paddingBottom: 0,
-  },
-  formItem: {
-    height: '28px',
-    lineHeight: '28px',
-    marginBottom: '25px',
-  },
-  formLabel: {
-    textAlign: 'right',
-  },
-  btns: {
-    margin: '25px 0',
-  },
-  resetBtn: {
-    marginLeft: '20px',
-  },
-};
+

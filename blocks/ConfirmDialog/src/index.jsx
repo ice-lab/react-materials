@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Dialog, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
+import styles from './index.module.scss';
 
-export default class ConfirmDialog extends Component {
-  static displayName = 'ConfirmDialog';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
@@ -61,14 +62,14 @@ export default class ConfirmDialog extends Component {
           {...this.props}
           visible={this.state.visible}
         >
-          <div style={styles.dialogContent}>
+          <div className={styles.dialogContent}>
             <img
-              style={styles.icon}
+              className={styles.icon}
               src="//img.alicdn.com/tfs/TB1PTrfb_nI8KJjy0FfXXcdoVXa-52-52.png"
               srcSet="//img.alicdn.com/tfs/TB1c5feb46I8KJjy0FgXXXXzVXa-104-104.png"
               alt=""
             />
-            <p style={styles.text}>
+            <p className={styles.text}>
               {this.props.text ? this.props.text : '你确定要删除此条内容吗？'}
             </p>
           </div>
@@ -81,20 +82,4 @@ export default class ConfirmDialog extends Component {
   }
 }
 
-const styles = {
-  icon: {
-    width: '52px',
-    height: '52px',
-    marginTop: '26px',
-    marginBottom: '10px',
-  },
-  dialogContent: {
-    height: '160px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: '16px',
-  },
-};
+

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.complexFilter {
+  .tabFilterItem {
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+    width: 40px;
+    margin: 0 20px;
+    white-space: nowrap;
+    padding-bottom: 15px;
+    &:hover,
+    &.active {
+      color: #3080fe;
+      border-bottom-color: #3080fe;
+    }
+  }
+
+  .filterBelongingItem {
+    cursor: pointer;
+    font-size: 14px;
+    color: #666;
+    margin-right: 20px;
+    &.active,
+    &:hover {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}
+.tabFilterContainer {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0;
+};
+.filterBelonging {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F4F4F4
+};
+.filterBelongingLabel {
+  font-size: 14px;
+  color: #333;
+  margin-right: 19px;
+};
+.filterForm {
+  margin-top: 20px;
+};
+.combobox { width: 200px; margin-right: 25px };
+.select { width: 50px; margin-right: 25px };
+.col {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+};

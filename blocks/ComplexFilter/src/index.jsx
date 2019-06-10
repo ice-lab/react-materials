@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select, Grid } from '@alifd/next';
-import './ComplexFilter.scss';
+import styles from  './index.module.scss';
 
 const { Row, Col } = Grid;
 const {
   Option
 } = Select;
 
-export default class ComplexFilter extends Component {
-  static displayName = 'ComplexFilter';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static defaultProps = {};
 
@@ -37,13 +37,13 @@ export default class ComplexFilter extends Component {
       { type: 'type4', text: '类目四' },
     ];
     return (
-      <div className="complex-filter">
-        <IceContainer style={styles.tabFilterContainer}>
+      <div className={styles.complexFilter}>
+        <IceContainer className={styles.tabFilterContainer}>
           {FILTERS.map((item, idx) => (
             <div
               key={idx}
-              className={`tab-filter-item ${
-                currentFilterType === item.type ? 'active' : ''
+              className={`${styles.tabFilterItem} ${
+                currentFilterType === item.type ? styles.active  : ''
               }`}
               onClick={() => {
                 this.setState({
@@ -57,12 +57,12 @@ export default class ComplexFilter extends Component {
         </IceContainer>
 
         <IceContainer>
-          <div style={styles.filterBelonging}>
-            <span style={styles.filterBelongingLabel}>所属类目：</span>
+          <div className={styles.filterBelonging}>
+            <span className={styles.filterBelongingLabel}>所属类目：</span>
             {CATEGORIES.map((cat, idx) => (
               <span
-                className={`filter-belonging-item ${
-                  categories.indexOf(cat.type) > -1 ? 'active' : ''
+                className={`${styles.filterBelongingItem} ${
+                  categories.indexOf(cat.type) > -1 ? styles.active : ''
                 }`}
                 onClick={() => {
                   const isInCategory = categories.indexOf(cat.type) > -1;
@@ -85,19 +85,19 @@ export default class ComplexFilter extends Component {
             ))}
           </div>
 
-          <Row wrap style={styles.filterForm}>
-            <Col xxs={24} s={8} style={styles.col}>
+          <Row wrap className={styles.filterForm}>
+            <Col xxs={24} s={8} className={styles.col}>
               所有者：
               <Select
-                style={styles.combobox}
+                className={styles.combobox}
                 defaultValue={["卓凌"]}
                 mode="tag"
                 onBlur={() => console.log('blur')} />
             </Col>
 
-            <Col xxs={24} s={8} style={styles.col}>
+            <Col xxs={24} s={8} className={styles.col}>
               活跃用户：
-              <Select style={styles.select}>
+              <Select className={styles.select}>
                 <Option value="">空</Option>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
@@ -108,9 +108,9 @@ export default class ComplexFilter extends Component {
               </Select>
             </Col>
 
-            <Col xxs={24} s={8} style={styles.col}>
+            <Col xxs={24} s={8} className={styles.col}>
               好评度：
-              <Select style={styles.select}>
+              <Select className={styles.select}>
                 <Option value="">空</Option>
                 <Option value="jack">Jack</Option>
                 <Option value="lucy">Lucy</Option>
@@ -127,26 +127,4 @@ export default class ComplexFilter extends Component {
   }
 }
 
-const styles = {
-  tabFilterContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    paddingBottom: 0,
-  },
-  filterBelonging: { paddingBottom: '10px', borderBottom: '1px solid #F4F4F4' },
-  filterBelongingLabel: {
-    fontSize: '14px',
-    color: '#333',
-    marginRight: '19px',
-  },
-  filterForm: {
-    marginTop: '20px',
-  },
-  combobox: { width: '200px', marginRight: '25px' },
-  select: { width: '50px', marginRight: '25px' },
-  col: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '15px',
-  },
-};
+
