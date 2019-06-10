@@ -1,0 +1,80 @@
+.wrapper{
+  position: relative;
+  overflow: hidden;
+  height: 690px;
+};
+.contentWrapper{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+};
+.titleWrapper{
+  margin-top: 120px;
+};
+.titleLine{
+  width: 140px;
+  height: 2px;
+  margin-top: 17px;
+  background: #EEEEEE;
+  border-left: 2px solid #5fb2f8;
+};
+.titleHighlightLine{
+  background: #3080FE;
+  height: 2px;
+  width: 33px;
+};
+.title{
+  color: #223C4E;
+  font-size: 36px;
+};
+.desc{
+  color: #6D7A82;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 24px;
+  width: 525px;
+  text-align: center;
+};
+.featureListWrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+  max-width: 960px;
+  width: 100%;
+};
+.featureItem{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+};
+.featureTitle{
+  margin-top: 35px;
+  font-size: 24px;
+  color: #333333;
+};
+.featureDesc{
+  font-size: 14px;
+  color: #999999;
+  margin-top: 0;
+  margin-bottom: 0;
+};
+.extraButton{
+  margin-top: 50px;
+  border-color: #3080FE;
+  background: transparent;
+  color: #3080FE;
+};
+.clipBackground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+};

@@ -1,0 +1,29 @@
+.container{
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 80px;
+};
+.items{
+  display: flex;
+  flex-wrap: wrap;
+};
+.item{
+  text-align: center;
+  padding: 0 30px;
+  margin: 40px 0;
+};
+.title{
+  font-weight: bold;
+  font-size: 20px;
+};
+.image{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+};
+.description{
+  font-size: 13px;
+  line-height: 22px;
+  color: #999;
+};

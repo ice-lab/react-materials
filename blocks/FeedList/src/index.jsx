@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-
+import styles from './index.module.scss';
 const dataSource = [
   {
     nickName: '某某',
@@ -56,15 +56,15 @@ export default class FeedList extends Component {
   componentWillUnmount() {}
   renderItem = (item, idx) => {
     return (
-      <div style={styles.item} key={idx}>
-        <div style={styles.itemRow}>
-          <span style={styles.title}>
-            <img src={item.avatar} style={styles.avatar} alt="avatar" />
+      <div className={styles.item} key={idx}>
+        <div className={styles.itemRow}>
+          <span className={styles.title}>
+            <img src={item.avatar} className={styles.avatar} alt="avatar" />
             {item.nickName} 发布了一个状态
           </span>
-          <span style={styles.status}>{item.datetime}</span>
+          <span className={styles.status}>{item.datetime}</span>
         </div>
-        <a href="##" style={styles.message}>
+        <a href="##" className={styles.message}>
           {item.message}
         </a>
       </div>
@@ -75,12 +75,12 @@ export default class FeedList extends Component {
     return (
       <div className="feed-list">
         <IceContainer>
-          <div style={styles.titleRow}>
-            <h2 style={styles.cardTitle}>状态列表</h2>
-            <span style={styles.status}>共10条状态</span>
+          <div className={styles.titleRow}>
+            <h2 className={styles.cardTitle}>状态列表</h2>
+            <span className={styles.status}>共10条状态</span>
           </div>
           {dataSource.map(this.renderItem)}
-          <div style={styles.allMessage}>
+          <div className={styles.allMessage}>
             <a href="##">查看全部消息</a>
           </div>
         </IceContainer>
@@ -88,57 +88,3 @@ export default class FeedList extends Component {
     );
   }
 }
-
-const styles = {
-  titleRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: '15px',
-  },
-  cardTitle: {
-    margin: 0,
-    fontSize: '18px',
-    display: 'inline-flex',
-  },
-  title: {
-    fontSize: '14px',
-    display: 'inline-flex',
-    lineHeight: '22px',
-  },
-  status: {
-    display: 'flex',
-    alignItems: 'center',
-    color: '#999',
-    fontSize: '12px',
-  },
-  itemRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  avatar: {
-    width: '24px',
-    height: '24px',
-    borderRadius: '50%',
-    marginRight: '10px',
-  },
-  item: {
-    display: 'flex',
-    flexDirection: 'column',
-    paddingTop: '15px',
-    borderBottom: '1px solid #fafafa',
-  },
-  message: {
-    color: '#999',
-    fontSize: '12px',
-    paddingLeft: '34px',
-    marginBottom: '15px',
-    lineHeight: '22px',
-  },
-  allMessage: {
-    textAlign: 'center',
-    height: '50px',
-    lineHeight: '50px',
-  },
-};

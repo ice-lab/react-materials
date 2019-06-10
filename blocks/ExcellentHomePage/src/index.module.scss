@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+.excellentHomePage {
+  position: relative;
+
+  .title {
+    text-align: center;
+    font-size: 78px;
+    letter-spacing: 4px;
+    line-height: 60px;
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    width: 700px;
+    font-size: 22px;
+    margin: 0;
+    color: #000;
+    text-shadow: #c8c8c8 1px 1px 2px;
+    text-align: center;
+    line-height: 1.7em;
+    font-weight: 100;
+  }
+}
+
+@media (max-width: 999px) {
+  .excellentHomePage {
+    .title {
+      font-size: 48px;
+    }
+    .subtitle {
+      font-size: 18px;
+      max-width: 80vw;
+    }
+  }
+}
+
+.excellentHomePageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+}
+
+.excellentHomePageContentWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .excellentHomePageContent {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 50px;
+  }
+
+  .excellentHomePageButtons {
+    a:hover,
+    a:visited,
+    a:link {
+      color: #fff;
+    }
+  }
+}
+
+.leftButton{
+  margin-right: 20px;
+};
+.gitStar{
+  border: 0px;
+  height: 32px;
+  width: 145px;
+  margin: 0 auto;
+};
+.gitContainer{
+  margin-top: 30px;
+  text-align: center;
+};
+.updateLogLinkWrap{
+  text-align: center;
+};
+.updateLogLink{
+  color: #fff;
+};
+.sty1{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-image: url('./images/TB1oJNKsFOWBuNjy0FiXXXFxVXa-1900-1010.svg');
+  background-position: center;
+}
+.sty2{
+  height: 50px;
+  padding: 0 58px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  background: #00CE72;
+}
+.sty3{
+  margin-left: 5px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  transform: rotate(-45deg);
+}
+.sty4{
+  margin-top: 80px;
+  position: relative;
+}

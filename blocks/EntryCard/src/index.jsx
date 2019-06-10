@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const list = [
   {
@@ -41,18 +42,14 @@ export default class EntryCard extends Component {
     return (
       <IceContainer
         className="entry-card"
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-        }}
+        className={styles.nl}
       >
         {list.map((item, index) => {
           return (
-            <div key={index} style={styles.item}>
-              <a href={item.url} style={styles.link} target="_blank">
-                <img src={item.img} style={styles.cover} alt={item.title} />
-                <div style={styles.title}>{item.title}</div>
+            <div key={index} className={styles.item}>
+              <a href={item.url} className={styles.link} target="_blank">
+                <img src={item.img} className={styles.cover} alt={item.title} />
+                <div className={styles.title}>{item.title}</div>
               </a>
             </div>
           );
@@ -61,26 +58,3 @@ export default class EntryCard extends Component {
     );
   }
 }
-
-const styles = {
-  item: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '70px',
-    margin: '10px 40px',
-  },
-  link: {
-    textDecoration: 'none',
-    color: '#333',
-  },
-  cover: {
-    width: '70px',
-    height: '70px',
-  },
-  title: {
-    marginTop: '12px',
-    fontSize: '14px',
-    textAlign: 'center',
-  },
-};

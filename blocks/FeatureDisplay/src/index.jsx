@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 const data = [
@@ -56,16 +56,16 @@ export default class FeatureDisplay extends Component {
 
   render() {
     return (
-      <div className="feature-display" style={styles.container}>
-        <div style={styles.items}>
+      <div className={styles.container}>
+        <div className={styles.items}>
           <Row gutter="20" wrap>
             {data.map((item, index) => {
               return (
                 <Col key={index} xxs="24" s="12" l="8">
-                  <div style={styles.item}>
-                    <img src={item.imgUrl} style={styles.image} alt="" />
-                    <h3 style={styles.title}>{item.title}</h3>
-                    <p style={styles.description}>{item.description}</p>
+                  <div className={styles.item}>
+                    <img src={item.imgUrl} className={styles.image} alt="" />
+                    <h3 className={styles.title}>{item.title}</h3>
+                    <p className={styles.description}>{item.description}</p>
                   </div>
                 </Col>
               );
@@ -76,35 +76,3 @@ export default class FeatureDisplay extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    width: '100%',
-    maxWidth: '1080px',
-    margin: '0 auto',
-    padding: '0 80px',
-  },
-  items: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  item: {
-    textAlign: 'center',
-    padding: '0 30px',
-    margin: '40px 0',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: '20px',
-  },
-  image: {
-    width: '150px',
-    height: '150px',
-    borderRadius: '50%',
-  },
-  description: {
-    fontSize: '13px',
-    lineHeight: '22px',
-    color: '#999',
-  },
-};
