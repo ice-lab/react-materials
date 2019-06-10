@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import CustomChart from './CustomChart';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default class ChartFacet extends Component {
-  static displayName = 'ChartFacet';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -21,7 +22,7 @@ export default class ChartFacet extends Component {
     return (
       <div className="chart-facet">
         <IceContainer>
-          <h4 style={styles.title}>分面图</h4>
+          <h4 className={styles.title}>分面图</h4>
           <Row wrap>
             <Col xxs="24" l="12">
               <CustomChart />
@@ -36,12 +37,4 @@ export default class ChartFacet extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 20px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+

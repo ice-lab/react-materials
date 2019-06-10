@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Coord, Guide, Shape } from 'bizcharts';
+import styles from './index.module.scss';
 
-export default class ChartGauge extends Component {
-  static displayName = 'ChartGauge';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -65,7 +66,7 @@ export default class ChartGauge extends Component {
     return (
       <div className="chart-gauge">
         <IceContainer>
-          <h4 style={styles.title}>仪表图</h4>
+          <h4 className={styles.title}>仪表图</h4>
           <Chart
             height={400}
             data={data}
@@ -174,12 +175,3 @@ export default class ChartGauge extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};

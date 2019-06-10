@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Coord, Legend } from 'bizcharts';
 import { DataView } from '@antv/data-set';
+import styles from './index.module.scss';
 
-export default class ChartRadar extends Component {
-  static displayName = 'ChartRadar';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -48,7 +49,7 @@ export default class ChartRadar extends Component {
     return (
       <div className="chart-radar">
         <IceContainer>
-          <h4 style={styles.title}>雷达图</h4>
+          <h4 className={styles.title}>雷达图</h4>
           <Chart
             height={400}
             data={dv}
@@ -103,12 +104,4 @@ export default class ChartRadar extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+

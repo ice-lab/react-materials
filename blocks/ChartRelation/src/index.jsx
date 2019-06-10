@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Tooltip, Label } from 'bizcharts';
 import { DataView } from '@antv/data-set';
+import styles from './index.module.scss';
 
-export default class ChartRelation extends Component {
-  static displayName = 'ChartRelation';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -74,7 +75,7 @@ export default class ChartRelation extends Component {
     return (
       <div className="chart-relation">
         <IceContainer>
-          <h4 style={styles.title}>面积图</h4>
+          <h4 className={styles.title}>面积图</h4>
           <Chart
             data={nodes}
             forceFit
@@ -116,12 +117,4 @@ export default class ChartRelation extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 20px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+

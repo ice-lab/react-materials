@@ -3,9 +3,10 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Label, Shape } from 'bizcharts';
+import styles from './index.module.scss';
 
-export default class ChartBubbleImage extends Component {
-  static displayName = 'ChartBubbleImage';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -75,7 +76,7 @@ export default class ChartBubbleImage extends Component {
     return (
       <div className="chart-bubble-image">
         <IceContainer>
-          <h4 style={styles.title}>自定义气泡图</h4>
+          <h4 className={styles.title}>自定义气泡图</h4>
           <Chart
             height={400}
             data={data}
@@ -118,12 +119,4 @@ export default class ChartBubbleImage extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+

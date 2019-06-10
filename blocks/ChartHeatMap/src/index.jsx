@@ -2,9 +2,10 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Label } from 'bizcharts';
+import styles from './index.module.scss';
 
-export default class ChartHeatMap extends Component {
-  static displayName = 'ChartHeatMap';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -105,7 +106,7 @@ export default class ChartHeatMap extends Component {
     return (
       <div className="chart-heat-map">
         <IceContainer>
-          <h4 style={styles.title}>色块图</h4>
+          <h4 className={styles.title}>色块图</h4>
           <Chart
             height={400}
             data={source}
@@ -161,12 +162,4 @@ export default class ChartHeatMap extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+
