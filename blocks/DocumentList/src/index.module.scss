@@ -1,0 +1,44 @@
+/*index.jsxiner{
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0f0f0;
+};
+.title{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+};
+
+/*DocumentList.jsx*/
+.container2{
+  padding: 0;
+  min-height: 800px;
+};
+.item{
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+  display: block;
+};
+.title2{
+  margin-left: 16px;
+  margin-right: 24px;
+  color: #314659;
+  font-size: 14px;
+};
+.icon{
+  color: #697b8c;
+};
+.description{
+  color: #697b8c;
+  font-size: 14px;
+};
+.time{
+  position: absolute;
+  right: 20px;
+  color: #314659;
+};

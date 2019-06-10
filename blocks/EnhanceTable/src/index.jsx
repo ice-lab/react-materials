@@ -4,6 +4,7 @@ import { Table, Pagination, Tab, Search } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import IceLabel from '@icedesign/label';
 import data from './data';
+import styles from './index.module.scss';
 
 export default class EnhanceTable extends Component {
   constructor(props) {
@@ -16,8 +17,8 @@ export default class EnhanceTable extends Component {
 
   renderTitle = (value, index, record) => {
     return (
-      <div style={styles.titleWrapper}>
-        <span style={styles.title}>{record.title}</span>
+      <div className={styles.titleWrapper}>
+        <span className={styles.title}>{record.title}</span>
       </div>
     );
   };
@@ -30,21 +31,20 @@ export default class EnhanceTable extends Component {
   renderOperations = (value, index, record) => {
     return (
       <div
-        className="enhance-table-operation"
-        style={styles.enhanceTableOperation}
+        className={styles.enhanceTableOperation}
       >
         <a
           href="#"
-          style={styles.operation}
+          className={styles.operation}
           target="_blank"
           onClick={this.editItem.bind(this, record)}
         >
           解决
         </a>
-        <a href="#" style={styles.operation} target="_blank">
+        <a href="#" className={styles.operation} target="_blank">
           详情
         </a>
-        <a href="#" style={styles.operation} target="_blank">
+        <a href="#" className={styles.operation} target="_blank">
           分类
         </a>
       </div>
@@ -87,8 +87,8 @@ export default class EnhanceTable extends Component {
 
   render() {
     return (
-      <div className="enhance-table" style={styles.enhanceTable}>
-        <IceContainer style={styles.card}>
+      <div>
+        <IceContainer className={styles.card}>
           <div>
             <Tab
               onChange={this.onTabChange}
@@ -101,7 +101,7 @@ export default class EnhanceTable extends Component {
                 key="solved"
                 title={
                   <span>
-                    已解决 <span style={styles.tabCount}>123</span>
+                    已解决 <span className={styles.tabCount}>123</span>
                   </span>
                 }
               />
@@ -109,7 +109,7 @@ export default class EnhanceTable extends Component {
                 key="needFix"
                 title={
                   <span>
-                    待解决 <span style={styles.tabCount}>10</span>
+                    待解决 <span className={styles.tabCount}>10</span>
                   </span>
                 }
               />
@@ -117,15 +117,15 @@ export default class EnhanceTable extends Component {
                 key="needValidate"
                 title={
                   <span>
-                    待验证 <span style={styles.tabCount}>2</span>
+                    待验证 <span className={styles.tabCount}>2</span>
                   </span>
                 }
               />
             </Tab>
           </div>
-          <div style={styles.extraFilter}>
+          <div className={styles.extraFilter}>
             <Search
-              style={styles.search}
+              className={styles.search}
               type="primary"
               style={{width: 150}}
               placeholder="搜索"
@@ -138,7 +138,7 @@ export default class EnhanceTable extends Component {
           <Table
             dataSource={data}
             className="basic-table"
-            style={styles.basicTable}
+            // style={styles.basicTable}
             hasBorder={false}
           >
             <Table.Column
@@ -165,7 +165,7 @@ export default class EnhanceTable extends Component {
               cell={this.renderOperations}
             />
           </Table>
-          <div style={styles.pagination}>
+          <div className={styles.pagination}>
             <Pagination />
           </div>
         </IceContainer>
@@ -173,42 +173,3 @@ export default class EnhanceTable extends Component {
     );
   }
 }
-
-const styles = {
-  titleWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  title: {
-    marginLeft: '10px',
-    lineHeight: '20px',
-  },
-  enhanceTableOperation: {
-    lineHeight: '28px',
-  },
-  operation: {
-    marginRight: '12px',
-    textDecoration: 'none',
-  },
-  card: {
-    minHeight: 0,
-    marginBottom: 20,
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-  },
-  tabCount: {
-    color: '#3080FE',
-  },
-  extraFilter: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  search: {
-    marginLeft: 10,
-  },
-  pagination: {
-    textAlign: 'right',
-    paddingTop: '26px',
-  },
-};

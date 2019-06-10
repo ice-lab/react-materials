@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from './ContainerTitle';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -30,16 +31,16 @@ export default class DocumentList extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container2}>
         <ContainerTitle title="项目文档" buttonText="新建文档" />
-        <div style={styles.content}>
+        <div className={styles.content}>
           {mockData.map((item, index) => {
             return (
-              <a href="#" style={styles.item} key={index}>
-                <Icon type="office" style={styles.icon} />
-                <span style={styles.title}>{item.title}</span>
-                <span style={styles.description}>{item.description}</span>
-                <span style={styles.time}>{item.time}</span>
+              <a href="#" className={styles.item} key={index}>
+                <Icon type="office" className={styles.icon} />
+                <span className={styles.title2}>{item.title}</span>
+                <span className={styles.description}>{item.description}</span>
+                <span className={styles.time}>{item.time}</span>
               </a>
             );
           })}
@@ -48,34 +49,3 @@ export default class DocumentList extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    padding: '0',
-    minHeight: '800px',
-  },
-  item: {
-    padding: '20px',
-    borderBottom: '1px solid #f0f0f0',
-    position: 'relative',
-    display: 'block',
-  },
-  title: {
-    marginLeft: '16px',
-    marginRight: '24px',
-    color: '#314659',
-    fontSize: '14px',
-  },
-  icon: {
-    color: '#697b8c',
-  },
-  description: {
-    color: '#697b8c',
-    fontSize: '14px',
-  },
-  time: {
-    position: 'absolute',
-    right: '20px',
-    color: '#314659',
-  },
-};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './EmptyContent.scss';
+import styles from './index.module.scss';
 
 export default class EmptyContent extends Component {
   static displayName = 'EmptyContent';
@@ -12,20 +12,20 @@ export default class EmptyContent extends Component {
 
   render() {
     return (
-      <div className="empty-content">
+      <div className={styles.exceptionContent}>
         <IceContainer>
-          <div style={styles.exceptionContent} className="exception-content">
+          <div className={styles.exceptionContent}>
             <img
               src={require('./images/TB1WNNxjBHH8KJjy0FbXXcqlpXa-780-780.png')}
               style={styles.image}
-              className="imgException"
+              className={styles.imgException}
               alt="empty"
             />
             <div style={styles.prompt}>
-              <h3 style={styles.title} className="title">
+              <h3 className={styles.title}>
                 页面暂无内容
               </h3>
-              <p style={styles.description} className="description">
+              <p className={styles.description}>
                 抱歉，页面暂无内容，请看看其他页面
               </p>
             </div>
@@ -35,17 +35,3 @@ export default class EmptyContent extends Component {
     );
   }
 }
-
-const styles = {
-  exceptionContent: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    color: '#333',
-  },
-  description: {
-    color: '#666',
-  },
-};

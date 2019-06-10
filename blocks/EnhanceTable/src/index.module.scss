@@ -1,0 +1,36 @@
+.titleWrapper{
+  display: flex;
+  flex-direction: row;
+};
+.title{
+  margin-left: 10px;
+  line-height: 20px;
+};
+.enhanceTableOperation{
+  line-height: 28px;
+};
+.operation{
+  margin-right: 12px;
+  text-decoration: none;
+};
+.card{
+  min-height: 0;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+};
+.tabCount{
+  color: #3080FE;
+};
+.extraFilter{
+  display: flex;
+  align-items: center;
+};
+.search{
+  margin-left: 10px;
+};
+.pagination{
+  text-align: right;
+  padding-top: 26px;
+};

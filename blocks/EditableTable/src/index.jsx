@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Button } from '@alifd/next';
 import CellEditor from './CellEditor';
-import './EditableTable.scss';
+import styles from './index.module.scss';
 
 const generatorData = () => {
   return Array.from({ length: 5 }).map((item, index) => {
@@ -78,7 +78,7 @@ export default class EditableTable extends Component {
 
   render() {
     return (
-      <div className="editable-table">
+      <div className={styles.editableTable}>
         <IceContainer>
           <Table dataSource={this.state.dataSource} hasBorder={false}>
             <Table.Column width={80} title="顺序" cell={this.renderOrder} />
@@ -99,7 +99,7 @@ export default class EditableTable extends Component {
             />
             <Table.Column title="操作" width={80} cell={this.renderOperation} />
           </Table>
-          <div onClick={this.addNewItem} style={styles.addNewItem}>
+          <div onClick={this.addNewItem} className={styles.addNewItem}>
             + 新增一行
           </div>
         </IceContainer>
@@ -107,14 +107,3 @@ export default class EditableTable extends Component {
     );
   }
 }
-
-const styles = {
-  addNewItem: {
-    background: '#F5F5F5',
-    height: 32,
-    lineHeight: '32px',
-    marginTop: 20,
-    cursor: 'pointer',
-    textAlign: 'center',
-  },
-};

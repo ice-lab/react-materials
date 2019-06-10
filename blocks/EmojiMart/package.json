@@ -26,10 +26,6 @@
     "@icedesign/container": "^1.x",
     "emoji-mart": "^2.6.1"
   },
-  "peerDependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^16.2.0"
-  },
   "blockConfig": {
     "name": "emoji-mart",
     "title": "Emoji 表情",
@@ -47,6 +43,8 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }
