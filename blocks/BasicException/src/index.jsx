@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './BasicException.scss';
+import styles from './index.module.scss';
 
 export default class BasicException extends Component {
   static displayName = 'BasicException';
@@ -8,18 +8,17 @@ export default class BasicException extends Component {
     return (
       <div className="basic-exception">
         <IceContainer>
-          <div style={styles.exceptionContent} className="exception-content">
+          <div className={styles.exceptionContent}>
             <img
               src={require('./images/TB1w4M7bNrI8KJjy0FpXXb5hVXa-260-260.png')}
-              style={styles.imgException}
-              className="imgException"
+              className={styles.imgException}
               alt="服务器出错"
             />
-            <div style={styles.content}>
-              <h3 style={styles.title} className="title">
+            <div className={styles.content}>
+              <h3 className={styles.title}>
                 抱歉，服务器出错了
               </h3>
-              <p style={styles.description} className="description">
+              <p className={styles.description}>
                 服务器出错了，请重新刷新页面或返回<a href="#">首页</a>
               </p>
             </div>
@@ -30,19 +29,3 @@ export default class BasicException extends Component {
   }
 }
 
-const styles = {
-  exceptionContent: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    marginLeft: 40,
-  },
-  title: {
-    color: '#333',
-  },
-  description: {
-    color: '#666',
-  },
-};
