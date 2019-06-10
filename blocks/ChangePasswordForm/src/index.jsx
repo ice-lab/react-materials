@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Grid, Form } from '@alifd/next';
 
-import './ChangePasswordForm.scss';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const FormItem = Form.Item;
@@ -13,8 +13,8 @@ const formItemLayout = {
   wrapperCol: { xxs: 16, s: 10, l: 7 },
 };
 
-export default class ChangePasswordForm extends Component {
-  static displayName = 'ChangePasswordForm';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -76,8 +76,8 @@ export default class ChangePasswordForm extends Component {
             ref="form"
             size="large"
           >
-            <div style={styles.formContent}>
-              <h2 style={styles.formTitle}>修改密码</h2>
+            <div  className={styles.formContent}>
+              <h2 className={styles.formTitle}>修改密码</h2>
               <FormItem
                 label="新密码："
                 {...formItemLayout}
@@ -106,7 +106,7 @@ export default class ChangePasswordForm extends Component {
               </FormItem>
             </div>
 
-            <Row wrap style={{ marginTop: 20 }}>
+            <Row wrap className="rowMarginTop">
               <Col xxs={{ offset: 6 }} s={{ offset: 3 }}>
                 <Form.Submit
                   size="large"
@@ -125,22 +125,4 @@ export default class ChangePasswordForm extends Component {
   }
 }
 
-const styles = {
-  formContent: {
-    width: '100%',
-    position: 'relative',
-  },
-  formItem: {
-    marginBottom: 25,
-  },
-  formLabel: {
-    height: '32px',
-    lineHeight: '32px',
-    textAlign: 'right',
-  },
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    borderBottom: '1px solid #eee',
-  },
-};
+

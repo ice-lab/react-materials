@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Axis, Geom, Tooltip, Legend } from 'bizcharts';
 import { DataSet } from '@antv/data-set';
-
-export default class ChartBar extends Component {
-  static displayName = 'ChartBar';
+import styles from './index.module.scss';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -53,7 +53,7 @@ export default class ChartBar extends Component {
     return (
       <div className="chart-bar">
         <IceContainer>
-          <h4 style={styles.title}>柱状图</h4>
+          <h4 className={styles.title}>柱状图</h4>
           <Chart height={400} data={dv} forceFit>
             <Axis name="月份" />
             <Axis name="月均降雨量" />
@@ -72,12 +72,4 @@ export default class ChartBar extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+
