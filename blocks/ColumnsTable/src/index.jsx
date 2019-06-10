@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Input, Table, Icon } from '@alifd/next';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 const mockData = {
@@ -101,8 +101,8 @@ const stateColors = {
   cancelled: '#2ecc71',
 };
 
-export default class ColumnsTable extends Component {
-  static displayName = 'ColumnsTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -118,47 +118,47 @@ export default class ColumnsTable extends Component {
   };
 
   renderAvatar = (value) => {
-    return <img src={value} alt="" style={styles.userAvatar} />;
+    return <img src={value} alt="" className={styles.userAvatar} />;
   };
 
   renderUserInfo = (value, index, record) => {
     return (
-      <div style={styles.userInfo}>
-        <h6 style={styles.userName}>{record.name}</h6>
-        <p style={styles.userEmail}>{record.email}</p>
+      <div className={styles.userInfo}>
+        <h6 className={styles.userName}>{record.name}</h6>
+        <p className={styles.userEmail}>{record.email}</p>
       </div>
     );
   };
 
   renderAccess = (value) => {
     return (
-      <span style={{ ...styles.userAccess, background: accessColors[value] }}>
+      <span className={styles.userAccess} style={{background: accessColors[value] }}>
         {value}
       </span>
     );
   };
 
   renderOper = () => {
-    return <Icon type="edit" style={styles.editIcon} />;
+    return <Icon type="edit" className={styles.editIcon} />;
   };
 
   renderState = (value) => {
     return (
-      <span style={{ ...styles.purchasesState, color: stateColors[value] }}>
+      <span className={styles.purchasesState} style={{color: stateColors[value] }}>
         {value}
       </span>
     );
   };
   render() {
     return (
-      <div style={styles.container}>
+      <div >
         <Row wrap gutter="20">
           <Col xxx="24" s="12">
-            <IceContainer style={{ padding: 0 }}>
-              <h2 style={styles.title}>Users</h2>
-              <div style={styles.searchInputCol}>
+            <IceContainer className={styles.containerPadding}>
+              <h2 className={styles.title}>Users</h2>
+              <div className={styles.searchInputCol}>
                 <Input
-                  style={styles.searchInput}
+                  className={styles.searchInput}
                   placeholder="Search Users ..."
                   hasClear
                   onChange={this.handleSearch}
@@ -186,11 +186,11 @@ export default class ColumnsTable extends Component {
             </IceContainer>
           </Col>
           <Col xxx="24" s="12">
-            <IceContainer style={{ padding: 0 }}>
-              <h2 style={styles.title}>Purchases</h2>
-              <div style={styles.searchInputCol}>
+            <IceContainer className={styles.containerPadding}>
+              <h2 className={styles.title}>Purchases</h2>
+              <div className={styles.searchInputCol}>
                 <Input
-                  style={styles.searchInput}
+                  className={styles.searchInput}
                   placeholder="Search Purchases ..."
                   hasClear
                   onChange={this.handleSearch}
@@ -216,42 +216,4 @@ export default class ColumnsTable extends Component {
   }
 }
 
-const styles = {
-  title: {
-    padding: '10px 20px',
-    margin: '0',
-  },
-  userAvatar: {
-    width: '40px',
-    height: '40px',
-    borderRadius: '50px',
-  },
-  userName: {
-    margin: '4px 0 3px',
-  },
-  userEmail: {
-    margin: 0,
-  },
-  userAccess: {
-    padding: '3px 6px',
-    borderRadius: '5px',
-    color: '#fff',
-    textTransform: 'capitalize',
-  },
-  editIcon: {
-    color: '#2874D1',
-    cursor: 'pointer',
-  },
-  searchInputCol: {
-    padding: '10px 20px',
-    background: '#E6EBF4',
-  },
-  searchInput: {
-    width: '100%',
-    background: '#F4F6FA',
-    border: 'none',
-  },
-  purchasesState: {
-    textTransform: 'capitalize',
-  },
-};
+

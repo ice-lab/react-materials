@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
-export default class CoBranding extends Component {
-  static displayName = 'CoBranding';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -26,15 +26,15 @@ export default class CoBranding extends Component {
       require('./images/TB1SpDwiamWBuNjy1XaXXXCbXXa-242-46.png'),
     ];
     return (
-      <IceContainer style={styles.container}>
-        <h4 style={styles.cardTitle}>合作品牌</h4>
-        <div style={styles.brandContent}>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.cardTitle}>合作品牌</h4>
+        <div className={styles.brandContent}>
           <Row gutter="10">
             {data.map((url, index) => {
               return (
                 <Col l="4" key={index}>
-                  <a href="#" style={styles.brandLink}>
-                    <img src={url} style={styles.brandLogo} alt="" />
+                  <a href="#" className={styles.brandLink}>
+                    <img src={url} className={styles.brandLogo} alt="" />
                   </a>
                 </Col>
               );
@@ -46,29 +46,3 @@ export default class CoBranding extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '40px 20px 60px',
-    textAlign: 'center',
-  },
-  cardTitle: {
-    margin: '0 0 20px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  brandLink: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '34px',
-  },
-  brandContent: {
-    width: '70%',
-    margin: '0 auto',
-  },
-  brandLogo: {
-    width: '80px',
-  },
-};

@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 import { DataSet } from '@antv/data-set';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
-export default class ChartTypeLine extends Component {
-  static displayName = 'ChartTypeLine';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -53,7 +54,7 @@ export default class ChartTypeLine extends Component {
     return (
       <div className="chart-type-line">
         <IceContainer>
-          <h4 style={styles.title}>折线图</h4>
+          <h4 className={styles.title}>折线图</h4>
           <Chart height={400} data={dv} scale={cols} forceFit>
             <Axis name="month" />
             <Axis
@@ -83,12 +84,4 @@ export default class ChartTypeLine extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0 0 40px',
-    fontSize: '18px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    borderBottom: '1px solid #eee',
-  },
-};
+

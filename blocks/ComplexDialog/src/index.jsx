@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Dialog, Button, Icon } from '@alifd/next';
 import { enquireScreen } from 'enquire-js';
+import styles from './index.module.scss';
 
-export default class ComplexDialog extends Component {
-  static displayName = 'ComplexDialog';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
@@ -41,7 +42,7 @@ export default class ComplexDialog extends Component {
 
   renderFooter = () => {
     return (
-      <div style={styles.footer}>
+      <div className={styles.footer}>
         <Button onClick={this.hideDialog}>稍后前往</Button>
         <Button onClick={this.hideDialog} type="primary">
           前往认证
@@ -69,30 +70,30 @@ export default class ComplexDialog extends Component {
           {...this.props}
           visible={this.state.visible}
         >
-          <div style={styles.dialogContent}>
+          <div className={styles.dialogContent}>
             <img
-              style={styles.icon}
+              className={styles.icon}
               src="//img.alicdn.com/tfs/TB1GOHLXyqAXuNjy1XdXXaYcVXa-52-52.png"
               srcSet="//img.alicdn.com/tfs/TB1h_K_b4rI8KJjy0FpXXb5hVXa-104-104.png"
               alt=""
             />
-            <div style={styles.info}>
+            <div className={styles.info}>
               恭喜您成功创作平台<br />现在可以认证符合自己的角色啦
             </div>
-            <div style={styles.extraInfo}>
+            <div className={styles.extraInfo}>
               角色是淘宝中对达人的XXX，通过角色您将获得特权
             </div>
-            <div style={styles.authList}>
-              <div style={styles.authItem}>
-                <Icon style={styles.authItemIcon} size="xs" type="select" />
+            <div className={styles.authList}>
+              <div className={styles.authItem}>
+                <Icon className={styles.authItemIcon} size="xs" type="select" />
                 V 标头像
               </div>
-              <div style={styles.authItem}>
-                <Icon style={styles.authItemIcon} size="xs" type="select" />
+              <div className={styles.authItem}>
+                <Icon className={styles.authItemIcon} size="xs" type="select" />
                 角色标志
               </div>
-              <div style={styles.authItem}>
-                <Icon style={styles.authItemIcon} size="xs" type="select" />
+              <div className={styles.authItem}>
+                <Icon className={styles.authItemIcon} size="xs" type="select" />
                 优先发表
               </div>
             </div>
@@ -107,43 +108,4 @@ export default class ComplexDialog extends Component {
   }
 }
 
-const styles = {
-  icon: {
-    width: '52px',
-    height: '52px',
-  },
-  dialogContent: {
-    // width: '640px',
-    // height: '200px',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  info: {
-    marginTop: '10px',
-    fontSize: '16px',
-    textAlign: 'center',
-  },
-  extraInfo: {
-    marginTop: '12px',
-    fontSize: '12px',
-    color: '#999999',
-  },
-  authList: {
-    marginTop: '10px',
-    fontSize: '12px',
-    color: '#999999',
-  },
-  authItem: {
-    marginTop: '5px',
-  },
-  authItemIcon: {
-    color: '#2ECA9C',
-    marginRight: '5px',
-  },
-  footer: {
-    marginTop: '10px',
-    marginBottom: '10px',
-    textAlign: 'center',
-  },
-};
+

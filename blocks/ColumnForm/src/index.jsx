@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Select, Grid, Form } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const FormItem = Form.Item;
@@ -10,8 +11,8 @@ const formItemLayout = {
   wrapperCol: { s: 12, l: 12 },
 };
 
-export default class ColumnForm extends Component {
-  static displayName = 'ColumnForm';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   onFormChange = (values, field) => {
     console.log(values, field);
@@ -31,7 +32,7 @@ export default class ColumnForm extends Component {
   render() {
     return (
       <div className="column-form">
-        <IceContainer title="运营商录入" style={styles.container}>
+        <IceContainer title="运营商录入" className={styles.container}>
           <Form onChange={this.onFormChange}>
             <div>
               <Row wrap>
@@ -60,7 +61,7 @@ export default class ColumnForm extends Component {
                   >
                     <Select
                       name="period"
-                      style={{ width: '100%' }}
+                      className={styles.selectWidth}
                       dataSource={[
                         { label: '按月结算', value: 'month' },
                         { label: '按季度结算', value: 'season' },
@@ -83,7 +84,7 @@ export default class ColumnForm extends Component {
                   <FormItem label="币种：" {...formItemLayout} required>
                     <Select
                       name="currency"
-                      style={{ width: '100%' }}
+                      className={styles.selectWidth}
                       dataSource={[
                         { label: '美元', value: 'usd' },
                         { label: '人民币', value: 'rmb' },
@@ -93,15 +94,15 @@ export default class ColumnForm extends Component {
                 </Col>
               </Row>
 
-              <Row style={styles.btns}>
-                <Col xxs="8" s="2" l="2" style={styles.formLabel}>
+              <Row className={styles.btns}>
+                <Col xxs="8" s="2" l="2" className={styles.formLabel}>
                   {' '}
                 </Col>
                 <Col s="12" l="10">
                   <Form.Submit type="primary" validate onClick={this.submit}>
                     立即创建
                   </Form.Submit>
-                  <Form.Reset style={styles.resetBtn} onClick={this.reset}>
+                  <Form.Reset className={styles.resetBtn} onClick={this.reset}>
                     重置
                   </Form.Reset>
                 </Col>
@@ -114,22 +115,4 @@ export default class ColumnForm extends Component {
   }
 }
 
-const styles = {
-  container: {
-    paddingBottom: 0,
-  },
-  formItem: {
-    height: '28px',
-    lineHeight: '28px',
-    marginBottom: '30px',
-  },
-  formLabel: {
-    textAlign: 'right',
-  },
-  btns: {
-    margin: '25px 0',
-  },
-  resetBtn: {
-    marginLeft: '20px',
-  },
-};
+

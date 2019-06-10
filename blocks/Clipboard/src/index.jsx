@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import IceContainer from '@icedesign/container';
 import { Grid, Button, Input, Message } from '@alifd/next';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
-export default class Clipboard extends Component {
-  static displayName = 'Clipboard';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -34,10 +34,10 @@ export default class Clipboard extends Component {
   render() {
     return (
       <IceContainer>
-        <Row wrap style={styles.row}>
+        <Row wrap className={styles.row}>
           <Col l="10">
             <Input.TextArea
-              style={{ width: '90%' }}
+              className={styles.inputWidth}
               rows={8}
               value={this.state.value}
               onChange={this.handleChange}
@@ -51,7 +51,7 @@ export default class Clipboard extends Component {
           </Col>
           <Col l="10">
             <Input.TextArea
-              style={{ width: '90%' }}
+              className={styles.inputWidth}
               rows={8}
               placeholder="通过右键粘贴功能到这里试试..."
               onChange={this.handleChange}
@@ -65,9 +65,4 @@ export default class Clipboard extends Component {
   }
 }
 
-const styles = {
-  row: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-};
+

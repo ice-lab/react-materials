@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
-
+import styles from './index.module.scss';
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xByzFvaw1M
  */
-export default class CircularChart extends Component {
-  static displayName = 'CircularChart';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -161,7 +161,7 @@ export default class CircularChart extends Component {
     return (
       <div className="circular-chart">
         <IceContainer>
-          <ReactEcharts option={this.getOption()} style={{ height: '450px' }} />
+          <ReactEcharts option={this.getOption()} className={styles.reactHeight} />
         </IceContainer>
       </div>
     );
