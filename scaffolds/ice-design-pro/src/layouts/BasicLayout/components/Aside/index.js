@@ -50,6 +50,7 @@ export default class Aside extends Component {
     const { collapse } = this.state;
     this.setState({
       collapse: !collapse,
+      openKeys: [],
     });
   };
 

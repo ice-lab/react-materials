@@ -1,6 +1,7 @@
 {
   "name": "react-materials",
-  "version": "1.0.1",
+  "version": "1.0.0",
+  "private": true,
   "description": "",
   "files": [
     "build/"
@@ -12,7 +13,13 @@
     "lint": "eslint --cache --ext .js .jsx ./",
     "deploy": "idev -V && npm run generate:ci && npm run upload-oss"
   },
-  "dependencies": {
+  "materialConfig": {
+    "type": "react"
+  },
+  "devDependencies": {
+    "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
+    "request-promise": "^4.2.4",
     "ali-oss": "^6.1.0",
     "babel-eslint": "^8.1.2",
     "eslint": "^4.14.0",
@@ -21,11 +28,6 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "ice-devtools": "^2.2.0",
-    "ice-scripts": "^1.9.2",
-    "request": "^2.88.0"
-  },
-  "materialConfig": {
-    "type": "react"
+    "ice-devtools": "^2.2.0"
   }
 }
