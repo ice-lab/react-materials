@@ -23,13 +23,12 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
+    "@alifd/next": "^1.x",
     "@icedesign/container": "^1.x",
     "braft-editor": "^1.9.8",
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "prop-types": "^15.5.8"
   },
   "blockConfig": {
     "name": "braft-editor",
@@ -41,9 +40,6 @@
     "version-0.x": "1.0.3"
   },
   "homepage": "https://unpkg.com/@icedesign/braft-editor-block/build/index.html",
-  "devDependencies": {
-    "react-dom": "^16.7.0"
-  },
   "scripts": {
     "start": "ice dev",
     "build": "ice build",

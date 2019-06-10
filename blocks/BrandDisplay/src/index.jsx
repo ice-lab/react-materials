@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Img from '@icedesign/img';
 import { Grid } from '@alifd/next';
 import { enquireScreen } from 'enquire-js';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 const dataSource = [
@@ -69,15 +69,15 @@ export default class BrandDisplay extends Component {
     const logoHeight = isMobile ? 150 : 175;
 
     return (
-      <div className="brand-display" style={styles.container}>
-        <div style={styles.brandHeader}>
-          <h5 style={styles.brandTitle}>品牌展示</h5>
+      <div className="brand-display" className={styles.container}>
+        <div className={styles.brandHeader}>
+          <h5 className={styles.brandTitle}>品牌展示</h5>
         </div>
         <Row gutter="20" wrap>
           {dataSource.map((item, index) => {
             return (
-              <Col xxs="24" s="12" l="12" key={index} style={styles.brandItem}>
-                <a href={item.url} style={styles.brandItemContent}>
+              <Col xxs="24" s="12" l="12" key={index} className={styles.brandItem}>
+                <a href={item.url} className={styles.brandItemContent}>
                   <div>
                     <Img
                       width={logoWidth}
@@ -87,16 +87,16 @@ export default class BrandDisplay extends Component {
                       alt="图片"
                     />
                   </div>
-                  <div style={styles.caseContent}>
-                    <div style={styles.caseSubject}>
+                  <div className={styles.caseContent}>
+                    <div className={styles.caseSubject}>
                       <img
                         src={item.headPic}
-                        style={styles.subjectImage}
+                        className={styles.subjectImage}
                         alt="图片"
                       />
-                      <span style={styles.subjectDesc}>{item.title}</span>
+                      <span className={styles.subjectDesc}>{item.title}</span>
                     </div>
-                    <p style={styles.caseDetail}>{item.subject}</p>
+                    <p className={styles.caseDetail}>{item.subject}</p>
                   </div>
                 </a>
               </Col>
@@ -107,58 +107,3 @@ export default class BrandDisplay extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    width: '100%',
-    maxWidth: '1080px',
-    margin: '0 auto',
-    padding: '80px 20px',
-  },
-  brandHeader: {
-    position: 'relative',
-    textAlign: 'center',
-  },
-  brandTitle: {
-    marginBottom: '40px',
-    fontSize: '20px',
-    color: '#333333',
-  },
-  brandItem: {
-    height: '175px',
-    background: '#fff',
-    display: 'inline-block',
-    verticalAlign: 'top',
-    marginBottom: '30px',
-    overflow: 'hidden',
-  },
-  brandItemContent: {
-    display: 'flex',
-  },
-
-  caseContent: {},
-  caseSubject: {
-    margin: '0 10px 0',
-    lineHeight: '60px',
-    height: '60px',
-  },
-  subjectImage: {
-    width: '60px',
-    height: '60px',
-    borderRadius: '50%',
-  },
-  subjectDesc: {
-    fontSize: '16px',
-    color: '#333333',
-    height: '60px',
-    verticalAlign: 'top',
-    marginLeft: '12px',
-  },
-  caseDetail: {
-    marginTop: 0,
-    fontSize: '12px',
-    color: '#666666',
-    padding: '0 16px',
-    textAlign: 'left',
-  },
-};
