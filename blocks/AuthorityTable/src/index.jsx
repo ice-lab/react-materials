@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import TableFilter from './TableFilter';
 import CustomTable from './CustomTable';
-
-export default class AuthorityTable extends Component {
-  static displayName = 'AuthorityTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -16,12 +15,10 @@ export default class AuthorityTable extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
+      <div>
         <TableFilter />
         <CustomTable />
       </div>
     );
   }
 }
-
-const styles = {};
