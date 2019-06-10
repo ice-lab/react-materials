@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 export default class BasicTab extends Component {
   static displayName = 'BasicTab';
@@ -15,7 +16,7 @@ export default class BasicTab extends Component {
 
     return (
       <div className="basic-tab">
-        <IceContainer style={styles.tabCardStyle}>
+        <IceContainer className={styles.tabCardStyle}>
           <Tab contentStyle={{ display: 'none' }}>
             {tabs.map((item) => <Tab.Item key={item.key} title={item.tab} />)}
           </Tab>
@@ -24,9 +25,3 @@ export default class BasicTab extends Component {
     );
   }
 }
-
-const styles = {
-  tabCardStyle: {
-    padding: 0,
-  },
-};

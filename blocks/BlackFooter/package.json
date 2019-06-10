@@ -26,6 +26,7 @@
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "@alifd/next": "^1.x"
   },
   "blockConfig": {
@@ -42,8 +43,5 @@
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
-  },
-  "devDependencies": {
-    "react-dom": "^16.2.0"
   }
 }

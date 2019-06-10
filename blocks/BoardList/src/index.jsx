@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Board from 'react-trello';
+import styles from './index.module.scss';
 
 export default class BoardList extends Component {
   static displayName = 'BoardList';
@@ -71,7 +72,7 @@ export default class BoardList extends Component {
       ],
     };
     return (
-      <div style={styles.boardList}>
+      <div className={styles.boardList}>
         <Board
           style={{ background: '#fff', padding: '12px' }}
           data={data}
@@ -86,9 +87,3 @@ export default class BoardList extends Component {
     );
   }
 }
-
-const styles = {
-  boardList: {
-    width: '100%',
-  },
-};
