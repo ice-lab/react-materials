@@ -25,6 +25,7 @@ export default class Header extends Component {
               defaultSelectedKeys={[pathname]}
               direction="hoz"
               type="primary"
+              embeddable={true}
             >
               {headerMenuConfig &&
                 headerMenuConfig.length > 0 &&
