@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@icedesign/container';
+import styles from './index.module.scss';
 import BadgeItem from './BadgeItem';
-
 export default class AccountFeatures extends Component {
   static displayName = 'AccountFeatures';
 
@@ -35,10 +35,10 @@ export default class AccountFeatures extends Component {
   render() {
     return (
       <Container>
-        <div style={styles.header}>
-          <h2 style={{ margin: 0, fontSize: 16 }}>账号勋章</h2>
+        <div className={styles.header}>
+          <h2 className={styles.titles}>账号勋章</h2>
         </div>
-        <div style={styles.body}>
+        <div className={styles.body}>
           {this.state.dataSource.map((item, index) => {
             return <BadgeItem data={item} key={index} />;
           })}
@@ -47,9 +47,3 @@ export default class AccountFeatures extends Component {
     );
   }
 }
-
-const styles = {
-  header: {
-    fontSize: 16,
-  },
-};

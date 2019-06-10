@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@icedesign/container';
 import FeatureItem from './FeatureItem';
-
-export default class AccountFeatures extends Component {
-  static displayName = 'AccountFeatures';
+import styles from  './index.module.scss';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {
     value: PropTypes.string,
@@ -63,10 +63,10 @@ export default class AccountFeatures extends Component {
   render() {
     return (
       <Container>
-        <div style={styles.header}>
-          <h2 style={{ margin: 0, fontSize: 16 }}>功能状态</h2>
+        <div className={styles.header}>
+          <h2 className={styles.function} >功能状态</h2>
         </div>
-        <div style={styles.body}>
+        <div>
           {this.state.dataSource.map((item, index) => {
             return <FeatureItem data={item} key={index} />;
           })}
@@ -76,8 +76,3 @@ export default class AccountFeatures extends Component {
   }
 }
 
-const styles = {
-  header: {
-    fontSize: 16,
-  },
-};
