@@ -2,8 +2,9 @@ import Schema from 'async-validator';
 import isEqual from 'lodash.isequal';
 
 export default class FormCore {
-  constructor({ initialValues = {}, rules = {}, effects = [], onSubmit }) {
+  constructor({ initialValues = {}, rules = {}, effects = [], onSubmit, onChange }) {
     this.onSubmit = onSubmit;
+    this.onChange = onChange;
     this.initialValues = { ...initialValues };
     this.values = { ...this.initialValues };
     this.errors = {};
