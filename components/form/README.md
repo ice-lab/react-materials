@@ -80,6 +80,7 @@ ReactDOM.render((
 | ------ | ---- | ---- | ---- | ------ | ---- |
 | initialValues |  表单初始值    |  N    |   object   |    {}    |   -   |
 | onSubmit |  submit函数   |  Y    |   function   |    -    |   -   |
+| onChange |  表单变化回调   |  N    |   function   |    -    |   function(values: Object, item: Object) => void <br> 参数: <br> values: {Object} 表单数据 <br> item: {Object} 详细 <br> item.name: {String} 变化的组件名 <br> item.value: {String} 变化的数据 |
 | rules |  校验规则   |  N    |   object   |    {}    |   -   |
 | effects |  联动规则   |  N    |   array   |    []    |   -   |
 | layout |  表单布局   |  N    |   object   |      |   -   |
@@ -157,7 +158,7 @@ ReactDOM.render((
 | layout |  设置当前 Field 的布局   |  N    |   object   |   同 layout   |  Field 的 layout 设置会覆盖 layout 设置|
 | tips |  提示信息   |  N    |   string   |    |    |
 | errorRender |  自定义 error 渲染   |  N    |   function(error) {}   |    |   |
-| onChange |  自定义 onChange 函数   |  N    |   function() {}   |    | 默认情况下已处理表单的 onChange(eventOrValue) 事件，如果接入的三方表单 onChange 的第一个参数不是 event 或者 value，用户可以主动设置对应的值。比如，接入表单的 onChange(xxx, value) 第二个参数才是 value，则可以手动设置 `formCore.setValue(fieldname, value)`  |
+| onChange |  自定义 onChange 函数   |  N    |   function() {}   |    | 默认情况下已处理表单的 onChange(eventOrValue) 事件，如果接入的三方表单 onChange 的第一个参数不是 event 或者 value，用户可以主动设置对应的值。比如，接入表单的 onChange(xxx, value) 第二个参数才是 value，则可以手动设置 `formCore.setValue(fieldname, value)`。手动设置 Field 的 onChange 事件时，若需要监听整个表单变化，则需要主动调用 Form 上的 formCore.onChange |
 
 其他属性会传递到 `component` 上，如果没有 `component` 但有 `children`，则属性传递到 `children` 上。
 `Field` 的 `rules` 和 `effects` 不需要 `name` 作为 key 了，写法如下：

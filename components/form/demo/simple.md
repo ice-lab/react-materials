@@ -21,11 +21,16 @@ class App extends Component {
     window.alert(JSON.stringify(values, 0, 2))
   }
 
+  onChange(values, field) {
+    console.log(values, field);
+  }
+
   render() {
     return (
       <div>
         <Form
           onSubmit={this.onSubmit}
+          onChange={this.onChange}
         >
           <h2>个人资料</h2>
           <Field label="姓名：" name="username" component={Input} />
@@ -38,7 +43,7 @@ class App extends Component {
             <Option value="medium" key="medium">中</Option>
             <Option value="large" key="large">大</Option>
           </Field>
-          <Field label="选项：" name="checkbox" component={Checkbox.Group}>
+          <Field label="选项：" name="checkbox" value={[]} component={Checkbox.Group}>
             <Checkbox value="a">选项一</Checkbox>
             <Checkbox value="b">选项二</Checkbox>
             <Checkbox disabled value="c">选项三（disabled）</Checkbox>
