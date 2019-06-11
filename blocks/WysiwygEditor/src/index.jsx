@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Editor } from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-
+import styles from './index.module.scss';
 export default class WysiwygEditor extends Component {
   static displayName = 'WysiwygEditor';
 
@@ -22,7 +22,7 @@ export default class WysiwygEditor extends Component {
           toolbarClassName="toolbarClassName"
           wrapperClassName="wrapperClassName"
           editorClassName="editorClassName"
-          editorStyle={styles.editorContent}
+          className={styles.editorContent}
           onEditorStateChange={this.onEditorStateChange}
         />
       </IceContainer>
@@ -30,8 +30,4 @@ export default class WysiwygEditor extends Component {
   }
 }
 
-const styles = {
-  editorContent: {
-    minHeight: '300px',
-  },
-};
+

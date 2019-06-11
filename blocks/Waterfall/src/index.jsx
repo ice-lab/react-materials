@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import AutoResponsive from 'autoresponsive-react';
 import data from './data';
-import './Waterfall.scss';
+import './index.scss';
 
 export default class Waterfall extends Component {
   static displayName = 'Waterfall';

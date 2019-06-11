@@ -1,6 +1,7 @@
 /* eslint jsx-a11y/media-has-caption: 0, jsx-a11y/no-noninteractive-element-interactions: 0 */
 import React, { Component } from 'react';
 import { Dialog, Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -247,15 +248,15 @@ export default class VideoList extends Component {
 
   render() {
     return (
-      <div style={styles.videoListContainer}>
-        <ul style={styles.videoCate}>
+      <div className={styles.videoListContainer}>
+        <ul className={styles.videoCate}>
           {data.map((item, index) => {
             const activeStyle =
               this.state.index === index ? styles.active : null;
             return (
               <li
                 key={index}
-                style={{ ...styles.videoCateItem, ...activeStyle }}
+                className={`${styles.videoCateItem} ${activeStyle}`}
                 onClick={() => this.handleCateChange(index)}
               >
                 {item.title}
@@ -264,42 +265,42 @@ export default class VideoList extends Component {
           })}
         </ul>
 
-        <Row style={styles.videoList} gutter="20" wrap>
+        <Row className={styles.videoList} gutter="20" wrap>
           {data[this.state.index].value.map((item, index) => {
             return (
               <Col xxs="24" s="12" l="8" key={index}>
-                <div style={styles.videoCarditem}>
-                  <div style={{ position: 'relative' }}>
+                <div className={styles.videoCarditem}>
+                  <div className={styles.videoPosition}>
                     <img
                       alt=""
                       src={require('./images/TB1E0sbmpmWBuNjSspdXXbugXXa-84-84.png')}
-                      style={styles.playerIcon}
+                      className={styles.playerIcon}
                     />
                     <video
                       src={item.videoUrl}
                       controls={false}
-                      style={styles.video}
+                      className={styles.video}
                       onClick={() => this.handleOpen(item)}
                     >
                       您的浏览器不支持播放该视频！
                     </video>
                   </div>
 
-                  <div style={styles.videoInfo}>
-                    <h5 style={styles.videoTitle}>{item.videoType}</h5>
-                    <div style={styles.videoDesc}>
+                  <div className={styles.videoInfo}>
+                    <h5 className={styles.videoTitle}>{item.videoType}</h5>
+                    <div className={styles.videoDesc}>
                       <div>服务包含内容：</div>
                       <div dangerouslySetInnerHTML={{ __html: item.desc }} />
                     </div>
-                    <div style={styles.videoFee}>
-                      单支 ￥ <strong style={styles.fee}>{item.fee}</strong> 起
+                    <div className={styles.videoFee}>
+                      单支 ￥ <strong className={styles.fee}>{item.fee}</strong> 起
                     </div>
-                    <a href="#" style={styles.videoLink}>
+                    <a href="#" className={styles.videoLink}>
                       开始定制{' '}
                       <img
                         alt=""
                         src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
-                        style={styles.arrowIcon}
+                        className={styles.arrowIcon}
                       />
                     </a>
                   </div>
@@ -315,26 +316,19 @@ export default class VideoList extends Component {
                     <video
                       src={this.state.dialogVideo.videoUrl}
                       controls
-                      style={styles.dialogVideo}
+                      className={styles.dialogVideo}
                       webkit-playsinline="false"
                     >
                       您的浏览器不支持播放该视频！
                     </video>
                     <a
                       href="#"
-                      style={{
-                        ...styles.videoLink,
-                        width: '166px',
-                        height: '40px',
-                        lineHeight: '40px',
-                        bottom: '-60px',
-                        top: 'auto',
-                      }}
+                      className={`${styles.videoLink} ${styles.start}`}
                     >
                       开始定制{' '}
                       <img
                         src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
-                        style={styles.arrowIcon}
+                        className={styles.arrowIcon}
                         alt=""
                       />
                     </a>
@@ -349,100 +343,4 @@ export default class VideoList extends Component {
   }
 }
 
-const styles = {
-  videoListContainer: {
-    margin: '20px 0',
-  },
-  videoCate: {
-    margin: '0 10px',
-    background: '#fff',
-    padding: '0 14px',
-    borderRadius: '4px',
-  },
-  videoCateItem: {
-    display: 'inline-block',
-    margin: '12px 4px',
-    padding: '6px 18px',
-    fontSize: '16px',
-    color: '#666',
-    cursor: 'pointer',
-  },
-  videoList: {
-    margin: '20px 0 0',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  videoCarditem: {
-    marginBottom: '20px',
-    borderRadius: '4px',
-    background: '#fff',
-  },
-  active: {
-    color: '#FF5D38',
-    border: '1px solid #FF5D38',
-    borderRadius: '50px',
-  },
-  video: {
-    display: 'block',
-    width: '100%',
-    cursor: 'pointer',
-    borderRadius: '4px',
-  },
-  dialogVideo: {
-    width: '600px',
-  },
-  videoInfo: {
-    position: 'relative',
-    padding: '20px',
-  },
-  videoTitle: {
-    margin: '0 0 10px',
-    lineHeight: '32px',
-    fontSize: '24px',
-  },
-  videoDesc: {
-    padding: '0 0 20px',
-    margin: '0 0 20px',
-    fontSize: '14px',
-    color: '#999',
-    lineHeight: '20px',
-    height: '120px',
-    overflow: 'hidden',
-  },
-  videoFee: {
-    position: 'absolute',
-    bottom: '20px',
-    fontSize: '14px',
-  },
-  fee: {
-    fontSize: '18px',
-  },
-  videoLink: {
-    position: 'absolute',
-    top: '20px',
-    right: '0',
-    width: '124px',
-    height: '32px',
-    lineHeight: '32px',
-    textAlign: 'center',
-    color: '#fff',
-    background: '#FF5D38',
-  },
-  arrowIcon: {
-    width: '20px',
-    height: '20px',
-    verticalAlign: 'middle',
-    marginLeft: '4px',
-    marginTop: '-2px',
-  },
-  playerIcon: {
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    width: '40px',
-    height: '40px',
-    marginLeft: '-20px',
-    marginTop: '-20px',
-  },
-};
+

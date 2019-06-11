@@ -8,6 +8,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import Filter from './Filter';
+import styles from './index.module.scss';
 
 export default class ValidateForm extends Component {
   static displayName = 'ValidateForm';
@@ -40,11 +41,11 @@ export default class ValidateForm extends Component {
 
   render() {
     return (
-      <div style={styles.validateForm}>
+      <div className={styles.validateForm}>
         <Filter />
-        <IceContainer style={styles.container}>
-          <div style={styles.title}>自动化测试 URL</div>
-          <div style={styles.summary}>
+        <IceContainer className={styles.container}>
+          <div className={styles.title}>自动化测试 URL</div>
+          <div className={styles.summary}>
             <p>您可输需要测试的URL地址，会调用自动化验证接口进行验证。</p>
             <p>验证结束后会将验证结果发至测试人，请注意查收邮箱。</p>
           </div>
@@ -54,8 +55,8 @@ export default class ValidateForm extends Component {
             ref="form"
           >
             <div>
-              <div style={styles.formItem}>
-                <div style={styles.formLabel}>验证地址：</div>
+              <div className={styles.formItem}>
+                <div className={styles.formLabel}>验证地址：</div>
                 <IceFormBinder
                   name="url"
                   required
@@ -66,15 +67,15 @@ export default class ValidateForm extends Component {
                     placeholder="https://alibaba.github.io/ice/"
                     type="url"
                     size="large"
-                    style={{ width: '400px' }}
+                    className={styles.text}
                   />
                 </IceFormBinder>
-                <div style={styles.formError}>
+                <div className={styles.formError}>
                   <IceFormError name="url" />
                 </div>
               </div>
-              <div style={styles.formItem}>
-                <div style={styles.formLabel}>接收邮箱：</div>
+              <div className={styles.formItem}>
+                <div className={styles.formLabel}>接收邮箱：</div>
                 <IceFormBinder
                   required
                   name="email"
@@ -85,10 +86,10 @@ export default class ValidateForm extends Component {
                     placeholder="abc@example.com"
                     type="email"
                     size="large"
-                    style={{ width: '400px' }}
+                    className={styles.add}
                   />
                 </IceFormBinder>
-                <div style={styles.formError}>
+                <div className={styles.formError}>
                   <IceFormError name="email" />
                 </div>
               </div>
@@ -106,27 +107,3 @@ export default class ValidateForm extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    margin: '20px',
-  },
-  title: {
-    marginBottom: '10px',
-    fontSize: '16px',
-    fontWeight: '500',
-    color: 'rgba(0, 0, 0,.85)',
-  },
-  summary: {
-    margin: '0 0 20px',
-  },
-  formItem: {
-    marginBottom: '20px',
-  },
-  formLabel: {
-    marginBottom: '10px',
-  },
-  formError: {
-    marginTop: '10px',
-  },
-};

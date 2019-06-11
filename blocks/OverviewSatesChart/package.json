@@ -30,9 +30,6 @@
     "bizcharts": "3.2.2",
     "@alifd/next": "^1.x"
   },
-  "peerDependencies": {
-    "react": "^16.2.0"
-  },
   "blockConfig": {
     "name": "overview-sates-chart",
     "title": "数据概览",
@@ -50,6 +47,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

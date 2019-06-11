@@ -6,7 +6,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
-import './UserLogin.scss';
+import './index.scss';
 
 const { Row, Col } = Grid;
 

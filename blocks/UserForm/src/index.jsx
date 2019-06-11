@@ -8,6 +8,8 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 export default class UserForm extends Component {
   static displayName = 'UserForm';
@@ -73,11 +75,11 @@ export default class UserForm extends Component {
             onChange={this.formChange}
             ref="form"
           >
-            <div style={styles.formContent}>
-              <h2 style={styles.formTitle}>添加用户</h2>
+            <div className={styles.formContent}>
+              <h2 className={styles.formTitle}>添加用户</h2>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   用户名：
                 </Col>
                 <Col s="12" l="10">
@@ -85,15 +87,15 @@ export default class UserForm extends Component {
                     <Input
                       size="large"
                       placeholder="请输入用户名"
-                      style={{ width: '100%' }}
+                      className={ styles.userName}
                     />
                   </IceFormBinder>
                   <IceFormError name="username" />
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   昵称：
                 </Col>
                 <Col s="12" l="10">
@@ -101,15 +103,15 @@ export default class UserForm extends Component {
                     <Input
                       size="large"
                       placeholder="请输入昵称"
-                      style={{ width: '100%' }}
+                      className={styles.nickName}
                     />
                   </IceFormBinder>
                   <IceFormError name="displayName" />
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   邮箱：
                 </Col>
                 <Col s="12" l="10">
@@ -120,7 +122,7 @@ export default class UserForm extends Component {
                     message="请输入正确的邮箱"
                   >
                     <Input
-                      style={{ width: '100%' }}
+                      className={styles.emailAdd}
                       size="large"
                       placeholder="ice-admin@alibaba-inc.com"
                     />
@@ -129,14 +131,14 @@ export default class UserForm extends Component {
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   用户组：
                 </Col>
                 <Col s="12" l="10">
                   <IceFormBinder name="userGroup">
                     <Select
-                      style={{ width: '100%' }}
+                      className={styles.chooseMan}
                       size="large"
                       placeholder="请选择..."
                       dataSource={[
@@ -148,14 +150,14 @@ export default class UserForm extends Component {
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   状态：
                 </Col>
                 <Col s="12" l="10">
                   <IceFormBinder name="userState">
                     <Select
-                      style={{ width: '100%' }}
+                      className={styles.stateMan}
                       size="large"
                       placeholder="请选择..."
                       dataSource={[
@@ -168,8 +170,8 @@ export default class UserForm extends Component {
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   新密码：
                 </Col>
                 <Col s="12" l="10">
@@ -179,7 +181,7 @@ export default class UserForm extends Component {
                     validator={this.checkPasswd}
                   >
                     <Input
-                      style={{ width: '100%' }}
+                      className={styles.anotherNum}
                       htmlType="password"
                       size="large"
                       placeholder="请重新输入新密码"
@@ -189,8 +191,8 @@ export default class UserForm extends Component {
                 </Col>
               </Row>
 
-              <Row style={styles.formItem}>
-                <Col xxs="6" s="3" l="3" style={styles.formLabel}>
+              <Row className={styles.formItem}>
+                <Col xxs="6" s="3" l="3" className={styles.formLabel}>
                   确认密码：
                 </Col>
                 <Col s="12" l="10">
@@ -207,7 +209,7 @@ export default class UserForm extends Component {
                     }
                   >
                     <Input
-                      style={{ width: '100%' }}
+                      className={styles.sameNum}
                       htmlType="password"
                       size="large"
                       placeholder="两次输入密码保持一致"
@@ -219,7 +221,7 @@ export default class UserForm extends Component {
             </div>
           </IceFormBinderWrapper>
 
-          <Row style={{ marginTop: 20 }}>
+          <Row>
             <Col offset="3">
               <Button
                 size="large"
@@ -236,22 +238,4 @@ export default class UserForm extends Component {
   }
 }
 
-const styles = {
-  formContent: {
-    width: '100%',
-    position: 'relative',
-  },
-  formItem: {
-    marginBottom: 25,
-  },
-  formLabel: {
-    height: '32px',
-    lineHeight: '32px',
-    textAlign: 'right',
-  },
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    borderBottom: '1px solid #eee',
-  },
-};
+

@@ -3,9 +3,9 @@ import QueueAnim from 'rc-queue-anim';
 import ScrollAnim from 'rc-scroll-anim';
 import Summary from './Summary';
 import MOCK_DATA from './data';
+import styles from './index.module.scss';
 
 const ScrollOverPack = ScrollAnim.OverPack;
-
 export default class Workshop extends Component {
   static displayName = 'Workshop';
 
@@ -20,10 +20,10 @@ export default class Workshop extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <ScrollOverPack>
-          <div style={styles.content}>
-            <div style={styles.contentLeft}>
+          <div className={styles.content}>
+            <div className={styles.contentLeft}>
               <QueueAnim
                 key="queueAnim"
                 delay={200}
@@ -40,8 +40,8 @@ export default class Workshop extends Component {
               </QueueAnim>
             </div>
 
-            <div style={styles.contentRight}>
-              <div style={styles.items}>
+            <div className={styles.contentRight}>
+              <div className={styles.items}>
                 <QueueAnim
                   delay={100}
                   duration={450}
@@ -50,9 +50,9 @@ export default class Workshop extends Component {
                 >
                   {MOCK_DATA.map((item, index) => {
                     return (
-                      <div style={styles.item} key={index}>
-                        <div style={styles.itemNum}>{`0${item.id}`}</div>
-                        <div style={styles.itemTitle}>{item.title}</div>
+                      <div className={styles.item} key={index}>
+                        <div className={styles.itemNum}>{`0${item.id}`}</div>
+                        <div className={styles.itemTitle}>{item.title}</div>
                       </div>
                     );
                   })}
@@ -66,46 +66,4 @@ export default class Workshop extends Component {
   }
 }
 
-const styles = {
-  container: {
-    height: '100vh',
-    background: `url(${require('./images/bg.png')})`,
-    backgroundSize: 'contain',
-  },
-  content: {
-    position: 'relative',
-    width: '1200px',
-    margin: '0 auto',
-    paddingTop: '180px',
-    display: 'flex',
-  },
-  contentLeft: {
-    width: '50%',
-  },
-  contentRight: {
-    width: '50%',
-  },
-  item: {
-    marginBottom: '35px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  itemNum: {
-    width: '28px',
-    height: '28px',
-    lineHeight: '28px',
-    background: '#d1ff00',
-    borderRadius: '50%',
-    fontSize: '16px',
-    color: '#000',
-    textAlign: 'center',
-    fontWeight: '700',
-  },
-  itemTitle: {
-    fontSize: '24px',
-    color: '#fff',
-    letterSpacing: '2px',
-    marginLeft: '30px',
-    fontWeight: '700',
-  },
-};
+

@@ -26,11 +26,8 @@
     "@icedesign/container": "^1.x",
     "draft-js": "^0.10.5",
     "react-draft-wysiwyg": "^1.12.13",
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "@alifd/next": "^1.x",
+    "prop-types": "^15.5.8"
   },
   "blockConfig": {
     "name": "wysiwyg-editor",
@@ -49,6 +46,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

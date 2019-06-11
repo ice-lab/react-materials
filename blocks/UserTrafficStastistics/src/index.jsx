@@ -3,6 +3,7 @@ import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Coord, Label, Legend } from 'bizcharts';
 import { DataView } from '@antv/data-set';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -83,7 +84,7 @@ export default class UserTrafficStastistics extends Component {
               type="interval"
               position="status*count"
               color="status"
-              style={{
+               className={{
                 lineWidth: 1,
                 stroke: '#fff',
               }}
@@ -225,9 +226,9 @@ export default class UserTrafficStastistics extends Component {
           <ul>
             {browsers.map((browser) => {
               return (
-                <li style={styles.browserItem} key={browser.type}>
+                <li  className={styles.browserItem} key={browser.type}>
                   <span>{browser.type}</span>
-                  <span style={styles.percentage}>
+                  <span className={styles.percentage}>
                     {parseInt(browser.rate * 100, 10)}%
                   </span>
                 </li>
@@ -236,18 +237,18 @@ export default class UserTrafficStastistics extends Component {
           </ul>
         </IceContainer>
         <IceContainer title="用户满意度">
-          <div style={styles.satisfaction}>70%</div>
+          <div className={styles.satisfaction}>70%</div>
           <Row>
-            <Col span={8} style={styles.satisfactionItem}>
-              <div style={styles.subtitle}>上个月</div>
+            <Col span={8} className={styles.satisfactionItem}>
+              <div className={styles.subtitle}>上个月</div>
               <div>54.1%</div>
             </Col>
-            <Col span={8} style={styles.satisfactionItem}>
-              <div style={styles.subtitle}>变化</div>
+            <Col span={8} className={styles.satisfactionItem}>
+              <div className={styles.subtitle}>变化</div>
               <div>+15.9%</div>
             </Col>
-            <Col span={8} style={styles.satisfactionItem}>
-              <div style={styles.subtitle}>趋势</div>
+            <Col span={8} className={styles.satisfactionItem}>
+              <div className={styles.subtitle}>趋势</div>
               <div>上升</div>
             </Col>
           </Row>
@@ -259,7 +260,7 @@ export default class UserTrafficStastistics extends Component {
   render() {
     return (
       <div className="user-traffic-stastistics">
-        <Row wrap gutter="20">
+        <Row wrap gutter="20" className={styles.bottomRow}>
           <Col xxs="24" l="7">
             {this.renderTrafficTypes()}
           </Col>
@@ -275,35 +276,3 @@ export default class UserTrafficStastistics extends Component {
   }
 }
 
-const styles = {
-  browserItem: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: '5px 0',
-    // borderBottom: '1px dotted #eee',
-  },
-  percentage: {
-    padding: '2px 5px',
-    backgroundColor: '#307bf0',
-    color: '#fff',
-    borderRadius: '14px',
-    fontSize: '12px',
-  },
-  satisfaction: {
-    textAlign: 'center',
-    fontSize: '36px',
-    color: '#307bf0',
-    padding: '0 0 8px',
-  },
-  satisfactionItem: {
-    textAlign: 'center',
-    fontWeight: 500,
-  },
-  subtitle: {
-    fontSize: '13px',
-    color: '#999',
-    marginBottom: '5px',
-    fontWeight: 400,
-  },
-};
