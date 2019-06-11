@@ -26,10 +26,9 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "bizcharts": "^3.1.8"
-  },
-  "peerDependencies": {
-    "react": "^16.2.0",
+    "@alifd/next": "^1.15.5",
+    "@icedesign/container": "^1.0.4",
+    "bizcharts": "^3.1.8",
     "prop-types": "^15.5.8"
   },
   "blockConfig": {
@@ -49,6 +48,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

@@ -24,9 +24,10 @@
     "block"
   ],
   "dependencies": {
+    "@alifd/next": "^1.x",
     "@icedesign/container": "^1.x",
     "@icedesign/form-binder": "^1.x",
-    "@alifd/next": "^1.x"
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "prop-types": "^15.5.8",
