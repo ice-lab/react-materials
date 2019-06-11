@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -75,13 +76,13 @@ export default class OverviewBoard extends Component {
           return (
             <Col xxs="12" l="6" key={index}>
               <IceContainer style={{ background: item.color }}>
-                <div style={styles.navItem}>
-                  <div style={styles.imgWrap}>
-                    <img src={item.img} alt="" style={styles.img} />
+                <div className={styles.navItem}>
+                  <div className={styles.imgWrap}>
+                    <img src={item.img} alt="" className={styles.img} />
                   </div>
-                  <div style={styles.infoWrap}>
-                    <p style={styles.count}>{item.count}</p>
-                    <h5 style={styles.title}>{item.title}</h5>
+                  <div className={styles.infoWrap}>
+                    <p className={styles.count}>{item.count}</p>
+                    <h5 className={styles.title}>{item.title}</h5>
                   </div>
                 </div>
               </IceContainer>
@@ -93,36 +94,3 @@ export default class OverviewBoard extends Component {
   }
 }
 
-const styles = {
-  navItem: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#fff',
-  },
-  imgWrap: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '62px',
-    height: '62px',
-    borderRadius: '50%',
-    background: '#fff',
-  },
-  img: {
-    width: '30px',
-  },
-  infoWrap: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginLeft: '15px',
-  },
-  count: {
-    fontWeight: 'bold',
-    fontSize: '14px',
-    margin: '0',
-  },
-  title: {
-    margin: '2px 0',
-  },
-};

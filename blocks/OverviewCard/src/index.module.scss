@@ -1,0 +1,54 @@
+
+    .iconWrap {
+      position: relative;
+      height: 24px;
+    }
+    .icon {
+      position: absolute;
+      color: #999;
+      left: 0;
+    }
+    .content {
+      text-align: center;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+    }
+    .leftItem {
+      text-align: right;
+      padding-right: 10px;
+    }
+    .rightItem {
+      text-align: left;
+      padding-left: 10px;
+    }
+    .count{
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+    .label {
+      font-size: 14px;
+      color: #666;
+      font-weight: bold;
+    }
+    .line {
+      border-right: 1px solid #eee;
+    }
+
+    .iconOther{
+        left: 0px;
+    }
+    .iconRight{
+        right:0px;
+    }
+    .countColor{
+        color:#35C6D9 
+    }
+
+    .countOne{
+        color:#9DCB6B 
+    }
+ 
+  

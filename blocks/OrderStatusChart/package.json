@@ -31,9 +31,6 @@
     "bizcharts": "3.2.2",
     "prop-types": "^15.5.8"
   },
-  "peerDependencies": {
-    "react": "^16.2.0"
-  },
   "blockConfig": {
     "name": "order-status-chart",
     "title": "订单状态型图表",
@@ -51,6 +48,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

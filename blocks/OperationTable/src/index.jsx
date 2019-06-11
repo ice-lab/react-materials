@@ -4,7 +4,7 @@ import { Table, Pagination, Icon, Message } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import IceImg from '@icedesign/img';
 import IceLabel from '@icedesign/label';
-
+import styles from './index.module.scss';
 import EditorInfoDialog from './EditorInfoDialog';
 
 function mockList() {
@@ -36,8 +36,8 @@ function mockList() {
   });
 }
 
-export default class OperationTable extends Component {
-  static displayName = 'OperationTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -79,11 +79,11 @@ export default class OperationTable extends Component {
 
   renderTitle = (value, index, record) => {
     return (
-      <div style={styles.titleCol}>
+      <div className={styles.titleCol}>
         <div>
           <IceImg src={record.cover} width={48} height={48} />
         </div>
-        <span style={styles.titleText}>{record.title}</span>
+        <span className={styles.titleText}>{record.title}</span>
       </div>
     );
   };
@@ -109,18 +109,18 @@ export default class OperationTable extends Component {
 
   renderOperations = (value, index, record) => {
     return (
-      <div className="operation-table-operation" style={styles.operationTable}>
+      <div className={`${styles.operationTable} operation-table-operation`}>
         <span
           onClick={this.editItem.bind(this, record)}
           title="编辑"
-          style={styles.operBtn}
+          className={styles.operBtn}
         >
           <Icon size="xs" type="edit" />
         </span>
-        <span title="删除" style={styles.operBtn}>
+        <span title="删除" className={styles.operBtn}>
           <Icon size="xs" type="close" />
         </span>
-        <span title="收藏" style={styles.operBtn}>
+        <span title="收藏" className={styles.operBtn}>
           <Icon size="xs" type="favorites-filling" />
         </span>
       </div>
@@ -144,12 +144,12 @@ export default class OperationTable extends Component {
 
     return (
       <div className="operation-table">
-        <IceContainer style={styles.cardContainer}>
+        <IceContainer className={styles.cardContainer}>
           <Table
             dataSource={tableData.list}
             loading={tableData.__loading}
-            className="basic-table"
-            style={styles.basicTable}
+            // className="basic-table"
+            className={`${styles.basicTable} basic-table`}
             hasBorder={false}
           >
             <Table.Column
@@ -176,7 +176,7 @@ export default class OperationTable extends Component {
               cell={this.renderOperations}
             />
           </Table>
-          <div style={styles.paginationContainer}>
+          <div className={styles.paginationContainer}>
             <Pagination
               current={tableData.currentPage}
               pageSize={tableData.pageSize}
@@ -189,33 +189,3 @@ export default class OperationTable extends Component {
     );
   }
 }
-
-const styles = {
-  cardContainer: {
-    padding: '10px 10px 20px 10px',
-  },
-  titleCol: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  titleText: {
-    marginLeft: '10px',
-    lineHeight: '20px',
-  },
-  operBtn: {
-    display: 'inline-block',
-    width: '24px',
-    height: '24px',
-    borderRadius: '999px',
-    color: '#929292',
-    background: '#f2f2f2',
-    textAlign: 'center',
-    cursor: 'pointer',
-    lineHeight: '24px',
-    marginRight: '6px',
-  },
-  paginationContainer: {
-    textAlign: 'right',
-    paddingTop: '26px',
-  },
-};

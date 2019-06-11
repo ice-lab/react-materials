@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -105,8 +106,8 @@ const mockData = [
   },
 ];
 
-export default class OrderList extends Component {
-  static displayName = 'OrderList';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -124,9 +125,9 @@ export default class OrderList extends Component {
    */
   renderOrderInfo = (product) => {
     return (
-      <div className="order-info" style={styles.orderInfo}>
-        <img src={product[0].avatar} style={styles.orderImg} alt="头像" />
-        <div className="order-description" style={styles.orderDescription}>
+      <div className={`${styles.orderInfo} order-info`}>
+        <img src={product[0].avatar} className={styles.orderImg} alt="头像" />
+        <div className={`${styles.orderDescription} order-description`}>
           {product[0].description}
         </div>
       </div>
@@ -161,7 +162,7 @@ export default class OrderList extends Component {
    */
   renderOperation = () => {
     return (
-      <a href="/" style={styles.orderDetailLink}>
+      <a href="/" className={styles.orderDetailLink}>
         查看
       </a>
     );
@@ -184,7 +185,7 @@ export default class OrderList extends Component {
     const { tableData } = this.state;
 
     return (
-      <div className="order-list" style={styles.orderList}>
+      <div className={`${styles.orderList} order-list`}>
         <IceContainer title="订单列表">
           <Table
             dataSource={tableData}
@@ -217,14 +218,4 @@ export default class OrderList extends Component {
   }
 }
 
-const styles = {
-  orderImg: {
-    width: '60px',
-    height: '60px',
-    float: 'left',
-    marginRight: '10px',
-  },
-  orderDetailLink: {
-    textDecoration: 'none',
-  },
-};
+

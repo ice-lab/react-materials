@@ -5,6 +5,7 @@ import Head from './Head';
 import Field from './Field';
 import Trend from './Trend';
 import ColumnChart from './ColumnChart';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -48,11 +49,11 @@ export default class OverviewChartCard extends Component {
           <IceContainer>
             <Head title="完成比例" content="数据说明" total="51%" />
             <div
-              style={{ height: '64px', display: 'flex', alignItems: 'center' }}
+              className={styles.numUsing }
             >
               <Progress percent={51} />
             </div>
-            <Trend style={styles.footer} />
+            <Trend className={styles.footer} />
           </IceContainer>
         </Col>
       </Row>
@@ -60,11 +61,3 @@ export default class OverviewChartCard extends Component {
   }
 }
 
-const styles = {
-  footer: {
-    height: '30px',
-    paddingTop: '10px',
-    marginTop: '10px',
-    borderTop: '1px solid #e8e8e8',
-  },
-};
