@@ -6,12 +6,13 @@ import {
   FormError,
 } from '@icedesign/form-binder';
 import './JoinUs.scss';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const telPattern = /^(1[\d]{1}[\d]{9})|(((400)-(\d{3})-(\d{4}))|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$)$|^([ ]?)$/;
 
-export default class JoinUs extends Component {
-  static displayName = 'JoinUs';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
@@ -41,16 +42,13 @@ export default class JoinUs extends Component {
   render() {
     return (
       <div
-        className="join-us"
-        style={{
-          ...styles.container,
-          ...styles.joinUs,
-        }}
+        // className="join-us"
+        className={`${styles.container} ${styles.joinUs} join-us`}
       >
-        <div style={styles.content}>
-          <div style={styles.head}>
-            <h2 style={styles.title}>我们的团队</h2>
-            <p style={styles.intro}>
+        <div className={styles.content}>
+          <div className={styles.head}>
+            <h2 className={styles.title}>我们的团队</h2>
+            <p className={styles.intro}>
               我们是一支充满激情、志向远大、怀揣梦想的团队，
               <br />
               也是一个思维活跃、朝气蓬勃、团结互助的大家庭
@@ -63,22 +61,22 @@ export default class JoinUs extends Component {
             value={this.state.formValue}
             onChange={this.formChange}
           >
-            <div style={styles.formContent}>
+            <div className={styles.formContent}>
               <Row
                 wrap
                 gutter={20}
-                className="hoz-form-item"
-                style={styles.hozFormItem}
+                // className="hoz-form-item"
+                className={`${styles.hozFormItem} hoz-form-item`}
               >
                 <Col span={8}>
                   <FormBinder required message="必填项" name="username">
                     <Input
-                      style={{ width: '100%', marginTop: '20px' }}
+                      className={styles.inputWidth}
                       placeholder="姓名"
                     />
                   </FormBinder>
-                  <div style={styles.formErrorWrapper}>
-                    <FormError name="username" style={styles.errorText} />
+                  <div className={styles.formErrorWrapper}>
+                    <FormError name="username" className={styles.errorText} />
                   </div>
                 </Col>
                 <Col span={8}>
@@ -89,12 +87,12 @@ export default class JoinUs extends Component {
                     name="email"
                   >
                     <Input
-                      style={{ width: '100%', marginTop: '20px' }}
+                      className={styles.inputWidth}
                       placeholder="邮箱"
                     />
                   </FormBinder>
-                  <div style={styles.formErrorWrapper}>
-                    <FormError name="email" style={styles.errorText} />
+                  <div className={styles.formErrorWrapper}>
+                    <FormError name="email" className={styles.errorText} />
                   </div>
                 </Col>
                 <Col span={8}>
@@ -106,30 +104,30 @@ export default class JoinUs extends Component {
                     name="phone"
                   >
                     <Input
-                      style={{ width: '100%', marginTop: '20px' }}
+                      className={styles.inputWidth}
                       placeholder="电话"
                     />
                   </FormBinder>
-                  <div style={styles.formErrorWrapper}>
-                    <FormError name="phone" style={styles.errorText} />
+                  <div className={styles.formErrorWrapper}>
+                    <FormError name="phone" className={styles.errorText} />
                   </div>
                 </Col>
-                <Col span={24} style={styles.verFormItem}>
+                <Col span={24} className={styles.verFormItem}>
                   <FormBinder name="jobtitle">
                     <Input
-                      style={{ width: '100%', marginTop: '20px' }}
+                      className={styles.inputWidth}
                       placeholder="职位"
                     />
                   </FormBinder>
                 </Col>
                 <Col
                   span={24}
-                  className="ver-form-item"
-                  style={styles.verFormItem}
+                  // className="ver-form-item"
+                  className={`${styles.verFormItem} ver-form-item`}
                 >
                   <FormBinder name="content">
                     <Input.TextArea
-                      style={{ width: '100%', marginTop: '20px' }}
+                      className={styles.inputWidth}
                       placeholder="一些自我介绍"
                     />
                   </FormBinder>
@@ -141,7 +139,7 @@ export default class JoinUs extends Component {
                   <Button
                     onClick={this.handleSubmit}
                     type="primary"
-                    style={styles.submitBtn}
+                    className={styles.submitBtn}
                   >
                     提交
                   </Button>
@@ -155,28 +153,4 @@ export default class JoinUs extends Component {
   }
 }
 
-const styles = {
-  container: {
-    background: `url${require('./images/TB1JGoDi3vD8KJjy0FlXXagBFXa-5040-2811.png')}`,
-    backgroundSize: 'cover',
-  },
-  content: {
-    maxWidth: '1080px',
-    margin: '0 auto',
-    padding: '80px 0',
-  },
-  head: { width: '50%', margin: '0 auto' },
-  title: { margin: 0, textAlign: 'center', fontSize: '28px', color: '#fff' },
-  intro: { textAlign: 'center', color: '#fff' },
-  formContent: { maxWidth: '680px', padding: '0 20px', margin: '60px auto' },
-  errorText: { color: '#fff' },
-  submitBtn: { color: '#2977f3', background: '#fff', borderRadius: '6px' },
-  joinUs: {},
-  hozFormItem: {},
-  verFormItem: {
-    marginTop: '20px',
-  },
-  formErrorWrapper: {
-    color: 'red',
-  },
-};
+

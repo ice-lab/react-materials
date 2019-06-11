@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
-
-const styles = {
-  processing: {
-    color: '#5485F7',
-  },
-  finish: {
-    color: '#64D874',
-  },
-  terminated: {
-    color: '#999999',
-  },
-  pass: {
-    color: '#FA7070',
-  },
-};
+import styles from './index.module.scss';
 
 const generatorMockStatus = () => {
   const random = parseInt(Math.random() * 10, 10);
@@ -41,14 +27,14 @@ const generatorData = () => {
 };
 
 const statusComponents = {
-  processing: <span style={styles.processing}>进行中</span>,
-  finish: <span style={styles.finish}>已完成</span>,
-  terminated: <span style={styles.terminated}>已终止</span>,
-  pass: <span style={styles.pass}>未通过</span>,
+  processing: <span className={styles.processing}>进行中</span>,
+  finish: <span className={styles.finish}>已完成</span>,
+  terminated: <span className={styles.terminated}>已终止</span>,
+  pass: <span className={styles.pass}>未通过</span>,
 };
 
-export default class LiteTable extends Component {
-  static displayName = 'LiteTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -69,7 +55,7 @@ export default class LiteTable extends Component {
     const { tableData } = this.state;
     return (
       <div className="lite-table">
-        <IceContainer style={styles.tableCard}>
+        <IceContainer className={styles.tableCard}>
           <Table dataSource={tableData} hasBorder={false}>
             <Table.Column title="项目名称" dataIndex="project" width={200} />
             <Table.Column title="创建者" dataIndex="owner" width={100} />

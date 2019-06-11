@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { enquireScreen } from 'enquire-js';
+import styles from './index.module.scss';
 
-export default class LeftContentDisplay extends Component {
-  static displayName = 'LeftContentDisplay';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
@@ -30,19 +31,19 @@ export default class LeftContentDisplay extends Component {
       height: this.state.isMobile ? '300px' : '600px',
     };
     return (
-      <div style={styles.container}>
-        <div style={{ ...styles.content, ...contentStyle }}>
-          <div style={styles.col}>
-            <h2 style={styles.title}>功能描述</h2>
-            <p style={styles.description}>
+      <div className={styles.container}>
+        <div className={styles.content} style={{...contentStyle }}>
+          <div className={styles.col}>
+            <h2 className={styles.title}>功能描述</h2>
+            <p className={styles.description}>
               功能描述的文案，功能描述的文案功能描述的文案功能描述的文案
             </p>
           </div>
-          <div style={styles.col}>
+          <div className={styles.col}>
             <img
               src={require('./images/TB1MgyDjsLJ8KJjy0FnXXcFDpXa-618-1046.png')}
               alt="img"
-              style={styles.image}
+              className={styles.image}
             />
           </div>
         </div>
@@ -51,34 +52,4 @@ export default class LeftContentDisplay extends Component {
   }
 }
 
-const styles = {
-  container: {
-    width: '100%',
-    maxWidth: '1080px',
-    margin: '0 auto',
-    padding: '80px 0',
-  },
-  content: {
-    display: 'flex',
-    position: 'relative',
-    alignItems: 'center',
-    overflow: 'hidden',
-  },
-  col: {
-    width: '50%',
-    padding: '0 20px',
-  },
-  title: {
-    fontSize: '28px',
-    fontWeight: 'bold',
-  },
-  description: {
-    color: '#666',
-    lineHeight: '22px',
-  },
-  image: {
-    position: 'absolute',
-    top: '20px',
-    width: '40%',
-  },
-};
+

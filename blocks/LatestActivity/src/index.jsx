@@ -11,8 +11,8 @@ const getData = () => {
   });
 };
 
-export default class LatestActivity extends Component {
-  static displayName = 'LatestActivity';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 

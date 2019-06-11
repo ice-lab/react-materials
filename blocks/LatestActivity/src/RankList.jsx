@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Table } from '@alifd/next';
 import PropTypes from 'prop-types';
+import styles from './index.module.scss';
 
 export default class RankList extends Component {
   static defaultProps = {
@@ -16,9 +17,9 @@ export default class RankList extends Component {
   render() {
     const { subTitle, dataSource, columns } = this.props;
     return (
-      <div style={styles.content}>
-        <h3 style={styles.subTitle}>{subTitle}</h3>
-        <Table dataSource={dataSource} hasBorder={false} style={styles.table}>
+      <div className={styles.contentTwo}>
+        <h3 className={styles.subTitle}>{subTitle}</h3>
+        <Table dataSource={dataSource} hasBorder={false} className={styles.table}>
           {columns.map((item) => {
             return (
               <Table.Column
@@ -29,35 +30,12 @@ export default class RankList extends Component {
             );
           })}
         </Table>
-        <div style={styles.footer}>
-          <a style={styles.link}>查看更多</a>
+        <div className={styles.footer}>
+          <a className={styles.linkTwo}>查看更多</a>
         </div>
       </div>
     );
   }
 }
 
-const styles = {
-  subTitle: {
-    margin: '0',
-    padding: '20px 20px 10px',
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #f0f0f0',
-  },
-  table: {
-    margin: '0 10px',
-  },
-  footer: {
-    height: '40px',
-    padding: '0 20px',
-    background: '#fff',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-  },
-  link: {
-    color: '#4990e2',
-  },
-};
+
