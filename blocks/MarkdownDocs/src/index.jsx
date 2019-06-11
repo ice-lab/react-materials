@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import './MarkdownDocs.scss';
+import './index.scss';
 
 const initialSource = `
 # 开发者入驻

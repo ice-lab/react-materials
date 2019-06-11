@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Icon } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -43,18 +44,18 @@ export default class ModelOverview extends Component {
         {mockData.map((item, index) => {
           return (
             <Col xxs="24" xs="12" l="6" key={index}>
-              <div style={styles.box}>
+              <div className={styles.box}>
                 <div
                   style={{
-                    ...styles.symbol,
                     background: `${item.symbolBgColor}`,
                   }}
+                  className={styles.symbol}
                 >
                   <Icon size="xl" type={item.symbol} />
                 </div>
-                <div style={styles.value}>
-                  <div style={styles.count}>{item.count}</div>
-                  <div style={styles.desc}>{item.desc}</div>
+                <div className={styles.value}>
+                  <div className={styles.count}>{item.count}</div>
+                  <div className={styles.desc}>{item.desc}</div>
                 </div>
               </div>
             </Col>
@@ -65,34 +66,3 @@ export default class ModelOverview extends Component {
   }
 }
 
-const styles = {
-  box: {
-    display: 'flex',
-    height: '100px',
-    background: '#fff',
-    borderRadius: '4px',
-    marginBottom: '20px',
-  },
-  symbol: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '40%',
-    color: '#fff',
-  },
-  value: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '60%',
-    color: '#c6cad6',
-  },
-  count: {
-    fontSize: '36px',
-    marginBottom: '2px',
-  },
-  desc: {
-    fontSize: '13px',
-  },
-};

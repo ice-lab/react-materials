@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import Masonry from 'react-masonry-component';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 const dataSource = [
@@ -66,9 +66,9 @@ export default class CustomMasonry extends Component {
     const childElements = dataSource.map(function(item, index) {
       return (
         <Col l="4" key={index}>
-          <div style={styles.itemBody}>
-            <img src={item.img} style={styles.itemImg} alt="" />
-            <h3 style={styles.itemTitle}>{item.title}</h3>
+          <div className={styles.itemBody}>
+            <img src={item.img} className={styles.itemImg} alt="" />
+            <h3 className={styles.itemTitle}>{item.title}</h3>
           </div>
         </Col>
       );
@@ -79,7 +79,7 @@ export default class CustomMasonry extends Component {
     };
 
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container}>
         <Row wrap>
           <Masonry options={masonryOptions} style={{ width: '100%' }}>
             {childElements}
@@ -89,24 +89,3 @@ export default class CustomMasonry extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    background: '#F7F8FA',
-  },
-  itemBody: {
-    margin: '10px',
-    padding: '10px',
-    background: '#fff',
-    cursor: 'pointer',
-  },
-  itemImg: {
-    maxWidth: '100%',
-  },
-  itemTitle: {
-    margin: 0,
-    padding: '10px 0 0',
-    fontSize: '15px',
-    textTransform: 'uppercase',
-  },
-};

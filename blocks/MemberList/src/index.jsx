@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
 import ContainerTitle from './ContainerTitle';
+import styles from './index.module.scss';
 
 export default class MemberList extends Component {
   static displayName = 'MemberList';
@@ -17,9 +18,9 @@ export default class MemberList extends Component {
 
   renderProfile = (value, index, record) => {
     return (
-      <div style={styles.profile}>
-        <img src={record.avatar} alt="" style={styles.avatar} />
-        <span style={styles.name}>{record.name}</span>
+      <div className={styles.profile}>
+        <img src={record.avatar} alt="" className={styles.avatar} />
+        <span className={styles.name}>{record.name}</span>
       </div>
     );
   };
@@ -27,8 +28,8 @@ export default class MemberList extends Component {
   renderOper = () => {
     return (
       <div>
-        <a style={{ ...styles.link, ...styles.edit }}>修改</a>
-        <a style={{ ...styles.link, ...styles.delete }}>删除</a>
+        <a className={styles.edit}>修改</a>
+        <a className={styles.link}>删除</a>
       </div>
     );
   };
@@ -50,11 +51,11 @@ export default class MemberList extends Component {
     ];
 
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container}>
         <ContainerTitle
           title="项目成员"
           buttonText="添加成员"
-          style={styles.title}
+          className={styles.title}
         />
         <Table dataSource={dataSource} hasHeader={false} hasBorder={false}>
           <Table.Column dataIndex="name" cell={this.renderProfile} />
@@ -67,34 +68,4 @@ export default class MemberList extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  title: {
-    borderBottom: '0',
-  },
-  profile: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  avatar: {
-    width: '24px',
-    height: '24px',
-    border: '1px solid #eee',
-    background: '#eee',
-    borderRadius: '50px',
-  },
-  name: {
-    marginLeft: '15px',
-    color: '#314659',
-    fontSize: '14px',
-  },
-  link: {
-    cursor: 'pointer',
-    color: '#1890ff',
-  },
-  edit: {
-    marginRight: '5px',
-  },
-};
+

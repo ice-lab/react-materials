@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 const dataSource = [
   {
@@ -40,22 +41,22 @@ export default class MessageList extends Component {
 
   renderItem = (item, idx) => {
     return (
-      <div style={styles.item} key={idx}>
-        <div style={styles.title}>
+      <div className={styles.item} key={idx}>
+        <div className={styles.title}>
           {item.title}
-          <span style={styles.datetime}>{item.datetime}</span>
+          <span className={styles.datetime}>{item.datetime}</span>
         </div>
-        <div style={styles.message}>{item.message}</div>
+        <div className={styles.message}>{item.message}</div>
       </div>
     );
   };
 
   render() {
     return (
-      <div className="message-list" style={styles.messageList}>
+      <div className="message-list" className={styles.messageList}>
         <IceContainer>
           {dataSource.map(this.renderItem)}
-          <div style={styles.paginationWarp}>
+          <div className={styles.paginationWarp}>
             <Pagination />
           </div>
         </IceContainer>
@@ -64,34 +65,3 @@ export default class MessageList extends Component {
   }
 }
 
-const styles = {
-  item: {
-    borderBottom: '1px solid #eee',
-    margin: '0 0 20px',
-  },
-  title: {
-    fontSize: '14px',
-    color: '#444',
-    marginBottom: '10px',
-    position: 'relative',
-  },
-  datetime: {
-    position: 'absolute',
-    right: '10px',
-    paddingTop: '10px',
-    fontSize: '12px',
-    color: '#999',
-  },
-  message: {
-    fontSize: '12px',
-    color: '#999',
-    marginBottom: '10px',
-  },
-  paginationWarp: {
-    marginTop: '15px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-  },
-  messageList: {},
-};
