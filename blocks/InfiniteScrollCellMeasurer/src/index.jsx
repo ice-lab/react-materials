@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { AutoSizer } from 'react-virtualized';
 import cn from 'classnames';
-import './InfiniteScrollCellMeasurer.scss';
 import DynamicWidthGrid from './DynamicWidthGrid';
 
 const data = {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -32,8 +33,8 @@ const mockData = [
   ],
 ];
 
-export default class InfoOverview extends Component {
-  static displayName = 'InfoOverview';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -50,20 +51,20 @@ export default class InfoOverview extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <h4 style={styles.containerTitle}>概览</h4>
-        <Row wrap gutter={20} style={styles.row}>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.containerTitle}>概览</h4>
+        <Row wrap gutter={20} className={styles.row}>
           {mockData.map((items, index) => {
             const borderNone =
               index === mockData.length - 1 ? styles.borderNone : {};
             return (
               <Col l="6" xs="12" xxs="24" key={index}>
-                <div style={{ ...styles.box, ...borderNone }}>
+                <div className={`${styles.box} ${borderNone}`}>
                   {items.map((item, key) => {
                     return (
-                      <div style={styles.boxCell} key={key}>
-                        <div style={styles.cellName}>{item.name}</div>
-                        <div style={styles.cellValue}>{item.value}</div>
+                      <div className={styles.boxCell} key={key}>
+                        <div className={styles.cellName}>{item.name}</div>
+                        <div className={styles.cellValue}>{item.value}</div>
                       </div>
                     );
                   })}
@@ -77,46 +78,4 @@ export default class InfoOverview extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  containerTitle: {
-    margin: '0',
-    padding: '15px 20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #f0f0f0',
-  },
-  row: {
-    padding: '20px',
-  },
-  box: {
-    display: 'flex',
-    flexFlow: 'wrap',
-    borderRight: '1px solid #f0f0f0',
-  },
-  borderNone: {
-    borderRight: '0',
-  },
-  boxCell: {
-    width: '50%',
-    margin: '10px 0',
-  },
-  cellName: {
-    color: '#666',
-    lineHeight: '14px',
-    fontSize: '12px',
-  },
-  cellValue: {
-    marginTop: '8px',
-    color: '#333',
-    lineHeight: '30px',
-    fontSize: '16px',
-    fontWeight: '500',
-  },
-};
+

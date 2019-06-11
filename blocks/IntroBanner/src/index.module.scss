@@ -1,0 +1,48 @@
+.introBannerWrapStyles {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+};
+.introBannerImgStyles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 1920px;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 10;
+};
+.introBannerImgMaskStyles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: .45;
+  z-index: 15;
+};
+.introBannerTextStyles {
+  position: absolute;
+  top: 112px;
+  z-index: 15;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 40px;
+  color: #fff;
+  pointer-events: none;
+};
+.introBannerTitleStyles {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 70px;
+};
+.introBannerSubtitleStyles {
+  margin-top: 8px;
+  margin-bottom: 48px;
+  max-width: 768px;
+  font-size: 16px;
+  line-height: 25px;
+};

@@ -3,12 +3,12 @@ import IceContainer from '@icedesign/container';
 import { Tab, Button, Grid } from '@alifd/next';
 import IceEllipsis from '@icedesign/ellipsis';
 import data from './data';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { Item } = Tab;
 
-export default class InfoDisplayTab extends Component {
-  static displayName = 'InfoDisplayTab';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -25,14 +25,14 @@ export default class InfoDisplayTab extends Component {
     return items.map((item, index) => {
       return (
         <Col xxs="24" s="12" l="8" key={index}>
-          <div style={styles.columnCard}>
-            <div style={styles.cardTitle}>{item.title}</div>
-            <div style={styles.cardDescWrapper}>
-              <div style={styles.cardDesc}>
+          <div className={styles.columnCard}>
+            <div className={styles.cardTitle}>{item.title}</div>
+            <div className={styles.cardDescWrapper}>
+              <div className={styles.cardDesc}>
                 <IceEllipsis lineLimit={6} text={item.desc} />
               </div>
             </div>
-            <div style={styles.cardBtnWrapper}>
+            <div className={styles.cardBtnWrapper}>
               <Button
                 type="primary"
                 component="a"
@@ -79,34 +79,4 @@ export default class InfoDisplayTab extends Component {
   }
 }
 
-const styles = {
-  columnCard: {
-    overflow: 'hidden',
-    boxShadow:
-      '0px 0px 2px 0px rgba(0, 0, 0, 0.1),0px 2px 2px 0px rgba(0, 0, 0, 0.1)',
-    background: '#fff',
-    height: '280px',
-    marginBottom: '20px',
-  },
-  cardDescWrapper: {
-    marginTop: '20px',
-  },
-  cardTitle: {
-    fontSize: '18px',
-    textAlign: 'center',
-    marginTop: '22px',
-  },
-  cardDesc: {
-    padding: '0 20px',
-    height: '144px',
-    overflow: 'hidden',
-    lineHeight: '24px',
-    fontSize: '14px',
-    color: '#666',
-    margin: '5px auto 0 auto',
-  },
-  cardBtnWrapper: {
-    textAlign: 'center',
-    marginTop: '15px',
-  },
-};
+

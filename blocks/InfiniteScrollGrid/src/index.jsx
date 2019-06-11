@@ -25,8 +25,8 @@ const data = {
   ],
 };
 
-export default class InfiniteScrollGrid extends PureComponent {
-  static displayName = 'InfiniteScrollGrid';
+export default class Index extends PureComponent {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);

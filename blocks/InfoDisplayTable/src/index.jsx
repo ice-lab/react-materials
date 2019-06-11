@@ -31,8 +31,8 @@ const dataSource = () => {
   ];
 };
 
-export default class InfoDisplayTable extends Component {
-  static displayName = 'InfoDisplayTable';
+export default class Index extends Component {
+  static displayName = 'Index';
 
   static propTypes = {};
 
@@ -45,7 +45,7 @@ export default class InfoDisplayTable extends Component {
 
   render() {
     return (
-      <div className="info-display-table" style={styles.infoDisplayTable}>
+      <div className="info-display-table">
         <IceContainer>
           <Table dataSource={dataSource()}>
             <Table.Column title="个人信息" dataIndex="label" />
@@ -57,4 +57,4 @@ export default class InfoDisplayTable extends Component {
   }
 }
 
-const styles = { infoDisplayTable: {} };
+

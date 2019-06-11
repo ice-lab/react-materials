@@ -4,8 +4,8 @@ import { List, AutoSizer } from 'react-virtualized';
 import './InfiniteScrollList.scss';
 import data from './data';
 
-export default class InfiniteScrollList extends PureComponent {
-  static displayName = 'InfiniteScrollList';
+export default class Index extends PureComponent {
+  static displayName = 'Index';
 
   constructor(props) {
     super(props);
