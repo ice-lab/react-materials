@@ -1,0 +1,11 @@
+.icelayout {
+  min-width: 1200px;
+  min-height: 100vh;
+  .icelayoutmain {
+    background: #f2f2f2;
+    padding: 0;
+    .maincontainer {
+      padding: 20px;
+    }
+  }
+}

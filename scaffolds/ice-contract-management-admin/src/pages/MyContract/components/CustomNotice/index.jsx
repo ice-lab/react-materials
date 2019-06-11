@@ -1,19 +1,19 @@
 import React from 'react';
 import { Message } from '@alifd/next';
-import './index.modules.scss';
+import styles from  './index.module.scss';
 
 const CustomNotice = () => {
   const renderNum = (num, color) => {
-    return <strong style={{...color }} className="stylesnum">{num}</strong>;
+    return <strong style={{...color }} className={styles.num}>{num}</strong>;
   };
 
   return (
     <Message
       closeable
-      className="custom-notice"
-      className="stylesnotice"
+      className={styles.customnotice}
+      className={styles.notice}
       title={
-        <div className="stylestitle1">
+        <div className={styles.title1}>
           当前共有
           {renderNum(1, {color: '#F04631'})}
           份合同，其中已倒签 {renderNum(0, {color: '#F04631'})}

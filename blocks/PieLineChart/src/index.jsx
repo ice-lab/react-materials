@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xHJDyokLHb

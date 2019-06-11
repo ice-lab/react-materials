@@ -5,7 +5,7 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import IceImg from '@icedesign/img';
 import { headerMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
-import './index.modules.scss';
+import styles from './index.module.scss';
 
 @withRouter
 export default class Header extends Component {
@@ -13,12 +13,12 @@ export default class Header extends Component {
     const { location = {} } = this.props;
     const { pathname } = location;
     return (
-      <div className="header-container">
-        <div className="header-content">
+      <div className={styles.headercontainer}>
+        <div className={styles.headercontent}>
           <Logo style={{color :"#fff"}} isDark/>
-          <div className="header-navbar">
+          <div className={styles.headernavbar">
             <Nav
-              className="header-navbar-menu"
+              className={styles.headernavbarmenu}
               onClick={this.handleNavClick}
               selectedKeys={[pathname]}
               defaultSelectedKeys={[pathname]}
@@ -108,40 +108,35 @@ export default class Header extends Component {
               triggerType="click"
               trigger={
                 <div
-                  className="ice-design-header-userpannel"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    fontSize: 12,
-                  }}
+                  className={styles.icedesignheaderuserpannel}
                 >
                   <IceImg
                     height={40}
                     width={40}
                     src={require('./images/avatar.png')}
-                    className="user-avatar"
+                    className={styles.useravatar}
                   />
-                  <div className="user-profile">
-                    <span className="user-name" style={{ fontSize: '13px' }}>
+                  <div className={styles.userprofile}>
+                    <span className={styles.username}>
                       淘小宝
                     </span>
                     <br />
-                    <span className="user-department">技术部</span>
+                    <span className={styles.userdepartment}>技术部</span>
                   </div>
-                  <Icon type="arrow-down" size="xxs" className="icon-down" />
+                  <Icon type="arrow-down" size="xxs" className={styles.icondown} />
                 </div>
               }
               closable={false}
-              className="user-profile-menu"
+              className={styles.userprofilemenu}
             >
               <ul>
-                <li className="user-profile-menu-item">
+                <li className={styles.userprofilemenuitem}>
                   <Link to="/setting">
                     <FoundationSymbol type="repair" size="small" />
                     设置
                   </Link>
                 </li>
-                <li className="user-profile-menu-item">
+                <li className={styles.userprofilemenuitem}>
                   <Link to="/user/login">
                     <FoundationSymbol type="compass" size="small" />
                     退出

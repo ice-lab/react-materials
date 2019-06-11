@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
-import './index.modules.scss'
 
 export default class BasicLine extends Component {
   static displayName = 'BasicLine';

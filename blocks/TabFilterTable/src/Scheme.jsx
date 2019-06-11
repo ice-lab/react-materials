@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Checkbox, Table, Pagination } from '@alifd/next';
-import './index.modules.scss';
+import styles from  './index.module.scss';
 
 const { Group: CheckboxGroup } = Checkbox;
 
@@ -59,20 +59,20 @@ export default class TableFilter extends Component {
   };
 
   renderOper = () => {
-    return <a className="styleslink">详情</a>;
+    return <a style={styles.link}>详情</a>;
   };
 
   renderStat = (value) => {
     console.log(value);
     return (
       <div>
-        <span className="one">
+        <span style={styles.one}>
           {value.success}
         </span>
-        <span className="two">
+        <span style={styles.two}>
           {value.error}
         </span>
-        <span className="three">
+        <span style={styles.three}>
           {value.uncover}
         </span>
       </div>
@@ -84,11 +84,11 @@ export default class TableFilter extends Component {
     const { current } = this.state;
 
     return (
-      <div className="stylescontainer">
-        <div className="stylestableHead">
-          <div className="styleslabel">状态:</div>
+      <div className={styles.container}>
+        <div className={styles.tableHead}>
+          <div className={styles.label}>状态:</div>
           <CheckboxGroup
-            className="check"
+            className={styles.check}
             defaultValue={['success', 'error']}
             dataSource={checkboxOptions}
             onChange={this.onChange}
@@ -106,7 +106,7 @@ export default class TableFilter extends Component {
           <Table.Column title="操作" cell={this.renderOper} />
         </Table>
         <Pagination
-          className="stylespagination"
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />

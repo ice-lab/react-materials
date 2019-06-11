@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -52,9 +52,9 @@ export default class QuickNavigation extends Component {
           return (
             <Col xxs="12" l="4" key={index}>
               <IceContainer>
-                <div className="stylesnavItem">
-                  <img src={item.img} alt="" className="stylesimg" />
-                  <h4 className="stylestitle">{item.title}</h4>
+                <div className={styles.navItem}>
+                  <img src={item.img} alt="" className={styles.img} />
+                  <h4 className={styles.title}>{item.title}</h4>
                 </div>
               </IceContainer>
             </Col>

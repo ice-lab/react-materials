@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Pagination, Balloon, Icon } from '@alifd/next';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const getData = () => {
   return Array.from({ length: 20 }).map((item, index) => {
@@ -54,9 +54,9 @@ export default class Home extends Component {
     return (
       <Balloon
         align="lt"
-        trigger={<div className="ballondiv">{value}</div>}
+        trigger={<div className={styles.ballondiv}>{value}</div>}
         closable={false}
-        className="ballon"
+        className={styles.ballon}
       >
         青霉素是抗菌素的一种，是能破坏细菌的细胞壁并在细菌细胞的繁殖期起杀菌作用的一类抗生素
       </Balloon>
@@ -66,8 +66,8 @@ export default class Home extends Component {
   renderState = (value) => {
     return (
       <div>
-        <span className="stylescircle" />
-        <span className="stylesstateText">{value}</span>
+        <span className={styles.circle} />
+        <span className={styles.stateText}>{value}</span>
       </div>
     );
   };
@@ -75,7 +75,7 @@ export default class Home extends Component {
   renderOper = () => {
     return (
       <div>
-        <Icon type="edit" size="small" className="styleseditIcon" />
+        <Icon type="edit" size="small" className={styles.editIcon} />
       </div>
     );
   };
@@ -83,12 +83,11 @@ export default class Home extends Component {
   render() {
     const { dataSource } = this.state;
     return (
-      <div className="stylestableContainer">
+      <div className={styles.tableContainer}>
         <Table
           dataSource={dataSource}
           onSort={this.handleSort}
           hasBorder={false}
-          className="custom-table"
         >
           <Table.Column title="序列号" dataIndex="id" sortable align="center" />
           <Table.Column title="调价单号" dataIndex="orderID" sortable />
@@ -111,7 +110,7 @@ export default class Home extends Component {
           <Table.Column title="操作" cell={this.renderOper} />
         </Table>
         <Pagination
-          className="stylespagination"
+          className={styles.pagination}
           current={this.state.current}
           onChange={this.handlePagination}
         />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
 import PropTypes from 'prop-types';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 export default class ColorPicker extends React.Component {
   static propTypes = {
@@ -46,12 +46,12 @@ export default class ColorPicker extends React.Component {
   render() {
     return (
       <div>
-        <div className="stylesswatch" onClick={this.handleClick}>
-          <div style={{ background: `${this.state.color}` }}  className="stylescolor"/>
+        <div className={styles.swatch} onClick={this.handleClick}>
+          <div style={{ background: `${this.state.color}` }}  className={styles.color}/>
         </div>
         {this.state.displayColorPicker ? (
-          <div className="stylespopover">
-            <div className="stylescover" onClick={this.handleClose} />
+          <div className={styles.popover}>
+            <div className={styles.cover} onClick={this.handleClose} />
             <SketchPicker
               color={this.state.color}
               onChange={this.handleChange}

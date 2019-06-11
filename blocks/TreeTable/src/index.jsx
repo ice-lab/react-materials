@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const mockData = [
   {
@@ -138,7 +138,7 @@ export default class TreeTable extends Component {
           <Table.Column title="地址" dataIndex="address" />
         </Table>
         <Pagination
-          className="page"
+          className={styles.page}
           current={this.state.current}
           onChange={this.handleChange}
         />

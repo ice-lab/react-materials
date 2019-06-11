@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
-import '../index.modules.scss'
+import styles from  '../index.module.scss'
 
 export default class ArticleList extends Component {
   static displayName = 'ArticleList';
@@ -13,7 +13,7 @@ export default class ArticleList extends Component {
 
   renderTag = (text, onClick) => {
     return (
-      <Button key={text} size="small" onClick={onClick} className="stylesbutton">
+      <Button key={text} size="small" onClick={onClick} style={styles.button}>
         {text}
       </Button>
     );
@@ -27,15 +27,15 @@ export default class ArticleList extends Component {
     //   informationStyle.marginBottom = '0px';
     // }
     return (
-      <div key={idx} className={isLast?"wrapperStyle1":"wrapperStyle"}>
-        <div className="stylestitle">
+      <div key={idx} className={isLast?styles.wrapperStyle1:styles.wrapperStyle}>
+        <div className={styles.title}>
           {data.title}
-          <span hidden="xxs" className="stylesdatetime">
+          <span hidden="xxs" className={styles.datetime}>
             {data.datetime}
           </span>
         </div>
-        <div className="stylesdesc">{data.description}</div>
-        <div className={isLast?"informationStyle1":"informationStyle"}>
+        <div className={styles.desc}>{data.description}</div>
+        <div className={isLast?styles.informationStyle1:styles.informationStyle}>
           <div>
             {data.tags.map((item) => {
               return this.renderTag(
@@ -45,10 +45,10 @@ export default class ArticleList extends Component {
               );
             })}
           </div>
-          <div className="stylesoperator" hidden={['xxs', 'xs']}>
-            <span className="stylesoperatorItem">点赞: {data.star}</span>
-            <span className="stylesoperatorItem">喜爱: {data.like}</span>
-            <span className="stylesoperatorItem">评论: {data.comment}</span>
+          <div className={styles.operator} hidden={['xxs', 'xs']}>
+            <span className={styles.operatorItem}>点赞: {data.star}</span>
+            <span className={styles.operatorItem}>喜爱: {data.like}</span>
+            <span className={styles.operatorItem}>评论: {data.comment}</span>
           </div>
         </div>
       </div>

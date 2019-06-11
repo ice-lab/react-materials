@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -27,25 +27,25 @@ export default class TestimonialCard extends Component {
   render() {
     const data = generatorData(3);
     return (
-      <div className="stylescontainer">
-        <div className="stylescontent">
+      <div className={styles.container}>
+        <div className={styles.content}>
           <Row wrap gutter={20}>
             {data.map((item, index) => {
               return (
                 <Col xxs="24" s="8" l="8" key={index}>
-                  <div className="stylesitem">
-                    <div className="stylesinfoBox">
+                  <div className={styles.item}>
+                    <div className={styles.infoBox}>
                       <img
-                        className="stylesavatar"
+                        className={styles.avatar}
                         src={item.imgUrl}
                         alt={item.name}
                       />
-                      <div className="stylesbaseInfo">
-                        <h5 className="stylesname">{item.name}</h5>
-                        <p className="stylescompany">{item.company}</p>
+                      <div className={styles.baseInfo}>
+                        <h5 className={styles.name}>{item.name}</h5>
+                        <p className={styles.company}>{item.company}</p>
                       </div>
                     </div>
-                    <p className="stylesdescription">
+                    <p className={styles.description}>
                       “
                       {item.description}
                       ”

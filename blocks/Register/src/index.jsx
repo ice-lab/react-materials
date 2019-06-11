@@ -1,8 +1,7 @@
 /* eslint react/no-string-refs:0 */
 import React, { Component } from 'react';
 import { Input, Button, Grid, Message, Icon, Form } from '@alifd/next';
-import './Register.scss';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 const Item = Form.Item;
@@ -66,20 +65,20 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div  className="user-register stylescontainer">
-        <div className="stylesheader">
-          <a href="#" className="stylesmeta">
+      <div  className={styles.container}>
+        <div className={styles.header}>
+          <a href="#" className={styles.meta}>
             <img
-              className="styleslogo"
+              className={styles.logo}
               src={require('./images/TB13UQpnYGYBuNjy0FoXXciBFXa-242-134.png')}
               alt="logo"
             />
-            <span className="stylestitle">飞冰</span>
+            <span className={styles.title}>飞冰</span>
           </a>
-          <p className="stylesdesc">飞冰让前端开发简单而友好</p>
+          <p className={styles.desc}>飞冰让前端开发简单而友好</p>
         </div>
-        <div className="stylesformContainer">
-          <h4 className="stylesformTitle">注 册</h4>
+        <div className={styles.formContainer}>
+          <h4 className={styles.formTitle}>注 册</h4>
           <Form
             value={this.state.value}
             onChange={this.formChange}
@@ -93,7 +92,7 @@ export default class Register extends Component {
                   innerBefore={<Icon
                     type="account"
                     size="small"
-                    className="stylesinputIcon"
+                    className={styles.inputIcon}
                   />}
                 />
               </Item>
@@ -103,7 +102,7 @@ export default class Register extends Component {
                 message="请输入正确的邮箱"
               >
                 <Input name="email" size="large" maxLength={20} placeholder="邮箱" className="inputbox"
-                  innerBefore={<Icon type="email" size="small" className="stylesinputIcon" />} />
+                  innerBefore={<Icon type="email" size="small" className={styles.inputIcon} />} />
               </Item>
 
               <Item
@@ -113,7 +112,7 @@ export default class Register extends Component {
                 <Input
                   name="passwd"
                   className="inputbox"
-                  innerBefore={<Icon type="account" test="lock" size="small" className="stylesinputIcon" />}
+                  innerBefore={<Icon type="account" test="lock" size="small" className={styles.inputIcon} />}
                   htmlType="password"
                   size="large"
                   placeholder="至少8位密码"
@@ -132,7 +131,7 @@ export default class Register extends Component {
               >
                 <Input name="rePasswd"
                   className="inputbox"
-                  innerBefore={<Icon type="email" test="lock" size="small" className="stylesinputIcon" />}
+                  innerBefore={<Icon type="email" test="lock" size="small" className={styles.inputIcon} />}
                   htmlType="password"
                   size="large"
                   placeholder="确认密码"
@@ -145,14 +144,14 @@ export default class Register extends Component {
                   type="primary"
                   validate
                   onClick={this.handleSubmit}
-                  className="stylessubmitBtn"
+                  className={styles.submitBtn}
                 >
                   注 册
                 </Form.Submit>
               </Row>
 
-              <Row className="stylestips">
-                <a href="/" className="styleslink">
+              <Row className={styles.tips}>
+                <a href="/" className={styles.link}>
                   使用已有账户登录
                 </a>
               </Row>

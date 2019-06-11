@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import { asideMenuConfig } from '../../../../menuConfig';
-import './index.modules.scss';
+import styles from  './index.module.scss';
 
 const NavItem = Nav.Item;
 
@@ -14,16 +14,16 @@ export default class BasicLayout extends Component {
     const { pathname } = location;
 
     return (
-      <div className="ice-aside-custom">
-        <div className="ice-aside-logo">LOGO</div>
-        <Nav selectedKeys={[pathname]} className="ice-menu-custom">
+      <div className={styles.iceasid-custom}>
+        <div className={styles.iceasidelogo}>LOGO</div>
+        <Nav selectedKeys={[pathname]} className={styles.icemenucustom}>
           {Array.isArray(asideMenuConfig) &&
             asideMenuConfig.length > 0 &&
             asideMenuConfig.map((nav) => {
               return (
                 <NavItem key={nav.path} icon={nav.icon ? nav.icon : undefined}>
-                  <Link to={nav.path} className="ice-menu-link">
-                    <span className="ice-menu-item-text">{nav.name}</span>
+                  <Link to={nav.path} className={styles.icemenulink}>
+                    <span className={styles.icemenuitemtext}>{nav.name}</span>
                   </Link>
                 </NavItem>
               );

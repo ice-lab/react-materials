@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 import IceContainer from '@icedesign/container';
 import 'react-quill/dist/quill.snow.css';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 export default class QuillRichTextEditor extends Component {
   static displayName = 'QuillRichTextEditor';
@@ -35,7 +35,7 @@ export default class QuillRichTextEditor extends Component {
           formats={QuillRichTextEditor.formats}
           onChange={this.handleChange}
         >
-          <div className="styleseditorArea" />
+          <div className={styles.editorArea} />
         </ReactQuill>
       </IceContainer>
     );

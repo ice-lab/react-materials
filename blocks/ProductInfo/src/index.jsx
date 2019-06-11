@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -51,14 +51,14 @@ export default class ProductInfo extends Component {
 
   render() {
     return (
-      <div className="product-info stylescontainer" >
+      <div className={styles.container} >
         <Row wrap>
           {dataSource.map((item, index) => {
             return (
-              <Col xxs="12" s="8" l="8" key={index} className="stylesitem">
-                <img src={item.pic} className="stylespic" alt="" />
-                <h3 className="stylestitle">{item.title}</h3>
-                <p className="stylesdesc">{item.desc}</p>
+              <Col xxs="12" s="8" l="8" key={index} className={styles.item}>
+                <img src={item.pic} className={styles.pic} alt="" />
+                <h3 className={styles.title}>{item.title}</h3>
+                <p className={styles.desc}>{item.desc}</p>
               </Col>
             );
           })}

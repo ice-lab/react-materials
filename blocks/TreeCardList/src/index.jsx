@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Select } from "@alifd/next";
 import IceContainer from "@icedesign/container";
-import "./TreeCardList.scss";
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Option } = Select;
 
@@ -38,7 +37,7 @@ export default class TreeCardList extends Component {
 
   renderItem = (item, idx) => {
     return (
-      <a href={item.url} className="tree-card-item" key={idx}>
+      <a href={item.url} className={styles.treecarditem} key={idx}>
         <span>{item.tab}</span>
         <span>{item.subTitle}</span>
       </a>
@@ -47,9 +46,9 @@ export default class TreeCardList extends Component {
 
   render() {
     return (
-      <div className="tree-card-list">
+      <div className={styles.treecardlist}>
         <IceContainer>
-          <div className="stylesfirstRow">
+          <div className={styles.firstRow}>
             <span>站点列表</span>
             <Select size="small">
               <Option value="淘宝">淘宝</Option>

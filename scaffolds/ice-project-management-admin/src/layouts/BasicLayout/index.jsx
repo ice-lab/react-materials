@@ -4,14 +4,14 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 import MainRoutes from './MainRoutes';
-import './index.modules.scss';
+import styles from  './index.module.scss';
 
 export default class BasicLayout extends Component {
   render() {
     return (
       <Layout
         fixable
-        className="ice-design-layout"
+        className={styles.icedesignlayout}
       >
         <Layout.Section>
           <Layout.Aside width={240}>
@@ -22,7 +22,7 @@ export default class BasicLayout extends Component {
             <Layout.Header>
               <Header />
             </Layout.Header>
-            <div className="main-container">
+            <div className={styles.maincontainer}>
               <MainRoutes />
             </div>
             <Footer />

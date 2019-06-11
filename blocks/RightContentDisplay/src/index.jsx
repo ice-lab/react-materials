@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 export default class RightContentDisplay extends Component {
   static displayName = 'RightContentDisplay';
@@ -11,18 +11,18 @@ export default class RightContentDisplay extends Component {
 
   render() {
     return (
-      <div className="right-content-display" className="stylescontainer">
-        <div className="right-content-display-content" className="stylescontent">
-          <div className="stylescol">
+      <div  className={styles.container}>
+        <div  className={styles.content}>
+          <div className={styles.col}>
             <img
               src={require('./images/TB1MgyDjsLJ8KJjy0FnXXcFDpXa-618-1046.png')}
               alt="img"
-              className="stylesimage"
+              className={styles.image}
             />
           </div>
-          <div className="stylescol">
-            <h2 className="stylestitle">功能描述</h2>
-            <p className="stylesdescription">
+          <div className={styles.col}>
+            <h2 className={styles.title}>功能描述</h2>
+            <p className={styles.description}>
               功能描述的文案，功能描述的文案功能描述的文案功能描述的文案
             </p>
           </div>

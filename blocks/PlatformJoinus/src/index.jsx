@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "@alifd/next";
-import "./index.modules.scss";
+import styles from  "./index.module.scss";
 
 export default class PlatformJoinUs extends Component {
   static displayName = "PlatformJoinUs";
@@ -16,19 +16,19 @@ export default class PlatformJoinUs extends Component {
 
   render() {
     return (
-      <div className="styleswrapper">
+      <div className={styles.wrapper}>
         <div>
-          <div className="stylestitleWrapper">
-            <h2 className="stylestitle">现在就加入我们</h2>
+          <div className={styles.titleWrapper}>
+            <h2 className={styles.title}>现在就加入我们</h2>
             <p>
               在人工智能将替代一切的未来
               <br />
               唯有内容的创作无可替代
             </p>
           </div>
-          <div className="stylesbuttons">
+          <div className={styles.buttons}>
             <Button
-              className="stylessecondaryButton"
+              className={styles.secondaryButton}
               type="normal"
               component="a"
               href="your-url"
@@ -36,7 +36,7 @@ export default class PlatformJoinUs extends Component {
               开通
             </Button>
             <Button
-              className="stylesprimaryButton"
+              className={styles.primaryButton}
               type="primary"
               component="a"
               href="your-url"

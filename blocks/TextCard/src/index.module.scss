@@ -1,0 +1,28 @@
+.textCardItem{
+  border-right: 1px solid #f0f0f0;
+  height: 90px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textCardItem1{
+  height: 90px;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textCardTitle{
+  font-size: 16px;
+}
+.textCardSubtitle{
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.textCardNumber{
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Table, Input, Select, Grid } from '@alifd/next';
 import { FormBinderWrapper, FormBinder } from '@icedesign/form-binder';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -91,12 +91,12 @@ export default class TagTable extends Component {
     const { formValue } = this.state;
 
     return (
-      <div className="tag-table">
+      <div>
         <IceContainer>
           <FormBinderWrapper value={formValue} onChange={this.formChange}>
-            <div className="rowdiv">
-              <Row className="stylesformRow">
-                <Col xxs="6" s="4" l="2" className="styleslabel">
+            <div className={styles.rowdiv}>
+              <Row className={styles.formRow}>
+                <Col xxs="6" s="4" l="2" className={styles.label}>
                   漏洞搜索:{' '}
                 </Col>
                 <Col span="10">
@@ -105,8 +105,8 @@ export default class TagTable extends Component {
                   </FormBinder>
                 </Col>
               </Row>
-              <Row className="stylesformRow">
-                <Col xxs="6" s="4" l="2" className="styleslabel">
+              <Row className={styles.formRow}>
+                <Col xxs="6" s="4" l="2" className={styles.label}>
                   处理状态:{' '}
                 </Col>
                 <Col span="10">
@@ -119,8 +119,8 @@ export default class TagTable extends Component {
                   </FormBinder>
                 </Col>
               </Row>
-              <Row className="stylesformRow">
-                <Col xxs="6" s="4" l="2" className="styleslabel">
+              <Row className={styles.formRow}>
+                <Col xxs="6" s="4" l="2" className={styles.label}>
                   漏洞等级:{' '}
                 </Col>
                 <Col span="10">

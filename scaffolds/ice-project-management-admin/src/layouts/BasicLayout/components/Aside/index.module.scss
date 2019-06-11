@@ -1,0 +1,23 @@
+.icelayoutaside {
+  .iceasidecustom {
+    height: 100%;
+    width: 240px;
+    padding-top: 10px;
+    box-shadow: 4px 1px 12px rgba(0, 55, 107, 0.04);
+    .iceasidelogo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #447eff;
+    }
+    .nextmenuitemtext {
+      color: #666;
+      .nextnavicon .nexticon {
+        margin-right: 10px;
+      }
+    }
+  }
+}

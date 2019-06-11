@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import ContainerTitle from './ContainerTitle';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -48,16 +48,16 @@ export default class Overview extends Component {
         <IceContainer>
           <Row>
             <Col l="4">
-              <div className="stylesitem">
+              <div className={styles.item}>
                 <img src={require('./images/box.svg')} alt="" />
               </div>
             </Col>
             {mockData.map((item, index) => {
               return (
                 <Col l="4" key={index}>
-                  <div className="stylesitem">
-                    <p className="stylesitemTitle">{item.title}</p>
-                    <p className="stylesitemValue">{item.value}</p>
+                  <div className={styles.item}>
+                    <p className={styles.itemTitle}>{item.title}</p>
+                    <p className={styles.itemValue}>{item.value}</p>
                   </div>
                 </Col>
               );

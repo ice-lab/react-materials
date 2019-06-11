@@ -3,7 +3,7 @@ import { Tab, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Track from './Track';
 import Scheme from './Scheme';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const TabPane = Tab.Item;
 
@@ -33,12 +33,12 @@ export default class TabFilterTable extends Component {
   }
 
   renderTabExtraContent = () => {
-    return <DatePicker size="large" className="datapic" />;
+    return <DatePicker size="large" className={styles.datapic} />;
   };
 
   render() {
     return (
-      <IceContainer className="stylescontainer1">
+      <IceContainer className={styles.container1}>
         <Tab
           onChange={handleChange}
           extra={this.renderTabExtraContent()}

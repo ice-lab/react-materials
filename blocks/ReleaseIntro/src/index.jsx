@@ -85,64 +85,64 @@ export default class ReleaseIntro extends Component {
     const subTitle = ver[0] === '0' ? 'Beta' : '';
 
     return (
-      <div className="styleswrapperContainer">
-        <div className="stylesbgImage2" />
-        <div className="styleswrapper">
-          <div className="stylesbgImage">
-            <div className="stylesbgImageMask" />
+      <div className={styles.wrapperContainer}>
+        <div className={styles.bgImage2} />
+        <div className={styles.wrapper}>
+          <div className={styles.bgImage}>
+            <div className={styles.bgImageMask} />
           </div>
-          <div className="styleswrapperBody">
-            <div className="stylessoftwareIntro">
-              <div className="stylestitle">
-                Iceworks <span className="stylessubtitle">{subTitle}</span>
+          <div className={styles.wrapperBody}>
+            <div className={styles.softwareIntro}>
+              <div className={styles.title}>
+                Iceworks <span className={styles.subtitle}>{subTitle}</span>
               </div>
-              <div className="stylesslogan">让前端工程变的轻松便捷</div>
-              <div className="box">
+              <div className={styles.slogan}>让前端工程变的轻松便捷</div>
+              <div className={styles.box}>
                 <SplitButton
                   menu={menu}
                   onClick={this.download}
                   size="large"
                   className="iceworks-download-btn">
                   立即下载
-                  <span className="boxspan1">
+                  <span className={styles.boxspan1}>
                     {descriptor[osType].download}
                   </span>
                 </SplitButton>
               </div>
               {loading ? null : (
-                <div className="stylessoftwareDetail">
-                  <div className="stylesversion">
-                    <span className="boxspan2">
+                <div className={styles.softwareDetail}>
+                  <div className={styles.version}>
+                    <span className={styles.boxspan2}>
                       {data[osType].version}
                     </span>
-                    <span className="boxspan3">
+                    <span className={styles.boxspan3}>
                       当前版本
                     </span>
                   </div>
 
-                  <div className="stylesseparator" />
-                  <div className="styleshistory">
-                    <span style={{ display: 'block' }}>
+                  <div className={styles.separator} />
+                  <div className={styles.history}>
+                    <span className={styles.soana}>
                       {data[osType].releaseDate}
                     </span>
-                    <span className="boxspan4">
+                    <span className={styles.boxspan4}>
                       发布日期
                     </span>
                   </div>
                 </div>
               )}
-              <div className="box2">
-                <div className="box3">
+              <div className={styles.box2}>
+                <div className={styles.box3}>
                   运行环境：{descriptor[osType].env}
                 </div>
               </div>
-              <div className="box2">
-                <a className="box2a" href={'#get-started'}>
+              <div className={styles.box2}>
+                <a className={styles.box2a} href={'#get-started'}>
                   立即开始
                 </a>
               </div>
             </div>
-            <div className="stylessoftware" />
+            <div className={styles.software} />
           </div>
         </div>
       </div>

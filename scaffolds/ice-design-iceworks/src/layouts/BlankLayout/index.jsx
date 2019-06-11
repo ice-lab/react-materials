@@ -3,7 +3,7 @@ import Layout from '@icedesign/layout';
 import { Switch, Route } from 'react-router-dom';
 import routerData from '../../routerConfig';
 import NotFound from '../../components/NotFound';
-import  './index.modules.scss'
+import  styles from './index.module.scss'
 
 export default class BlankLayout extends Component {
   static propTypes = {};
@@ -12,7 +12,7 @@ export default class BlankLayout extends Component {
 
   render() {
     return (
-      <Layout className="ice-blank-layout lay-out">
+      <Layout className={styles.iceblanklayout}>
         <Switch>
           {routerData.map((item, index) => {
             return item.component ? (

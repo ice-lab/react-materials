@@ -4,7 +4,7 @@ import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { asideMenuConfig } from '../../../../menuConfig';
-import './index.modules.scss';
+import styles from  './index.module.scss';
 
 @withRouter
 export default class BasicLayout extends Component {
@@ -22,17 +22,17 @@ export default class BasicLayout extends Component {
     const { pathname } = location;
 
     return (
-      <Nav  selectedKeys={[pathname]} className="ice-menu-custom" activeDirection="right">
+      <Nav  selectedKeys={[pathname]} className={styles.icemenucustom} activeDirection="right">
         {Array.isArray(asideMenuConfig) &&
           asideMenuConfig.length > 0 &&
           asideMenuConfig.map((nav) => {
             return (
               <Nav.Item key={nav.path}>
-                <Link to={nav.path} className="ice-menu-link">
+                <Link to={nav.path} className={styles.icemenulink}>
                   {nav.icon ? (
                     <FoundationSymbol size="small" type={nav.icon} />
                   ) : null}
-                  <span className="ice-menu-item-text">{nav.name}</span>
+                  <span className={styles.icemenuitemtext}>{nav.name}</span>
                 </Link>
               </Nav.Item>
             );

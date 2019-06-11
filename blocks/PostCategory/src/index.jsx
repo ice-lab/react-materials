@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './index.modules.scss'
+import styles from './index.module.scss'
 import { Tab, Button } from '@alifd/next';
 
 function mockCentent() {
@@ -73,11 +73,11 @@ export default class PostCategory extends Component {
 
     return (
       <div>
-        <div className="stylestitleWrapper">
-          <span className="fbxp">
+        <div className={styles.titleWrapper}>
+          <span className={styles.fbxp}>
             发布新作品
           </span>
-          <span className="nrfx">
+          <span className={styles.nrfx}>
             内容质量与粉丝效果好的作品可以得到更多频道曝光?
           </span>
         </div>
@@ -91,38 +91,38 @@ export default class PostCategory extends Component {
                 tabStyle={{ height: 60, padding: '0 15px' }}
                 key={item.key}
                 title={
-                  <div className="stylesnavItemWraper">
+                  <div className={styles.navItemWraper}>
                     <img
                       alt={item.tab}
                       src={item.icon}
-                      className="imgas"
+                      className={styles.imgas}
                     />
                     {item.tab}
                   </div>
                 }
               >
-                <div className="stylespostCategoryList">
+                <div className={styles.postCategoryList}>
                   {item.content.map((item, index) => {
                     return (
-                      <div key={index} className="stylespostCategoryItem">
-                        <div className="stylescoverWrapper">
+                      <div key={index} className={styles.postCategoryItem}>
+                        <div className={styles.coverWrapper}>
                           <img
                             alt={item.title}
-                            className="imgbs"
+                            className={styles.imgbs}
                             src={item.cover}
                           />
                         </div>
-                        <div className="stylesblockDetail">
-                          <h3 className="stylesblockTitle">{item.title}</h3>
+                        <div className={styles.blockDetail}>
+                          <h3 className={styles.blockTitle}>{item.title}</h3>
 
                           {item.detail.map((desc, detailIndex) => {
                             return (
-                              <div key={detailIndex} className="stylesblockItem">
-                                <label className="stylesblockLable">
+                              <div key={detailIndex} className={styles.blockItem}>
+                                <label className={styles.blockLable}>
                                   {desc.label}
                                 </label>
                                 <div
-                                  className="stylesblockDesc"
+                                  className={styles.blockDesc}
                                   dangerouslySetInnerHTML={{
                                     __html: desc.desc,
                                   }}
@@ -131,7 +131,7 @@ export default class PostCategory extends Component {
                             );
                           })}
                           <Button
-                            className="stylesblockBtn"
+                            className={styles.blockBtn}
                             type="primary"
                             component="a"
                             href={item.url}

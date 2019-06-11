@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -33,26 +33,26 @@ export default class Testimonial extends Component {
     const data = generatorData(3);
     return (
       <IceContainer>
-        <div className="stylesitems">
+        <div className={styles.items}>
           <Row gutter="20" wrap>
             {data.map((item, index) => {
               return (
                 <Col xxs="24" s="8" l="8" key={index}>
-                  <div className="stylesitem">
-                    <p className="stylesdescription">
+                  <div className={styles.item}>
+                    <p className={styles.description}>
                       “
                       {item.description}
                       ”
                     </p>
-                    <div className="stylesinfoBox">
+                    <div className={styles.infoBox}>
                       <img
-                        className="stylesavatar"
+                        className={styles.avatar}
                         src={item.imgUrl}
                         alt={item.name}
                       />
                       <div>
-                        <h5 className="stylesname">{item.name}</h5>
-                        <p className="stylescompany">{item.company}</p>
+                        <h5 className={styles.name}>{item.name}</h5>
+                        <p className={styles.company}>{item.company}</p>
                       </div>
                     </div>
                   </div>

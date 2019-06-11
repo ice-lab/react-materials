@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Checkbox, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const avatarImg = require('./images/avatar.jpg');
 
@@ -62,41 +62,41 @@ export default class TodoList extends Component {
     return (
       <Row wrap guttter="20">
         <Col xxs="12" l="10">
-          <IceContainer title="新增用户" className="stylescontainer">
+          <IceContainer title="新增用户" className={styles.container}>
             {mockData.accounts.map((item, index) => {
               return (
-                <div className="stylesuserItem" key={index}>
-                  <img src={item.avatar} alt="" className="stylesavatar" />
-                  <div className="stylesuserInfo">
-                    <h3 className="stylesuserName">{item.username}</h3>
-                    <p className="stylesuserPosition">{item.position}</p>
+                <div className={styles.userItem} key={index}>
+                  <img src={item.avatar} alt="" className={styles.avatar} />
+                  <div className={styles.userInfo}>
+                    <h3 className={styles.userName}>{item.username}</h3>
+                    <p className={styles.userPosition}>{item.position}</p>
                   </div>
-                  <div className="stylescreateTime">{item.time}</div>
+                  <div className={styles.createTime}>{item.time}</div>
                 </div>
               );
             })}
           </IceContainer>
         </Col>
         <Col xxs="12" l="14">
-          <IceContainer title="任务列表" className="stylescontainer">
+          <IceContainer title="任务列表" className={styles.container}>
             {mockData.todos.map((item, index) => {
               return (
-                <div className="stylestaskList" key={index}>
+                <div className={styles.taskList} key={index}>
                   <Checkbox id="pear" />
-                  <div className="stylestaskBody">
-                    <h6 className="stylestaskTitle">{item.title}</h6>
-                    <p className="stylestaskTime">{item.time}</p>
-                    <div className="stylestaskTags">
+                  <div className={styles.taskBody}>
+                    <h6 className={styles.taskTitle}>{item.title}</h6>
+                    <p className={styles.taskTime}>{item.time}</p>
+                    <div className={styles.taskTags}>
                       {item.tags.map((tag, idx) => {
                         return (
-                          <span className="stylestaskTags" key={idx}>
+                          <span className={styles.taskTags} key={idx}>
                             # {tag}{' '}
                           </span>
                         );
                       })}
                     </div>
                   </div>
-                  <div className="stylestaskOper">
+                  <div className={styles.taskOper}>
                     <Icon type="ellipsis" />
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import ReactEcharts from 'echarts-for-react';
 import { Icon } from '@alifd/next';
 import 'echarts/lib/chart/map';
 import 'echarts/map/js/world';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const geoCoordMap = {
   '中国 · 浙江兰溪': [119.133, 29.12],
@@ -347,14 +347,14 @@ export default class RealTimeTradeChart extends Component {
   render() {
     return (
       <IceContainer className="box">
-        <div className="stylesinfo">
-          <h1 className="stylestitle">某某某品牌 电商实时状况</h1>
-          <p className="stylestime">
-            <Icon type="time" size="small" className="stylestimeIcon" />
+        <div className={styles.info}>
+          <h1 className={styles.title}>某某某品牌 电商实时状况</h1>
+          <p className={styles.time}>
+            <Icon type="time" size="small" className={styles.timeIcon} />
             {this.state.date}
           </p>
-          <p className="stylessubTitle">今日交易额</p>
-          <p className="stylessum">16828234,00亿元</p>
+          <p className={styles.subTitle}>今日交易额</p>
+          <p className={styles.sum}>16828234,00亿元</p>
         </div>
         <ReactEcharts option={option} className="boxhe" />
       </IceContainer>

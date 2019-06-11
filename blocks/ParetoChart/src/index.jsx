@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const ReactHighcharts = require('react-highcharts');
 
@@ -106,8 +106,8 @@ export default class ParetoChart extends Component {
   render() {
     return (
       <IceContainer>
-        <div className="stylescardHead">
-          <h4 className="stylescardTitle">
+        <div className={styles.cardHead}>
+          <h4 className={styles.cardTitle}>
             {this.state.cardTitle}
             构建次数
           </h4>

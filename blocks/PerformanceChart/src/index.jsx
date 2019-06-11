@@ -4,7 +4,7 @@ import { Tab } from '@alifd/next';
 import LineChart from './LineChart';
 import Head from './Head';
 import './PerformanceChart.scss';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const TabPane = Tab.Item;
 
@@ -43,7 +43,7 @@ export default class PerformanceChart extends Component {
   render() {
     return (
       <IceContainer className="flow-statistics">
-        <h4 className="stylestitle">销售业绩</h4>
+        <h4 className={styles.title}>销售业绩</h4>
         <Tab shape="text" size="small">
           <TabPane title="全店" key="1">
             <Head data={MOCK_DATA.all} />

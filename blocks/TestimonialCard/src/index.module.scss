@@ -1,0 +1,41 @@
+.container{
+  // background:url('./images/TB1JGoDi3vD8KJjy0FlXXagBFXa-5040-2811.png');
+  border-radius: 0;
+  width: 100%;
+  padding: 80px 0;
+}
+.content{
+  max-width: 1080px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.item{
+  margin-bottom: 20px;
+  padding: 20px 30px 60px;
+  background: #fff;
+  border-radius: 6px;
+}
+.infoBox{
+  display: flex
+}
+.avatar{
+  width: 64px;
+  height: 64px;
+}
+.baseInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+}
+.name{
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+.company{
+  margin: 0;
+}
+.description{
+  line-height: 28px;
+}

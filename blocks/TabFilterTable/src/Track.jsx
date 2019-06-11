@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Table, Pagination } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
@@ -43,9 +43,9 @@ export default class TableFilter extends Component {
   renderOper = () => {
     return (
       <div>
-        <a className="styleslink">详情</a>
-        <span className="stylesseparator" />
-        <a className="styleslink">申请权限</a>
+        <a className={styles.link}>详情</a>
+        <span className={styles.separator} />
+        <a className={styles.link}>申请权限</a>
       </div>
     );
   };
@@ -55,15 +55,15 @@ export default class TableFilter extends Component {
     const { current } = this.state;
 
     return (
-      <div className="stylescontainer">
-        <div className="stylestableHead">
-          <div className="styleslabel">页面名称:</div>
+      <div className={styles.container}>
+        <div className={styles.tableHead}>
+          <div className={styles.label}>页面名称:</div>
           <Input
             placeholder="请输入页面名称"
             hasClear
             onChange={this.onChange}
             size="large"
-            className="input"
+            style="input"
           />
         </div>
         <Table dataSource={dataSource} hasBorder={false}>
@@ -77,7 +77,7 @@ export default class TableFilter extends Component {
           <Table.Column title="操作" cell={this.renderOper} width={200} />
         </Table>
         <Pagination
-          className="stylespagination1"
+          className={styles.pagination1}
           current={current}
           onChange={this.handlePaginationChange}
         />

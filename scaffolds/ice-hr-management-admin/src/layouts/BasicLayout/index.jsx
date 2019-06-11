@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 
-import './index.modules.scss';
+import   './index.module.scss';
 
 const theme = 'dark';
 

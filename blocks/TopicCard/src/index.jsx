@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const dataSource = [
   {
@@ -42,26 +42,26 @@ export default class TopicCard extends Component {
 
   render() {
     return (
-      <div className="topic-card">
+      <div>
         <IceContainer title="数据概览">
-          <div className="stylesitems">
+          <div className={styles.items}>
             {dataSource.map((item, idx) => {
               return (
                 <div
-                  className="topic-card-item stylesitem"
+                className={styles.item}
                   key={`card-item-${idx}`}
                 >
-                  <div className="stylescover">
-                    <img alt="icon" src={item.icon} className="stylesicon" />
+                  <div className={styles.cover}>
+                    <img alt="icon" src={item.icon} className={styles.icon} />
                   </div>
                   <div>
-                    <div className="stylesmeta">{item.meta}</div>
-                    <div className="stylestotal">{item.total}</div>
-                    <div className="stylescompareText">
-                      较前日 <span className="stylesup"> ↑ +{item.up}</span>
+                    <div className={styles.meta}>{item.meta}</div>
+                    <div className={styles.total}>{item.total}</div>
+                    <div className={styles.compareText}>
+                      较前日 <span className={styles.up}> ↑ +{item.up}</span>
                     </div>
-                    <div className="stylescompareText">
-                      近7天 <span className="stylesdown"> ↓ -{item.down}</span>
+                    <div className={styles.compareText}>
+                      近7天 <span className={styles.down}> ↓ -{item.down}</span>
                     </div>
                   </div>
                 </div>

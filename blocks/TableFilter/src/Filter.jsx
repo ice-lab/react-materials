@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, DatePicker, Select } from '@alifd/next';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 export default class TableFilter extends Component {
   static displayName = 'TableFilter';
@@ -57,8 +57,8 @@ export default class TableFilter extends Component {
   render() {
     const { startValue, endValue, endOpen } = this.state;
     return (
-      <div className="stylestableFilter">
-        <div className="stylesfilterItem">
+      <div className={styles.tableFilter}>
+        <div className={styles.filterItem}>
           <span>调价日期：</span>
           <DatePicker
             disabledDate={this.disabledStartDate}
@@ -77,7 +77,7 @@ export default class TableFilter extends Component {
             onOpenChange={this.handleEndOpenChange}
           />
         </div>
-        <div className="stylesfilterItem">
+        <div className={styles.filterItem}>
           <span>状态：</span>
           <Select>
             <Select.Option value="all">全部</Select.Option>
@@ -85,7 +85,7 @@ export default class TableFilter extends Component {
             <Select.Option value="unCheck">未审核</Select.Option>
           </Select>
         </div>
-        <Button type="primary" className="stylessubmitButton">
+        <Button type="primary" className={styles.submitButton}>
           查询
         </Button>
       </div>

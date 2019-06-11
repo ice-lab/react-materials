@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
 
-import './index.modules.scss'
+import styles from  './index.module.scss'
 import MOCK_DATA from './data';
 
 const { Row, Col } = Grid;
@@ -20,20 +20,20 @@ export default class Partners extends Component {
 
   render() {
     return (
-      <div className="stylescontainer">
-        <div className="stylescontent">
-          <div className="stylesbigTitle">PARTNERS</div>
-          <div className="stylessubTitle">合作伙伴</div>
-          <div className="stylespartnerBox">
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.bigTitle}>PARTNERS</div>
+          <div className={styles.subTitle}>合作伙伴</div>
+          <div className={styles.partnerBox}>
             {MOCK_DATA.map((item, index) => {
               return (
-                <div className="stylespartnerItem" key={index}>
-                  <div className="stylespartnerTitle">{item.title}</div>
+                <div className={styles.partnerItem} key={index}>
+                  <div className={styles.partnerTitle}>{item.title}</div>
                   <Row wrap gutter={20}>
                     {item.partners.map((src, key) => {
                       return (
                         <Col l="4" key={key}>
-                          <img src={src} alt="" className="styleslogo" />
+                          <img src={src} alt="" className={styles.logo} />
                         </Col>
                       );
                     })}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./index.modules.scss";
+import styles from "./index.module.scss";
 
 export default class PlatformIntro2 extends Component {
   static displayName = "PlatformIntro2";
@@ -15,10 +15,10 @@ export default class PlatformIntro2 extends Component {
 
   render() {
     return (
-      <div className="styleswrapper">
-        <div className="stylesbody">
-          <h2 className="stylestitle">高效的内容创作工具</h2>
-          <p className="stylestext">
+      <div className={styles.wrapper}>
+        <div className={styles.sbody}>
+          <h2 className={styles.title}>高效的内容创作工具</h2>
+          <p className={styles.text}>
             聚集全网最新鲜的创意，直击用户需求
             <br />
             海量优质素材，快速锁定优质商品、图片、视频
@@ -29,7 +29,7 @@ export default class PlatformIntro2 extends Component {
         <img
           src={require("./images/TB1DzIrRVXXXXckXFXXXXXXXXXX-1740-800.png")}
           alt=""
-          className="stylesimage"
+          className={styles.image}
         />
       </div>
     );

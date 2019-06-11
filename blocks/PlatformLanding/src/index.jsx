@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from '@alifd/next';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 export default class PlatformLanding extends Component {
   static displayName = 'PlatformLanding';
@@ -16,14 +16,14 @@ export default class PlatformLanding extends Component {
 
   render() {
     return (
-      <div className="styleswrapper">
-        <div className="stylesbody">
+      <div className={styles.wrapper}>
+        <div className={styles.body}>
           <h2 className="stylestitle">
             在人工智能将替代一切的未来<br />唯有内容的创作无可替代
           </h2>
-          <div className="stylesbuttons">
+          <div className={styles.buttons}>
             <Button
-              className="stylessecondaryButton"
+              className={styles.secondaryButton}
               type="normal"
               component="a"
               href="your-url"
@@ -31,7 +31,7 @@ export default class PlatformLanding extends Component {
               开通
             </Button>
             <Button
-              className="stylesprimaryButton"
+              className={styles.primaryButton}
               type="primary"
               component="a"
               href="your-url"

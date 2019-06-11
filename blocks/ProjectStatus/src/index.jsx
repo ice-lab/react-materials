@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Timeline } from '@alifd/next';
 import LineChart from './LineChart';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 const { Item: TimelineItem } = Timeline;
@@ -59,14 +59,14 @@ export default class ProjectStatus extends Component {
           <Col xxs="24" l="12">
             <IceContainer title="完成进度">
               <LineChart />
-              <div className="stylesprojectStatus">
-                <p className="stylesmeta">项目状态</p>
-                <h2 className="stylescount">76,533</h2>
+              <div className={styles.projectStatus}>
+                <p className={styles.meta}>项目状态</p>
+                <h2 className={styles.count}>76,533</h2>
               </div>
             </IceContainer>
           </Col>
           <Col xxs="24" l="12">
-            <IceContainer title="完成状态" className="stylescontainer">
+            <IceContainer title="完成状态" className={styles.container}>
               {this.renderTimeline()}
             </IceContainer>
           </Col>

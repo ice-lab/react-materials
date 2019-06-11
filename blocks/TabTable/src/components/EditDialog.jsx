@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
-import '../index.modules.scss'
+import styles from  '../index.module.scss'
 
 const FormItem = Form.Item;
 
@@ -60,7 +60,7 @@ export default class EditDialog extends Component {
     };
 
     return (
-      <div className="styleseditDialog">
+      <div className={styles.editDialog}>
         <Button
           size="small"
           type="primary"
@@ -69,7 +69,7 @@ export default class EditDialog extends Component {
           编辑
         </Button>
         <Dialog
-          className="dialog"
+          className={styles.dialog}
           visible={this.state.visible}
           onOk={this.handleSubmit}
           closeable="esc,mask,close"

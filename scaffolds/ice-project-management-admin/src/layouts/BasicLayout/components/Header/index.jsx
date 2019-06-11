@@ -4,7 +4,7 @@ import { Balloon, Icon, Nav } from "@alifd/next";
 import IceImg from "@icedesign/img";
 import { headerMenuConfig } from "../../../../menuConfig";
 import Logo from "../Logo";
-import "./index.modules.scss";
+import styles from  "./index.module.scss";
 
 const NavItem = Nav.Item;
 const SubNav = Nav.SubNav;
@@ -15,11 +15,11 @@ export default class Header extends Component {
     const { location = {} } = this.props;
     const { pathname } = location;
     return (
-      <div className="header-container">
+      <div className={styles.headercontainer}>
         <Logo isDark style={{color :"#fff"}}/>
-        <div className="header-navbar">
+        <div className={styles.headernavbar}>
           <Nav
-            className="header-navbar-menu"
+            className={styles.headernavbarmenu}
             selectedKeys={[pathname]}
             defaultSelectedKeys={[pathname]}
             direction="hoz"
@@ -93,28 +93,28 @@ export default class Header extends Component {
           <Balloon
             triggerType="hover"
             trigger={
-              <div className="ice-design-header-userpannel balloondiv">
+              <div className={styles.balloondiv}>
                 <IceImg
                   height={40}
                   width={40}
                   src={require("./images/avatar.png")}
-                  className="user-avatar"
+                  className={styles.useravatar}
                 />
-                <div className="user-profile">
-                  <span className="user-name userspan">
+                <div className={styles.userprofile}>
+                  <span className={styles.usernameuserspan}>
                     淘小宝
                   </span>
                   <br />
-                  <span className="user-department">技术部</span>
+                  <span className={styles.userdepartment}>技术部</span>
                 </div>
-                <Icon type="arrow-down" size="xxs" className="icon-down" />
+                <Icon type="arrow-down" size="xxs" className={styles.icondown} />
               </div>
             }
             closable={false}
-            className="user-profile-menu"
+            className={styles.userprofilemenu}
           >
             <ul>
-              <li className="user-profile-menu-item">
+              <li className={styles.userprofilemenuitem}>
                 <Link to="/user/login">
                   <Icon type="upload" size="xs" />
                   退出

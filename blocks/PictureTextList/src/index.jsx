@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination, Grid } from '@alifd/next';
 import SingleItem from './SingleItem';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -156,17 +156,17 @@ export default class PictureTextList extends Component {
   };
 
   renderItemRow = () => {
-    return <div className="stylesrow">{dataSource.map(this.renderItem)}</div>;
+    return <div className={styles.row}>{dataSource.map(this.renderItem)}</div>;
   };
 
   render() {
     return (
-      <div className="picture-text-list">
-        <IceContainer className="stylescard">
+      <div>
+        <IceContainer className={styles.card}>
           <Row wrap gutter={20}>
             {dataSource.map(this.renderItem)}
           </Row>
-          <div className="stylespaginationContainer">
+          <div className={styles.paginationContainer}>
             <Pagination />
           </div>
         </IceContainer>

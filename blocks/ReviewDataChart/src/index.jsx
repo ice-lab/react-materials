@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Axis, Tooltip, Geom } from 'bizcharts';
 import DataSet from '@antv/data-set';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const data = [
   {
@@ -54,31 +54,31 @@ export default class ReviewDataChart extends Component {
   render() {
     return (
       <IceContainer title="数据图表">
-        <div className="stylescoreDataTitle">近一月</div>
-        <div className="stylescoreDataWrapper">
-          <div className="stylescoreData">
-            <div className="stylescoreDataCount">135</div>
-            <div className="stylescoreDataDesc">
+        <div className={styles.coreDataTitle}>近一月</div>
+        <div className={styles.coreDataWrapper}>
+          <div className={styles.coreData}>
+            <div className={styles.oreDataCount}>135</div>
+            <div className={styles.coreDataDesc}>
               <span
-                className="stylesindicator onecolor"
+                className={styles.indicator1}
               />
               <span>已完成</span>
             </div>
           </div>
-          <div className="stylescoreData">
-            <div className="stylescoreDataCount">242</div>
-            <div className="stylescoreDataDesc">
+          <div className={styles.coreData}>
+            <div className={styles.coreDataCount}>242</div>
+            <div className={styles.coreDataDesc}>
               <span
-                className="stylesindicator twocolor"
+                className={styles.indicator2}
               />
               <span>已邀请</span>
             </div>
           </div>
-          <div className="stylescoreData">
-            <div className="stylescoreDataCount">22</div>
-            <div className="stylescoreDataDesc">
+          <div className={styles.coreData}>
+            <div className={styles.coreDataCount}>22</div>
+            <div className={styles.coreDataDesc}>
               <span
-                className="stylesindicator threecolor"
+                className={styles.indicator3}
               />
               <span>已回绝</span>
             </div>

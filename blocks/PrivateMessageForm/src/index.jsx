@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Input, Button, Grid, Message } from "@alifd/next";
 import IceContainer from "@icedesign/container";
-import "./index.modules.scss";
+import styles from "./index.module.scss";
 
 const { Row, Col } = Grid;
 
@@ -43,15 +43,15 @@ export default class PrivateMessageForm extends Component {
 
   render() {
     return (
-      <div className="private-message-form">
+      <div>
         <IceContainer title="私有消息">
-          <Row className="stylesformRow">
+          <Row className={styles.formRow}>
             <Col xxs="5" s="5" l="2">
               标题
             </Col>
             <Col s="14" l="7">
               <Input
-                className="rowinput"
+                className={styles.rowinput}
                 value={this.state.title}
                 onChange={this.titleChange}
                 placeholder="请输入标题"
@@ -59,13 +59,13 @@ export default class PrivateMessageForm extends Component {
             </Col>
           </Row>
 
-          <Row className="stylesformRow">
+          <Row className={styles.formRow}>
             <Col xxs="5" s="5" l="2">
               消息内容
             </Col>
             <Col s="14" l="7">
               <Input.TextArea
-                className="rowinput"
+                className={styles.rowinput}
                 value={this.state.message}
                 onChange={this.messageChange}
                 placeholder="请输入内容"

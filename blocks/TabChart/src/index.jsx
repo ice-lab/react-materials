@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
 import SeriesLine from './SeriesLine';
 import BasicLine from './BasicLine';
-
+import styles from './index.module.scss'
 const TabPane = Tab.Item;
 
 export default class TabChart extends Component {
@@ -24,8 +24,8 @@ export default class TabChart extends Component {
 
   render() {
     return (
-      <div className="tab-chart" className="stylescontainer">
-        <IceContainer className="stylescard">
+      <div className={styles.container}>
+        <IceContainer className={styles.card}>
           <Tab onChange={this.handleChange}>
             <TabPane key="1" title="收益走势">
               <SeriesLine />

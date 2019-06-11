@@ -6,7 +6,7 @@ import CustomMaterials from './components/CustomMaterials';
 import VisualAssembly from './components/VisualAssembly';
 import SoftwareDownload from './components/SoftwareDownload';
 import ChangeLogs from './components/ChangeLogs';
-import './index.modules.scss'
+import  styles from'./index.module.scss'
 
 export default class Home extends Component {
   static displayName = 'Home';
@@ -18,7 +18,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="home-page homepage" >
+      <div className={styles.homepage}>
         <Header />
         <SoftwareDownload />
         <div id="feature">

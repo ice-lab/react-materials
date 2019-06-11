@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Pagination, Radio, Search } from '@alifd/next';
 import data from './data';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Group: RadioGroup } = Radio;
 
@@ -23,8 +23,8 @@ export default class TimeFilterTable extends Component {
 
   render() {
     return (
-      <div className="time-filter-table">
-        <IceContainer className="stylesfilterCard">
+      <div >
+        <IceContainer className={styles.filterCard}>
           <div>
             <span>选择活动日期范围：</span>
             <RadioGroup
@@ -51,7 +51,7 @@ export default class TimeFilterTable extends Component {
             </div>
           )}
         </IceContainer>
-        <IceContainer className="stylestableCard">
+        <IceContainer className={styles.tableCard}>
           <Table dataSource={data} hasBorder={false}>
             <Table.Column title="顺序" cell={this.renderOrder} width={45} />
             <Table.Column title="活动名称" dataIndex="title" width={85} />
@@ -59,7 +59,7 @@ export default class TimeFilterTable extends Component {
             <Table.Column title="有效时间" dataIndex="validity" width={85} />
             <Table.Column title="负责人" dataIndex="owner" width={85} />
           </Table>
-          <div className="stylespagination">
+          <div className={styles.pagination}>
             <Pagination />
           </div>
         </IceContainer>

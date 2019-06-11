@@ -8,6 +8,7 @@ import {
 } from '@icedesign/form-binder';
 import QRCode from 'qrcode.react';
 import ColorPicker from './ColorPicker';
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 const { Option } = Select;
@@ -53,8 +54,8 @@ export default class QrCode extends Component {
       <IceContainer title="二维码生成器">
         <IceFormBinderWrapper value={value} onChange={this.formChange}>
           <div>
-            <Row className="stylesformRow">
-              <Col l="2" className="styleslabel">
+            <Row className={styles.formRow}>
+              <Col l="2" className={styles.label}>
                 二维码大小
               </Col>
               <Col l="20">
@@ -68,8 +69,8 @@ export default class QrCode extends Component {
                 </IceFormBinder>
               </Col>
             </Row>
-            <Row className="stylesformRow">
-              <Col l="2" className="styleslabel">
+            <Row className={styles.formRow}>
+              <Col l="2" className={styles.label}>
                 背景色
               </Col>
               <Col l="20">
@@ -81,8 +82,8 @@ export default class QrCode extends Component {
                 />
               </Col>
             </Row>
-            <Row className="stylesformRow">
-              <Col l="2" className="styleslabel">
+            <Row className={styles.formRow}>
+              <Col l="2" className={styles.label}>
                 前景色
               </Col>
               <Col l="20">
@@ -94,8 +95,8 @@ export default class QrCode extends Component {
                 />
               </Col>
             </Row>
-            <Row className="stylesformRow">
-              <Col l="2" className="styleslabel">
+            <Row className={styles.formRow}>
+              <Col l="2" className={styles.label}>
                 图案样式
               </Col>
               <Col l="20">
@@ -109,8 +110,8 @@ export default class QrCode extends Component {
                 </IceFormBinder>
               </Col>
             </Row>
-            <Row className="stylesformRow">
-              <Col l="2" className="styleslabel">
+            <Row className={styles.formRow}>
+              <Col l="2" className={styles.label}>
                 二维码地址
               </Col>
               <Col l="20">
@@ -126,7 +127,7 @@ export default class QrCode extends Component {
         </IceFormBinderWrapper>
 
         <Row>
-          <Col l="2" className="styleslabel">
+          <Col l="2" className={styles.label}>
             生成二维码
           </Col>
           <Col l="20">

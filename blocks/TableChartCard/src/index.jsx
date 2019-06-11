@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import CustomTable from './CustomTable';
 import PirChart from './PieChart';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -21,8 +21,8 @@ export default class TableChartCard extends Component {
 
   render() {
     return (
-      <IceContainer className="stylescontainer">
-        <h4 className="stylestitle">计算健康分析</h4>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.title}>计算健康分析</h4>
         <Row wrap>
           <Col l="8">
             <PirChart />

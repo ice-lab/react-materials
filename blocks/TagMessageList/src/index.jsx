@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import './TagMessageList.scss';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const dataSource = [
   { title: '关于淘宝网存储设备商品发布规范的公告', date: '2017/01/06' },
@@ -22,23 +22,23 @@ export default class TagMessageList extends Component {
 
   renderItem = (item, idx) => {
     return (
-      <div className="stylesitem" key={idx}>
-        <a href="##" className="stylestitle">
+      <div style={styles.item} key={idx}>
+        <a href="##" style={styles.title}>
           {item.title}
         </a>
-        <div className="stylesdate">{item.date}</div>
+        <div style={styles.date}>{item.date}</div>
       </div>
     );
   };
 
   render() {
     return (
-      <div className="tag-message-list">
+      <div className={styles.tagmessagelist}>
         <IceContainer>
           <Tab size="small">
             <Tab.Item key={0} title="我的消息">
               {dataSource.map(this.renderItem)}
-              <div className="stylesallMessage">
+              <div className={styles.allMessage}>
                 <a href="##">查看全部消息</a>
               </div>
             </Tab.Item>

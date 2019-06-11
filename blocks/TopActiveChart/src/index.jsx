@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Table, Progress } from '@alifd/next';
 import LintChart from './LineChart';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -62,8 +62,8 @@ export default class TopActiveChart extends Component {
 
   renderProduct = (value, index, record) => {
     return (
-      <div className="stylesproduct">
-        <img src={record.pic} className="stylesproductPic" alt="" />
+      <div className={styles.product}>
+        <img src={record.pic} className={styles.productPic} alt="" />
         <p>{record.title}</p>
       </div>
     );
@@ -78,7 +78,7 @@ export default class TopActiveChart extends Component {
               dataSource={activePages}
               hasBorder={false}
               hasHeader={false}
-              className="table"
+              className={styles.table}
             >
               <Table.Column title="ID" dataIndex="id" width="5%" />
               <Table.Column title="页面" dataIndex="page" />
@@ -99,7 +99,7 @@ export default class TopActiveChart extends Component {
               dataSource={ViewedProducts}
               hasBorder={false}
               hasHeader={false}
-              className="table"
+              className={styles.table}
             >
               <Table.Column
                 title="产品"
@@ -107,14 +107,14 @@ export default class TopActiveChart extends Component {
                 cell={(value, index, record) =>
                   this.renderProduct(value, index, record)
                 }
-                className="tablecolum1"
+                className={styles.tablecolum1}
               />
               <Table.Column title="分类" dataIndex="cate"
-                className="tablecolum2"
+                className={styles.tablecolum2}
                />
               <Table.Column
                 title="销售趋势"
-                className="tablecolum2"
+                className={styles.tablecolum2}
                 cell={() => <LintChart />}
               />
               <Table.Column title="销售数量" dataIndex="amount" width="20%" />

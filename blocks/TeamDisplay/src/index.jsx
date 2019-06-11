@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -25,8 +25,8 @@ export default class TeamDisplay extends Component {
   render() {
     const data = generatorData(6);
     return (
-      <div className="team-display stylescontainer">
-        <h2 className="stylestitle">我们的团队</h2>
+      <div className={styles.container}>
+        <h2 className={styles.title}>我们的团队</h2>
         <Row wrap>
           {data.map((item, index) => {
             return (
@@ -34,11 +34,11 @@ export default class TeamDisplay extends Component {
                 <div>
                   <img
                     src={item.imgUrl}
-                    className="stylesavatar"
+                    className={styles.avatar}
                     alt={item.name}
                   />
-                  <h5 className="stylesname">{item.name}</h5>
-                  <p className="stylesdescription">{item.description}</p>
+                  <h5 className={styles.name}>{item.name}</h5>
+                  <p className={styles.description}>{item.description}</p>
                 </div>
               </Col>
             );

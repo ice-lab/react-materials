@@ -3,7 +3,7 @@ import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { Chart, Coord, Geom, Tooltip, Axis, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 const { DataView } = DataSet;

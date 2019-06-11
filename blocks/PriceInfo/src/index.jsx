@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -45,23 +45,23 @@ export default class PriceInfo extends Component {
 
   render() {
     return (
-      <div className="stylescontainer">
+      <div className={styles.container}>
         <Row gutter="20" wrap>
           {data.map((item, index) => {
             return (
               <Col xxs="24" s="8" l="8" key={index}>
-                <div className="stylesitem">
-                  <div className="styleshead">
-                    <h3 className="stylestitle">{item.title}</h3>
-                    <p className="stylesprice">￥{item.price}</p>
+                <div className={styles.item}>
+                  <div className={styles.head}>
+                    <h3 className={styles.title}>{item.title}</h3>
+                    <p className={styles.price}>￥{item.price}</p>
                   </div>
-                  <div className="stylesinfo">
-                    <img className="stylesimage" src={item.imgUrl} alt="" />
-                    <h5 className="stylestype">{item.type}</h5>
-                    <p className="stylesdescription">{item.description}</p>
+                  <div className={styles.info}>
+                    <img className={styles.image} src={item.imgUrl} alt="" />
+                    <h5 className={styles.type}>{item.type}</h5>
+                    <p className={styles.description}>{item.description}</p>
                   </div>
-                  <div className="stylesbuyBtn">
-                    <a href="/" className="styleslink">
+                  <div className={styles.buyBtn}>
+                    <a href="/" className={styles.link}>
                       立即购买
                     </a>
                   </div>

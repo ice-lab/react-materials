@@ -1,8 +1,7 @@
 /* eslint react/no-string-refs:0 */
 import React, { Component } from 'react';
 import { Input, Checkbox, Grid, Icon, Form } from '@alifd/next';
-import './RegisterForm.scss';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const { Row } = Grid;
 const Item = Form.Item;
@@ -57,9 +56,9 @@ export default class RegisterForm extends Component {
 
   render() {
     return (
-      <div className="register-form">
-        <div className="stylesformContainer">
-          <h4 className="stylesformTitle">注册</h4>
+      <div className={styles.registerform}>
+        <div className={styles.formContainer}>
+          <h4 className={styles.formTitle}>注册</h4>
           <Form
             value={this.state.value}
             onChange={this.formChange}
@@ -71,7 +70,7 @@ export default class RegisterForm extends Component {
                 placeholder="会员名/邮箱/手机号"
                 name="account"
                 innerBefore={
-                  <Icon type="account" size="small" className="stylesinputIcon"/>
+                  <Icon type="account" size="small" className={styles.inputIcon}/>
                 }
               />
             </Item>
@@ -84,7 +83,7 @@ export default class RegisterForm extends Component {
                     type="account"
                     test="lock"
                     size="small"
-                    className="stylesinputIcon"
+                    className={styles.inputIcon}
                   />
                 }
                 htmlType="password"
@@ -106,7 +105,7 @@ export default class RegisterForm extends Component {
                     type="account"
                     test="lock"
                     size="small"
-                    className="stylesinputIcon"
+                    className={styles.inputIcon}
                   />
                 }
                 htmlType="password"
@@ -119,23 +118,23 @@ export default class RegisterForm extends Component {
               <Checkbox name="checkbox">记住账号</Checkbox>
             </Item>
 
-            <Row className="stylesformItem">
+            <Row className={styles.formItem}>
               <Form.Submit
                 type="primary"
                 onClick={this.handleSubmit}
                 validate
-                className="stylessubmitBtn"
+                className={styles.submitBtn}
               >
                 注 册
               </Form.Submit>
             </Row>
 
-            <Row className="tips" className="stylestips">
-              <a href="/" className="styleslink">
+            <Row className="tips" className={styles.tips}>
+              <a href="/" className={styles.link}>
                 立即登录
               </a>
-              <span className="stylesline">|</span>
-              <a href="/" className="styleslink">
+              <span className={styles.line}>|</span>
+              <a href="/" className={styles.link}>
                 忘记密码
               </a>
             </Row>

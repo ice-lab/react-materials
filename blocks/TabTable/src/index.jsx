@@ -5,7 +5,7 @@ import CustomTable from './components/CustomTable';
 import EditDialog from './components/EditDialog';
 import DeleteBalloon from './components/DeleteBalloon';
 import data from './data';
-
+import styles from './index.module.scss'
 const TabPane = Tab.Item;
 
 const tabs = [
@@ -95,7 +95,7 @@ export default class TabTable extends Component {
   render() {
     const { dataSource } = this.state;
     return (
-      <div className="tab-table">
+      <div style={styles.tabtable}>
         <IceContainer>
           <Tab onChange={this.handleTabChange}>
             {tabs.map((item) => {

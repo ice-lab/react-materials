@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
 import ArticleList from './ArticleList';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const dataSource = [
   {
@@ -89,18 +89,18 @@ export default class TabArticle extends Component {
   render() {
     return (
       <div className="tab-article">
-        <IceContainer className="stylestabList">
-          <div className="stylestab">
-            最新 <img src={ICON.active} className="stylesicon" alt="最新" />
+        <IceContainer className={styles.tabList}>
+          <div className={styles.tab}>
+            最新 <img src={ICON.active} className={styles.icon} alt="最新" />
           </div>
-          <div className="stylestab">
-            最热 <img src={ICON.inactive} className="stylesicon" alt="最热" />
+          <div className={styles.tab}>
+            最热 <img src={ICON.inactive} className={styles.icon} alt="最热" />
           </div>
-          <div className="stylestab">
+          <div className={styles.tab}>
             距离截稿日期最近{' '}
             <img
               src={ICON.inactive}
-              className="stylesicon"
+              className={styles.icon}
               alt="距离截稿日期最近"
             />
           </div>

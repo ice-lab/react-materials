@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import  './index.modules.scss';
+import styles from   './index.module.scss';
 
 export default class NotFound extends Component {
   static displayName = 'NotFound';
 
   render() {
     return (
-      <div className="basic-not-found">
+      <div className={styles.basicnotfound}>
         <IceContainer>
-          <div  className="exception-content">
+          <div  className={styles.exceptioncontent}>
             <img
               src={require('./images/TB1txw7bNrI8KJjy0FpXXb5hVXa-260-260.png')}
               className="imgException"
               alt="页面不存在"
             />
-            <div className="prompt">
-              <h3 className="title">
+            <div className={styles.prompt}>
+              <h3 className={styles.title}>
                 抱歉，你访问的页面不存在
               </h3>
-              <p  className="description">
+              <p  className={styles.description}>
                 您要找的页面没有找到，请返回
                 <a href="#">首页</a>
                 继续浏览

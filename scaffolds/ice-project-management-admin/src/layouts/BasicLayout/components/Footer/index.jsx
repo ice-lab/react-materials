@@ -3,7 +3,7 @@ import Layout from '@icedesign/layout';
 import cx from 'classnames';
 import Logo from '../Logo';
 
-import './index.modules.scss';
+import styles from './index.module.scss';
 
 export default class Footer extends PureComponent {
   render() {
@@ -16,16 +16,16 @@ export default class Footer extends PureComponent {
           lineHeight: '36px',
         }}
       >
-        <div className="ice-design-layout-footer-body">
-          <div className="logodiv">
+        <div className={styles.icedesignlayoutfooterbody}>
+          <div className={styles.logodiv}>
             <Logo style={{ color: '#666' }} />
           </div>
-          <div className="copyright">
+          <div className={styles.copyright}>
             © 2018 Theme designed by{' '}
             <a
               href="https://github.com/alibaba/ice"
               target="_blank"
-              className="copyright-link"
+              className={styles.copyrightlink}
               rel="noopener noreferrer"
             >
               ICE

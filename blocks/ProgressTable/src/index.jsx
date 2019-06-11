@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Table, Progress, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const getTableData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
@@ -59,7 +59,7 @@ export default class ProgressTable extends Component {
               width={200}
             />
           </Table>
-          <div className="stylespaginationWrapper">
+          <div className={styles.paginationWrapper}>
             <Pagination
               current={this.state.current}
               onChange={this.onPageChange}

@@ -6,7 +6,7 @@ import { isKeyHotkey } from 'is-hotkey';
 import initialValue from './initRichValue.json';
 
 import './RichEditor.scss';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 // 当前富文本组件使用了 Slate 详细文档请参见 https://docs.slatejs.org/
 
@@ -201,7 +201,7 @@ export default class RichEditor extends Component {
             </div>
             <div className="rich-editor-body">
               <Editor
-                className="styleseditor"
+                className={styles.editor}
                 placeholder="请编写一些内容..."
                 value={this.state.value}
                 onChange={this.onChange}

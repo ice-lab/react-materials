@@ -1,0 +1,61 @@
+.container{
+height: 316px;
+overflow-y: scroll;
+}
+.userItem{
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.avatar{
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+.userInfo{
+  margin-left: 20px;
+}
+.userName{
+  margin: 0;
+}
+.userPosition{
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+}
+.createTime{
+  position: absolute;;
+  right: 0;
+  color: #999;
+}
+.taskList{
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.taskBody{
+  width: 100%;
+  padding: 0 10px;
+  margin-top: -2px;
+}
+.taskTitle{
+  margin: 0;
+}
+.taskTime{
+  margin: 2px 0;
+  font-size: 13px;
+  color: #666;
+}
+.taskTags{
+  color: #4AD172;
+  font-size: 12px;
+  margin-right: 4px;
+}
+.taskOper{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #4AD172;
+}

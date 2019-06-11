@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
-import './index.modules.scss'
+import styles from  './index.module.scss'
 
 const mockDataSource = [
   {
@@ -108,10 +108,10 @@ export default class ReviewRequestTable extends Component {
 
   renderInviteInfo = (value, index, record) => {
     return (
-      <div className="stylesinviteInfo">
-        <span className="stylesavatarWrapper">
+      <div className={styles.inviteInfo}>
+        <span className={styles.avatarWrapper}>
           <img
-            className="stylesavatar"
+            className={styles.avatar}
             width="40"
             height="40"
             src={record.invite.avatar}
@@ -125,10 +125,10 @@ export default class ReviewRequestTable extends Component {
 
   renderSentInfo = (value, index, record) => {
     return (
-      <div className="stylessentInfo">
-        <span className="stylesavatarWrapper">
+      <div className={styles.sentInfo}>
+        <span className={styles.avatarWrapper}>
           <img
-            className="stylesavatar"
+            className={styles.avatar}
             width="40"
             height="40"
             src={record.sent.avatar}

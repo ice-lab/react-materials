@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Dialog, Tab, Table, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.modules.scss'
+import styles from './index.module.scss'
 
 const TabPane = Tab.Item;
 
@@ -71,7 +71,7 @@ export default class TabDialog extends Component {
     return (
       <IceContainer>
         <Dialog
-          className="tab-dialog stylesdialog"
+          className={styles.dialog}
           autoFocus={false}
           isFullScreen
           title="选择信息"
@@ -87,7 +87,7 @@ export default class TabDialog extends Component {
               onChange={this.onTabChange}
             >
               <TabPane title="选择文章" key="post">
-                <div className="stylestabContent">
+                <div className={styles.tabContent}>
                   <Table
                     dataSource={mockData}
                     rowSelection={{
@@ -100,7 +100,7 @@ export default class TabDialog extends Component {
                 </div>
               </TabPane>
               <TabPane title="选择视频" key="video">
-                <div className="stylestabContent">
+                <div className={styles.tabContent}>
                   <Table
                     dataSource={mockData}
                     rowSelection={{
