@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Button, Select, Checkbox, Form, NumberPicker, SplitButton } from '@alifd/next';
+import styles from './index.module.scss';
 
 const CheckboxGroup = Checkbox.Group;
 const FormItem = Form.Item;
@@ -32,11 +33,11 @@ export default class GroupedForm extends Component {
   render() {
     return (
       <div className="grouped-form">
-        <IceContainer title="商品发布" style={styles.container}>
+        <IceContainer title="商品发布" className={styles.container}>
           <Form onChange={this.formChange}>
             <div>
-              <div style={styles.subForm}>
-                <h3 style={styles.formTitle}>商品信息</h3>
+              <div className={styles.subForm}>
+                <h3 className={styles.formTitle}>商品信息</h3>
                 <div>
                   <FormItem label="宝贝标题：" {...formItemLayout} required requiredMessage="宝贝标题必须填写">
                     <Input name="title" placeholder="请输入宝贝标题" message="宝贝标题必须填写" />
@@ -64,8 +65,8 @@ export default class GroupedForm extends Component {
                 </div>
               </div>
 
-              <div style={styles.subForm}>
-                <h3 style={styles.formTitle}>物流服务</h3>
+              <div className={styles.subForm}>
+                <h3 className={styles.formTitle}>物流服务</h3>
                 <div>
                   <FormItem label="物流公司：" {...formItemLayout} required requiredMessage="请选择物流公司">
                     <CheckboxGroup
@@ -90,7 +91,7 @@ export default class GroupedForm extends Component {
                 <Form.Submit type="primary" validate onClick={this.submit}>
                   立即创建
                   </Form.Submit>
-                <Form.Reset style={styles.resetBtn} onClick={this.reset}>
+                <Form.Reset className={styles.resetBtn} onClick={this.reset}>
                   重置
                   </Form.Reset>
               </FormItem>
@@ -102,31 +103,3 @@ export default class GroupedForm extends Component {
   }
 }
 
-const styles = {
-  container: {
-    paddingBottom: 0,
-  },
-  subForm: {
-    marginBottom: '20px',
-  },
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    fontSize: '14px',
-    borderBottom: '1px solid #eee',
-  },
-  formItem: {
-    height: '28px',
-    lineHeight: '28px',
-    marginBottom: '25px',
-  },
-  formLabel: {
-    textAlign: 'right',
-  },
-  btns: {
-    margin: '25px 0',
-  },
-  resetBtn: {
-    marginLeft: '20px',
-  },
-};

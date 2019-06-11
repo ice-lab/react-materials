@@ -1,8 +1,10 @@
+
 import Container from '@icedesign/container';
 import React, { Component } from 'react';
 import { Grid, Pagination } from '@alifd/next';
 
 import HotPostRankItem from './HotPostRankItem';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -40,7 +42,7 @@ export default class HotPostRank extends Component {
   render() {
     return (
       <Container>
-        <div style={styles.header}>
+        <div className={styles.header}>
           <h3 style={{ fontSize: 16, color: '#333', margin: 0 }}>
             粉丝最新关注点
           </h3>
@@ -86,9 +88,3 @@ export default class HotPostRank extends Component {
   }
 }
 
-const styles = {
-  header: {
-    marginBottom: 20,
-  },
-  HotPostRankList: {},
-};

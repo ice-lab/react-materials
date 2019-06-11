@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
 import { Responsive, WidthProvider } from 'react-grid-layout';
-import './GridLayout.scss';
+import './index.scss';
 
 function random(start, end) {
   return Math.floor(Math.random() * (end - start) + start);
