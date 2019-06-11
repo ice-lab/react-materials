@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -20,59 +21,59 @@ export default class NormalFooter extends Component {
     return (
       <div className="normal-footer">
         <IceContainer>
-          <Row wrap style={styles.content}>
+          <Row wrap className={styles.content}>
             <Col l="4" xxs="24">
-              <a href="#" style={styles.brand}>
+              <a href="#" className={styles.brand}>
                 <img
                   src={require('./images/TB1saOBbYGYBuNjy0FoXXciBFXa-218-58.png')}
                   alt=""
-                  style={styles.logo}
+                  className={styles.logo}
                 />
               </a>
             </Col>
             <Col l="16" xxs="24">
-              <div style={{ ...styles.nav, ...styles.pullCenter }}>
-                <a href="#" style={styles.navLink}>
+              <div className={styles.pullCenter }>
+                <a href="#" className={styles.navLink}>
                   Home
                 </a>
-                <a href="#" style={styles.navLink}>
+                <a href="#" className={styles.navLink}>
                   Shop
                 </a>
-                <a href="#" style={styles.navLink}>
+                <a href="#" className={styles.navLink}>
                   Blog
                 </a>
-                <a href="#" style={styles.navLink}>
+                <a href="#" className={styles.navLink}>
                   Service
                 </a>
-                <a href="#" style={styles.navLink}>
+                <a href="#" className={styles.navLink}>
                   About
                 </a>
-                <a href="#" style={{ ...styles.navLink, marginRight: 0 }}>
+                <a href="#" style={{marginRight: 0 }} className={styles.navLink}>
                   Contact
                 </a>
               </div>
             </Col>
             <Col l="4" xxs="24">
-              <div style={styles.pullRight}>
+              <div className={styles.pullRight}>
                 <a href="#">
                   <img
                     src={require('./images/TB1JkgmjnnI8KJjy0FfXXcdoVXa-60-48.png')}
                     alt=""
-                    style={{ ...styles.socialImg, marginRight: '16px' }}
+                    style={{marginRight: '16px'}} className={styles.socialImg}
                   />
                 </a>
                 <a href="#">
                   <img
                     src={require('./images/TB1hEz2jf6H8KJjy0FjXXaXepXa-60-48.png')}
                     alt=""
-                    style={styles.socialImg}
+                    className={styles.socialImg}
                   />
                 </a>
               </div>
             </Col>
           </Row>
-          <div style={styles.line} />
-          <div style={{ ...styles.copyright, ...styles.pullCenter }}>
+          <div className={styles.line} />
+          <div className={styles.copyright}>
             © Copyright 2018. All rights reserved.
           </div>
         </IceContainer>
@@ -80,35 +81,3 @@ export default class NormalFooter extends Component {
     );
   }
 }
-
-const styles = {
-  content: {
-    alignItems: 'center',
-    padding: '16px 0',
-  },
-  logo: {
-    width: '86px',
-  },
-  pullCenter: {
-    textAlign: 'center',
-  },
-  pullRight: {
-    textAlign: 'right',
-  },
-  navLink: {
-    marginRight: '20px',
-    color: 'rgba(0, 0, 0, 0.7)',
-  },
-  socialImg: {
-    width: '22px',
-    height: '16px',
-  },
-  line: {
-    margin: '16px 0',
-    borderBottom: '1px solid rgba(120,130,140,.13)',
-  },
-  copyright: {
-    color: '#999',
-    fontSize: '12px',
-  },
-};

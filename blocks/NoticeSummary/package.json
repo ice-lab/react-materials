@@ -23,10 +23,9 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
+    "@alifd/next": "^1.x",
     "react": "^16.2.0",
+    "react-dom": "^16.x",
     "prop-types": "^15.5.8"
   },
   "blockConfig": {
@@ -44,8 +43,5 @@
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
-  },
-  "devDependencies": {
-    "react-dom": "^16.x"
   }
 }

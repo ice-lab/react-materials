@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import Monaco from 'react-monaco-editor';
 import 'regenerator-runtime/runtime';
-import './MonacoEditor.scss';
+import styles from './index.module.scss';
 
 function getScript(uri) {
   return new Promise((resolve, reject) => {
@@ -79,10 +79,9 @@ function foo() {
 
     return (
       <div
-        className="monaco-editor-container"
-        style={styles.monacoEditorContainer}
+        className={styles.monacoEditorContainer}
       >
-        <IceContainer style={styles.container}>
+        <IceContainer className={styles.container}>
           {monacoReady ? (
             <Monaco
               height="600"
@@ -102,7 +101,3 @@ function foo() {
   }
 }
 
-const styles = {
-  container: { overflow: 'hidden', position: 'relative' },
-  monacoEditorContainer: {},
-};

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import fecha from 'fecha';
 
 import { Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 const mokeDataTitle = [
   '新发布内容，立刻放入【内容分类】，能获得更多曝光量！【点击查看详情】',
@@ -47,7 +48,7 @@ class NoticeList extends Component {
   render() {
     return (
       <Container>
-        <h3 style={styles.header}>平台公告</h3>
+        <h3 className={styles.header}>平台公告</h3>
         <div>
           {this.state.dataSource.map((notice, index) => {
             return (
@@ -56,15 +57,15 @@ class NoticeList extends Component {
                 target="_blank"
                 title={notice.title}
                 href={notice.url}
-                style={styles.noticeItem}
+                className={styles.noticeItem}
               >
                 <div>
-                  <span style={styles.title}>{notice.title}</span>
-                  {notice.top && <span style={styles.top}>置顶</span>}
-                  {notice.hot && <span style={styles.hot}>HOT</span>}
-                  {notice.new && <span style={styles.new}>NEW</span>}
+                  <span className={styles.title}>{notice.title}</span>
+                  {notice.top && <span className={styles.top}>置顶</span>}
+                  {notice.hot && <span className={styles.hot}>HOT</span>}
+                  {notice.new && <span className={styles.new}>NEW</span>}
                 </div>
-                <span style={styles.time}>
+                <span className={styles.time}>
                   {fecha.format(notice.time, 'MM-DD HH:mm')}
                 </span>
               </a>
@@ -78,54 +79,4 @@ class NoticeList extends Component {
     );
   }
 }
-
-const styles = {
-  header: {
-    fontSize: 16,
-    lineHeight: '16px',
-    paddingBottom: 20,
-    fontWeight: 700,
-  },
-  noticeItem: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid #fafafa',
-    lineHeight: '54px',
-    height: 54,
-    textDecoration: 'none',
-  },
-  title: {
-    color: '#333',
-  },
-  top: {
-    backgroundColor: '#eff6ff',
-    fontSize: 12,
-    color: '#4196ff',
-    lineHeight: '16px',
-    marginLeft: 5,
-    padding: '0 8px',
-    borderRadius: 20,
-  },
-  hot: {
-    backgroundColor: '#ffe8e8',
-    fontSize: 12,
-    color: '#f86d6d',
-    lineHeight: '16px',
-    marginLeft: 5,
-    padding: '0 8px',
-    borderRadius: 20,
-  },
-  new: {
-    backgroundColor: '#fff4e2',
-    fontSize: 12,
-    color: '#fca61c',
-    lineHeight: '16px',
-    marginLeft: 5,
-    padding: '0 8px',
-    borderRadius: 20,
-  },
-  time: { color: '#999' },
-};
-
 export default NoticeList;

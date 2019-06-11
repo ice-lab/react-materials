@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Icon, Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -32,48 +33,48 @@ export default class MultiCard extends Component {
   render() {
     const data = getData();
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Row wrap gutter="20">
           {data.map((item, index) => {
             return (
               <Col l="6" key={index}>
-                <div style={styles.card}>
-                  <div style={styles.head}>
-                    <h4 style={styles.title}>
+                <div className={styles.card}>
+                  <div className={styles.head}>
+                    <h4 className={styles.title}>
                       {index === 0 ? item.title : item.appVersion}
                     </h4>
                   </div>
-                  <Row wrap style={styles.body}>
-                    <Col l="12" style={styles.info}>
+                  <Row wrap className={styles.body}>
+                    <Col l="12" className={styles.info}>
                       埋点错误数：
                       {item.error}
                     </Col>
-                    <Col l="12" style={styles.info}>
+                    <Col l="12" className={styles.info}>
                       今日 DAU：
                       {item.dau}
                     </Col>
-                    <Col l="12" style={styles.info}>
+                    <Col l="12" className={styles.info}>
                       新增埋点数：
                       {item.newTrack}
                     </Col>
-                    <Col l="12" style={styles.info}>
+                    <Col l="12" className={styles.info}>
                       遗漏埋点数：
                       {item.omitTrack}
                     </Col>
                   </Row>
-                  <Row style={styles.footer}>
+                  <Row className={styles.footer}>
                     <Col l="12">
-                      <a style={styles.link}>
-                        <Icon type="set" size="small" style={styles.icon} />
+                      <a className={styles.link}>
+                        <Icon type="set" size="small" className={styles.icon} />
                         告警配置
                       </a>
                     </Col>
                     <Col l="12">
-                      <a style={styles.link}>
+                      <a className={styles.link}>
                         <Icon
                           type="attachment"
                           size="small"
-                          style={styles.icon}
+                          className={styles.icon}
                         />
                         查看详情
                       </a>
@@ -88,61 +89,3 @@ export default class MultiCard extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    margin: '20px',
-  },
-  createScheme: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '190px',
-    cursor: 'pointer',
-  },
-  card: {
-    displayName: 'flex',
-    marginBottom: '20px',
-    background: '#fff',
-    borderRadius: '6px',
-  },
-  head: {
-    position: 'relative',
-    padding: '16px 16px 8px',
-    borderBottom: '1px solid #e9e9e9',
-  },
-  title: {
-    margin: '0 0 5px',
-    width: '90%',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    fontSize: '16px',
-    fontWeight: '500',
-    color: 'rgba(0,0,0,.85)',
-  },
-  desc: {
-    margin: '0',
-    fontSize: '14px',
-  },
-  body: {
-    position: 'relative',
-    padding: '16px 16px 6px',
-  },
-  info: {
-    margin: '0 0 10px',
-    fontSize: '13px',
-  },
-  footer: {
-    padding: '10px 16px',
-    borderTop: '1px solid #eee',
-    textAlign: 'center',
-  },
-  icon: {
-    marginRight: '5px',
-  },
-  link: {
-    cursor: 'pointer',
-    color: '#a84ef9',
-  },
-};
