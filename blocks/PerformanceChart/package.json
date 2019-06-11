@@ -25,10 +25,11 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
+    "@alifd/next": "^1.x",
+    "@antv/data-set": "^0.10.2",
     "@icedesign/container": "^1.x",
-    "prop-types": "^15.5.8",
     "bizcharts": "3.2.2",
-    "@alifd/next": "^1.x"
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",
