@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
 import ScrollAnim from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const ScrollOverPack = ScrollAnim.OverPack;
@@ -58,26 +59,26 @@ export default class FrontierContent extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <ScrollOverPack always={false}>
           <QueueAnim type="bottom" delay={100} duration={1000}>
-            <div style={styles.content} key="content">
+            <div className={styles.content} key="content">
               <Row wrap gutter={20}>
                 <Col xs="24" m="12" l="8">
-                  <div style={styles.titleWrap}>
-                    <div style={styles.bigTitle}>FRONTIER</div>
-                    <div style={styles.subTitle}>前沿内容</div>
+                  <div className={styles.titleWrap}>
+                    <div className={styles.bigTitle}>FRONTIER</div>
+                    <div className={styles.subTitle}>前沿内容</div>
                   </div>
                 </Col>
                 {MOCK_DATA.map((item, index) => {
                   return (
                     <Col xs="24" m="12" l="8" key={index}>
-                      <div style={styles.item}>
-                        <div style={styles.itemNum}>{item.num}</div>
-                        <div style={styles.itemBox}>
-                          <div style={styles.itemTitle}>{item.title}</div>
-                          <div style={styles.itemSubtit}>{item.subtit}</div>
-                          <div style={styles.itemDesc}>{item.desc}</div>
+                      <div className={styles.item}>
+                        <div className={styles.itemNum}>{item.num}</div>
+                        <div className={styles.itemBox}>
+                          <div className={styles.itemTitle}>{item.title}</div>
+                          <div className={styles.itemSubtit}>{item.subtit}</div>
+                          <div className={styles.itemDesc}>{item.desc}</div>
                         </div>
                       </div>
                     </Col>
@@ -91,75 +92,3 @@ export default class FrontierContent extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    backgroundImage: `url(${require('./images/bg.png')})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '50%',
-    padding: '60px 0',
-    minHeight: '562px',
-  },
-  content: {
-    width: '1200px',
-    margin: '0 auto',
-  },
-  titleWrap: {
-    marginTop: '44px',
-  },
-  bigTitle: {
-    fontSize: '68px',
-    lineHeight: '82px',
-    fontWeight: '700',
-    color: '#fff',
-  },
-  subTitle: {
-    fontSize: '24px',
-    lineHeight: '30px',
-    color: '#fff',
-    marginTop: '8px',
-  },
-  item: {
-    position: 'relative',
-    marginTop: '48px',
-  },
-  itemNum: {
-    position: 'absolute',
-    top: '-8px',
-    left: '0',
-    width: '65px',
-    fontSize: '100px',
-    lineHeight: '100px',
-    textAlign: 'center',
-    color: 'rgba(35,108,255,.2)',
-    zIndex: '0',
-    fontWeight: '700',
-  },
-  itemBox: {
-    padding: '0 20px',
-  },
-  itemTitle: {
-    fontSize: '32px',
-    lineHeight: '38px',
-    color: '#fff',
-    fontWeight: '700',
-  },
-  itemSubtit: {
-    fontSize: '20px',
-    lineHeight: '30px',
-    color: '#fff',
-    marginTop: '2px',
-  },
-  itemDesc: {
-    fontSize: '14px',
-    lineHeight: '22px',
-    color: 'hsla(0,0%,100%,.85)',
-    height: '88px',
-    marginTop: '15px',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    display: '-webkit-box',
-    WebkitLineClamp: '4',
-  },
-};

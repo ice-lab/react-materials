@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select, DatePicker } from '@alifd/next';
-
+import styles from './index.module.scss';
 export default class FilterBar extends Component {
   static displayName = 'FilterBar';
 
@@ -30,7 +30,7 @@ export default class FilterBar extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
+      <IceContainer className={styles.container}>
         <Select
           size="large"
           style={{ width: '200px' }}
@@ -46,10 +46,3 @@ export default class FilterBar extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-};

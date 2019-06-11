@@ -5,12 +5,13 @@ import IceContainer from '@icedesign/container';
 import IceLabel from '@icedesign/label';
 import FilterForm from './Filter';
 import data from './data';
+import styles from './index.module.scss';
 
 export default class EnhanceTable extends Component {
   renderTitle = (value, index, record) => {
     return (
-      <div style={styles.titleWrapper}>
-        <span style={styles.title}>{record.title}</span>
+      <div className={styles.titleWrapper}>
+        <span className={styles.title}>{record.title}</span>
       </div>
     );
   };
@@ -24,20 +25,20 @@ export default class EnhanceTable extends Component {
     return (
       <div
         className="filter-table-operation"
-        style={styles.filterTableOperation}
+        className={styles.filterTableOperation}
       >
         <a
           href="#"
-          style={styles.operationItem}
+          className={styles.operationItem}
           target="_blank"
           onClick={this.editItem.bind(this, record)}
         >
           解决
         </a>
-        <a href="#" style={styles.operationItem} target="_blank">
+        <a href="#" className={styles.operationItem} target="_blank">
           详情
         </a>
-        <a href="#" style={styles.operationItem} target="_blank">
+        <a href="#" className={styles.operationItem} target="_blank">
           分类
         </a>
       </div>
@@ -93,7 +94,7 @@ export default class EnhanceTable extends Component {
               cell={this.renderOperations}
             />
           </Table>
-          <div style={styles.paginationWrapper}>
+          <div className={styles.paginationWrapper}>
             <Pagination />
           </div>
         </IceContainer>
@@ -101,26 +102,3 @@ export default class EnhanceTable extends Component {
     );
   }
 }
-
-const styles = {
-  filterTableOperation: {
-    lineHeight: '28px',
-  },
-  operationItem: {
-    marginRight: '12px',
-    textDecoration: 'none',
-    color: '#5485F7',
-  },
-  titleWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  title: {
-    marginLeft: '10px',
-    lineHeight: '20px',
-  },
-  paginationWrapper: {
-    textAlign: 'right',
-    paddingTop: '26px',
-  },
-};

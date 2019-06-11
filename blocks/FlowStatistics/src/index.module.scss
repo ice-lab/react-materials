@@ -1,0 +1,25 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.textLabel {
+    margin: 0;
+    color: #666;
+}
+
+.counterNum {
+    margin: 10px;
+    font-size: 28px;
+}
+
+.title {
+    margin: 0;
+    font-size: 16px;
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}

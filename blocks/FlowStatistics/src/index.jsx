@@ -3,6 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
 import LineChart from './LineChart';
 import Head from './Head';
+import styles from './index.module.scss';
 
 const MOCK_DATA = {
   threeMonths: {
@@ -39,7 +40,7 @@ export default class FlowStatistics extends Component {
   render() {
     return (
       <IceContainer className="flow-statistics">
-        <h4 style={styles.title}>流量统计</h4>
+        <h4 className={styles.title}>流量统计</h4>
         <Tab shape="text" size="small">
           <Tab.Item title="近三个月" key="1">
             <Head data={MOCK_DATA.threeMonths} />
@@ -59,12 +60,3 @@ export default class FlowStatistics extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0',
-    fontSize: '16px',
-    paddingBottom: '15px',
-    fontWeight: 'bold',
-    color: '#333',
-  },
-};

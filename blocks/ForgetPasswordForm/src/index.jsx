@@ -6,6 +6,7 @@ import {
   FormBinder,
   FormError,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 export default class ForgetPasswordForm extends Component {
   static displayName = 'ForgetPasswordForm';
@@ -42,12 +43,12 @@ export default class ForgetPasswordForm extends Component {
   render() {
     return (
       <IceContainer>
-        <div style={styles.title}>忘记密码</div>
-        <div style={styles.subtitle}>
+        <div className={styles.title}>忘记密码</div>
+        <div className={styles.subtitle}>
           填入您的邮箱，重置后的密码会发到您的邮箱
         </div>
-        <div style={styles.groupTitle}>邮箱地址：</div>
-        <div style={styles.inputWrap}>
+        <div className={styles.groupTitle}>邮箱地址：</div>
+        <div className={styles.inputWrap}>
           <FormBinderWrapper
             ref={(form) => {
               this.form = form;
@@ -64,7 +65,7 @@ export default class ForgetPasswordForm extends Component {
                 message="Email 地址不合法, 请检查"
                 name="email"
               >
-                <Input style={styles.input} placeholder="请输入邮箱地址" />
+                <Input className={styles.input} placeholder="请输入邮箱地址" />
               </FormBinder>
               <div>
                 <FormError name="email" />
@@ -73,7 +74,7 @@ export default class ForgetPasswordForm extends Component {
           </FormBinderWrapper>
         </div>
 
-        <div style={styles.btnWrap}>
+        <div className={styles.btnWrap}>
           <Button type="primary" onClick={this.sendMessage}>
             发送新密码
           </Button>
@@ -83,24 +84,4 @@ export default class ForgetPasswordForm extends Component {
   }
 }
 
-const styles = {
-  title: {
-    fontSize: '16px',
-    margin: '0 0 10px',
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  subtitle: {
-    fontSize: '12px',
-    marginBottom: '20px',
-  },
-  groupTitle: {
-    marginBottom: '10px',
-  },
-  input: {
-    maxWidth: '332px',
-    width: '70%',
-    minWidth: '150px',
-  },
-  inputWrap: { marginBottom: '20px' },
-};
+

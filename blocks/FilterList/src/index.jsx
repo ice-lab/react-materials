@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Search, Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import SingleItem from './SingleItem';
-import './FilterList.scss';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const dataSource = [
@@ -181,7 +181,7 @@ export default class FilterList extends Component {
 
   renderItems = () => {
     return (
-      <Row gutter="20" wrap style={styles.itemRow}>
+      <Row gutter="20" wrap className={styles.itemRow}>
         {dataSource.map((item, index) => {
           return (
             <Col key={index} xxs="24" s="8" l="4">
@@ -200,101 +200,56 @@ export default class FilterList extends Component {
     };
 
     return (
-      <div className="filter-list">
+      <div className={styles.filterList}>
         <IceContainer
-          style={{ ...styles.filterListHeaderWrapper, ...cardStyle }}
+          className={styles.hb1}
         >
-          <div style={styles.filterCategories}>
-            <div className="select-item" style={styles.selectItem}>
+          <div className={styles.filterCategories}>
+            <div className={styles.selectItem}>
               我的商品
             </div>
-            <div className="select-item" style={styles.selectItem}>
+            <div className={styles.selectItem}>
               我的图片
             </div>
-            <div className="select-item" style={styles.selectItem}>
+            <div className={styles.selectItem}>
               我的视频
             </div>
           </div>
 
-          <div style={styles.searchWrapper}>
+          <div className={styles.searchWrapper}>
             <Search
               placeholder="标题"
               inputWidth={120}
               searchText=""
-              style={styles.searchInput}
+              className={styles.searchInput}
             />
             <Button type="primary">搜索</Button>
           </div>
 
-          <div style={styles.filterCategory}>
-            <Button className="select-btn" style={styles.selectBtn}>
+          <div className={styles.filterCategory}>
+            <Button className={styles.selectBtn}>
               全部商品
             </Button>
-            <Button className="select-btn" style={styles.selectBtn}>
+            <Button className={styles.selectBtn}>
               未分类
             </Button>
-            <Button className="select-btn" style={styles.selectBtn}>
+            <Button className={styles.selectBtn}>
               已失效
             </Button>
-            <Button className="select-btn" style={styles.selectBtn}>
+            <Button className={styles.selectBtn}>
               有好货专用
             </Button>
-            <Button className="select-btn" style={styles.selectBtn}>
+            <Button className={styles.selectBtn}>
               必买清单
             </Button>
             <span />
           </div>
         </IceContainer>
 
-        <IceContainer style={{ ...styles.searchResultWrapper, ...cardStyle }}>
+        <IceContainer className={styles.hb2}>
           {this.renderItems()}
         </IceContainer>
       </div>
     );
   }
 }
-
-const styles = {
-  selectItem: {
-    padding: '0 16px',
-    borderRight: '1px solid #ddd',
-    cursor: 'pointer',
-  },
-  selectBtn: {
-    marginRight: '10px',
-    marginBottom: '10px',
-  },
-  itemRow: {
-    margin: '0 10px 10px 10px',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  filterListHeaderWrapper: {
-    padding: '20px 20px 5px 20px',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-  },
-  searchWrapper: {
-    display: 'flex',
-    flexDirection: 'row',
-    margin: '0 0 15px 0',
-  },
-  searchInput: {
-    marginRight: '15px',
-  },
-  filterCategories: {
-    display: 'flex',
-    flexDirection: 'row',
-    margin: '0 0 15px 0',
-  },
-  searchResultWrapper: {
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    padding: '20px 0',
-  },
-  filterCategory: {
-    width: '100%',
-  },
-};
