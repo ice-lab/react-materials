@@ -54,7 +54,7 @@ export default class StepForm extends Component {
             <Col xxs="24" s="5" l="5" style={styles.formLabel}>
               <Step
                 current={this.state.step}
-                direction="vertical"
+                direction="ver"
                 shape="dot"
                 animation={false}
                 style={styles.step}
