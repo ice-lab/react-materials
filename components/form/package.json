@@ -1,6 +1,6 @@
 {
   "name": "@ice/form",
-  "version": "0.1.0-4",
+  "version": "0.1.0-8",
   "description": "ICE 表单组件",
   "files": [
     "demo/",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@alifd/next": "^1.15.3",
+    "@icedesign/form-binder": "^1.0.6",
     "antd": "^3.18.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
@@ -56,5 +57,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://unpkg.com/@ice/form@0.1.0-4/build/index.html"
+  "homepage": "https://unpkg.com/@ice/form@0.1.0-8/build/index.html"
 }

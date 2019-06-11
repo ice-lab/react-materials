@@ -8,12 +8,12 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, linkages, value, defaultValue, format } = props;
+    const { name, rules, effects, value, defaultValue, format } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
-    !!linkages && store.addLinkages(name, linkages);
+    !!effects && store.addEffects(name, effects);
     !!status && store.setStatus(name, status, false);
 
     const isCheckbox = props.type && props.type === 'checkbox';
@@ -78,9 +78,11 @@ class Field extends React.Component {
       );
     }
 
+    let value;
+
     if (e && e.target && e.target.type === 'checkbox') {
       const checked = e.target.checked;
-      const value = e.target.value;
+      value = e.target.value;
       let currentValue = store.getFieldValue(name) || [];
       if (checked) {
         currentValue.push(value);
@@ -92,11 +94,12 @@ class Field extends React.Component {
       }
       store.setFieldValue(name, currentValue, store);
     } else {
-      const value = e && e.target
+      value = e && e.target
         ? e.target.value
         : e;
       store.setFieldValue(name, value, store);
     }
+    store.onChange(store.getValues(), { name, value });
   }
 
   render() {
@@ -110,7 +113,7 @@ class Field extends React.Component {
     let renderProps = {
       ...state.componentProps,
       renderFieldLayout,
-      layout,
+      formLevelLayout: layout,
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };

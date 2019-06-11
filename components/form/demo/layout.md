@@ -22,9 +22,10 @@ class App extends Component {
   render() {
     const layout = {
       labelCol: 1,
-      wrapperCol: 3,
-      labelTextAlign: 'right'
-    }
+      wrapperCol: 2,
+      labelTextAlign: 'left',
+      labelAlign: 'top'
+    };
     return (
       <div>
         <Form
@@ -43,7 +44,7 @@ class App extends Component {
             error => <span style={{color: '#ff7000'}}>{error}</span>
           } />
           <Field label="年龄：" name="age" component={Input} tips="身份证上的年龄" />
-          <Field label="简介：" name="intro" fieldLayout={{tipsCol: 2}} component={Input.TextArea} tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
+          <Field label="简介：" name="intro" layout={{tipsCol: 2}} component={Input.TextArea} tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
           <Field label="" name="submit">
             <Button htmlType="submit">Submit</Button>
           </Field>

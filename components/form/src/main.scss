@@ -5,6 +5,7 @@
 
 .ice-field {
   display: flex;
+  flex-wrap: wrap;
   [class*='ice-col-'] {
     width: 16.66%; 
     padding: 6px; 
@@ -26,10 +27,10 @@
   }
 
   .ice-field-label-top {
-    width: 100%;
+    flex-basis: 100%;
     padding-bottom: 0;
-    > .ice-field-control {
-      width: 100%;  
+    & + .ice-field-control {
+      padding-top: 0;
     }
   }
   .ice-field-label-text-right {

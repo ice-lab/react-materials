@@ -5,8 +5,8 @@ import FormCore from './FormCore';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    const { initialValues, rules, linkages, onSubmit } = props;
-    this.store = new FormCore({ initialValues, rules, linkages, onSubmit });
+    const { initialValues, rules, effects, onSubmit, onChange } = props;
+    this.store = new FormCore({ initialValues, rules, effects, onSubmit, onChange });
 
     this.state = {
       renderField: () => {},
@@ -33,15 +33,18 @@ class Form extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { initialValues, rules, linkages, onSubmit } = this.props;
+    const { initialValues, rules, effects, onSubmit, onChange } = this.props;
     if (prevProps.rules !== rules) {
       this.store.setConfig('rules', rules);
     }
-    if (prevProps.linkages !== linkages) {
-      this.store.setConfig('linkages', linkages);
+    if (prevProps.effects !== effects) {
+      this.store.setConfig('effects', effects);
     }
     if (prevProps.onSubmit !== onSubmit) {
       this.store.setConfig('onSubmit', onSubmit);
+    }
+    if (prevProps.onChange !== onChange) {
+      this.store.setConfig('onChange', onChange);
     }
     if (prevProps.initialValues !== initialValues) {
       this.store.setValues(initialValues);
@@ -49,7 +52,7 @@ class Form extends React.Component {
   }
 
   render() {
-    const { initialValues, onSubmit, children, rules, linkages, renderField, layout, ...rest } = this.props;
+    const { initialValues, onSubmit, onChange, children, rules, effects, renderField, layout, ...rest } = this.props;
     return (
       <FormContext.Provider value={this.store}>
         <form
