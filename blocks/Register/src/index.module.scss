@@ -1,0 +1,85 @@
+.container{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  background: #f0f2f5;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.meta{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo{
+  margin-right: 10px;
+  width: 48px;
+}
+.title{
+  text-align: center;
+  font-size: 33px;
+  color:rgba(0, 0, 0, 0.85);
+  font-family:Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.desc{
+  margin: 10px 0;
+  font-size: 14px;
+  color:rgba(0, 0, 0, 0.45)
+}
+.formContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 368px;
+  margin: 0 auto;
+}
+.formTitle{
+  position: relative;
+  margin-bottom: 25px;
+  flex-direction: column;
+  padding: 0;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+.inputIcon{
+  position: absolute;
+  left: 12px;
+  top:50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+.inputbox{
+  position: relative;
+  padding: 0;
+  input{
+    padding: 0 30px !important;
+  }
+}
+.formContainer{
+  .submitBtn{
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    background: #3080fe;
+    border-radius: 4px;
+    width: 100%;
+    padding: 0 12px;
+  }
+}
+.tips{
+  justify-content: center;
+}
+.link{
+  color: #999;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 25px 0;
+}

@@ -1,0 +1,63 @@
+.container{
+  height: 255px;
+}
+.overviewData{
+  margin-top: 25px;
+  font-size: 30px;
+}
+.overviewDataUnit{
+  font-size: 18px;
+}
+.overviewDataDetail{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between
+}
+.overviewDataDetailCount{
+  font-size: 18px
+}
+.overviewDataDetailDesc{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #666;
+}
+.overviewDataExtraLinks{
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top:1px solid #eee;
+}
+.overviewDataExtraLinksTitle{
+  font-size: 12px;
+  color: #666;
+}
+.overviewDataExtraLinksWrapper{
+  margin-top: 10px;
+}
+.overviewDataExtraLink{
+  margin-right: 5px;
+}
+.overviewRatingWrapper{
+  display: flex;
+  align-items: center;
+}
+.overviewRatingCount{
+  font-size: 32px;
+  margin-right: 10px
+}
+.overviewDetail{
+  margin-top: 20px;
+}
+.overviewDetailItem{
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.overviewDetailItemPercentWrapper{
+  flex:1
+}
+.overviewDetailItemPercent{
+  display: inline-block
+}
+.overviewDetailItemText{
+  margin-right: 10px;
+}
