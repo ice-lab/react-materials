@@ -3,7 +3,7 @@ module.exports = {
   publicPath: './',
   plugins: [
     ['ice-plugin-fusion', {
-      theme: '@icedesign/theme',
+      themePackage: '@icedesign/theme',
       themeConfig: {
         'nav-primary-bg-color': '#333',
       },
