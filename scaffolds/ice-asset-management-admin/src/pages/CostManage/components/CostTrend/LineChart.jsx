@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
+import styles from './index.module.scss';
 
 export default class LineChart extends React.Component {
   render() {
@@ -22,7 +23,7 @@ export default class LineChart extends React.Component {
     };
 
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Chart
           height={400}
           padding={[60, 40, 40, 80]}
@@ -73,25 +74,3 @@ export default class LineChart extends React.Component {
   }
 }
 
-const styles = {
-  head: {
-    marginBottom: '20px',
-  },
-  button: {
-    display: 'inline-block',
-    lineHeight: '28px',
-    marginRight: '10px',
-    padding: '0 15px',
-    height: '28px',
-    minWidth: '90px',
-    borderRadius: '2px',
-    fontSize: '12px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  },
-  actived: {
-    background: '#676ca8',
-    color: '#fff',
-  },
-};

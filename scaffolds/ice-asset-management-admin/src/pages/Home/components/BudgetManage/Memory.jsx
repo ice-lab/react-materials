@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Table, Pagination, Dialog } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
 import TableHead from './TableHead';
-
+import styles from './index.module.scss';
 // MOCK 数据，实际业务按需进行替换
 const getData = (length = 10) => {
   return Array.from({ length }).map((item, index) => {
@@ -84,11 +84,11 @@ export default class Memory extends Component {
   renderOper = () => {
     return (
       <div>
-        <a style={styles.link} onClick={this.handleEdit}>
+        <a className={styles.link} onClick={this.handleEdit}>
           修改
         </a>
-        <span style={styles.separator} />
-        <a style={styles.link} onClick={this.handleDetail}>
+        <span className={styles.separator} />
+        <a className={styles.link} onClick={this.handleDetail}>
           详情
         </a>
       </div>
@@ -99,7 +99,7 @@ export default class Memory extends Component {
     const { isLoading, data, current } = this.state;
 
     return (
-      <div style={styles.container}>
+      <div className={styles.containerMemory}>
         <TableHead onChange={this.handleFilterChange} />
         <Table loading={isLoading} dataSource={data} hasBorder={false}>
           <Table.Column title="部门名称" dataIndex="department" width={100} />
@@ -125,7 +125,7 @@ export default class Memory extends Component {
           <Table.Column title="操作" cell={this.renderOper} width={200} />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -134,34 +134,4 @@ export default class Memory extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0 20px 20px',
-  },
-  tableHead: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-  },
-  label: {
-    marginRight: '10px',
-  },
-  link: {
-    margin: '0 5px',
-    color: 'rgba(49, 128, 253, 0.65)',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  separator: {
-    margin: '0 8px',
-    display: 'inline-block',
-    height: '12px',
-    width: '1px',
-    verticalAlign: 'middle',
-    background: '#e8e8e8',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};
+

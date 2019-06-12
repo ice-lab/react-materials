@@ -1,0 +1,39 @@
+.container {
+  padding: 0 !important;
+};
+.titleContainer {
+  padding: 0 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(240, 240, 240);
+};
+.title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+};
+.chartContent {
+  padding: 15px;
+};
+.head {
+  margin-bottom: 20px;
+};
+.button {
+  display: inline-block;
+  line-height: 28px;
+  margin-right: 10px;
+  padding: 0 15px;
+  height: 28px;
+  min-width: 90px;
+  border-radius: 2px;
+  font-size: 12px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+};
+.actived {
+  background: #676ca8;
+  color: #fff;
+};

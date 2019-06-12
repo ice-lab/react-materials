@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const getData = (length = 10) => {
@@ -76,7 +77,7 @@ export default class ApplicationTable extends Component {
           loading={isLoading}
           dataSource={data}
           hasBorder={false}
-          style={styles.table}
+          className={styles.table}
         >
           <Table.Column title="应用" dataIndex="application" />
           <Table.Column title="负责人" dataIndex="leader" />
@@ -92,7 +93,7 @@ export default class ApplicationTable extends Component {
           <Table.Column title="问题优化" dataIndex="question" />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -101,10 +102,4 @@ export default class ApplicationTable extends Component {
   }
 }
 
-const styles = {
-  table: { margin: '20px' },
-  pagination: {
-    margin: '20px',
-    textAlign: 'right',
-  },
-};
+

@@ -7,6 +7,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Group: RadioGroup } = Radio;
@@ -70,23 +71,23 @@ export default class BaseSetting extends Component {
     return (
       <IceContainer>
         <IceFormBinderWrapper value={this.state.value} ref="form">
-          <div style={styles.formContent}>
-            <h2 style={styles.formTitle}>个人设置</h2>
+          <div className={styles.formContent}>
+            <h2 className={styles.formTitle}>个人设置</h2>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 姓名：
               </Col>
               <Col s="12" l="10">
                 <IceFormBinder name="name" required max={10} message="必填">
-                  <Input style={styles.inputItem} placeholder="淘小宝" />
+                  <Input className={styles.inputItem} placeholder="淘小宝" />
                 </IceFormBinder>
                 <IceFormError name="name" />
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 头像：
               </Col>
               <Col s="12" l="10">
@@ -111,8 +112,8 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 性别：
               </Col>
               <Col s="12" l="10">
@@ -126,22 +127,22 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 通知：
               </Col>
               <Col s="12" l="10">
                 <IceFormBinder type="boolean" name="notice">
                   <Switch
-                    style={{ background: '#2077ff', borderColor: '#2077ff' }}
+                    className={styles.switchBorder}
                   />
                 </IceFormBinder>
                 <IceFormError name="notice" />
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 邮件：
               </Col>
               <Col s="12" l="10">
@@ -152,7 +153,7 @@ export default class BaseSetting extends Component {
                   message="请输入正确的邮件"
                 >
                   <Input
-                    style={styles.inputItem}
+                    className={styles.inputItem}
                     placeholder="ice-admin@alibaba-inc.com"
                   />
                 </IceFormBinder>
@@ -160,8 +161,8 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 网站地址 ：
               </Col>
               <Col s="12" l="10">
@@ -172,13 +173,13 @@ export default class BaseSetting extends Component {
                   message="请输入正确的网站地址"
                 >
                   <Input
-                    style={styles.inputItem}
+                    className={styles.inputItem}
                     type="url"
                     placeholder="https://alibaba.github.io/ice"
                   />
                 </IceFormBinder>
                 <IceFormError
-                  style={{ marginLeft: 10 }}
+                  className={{ marginLeft: 10 }}
                   name="siteUrl"
                   required
                   message="请输入正确的网站地址"
@@ -186,8 +187,8 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 Github：
               </Col>
               <Col s="12" l="10">
@@ -198,7 +199,7 @@ export default class BaseSetting extends Component {
                   message="请输入正确的 Github 地址"
                 >
                   <Input
-                    style={styles.inputItem}
+                    className={styles.inputItem}
                     placeholder="https://github.com/alibaba/ice"
                   />
                 </IceFormBinder>
@@ -206,8 +207,8 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 Twitter：
               </Col>
               <Col s="12" l="10">
@@ -218,7 +219,7 @@ export default class BaseSetting extends Component {
                   message="请输入正确的 Twitter 地址"
                 >
                   <Input
-                    style={styles.inputItem}
+                    className={styles.inputItem}
                     placeholder="https://twitter.com"
                   />
                 </IceFormBinder>
@@ -226,14 +227,14 @@ export default class BaseSetting extends Component {
               </Col>
             </Row>
 
-            <Row style={styles.formItem}>
-              <Col xxs="6" s="3" l="3" style={styles.label}>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="3" l="3" className={styles.label}>
                 自我描述：
               </Col>
               <Col s="12" l="10">
                 <IceFormBinder name="description">
                   <Input
-                    style={styles.inputItem}
+                    className={styles.inputItem}
                     multiple
                     placeholder="请输入描述..."
                   />
@@ -244,11 +245,11 @@ export default class BaseSetting extends Component {
           </div>
         </IceFormBinderWrapper>
 
-        <Row style={{ marginTop: 20 }}>
+        <Row className={ styles.rowMargin}>
           <Col offset="3">
             <Button
               type="primary"
-              style={{ width: 100 }}
+              className={styles.buttonWidth}
               onClick={this.validateAllFormField}
             >
               更新设置
@@ -260,25 +261,3 @@ export default class BaseSetting extends Component {
   }
 }
 
-const styles = {
-  label: {
-    textAlign: 'right',
-  },
-  formContent: {
-    width: '100%',
-    position: 'relative',
-  },
-  formItem: {
-    alignItems: 'center',
-    marginBottom: 25,
-  },
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    borderBottom: '1px solid #eee',
-    color: '#333',
-  },
-  inputItem: {
-    width: '100%',
-  },
-};

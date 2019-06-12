@@ -6,6 +6,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -25,61 +26,61 @@ export default class Filter extends Component {
         onChange={this.formChange}
         ref="form"
       >
-        <Row wrap gutter="20" style={styles.formRow}>
+        <Row wrap gutter="20" className={styles.formRow}>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>平均分：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>平均分：</span>
               <IceFormBinder triggerType="onBlur" name="average">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="average" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>标准分：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>标准分：</span>
               <IceFormBinder triggerType="onBlur" name="standard">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="standard" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>所有表个数：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>所有表个数：</span>
               <IceFormBinder triggerType="onBlur" name="alltable">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="alltable" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>等级：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>等级：</span>
               <IceFormBinder triggerType="onBlur" name="type">
-                <Select style={{ width: '200px' }}>
+                <Select className={{ width: '200px' }}>
                   <Select.Option value="a1">A1</Select.Option>
                   <Select.Option value="a2">A2</Select.Option>
                 </Select>
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="type" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>监控率：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>监控率：</span>
               <IceFormBinder triggerType="onBlur" name="rate">
                 <Input placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="rate" />
               </div>
             </div>
@@ -90,27 +91,27 @@ export default class Filter extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: '0',
-    padding: '20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0,0,0,.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #eee',
-  },
-  formRow: {
-    padding: '10px 20px',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-};
+// const styles = {
+//   title: {
+//     margin: '0',
+//     padding: '20px',
+//     fonSize: '16px',
+//     textOverflow: 'ellipsis',
+//     overflow: 'hidden',
+//     whiteSpace: 'nowrap',
+//     color: 'rgba(0,0,0,.85)',
+//     fontWeight: '500',
+//     borderBottom: '1px solid #eee',
+//   },
+//   formRow: {
+//     padding: '10px 20px',
+//   },
+//   formItem: {
+//     display: 'flex',
+//     alignItems: 'center',
+//     margin: '10px 0',
+//   },
+//   formLabel: {
+//     minWidth: '70px',
+//   },
+// };
