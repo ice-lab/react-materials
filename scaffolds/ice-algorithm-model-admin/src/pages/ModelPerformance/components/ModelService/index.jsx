@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from '../../../../components/ContainerTitle';
-import './ModelService.scss';
+import './index.scss';
 
 export default class ModelService extends Component {
   render() {

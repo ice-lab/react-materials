@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import PropTypes from 'prop-types';
-import './CustomTable.scss';
+import './index.scss';
 
 export default class Home extends Component {
   static displayName = 'Home';
