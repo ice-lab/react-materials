@@ -1,4 +1,4 @@
-.base-info-table {
+.baseinfotable {
   width: 100%;
   tr {
     border: 1px solid #eee;
@@ -16,4 +16,15 @@
       }
     }
   }
+}
+.title{
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+}
+.icediv{
+  padding: 20px
 }

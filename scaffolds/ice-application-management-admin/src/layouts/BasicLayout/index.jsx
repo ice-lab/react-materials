@@ -4,7 +4,7 @@ import MainRoutes from './MainRoutes';
 import Header from './components/Header';
 import Asdie from './components/Aside';
 import Footer from './components/Footer';
-import styles from './BasicLayout.module.scss';
+import styles from './index.module.scss';
 
 export default class BasicLayout extends Component {
   static propTypes = {};

@@ -5,7 +5,7 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import IceImg from '@icedesign/img';
 import { headerMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
-import styles from './Header.module.scss';
+import styles from './index.module.scss';
 
 const { SubNav, Item } = Nav;
 

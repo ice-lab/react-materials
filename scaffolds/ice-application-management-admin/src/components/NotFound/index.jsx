@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './NotFound.scss';
+import './index.scss';
 
 export default class NotFound extends Component {
   static displayName = 'NotFound';

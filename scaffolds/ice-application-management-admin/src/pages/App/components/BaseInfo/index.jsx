@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
-import './BaseInfo.scss';
+import styles from './index.module.scss';
 
 export default class BaseInfo extends Component {
   static displayName = 'BaseInfo';
@@ -17,9 +17,9 @@ export default class BaseInfo extends Component {
   render() {
     return (
       <IceContainer style={{ padding: 0 }}>
-        <h3 style={styles.title}>应用信息</h3>
-        <div style={{ padding: '20px' }}>
-          <table className="base-info-table">
+        <h3 className={styles.title}>应用信息</h3>
+        <div className={styles.icediv}>
+          <table className={styles.baseinfotable}>
             <tbody>
               <tr>
                 <td>名称</td>
@@ -58,14 +58,3 @@ export default class BaseInfo extends Component {
     );
   }
 }
-
-const styles = {
-  title: {
-    margin: '0',
-    padding: '15px 20px',
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #f0f0f0',
-  },
-};

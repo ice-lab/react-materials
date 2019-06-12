@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import './Home.scss';
+import styles from  './index.module.scss';
 
 import ServiceCard from './components/ServiceCard';
 import PublishTime from './components/PublishTime';
@@ -19,7 +19,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="home">
+      <div className={styles.home}>
         <ServiceCard />
         <Row wrap gutter="20">
           <Col l="8">
