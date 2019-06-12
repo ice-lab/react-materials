@@ -51,7 +51,7 @@ export default class BasicLine extends Component {
             position="year*value"
             size={4}
             shape="circle"
-            style={styles.point}
+            style={{stroke:'#fff',lineWidth:1}}
           />
         </Chart>
       </div>
@@ -59,9 +59,3 @@ export default class BasicLine extends Component {
   }
 }
 
-const styles = {
-  point: {
-    stroke: '#fff',
-    lineWidth: 1,
-  },
-};

@@ -1,0 +1,63 @@
+.category{
+  padding: 0 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+.others{
+  padding: 15px 10px 0;
+}
+.label{
+  color: #333;
+  font-size: 14px;
+  margin-right: 10px;
+}
+.item{
+margin-right: 10px;
+}
+.wrapperStyle{
+  border-bottom: 1px solid #f4f4f4;
+  margin-bottom: 15px;
+}
+.wrapperStyle1{
+  margin-bottom:0;
+}
+.informationStyle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.informationStyle1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+.title{
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.datetime{
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+.desc{
+  color: #999;
+  font-size: 13px;
+  line-height: 24px;
+  padding-bottom: 15px;
+}
+.button{
+  margin-right: 10px;
+}
+.operator{
+  padding-top:8px;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+.operatorItem{
+  margin-right: 5px;
+}
