@@ -1,6 +1,6 @@
 /* eslint react/no-string-refs:0 */
 import React, { Component } from 'react';
-import { Grid, DatePicker, Select } from '@alifd/next';
+import { Grid, Input, Select } from '@alifd/next';
 import {
   FormBinderWrapper as IceFormBinderWrapper,
   FormBinder as IceFormBinder,
@@ -27,44 +27,44 @@ export default class Filter extends Component {
         ref="form"
       >
         <Row wrap gutter="20" className={styles.formRow}>
-          <Col l="8">
+          <Col l="6">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>时间筛选：</span>
-              <IceFormBinder triggerType="onBlur" name="time">
-                <DatePicker placeholder="请输入" />
+              <span className={styles.formLabel}>商品名称：</span>
+              <IceFormBinder triggerType="onBlur" name="name">
+                <Input placeholder="请输入" style={{ width: '200px' }} />
               </IceFormBinder>
               <div className={styles.formError}>
-                <IceFormError name="time" />
+                <IceFormError name="name" />
               </div>
             </div>
           </Col>
-          <Col l="8">
+          <Col l="6">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>时间区间：</span>
-              <IceFormBinder triggerType="onBlur" name="timeInterval">
+              <span className={styles.formLabel}>商品分类：</span>
+              <IceFormBinder triggerType="onBlur" name="cate">
                 <Select style={{ width: '200px' }}>
-                  <Select.Option value="1">近3个月</Select.Option>
-                  <Select.Option value="2">近半年</Select.Option>
-                  <Select.Option value="3">近一年</Select.Option>
+                  <Select.Option value="1">智能</Select.Option>
+                  <Select.Option value="2">数码</Select.Option>
+                  <Select.Option value="3">新品</Select.Option>
                 </Select>
               </IceFormBinder>
               <div className={styles.formError}>
-                <IceFormError name="timeInterval" />
+                <IceFormError name="cate" />
               </div>
             </div>
           </Col>
-          <Col l="8">
+          <Col l="6">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>状态：</span>
-              <IceFormBinder triggerType="onBlur" name="state">
+              <span className={styles.formLabel}>归属门店：</span>
+              <IceFormBinder triggerType="onBlur" name="store">
                 <Select style={{ width: '200px' }}>
-                  <Select.Option value="1">提现中</Select.Option>
-                  <Select.Option value="2">提现完成</Select.Option>
-                  <Select.Option value="3">提现失败</Select.Option>
+                  <Select.Option value="1">余杭盒马店</Select.Option>
+                  <Select.Option value="2">滨江盒马店</Select.Option>
+                  <Select.Option value="3">西湖盒马店</Select.Option>
                 </Select>
               </IceFormBinder>
               <div className={styles.formError}>
-                <IceFormError name="type" />
+                <IceFormError name="store" />
               </div>
             </div>
           </Col>
@@ -73,4 +73,5 @@ export default class Filter extends Component {
     );
   }
 }
+
 

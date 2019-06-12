@@ -27,40 +27,36 @@ export default class Filter extends Component {
         ref="form"
       >
         <Row wrap gutter="20" className={styles.formRow}>
-          <Col l="8">
+          <Col l="24">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>时间筛选：</span>
-              <IceFormBinder triggerType="onBlur" name="time">
-                <DatePicker placeholder="请输入" />
+              <span className={styles.formLabel}>注册时间：</span>
+              <IceFormBinder triggerType="onBlur" name="regdate">
+                <DatePicker placeholder="请输入" style={{ width: '200px' }} />
               </IceFormBinder>
               <div className={styles.formError}>
-                <IceFormError name="time" />
+                <IceFormError name="regdate" />
               </div>
             </div>
           </Col>
-          <Col l="8">
+          <Col l="24">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>时间区间：</span>
-              <IceFormBinder triggerType="onBlur" name="timeInterval">
-                <Select style={{ width: '200px' }}>
-                  <Select.Option value="1">近3个月</Select.Option>
-                  <Select.Option value="2">近半年</Select.Option>
-                  <Select.Option value="3">近一年</Select.Option>
-                </Select>
+              <span className={styles.formLabel}>生日时间：</span>
+              <IceFormBinder triggerType="onBlur" name="birthday">
+                <DatePicker placeholder="请输入" style={{ width: '200px' }} />
               </IceFormBinder>
               <div className={styles.formError}>
-                <IceFormError name="timeInterval" />
+                <IceFormError name="birthday" />
               </div>
             </div>
           </Col>
-          <Col l="8">
+          <Col l="24">
             <div className={styles.formItem}>
-              <span className={styles.formLabel}>状态：</span>
+              <span className={styles.formLabel}>归属门店：</span>
               <IceFormBinder triggerType="onBlur" name="state">
                 <Select style={{ width: '200px' }}>
-                  <Select.Option value="1">提现中</Select.Option>
-                  <Select.Option value="2">提现完成</Select.Option>
-                  <Select.Option value="3">提现失败</Select.Option>
+                  <Select.Option value="1">余杭盒马店</Select.Option>
+                  <Select.Option value="2">滨江盒马店</Select.Option>
+                  <Select.Option value="3">西湖盒马店</Select.Option>
                 </Select>
               </IceFormBinder>
               <div className={styles.formError}>
@@ -73,4 +69,5 @@ export default class Filter extends Component {
     );
   }
 }
+
 
