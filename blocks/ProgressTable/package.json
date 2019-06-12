@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/progress-table-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "进度条表格",
   "main": "lib/index.js",
   "files": [

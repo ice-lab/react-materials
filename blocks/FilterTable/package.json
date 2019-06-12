@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/filter-table-block",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "附带筛选工具条的表格",
   "files": [
     "src/",

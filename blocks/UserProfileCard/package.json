@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/user-profile-card-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "用于展示用户详细信息的卡片",
   "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/operation-table-block",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "附带操作按钮的表格",
   "main": "lib/index.js",
   "files": [
