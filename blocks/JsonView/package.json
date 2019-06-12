@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/json-view-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "支持编辑和展示JSON可视化区块",
   "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
   "files": [
@@ -24,11 +24,10 @@
   },
   "dependencies": {
     "@icedesign/container": "^1.x",
-    "react-json-view": "^1.18.3"
-  },
-  "peerDependencies": {
+    "react-json-view": "^1.18.3",
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "json-view",
@@ -45,8 +44,5 @@
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
-  },
-  "devDependencies": {
-    "react-dom": "^16.x"
   }
 }

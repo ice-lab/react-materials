@@ -1,0 +1,65 @@
+.tableContainer {
+  background: #fff;
+  padding-bottom: 10px;
+};
+.pagination {
+  margin: 20px 0;
+  text-align: center;
+};
+.editIcon {
+  color: #999;
+  cursor: pointer;
+};
+.circle {
+  display: inline-block;
+  background: #28a745;
+  width: 8px;
+  height: 8px;
+  border-radius: 50px;
+  margin-right: 4px;
+};
+.stateText {
+  color: #28a745;
+};
+.tableFilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+};
+.title {
+  height: 20px;
+  line-height: 20px;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 12px;
+  border-left: 4px solid #666;
+};
+.filter {
+  display: flex;
+};
+.filterItem {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+};
+.filterLabel {
+  font-weight: 500;
+  color: #999;
+};
+.submitButton {
+  margin-left: 20px;
+};
+.triggerMargin{
+  margin: 5px;
+}
+.selectWidth{
+  width: 200px;
+}
+.balloonLineHeight{
+  line-height: 24px;
+}
+

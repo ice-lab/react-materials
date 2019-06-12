@@ -1,0 +1,30 @@
+.container{
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding:80px 0;
+}
+.content{
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+.col{
+  width: 48%;
+  padding: 0 1%;
+}
+.title{
+  font-size: 28px;
+  font-weight: bold;
+}
+.description{
+  color: #999;
+  line-height: 22px;
+}
+.image{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  max-width: 360px;
+}

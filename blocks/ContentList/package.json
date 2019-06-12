@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/content-list-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "筛选和列表组合",
   "author": {
     "name": "ICE Team",
@@ -29,10 +29,6 @@
     "@icedesign/container": "^1.x",
     "@alifd/next": "^1.x"
   },
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "prop-types": "^15.5.8"
-  },
   "blockConfig": {
     "name": "content-list",
     "title": "内容列表",
@@ -51,6 +47,8 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
-    "react-dom": "^16.x"
+    "react": "^16.2.0",
+    "react-dom": "^16.x",
+    "prop-types": "^15.5.8"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/board-list-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "TODO 任务管理面板，可拖拽排序",
   "author": {
     "name": "ICE Team",
@@ -26,6 +26,7 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
+    "babel-runtime": "^6.26.0",
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
     "react-trello": "^1.33.0",

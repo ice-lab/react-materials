@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/notice-card-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "适用于顶部的消息提示",
   "author": "",
   "files": [
@@ -23,11 +23,10 @@
     "registry": "http://registry.npmjs.com"
   },
   "dependencies": {
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
+    "@alifd/next": "^1.x",
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "notice-card",
@@ -44,8 +43,5 @@
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
-  },
-  "devDependencies": {
-    "react-dom": "^16.x"
   }
 }

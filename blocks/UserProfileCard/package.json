@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/user-profile-card-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "用于展示用户详细信息的卡片",
   "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
   "files": [
@@ -25,10 +25,7 @@
   "dependencies": {
     "@icedesign/container": "^1.x",
     "@icedesign/img": "^0.1.2",
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
-    "react": "^16.2.0",
+    "@alifd/next": "^1.x",
     "prop-types": "^15.5.8"
   },
   "blockConfig": {
@@ -48,6 +45,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

@@ -1,0 +1,101 @@
+.formTitle {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: 4px;
+};
+.formItem {
+  margin-bottom: 20px;
+};
+.submitButton {
+  justify-content: center;
+};
+.checkbox {
+  color: #999;
+};
+.footer {
+  justify-content: center;
+  align-items: center;
+};
+.line {
+  margin: 0 5px;
+  color: #999;
+};
+.link {
+  color: #999;
+  font-size: 12px;
+  margin: 0 5px;
+};
+.container {
+  position: relative;
+  //width: 100wh;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url("./images/bg.jpg");
+};
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fff;
+};
+.containerLogin {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  height: 100vh !important;
+};
+.logoLink {
+  display: block;
+};
+.logoImg {
+  width: 102px;
+};
+.title {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+};
+.description {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #fff;
+};
+.button {
+  margin-top: 40px;
+  width: 180px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 50px;
+  color: #fff;
+  border: 1px solid #fff;
+};
+.buttonCustom {
+  margin-top: 40px !important;
+  width: 180px !important;
+  height: 48px !important;
+  line-height: 48px !important;
+  text-align: center !important;
+  border-radius: 50px !important;
+  border: 1px solid #9816f4 ;
+  box-shadow: 0px 5px 10px 2px rgba(152,22,244,0.19) !important;
+};
+.input {
+  width: 320px !important;
+  border-radius: 0 !important;
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-color: #ebedf2 !important;
+};
+.customBorder{
+  border: 0;
+}

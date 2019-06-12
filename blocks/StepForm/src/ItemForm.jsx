@@ -5,6 +5,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import { Input, Button, Select, Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -52,9 +53,9 @@ export default class ItemForm extends Component {
         onChange={this.onFormChange}
       >
         <div>
-          <h3 style={styles.formTitle}>商品信息</h3>
-          <Row style={styles.formItem}>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+          <h3 className={styles.formTitle}>商品信息</h3>
+          <Row className={styles.formItem}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               宝贝标题：
             </Col>
             <Col s="12" l="10">
@@ -63,14 +64,14 @@ export default class ItemForm extends Component {
                   required
                   placeholder="请输入宝贝标题"
                   message="宝贝标题必须填写"
-                  style={{ width: '100%' }}
+                  className={styles.babyTltle}
                 />
               </IceFormBinder>
               <IceFormError name="title" />
             </Col>
           </Row>
-          <Row style={styles.formItem}>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+          <Row className={styles.formItem}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               商品类型：
             </Col>
             <Col s="12" l="10">
@@ -78,7 +79,7 @@ export default class ItemForm extends Component {
                 <Select
                   className="next-form-text-align"
                   required
-                  style={{ width: '30%' }}
+                  className={styles.goodsTypoe}
                   message="请选择商品类型"
                   dataSource={[
                     { label: '全新', value: 'new' },
@@ -89,8 +90,8 @@ export default class ItemForm extends Component {
               <IceFormError name="type" />
             </Col>
           </Row>
-          <Row style={styles.formItem}>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+          <Row className={styles.formItem}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               宝贝价格：
             </Col>
             <Col s="12" l="10">
@@ -105,17 +106,17 @@ export default class ItemForm extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xxs="6" s="4" l="3" style={styles.formLabel}>
+            <Col xxs="6" s="4" l="3" className={styles.formLabel}>
               宝贝描述：
             </Col>
             <Col s="12" l="10">
               <IceFormBinder name="desc">
-                <Input.TextArea style={{ width: '100%' }} />
+                <Input.TextArea className={styles.describle} />
               </IceFormBinder>
             </Col>
           </Row>
           <Row>
-            <Col offset={3} style={styles.btns}>
+            <Col offset={3} className={styles.btns}>
               <Button onClick={this.submit} type="primary">
                 下一步
               </Button>
@@ -127,23 +128,3 @@ export default class ItemForm extends Component {
   }
 }
 
-const styles = {
-  formTitle: {
-    margin: '0 0 20px',
-    paddingBottom: '10px',
-    fontSize: '14px',
-    borderBottom: '1px solid #eee',
-  },
-  formItem: {
-    height: '28px',
-    lineHeight: '28px',
-    marginBottom: '30px',
-  },
-  formLabel: {
-    textAlign: 'right',
-  },
-  btns: {
-    marginTop: '25px',
-    marginBottom: '25px',
-  },
-};

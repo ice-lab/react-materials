@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/simple-form-dialog-block",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "简单的表单弹窗",
   "files": [
     "src/",

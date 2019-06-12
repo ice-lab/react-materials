@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/tab-dialog-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "标签内容弹窗",
   "files": [
     "src/",

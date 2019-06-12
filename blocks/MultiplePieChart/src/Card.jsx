@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Option } = Select;
 
@@ -28,8 +29,8 @@ export default class Card extends Component {
     const { title, options } = this.props;
     return (
       <IceContainer>
-        <div style={styles.cardHead}>
-          <h4 style={styles.cardTitle}>{title}</h4>
+        <div className={styles.cardHead}>
+          <h4 className={styles.cardTitle}>{title}</h4>
           <Select size="large" defaultValue="day">
             {options.map((option, index) => {
               return (
@@ -45,19 +46,3 @@ export default class Card extends Component {
     );
   }
 }
-
-const styles = {
-  cardHead: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: '0 0 20px',
-    paddingBottom: '15px',
-    borderBottom: '1px solid #eee',
-  },
-  cardTitle: {
-    margin: '0',
-    fontSize: '18px',
-    fontWeight: 'bold',
-  },
-};

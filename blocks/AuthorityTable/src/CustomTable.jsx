@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Pagination, Balloon, Icon } from '@alifd/next';
-
+import styles from './index.module.scss';
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
     return {
@@ -54,9 +54,9 @@ export default class Home extends Component {
     return (
       <Balloon
         align="lt"
-        trigger={<div style={{ margin: '5px' }}>{value}</div>}
+        trigger={<div className={styles.triggerMargin}>{value}</div>}
         closable={false}
-        style={{ lineHeight: '24px' }}
+        className={styles.balloonLineHeight}
       >
         皮肤科属于外科，主要治疗各种皮肤病，常见皮肤病有牛皮癣 、 疱疹
         、酒渣鼻等
@@ -66,17 +66,17 @@ export default class Home extends Component {
 
   renderState = (value) => {
     return (
-      <div style={styles.state}>
-        <span style={styles.circle} />
-        <span style={styles.stateText}>{value}</span>
+      <div>
+        <span className={styles.circle} />
+        <span className={styles.stateText}>{value}</span>
       </div>
     );
   };
 
   renderOper = () => {
     return (
-      <div style={styles.oper}>
-        <Icon type="edit" size="small" style={styles.editIcon} />
+      <div>
+        <Icon type="edit" size="small" className={styles.editIcon} />
       </div>
     );
   };
@@ -84,7 +84,7 @@ export default class Home extends Component {
   render() {
     const { dataSource } = this.state;
     return (
-      <div style={styles.tableContainer}>
+      <div className={styles.tableContainer}>
         <Table
           dataSource={dataSource}
           onSort={this.handleSort}
@@ -132,7 +132,7 @@ export default class Home extends Component {
           />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={this.state.current}
           onChange={this.handlePagination}
         />
@@ -141,28 +141,3 @@ export default class Home extends Component {
   }
 }
 
-const styles = {
-  tableContainer: {
-    background: '#fff',
-    paddingBottom: '10px',
-  },
-  pagination: {
-    margin: '20px 0',
-    textAlign: 'center',
-  },
-  editIcon: {
-    color: '#999',
-    cursor: 'pointer',
-  },
-  circle: {
-    display: 'inline-block',
-    background: '#28a745',
-    width: '8px',
-    height: '8px',
-    borderRadius: '50px',
-    marginRight: '4px',
-  },
-  stateText: {
-    color: '#28a745',
-  },
-};

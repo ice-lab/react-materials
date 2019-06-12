@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Input, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-
+import styles from './index.module.scss';
 export default class Filter extends Component {
   static displayName = 'Filter';
 
@@ -20,10 +20,10 @@ export default class Filter extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <div style={styles.label}>方案名称:</div>
+      <IceContainer className={styles.containerFilter}>
+        <div className={styles.label}>方案名称:</div>
         <Input placeholder="请输入方案名称" hasClear onChange={this.onChange} />
-        <Button type="primary" style={styles.button}>
+        <Button type="primary" className={styles.button}>
           查 询
         </Button>
       </IceContainer>
@@ -31,20 +31,4 @@ export default class Filter extends Component {
   }
 }
 
-const styles = {
-  container: {
-    margin: '20px 0px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  label: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '32px',
-    fontWeight: '500',
-    marginRight: '10px',
-  },
-  button: {
-    marginLeft: '20px',
-  },
-};
+

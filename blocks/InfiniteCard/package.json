@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/infinite-card-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "适用于横向滚动的多数据展示卡片",
   "author": "",
   "files": [
@@ -24,11 +24,10 @@
   },
   "dependencies": {
     "@icedesign/container": "^1.x",
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
+    "@alifd/next": "^1.x",
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
   },
   "blockConfig": {
     "name": "infinite-card",
@@ -45,8 +44,5 @@
     "build": "ice build",
     "screenshot": "ice-devtools screenshot",
     "prepublishOnly": "npm run build && npm run screenshot"
-  },
-  "devDependencies": {
-    "react-dom": "^16.x"
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-
+import styles from  './index.module.scss';
 const { Row, Col } = Grid;
 
 class FeatureItem extends Component {
@@ -9,34 +9,30 @@ class FeatureItem extends Component {
     return (
       <Row
         wrap
-        style={{
-          paddingTop: 20,
-          alignItems: 'center',
-          borderBottom: '1px solid #f4f4f4',
-        }}
+        className={styles.row}
       >
-        <Col l={3} s={4} xxs={24} style={{ margin: '0 0 20px 0' }}>
-          <div style={styles.cover}>
+        <Col l={3} s={4} xxs={24} className={styles.col}>
+          <div>
             <img
               alt={data.title}
-              style={{ width: 80, height: 80, display: 'block' }}
+              className={styles.firstImg}
               src={data.icon}
             />
           </div>
         </Col>
-        <Col l={11} s={10} xxs={24} style={{ margin: '0 0 20px 0' }}>
-          <h3 style={styles.title}>{data.title}</h3>
-          <div style={styles.desc}>{data.desc}</div>
+        <Col l={11} s={10} xxs={24} className={styles.col}>
+          <h3 className={styles.titles}>{data.title}</h3>
+          <div className={styles.desc}>{data.desc}</div>
         </Col>
-        <Col l={4} s={4} xxs={24} style={{ margin: '0 0 20px 0' }}>
-          <div style={{ textAlign: 'center', color: '#999', fontSize: 12 }}>
+        <Col l={4} s={4} xxs={24} className={styles.col}>
+          <div  className={styles.status} >
             {data.status}
           </div>
         </Col>
-        <Col l={6} s={6} xxs={24} style={{ margin: '0 0 20px 0' }}>
-          <div style={styles.desc}>{data.detail}</div>
+        <Col l={6} s={6} xxs={24} className={styles.col}>
+          <div className={styles.desc}>{data.detail}</div>
           <div>
-            <a href={data.url} style={{ fontSize: 12 }}>
+            <a href={data.url} className={styles.detail} >
               了解详情
             </a>
           </div>
@@ -46,16 +42,6 @@ class FeatureItem extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: 0,
-    fontSize: 16,
-  },
-  desc: {
-    fontSize: 12,
-    color: '#999',
-    lineHeight: '20px',
-  },
-};
+
 
 export default FeatureItem;

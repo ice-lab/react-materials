@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/todo-list-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "任务列表",
   "author": {
     "name": "ICE Team",
@@ -29,9 +29,6 @@
     "@icedesign/container": "^1.x",
     "@alifd/next": "^1.x"
   },
-  "peerDependencies": {
-    "react": "^16.2.0"
-  },
   "blockConfig": {
     "name": "todo-list",
     "title": "任务列表",
@@ -50,6 +47,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

@@ -1,0 +1,58 @@
+.wrapper{
+  position: relative;
+  overflow: hidden;
+  height: 690px;
+}
+.productContent{
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+}
+.titleLine{
+  width: 140px;
+  height: 2px;
+  margin-top: 17px;
+  background: #ffffff;
+  border-left: 2px solid #5fb2f8
+}
+.titleHighlightLine{
+  background: #3080fe;
+  height: 2;
+  width: 33px;
+}
+.productInfo{
+  width: 400px;
+  margin-right: 90px;
+  margin-top: 40px;
+}
+.title{
+  color: #223c4e;
+  font-size: 36px
+}
+.desc{
+  color: #6D7A82;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 24px
+}
+.extraButton{
+  margin-top: 35px;
+  border-color: #3080fe;
+  background: transparent;
+  color: #3080fe !important;
+}
+.clipBackground{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fafafa;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+}
+.proimg{
+  width: 696px;
+  height: 527px;
+}

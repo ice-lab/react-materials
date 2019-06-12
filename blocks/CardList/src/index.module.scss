@@ -1,0 +1,73 @@
+.container {
+  background: #fafafa;
+}
+.createScheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  cursor: pointer;
+}
+.card {
+  //displa: flex;
+  margin-bottom:
+    20px;
+  background: #fff;
+  border-radius: 6px;
+}
+.head {
+  position: relative;
+  padding: 16px 16px 8px;
+  border-bottom: 1px solid #e9e9e9;
+}
+.title {
+  margin: 0 0 5px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0,0,0,.85);
+}
+.desc {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+.body {
+  position: relative;
+  padding: 16px;
+}
+.info {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #666;
+}
+.time {
+  position: relative;
+}
+.addIcon {
+  margin-right: 10px;
+}
+.editIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+.containerFilter {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.label {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.button {
+  margin-left: 20px;
+}

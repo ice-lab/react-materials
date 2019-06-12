@@ -1,0 +1,15 @@
+.row{
+  margin: 0 10px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.card{
+  padding: 20px 10px;
+}
+.paginationContainer{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end
+}

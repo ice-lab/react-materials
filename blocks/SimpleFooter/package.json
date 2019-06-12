@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/simple-footer-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "LOGO和导航组合的页脚",
   "files": [
     "src/",

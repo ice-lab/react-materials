@@ -1,0 +1,25 @@
+.noticeItem {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding: 20px;
+}
+
+.noticeItemTitle {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.noticeItemBody {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bodyItem {
+    display: flex;
+    flex-basis: 33%;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 10px;
+}

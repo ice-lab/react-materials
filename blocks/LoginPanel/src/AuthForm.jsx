@@ -9,6 +9,7 @@ import {
 } from '@icedesign/form-binder';
 import CustomInput from './CustomInput';
 import CustomButton from './CustomButton';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -57,12 +58,12 @@ class AuthForm extends Component {
   renderButton = (item) => {
     return (
       <Row
-        style={{ ...styles.formItem, ...styles.submitButton }}
+        className={` ${styles.formItem} ${styles.submitButton}`}
         key={item.label}
       >
         <CustomButton
           {...item.componentProps}
-          style={{ border: 0 }}
+          className={styles.customBorder}
           onClick={this.handleSubmit}
         >
           {item.label}
@@ -73,8 +74,8 @@ class AuthForm extends Component {
 
   renderInput = (item) => {
     return (
-      <Row style={styles.formItem} key={item.label}>
-        <Col style={styles.formItemCol}>
+      <Row className={styles.formItem} key={item.label}>
+        <Col className={styles.formItemCol}>
           <IceFormBinder {...item.formBinderProps}>
             <CustomInput {...item.componentProps} />
           </IceFormBinder>
@@ -88,7 +89,7 @@ class AuthForm extends Component {
 
   renderCheckbox = (item) => {
     return (
-      <Row style={styles.formItem} key={item.label}>
+      <Row className={styles.formItem} key={item.label}>
         <Col>
           <IceFormBinder {...item.formBinderProps}>
             <Checkbox {...item.componentProps}>{item.label}</Checkbox>
@@ -115,21 +116,21 @@ class AuthForm extends Component {
     const { value } = this.state;
 
     return (
-      <div style={styles.formContainer}>
-        <h4 style={styles.formTitle}>{title}</h4>
+      <div className={styles.formContainer}>
+        <h4 className={styles.formTitle}>{title}</h4>
         <IceFormBinderWrapper
           value={value}
           onChange={this.formChange}
           ref="form"
         >
-          <div style={styles.formItems}>
+          <div className={styles.formItems}>
             {this.renderFromItem(config)}
 
             {Array.isArray(links) && links.length ? (
-              <Row style={styles.footer}>
+              <Row className={styles.footer}>
                 {links.map((item, index) => {
                   return (
-                    <a key={index} href={item.to} style={styles.link}>
+                    <a key={index} href={item.to} className={styles.link}>
                       {item.text}
                     </a>
                   );
@@ -143,36 +144,5 @@ class AuthForm extends Component {
   }
 }
 
-const styles = {
-  formTitle: {
-    marginBottom: '40px',
-    fontWeight: '500',
-    fontSize: '32px',
-    textAlign: 'center',
-    letterSpacing: '4px',
-  },
-  formItem: {
-    marginBottom: '20px',
-  },
-  submitButton: {
-    justifyContent: 'center',
-  },
-  checkbox: {
-    color: '#999',
-  },
-  footer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  line: {
-    margin: '0 5px',
-    color: '#999',
-  },
-  link: {
-    color: '#999',
-    fontSize: '12px',
-    margin: '0 5px',
-  },
-};
 
 export default AuthForm;

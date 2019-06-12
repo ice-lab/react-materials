@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Table, Switch, Icon, Button, Grid, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -55,16 +56,17 @@ export default class CustomTable extends Component {
 
   renderOper = () => {
     return (
-      <div style={styles.oper}>
+      <div className={styles.oper}>
         <Icon
           type="edit"
           size="small"
-          style={{ ...styles.icon, ...styles.editIcon }}
+         
+          className= {`${styles.icon} ${styles.editIcon}`}             
         />
         <Icon
           type="ashbin"
           size="small"
-          style={{ ...styles.icon, ...styles.deleteIcon }}
+          className={`${styles.icon} ${styles.deleteIcon}`} 
         />
       </div>
     );
@@ -73,20 +75,20 @@ export default class CustomTable extends Component {
   render() {
     return (
       <IceContainer title="用户列表">
-        <Row wrap style={styles.headRow}>
+        <Row wrap className={styles.headRow}>
           <Col l="12">
-            <Button type="primary" style={styles.button}>
-              <Icon type="add" size="xs" style={{ marginRight: '4px' }} />添加用户
+            <Button type="primary" className={styles.button}>
+              <Icon type="add" size="xs" className={styles.user} />添加用户
             </Button>
           </Col>
-          <Col l="12" style={styles.center}>
-            <Button type="normal" style={styles.button}>
+          <Col l="12" className={styles.center}>
+            <Button type="normal" className={styles.button}>
               删除
             </Button>
-            <Button type="normal" style={{ ...styles.button, marginLeft: 10 }}>
+            <Button type="normal" className={`${styles.button} ${styles.normaiBtn}`}>
               导入
             </Button>
-            <Button type="normal" style={{ ...styles.button, marginLeft: 10 }}>
+            <Button type="normal" className={`${styles.button} ${styles.normaiBtn}`}>
               下载
             </Button>
           </Col>
@@ -106,7 +108,7 @@ export default class CustomTable extends Component {
           <Table.Column title="操作" width={100} cell={this.renderOper} />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={this.state.current}
           onChange={this.handlePaginationChange}
         />
@@ -115,25 +117,4 @@ export default class CustomTable extends Component {
   }
 }
 
-const styles = {
-  headRow: {
-    marginBottom: '10px',
-  },
-  icon: {
-    color: '#2c72ee',
-    cursor: 'pointer',
-  },
-  deleteIcon: {
-    marginLeft: '20px',
-  },
-  center: {
-    textAlign: 'right',
-  },
-  button: {
-    borderRadius: '4px',
-  },
-  pagination: {
-    marginTop: '20px',
-    textAlign: 'right',
-  },
-};
+

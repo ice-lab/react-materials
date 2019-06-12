@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/real-time-data-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "基于 highcharts 的动态数据展示区块",
   "author": "",
   "files": [
@@ -26,11 +26,8 @@
     "@icedesign/container": "^1.x",
     "highcharts": "^6.1.1",
     "react-highcharts": "^16.0.2",
-    "@alifd/next": "^1.x"
-  },
-  "peerDependencies": {
     "prop-types": "^15.5.8",
-    "react": "^16.2.0"
+    "@alifd/next": "^1.x"
   },
   "blockConfig": {
     "name": "real-time-data",
@@ -49,6 +46,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {
+    "react": "^16.2.0",
     "react-dom": "^16.x"
   }
 }

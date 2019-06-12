@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.downloadCard {
+  .next-btn-medium {
+    padding: 0 8px;
+    .next-icon-first {
+      margin-right: 0;
+    }
+  }
+}
+
+.columnCardItem{
+  margin-bottom: 20;
+  position: relative;
+  float: left;
+  width: 100%;
+  min-width: 284px;
+  // height: 280px;
+  padding: 0px;
+  overflow: hidden;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1),0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  background: #fff
+};
+.cardBody{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #dedede;
+};
+.avatarWrapper{
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin: 0 auto;
+};
+.title{
+  font-size: 20px;
+  margin: 10px;
+};
+.desc{
+  font-size: 15px;
+  color: #999;
+};
+.downloadButtons{
+  margin: 15px 0;
+  text-align: center;
+};
+.rightButton{
+  width: 114px;
+  font-size: 13px;
+  margin-left: 10px;
+};
+.leftButton{
+  width: 114px;
+  font-size: 13px;
+};
+.cardBottom{
+  padding: 10px 10px;
+  background: #f6f7f9;
+};
+.bottomText{
+  margin-left: 15px;
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+};
+.img{
+  width: 100%;
+};

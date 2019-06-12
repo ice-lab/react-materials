@@ -1,0 +1,58 @@
+.cardContainer {
+  height: 280px !important;
+};
+.cardTitle {
+  position: relative;
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+};
+.more {
+  position: absolute;
+  right: 0;
+  font-size: 12px;
+  color: #666;
+};
+.item {
+  position: relative;
+  display: block;
+};
+.itemTime {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  font-size: 12px;
+};
+.itemTitle {
+  height: 34px;
+  line-height: 34px;
+  font-size: 13px;
+};
+.itemComment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+};
+.commentTitle {
+  height: 28px;
+  line-height: 28px;
+  font-size: 13px;
+};
+.commentTime {
+  font-size: 12px;
+};
+.commentNum {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 50px;
+  background: #FF2851;
+  color: #fff;
+};

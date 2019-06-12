@@ -1,0 +1,49 @@
+.title {
+    margin: 0 0 10px;
+    font-size: 18px;
+  }
+  .noticeList {
+    margin: 0;
+    padding: 0;
+  }
+  .noticeIte {
+    position: relative;
+    padding: 12px 0;
+    padding-right: 65px;
+    list-style: none ;
+    border-bottom: 1px solid #F4F4F4;
+  }
+  .noticeTitle {
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+  }
+  .noticeTag {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    margin-left: 5px;
+  }
+  .noticeTime {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    font-size: 12px;
+    color: #999;
+  }
+  .paginationWrap {
+    margin-top: 20px;
+    text-align: right;
+  }
+  .up{
+    color: #4296ff;
+    background: #eff6ff;
+  }
+  .new {
+    color: #fca61c;
+    background: #fff4e2;
+  }
+  .hot {
+    color: #f86d6d;
+    background: #ffe8e8;
+  }

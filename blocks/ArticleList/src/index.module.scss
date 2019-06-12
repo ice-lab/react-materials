@@ -1,0 +1,61 @@
+
+.articleFilterCard {
+  margin-bottom: 10px !important;
+  min-height: auto;
+  padding: 0 !important;
+}
+
+.sortItem {
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  float: left;
+  white-space: nowrap;
+  padding: 20px;
+}
+.articleItem {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.title {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+.desc {
+  line-height: 24px;
+  font-size: 14px;
+  color: #999;
+}
+.articleItemFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.tag {
+  font-size: 13px;
+  background: #f5f5f5;
+  color: #999;
+  padding: 4px 15px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
+.articleItemTags {
+  padding: 10px 0;
+}
+.articleItemMeta {
+  padding: 10px 0;
+}
+.itemMetaIcon {
+  font-size: 14px;
+  color: #999;
+  margin-right: 15px;
+}
+.articleSort {
+  margin: 0;
+  padding: 0;
+}
+
+

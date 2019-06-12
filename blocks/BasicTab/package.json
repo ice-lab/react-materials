@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/basic-tab-block",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "基础 Tab 组件",
   "main": "lib/index.js",
   "files": [
