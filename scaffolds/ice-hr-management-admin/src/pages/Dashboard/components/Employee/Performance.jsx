@@ -1,71 +1,44 @@
-import React, { Component } from 'react';
-import IceContainer from '@icedesign/container';
-import { Table, Progress } from '@alifd/next';
-import { withRouter } from 'react-router-dom';
-import DATA from './data';
+import React, { Component } from "react";
+import IceContainer from "@icedesign/container";
+import { Table, Progress } from "@alifd/next";
+import { withRouter } from "react-router-dom";
+import DATA from "./data";
+
+import styles from "./index.module.scss";
 
 @withRouter
 export default class TopActiveChart extends Component {
   renderProduct = (value, index, record) => {
     return (
-      <div style={styles.product}>
-        <p style={styles.prodyctTitle}>{record.title}</p>
+      <div className={styles.product}>
+        <p className={styles.prodyctTitle}>{record.title}</p>
       </div>
     );
   };
 
-  renderLead = (value) => {
-    return (
-      <img
-        src={value}
-        alt=""
-        style={{
-          width: '24px',
-          height: '24px',
-          borderRadius: '4px',
-        }}
-      />
-    );
+  renderLead = value => {
+    return <img src={value} alt="" className={styles.renderLead} />;
   };
 
   renderStatus = (value, index, record) => {
     return (
       <span
         style={{
-          // border: `1px solid ${record.color}`,
-          color: record.color,
-          borderRadius: '4px',
-          width: '78px',
-          height: '24px',
-          lineHeight: '24px',
-          fontSize: '12px',
-          fontWeight: '500',
-          textAlign: 'center',
-          display: 'inline-block',
+          color: record.color
         }}
+        className={styles.renderStatus}
       >
         {value}
       </span>
     );
   };
 
-  renderTeam = (value) => {
+  renderTeam = value => {
     return (
       <div>
         {value.map((item, index) => {
           return (
-            <img
-              src={item}
-              alt=""
-              key={index}
-              style={{
-                width: '24px',
-                height: '24px',
-                borderRadius: '50px',
-                border: '2px solid #fff',
-                boxShadow: '0px 2px 10px 0px rgba(0,0,0,0.2)',
-              }}
-            />
+            <img src={item} alt="" key={index} className={styles.renderTeam} />
           );
         })}
       </div>
@@ -75,7 +48,7 @@ export default class TopActiveChart extends Component {
   render() {
     return (
       <IceContainer title="项目列表">
-        <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
+        <Table dataSource={DATA} hasBorder={false} style={{ width: "100%" }}>
           <Table.Column title="项目名称" dataIndex="name" />
           <Table.Column title="截止时间" dataIndex="endTime" />
           <Table.Column
@@ -101,17 +74,3 @@ export default class TopActiveChart extends Component {
     );
   }
 }
-
-const styles = {
-  product: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  productPic: {
-    width: 60,
-    height: 60,
-  },
-  productTitle: {
-    margin: 0,
-  },
-};
