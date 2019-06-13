@@ -7,6 +7,7 @@ import TopList from './TopList';
 import LineChart from './LineChart';
 import Map from './Map';
 import Title from './Title';
+import styles from './index.module.scss';
 
 const data = {
   source: [
@@ -120,21 +121,21 @@ export default class DataAnalysis extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.main}>
-          <div style={styles.side}>
+      <div className={styles.container}>
+        <div className={styles.main}>
+          <div className={styles.side}>
             <PieChart data={data.source} title="交易来源占比" />
             <TopList data={data.topShop} title="成交额top店铺" />
             <LineChart data={data.source} title="渠道销售排行" />
           </div>
-          <div style={styles.middle}>
-            <div style={styles.header}>
-              <h1 style={styles.pageTitle}>某某某品牌 电商实时状况</h1>
-              <p style={styles.time}>
+          <div className={styles.middle}>
+            <div className={styles.header}>
+              <h1 className={styles.pageTitle}>某某某品牌 电商实时状况</h1>
+              <p className={styles.time}>
                 <Icon type="clock" size="xs" /> {this.state.date}
               </p>
               <Title data="今日交易额" />
-              <h2 style={styles.sum}>
+              <h2 className={styles.sum}>
                 1682
                 <TextLoop
                   speed={1000}
@@ -144,13 +145,13 @@ export default class DataAnalysis extends Component {
               </h2>
             </div>
           </div>
-          <div style={styles.side}>
+          <div className={styles.side}>
             <PieChart data={data.target} title="销售目标达成率" />
             <TopList data={data.topItem} title="成交额top商品" />
             <PieChart data={data.member} title="会员等级占比" />
           </div>
         </div>
-        <div style={styles.bg}>
+        <div className={styles.bg}>
           <Map />
         </div>
       </div>
@@ -158,51 +159,3 @@ export default class DataAnalysis extends Component {
   }
 }
 
-const styles = {
-  container: {
-    backgroundColor: '#000',
-    color: '#fff',
-    position: 'relative',
-    height: '100vh',
-  },
-  main: {
-    padding: '20px',
-    display: 'flex',
-    flexDirection: 'row',
-    height: '100vh',
-  },
-  bg: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    left: 0,
-  },
-  side: {
-    zIndex: 1,
-    width: '320px',
-    padding: '10px',
-  },
-  middle: {
-    flex: 1,
-  },
-  header: {
-    position: 'relative',
-    zIndex: 9,
-    textAlign: 'center',
-  },
-  pageTitle: {
-    fontSize: '36px',
-    margin: 0,
-  },
-  time: {
-    marginBottom: 20,
-  },
-  sum: {
-    height: '44px',
-    lineHeight: '44px',
-    margin: '25px 0 0',
-    color: '#f7d947',
-    fontSize: '62px',
-    fontWeight: 400,
-  },
-};
