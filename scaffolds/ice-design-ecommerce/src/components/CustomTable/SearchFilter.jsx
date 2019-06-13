@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from '@alifd/next';
 import CustomForm from '../CustomForm';
+import styles from './index.module.scss';
 
 export default class SearchFilter extends Component {
   static displayName = 'SearchFilter';
@@ -54,7 +55,7 @@ export default class SearchFilter extends Component {
     return (
       <Button
         text
-        style={styles.extraContent}
+        className={styles.extraContent}
         onClick={this.handleAdvancedSearch}
       >
         高级搜索{' '}
@@ -88,10 +89,4 @@ export default class SearchFilter extends Component {
   }
 }
 
-const styles = {
-  extraContent: {
-    position: 'absolute',
-    right: '0',
-    bottom: '0',
-  },
-};
+
