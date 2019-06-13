@@ -1,0 +1,51 @@
+.title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0,.85);
+};
+.table {
+  margin-top: 10px;
+};
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+};
+.detailButton {
+  background: #41cac0;
+  margin-right: 8px;
+};
+.container {
+  margin: 20px;
+  padding: 0;
+};
+.formRow {
+  padding: 10px 20px !important;
+};
+.formItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+};
+.formLabel {
+  min-width: 70px;
+};
+.tableCustom {
+  margin-top: 10px !important;
+  min-height: 500px !important;
+};
+.pagination {
+  margin: 20px 0 !important;
+  text-align: right !important;
+};
+.marginRight{
+  margin-right: 5px !important;
+}
+.selectMin{
+  width: 200px;
+}
