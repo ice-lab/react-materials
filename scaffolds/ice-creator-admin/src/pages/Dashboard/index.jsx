@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UserLanding from './components/UserLanding';
-import DataOverview from './components/DataOverview/DataOverview';
-import NoticeList from './components/NoticeList/NoticeList';
+import DataOverview from './components/DataOverview';
+import NoticeList from './components/NoticeList';
 
 export default class Dashboard extends Component {
   static displayName = 'Dashboard';

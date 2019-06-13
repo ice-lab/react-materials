@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Container from '@icedesign/container';
 import FeatureItem from './FeatureItem';
+import styles from './index.module.scss';
 
-export default class AccountFeatures extends Component {
+export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,10 +53,10 @@ export default class AccountFeatures extends Component {
   render() {
     return (
       <Container>
-        <div style={styles.header}>
-          <h2 style={{ margin: 0, fontSize: 16 }}>功能状态</h2>
+        <div className={styles.header}>
+          <h2 className={styles.name}>功能状态</h2>
         </div>
-        <div style={styles.body}>
+        <div className={styles.body}>
           {this.state.dataSource.map((item, index) => {
             return <FeatureItem data={item} key={index} />;
           })}
@@ -65,8 +66,4 @@ export default class AccountFeatures extends Component {
   }
 }
 
-const styles = {
-  header: {
-    fontSize: 16,
-  },
-};
+

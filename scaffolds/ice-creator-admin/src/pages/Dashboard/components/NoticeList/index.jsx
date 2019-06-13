@@ -1,7 +1,7 @@
 import Container from '@icedesign/container';
 import React, { Component } from 'react';
 import fecha from 'fecha';
-
+import styles from './index.module.scss';
 import { Pagination } from '@alifd/next';
 
 const mokeDataTitle = [
@@ -11,7 +11,7 @@ const mokeDataTitle = [
   '【爆文创作挑战开启】6月爆文红榜美妆篇 ，五步掌握爆款技巧',
 ];
 
-class NoticeList extends Component {
+class Index extends Component {
   constructor(props) {
     super(props);
 
@@ -47,7 +47,7 @@ class NoticeList extends Component {
   render() {
     return (
       <Container>
-        <h3 style={styles.header}>平台公告</h3>
+        <h3 className={styles.header}>平台公告</h3>
         <div>
           {this.state.dataSource.map((notice, index) => {
             return (
@@ -57,27 +57,27 @@ class NoticeList extends Component {
                 rel="noopener noreferrer"
                 title={notice.title}
                 href={notice.url}
-                style={styles.noticeItem}
+                className={styles.noticeItem}
               >
                 <div>
-                  <span style={styles.title}>{notice.title}</span>
+                  <span className={styles.title}>{notice.title}</span>
                   {notice.top && (
-                    <span style={{ ...styles.tag, ...styles.top }}>置顶</span>
+                    <span className={`${styles.tag} ${styles.top }`}>置顶</span>
                   )}
                   {notice.hot && (
-                    <span style={{ ...styles.tag, ...styles.hot }}>HOT</span>
+                    <span className={`${styles.tag} ${styles.hot }`}>HOT</span>
                   )}
                   {notice.new && (
-                    <span style={{ ...styles.tag, ...styles.new }}>NEW</span>
+                    <span className={`${styles.tag} ${styles.new }`}>NEW</span>
                   )}
                 </div>
-                <span style={styles.time}>
+                <span className={styles.time}>
                   {fecha.format(notice.time, 'MM-DD HH:mm')}
                 </span>
               </a>
             );
           })}
-          <div style={{ textAlign: 'right', paddingTop: 20 }}>
+          <div className={styles.divPadding}>
             <Pagination onChange={this.handleChange} />
           </div>
         </div>
@@ -86,45 +86,6 @@ class NoticeList extends Component {
   }
 }
 
-const styles = {
-  header: {
-    fontSize: 16,
-    lineHeight: '16px',
-    paddingBottom: 20,
-    fontWeight: 700,
-  },
-  noticeItem: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid #fafafa',
-    lineHeight: '54px',
-    height: 54,
-    textDecoration: 'none',
-  },
-  title: {
-    color: '#333',
-  },
-  tag: {
-    fontSize: 12,
-    lineHeight: '16px',
-    marginLeft: 5,
-    padding: '2px 8px',
-    borderRadius: 20,
-  },
-  top: {
-    backgroundColor: '#eff6ff',
-    color: '#5e83fb',
-  },
-  hot: {
-    backgroundColor: '#ffe8e8',
-    color: '#ee706d',
-  },
-  new: {
-    backgroundColor: '#fff4e2',
-    color: '#f7da47',
-  },
-  time: { color: '#999' },
-};
 
-export default NoticeList;
+
+export default Index;

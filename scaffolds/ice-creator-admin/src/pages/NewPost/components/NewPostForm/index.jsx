@@ -16,7 +16,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import { withRouter } from 'react-router-dom';
-
+import styles from './index.module.scss';
 const { Option } = Select;
 const { Group: RadioGroup } = Radio;
 
@@ -66,16 +66,16 @@ export default class NewPostForm extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <div style={styles.title}>发布作品</div>
+      <IceContainer >
+        <div className={styles.title}>发布作品</div>
         <IceFormBinderWrapper
           value={this.state.value}
           onChange={this.formChange}
           ref="form"
         >
-          <div style={styles.formContent}>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>作品名称</div>
+          <div className={styles.formContent}>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>作品名称</div>
               <IceFormBinder
                 required
                 triggerType="onBlur"
@@ -85,15 +85,15 @@ export default class NewPostForm extends Component {
                 <Input
                   placeholder="请输入作品名称"
                   size="large"
-                  style={{ width: '400px' }}
+                  className={styles.width}
                 />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="name" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>作品简介</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>作品简介</div>
               <IceFormBinder
                 required
                 triggerType="onBlur"
@@ -103,21 +103,21 @@ export default class NewPostForm extends Component {
                 <Input.TextArea
                   placeholder="请输入作品简介"
                   size="large"
-                  style={{ width: '400px' }}
+                  className={styles.width}
                 />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="desc" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>作品类别</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>作品类别</div>
               <IceFormBinder name="cate">
                 <Select
                   placeholder="请选择"
                   mode="multiple"
                   size="large"
-                  style={{ width: '400px' }}
+                  className={styles.width}
                 >
                   <Option value="car">汽车</Option>
                   <Option value="finance">金融</Option>
@@ -125,8 +125,8 @@ export default class NewPostForm extends Component {
                 </Select>
               </IceFormBinder>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>发布作者</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>发布作者</div>
               <IceFormBinder
                 required
                 triggerType="onBlur"
@@ -136,15 +136,15 @@ export default class NewPostForm extends Component {
                 <Input
                   placeholder="请输入"
                   size="large"
-                  style={{ width: '400px' }}
+                  className={styles.width}
                 />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="author" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>封面图</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>封面图</div>
               <IceFormBinder name="cover">
                 <Upload.Card
                   listType="card"
@@ -152,17 +152,17 @@ export default class NewPostForm extends Component {
                 />
               </IceFormBinder>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>发布时间</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>发布时间</div>
               <IceFormBinder name="time">
                 <DatePicker
                   size="large"
-                  style={{ width: '400px' }}
+                  className={styles.width}
                 />
               </IceFormBinder>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>状态</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>状态</div>
               <IceFormBinder name="status">
                 <RadioGroup
                   dataSource={[
@@ -178,13 +178,13 @@ export default class NewPostForm extends Component {
                 />
               </IceFormBinder>
             </div>
-            <p style={styles.tips}>
+            <p className={styles.tips}>
               提醒：若选择“收费”状态的话，请确认已开通个人创作者账户
             </p>
             <Button
               type="primary"
               size="large"
-              style={styles.submitButton}
+              className={styles.submitButton}
               onClick={this.validateAllFormField}
             >
               提 交
@@ -196,35 +196,4 @@ export default class NewPostForm extends Component {
   }
 }
 
-const styles = {
-  title: {
-    marginBottom: '30px',
-    fontSize: '18px',
-    fontWeight: '500',
-    color: 'rgba(0, 0, 0,.85)',
-  },
-  formContent: {
-    marginLeft: '30px',
-  },
-  formItem: {
-    marginBottom: '25px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  formLabel: {
-    width: '70px',
-    marginRight: '15px',
-    textAlign: 'right',
-  },
-  formError: {
-    marginLeft: '10px',
-  },
-  tips: {
-    color: '#f37327',
-    fontSize: '12px',
-    margin: '20px 0',
-  },
-  submitButton: {
-    marginLeft: '85px',
-  },
-};
+
