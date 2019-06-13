@@ -5,7 +5,7 @@ import { Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { headerMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
-import './Header.scss';
+import './index.scss';
 
 @withRouter
 export default class Header extends Component {
