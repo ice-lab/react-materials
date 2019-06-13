@@ -5,7 +5,7 @@ import Footer from './Footer';
 import routerData from '../../routerConfig';
 import './UserLayout.scss';
 
-export default class UserLayout extends Component {
+export default class Index extends Component {
   render() {
     return (
       <Layout className="user-layout">

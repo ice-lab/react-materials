@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DatePicker, Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from '../ContainerTitle';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 const mockData = [
@@ -36,23 +36,21 @@ export default class PassengerFlow extends Component {
           extraAfter={
             <DatePicker onChange={(val, str) => console.log(val, str)} />
           }
-          style={{ marginBottom: '20px' }}
+          className={styles.titleMargin}
         />
         <Row wrap gutter="20">
           {mockData.map((item, index) => {
             return (
               <Col l="4" key={index}>
-                <div style={styles.item}>
-                  <div style={styles.title}>{item.title}</div>
-                  <div style={styles.num}>{item.value}</div>
-                  <div style={styles.ratio}>
+                <div className={styles.item}>
+                  <div className={styles.title}>{item.title}</div>
+                  <div className={styles.num}>{item.value}</div>
+                  <div className={styles.ratio}>
                     <Icon
                       type={`arrow-${item.change}-filling`}
                       size="small"
-                      style={{
-                        ...styles[`arrow${item.change}Icon`],
-                        ...styles.arrowIcon,
-                      }}
+                      className={styles[`arrow${item.change}Icon`]}
+                      className={styles.arrowIcon}
                     />
                     环比上涨 {item.ratio}
                   </div>
@@ -66,32 +64,4 @@ export default class PassengerFlow extends Component {
   }
 }
 
-const styles = {
-  item: {
-    border: '1px solid #e1e2e3',
-    padding: '15px',
-  },
-  title: {
-    color: '#666',
-    fontSize: '13px',
-    marginBottom: '15px',
-  },
-  num: {
-    color: '#333',
-    fontWeight: '600',
-    marginBottom: '15px',
-  },
-  ratio: {
-    color: '#666',
-    fontSize: '13px',
-  },
-  arrowIcon: {
-    marginRight: '5px',
-  },
-  arrowupIcon: {
-    color: 'red',
-  },
-  arrowdownIcon: {
-    color: 'green',
-  },
-};
+

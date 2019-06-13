@@ -4,7 +4,7 @@ import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { asideMenuConfig } from '../../../../menuConfig';
 
-import './Aside.scss';
+import './index.scss';
 
 @withRouter
 export default class BasicLayout extends Component {

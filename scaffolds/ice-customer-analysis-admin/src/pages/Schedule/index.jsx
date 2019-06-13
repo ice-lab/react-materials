@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Table, Icon, Pagination, Balloon } from '@alifd/next';
 import Ellipsis from '@icedesign/ellipsis';
-import styles from './Schedule.module.scss'
-import './Schedule.scss';
+import styles from './index.module.scss'
+import './index.scss';
 
 
 const getData = () => {

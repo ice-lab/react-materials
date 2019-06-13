@@ -5,19 +5,19 @@ import Logo from '../Logo';
 
 import './Footer.scss';
 
-export default class Footer extends PureComponent {
+export default class Index extends PureComponent {
   render() {
     const { className, style } = this.props;
     return (
       <Layout.Footer
         className={cx('ice-design-layout-footer', className)}
+        // className={styles.lineHeight}
         style={{
-          ...style,
-          lineHeight: '36px',
+          ...style
         }}
       >
         <div className="ice-design-layout-footer-body">
-          <div style={{ filter: 'grayscale(100%)', opacity: 0.3 }}>
+          <div className="filter">
             <Logo isDark />
           </div>
           <div className="copyright">
