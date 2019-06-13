@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
+import styles from './index.module.scss';
 
 const mock = {
   index: [
@@ -40,9 +41,9 @@ export default class BarChart extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <h4 style={styles.average}>
-          平均执行天数: <span style={styles.number}>{mock.average}</span>
+      <div className={styles.container}>
+        <h4 className={styles.average}>
+          平均执行天数: <span className={styles.number}>{mock.average}</span>
         </h4>
         <Chart
           width={220}
@@ -90,20 +91,4 @@ export default class BarChart extends Component {
   }
 }
 
-const styles = {
-  container: {
-    position: 'relative',
-  },
-  average: {
-    position: 'absolute',
-    top: '-10px',
-    textAlign: 'center',
-    width: '100%',
-    fontSize: '12px',
-    textIndent: '20px',
-    color: '#999',
-  },
-  number: {
-    color: '#5e83fb',
-  },
-};
+

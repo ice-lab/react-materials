@@ -1,3 +1,20 @@
+
+.container {
+  position: relative;
+}
+.average{
+  position: absolute;
+  top: -10px;
+  text-align: center;
+  width: 100%;
+  font-size: 12px;
+  text-indent: 20px;
+  color: #999;
+}
+.number{
+  color: #5e83fb;
+}
+
 .container {
   width: 50%;
   padding: 10px;
