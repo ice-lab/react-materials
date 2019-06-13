@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { Icon, Nav } from '@alifd/next';
 import Logo from '../Logo';
 import { asideMenuConfig } from '../../../../menuConfig';
-import './scss/base.scss';
+import './index.modules.scss';
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
@@ -136,7 +136,7 @@ export default class Aside extends Component {
         )}
 
         <Nav
-          style={{ width: 200 }}
+          className="nav-box"
           direction="ver"
           activeDirection={null}
           selectedKeys={[pathname]}

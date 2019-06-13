@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import Layout from '@icedesign/layout';
 import Logo from '../Logo';
 
-import './Footer.scss';
+import './index.modules.scss';
 
 export default class Footer extends PureComponent {
   render() {
     return (
       <Layout.Footer className="ice-design-layout-footer" type={null}>
         <div className="ice-design-layout-footer-body">
-          <div style={{ filter: 'grayscale(100%)', opacity: 0.3 }}>
+          <div className="logo-div-img">
             <Logo />
           </div>
           <div className="copyright">

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Logo.scss';
+import './index.modules.scss';
 
 export default class Logo extends PureComponent {
   render() {

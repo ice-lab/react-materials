@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { headerMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
 
-import './scss/base.scss';
+import './index.modules.scss';
 
 export default class Header extends PureComponent {
   render() {

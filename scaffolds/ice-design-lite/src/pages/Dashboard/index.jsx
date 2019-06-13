@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Guide from '../../components/Guide';
 
-import './Dashboard.scss';
+import './index.scss';
 
 export default class Dashboard extends Component {
   static displayName = 'Dashboard';
