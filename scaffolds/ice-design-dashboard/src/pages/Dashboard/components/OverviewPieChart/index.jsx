@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart, Geom, Tooltip, Coord } from 'bizcharts';
 import { Grid } from '@alifd/next';
 import ContainetCard from '../../../../components/ContainerCard';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const mockData = [
@@ -47,9 +48,9 @@ export default class OverviewPieChart extends Component {
                     shape="sliceShape"
                   />
                 </Chart>
-                <div style={styles.content}>
-                  <h4 style={styles.title}>{item.title}</h4>
-                  <p style={styles.summary}>{item.summary}</p>
+                <div className={styles.content}>
+                  <h4 className={styles.title}>{item.title}</h4>
+                  <p className={styles.summary}>{item.summary}</p>
                 </div>
               </ContainetCard>
             </Col>
@@ -60,19 +61,3 @@ export default class OverviewPieChart extends Component {
   }
 }
 
-const styles = {
-  content: {
-    padding: '0 20px',
-    textAlign: 'center',
-  },
-  title: {
-    margin: '10px 0',
-    color: '#999',
-  },
-  summary: {
-    margin: '5px 0 0',
-    fontWeight: '400',
-    fontSize: '16px',
-    color: '#fff',
-  },
-};

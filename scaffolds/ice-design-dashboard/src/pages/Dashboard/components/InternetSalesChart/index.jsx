@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ContainerCard from '../../../../components/ContainerCard';
 import BurshChart from './BurshChart';
+import styles from './index.module.scss';
 
 const MOCK_DATA = [
   {
@@ -25,12 +26,12 @@ export default class InternetSalesChart extends Component {
   render() {
     return (
       <ContainerCard title="网络销售">
-        <div style={styles.summary}>
+        <div className={styles.summary}>
           {MOCK_DATA.map((item, index) => {
             return (
-              <div style={styles.item} key={index}>
-                <div style={styles.label}>{item.label}</div>
-                <div style={styles.value}>{item.value}</div>
+              <div className={styles.item} key={index}>
+                <div className={styles.label}>{item.label}</div>
+                <div className={styles.value}>{item.value}</div>
               </div>
             );
           })}
@@ -41,17 +42,3 @@ export default class InternetSalesChart extends Component {
   }
 }
 
-const styles = {
-  summary: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  item: {
-    textAlign: 'center',
-  },
-  value: {
-    marginTop: '10px',
-    fontSize: '28px',
-    fontWeight: 'bold',
-  },
-};

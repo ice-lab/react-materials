@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContainerCard from '../../../../components/ContainerCard';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -51,18 +52,18 @@ export default class TopProducts extends Component {
       <ContainerCard title="产品排名" contentStyle={{ padding: 0 }}>
         {mockData.map((data, index) => {
           return (
-            <div style={styles.content} key={index}>
-              <ul style={styles.items}>
+            <div className={styles.content} key={index}>
+              <ul className={styles.items}>
                 {data.items.map((item, idx) => {
                   return (
-                    <li style={styles.item} key={idx}>
-                      <span style={styles.label}>{item.label}</span>
-                      <span style={styles.value}>{item.value}</span>
+                    <li className={styles.item} key={idx}>
+                      <span className={styles.label}>{item.label}</span>
+                      <span className={styles.value}>{item.value}</span>
                     </li>
                   );
                 })}
               </ul>
-              <a href="#" style={styles.button}>
+              <a href="#" className={styles.button}>
                 {data.text}
               </a>
             </div>
@@ -73,27 +74,4 @@ export default class TopProducts extends Component {
   }
 }
 
-const styles = {
-  items: {
-    marginBottom: '15px',
-  },
-  item: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid #434857',
-    padding: '10px 20px',
-  },
-  label: {
-    color: '#fff',
-  },
-  value: {
-    color: '#999',
-  },
-  button: {
-    display: 'inline-block',
-    border: '1px solid #1997C6',
-    margin: '0 20px 20px',
-    padding: '8px 10px',
-    borderRadius: '6px',
-  },
-};
+

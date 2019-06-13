@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Icon } from '@alifd/next';
 import ColumnChart from './ColumnChart';
 import ContainerCard from '../../../../components/ContainerCard';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const mockData = [
@@ -42,24 +43,24 @@ const mockData = [
 export default class OverviewSatesChart extends Component {
   render() {
     return (
-      <div style={styles.container}>
+      <div className={styles.container}>
         <Row wrap gutter={20}>
           {mockData.map((item, index) => {
             return (
               <Col xxs="24" l="6" key={index}>
                 <ContainerCard>
-                  <div style={styles.summary}>
-                    <p style={styles.title}>{item.title}</p>
-                    <div style={styles.data}>
-                      <h2 style={styles.amount}>{item.amount}</h2>
-                      <div style={styles.percent}>
+                  <div className={styles.summary}>
+                    <p className={styles.title}>{item.title}</p>
+                    <div className={styles.data}>
+                      <h2 className={styles.amount}>{item.amount}</h2>
+                      <div className={styles.percent}>
                         {item.percent}{' '}
                         <Icon
                           type={`arrow-${
                             item.increase ? 'up' : 'down'
                           }-filling`}
                           size="xs"
-                          style={styles.arrowIcon}
+                          className={styles.arrowIcon}
                         />
                       </div>
                     </div>
@@ -75,31 +76,4 @@ export default class OverviewSatesChart extends Component {
   }
 }
 
-const styles = {
-  content: {
-    color: '#fff',
-    borderRadius: '6px',
-    border: '1px solid rgba(255, 255, 255, 0.30)',
-    transition: 'all .25s ease',
-  },
-  title: {
-    margin: '0 0 10px 0',
-  },
-  data: {
-    display: 'flex',
-    margin: '10px 0',
-  },
-  amount: {
-    margin: '0 15px 0 0',
-    fontSize: '28px',
-  },
-  percent: {
-    display: 'flex',
-    alignItems: 'flex-end',
-    marginBottom: '4px',
-    fontSize: '12px',
-  },
-  arrowIcon: {
-    marginLeft: '8px',
-  },
-};
+
