@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Logo from '../Logo';
-import './index.scss';
+import styles from  './index.module.scss';
 
 const MENUS = [
   {
@@ -20,14 +20,14 @@ const MENUS = [
 export default class Header extends Component {
   render() {
     return (
-      <div className="header-container">
-        <div className="header-content">
+      <div className={styles.headercontainer}>
+        <div className={styles.headercontent}>
           <Logo />
-          <div className="header-navbar">
+          <div className={styles.headernavbar}>
             {
               MENUS.map((item, idx) => {
                 return (
-                  <a key={idx} className="header-menu-item" href={item.path}>{item.name}</a>
+                  <a key={idx} className={styles.headermenuitem} href={item.path}>{item.name}</a>
                 );
               })
             }
