@@ -153,7 +153,7 @@ ReactDOM.render((
 | component |  表单类型，原生 html 标签或者三方组件   |  N    |     |    -    | 'input' 'textarea' Input Radio   |
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | effects |  联动规则   |  N    |   object   |    -    |   -   |
-| display |  显示隐藏   |  N    |   string   |    |   'show' / 'hide'  |
+| visible |  显示隐藏   |  N    |   boolean   |    |   true/false  |
 | format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
 | layout |  设置当前 Field 的布局   |  N    |   object   |   同 layout   |  Field 的 layout 设置会覆盖 layout 设置|
 | tips |  提示信息   |  N    |   string   |    |    |
@@ -169,9 +169,13 @@ ReactDOM.render((
   <Field label="昵称：" name="nickname" component="input" type="text" effects={{
     handler: formCore => {
       if (formCore.getFieldValue('nickname') === 'snow') {
-        formCore.setFieldProps('age', {display: 'show'});
+        formCore.setFieldProps('age', {
+          visible: true,
+        });
       } else {
-        formCore.setFieldProps('age', {display: 'hide'});
+        formCore.setFieldProps('age', {
+          visible: false,
+        });
       }
     }
   }} />
