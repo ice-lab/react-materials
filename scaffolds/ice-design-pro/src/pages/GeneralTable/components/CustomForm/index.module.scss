@@ -1,0 +1,16 @@
+.formContainer{
+  position: relative;
+  background: #fff;
+};
+.formItem{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+};
+.formLabel{
+  min-width: 70px;
+};
+.buttons{
+  margin: 10px 0 20px;
+  text-align: center;
+};
