@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './index.module.scss';
 
 export default class PlatformIntro2 extends Component {
   static displayName = 'PlatformIntro2';
@@ -15,14 +16,14 @@ export default class PlatformIntro2 extends Component {
   render() {
     return (
       <div
+        className={styles.wrapper}
         style={{
-          ...styles.wrapper,
           backgroundImage: `url(${require('./images/TB1d..oRVXXXXX4XVXXXXXXXXXX-2760-1480.png')})`,
         }}
       >
-        <div style={styles.body}>
-          <h2 style={styles.title}>高效的内容创作工具</h2>
-          <p style={styles.text}>
+        <div className={styles.body}>
+          <h2 className={styles.title}>高效的内容创作工具</h2>
+          <p className={styles.text}>
             聚集全网最新鲜的创意，直击用户需求<br />海量优质素材，快速锁定优质商品、图片、视频<br />发布前内容质量诊断，内容编辑更高效
           </p>
         </div>
@@ -31,36 +32,11 @@ export default class PlatformIntro2 extends Component {
           alt=""
           width="870"
           height="400"
-          style={styles.image}
+          className={styles.image}
         />
       </div>
     );
   }
 }
 
-const styles = {
-  wrapper: {
-    height: 740,
-    overflow: 'hidden',
-  },
-  body: {
-    textAlign: 'center',
-  },
-  title: {
-    fontSize: 24,
-    color: '#000',
-    marginBottom: 20,
-    marginTop: 50,
-  },
-  text: {
-    fontSize: 14,
-    color: '#666',
-    lineHeight: '24px',
-    letterSpacing: '2px',
-  },
-  image: {
-    margin: '0 auto',
-    marginTop: 50,
-    display: 'block',
-  },
-};
+
