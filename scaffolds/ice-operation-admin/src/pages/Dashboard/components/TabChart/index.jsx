@@ -4,6 +4,7 @@ import { Tab, Grid } from '@alifd/next';
 import SeriesLine from './SeriesLine';
 import BasicLine from './BasicLine';
 import Users from '../Users';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const TabPane = Tab.Item;
@@ -17,7 +18,7 @@ export default class TabChart extends Component {
     return (
       <Row gutter="20">
         <Col l="18">
-          <IceContainer style={styles.card}>
+          <IceContainer className={styles.card}>
             <Tab onChange={this.handleChange}>
               <TabPane key="1" title="销售走势">
                 <SeriesLine />
@@ -35,9 +36,3 @@ export default class TabChart extends Component {
     );
   }
 }
-
-const styles = {
-  card: {
-    padding: '0 20px',
-  },
-};

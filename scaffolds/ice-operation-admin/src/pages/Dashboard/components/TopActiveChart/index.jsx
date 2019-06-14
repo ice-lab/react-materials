@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Table, Progress } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -104,8 +105,8 @@ export default class TopActiveChart extends Component {
 
   renderProduct = (value, index, record) => {
     return (
-      <div style={styles.product}>
-        <p style={styles.prodyctTitle}>{record.title}</p>
+      <div className={styles.product}>
+        <p className={styles.prodyctTitle}>{record.title}</p>
       </div>
     );
   };
@@ -161,16 +162,3 @@ export default class TopActiveChart extends Component {
   }
 }
 
-const styles = {
-  product: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  productPic: {
-    width: 60,
-    height: 60,
-  },
-  productTitle: {
-    margin: 0,
-  },
-};

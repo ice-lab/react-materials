@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const TOP_USERS = [
   {
@@ -37,16 +38,16 @@ const TOP_USERS = [
 export default class Users extends Component {
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <h3 style={styles.title}>销售排名</h3>
+      <IceContainer className={styles.container}>
+        <h3 className={styles.title}>销售排名</h3>
         <ul>
           {TOP_USERS.map((user, index) => {
             return (
-              <li style={styles.userItem} key={index}>
-                <img src={user.avatar} alt="" style={styles.userAvatar} />
-                <div style={styles.userInfo}>
-                  <h6 style={styles.userName}>{user.name}</h6>
-                  <p style={styles.userTitle}>{user.title}</p>
+              <li className={styles.userItem} key={index}>
+                <img src={user.avatar} alt="" className={styles.userAvatar} />
+                <div className={styles.userInfo}>
+                  <h6 className={styles.userName}>{user.name}</h6>
+                  <p className={styles.userTitle}>{user.title}</p>
                 </div>
               </li>
             );
@@ -56,37 +57,3 @@ export default class Users extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    height: '384px',
-    overflowY: 'scroll',
-  },
-  title: {
-    margin: '0',
-    paddingBottom: '3px',
-    fontSize: '14px',
-    borderBottom: '1px solid #DCDEE3',
-  },
-  userItem: {
-    display: 'flex',
-    width: '100%',
-    padding: '10px 10px 10px 0',
-  },
-  userAvatar: {
-    width: '40px',
-    height: '40px',
-    marginRight: '10px',
-    borderRadius: '50%',
-  },
-  userName: {
-    margin: '0',
-    color: '#333',
-    fontWeight: 'bold',
-  },
-  userTitle: {
-    margin: '0',
-    color: '#999',
-    fontSize: '12px',
-  },
-};

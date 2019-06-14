@@ -7,6 +7,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 const { Option } = Select;
 const { Group: RadioGroup } = Radio;
@@ -47,16 +48,16 @@ export default class DonationForm extends Component {
 
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <div style={styles.title}>设备编辑</div>
+      <IceContainer>
+        <div className={styles.title}>设备编辑</div>
         <IceFormBinderWrapper
           value={this.state.value}
           onChange={this.formChange}
           ref="form"
         >
-          <div style={styles.formContent}>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>设备型号-名称</div>
+          <div className={styles.formContent}>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>设备型号-名称</div>
               <IceFormBinder
                 required
                 triggerType="onBlur"
@@ -68,12 +69,12 @@ export default class DonationForm extends Component {
                   style={{ width: '400px' }}
                 />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="modelName" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>设备型号-ID</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>设备型号-ID</div>
               <IceFormBinder
                 required
                 triggerType="onBlur"
@@ -85,12 +86,12 @@ export default class DonationForm extends Component {
                   style={{ width: '400px' }}
                 />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="modelId" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>设备类别</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>设备类别</div>
               <IceFormBinder name="cate">
                 <Select
                   placeholder="请选择"
@@ -103,8 +104,8 @@ export default class DonationForm extends Component {
                 </Select>
               </IceFormBinder>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>设备责任人</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>设备责任人</div>
               <IceFormBinder
                 required
                 name="responsible"
@@ -113,18 +114,18 @@ export default class DonationForm extends Component {
               >
                 <Input placeholder="请输入" style={{ width: '400px' }} />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="responsible" />
               </div>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>设备生产时间</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>设备生产时间</div>
               <IceFormBinder name="time">
                 <DatePicker style={{ width: '400px' }} />
               </IceFormBinder>
             </div>
-            <div style={styles.formItem}>
-              <div style={styles.formLabel}>绑定状态</div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>绑定状态</div>
               <IceFormBinder name="status">
                 <RadioGroup
                   dataSource={[
@@ -146,7 +147,7 @@ export default class DonationForm extends Component {
             </div>
             <Button
               type="primary"
-              style={styles.submitButton}
+              className={styles.submitButton}
               onClick={this.validateAllFormField}
             >
               提 交
@@ -157,31 +158,3 @@ export default class DonationForm extends Component {
     );
   }
 }
-
-const styles = {
-  title: {
-    marginBottom: '30px',
-    fontSize: '18px',
-    fontWeight: '500',
-    color: 'rgba(0, 0, 0,.85)',
-  },
-  formContent: {
-    marginLeft: '30px',
-  },
-  formItem: {
-    marginBottom: '25px',
-    display: 'flex',
-    alignItems: 'center',
-  },
-  formLabel: {
-    width: '120px',
-    marginRight: '15px',
-    textAlign: 'right',
-  },
-  formError: {
-    marginLeft: '10px',
-  },
-  submitButton: {
-    marginLeft: '140px',
-  },
-};
