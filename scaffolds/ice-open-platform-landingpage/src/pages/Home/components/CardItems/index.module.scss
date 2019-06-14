@@ -1,0 +1,109 @@
+.hyThirdPartyWrapper {
+  background: #fff;
+  min-width: 1280px;
+};
+.hyThirdParty {
+  padding-top: 47px;
+  padding-bottom: 40px;
+  text-align: center;
+  width: 1200px;
+  margin: 0 auto;
+};
+.hyThirdPartyTitle {
+  position: relative;
+  font-family: Microsoft YaHei;
+  font-size: 26px;
+  line-height: 40px;
+  color: #999;
+  font-weight: 400;
+  vertical-align: middle;
+  margin-bottom: 40px;
+};
+.thirdPartyMore {
+  position: absolute;
+  right: 0;
+  top: 12px;
+  color: #108ee9;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-decoration: none;
+};
+.thirdPartyDetails {
+  position: relative;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+};
+.thirdPartyDetail {
+  z-index: 0;
+  font-size: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: block;
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+};
+.thirdPartyDetailItem {
+  display: inline-block;
+  vertical-align: top;
+  width: 270px;
+  height: 400px;
+  border-radius: 2px 2px 0 0;
+  margin: 0 20px;
+  border: 1px solid #eaeaea;
+  box-sizing: border-box;
+  -webkit-transition: -webkit-transform .2s linear;
+  transition: transform .2s linear,\n-webkit-transform .2s linear;
+};
+.thirdPartyDetailItemFirst {
+  margin-left: 0;
+};
+.thirdPartyDetailItemLast {
+  margin-right: 0;
+};
+.thirdPartyDetailImg {
+  width: 270px;
+  height: 180px;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: -1px;
+  border: 0;
+};
+.thirdPartyName {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 28px;
+  color: #333;
+  font-weight: 600;
+};
+.thirdPartySold {
+  font-size: 14px;
+  color: #333;
+  line-height: 20px;
+};
+.thirdPartySoldNumber {
+  color: #108ee9;
+  font-weight: 500;
+};
+.thirdPartyDesc {
+  margin: 14px 15px 0;
+  color: #333;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  height: 60px;
+};
+.thirdPartyLink {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 5px 37px;
+  font-size: 14px;
+  color: #108ee9;
+  border: 1px solid #108ee9;
+  border-radius: 4px;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+};
