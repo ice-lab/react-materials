@@ -1,7 +1,7 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 
-const Guide = () => {
+function Guide() {
   return (
     <IceContainer style={{ minHeight: '500px', paddingLeft: '40px' }}>
       <h2>使用指南</h2>

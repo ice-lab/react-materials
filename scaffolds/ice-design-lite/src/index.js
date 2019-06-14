@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
+
+import BasicLayout from './layouts/BasicLayout';
 
 // 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
 import '@alifd/next/reset.scss';
-
-import router from './router';
 
 const ICE_CONTAINER = document.getElementById('ice-container');
 
@@ -15,7 +15,11 @@ if (!ICE_CONTAINER) {
 }
 
 ReactDOM.render(
-  <HashRouter>{router()}</HashRouter>,
+  <HashRouter>
+    <Switch>
+      <Route path="/" component={BasicLayout} />
+    </Switch>
+  </HashRouter>,
 
   ICE_CONTAINER
 );
