@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
+import IceContainer from '@icedesign/container';
 import { Table, Pagination, Message } from '@alifd/next';
-import { Link } from 'react-router-dom';
-import TableFilter from './TableFilter';
 import styles from './index.module.scss';
 
-const getData = (length = 10) => {
-  return Array.from({ length }).map((item, index) => {
+const getData = () => {
+  return Array.from({ length: 10 }).map((item, index) => {
     return {
-      id: `2018090${index}`,
-      key: `200920${index}`,
-      name: `iotApp0${index}`,
-      platform: 'ANDROID',
-      status: '正常',
+      testTime: `2018-08-28 14:29:0${index}`,
+      creator: '淘小宝',
+      reportName: '手淘双十一测试',
+      schemeName: '手淘内容详情页',
+      result: '通过',
     };
   });
 };
 
-export default class CustomTable extends Component {
+export default class ReportTable extends Component {
   state = {
     current: 1,
     isLoading: false,
@@ -57,7 +56,7 @@ export default class CustomTable extends Component {
         current,
       },
       () => {
-        this.fetchData(10);
+        this.fetchData();
       }
     );
   };
@@ -66,16 +65,16 @@ export default class CustomTable extends Component {
     Message.success('申请权限已发送，请十分钟之后再试');
   };
 
-  handleFilterChange = () => {
-    this.fetchData(5);
+  handleDetail = () => {
+    Message.prompt('需要管理员权限才能查看详情');
   };
 
   renderOper = () => {
     return (
       <div>
-        <Link to="/" className={styles.link}>
+        <a className={styles.link} onClick={this.handleDetail}>
           详情
-        </Link>
+        </a>
         <span className={styles.separator} />
         <a className={styles.link} onClick={this.handleApply}>
           申请权限
@@ -88,14 +87,13 @@ export default class CustomTable extends Component {
     const { isLoading, data, current } = this.state;
 
     return (
-      <div>
-        <TableFilter onChange={this.handleFilterChange} />
+      <IceContainer className={styles.container}>
         <Table loading={isLoading} dataSource={data} hasBorder={false}>
-          <Table.Column title="APPID" dataIndex="id" />
-          <Table.Column title="当前APPKey" dataIndex="key" />
-          <Table.Column title="应用名称" dataIndex="name" />
-          <Table.Column title="应用平台" dataIndex="platform" />
-          <Table.Column title="应用状态" dataIndex="status" />
+          <Table.Column title="测试时间" dataIndex="testTime" />
+          <Table.Column title="创建人" dataIndex="creator" />
+          <Table.Column title="报告名称" dataIndex="reportName" />
+          <Table.Column title="方案名称" dataIndex="schemeName" />
+          <Table.Column title="测试结果" dataIndex="result" />
           <Table.Column title="操作" cell={this.renderOper} />
         </Table>
         <Pagination
@@ -103,7 +101,8 @@ export default class CustomTable extends Component {
           current={current}
           onChange={this.handlePaginationChange}
         />
-      </div>
+      </IceContainer>
     );
   }
 }
+

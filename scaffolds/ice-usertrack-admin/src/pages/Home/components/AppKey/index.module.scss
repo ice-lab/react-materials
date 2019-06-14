@@ -1,0 +1,35 @@
+.container {
+    margin: 20px;
+    padding: 10px 20px 20px;
+}
+
+.row {
+    margin: 4px 0 20px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.link {
+    margin: 0 5px;
+    color: rgba(49, 128, 253, 0.65);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.separator {
+    margin: 0 8px;
+    display: inline-block;
+    height: 12px;
+    width: 1px;
+    vertical-align: middle;
+    background: #e8e8e8;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: right;
+}
