@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-
+import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 class StateItem extends Component {
@@ -9,27 +9,23 @@ class StateItem extends Component {
     return (
       <Row
         wrap
-        style={{
-          paddingTop: 20,
-          alignItems: 'center',
-          borderBottom: '1px solid #f4f4f4',
-        }}
+        className={styles.wrap}
       >
-        <Col style={{ margin: '0 0 20px 0' }} l={3} s={4} xxs={24}>
-          <div style={styles.cover}>
+        <Col className={styles.col} l={3} s={4} xxs={24}>
+          <div className={styles.cover}>
             <img
               alt={data.title}
-              style={{ width: 80, height: 80, display: 'block' }}
+              className={styles.img}
               src={data.icon}
             />
           </div>
         </Col>
-        <Col style={{ margin: '0 0 20px 0' }} l={17} s={14} xxs={24}>
-          <h3 style={styles.title}>{data.title}</h3>
-          <div style={styles.desc}>{data.desc}</div>
+        <Col className={styles.col} l={17} s={14} xxs={24}>
+          <h3 className={styles.title}>{data.title}</h3>
+          <div className={styles.desc}>{data.desc}</div>
         </Col>
-        <Col style={{ margin: '0 0 20px 0' }} l={4} s={4} xxs={24}>
-          <div style={{ textAlign: 'center', color: '#333', fontSize: 14 }}>
+        <Col className={styles.col} l={4} s={4} xxs={24}>
+          <div className={styles.status}>
             {data.status}
           </div>
         </Col>
@@ -38,16 +34,6 @@ class StateItem extends Component {
   }
 }
 
-const styles = {
-  title: {
-    margin: 0,
-    fontSize: 16,
-  },
-  desc: {
-    fontSize: 12,
-    color: '#999',
-    lineHeight: '20px',
-  },
-};
+
 
 export default StateItem;

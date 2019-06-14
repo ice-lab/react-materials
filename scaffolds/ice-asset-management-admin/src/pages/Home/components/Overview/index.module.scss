@@ -1,0 +1,44 @@
+.alignRight {
+  text-align: right !important;
+};
+.container {
+  padding: 0 !important;
+};
+.containerTitle {
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+};
+.row {
+  padding: 20px;
+};
+.box {
+  display: flex;
+  flex-flow: wrap;
+  border-right: 1px solid #f0f0f0;
+};
+.borderNone {
+  border-right: 0;
+};
+.boxCell {
+  width: 50%;
+  margin: 10px 0;
+};
+.cellName {
+  color: #666;
+  line-height: 14px;
+  font-size: 12px;
+};
+.cellValue {
+  margin-top: 8px;
+  color: #333;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: 500;
+};

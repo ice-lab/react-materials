@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
+import styles from './index.module.scss';
 
 export default class CustomTable extends Component {
   static displayName = 'CustomTable';
@@ -30,12 +31,12 @@ export default class CustomTable extends Component {
     const { current } = this.state;
     const { dataSource, columns, isLoading } = this.props;
     return (
-      <div style={styles.container}>
+      <div>
         <Table
           loading={isLoading}
           dataSource={dataSource}
           hasBorder={false}
-          style={styles.table}
+          className={styles.tableCustom}
         >
           {columns.map((item, index) => {
             return (
@@ -50,7 +51,7 @@ export default class CustomTable extends Component {
           })}
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -59,13 +60,4 @@ export default class CustomTable extends Component {
   }
 }
 
-const styles = {
-  table: {
-    marginTop: '10px',
-    minHeight: '500px',
-  },
-  pagination: {
-    margin: '20px 0',
-    textAlign: 'right',
-  },
-};
+

@@ -1,0 +1,39 @@
+.container{
+  background: url(https://img.alicdn.com/tfs/TB1Q7YOdMHqK1RjSZFgXXa7JXXa-2868-912.png);
+  width:100%;
+  height: 418px;
+  background-size: cover;
+}
+.content{
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title{
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 52px;
+}
+.desc{
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+.link{
+  border: 1px solid #fff;
+  font-size: 14px;
+  width: 124px;
+  height: 40px;
+  line-height: 40px;
+  color: rgba(31,56,88,0.6);
+  border-radius: 18px;
+  padding: 0 16px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}

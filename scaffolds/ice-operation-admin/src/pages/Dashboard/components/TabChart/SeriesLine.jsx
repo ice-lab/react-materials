@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 import { DataSet } from '@antv/data-set';
+import styles from './index.module.scss';
 
 export default class SeriesLine extends Component {
   static displayName = 'SeriesLine';
@@ -74,17 +75,10 @@ export default class SeriesLine extends Component {
             size={4}
             shape="circle"
             color="city"
-            style={styles.point}
+            className={styles.point}
           />
         </Chart>
       </div>
     );
   }
 }
-
-const styles = {
-  point: {
-    stroke: '#fff',
-    lineWidth: 1,
-  },
-};

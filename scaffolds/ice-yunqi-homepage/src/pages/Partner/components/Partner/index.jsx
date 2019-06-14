@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
 
 import MOCK_DATA from './data';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -19,20 +20,20 @@ export default class Partner extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.content}>
-          <div style={styles.bigTitle}>PARTNERS</div>
-          <div style={styles.subTitle}>合作伙伴</div>
-          <div style={styles.partnerBox}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.bigTitle}>PARTNERS</div>
+          <div className={styles.subTitle}>合作伙伴</div>
+          <div className={styles.partnerBox}>
             {MOCK_DATA.map((item, index) => {
               return (
-                <div style={styles.partnerItem} key={index}>
-                  <div style={styles.partnerTitle}>{item.title}</div>
+                <div className={styles.partnerItem} key={index}>
+                  <div className={styles.partnerTitle}>{item.title}</div>
                   <Row wrap gutter={20}>
                     {item.partners.map((src, key) => {
                       return (
                         <Col l="4" key={key}>
-                          <img src={src} alt="" style={styles.logo} />
+                          <img src={src} alt="" className={styles.logo} />
                         </Col>
                       );
                     })}
@@ -46,48 +47,3 @@ export default class Partner extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    marginTop: '78px',
-    background: '#ffff',
-  },
-  content: {
-    width: '1200px',
-    margin: '0 auto',
-  },
-  bigTitle: {
-    paddingTop: '30px',
-    fontSize: '60px',
-    color: '#333',
-    letterSpacing: '.77px',
-  },
-  subTitle: {
-    fontSize: '24px',
-    color: '#333',
-    textAlign: 'left',
-    lineHeight: '30px',
-    marginTop: '58px',
-    paddingBottom: '30px',
-    borderBottom: '1px solid #333',
-  },
-  partnerBox: {
-    marginTop: '60px',
-  },
-  partnerItem: {
-    marginBottom: '60px',
-  },
-  partnerTitle: {
-    fontWeight: '700',
-    fontSize: '20px',
-    color: '#333',
-    letterSpacing: '.25px',
-    lineHeight: '24px',
-    marginBottom: '40px',
-  },
-  logo: {
-    maxWidth: '100%',
-    marginBottom: '20px',
-    display: 'block',
-  },
-};

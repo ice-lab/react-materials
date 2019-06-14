@@ -1,0 +1,64 @@
+.container{
+  padding: 0;
+}
+.table{
+  padding: 20px;
+}
+.title{
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0
+}
+.btnl{
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background: #447eff;
+  margin-right: 8px
+}
+.btnr{
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  background: #ee706d
+}
+.state{
+  color: #ee706d;
+  font-weight: bold;
+  position: relative;
+}
+.dot{
+  width: 8px;
+  height: 8px;
+  background: #ee706d;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: -12px;
+}
+.pagination{
+  margin: 20px 0;
+  text-align: right
+}
+.formRow{
+  padding: 10px 20px;
+}
+.formItem{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.formLabel{
+  min-width: 70px
+}

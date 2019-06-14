@@ -2,7 +2,7 @@
  * 按照下载量和最新的规则对模板进行排序推荐
  */
 const scaffolds = [
-  // 基础模板(2)
+  // 基础模板(3)
   'ice-design-pro',
   'ice-design-lite',
   'ice-typescript-starter',

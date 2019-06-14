@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableFilter from './TableFilter';
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const getData = (length = 10) => {
@@ -74,9 +75,9 @@ export default class QualityTable extends Component {
   renderOper = () => {
     return (
       <div>
-        <a style={styles.link}>详情</a>
-        <span style={styles.separator} />
-        <a style={styles.link}>申请权限</a>
+        <a className={styles.link}>详情</a>
+        <span className={styles.separator} />
+        <a className={styles.link}>申请权限</a>
       </div>
     );
   };
@@ -85,14 +86,14 @@ export default class QualityTable extends Component {
     const { isLoading, data, current } = this.state;
 
     return (
-      <IceContainer style={styles.container}>
-        <h4 style={styles.title}>等级表概览</h4>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.titleTwo}>等级表概览</h4>
         <TableFilter onChange={this.handleFilterChange} />
         <Table
           loading={isLoading}
           dataSource={data}
           hasBorder={false}
-          style={styles.table}
+          className={styles.table}
         >
           <Table.Column title="等级" dataIndex="grade" />
           <Table.Column title="平均分" dataIndex="average" />
@@ -106,7 +107,7 @@ export default class QualityTable extends Component {
           <Table.Column title="其他监控率" dataIndex="otherRate" />
         </Table>
         <Pagination
-          style={styles.pagination}
+          className={styles.pagination}
           current={current}
           onChange={this.handlePaginationChange}
         />
@@ -115,41 +116,41 @@ export default class QualityTable extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0 0 20px',
-  },
-  title: {
-    margin: '0',
-    padding: '15px 20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0,0,0,.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #eee',
-  },
-  link: {
-    margin: '0 5px',
-    color: 'rgba(49, 128, 253, 0.65)',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  separator: {
-    margin: '0 8px',
-    display: 'inline-block',
-    height: '12px',
-    width: '1px',
-    verticalAlign: 'middle',
-    background: '#e8e8e8',
-  },
-  table: {
-    padding: '0 20px',
-  },
-  pagination: {
-    textAlign: 'right',
-    marginTop: '20px',
-    padding: '0 20px',
-  },
-};
+// const styles = {
+//   container: {
+//     padding: '0 0 20px',
+//   },
+//   title: {
+//     margin: '0',
+//     padding: '15px 20px',
+//     fonSize: '16px',
+//     textOverflow: 'ellipsis',
+//     overflow: 'hidden',
+//     whiteSpace: 'nowrap',
+//     color: 'rgba(0,0,0,.85)',
+//     fontWeight: '500',
+//     borderBottom: '1px solid #eee',
+//   },
+//   link: {
+//     margin: '0 5px',
+//     color: 'rgba(49, 128, 253, 0.65)',
+//     cursor: 'pointer',
+//     textDecoration: 'none',
+//   },
+//   separator: {
+//     margin: '0 8px',
+//     display: 'inline-block',
+//     height: '12px',
+//     width: '1px',
+//     verticalAlign: 'middle',
+//     background: '#e8e8e8',
+//   },
+//   table: {
+//     padding: '0 20px',
+//   },
+//   pagination: {
+//     textAlign: 'right',
+//     marginTop: '20px',
+//     padding: '0 20px',
+//   },
+// };

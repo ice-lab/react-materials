@@ -1,0 +1,30 @@
+.textCardItem{
+  border-right: 1px solid #F0F0F0 !important;
+  height: 90px !important;
+  width: 33% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+};
+.textCardSubtitle{
+  font-size: 12px;
+  margin-bottom: 10px;
+};
+.textCardTitle{
+  font-size: 16px;
+};
+.textCardNumber{
+  font-size: 24px;
+  font-weight: bold;
+};
+.hb{
+  border-right: 1px solid #F0F0F0 !important;
+  height: 90px !important;
+  width: 33% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-right: 0px !important;
+}

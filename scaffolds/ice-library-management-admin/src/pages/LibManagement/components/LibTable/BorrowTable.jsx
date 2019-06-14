@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Message } from '@alifd/next';
 import CustomTable from './CustomTable';
 import TableFilter from './TableFilter';
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const getData = () => {
@@ -79,7 +80,7 @@ export default class BorrowTable extends Component {
   };
 
   renderOper = () => {
-    return <a style={{ ...styles.button, ...styles.detailButton }}>查看</a>;
+    return <a className={`${styles.button} ${styles.detailButton}`}>查看</a>;
   };
 
   render() {
@@ -159,7 +160,7 @@ export default class BorrowTable extends Component {
       },
     ];
     return (
-      <div style={styles.container}>
+      <div>
         <TableFilter config={config} onChange={this.handleFilter} />
         <CustomTable
           isLoading={isLoading}
@@ -172,21 +173,4 @@ export default class BorrowTable extends Component {
   }
 }
 
-const styles = {
-  table: {
-    marginTop: '10px',
-  },
-  button: {
-    display: 'inline-block',
-    padding: '6px 12px',
-    fontSize: '12px',
-    borderRadius: '4px',
-    color: '#fff',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  },
-  detailButton: {
-    background: '#41cac0',
-    marginRight: '8px',
-  },
-};
+

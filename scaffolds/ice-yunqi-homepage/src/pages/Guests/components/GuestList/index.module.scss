@@ -1,0 +1,77 @@
+.container {
+    background: #000;
+    padding: 70px 0;
+}
+
+.content {
+    width: 80%;
+    margin: 50px auto 0;
+}
+
+.title {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    overflow: hidden;
+}
+
+.line {
+    width: 38px;
+    height: 3px;
+    font-size: 0;
+    background-color: #fa7453;
+    margin: 14px auto 0;
+    overflow: hidden;
+}
+
+.desc {
+    line-height: 20px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    display: block;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .5));
+    background-repeat: repeat-x;
+}
+
+.name {
+    display: block;
+    width: 90%;
+    line-height: 28px;
+    font-size: 18px;
+    color: #fff;
+    margin: 14px auto 0;
+    overflow: hidden;
+}
+
+.job {
+    display: block;
+    width: 90%;
+    line-height: 18px;
+    font-size: 12px;
+    color: #fff;
+    margin: 0 auto 14px;
+    overflow: hidden;
+}

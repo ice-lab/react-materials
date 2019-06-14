@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -68,21 +69,21 @@ export default class Speakers extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <div style={styles.content}>
-          <div style={styles.mainTitle}>SPEAKERS</div>
-          <div style={styles.mainDesc}>精彩演讲回顾</div>
-          <Row wrap gutter="20" style={styles.row}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.mainTitle}>SPEAKERS</div>
+          <div className={styles.mainDesc}>精彩演讲回顾</div>
+          <Row wrap gutter="20" className={styles.row}>
             {data.map((item, index) => {
               return (
                 <Col l="6" key={index}>
-                  <div style={styles.item}>
-                    <img src={item.avatar} alt="" style={styles.avatar} />
-                    <div style={styles.mask} />
-                    <div style={styles.line} />
-                    <div style={styles.info}>
-                      <div style={styles.name}>{item.name}</div>
-                      <div style={styles.job}>{item.job}</div>
+                  <div className={styles.item}>
+                    <img src={item.avatar} alt="" className={styles.avatar} />
+                    <div className={styles.mask} />
+                    <div className={styles.line} />
+                    <div className={styles.info}>
+                      <div className={styles.name}>{item.name}</div>
+                      <div className={styles.job}>{item.job}</div>
                     </div>
                   </div>
                 </Col>
@@ -94,82 +95,3 @@ export default class Speakers extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    padding: '50px 0',
-    background: '#000',
-  },
-  content: {
-    width: '1200px',
-    margin: '0 auto',
-  },
-  mainTitle: {
-    fontSize: '60px',
-    color: '#fff',
-    letterSpacing: '0.77px',
-    lineHeight: '72px',
-    margin: '0',
-    fontWeight: '700',
-  },
-  mainDesc: {
-    fontSize: '24px',
-    lineHeight: '30px',
-    color: '#fff',
-    marginTop: '8px',
-    fontWeight: '700',
-  },
-  row: {
-    marginTop: '70px',
-  },
-  item: {
-    position: 'relative',
-    cursor: 'pointer',
-    marginTop: '20px',
-    overflow: 'hidden',
-  },
-  avatar: {
-    display: 'block',
-    verticalAlign: 'top',
-    width: '100%',
-  },
-  mask: {
-    position: 'absolute',
-    bottom: '0',
-    left: '0',
-    width: '100%',
-    height: '70%',
-    opacity: '.75',
-    backgroundImage: 'linear-gradient(-179deg,transparent 1%,#000)',
-    transition: 'opacity .3s ease-in-out',
-  },
-  line: {
-    position: 'absolute',
-    left: '0',
-    bottom: '0',
-    width: '100%',
-    height: '4px',
-    background: '#236cff',
-  },
-  info: {
-    position: 'absolute',
-    left: '0',
-    bottom: '20px',
-    padding: '0 5%',
-    overflow: 'hidden',
-  },
-  name: {
-    lineHeight: '30px',
-    fontSize: '20px',
-    fontWeight: '700',
-    color: '#fff',
-    overflow: 'hidden',
-  },
-  job: {
-    lineHeight: '18px',
-    fontSize: '14px',
-    fontWeight: '700',
-    color: '#fff',
-    overflow: 'hidden',
-  },
-};

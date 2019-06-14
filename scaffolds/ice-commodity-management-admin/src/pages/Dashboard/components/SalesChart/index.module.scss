@@ -1,0 +1,28 @@
+
+    .content {
+      color: #fff;
+      border-radius: 3px;
+    }
+    .summary {
+      padding: 20px;
+    }
+    .title {
+      margin: 0 0 10px 0;
+    }
+    .data {
+      display: flex;
+      margin: 10px 0;
+    }
+    .amount {
+      margin: 0 15px 0 0;
+      font-size: 28px;
+    }
+    .percent {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 4px;
+      font-size: 12px;
+    }
+    .arrowIcon {
+      margin-left: 8px;
+    }

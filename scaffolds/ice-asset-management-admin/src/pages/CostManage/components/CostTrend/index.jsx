@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import LineChart from './LineChart';
-import './index.scss';
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const mockData = [
@@ -104,9 +104,9 @@ export default class CostTrend extends Component {
   render() {
     const { data, type } = this.state;
     return (
-      <IceContainer style={styles.container} className="cost-trend">
-        <div style={styles.titleContainer}>
-          <div style={styles.title}>费用趋势</div>
+      <IceContainer className={`${styles.container} cost-trend`}>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}>费用趋势</div>
           <Select onChange={this.changeType} value={type} size="small">
             {
               ['allCost', 'cost'].map((item) => {
@@ -116,7 +116,7 @@ export default class CostTrend extends Component {
           </Select>
         </div>
 
-        <div style={styles.chartContent}>
+        <div className={styles.chartContent}>
           <LineChart data={data} />
         </div>
       </IceContainer>
@@ -124,24 +124,3 @@ export default class CostTrend extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  titleContainer: {
-    padding: '0 20px',
-    height: '40px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid rgb(240, 240, 240)',
-  },
-  title: {
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-  },
-  chartContent: {
-    padding: '15px',
-  },
-};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
-
+import styles from './index.module.scss';
 const FormItem = Form.Item;
 
 export default class EditDialog extends Component {
@@ -59,12 +59,12 @@ export default class EditDialog extends Component {
     };
 
     return (
-      <div style={styles.editDialog}>
+      <div className={styles.editDialog}>
         <Button type="primary" onClick={() => this.onOpen(index, record)}>
           编辑
         </Button>
         <Dialog
-          style={{ width: 640 }}
+          className={styles.w}
           visible={this.state.visible}
           onOk={this.handleSubmit}
           closeable="esc,mask,close"
@@ -110,10 +110,3 @@ export default class EditDialog extends Component {
     );
   }
 }
-
-const styles = {
-  editDialog: {
-    display: 'inline-block',
-    marginRight: '5px',
-  },
-};

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -51,9 +52,9 @@ export default class Overview extends Component {
           {mockData.map((item, index) => {
             return (
               <Col l="4" key={index}>
-                <div style={styles.box}>
-                  <div style={styles.name}>{item.name}</div>
-                  <div style={styles.value}>{item.value}</div>
+                <div className={styles.box}>
+                  <div className={styles.name}>{item.name}</div>
+                  <div className={styles.value}>{item.value}</div>
                 </div>
               </Col>
             );
@@ -64,17 +65,3 @@ export default class Overview extends Component {
   }
 }
 
-const styles = {
-  name: {
-    color: '#666',
-    lineHeight: '14px',
-    fontSize: '14px',
-  },
-  value: {
-    color: '#333',
-    fontWeight: '500',
-    fontSize: '22px',
-    lineHeight: '30px',
-    marginTop: '8px',
-  },
-};
