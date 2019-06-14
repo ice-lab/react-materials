@@ -2,9 +2,9 @@ import React, { createElement, cloneElement } from 'react';
 import cs from 'classnames';
 
 function renderField(props) {
-  const { label, component, error, display, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, className, style, ...rest } = props;
+  const { label, component, error, visible = true, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, className, style, ...rest } = props;
 
-  if (display === 'hide') return null;
+  if (!visible) return null;
 
   let child;
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import FormContext from './context';
 import FormCore from './FormCore';
 
@@ -69,5 +71,24 @@ class Form extends React.Component {
     );
   }
 }
+
+Form.propTypes = {
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  initialValues: PropTypes.object,
+  rules: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
+  effects: PropTypes.array,
+};
+
+Form.defaultProps = {
+  onChange: () => {},
+  onSubmit: () => {},
+  initialValues: {},
+  rules: [],
+  effects: [],
+};
 
 export default Form;
