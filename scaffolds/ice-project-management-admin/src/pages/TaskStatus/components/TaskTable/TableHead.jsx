@@ -7,6 +7,8 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
+import styles from './index.module.scss'
+
 const { Row, Col } = Grid;
 
 export default class TableHead extends Component {
@@ -25,40 +27,40 @@ export default class TableHead extends Component {
         onChange={this.formChange}
         ref="form"
       >
-        <Row wrap gutter="20" style={styles.formRow}>
+        <Row wrap gutter="20" className={styles.formRow}>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>任务状态：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>任务状态：</span>
               <IceFormBinder triggerType="onBlur">
-                <Select name="status" style={{ width: '200px' }}>
+                <Select name="status" className={{ width: '200px' }}>
                   <Select.Option value="option1">未解决</Select.Option>
                   <Select.Option value="option2">已解决</Select.Option>
                   <Select.Option value="option3">已解决</Select.Option>
                 </Select>
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="status" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>Assign By：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>Assign By：</span>
               <IceFormBinder triggerType="onBlur">
                 <Input placeholder="请输入" name="by" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="by" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>Assign To：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>Assign To：</span>
               <IceFormBinder triggerType="onBlur">
                 <Input placeholder="请输入" name="to" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="to" />
               </div>
             </div>
@@ -69,31 +71,3 @@ export default class TableHead extends Component {
   }
 }
 
-const styles = {
-  container: {
-    margin: '20px',
-    padding: '0',
-  },
-  title: {
-    margin: '0',
-    padding: '20px',
-    fonSize: '16px',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    color: 'rgba(0,0,0,.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #eee',
-  },
-  formRow: {
-    padding: '10px 20px',
-  },
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-};
