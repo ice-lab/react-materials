@@ -8,7 +8,7 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, effects, value, defaultValue, formatGetValue, formatSetValue } = props;
+    const { name, rules, effects, value, defaultValue, getValueFormatter, setValueFormatter } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
@@ -33,29 +33,29 @@ class Field extends React.Component {
           store.setFieldValueWithoutNotify(name, value);
         }
       } else {
-        store.setFieldValueWithoutNotify(name, formatSetValue ? formatSetValue(value) : value);
+        store.setFieldValueWithoutNotify(name, setValueFormatter ? setValueFormatter(value) : value);
       }
     }
     if (defaultValue) {
-      store.setFieldValueWithoutNotify(name, formatSetValue ? formatSetValue(defaultValue) : value);
+      store.setFieldValueWithoutNotify(name, setValueFormatter ? setValueFormatter(defaultValue) : value);
     }
-    // with prop formatSetValue, use renderValue to render
+    // with prop setValueFormatter, use renderValue to render
     this.renderValue = undefined;
     this.state = {
-      value: formatGetValue ? formatGetValue(store.getFieldValue(name)) : store.getFieldValue(name),
+      value: getValueFormatter ? getValueFormatter(store.getFieldValue(name)) : store.getFieldValue(name),
       error: store.getFieldError(name),
     };
   }
 
   componentDidMount() {
     const store = this.context;
-    const { name, formatGetValue } = this.props;
+    const { name, getValueFormatter } = this.props;
     this.unsubscribe = store.subscribe(n => {
       if (n === name || n === '*') {
         const value = this.renderValue ? this.renderValue : store.getFieldValue(name);
         const error = store.getFieldError(name);
         this.setState({
-          value: formatGetValue ? formatGetValue(value) : value,
+          value: getValueFormatter ? getValueFormatter(value) : value,
           error,
         });
       }
@@ -71,7 +71,7 @@ class Field extends React.Component {
 
   onChange = e => {
     const store = this.context;
-    const { name, formatSetValue } = this.props;
+    const { name, setValueFormatter } = this.props;
 
     if (!name) {
       throw new Error(
@@ -98,10 +98,10 @@ class Field extends React.Component {
         ? e.target.value
         : e;
     }
-    if (formatSetValue) {
+    if (setValueFormatter) {
       this.renderValue = value;
     }
-    store.setFieldValue(name, formatSetValue ? formatSetValue(value) : value, store);
+    store.setFieldValue(name, setValueFormatter ? setValueFormatter(value) : value, store);
     store.onChange(store.getValues(), { name, value });
   }
 
