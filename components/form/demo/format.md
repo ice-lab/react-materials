@@ -23,8 +23,11 @@ class App extends Component {
     return (
       <div>
         <Form onSubmit={this.onSubmit}>
-          <h4>名称显示为小写</h4>
-          <Field name="name" label="名称：" component={Input} format={
+          <h4>名称显示值为小写，昵称保存值为小写</h4>
+          <Field name="name" label="名称：" component={Input} formatGetValue={
+            value => value && value.toLowerCase()
+          } />
+          <Field name="nickname" label="昵称：" component={Input} formatSetValue={
             value => value && value.toLowerCase()
           } />
           <Field label="年龄：" name="age" component={Input} htmlType="number" />

@@ -8,7 +8,7 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, effects, value, defaultValue, format } = props;
+    const { name, rules, effects, value, defaultValue, formatGetValue, formatSetValue } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
@@ -33,29 +33,30 @@ class Field extends React.Component {
           store.setFieldValueWithoutNotify(name, value);
         }
       } else {
-        store.setFieldValueWithoutNotify(name, value);
+        store.setFieldValueWithoutNotify(name, formatSetValue ? formatSetValue(value) : value);
       }
     }
     if (defaultValue) {
-      store.setFieldValueWithoutNotify(name, defaultValue);
+      store.setFieldValueWithoutNotify(name, formatSetValue ? formatSetValue(defaultValue) : value);
     }
-
+    // with prop formatSetValue, use renderValue to render
+    this.renderValue = undefined;
     this.state = {
-      value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
+      value: formatGetValue ? formatGetValue(store.getFieldValue(name)) : store.getFieldValue(name),
       error: store.getFieldError(name),
-      componentProps: store.getFieldProps(name),
     };
   }
 
   componentDidMount() {
     const store = this.context;
-    const { name, format } = this.props;
+    const { name, formatGetValue } = this.props;
     this.unsubscribe = store.subscribe(n => {
       if (n === name || n === '*') {
+        const value = this.renderValue ? this.renderValue : store.getFieldValue(name);
+        const error = store.getFieldError(name);
         this.setState({
-          value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
-          error: store.getFieldError(name),
-          componentProps: store.getFieldProps(name),
+          value: formatGetValue ? formatGetValue(value) : value,
+          error,
         });
       }
     });
@@ -70,7 +71,7 @@ class Field extends React.Component {
 
   onChange = e => {
     const store = this.context;
-    const { name } = this.props;
+    const { name, formatSetValue } = this.props;
 
     if (!name) {
       throw new Error(
@@ -82,38 +83,38 @@ class Field extends React.Component {
 
     if (e && e.target && e.target.type === 'checkbox') {
       const checked = e.target.checked;
-      value = e.target.value;
-      let currentValue = store.getFieldValue(name) || [];
+      const currentValue = e.target.value;
+      value = store.getFieldValue(name) || [];
       if (checked) {
-        currentValue.push(value);
+        value.push(currentValue);
       } else {
-        const index = currentValue.indexOf(value);
+        const index = value.indexOf(currentValue);
         if (index !== -1) {
-          currentValue = currentValue.slice(0, index).concat(currentValue.slice(index + 1));
+          value = value.slice(0, index).concat(value.slice(index + 1));
         }
       }
-      store.setFieldValue(name, currentValue, store);
     } else {
       value = e && e.target
         ? e.target.value
         : e;
-      store.setFieldValue(name, value, store);
     }
+    if (formatSetValue) {
+      this.renderValue = value;
+    }
+    store.setFieldValue(name, formatSetValue ? formatSetValue(value) : value, store);
     store.onChange(store.getValues(), { name, value });
   }
 
   render() {
-    const { value, type, component, onChange, children } = this.props;
+    const { name, value, type, component, onChange, children } = this.props;
     const isCheckbox = type && (type === 'checkbox');
     const isRadio = type && (type === 'radio');
     const store = this.context;
     const state = this.state;
-    const renderFieldLayout = store.getRenderField();
-    const layout = store.getLayout();
     let renderProps = {
-      ...state.componentProps,
-      renderFieldLayout,
-      formLevelLayout: layout,
+      ...store.getFieldProps(name),
+      renderFieldLayout: store.getRenderField(),
+      formLevelLayout: store.getLayout(),
       error: state.error,
       value: (isCheckbox || isRadio) ? value : (state.value || ''),
     };

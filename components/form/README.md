@@ -154,7 +154,8 @@ ReactDOM.render((
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | effects |  联动规则   |  N    |   object   |    -    |   -   |
 | visible |  显示隐藏   |  N    |   boolean   |    |   true/false  |
-| format |  格式化 value  |  N    |   function   |    |  function(value) => formatValue  |
+| formatGetValue |  格式化控件渲染值  |  N    |   function   |    |  function(savedValue) => renderValue  |
+| formatSetValue |  格式化控件提交值  |  N    |   function   |    |  function(renderValue) => savedValue  |
 | layout |  设置当前 Field 的布局   |  N    |   object   |   同 layout   |  Field 的 layout 设置会覆盖 layout 设置|
 | tips |  提示信息   |  N    |   string   |    |    |
 | errorRender |  自定义 error 渲染   |  N    |   function(error) {}   |    |   |
