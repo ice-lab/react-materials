@@ -1,11 +1,11 @@
 import React from 'react';
 import Guide from '../../components/Guide';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-page">
+    <div className={styles.dashboard}>
       <Guide />
     </div>
   );
