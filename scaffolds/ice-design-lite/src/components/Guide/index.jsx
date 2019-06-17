@@ -1,9 +1,10 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 function Guide() {
   return (
-    <IceContainer style={{ minHeight: '500px', paddingLeft: '40px' }}>
+    <IceContainer style={styles.icebox}>
       <h2>使用指南</h2>
       <ul>
         <li style={styles.item}>
@@ -48,13 +49,6 @@ function Guide() {
       </ul>
     </IceContainer>
   );
-};
-
-const styles = {
-  item: {
-    height: '34px',
-    lineHeight: '34px',
-  },
-};
+}
 
 export default Guide;
