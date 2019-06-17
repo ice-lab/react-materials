@@ -1,8 +1,8 @@
 const fieldPropWhiteList = [
   'rules',
   'effects',
-  'getValueFormatter',
   'setValueFormatter',
+  'getValueFormatter',
 ];
 
 const getComponentProps = props => {
