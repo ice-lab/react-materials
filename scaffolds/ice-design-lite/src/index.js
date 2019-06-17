@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 
 import { Switch, Route, HashRouter } from 'react-router-dom';
 
-import BasicLayout from './layouts/BasicLayout';
 
 // 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
 import '@alifd/next/reset.scss';
 
+import BasicLayout from './layouts/BasicLayout';
+import LanguageProvider from './components/LocaleProvider';
+import { getLocale } from './utils/locale';
+
+const locale = getLocale();
 const ICE_CONTAINER = document.getElementById('ice-container');
 
 if (!ICE_CONTAINER) {
@@ -15,11 +19,13 @@ if (!ICE_CONTAINER) {
 }
 
 ReactDOM.render(
-  <HashRouter>
-    <Switch>
-      <Route path="/" component={BasicLayout} />
-    </Switch>
-  </HashRouter>,
+  <LanguageProvider locale={locale}>
+    <HashRouter>
+      <Switch>
+        <Route path="/" component={BasicLayout} />
+      </Switch>
+    </HashRouter>
+  </LanguageProvider>,
 
   ICE_CONTAINER
 );

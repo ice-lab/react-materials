@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import cx from 'classnames';
 import { Icon, Nav } from '@alifd/next';
+import { FormattedMessage } from 'react-intl';
 import Logo from '../Logo';
 import { asideMenuConfig } from '../../../../menuConfig';
 import './scss/base.scss';
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
+
+/**
+ * menuConfig.js 的 name 属性和 locals/menu.js 的 key 进行对应
+ * 在这里进行转换 path: '/chart/basic' => 'app.menu.chart.basic'
+ */
+function getLocaleKey(item) {
+  return `app.menu${item.path.replace(/\//g, '.')}`;
+}
 
 /**
  * 二级导航
@@ -22,7 +31,11 @@ function getSubMenuOrItem(item, index) {
         <SubNav
           key={index}
           icon={item.icon ? item.icon : null}
-          label={<span className="ice-menu-collapse-hide">{item.name}</span>}
+          label={
+            <span className="ice-menu-collapse-hide">
+              <FormattedMessage id={getLocaleKey(item)} />
+            </span>
+          }
         >
           {childrenItems}
         </SubNav>
@@ -32,7 +45,9 @@ function getSubMenuOrItem(item, index) {
   }
   return (
     <NavItem key={item.path}>
-      <Link to={item.path}>{item.name}</Link>
+      <Link to={item.path}>
+        <FormattedMessage id={getLocaleKey(item)} />
+      </Link>
     </NavItem>
   );
 }
