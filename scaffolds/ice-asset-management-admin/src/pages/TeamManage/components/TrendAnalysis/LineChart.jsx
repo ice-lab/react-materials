@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
+import styles from './index.module.scss';
 
 export default class LineChart extends React.Component {
   static propTypes = {
@@ -56,15 +57,15 @@ export default class LineChart extends React.Component {
     };
 
     return (
-      <div style={styles.container}>
-        <div style={styles.head}>
+      <div className={styles.container}>
+        <div className={styles.head}>
           {this.props.buttons.map((item, index) => {
             const actived =
               this.state.currentIndex === index ? styles.actived : {};
             return (
               <a
                 key={index}
-                style={{ ...styles.button, ...actived }}
+                className={`${styles.button} ${actived}`}
                 onClick={() => this.handleClick(index, item.value)}
               >
                 {item.text}
@@ -110,25 +111,4 @@ export default class LineChart extends React.Component {
   }
 }
 
-const styles = {
-  head: {
-    marginBottom: '20px',
-  },
-  button: {
-    display: 'inline-block',
-    lineHeight: '28px',
-    marginRight: '10px',
-    padding: '0 15px',
-    height: '28px',
-    minWidth: '90px',
-    borderRadius: '2px',
-    fontSize: '12px',
-    textAlign: 'center',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  },
-  actived: {
-    background: '#676ca8',
-    color: '#fff',
-  },
-};
+

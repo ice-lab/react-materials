@@ -199,7 +199,7 @@ export default class RichEditor extends Component {
             </div>
             <div className="rich-editor-body">
               <Editor
-                style={styles.editor}
+                className="styleseditor"
                 placeholder="请编写一些内容..."
                 value={this.state.value}
                 onChange={this.onChange}
@@ -216,8 +216,3 @@ export default class RichEditor extends Component {
   }
 }
 
-const styles = {
-  editor: {
-    minHeight: 200,
-  },
-};

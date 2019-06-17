@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ScrollAnim from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
+import styles from './index.module.scss'
 
 const ScrollOverPack = ScrollAnim.OverPack;
 
@@ -51,8 +52,8 @@ export default class ChangeLogs extends Component {
     const renders = [];
     changelogs.forEach((v) => {
       renders.push(
-        <h3 key={`${v.version}-title`} style={styles.featureTag}>
-          v{v.version} <span style={styles.featureDate}>{v.releaseDate}</span>
+        <h3 key={`${v.version}-title`} className={styles.featureTag}>
+          v{v.version} <span className={styles.featureDate}>{v.releaseDate}</span>
         </h3>
       );
       renders.push(
@@ -69,10 +70,10 @@ export default class ChangeLogs extends Component {
     const { changelogs } = this.state;
 
     return (
-      <div style={styles.container}>
-        <ScrollOverPack always={false} playScale={0.5} style={styles.features}>
+      <div className={styles.container}>
+        <ScrollOverPack always={false} playScale={0.5} className={styles.features}>
           <QueueAnim key="anim" type="bottom">
-            <h1 style={styles.featureTitle}>更新历史</h1>
+            <h1 className={styles.featureTitle}>更新历史</h1>
             {this.renderChangeLogs(changelogs)}
           </QueueAnim>
         </ScrollOverPack>
@@ -80,35 +81,3 @@ export default class ChangeLogs extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    margin: '0 auto',
-    padding: '45px 0',
-    overflow: 'hidden',
-    fontSize: '14px',
-    lineHeight: '28px',
-  },
-  features: {
-    maxWidth: '640px',
-    margin: '0 auto',
-    backgroundColor: '#fff',
-    borderRadius: '5px',
-    minHeight: '100vh',
-  },
-  featureTag: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    fontSize: '20px',
-    margin: '55px auto 20px auto',
-  },
-  featureDate: {
-    fontSize: '14px',
-  },
-  featureTitle: {
-    textAlign: 'center',
-    fontSize: '45px',
-    fontWeight: '100',
-  },
-};

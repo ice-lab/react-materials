@@ -1,33 +1,16 @@
-import React from 'react';
-import Logo from '../Logo';
+import React from "react";
+import Logo from "../Logo";
+import styles from "./index.module.scss";
 
 export default () => {
   return (
-    <div
-      style={{
-        maxWidth: '1200px',
-        margin: '20px auto',
-        textAlign: 'center',
-        lineHeight: '36px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}
-    >
-      <div style={{ filter: 'grayscale(100%)', opacity: 0.3 }}>
+    <div className={styles.box}>
+      <div className={styles.logo}>
         <Logo isDark />
       </div>
-      <div
-        style={{
-          color: '#999',
-          lineHeight: 1.5,
-          fontSize: 12,
-          textAlign: 'right',
-        }}
-      >
+      <div className={styles.btitle}>
         阿里巴巴集团
-        <br />
-        © 2018 版权所有
+        <br />© 2018 版权所有
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Chart, Axis, Geom, Tooltip } from 'bizcharts';
 import { DataSet } from '@antv/data-set';
 
+
 export default class LineChart extends Component {
   static displayName = 'LineChart';
 

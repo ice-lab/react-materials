@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import styles from './index.module.scss';
 export default class PlatformBlackIntro extends Component {
   static displayName = 'PlatformBlackIntro';
 
@@ -15,30 +15,30 @@ export default class PlatformBlackIntro extends Component {
   render() {
     return (
       <div
+        className={styles.wrapper}
         style={{
-          ...styles.wrapper,
           backgroundImage: `url(${require('./images/TB1.IQmRVXXXXbYXVXXXXXXXXXX-2760-1480.png')})`,
         }}
       >
-        <div style={styles.body}>
-          <h2 style={styles.title}>多元化的商业机制</h2>
-          <p style={styles.text}>
+        <div className={styles.body}>
+          <h2 className={styles.title}>多元化的商业机制</h2>
+          <p className={styles.text}>
             商品推广佣金，精准转化内容影响力<br />优质内容奖励
             ，为优质内容创作者保驾护航<br />阿里V任务，为你的内容创作能力对接更多潜在客户
           </p>
         </div>
-        <div style={styles.extraBody}>
+        <div className={styles.extraBody}>
           <img
             alt=""
             src={require('./images/TB1opWDSpXXXXbwXFXXXXXXXXXX-1412-436.png')}
             height="218"
             width="706"
-            style={styles.image}
+            className={styles.image}
           />
-          <div style={styles.extraText}>
-            <p style={styles.extraTextItemLeft}>开放更多内容消费场景</p>
-            <p style={styles.extraTextItemCenter}>激励优质内容生产</p>
-            <p style={styles.extraTextItemRight}>连接品牌商家需求</p>
+          <div className={styles.extraText}>
+            <p className={styles.extraTextItemLeft}>开放更多内容消费场景</p>
+            <p className={styles.extraTextItemCenter}>激励优质内容生产</p>
+            <p className={styles.extraTextItemRight}>连接品牌商家需求</p>
           </div>
         </div>
       </div>
@@ -46,54 +46,4 @@ export default class PlatformBlackIntro extends Component {
   }
 }
 
-const styles = {
-  wrapper: {
-    height: 740,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    overflow: 'hidden',
-  },
-  body: {
-    textAlign: 'center',
-  },
-  title: {
-    color: '#fff',
-    fontSize: 24,
-    marginBottom: 20,
-    marginTop: 130,
-  },
-  text: {
-    color: '#fff',
-    fontSize: 14,
-    lineHeight: '24px',
-    letterSpacing: '2px',
-  },
-  extraBody: {
-    textAlign: 'center',
-    position: 'relative',
-    marginTop: 80,
-  },
-  image: {
-    display: 'block',
-    margin: '0 auto',
-  },
-  extraText: {
-    width: 706,
-    margin: '0 auto',
-    display: 'flex',
-    color: '#fff',
-  },
-  extraTextItemLeft: {
-    width: '215px',
-    textAlign: 'center',
-  },
-  extraTextItemCenter: {
-    width: '275px',
-    textAlign: 'center',
-  },
-  extraTextItemRight: {
-    width: '215px',
-    textAlign: 'center',
-  },
-};
+

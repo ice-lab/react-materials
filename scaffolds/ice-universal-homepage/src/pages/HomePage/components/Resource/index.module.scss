@@ -1,0 +1,86 @@
+.container{
+  width: 1200px;
+  padding: 80px 0;
+  margin: 0 auto;
+}
+.content{
+  padding: 40px;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.10);
+  display: flex
+}
+.leftContent{
+  border-right: 1px solid #f0f0f0;
+}
+.cell{
+  width: 50%;
+  padding: 40px;
+}
+.title{
+  line-height: 38px;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 0 0 24px;
+  text-align: center
+}
+.subTitle{
+  margin: 0 0 15px;
+  color:rgba(0,0,0,0.8);
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase
+}
+.desc{
+  font-size: 14px;
+  text-align: justify;
+  color: rgba(0,0,0,0.6);
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+.link{
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 24px
+}
+.itemBody{
+  display: flex
+}
+.topItemBody{
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #f0f0f0
+}
+.itemBodyImg{
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.cellleftContent{
+  width: 50%;
+  padding: 40px;
+  border-right: 1px solid #f0f0f0;
+}
+.cellrightContent{
+  width: 50%;
+  padding: 40px;
+}
+.topItemBodyitemBody{
+  display: flex;
+  padding-bottom: 80px;
+  margin-bottom: 80px;
+  border-bottom: 1px solid #f0f0f0
+}
+.bottomItemBodyitemBody{
+  display: flex
+}
+.imga{
+  width: 392px;
+  margin-top: 60px;
+}
+.imgt{
+  width: 144px;
+  margin-right: 40px
+}
+.imgtr{
+  width: 144px;
+  margin-left: 40px;
+}

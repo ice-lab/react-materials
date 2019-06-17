@@ -1,7 +1,7 @@
 import React from 'react';
 import Guide from '../../components/Guide';
 
-import './Dashboard.scss';
+import './index.scss';
 
 export default function Dashboard() {
   return (

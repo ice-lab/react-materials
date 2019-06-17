@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from './index.module.scss';
 
 export default class IntroBanner extends Component {
   static displayName = 'IntroBanner';
@@ -14,27 +15,23 @@ export default class IntroBanner extends Component {
 
   render() {
     return (
-      <div className="intro-banner-wrap" style={style.introBannerWrapStyles}>
+      <div className={`intro-banner-wrap ${style.introBannerWrapStyles}`}>
         <img
-          className="intro-banner-img"
+          className={`intro-banner-img ${style.introBannerImgStyles}`}
           src={require('./images/TB1R9Ius1uSBuNjy1XcXXcYjFXa-3840-900.jpg')}
-          style={style.introBannerImgStyles}
           alt=""
         />
         <div
-          className="intro-banner-img-mask"
-          style={style.introBannerImgMaskStyles}
+          className={`intro-banner-img-mask ${style.introBannerImgMaskStyles}`}
         />
-        <div className="intro-banner-text" style={style.introBannerTextStyles}>
+        <div className={`intro-banner-text ${style.introBannerTextStyles}`}>
           <h2
-            className="intro-banner-title"
-            style={style.introBannerTitleStyles}
+            className={`intro-banner-title ${style.introBannerTitleStyles}`}
           >
             智慧社区，未来生活
           </h2>
           <p
-            className="intro-banner-subtitle"
-            style={style.introBannerSubtitleStyles}
+            className={`intro-banner-subtitle ${style.introBannerSubtitleStyles}`}
           >
             输出支付，账户体系，信用金融，电商，采购，文化公益和大数据等能力和资源，助力社区物业通过提升信息化、智能化水平，改善物业管理水平和服务品质，推动建设便利舒适、安全和谐的智慧社区
           </p>
@@ -44,52 +41,3 @@ export default class IntroBanner extends Component {
   }
 }
 
-const style = {
-  introBannerWrapStyles: {
-    width: '100%',
-    height: '450px',
-    position: 'relative',
-    overflow: 'hidden',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  introBannerImgStyles: {
-    position: 'absolute',
-    top: '0',
-    left: '50%',
-    display: 'block',
-    width: '1920px',
-    height: '100%',
-    transform: 'translateX(-50%)',
-    zIndex: '10',
-  },
-  introBannerImgMaskStyles: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    top: '0',
-    left: '0',
-    background: '#000',
-    opacity: '.45',
-    zIndex: '15',
-  },
-  introBannerTextStyles: {
-    position: 'relative',
-    zIndex: '99',
-    width: '1200px',
-    color: '#fff',
-  },
-  introBannerTitleStyles: {
-    fontWeight: '400',
-    fontSize: '50px',
-    lineHeight: '70px',
-  },
-  introBannerSubtitleStyles: {
-    marginTop: '8px',
-    marginBottom: '48px',
-    maxWidth: '768px',
-    fontSize: '16px',
-    lineHeight: '25px',
-  },
-};

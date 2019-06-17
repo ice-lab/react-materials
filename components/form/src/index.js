@@ -1,2 +1,6 @@
-export Form from './Form';
-export Field from './Field';
+import Form from './Form';
+import Field from './Field';
+
+import './main.scss';
+
+export { Form, Field };

@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '@icedesign/layout';
 import Logo from '../Logo';
 
-import './Footer.scss';
+import './index.modules.scss';
 
 export default function Footer() {
   return (

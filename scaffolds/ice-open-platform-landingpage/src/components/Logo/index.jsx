@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './index.module.scss';
 
 const LIGHT =
   require('./images/TB1KmB6nntYBeNjy1XdXXXXyVXa-224-60.png');
@@ -11,14 +12,9 @@ export default class Logo extends Component {
     const logo = isDark ? DARK : LIGHT;
     return (
       <div
-        className="logo"
-        style={{
-          height: 32,
-          color: '#f40',
-          textAlign: 'left',
-        }}
+        className="logo div"
       >
-        <a href="/" style={{ display: 'block', position: 'relative' }}>
+        <a href="/" className="position">
           <img src={logo} width="129" height="35" alt="logo" />
         </a>
       </div>

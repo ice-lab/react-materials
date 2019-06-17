@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab, Select } from '@alifd/next';
 import LineChart from './LineChart';
-import './index.scss';
+import styles from './index.module.scss';
 
 const chartData = [
   {
@@ -139,9 +139,9 @@ export default class TrendAnalysis extends Component {
     const buttons = typeToButtons[type];
 
     return (
-      <IceContainer style={styles.container} className="trend-analysis">
-        <div style={styles.titleContainer}>
-          <div style={styles.title}>趋势分析</div>
+      <IceContainer className={`${styles.container} trend-analysis`}>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}>趋势分析</div>
           <Select onChange={this.changeType} value={type} size="small">
             {
               ['calculate', 'memory', 'cost'].map((item) => {
@@ -151,7 +151,7 @@ export default class TrendAnalysis extends Component {
           </Select>
         </div>
 
-        <div style={styles.chartContent}>
+        <div className={styles.chartContent}>
           <LineChart
             onChange={this.handleClick}
             fields={fields}
@@ -164,24 +164,4 @@ export default class TrendAnalysis extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  titleContainer: {
-    padding: '0 20px',
-    height: '40px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid rgb(240, 240, 240)',
-  },
-  title: {
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-  },
-  chartContent: {
-    padding: '15px',
-  },
-};
+

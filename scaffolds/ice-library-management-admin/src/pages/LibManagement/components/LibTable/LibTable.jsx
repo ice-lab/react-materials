@@ -3,7 +3,7 @@ import { Message, Button } from '@alifd/next';
 import TableFilter from './TableFilter';
 import CustomTable from './CustomTable';
 import styles from './LibTable.module.scss';
-
+import styless from './index.module.scss';
 // MOCK 数据，实际业务按需进行替换
 const getData = () => {
   return Array.from({ length: 20 }).map((item, index) => {
@@ -83,7 +83,7 @@ export default class LibTable extends Component {
   renderOper = () => {
     return (
       <div>
-        <Button style={{ marginRight: '5px' }} onClick={this.handleDetailClick}>
+        <Button className={styless.marginRight} onClick={this.handleDetailClick}>
           查看
         </Button>
         <Button
@@ -221,7 +221,7 @@ export default class LibTable extends Component {
     ];
 
     return (
-      <div style={styles.container}>
+      <div>
         <TableFilter config={config} onChange={this.handleFilter} />
         <CustomTable
           isLoading={isLoading}

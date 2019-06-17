@@ -3,14 +3,15 @@ import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import CustomTable from '../HealthAnalysis/CustomTable';
 import PirChart from '../HealthAnalysis/PieChart';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
 export default class HealthAnalysis extends Component {
   render() {
     return (
-      <IceContainer style={styles.container}>
-        <h4 style={styles.title}>计算健康分析</h4>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.title}>计算健康分析</h4>
         <Row>
           <Col l="8">
             <PirChart />
@@ -24,16 +25,4 @@ export default class HealthAnalysis extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  title: {
-    margin: '0 0 20px',
-    padding: '15px 20px',
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-    borderBottom: '1px solid #f0f0f0',
-  },
-};
+

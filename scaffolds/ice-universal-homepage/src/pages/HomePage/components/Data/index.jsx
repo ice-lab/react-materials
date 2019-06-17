@@ -3,6 +3,7 @@ import { Grid } from '@alifd/next';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
 import LineChart from './LineChart';
+import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
@@ -16,9 +17,9 @@ export default class Data extends Component {
 
   render() {
     return (
-      <div style={styles.container}>
-        <h3 style={styles.title}>提效数据</h3>
-        <div style={styles.content}>
+      <div className={styles.container}>
+        <h3 className={styles.title}>提效数据</h3>
+        <div className={styles.content}>
           <Row gutter="20">
             <Col l="8">
               <BarChart />
@@ -35,21 +36,3 @@ export default class Data extends Component {
     );
   }
 }
-
-const styles = {
-  container: {
-    padding: '80px 0',
-  },
-  content: {
-    width: '1200px',
-    margin: '0 auto',
-  },
-  title: {
-    color: 'rgba(0,0,0,0.8)',
-    lineHeight: '38px',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: '40px',
-    margin: '0 0 24px',
-  },
-};

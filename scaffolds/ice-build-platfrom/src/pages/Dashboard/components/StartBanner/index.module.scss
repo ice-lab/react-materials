@@ -1,0 +1,25 @@
+
+    .container {
+      border-radius: 4px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #151618;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+background-image:         url(https://img.alicdn.com/tfs/TB1EH5cx9zqK1RjSZFjXXblCFXa-3360-520.png);
+    }
+    .link {
+      padding: 10px 20px;
+      margin: 10px;
+      color: #333;
+      border-radius: 4px;
+    }
+    .startLink {
+      background: rgba(255,255,255,0.9);
+    }
+    .builderLink{
+      background: rgba(255,255,255,0.9);
+    }

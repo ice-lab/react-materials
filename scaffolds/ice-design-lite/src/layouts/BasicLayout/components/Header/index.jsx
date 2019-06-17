@@ -11,7 +11,7 @@ import stores from '../../../../stores/index';
 import SelectLang from '../../../../components/SelectLang';
 import Logo from '../Logo';
 
-import './scss/base.scss';
+import './index.modules.scss';
 
 function getLocaleKey(item) {
   return `app.header.${item.name}`;

@@ -8,7 +8,7 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 import MainRoutes from './MainRoutes';
-import './scss/index.scss';
+import './index.scss';
 
 const BasicLayout = withRouter(() => {
 

@@ -1,0 +1,34 @@
+.container {
+    position: relative;
+    width: 100wh;
+    min-width: 1200px;
+    height: 100vh;
+    background-image:
+      url(https://img.alicdn.com/tfs/TB1sfq4x7voK1RjSZFNXXcxMVXa-1350-900.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    // zIndex: 9;
+  }
+  .mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .row {
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  .form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

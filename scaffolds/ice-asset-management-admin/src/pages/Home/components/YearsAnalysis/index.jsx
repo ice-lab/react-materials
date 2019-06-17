@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import LineChart from './LineChart';
 import Head from './Head';
-import './index.scss';
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const MOCK_DATA = {
@@ -50,9 +50,9 @@ export default class YearsAnalysis extends Component {
     const { type } = this.state;
 
     return (
-      <IceContainer style={styles.container} className="years-analysis">
-        <div style={styles.titleContainer}>
-          <div style={styles.title}>财年分析</div>
+      <IceContainer className={`${styles.container} years-analysis` }>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}>财年分析</div>
           <Select onChange={this.changeType} value={type} size="small">
             {
               ['memory', 'calculate', 'cost'].map((item) => {
@@ -61,7 +61,7 @@ export default class YearsAnalysis extends Component {
             }
           </Select>
         </div>
-        <div style={styles.chartContent}>
+        <div className={styles.chartContent}>
           <Head data={MOCK_DATA[type]} />
           <LineChart />
         </div>
@@ -70,24 +70,4 @@ export default class YearsAnalysis extends Component {
   }
 }
 
-const styles = {
-  container: {
-    padding: '0',
-  },
-  titleContainer: {
-    padding: '0 20px',
-    height: '40px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    borderBottom: '1px solid rgb(240, 240, 240)',
-  },
-  title: {
-    fonSize: '16px',
-    color: 'rgba(0, 0, 0, 0.85)',
-    fontWeight: '500',
-  },
-  chartContent: {
-    padding: '15px',
-  },
-};
+

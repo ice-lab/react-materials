@@ -6,6 +6,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -25,21 +26,21 @@ export default class Filter extends Component {
         onChange={this.formChange}
         ref="form"
       >
-        <Row wrap gutter="20" style={styles.formRow}>
+        <Row wrap gutter="20" className={styles.formRow}>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>时间筛选：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>时间筛选：</span>
               <IceFormBinder triggerType="onBlur" name="time">
                 <DatePicker placeholder="请输入" />
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="time" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>时间区间：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>时间区间：</span>
               <IceFormBinder triggerType="onBlur" name="timeInterval">
                 <Select style={{ width: '200px' }}>
                   <Select.Option value="1">近3个月</Select.Option>
@@ -47,14 +48,14 @@ export default class Filter extends Component {
                   <Select.Option value="3">近一年</Select.Option>
                 </Select>
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="timeInterval" />
               </div>
             </div>
           </Col>
           <Col l="8">
-            <div style={styles.formItem}>
-              <span style={styles.formLabel}>状态：</span>
+            <div className={styles.formItem}>
+              <span className={styles.formLabel}>状态：</span>
               <IceFormBinder triggerType="onBlur" name="state">
                 <Select style={{ width: '200px' }}>
                   <Select.Option value="1">提现中</Select.Option>
@@ -62,7 +63,7 @@ export default class Filter extends Component {
                   <Select.Option value="3">提现失败</Select.Option>
                 </Select>
               </IceFormBinder>
-              <div style={styles.formError}>
+              <div className={styles.formError}>
                 <IceFormError name="type" />
               </div>
             </div>
@@ -73,13 +74,3 @@ export default class Filter extends Component {
   }
 }
 
-const styles = {
-  formItem: {
-    display: 'flex',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  formLabel: {
-    minWidth: '70px',
-  },
-};
