@@ -37,7 +37,7 @@ class Field extends React.Component {
       }
     }
     if (defaultValue) {
-      store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(defaultValue) : value);
+      store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(defaultValue) : defaultValue);
     }
     // with prop getValueFormatter, use renderValue to render
     this.renderValue = undefined;
