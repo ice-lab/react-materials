@@ -1,9 +1,9 @@
 import React from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
 
-import Guide from '../../components/Guide';
-import { asideMenuConfig } from '../../menuConfig';
-import routerData from '../../routerConfig';
+import Guide from '@/components/Guide';
+import { asideMenuConfig } from '@/menuConfig';
+import routerData from '@/routerConfig';
 
 function MainRoutes() {
   /**

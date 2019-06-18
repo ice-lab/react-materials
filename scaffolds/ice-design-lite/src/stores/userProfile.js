@@ -1,21 +1,21 @@
 import request from '../utils/request';
-import { userProfile } from '../sourceConfig';
+import { userProfile } from '../dataSourceConfig';
 
 export default {
-  name: '',
-  department: '',
-  avatar: '',
+  userinfo: {
+    name: '',
+    department: '',
+    avatar: '',
+  },
   userid: '',
 
   async fetchData() {
     try {
       const { data } = await request(userProfile);
-      const { name, department, avatar, userid } = data;
-      this.name = name;
-      this.department = department;
-      this.avatar = avatar;
+      const { name, department, avatar, userid } = data.data;
+      this.userinfo = { name, department, avatar };
       this.userid = userid;
-    } catch (error) {
+    } catch (err) {
     }
   }
 

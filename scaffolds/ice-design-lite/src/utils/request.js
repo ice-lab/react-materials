@@ -1,18 +1,29 @@
 import axios from 'axios';
-import jsonpAdapter from 'axios-jsonp';
+import { Message } from '@alifd/next';
 
 // Set baseUrl when debugging production url in dev mode
 // axios.baseUrl = '//xxxx.taobao.com';
 
-export default function request(opts) {
-  const { type, url, ...resetParams } = opts;
-  const params = {
-    url: opts.url,
-    ...resetParams,
-  };
-  if (type === 'jsonp') {
-    params.adapter = jsonpAdapter;
+export default async function request(options) {
+  try {
+    const response = await axios(options);
+    const data = response.data;
+    if (data.status === 'SUCCESS') {
+      return { response, data };
+    } else if (data.status === 'NOT_LOGIN') {
+      // 处理未登录逻辑
+      location.href = '';
+    } else {
+      throw new Error(data.message || '后端接口异常');
+    }
+  } catch (err) {
+    // 统一处理接口异常逻辑
+    Message.show({
+      type: 'error',
+      title: '错误消息',
+      content: err.message
+    });
+    console.error(err);
+    throw err;
   }
-
-  return axios(params);
 }

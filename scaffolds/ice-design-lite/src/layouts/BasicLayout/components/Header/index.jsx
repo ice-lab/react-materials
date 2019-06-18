@@ -6,9 +6,9 @@ import Layout from '@icedesign/layout';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { headerMenuConfig } from '../../../../menuConfig';
-import stores from '../../../../stores/index';
-import SelectLang from '../../../../components/SelectLang';
+import { headerMenuConfig } from '@/menuConfig';
+import stores from '@/stores/index';
+import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';
 
 import './index.modules.scss';
@@ -20,7 +20,8 @@ function getLocaleKey(item) {
 export default function Header(props) {
   const { isMobile, className, style } = props;
   const userProfile = stores.useStore('userProfile');
-  const { name, department, avatar, fetchData } = userProfile;
+  const {  userinfo, fetchData } = userProfile;
+  const { name, department, avatar } = userinfo;
 
   useEffect(() => {
     userProfile.fetchData();
