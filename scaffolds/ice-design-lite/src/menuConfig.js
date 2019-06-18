@@ -4,14 +4,14 @@
 
 const headerMenuConfig = [
   {
-    name: '反馈',
+    name: 'feedback',
     path: 'https://github.com/alibaba/ice',
     external: true,
     newWindow: true,
     icon: 'email',
   },
   {
-    name: '帮助',
+    name: 'help',
     path: 'https://alibaba.github.io/ice',
     external: true,
     newWindow: true,
@@ -37,8 +37,12 @@ const asideMenuConfig = [
     icon: 'picture',
     children: [
       {
-        name: '常用图表',
-        path: '/chart/list',
+        name: '基础图表',
+        path: '/chart/basic',
+      },
+      {
+        name: '通用图表',
+        path: '/chart/general',
       },
     ],
   },

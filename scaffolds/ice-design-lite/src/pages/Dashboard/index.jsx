@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
-import Guide from '../../components/Guide';
+import React from 'react';
+import Guide from '@/components/Guide';
 
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class Dashboard extends Component {
-  static displayName = 'Dashboard';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="dashboard-page">
-        <Guide />
-      </div>
-    );
-  }
+export default function Dashboard() {
+  return (
+    <div className={styles.dashboard}>
+      <Guide />
+    </div>
+  );
 }

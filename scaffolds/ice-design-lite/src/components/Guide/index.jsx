@@ -1,8 +1,8 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
-const Guide = () => {
+function Guide() {
   return (
     <IceContainer className={styles.icebox}>
       <h2>使用指南</h2>
@@ -49,6 +49,6 @@ const Guide = () => {
       </ul>
     </IceContainer>
   );
-};
+}
 
 export default Guide;

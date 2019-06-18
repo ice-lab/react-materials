@@ -31,7 +31,6 @@ export default class Header extends Component {
       style,
       intl: { formatMessage },
     } = this.props;
-    console.log(this.props);
 
     return (
       <Layout.Header

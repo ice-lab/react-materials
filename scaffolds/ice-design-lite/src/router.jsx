@@ -1,17 +1,63 @@
 /**
  * 定义应用路由
  */
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import React from 'react';
+import path from 'path';
+import routes from './routerConfig';
 
-import BasicLayout from './layouts/BasicLayout';
-
-// 按照 Layout 归类分组可以按照如下方式组织路由
 const router = () => {
   return (
-    <Switch>
-      <Route path="/" component={BasicLayout} />
-    </Switch>
+    <Router basename="/">
+      <Switch>
+        {routes.map((route, id) => {
+          const { component, layout, children, ...others } = route;
+
+          if (!children) {
+            // eslint-disable-next-line
+            const RouteLayout = layout && require(`./${layout}`).default;
+            // eslint-disable-next-line
+            const RouteComponent = require(`./${component}`).default;
+
+            return (
+              <Route
+                key={id}
+                {...others}
+                component={(props) => {
+                  return (
+                    <RouteLayout key={id}>
+                      <RouteComponent {...props} />
+                    </RouteLayout>
+                  );
+                }}
+              />
+            );
+            // eslint-disable-next-line
+          } else {
+            // eslint-disable-next-line
+            const RouteLayout = component && require(`./${component}`).default;
+            return (
+              <RouteLayout key={id}>
+                <Switch>
+                  {route.children.map((routeChild, idx) => {
+                    routeChild.path = path.join(route.path, routeChild.path);
+                    // eslint-disable-next-line
+                    const RouteComponent = require(`./${routeChild.component}`).default;
+                    return (
+                      <Route
+                        key={`${id}-${idx}`}
+                        {...routeChild}
+                        component={RouteComponent}
+                      />
+                    );
+                  })}
+                </Switch>
+              </RouteLayout>
+            );
+          }
+        })}
+      </Switch>
+    </Router>
   );
 };
 
