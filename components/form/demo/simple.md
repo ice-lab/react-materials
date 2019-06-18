@@ -35,7 +35,6 @@ class App extends Component {
           <h2>个人资料</h2>
           <Field label="姓名：" name="username" component={Input} />
           <Field label="年龄：" name="age" component={Input} htmlType="number" />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
           <Field label="描述：" name="intro" component={Input.TextArea} />
           <Field label="开关：" name="open" component={Switch} />
           <Field label="尺寸：" name="size" component={Select}>

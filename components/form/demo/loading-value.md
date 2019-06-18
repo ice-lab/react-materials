@@ -44,6 +44,15 @@ class App extends Component {
         <Form
           initialValues={this.state.data}
           onSubmit={this.onSubmit}
+          effects={[{
+            field: 'name',
+            handler: formCore => {
+              const name = formCore.getFieldValue('name');
+              if (name === 'erikras') {
+                formCore.setFieldValue('age', 28)
+              }
+            }
+          }]}
         >
           {this.state.loading && <div className="loading">loading...</div>}
           <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component={Input} />
