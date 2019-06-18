@@ -1,16 +1,14 @@
 /* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React, { useState, useEffect } from 'react';
 import Layout from '@icedesign/layout';
-import { withRouter } from 'react-router';
 import { enquire } from 'enquire-js';
 
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import MainRoutes from './MainRoutes';
 import './index.scss';
 
-const BasicLayout = withRouter(() => {
+const BasicLayout = (props) => {
 
   const [isScreen, setIsScreen] = useState();
 
@@ -53,13 +51,13 @@ const BasicLayout = withRouter(() => {
             <Aside isMobile={isMobile} />
           </Layout.Aside>
           <Layout.Main>
-            <MainRoutes />
+            {props.children}
           </Layout.Main>
         </Layout.Section>
         <Footer />
       </Layout>
     </div>
   );
-});
+};
 
 export default BasicLayout;
