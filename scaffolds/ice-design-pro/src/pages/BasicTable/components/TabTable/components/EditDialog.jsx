@@ -1,116 +1,105 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 
 const FormItem = Form.Item;
 
-export default class EditDialog extends Component {
-  static displayName = 'EditDialog';
+const field = new Field({});
+const init = field.init;
+const formItemLayout = {
+  labelCol: {
+    fixedSpan: 6,
+  },
+  wrapperCol: {
+    span: 14,
+  },
+};
 
-  static defaultProps = {};
+export default function EditDialog(props) {
+  const { index, record } = props;
+  const [dialogVisible, setVisible] = useState(false);
+  const [dataIndex, setDataIndex] = useState(null);
+  const [formData, setFormData] = useState({});
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      dataIndex: null,
-    };
-    this.field = new Field(this);
-  }
-
-  handleSubmit = () => {
-    this.field.validate((errors, values) => {
+  function handleSubmit() {
+    field.validate((errors, values) => {
       if (errors) {
         console.log('Errors in form!!!');
         return;
       }
 
-      const { dataIndex } = this.state;
-      this.props.getFormValues(dataIndex, values);
-      this.setState({
-        visible: false,
-      });
+      props.getFormValues(dataIndex, values);
+      setVisible(false);
     });
-  };
-
-  onOpen = (index, record) => {
-    this.field.setValues({ ...record });
-    this.setState({
-      visible: true,
-      dataIndex: index,
-    });
-  };
-
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
-  };
-
-  render() {
-    const init = this.field.init;
-    const { index, record } = this.props;
-    const formItemLayout = {
-      labelCol: {
-        fixedSpan: 6,
-      },
-      wrapperCol: {
-        span: 14,
-      },
-    };
-
-    return (
-      <div style={styles.editDialog}>
-        <Button type="primary" onClick={() => this.onOpen(index, record)}>
-          <FormattedMessage id="app.base.table.btn.edit" />
-        </Button>
-        <Dialog
-          style={{ width: 640 }}
-          visible={this.state.visible}
-          onOk={this.handleSubmit}
-          closeable="esc,mask,close"
-          onCancel={this.onClose}
-          onClose={this.onClose}
-          title="编辑"
-        >
-          <Form field={this.field}>
-            <FormItem label="标题：" {...formItemLayout}>
-              <Input
-                {...init('title', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="作者：" {...formItemLayout}>
-              <Input
-                {...init('author', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="状态：" {...formItemLayout}>
-              <Input
-                {...init('status', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="发布时间：" {...formItemLayout}>
-              <Input
-                {...init('date', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-          </Form>
-        </Dialog>
-      </div>
-    );
   }
+
+  function onOpen(openIndex, openRecord) {
+    field.setValues({ ...openRecord });
+    setVisible(true);
+    setDataIndex(openIndex);
+  }
+
+  function onClose() {
+    setVisible(false);
+  }
+
+  function onChange(value) {
+    setFormData(value);
+  }
+
+  return (
+    <div style={styles.editDialog}>
+      <Button type="primary" onClick={() => onOpen(index, record)}>
+        <FormattedMessage id="app.base.table.btn.edit" />
+      </Button>
+      <Dialog
+        style={{ width: 640 }}
+        visible={dialogVisible}
+        onOk={handleSubmit}
+        closeable="esc,mask,close"
+        onCancel={onClose}
+        onClose={onClose}
+        title="编辑"
+      >
+        <Form field={field} onChange={onChange} value={formData}>
+          <FormItem label="标题：" {...formItemLayout}>
+            <Input
+              {...init('title', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+
+          <FormItem label="作者：" {...formItemLayout}>
+            <Input
+              {...init('author', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+
+          <FormItem label="状态：" {...formItemLayout}>
+            <Input
+              {...init('status', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+
+          <FormItem label="发布时间：" {...formItemLayout}>
+            <Input
+              {...init('date', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+        </Form>
+      </Dialog>
+    </div>
+  );
 }
+
+EditDialog.displayName = 'EditDialog';
 
 const styles = {
   editDialog: {

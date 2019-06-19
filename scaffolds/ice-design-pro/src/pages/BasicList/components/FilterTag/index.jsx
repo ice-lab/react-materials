@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styles from './index.module.scss';
 
 const MOCK_DATA = [
@@ -24,53 +24,41 @@ const MOCK_DATA = [
   },
 ];
 
-export default class FilterTag extends Component {
-  state = {
-    data: MOCK_DATA,
-  };
+export default function FilterTag(props) {
+  const [data, setData] = useState(MOCK_DATA);
 
-  handleClick = (value, index) => {
-    const { data } = this.state;
+  async function handleClick(value, index) {
     data[index].selected = value;
-    this.setState(
-      {
-        data,
-      },
-      () => {
-        this.props.onChange();
-      }
-    );
-  };
-
-  render() {
-    const { data } = this.state;
-    return (
-      <div className={styles.filterContent}>
-        {data.map((item, index) => {
-          const lastItem = index === data.length - 1;
-          const lastItemStyle = lastItem ? { marginBottom: 10 } : null;
-          return (
-            <div className={styles.filterItem} style={lastItemStyle} key={index}>
-              <div className={styles.filterLabel}>{item.label}:</div>
-              <div className={styles.filterList}>
-                {item.value.map((text, idx) => {
-                  const activeStyle =
-                    item.selected === text ? styles.activeText : styles.filterText;
-                  return (
-                    <span
-                      onClick={() => this.handleClick(text, index)}
-                      className={activeStyle}
-                      key={idx}
-                    >
-                      {text}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
+    setData(data);
+    props.onChange();
   }
+
+  return (
+    <div className={styles.filterContent}>
+      {data.map((item, index) => {
+        const lastItem = index === data.length - 1;
+        const lastItemStyle = lastItem ? { marginBottom: 10 } : null;
+        return (
+          <div className={styles.filterItem} style={lastItemStyle} key={index}>
+            <div className={styles.filterLabel}>{item.label}:</div>
+            <div className={styles.filterList}>
+              {item.value.map((text, idx) => {
+                const activeStyle =
+                  item.selected === text ? styles.activeText : styles.filterText;
+                return (
+                  <span
+                    onClick={() => handleClick(text, index)}
+                    className={activeStyle}
+                    key={idx}
+                  >
+                    {text}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }

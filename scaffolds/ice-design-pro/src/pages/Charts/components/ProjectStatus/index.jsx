@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Timeline } from '@alifd/next';
 import { injectIntl, FormattedMessage } from 'react-intl';
@@ -8,20 +8,8 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { Item: TimelineItem } = Timeline;
 
-@injectIntl
-export default class ProjectStatus extends Component {
-  static displayName = 'ProjectStatus';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderTimeline = () => {
+function ProjectStatus(props) {
+  function renderTimeline() {
     return (
       <Timeline>
         <TimelineItem
@@ -52,41 +40,43 @@ export default class ProjectStatus extends Component {
         />
       </Timeline>
     );
-  };
-
-  render() {
-    const {
-      intl: { formatMessage },
-    } = this.props;
-
-    return (
-      <Row wrap gutter={20}>
-        <Col xxs="24" l="12" >
-          <IceContainer
-            title={formatMessage({
-              id: 'app.chart.general.complete.schedule',
-            })}
-          >
-            <LineChart />
-            <div className={styles.projectStatus}>
-              <p className={styles.meta}>
-                <FormattedMessage id="app.chart.general.complete.state" />
-              </p>
-              <h2 className={styles.count}>76,533</h2>
-            </div>
-          </IceContainer>
-        </Col>
-        <Col xxs="24" l="12" >
-          <IceContainer
-            title={formatMessage({
-              id: 'app.chart.general.complete.condition',
-            })}
-            className={styles.container}
-          >
-            {this.renderTimeline()}
-          </IceContainer>
-        </Col>
-      </Row>
-    );
   }
+
+  const {
+    intl: { formatMessage },
+  } = props;
+
+  return (
+    <Row wrap gutter={20}>
+      <Col xxs="24" l="12" >
+        <IceContainer
+          title={formatMessage({
+            id: 'app.chart.general.complete.schedule',
+          })}
+        >
+          <LineChart />
+          <div className={styles.projectStatus}>
+            <p className={styles.meta}>
+              <FormattedMessage id="app.chart.general.complete.state" />
+            </p>
+            <h2 className={styles.count}>76,533</h2>
+          </div>
+        </IceContainer>
+      </Col>
+      <Col xxs="24" l="12" >
+        <IceContainer
+          title={formatMessage({
+            id: 'app.chart.general.complete.condition',
+          })}
+          className={styles.container}
+        >
+          {renderTimeline()}
+        </IceContainer>
+      </Col>
+    </Row>
+  );
 }
+
+ProjectStatus.displayName = 'ProjectStatus';
+
+export default injectIntl(ProjectStatus);

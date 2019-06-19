@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Table from './components/Table';
 
-export default class BaiscList extends Component {
-  render() {
-    return (
-      <div className="list-page">
-        <Table />
-      </div>
-    );
-  }
+export default function BaiscList() {
+  return (
+    <div className="list-page">
+      <Table />
+    </div>
+  );
 }

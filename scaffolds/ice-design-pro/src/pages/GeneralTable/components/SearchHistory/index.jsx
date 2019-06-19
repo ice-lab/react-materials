@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { injectIntl } from 'react-intl';
 import ContainerTitle from '../ContainerTitle';
@@ -46,57 +46,48 @@ const mockData = [
   },
 ];
 
-@injectIntl
-export default class SearchHistory extends Component {
-  static displayName = 'SearchHistory';
+function SearchHistory(props) {
+  const {
+    intl: { formatMessage },
+  } = props;
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
+  function handleQuery() {
+    props.fetchData();
   }
 
-  handleQuery = () => {
-    this.props.fetchData();
-  };
-
-  render() {
-    const {
-      intl: { formatMessage },
-    } = this.props;
-    return (
-      <IceContainer className={styles.container}>
-        <ContainerTitle
-          title={formatMessage({ id: 'app.general.history.title' })}
-        />
-        <div className={styles.historyList}>
-          {mockData.map((item, index) => {
-            return (
-              <div className={styles.historyItem} key={index}>
-                <div className={styles.itemInfo}>
-                  <span className={styles.time}>{item.time}</span>
-                  <span className={styles.query} onClick={this.handleQuery}>
-                    再次查询
-                  </span>
-                </div>
-                <div className={styles.keywords}>
-                  {item.keywords.map((keyword, key) => {
-                    return (
-                      <div className={styles.keyword} key={key}>
-                        <span className={styles.label}>{keyword.label}：</span>
-                        <span className={styles.value}>{keyword.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
+  return (
+    <IceContainer className={styles.container}>
+      <ContainerTitle
+        title={formatMessage({ id: 'app.general.history.title' })}
+      />
+      <div className={styles.historyList}>
+        {mockData.map((item, index) => {
+          return (
+            <div className={styles.historyItem} key={index}>
+              <div className={styles.itemInfo}>
+                <span className={styles.time}>{item.time}</span>
+                <span className={styles.query} onClick={handleQuery}>
+                  再次查询
+                </span>
               </div>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+              <div className={styles.keywords}>
+                {item.keywords.map((keyword, key) => {
+                  return (
+                    <div className={styles.keyword} key={key}>
+                      <span className={styles.label}>{keyword.label}：</span>
+                      <span className={styles.value}>{keyword.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }
+
+SearchHistory.displayName = 'SearchHistory';
+
+export default injectIntl(SearchHistory);

@@ -1,21 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TableChartCard from './components/TableChartCard';
 import TabTable from './components/TabTable';
 
-export default class BasicTable extends Component {
-  static displayName = 'BasicTable';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="basic-table-page">
-        <TabTable />
-        <TableChartCard />
-      </div>
-    );
-  }
+export default function BasicTable() {
+  return (
+    <div>
+      <TabTable />
+      <TableChartCard />
+    </div>
+  );
 }
+
+BasicTable.displayName = 'BasicTable';

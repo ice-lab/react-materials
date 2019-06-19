@@ -1,5 +1,5 @@
 /* eslint no-mixed-operators:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table, Progress, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -15,57 +15,47 @@ const getTableData = () => {
   });
 };
 
-export default class ProgressTable extends Component {
-  static displayName = 'ProgressTable';
+export default function ProgressTable() {
+  const [dataSource] = useState(getTableData());
+  const [current, setCurrent] = useState(1);
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      dataSource: getTableData(),
-      current: 1,
-    };
+  function renderCellProgress(value) {
+    return <Progress percent={parseInt(value, 10)} />;
   }
 
-  renderCellProgress = value => (
-    <Progress percent={parseInt(value, 10)} />
+  function onPageChange(pageNo) {
+    setCurrent(pageNo);
+  }
+
+  return (
+    <div className="progress-table">
+      <IceContainer className="tab-card" title="本月最活跃金主">
+        <Table
+          getRowProps={(record, index) => {
+            return { className: `progress-table-tr progress-table-tr${index}` };
+          }}
+          dataSource={dataSource}
+        >
+          <Table.Column title="店铺名称" dataIndex="name" width={200} />
+          <Table.Column title="成交金额" dataIndex="total" width={200} />
+          <Table.Column title="成交单数" dataIndex="count" width={100} />
+          <Table.Column
+            title=""
+            dataIndex="progress"
+            cell={renderCellProgress}
+            width={200}
+          />
+        </Table>
+        <div className={styles.paginationWrapper}>
+          <Pagination
+            current={current}
+            onChange={onPageChange}
+            shape="arrow-only"
+          />
+        </div>
+      </IceContainer>
+    </div>
   );
-
-  onPageChange = (pageNo) => {
-    this.setState({
-      current: pageNo,
-    });
-  };
-
-  render() {
-    return (
-      <div className="progress-table">
-        <IceContainer className="tab-card" title="本月最活跃金主">
-          <Table
-            getRowProps={(record, index) => {
-              return { className: `progress-table-tr progress-table-tr${index}` };
-            }}
-            dataSource={this.state.dataSource}
-          >
-            <Table.Column title="店铺名称" dataIndex="name" width={200} />
-            <Table.Column title="成交金额" dataIndex="total" width={200} />
-            <Table.Column title="成交单数" dataIndex="count" width={100} />
-            <Table.Column
-              title=""
-              dataIndex="progress"
-              cell={this.renderCellProgress}
-              width={200}
-            />
-          </Table>
-          <div className={styles.paginationWrapper}>
-            <Pagination
-              current={this.state.current}
-              onChange={this.onPageChange}
-              shape="arrow-only"
-            />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
 }
+
+ProgressTable.displayName = 'ProgressTable';
