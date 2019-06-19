@@ -1,5 +1,5 @@
 /* eslint camelcase:0 */
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { ConfigProvider } from '@alifd/next';
@@ -32,22 +32,20 @@ const localeInfo = {
   },
 };
 
-class LocaleProvider extends PureComponent {
-  render() {
-    const { locale, children } = this.props;
+function LocaleProvider(props) {
+  const { locale, children } = props;
 
-    const myLocale = localeInfo[locale]
-      ? localeInfo[locale]
-      : localeInfo['en-US'];
+  const myLocale = localeInfo[locale]
+    ? localeInfo[locale]
+    : localeInfo['en-US'];
 
-    return (
-      <IntlProvider locale={myLocale.appLocale} messages={myLocale.appMessages}>
-        <ConfigProvider locale={myLocale.nextLocale}>
-          {React.Children.only(children)}
-        </ConfigProvider>
-      </IntlProvider>
-    );
-  }
+  return (
+    <IntlProvider locale={myLocale.appLocale} messages={myLocale.appMessages}>
+      <ConfigProvider locale={myLocale.nextLocale}>
+        {React.Children.only(children)}
+      </ConfigProvider>
+    </IntlProvider>
+  );
 }
 
 LocaleProvider.propTypes = {

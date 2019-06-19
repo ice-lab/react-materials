@@ -14,20 +14,18 @@ module.exports = {
     if (username === 'admin' && password === 'admin') {
       res.send({
         status: 'SUCCESS',
-        statusText: 'ok',
         currentAuthority: 'admin',
       });
     } else if (username === 'user' && password === 'user') {
       res.send({
         status: 'SUCCESS',
-        statusText: 'ok',
         currentAuthority: 'user',
       });
     } else {
       res.send({
         status: 'FAIL',
-        statusText: 'unauthorized',
         currentAuthority: 'guest',
+        message: '用户名或者密码错误'
       });
     }
   },
@@ -35,7 +33,6 @@ module.exports = {
   'POST /api/register': (req, res) => {
     res.send({
       status: 'SUCCESS',
-      statusText: 'ok',
       currentAuthority: 'user',
     });
   },
@@ -43,7 +40,6 @@ module.exports = {
   'POST /api/logout': (req, res) => {
     res.send({
       status: 'SUCCESS',
-      statusText: 'ok',
       currentAuthority: 'guest',
     });
   },

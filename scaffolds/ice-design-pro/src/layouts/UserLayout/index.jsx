@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import Layout from '@icedesign/layout';
 import PageLoading from '@/components/PageLoading';
-import Footer from './Footer';
+import Footer from './components/Footer';
 import './index.scss';
 
 export default function UserLayout(props) {

@@ -1,13 +1,10 @@
 /* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import { Input, Grid, Form } from '@alifd/next';
-// import { connect } from 'react-redux';
-// import { compose } from 'redux';
+import { Input, Grid, Form, Message } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-// import injectReducer from '../../utils/injectReducer';
-// import { userRegister } from './action';
-// import reducer from './reducer';
+import request from '@/utils/request';
+import { userRegister } from '@/dataSourceConfig';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -52,7 +49,16 @@ const UserRegister = withRouter((props) => {
       console.log('errors', errors);
       return;
     }
-    props.userRegister(values);
+    handleRegister();
+  }
+
+  async function handleRegister() {
+    try {
+      const { data } = await request(userRegister);
+      Message.success('注册成功');
+      props.history.push('/user/login');
+    } catch (err) {
+    }
   }
 
   return (
@@ -151,22 +157,3 @@ const UserRegister = withRouter((props) => {
 });
 
 export default UserRegister;
-// UserRegister.displayName = 'UserRegister';
-//
-// const mapDispatchToProps = { userRegister };
-//
-// const mapStateToProps = (state) => {
-//   return { registerResult: state.register };
-// };
-//
-// const withConnect = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// );
-//
-// const withReducer = injectReducer({ key: 'register', reducer });
-//
-// export default compose(
-//   withReducer,
-//   withConnect
-// )(UserRegister);
