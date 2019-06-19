@@ -2,12 +2,12 @@
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form } from '@alifd/next';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
+// import { connect } from 'react-redux';
+// import { compose } from 'redux';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-import injectReducer from '../../utils/injectReducer';
-import { userRegister } from './action';
-import reducer from './reducer';
+// import injectReducer from '../../utils/injectReducer';
+// import { userRegister } from './action';
+// import reducer from './reducer';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -150,22 +150,23 @@ const UserRegister = withRouter((props) => {
   );
 });
 
-UserRegister.displayName = 'UserRegister';
-
-const mapDispatchToProps = { userRegister };
-
-const mapStateToProps = (state) => {
-  return { registerResult: state.register };
-};
-
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps
-);
-
-const withReducer = injectReducer({ key: 'register', reducer });
-
-export default compose(
-  withReducer,
-  withConnect
-)(UserRegister);
+export default UserRegister;
+// UserRegister.displayName = 'UserRegister';
+//
+// const mapDispatchToProps = { userRegister };
+//
+// const mapStateToProps = (state) => {
+//   return { registerResult: state.register };
+// };
+//
+// const withConnect = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// );
+//
+// const withReducer = injectReducer({ key: 'register', reducer });
+//
+// export default compose(
+//   withReducer,
+//   withConnect
+// )(UserRegister);

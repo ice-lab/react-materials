@@ -4,6 +4,7 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import React from 'react';
 import path from 'path';
+// import history from './history';
 import routes from './routerConfig';
 import NotFound from './pages/Exception/NotFound';
 

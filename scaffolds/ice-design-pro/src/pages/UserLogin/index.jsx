@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Input, Checkbox, Grid, Form } from '@alifd/next';
 
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import injectReducer from '../../utils/injectReducer';
-import { userLogin } from './actions';
-import reducer from './reducer';
+// import { connect } from 'react-redux';
+// import { compose } from 'redux';
+// import injectReducer from '../../utils/injectReducer';
+// import { userLogin } from './actions';
+// import reducer from './reducer';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -90,22 +90,23 @@ function UserLogin(props) {
   );
 }
 
-const mapDispatchToProps = {
-  userLogin,
-};
-
-const mapStateToProps = (state) => {
-  return { loginResult: state.login };
-};
-
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps
-);
-
-const withReducer = injectReducer({ key: 'login', reducer });
-
-export default compose(
-  withReducer,
-  withConnect
-)(UserLogin);
+export default UserLogin;
+// const mapDispatchToProps = {
+//   userLogin,
+// };
+//
+// const mapStateToProps = (state) => {
+//   return { loginResult: state.login };
+// };
+//
+// const withConnect = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// );
+//
+// const withReducer = injectReducer({ key: 'login', reducer });
+//
+// export default compose(
+//   withReducer,
+//   withConnect
+// )(UserLogin);
