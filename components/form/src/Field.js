@@ -18,7 +18,7 @@ class Field extends React.Component {
 
     const isCheckbox = props.type && props.type === 'checkbox';
     const isRadio = props.type && props.type === 'radio';
-    if (isCheckbox || isRadio && !value) {
+    if ((isCheckbox || isRadio) && !value) {
       throw new Error("'value' prop is required for type='checkbox' and type='radio'.");
     }
     if (value) {
