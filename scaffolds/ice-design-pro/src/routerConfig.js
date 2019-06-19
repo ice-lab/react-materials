@@ -53,8 +53,12 @@ const routerConfig = [
         component: Dashboard,
       },
       {
-        path: '/dashboard/monitor',
-        component: Dashboard,
+        path: '/chart/general',
+        component: Charts,
+      },
+      {
+        path: '/chart/basic',
+        component: BasicCharts,
       },
       {
         path: '/list/basic',
