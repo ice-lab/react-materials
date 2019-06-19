@@ -49,7 +49,7 @@ class Form extends React.Component {
       this.store.setConfig('onChange', onChange);
     }
     if (prevProps.initialValues !== initialValues) {
-      this.store.setValues(initialValues);
+      this.store.setValues(initialValues, true);
     }
   }
 
