@@ -1,46 +1,45 @@
 module.exports = {
   'GET /api/profile': {
-    name: '淘小宝',
-    department: '技术部',
-    avatar: 'https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png',
-    userid: 10001,
+    status: 'SUCCESS',
+    data: {
+      name: '淘小宝',
+      department: '技术部',
+      avatar: 'https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png',
+      userid: 10001,
+    }
   },
 
   'POST /api/login': (req, res) => {
     const { password, username } = req.body;
     if (username === 'admin' && password === 'admin') {
       res.send({
-        status: 200,
-        statusText: 'ok',
+        status: 'SUCCESS',
         currentAuthority: 'admin',
       });
     } else if (username === 'user' && password === 'user') {
       res.send({
-        status: 200,
-        statusText: 'ok',
+        status: 'SUCCESS',
         currentAuthority: 'user',
       });
     } else {
       res.send({
-        status: 401,
-        statusText: 'unauthorized',
+        status: 'FAIL',
         currentAuthority: 'guest',
+        message: '用户名或者密码错误'
       });
     }
   },
 
   'POST /api/register': (req, res) => {
     res.send({
-      status: 200,
-      statusText: 'ok',
+      status: 'SUCCESS',
       currentAuthority: 'user',
     });
   },
 
   'POST /api/logout': (req, res) => {
     res.send({
-      status: 200,
-      statusText: 'ok',
+      status: 'SUCCESS',
       currentAuthority: 'guest',
     });
   },

@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import React from 'react';
 import path from 'path';
 import routes from './routerConfig';
-import NotFound from './pages/Exception/NotFound';
 
 const router = () => {
   return (

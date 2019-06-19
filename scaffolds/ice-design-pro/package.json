@@ -17,6 +17,7 @@
   "dependencies": {
     "@alifd/next": "^1.x",
     "@antv/data-set": "^0.9.5",
+    "@ice/store": "^0.1.1",
     "@icedesign/container": "^1.x",
     "@icedesign/data-binder": "^1.x",
     "@icedesign/ellipsis": "^1.x",
@@ -28,7 +29,6 @@
     "@icedesign/theme": "^1.x",
     "axios": "^0.17.1",
     "bizcharts": "^3.2.2",
-    "bizgoblin": "0.0.1",
     "classnames": "^2.2.5",
     "enquire-js": "^0.1.2",
     "history": "^4.7.2",
@@ -36,18 +36,12 @@
     "intl": "^1.2.5",
     "invariant": "^2.2.4",
     "lodash": "^4.17.10",
-    "moment": "^2.23.0",
     "path-to-regexp": "^2.2.1",
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
-    "react-document-title": "^2.0.3",
     "react-dom": "^16.4.1",
     "react-intl": "^2.8.0",
-    "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "5.0.0-alpha.6",
-    "redux": "3.6.0",
-    "redux-thunk": "^2.3.0"
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",

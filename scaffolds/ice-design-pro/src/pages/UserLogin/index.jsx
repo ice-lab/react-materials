@@ -2,13 +2,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-import { Input, Checkbox, Grid, Form } from '@alifd/next';
-
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import injectReducer from '../../utils/injectReducer';
-import { userLogin } from './actions';
-import reducer from './reducer';
+import { Input, Checkbox, Grid, Form, Message } from '@alifd/next';
+import { setAuthority } from '@/utils/authority';
+import { reloadAuthorized } from '@/utils/Authorized';
+import request from '@/utils/request';
+import { userLogin } from '@/dataSourceConfig';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -30,7 +28,24 @@ function UserLogin(props) {
       console.log('errors', errors);
       return;
     }
-    props.userLogin(values);
+    handleLogin(values);
+  }
+
+  async function handleLogin(params) {
+    try {
+      const { data } = await request({
+        ...userLogin,
+        data: {
+          ...userLogin.data,
+          ...params
+        }
+      });
+      Message.success('登录成功');
+      setAuthority(data.currentAuthority);
+      reloadAuthorized();
+      props.history.push('/');
+    } catch (err) {
+    }
   }
 
   return (
@@ -90,22 +105,4 @@ function UserLogin(props) {
   );
 }
 
-const mapDispatchToProps = {
-  userLogin,
-};
-
-const mapStateToProps = (state) => {
-  return { loginResult: state.login };
-};
-
-const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps
-);
-
-const withReducer = injectReducer({ key: 'login', reducer });
-
-export default compose(
-  withReducer,
-  withConnect
-)(UserLogin);
+export default UserLogin;
