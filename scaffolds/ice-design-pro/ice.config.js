@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entry: 'src/index.jsx',
   publicPath: './',
@@ -9,4 +11,10 @@ module.exports = {
       locales: ['zh-cn'],
     }],
   ],
+  alias: {
+    '@': path.resolve(__dirname, './src/')
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
 };

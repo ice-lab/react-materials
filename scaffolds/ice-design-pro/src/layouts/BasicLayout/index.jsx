@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import Layout from '@icedesign/layout';
-import { withRouter } from 'react-router';
 import { enquire } from 'enquire-js';
 
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
 import BasicLayoutHoc from './BasicLayoutHoc';
-import MainRoutes from './MainRoutes';
+import PageLoading from '../../components/PageLoading';
 import './index.scss';
 
-@withRouter
 @BasicLayoutHoc
 export default class BasicLayout extends Component {
   static propTypes = {};
@@ -72,7 +70,10 @@ export default class BasicLayout extends Component {
               <Aside isMobile={isMobile} />
             </Layout.Aside>
             <Layout.Main>
-              <MainRoutes />
+              <Suspense fallback={<PageLoading />}>
+                {this.props.children}
+              </Suspense>
+              {/* <MainRoutes /> */}
             </Layout.Main>
           </Layout.Section>
 
