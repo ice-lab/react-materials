@@ -22,22 +22,23 @@ export default class UserLayout extends Component {
           </a>
           <p className="desc">让前端开发简单而友好</p>
         </div>
-        <Suspense fallback={<PageLoading />}>
-          <Switch>
-            {routerData.map((item, index) => {
-              return item.component ? (
-                <Route
-                  key={index}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              ) : null;
-            })}
-
-            <Redirect exact from="/user" to="/user/login" />
-          </Switch>
-        </Suspense>
+        {this.props.children}
+        {/* <Suspense fallback={<PageLoading />}> */}
+        {/*   <Switch> */}
+        {/*     {routerData.map((item, index) => { */}
+        {/*       return item.component ? ( */}
+        {/*         <Route */}
+        {/*           key={index} */}
+        {/*           path={item.path} */}
+        {/*           component={item.component} */}
+        {/*           exact={item.exact} */}
+        {/*         /> */}
+        {/*       ) : null; */}
+        {/*     })} */}
+        {/*  */}
+        {/*     <Redirect exact from="/user" to="/user/login" /> */}
+        {/*   </Switch> */}
+        {/* </Suspense> */}
         <Footer />
       </Layout>
     );
