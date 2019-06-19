@@ -17,10 +17,10 @@ const GeneralTable = React.lazy(() => import('./pages/GeneralTable'));
 const Profile = React.lazy(() => import('./pages/Profile'));
 const Setting = React.lazy(() => import('./pages/Setting'));
 const Fail = React.lazy(() => import('./pages/Fail'));
-const Empty = React.lazy(() => import('./pages/Exception/Empty'));
-const Forbidden = React.lazy(() => import('./pages/Exception/Forbidden'));
-const NotFound = React.lazy(() => import('./pages/Exception/NotFound'));
-const ServerError = React.lazy(() => import('./pages/Exception/ServerError'));
+const Empty = React.lazy(() => import('./pages/Empty'));
+const Forbidden = React.lazy(() => import('./pages/Forbidden'));
+const NotFound = React.lazy(() => import('./pages/NotFound'));
+const ServerError = React.lazy(() => import('./pages/ServerError'));
 
 const routerConfig = [
   {
