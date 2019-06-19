@@ -24,7 +24,7 @@ const router = () => {
                     {children && (
                       <Switch>
                         {/* 普通路由 */}
-                        {children.filter(routeChild => routeChild.path)
+                        {children.filter(routeChild => routeChild.path && routeChild.component)
                           .map((routeChild, idx) => {
                             const { component } = routeChild;
                             return (
@@ -36,20 +36,20 @@ const router = () => {
                             );
                           })}
                         {/* Redirect路由 */}
-                        {children.filter(routeChild => routeChild.from)
+                        {children.filter(routeChild => routeChild.redirect)
                           .map((routeChild, idx) => {
-                            const { from, to } = routeChild;
+                            const { redirect } = routeChild;
                             return (
                               <Redirect
                                 key={`redirect-${id}-${idx}`}
                                 exact
-                                from={from}
-                                to={to}
+                                from={path.join(route.path, routeChild.path)}
+                                to={redirect}
                               />
                             );
                           })}
                         {/* 未匹配路由 */}
-                        {children.filter(routeChild => !routeChild.path && !routeChild.from)
+                        {children.filter(routeChild => !routeChild.path)
                           .map((routeChild, idx) => {
                             const { component } = routeChild;
                             return (

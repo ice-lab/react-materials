@@ -36,8 +36,8 @@ const routerConfig = [
         component: UserRegister,
       },
       {
-        from: '/user',
-        to: '/user/login'
+        path: '/',
+        redirect: '/user/login'
       },
       {
         component: NotFound,
@@ -109,8 +109,8 @@ const routerConfig = [
         component: NotFound,
       },
       {
-        from: '/',
-        to: '/dashboard/monitor'
+        path: '/',
+        redirect: '/dashboard/monitor'
       },
       {
         component: NotFound,
