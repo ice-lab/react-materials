@@ -1,6 +1,6 @@
 import React from 'react';
 import { injectIntl } from 'react-intl';
-import Exception from '../../components/Exception';
+import Exception from '@/components/Exception';
 
 const NotFound = ({ intl }) => {
   return (
