@@ -92,7 +92,6 @@ const Aside = withRouter((props) => {
   const [collapse, setCollapse] = useState(false);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openKeys, setOpenKeys] = useState(defaultOpenKeys);
-  let openKeysCache = defaultOpenKeys;
 
   /**
    * 响应式通过抽屉形式切换菜单
@@ -119,10 +118,9 @@ const Aside = withRouter((props) => {
   /**
    * 当前展开的菜单项
    */
-  function onOpenChange(openKeys) {
-    setOpenKeys(openKeys);
+  function onOpenChange(keys) {
+    setOpenKeys(keys);
     setOpenDrawer(false);
-    openKeysCache = openKeys;
   }
 
   const {

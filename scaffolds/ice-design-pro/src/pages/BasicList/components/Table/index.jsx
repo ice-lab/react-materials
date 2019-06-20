@@ -93,7 +93,7 @@ export default function GoodsTable() {
         </Button>
       </div>
     );
-  };
+  }
 
   return (
     <div className={styles.container}>

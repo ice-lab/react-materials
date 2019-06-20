@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import { injectIntl, FormattedMessage } from 'react-intl';
@@ -136,4 +136,4 @@ export default injectIntl((props) => {
       </div>
     </IceContainer>
   );
-})
+});

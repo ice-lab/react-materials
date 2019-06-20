@@ -21,7 +21,7 @@ export default async function request(options) {
     Message.show({
       type: 'error',
       title: '错误消息',
-      content: err.message
+      content: err.message,
     });
     console.error(err);
     throw err;

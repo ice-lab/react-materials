@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ProjectTable from './components/ProjectTable';
 import OverviewChart from './components/OverviewChart';
 

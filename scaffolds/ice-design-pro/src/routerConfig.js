@@ -37,12 +37,12 @@ const routerConfig = [
       },
       {
         path: '/',
-        redirect: '/user/login'
+        redirect: '/user/login',
       },
       {
         component: NotFound,
-      }
-    ]
+      },
+    ],
   },
   {
     path: '/',
@@ -114,12 +114,12 @@ const routerConfig = [
       },
       {
         path: '/',
-        redirect: '/dashboard/monitor'
+        redirect: '/dashboard/monitor',
       },
       {
         component: NotFound,
-      }
-    ]
+      },
+    ],
   },
 ];
 

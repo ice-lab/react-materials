@@ -1,6 +1,6 @@
 import React from 'react';
-import Table from './components/Table';
 import { withAuth } from '@/components/Auth';
+import Table from './components/Table';
 
 function BasicList() {
   return (
