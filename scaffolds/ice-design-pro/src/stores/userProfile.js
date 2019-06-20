@@ -1,5 +1,7 @@
-import request from '../utils/request';
-import { userProfile } from '../dataSourceConfig';
+import request from '@/utils/request';
+import { userProfile, userLogout, userLogin } from '../dataSourceConfig';
+
+const CURRENT_USER_KEY = 'ice-pro-authority';
 
 export default {
   userinfo: {
@@ -8,6 +10,7 @@ export default {
     avatar: '',
   },
   userid: '',
+  authority: 'guest',
 
   async fetchData() {
     try {
@@ -16,7 +19,31 @@ export default {
       this.userinfo = { name, department, avatar };
       this.userid = userid;
     } catch (err) {
+      console.log(err);
     }
-  }
+  },
 
+  async login(params, callback) {
+    const { data } = await request({
+      ...userLogin,
+      data: {
+        ...userLogin.data,
+        ...params,
+      },
+    });
+    this.authority = data.authority;
+    localStorage.setItem(CURRENT_USER_KEY, data.authority);
+    if (callback) {
+      callback();
+    }
+  },
+
+  async logout(callback) {
+    const { data } = await request(userLogout);
+    this.authority = data.authority;
+    localStorage.setItem(CURRENT_USER_KEY, data.authority);
+    if (callback) {
+      callback();
+    }
+  },
 };

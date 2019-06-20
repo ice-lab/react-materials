@@ -1,8 +1,9 @@
 import React from 'react';
 import TableChartCard from './components/TableChartCard';
 import TabTable from './components/TabTable';
+import { withAuth } from '@/components/Auth';
 
-export default function BasicTable() {
+function BasicTable() {
   return (
     <div>
       <TabTable />
@@ -12,3 +13,7 @@ export default function BasicTable() {
 }
 
 BasicTable.displayName = 'BasicTable';
+
+export default withAuth({
+  authorities: ['admin'],
+})(BasicTable);

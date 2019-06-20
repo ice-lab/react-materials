@@ -6,7 +6,7 @@ module.exports = {
       department: '技术部',
       avatar: 'https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png',
       userid: 10001,
-    }
+    },
   },
 
   'POST /api/login': (req, res) => {
@@ -14,18 +14,18 @@ module.exports = {
     if (username === 'admin' && password === 'admin') {
       res.send({
         status: 'SUCCESS',
-        currentAuthority: 'admin',
+        authority: 'admin',
       });
     } else if (username === 'user' && password === 'user') {
       res.send({
         status: 'SUCCESS',
-        currentAuthority: 'user',
+        authority: 'user',
       });
     } else {
       res.send({
         status: 'FAIL',
-        currentAuthority: 'guest',
-        message: '用户名或者密码错误'
+        authority: 'guest',
+        message: '用户名或者密码错误',
       });
     }
   },
@@ -33,14 +33,14 @@ module.exports = {
   'POST /api/register': (req, res) => {
     res.send({
       status: 'SUCCESS',
-      currentAuthority: 'user',
+      authority: 'user',
     });
   },
 
   'POST /api/logout': (req, res) => {
     res.send({
       status: 'SUCCESS',
-      currentAuthority: 'guest',
+      authority: 'guest',
     });
   },
 };

@@ -3,24 +3,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Input, Checkbox, Grid, Form, Message } from '@alifd/next';
-import { setAuthority } from '@/utils/authority';
-import { reloadAuthorized } from '@/utils/Authorized';
-import request from '@/utils/request';
-import { userLogin } from '@/dataSourceConfig';
+import stores from '@/stores/index';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
 const FormItem = Form.Item;
 
 function UserLogin(props) {
+  const userProfile = stores.useStore('userProfile');
+
   const [value, setValue] = useState({
     username: '',
     password: '',
     checkbox: false,
   });
 
-  function formChange(value) {
-    setValue(value);
+  function formChange(formValue) {
+    setValue(formValue);
   }
 
   function handleSubmit(values, errors) {
@@ -33,18 +32,12 @@ function UserLogin(props) {
 
   async function handleLogin(params) {
     try {
-      const { data } = await request({
-        ...userLogin,
-        data: {
-          ...userLogin.data,
-          ...params
-        }
+      userProfile.login(params, () => {
+        Message.success('登录成功');
+        props.history.push('/');
       });
-      Message.success('登录成功');
-      setAuthority(data.currentAuthority);
-      reloadAuthorized();
-      props.history.push('/');
     } catch (err) {
+      console.log(err);
     }
   }
 

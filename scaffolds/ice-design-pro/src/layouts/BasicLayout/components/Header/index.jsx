@@ -10,15 +10,13 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { headerMenuConfig } from '@/menuConfig';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
-import { setAuthority } from '@/utils/authority';
-import { reloadAuthorized } from '@/utils/Authorized';
-import request from '@/utils/request';
-import { userLogout } from '@/dataSourceConfig';
 import Logo from '../Logo';
 
 import './index.scss';
 
 function Header(props) {
+  const userProfile = stores.useStore('userProfile');
+
   function getLocaleKey(item) {
     return `app.header.${item.name}`;
   }
@@ -29,12 +27,12 @@ function Header(props) {
 
   async function handleLogout() {
     try {
-      const { data } = await request(userLogout);
-      Message.success('已登出');
-      setAuthority(data.currentAuthority);
-      reloadAuthorized();
-      props.history.push('/user/login');
+      userProfile.logout(() => {
+        Message.success('已登出');
+        props.history.push('/user/login');
+      });
     } catch (err) {
+      console.log(err);
     }
   }
 
@@ -45,7 +43,6 @@ function Header(props) {
     intl: { formatMessage },
   } = props;
 
-  const userProfile = stores.useStore('userProfile');
   const {  userinfo, fetchData } = userProfile;
   const { name, department, avatar } = userinfo;
 

@@ -3,8 +3,9 @@ import OverviewPieChart from './components/OverviewPieChart';
 import BizchartsBarBasicColumn from './components/BizchartsBarBasicColumn';
 import BizchartsLineCurved from './components/BizchartsLineCurved';
 import BizchartsOtherBubbleImage from './components/BizchartsOtherBubbleImage';
+import { withAuth } from '@/components/Auth';
 
-export default function BasicCharts() {
+function BasicCharts() {
   return (
     <div>
       <OverviewPieChart />
@@ -14,3 +15,7 @@ export default function BasicCharts() {
     </div>
   );
 }
+
+export default withAuth({
+  authorities: ['admin', 'user'],
+})(BasicCharts);

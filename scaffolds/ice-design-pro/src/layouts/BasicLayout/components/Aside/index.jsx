@@ -8,7 +8,6 @@ import { FormattedMessage } from 'react-intl';
 
 import Logo from '../Logo';
 import { asideMenuConfig } from '../../../../menuConfig';
-import Authorized from '../../../../utils/Authorized';
 import './index.scss';
 
 const SubNav = Nav.SubNav;
@@ -86,18 +85,6 @@ function getDefaultOpenKeys(location = {}) {
   }
 
   return openKeys;
-}
-
-/**
- * 权限检查
- */
-function checkPermissionItem(authority, ItemDom) {
-  if (Authorized.check) {
-    const { check } = Authorized;
-    return check(authority, ItemDom);
-  }
-
-  return ItemDom;
 }
 
 const Aside = withRouter((props) => {
