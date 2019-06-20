@@ -6,6 +6,8 @@ module.exports = {
       department: '技术部',
       avatar: 'https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png',
       userid: 10001,
+      // 个人信息中返回当前用户的角色
+      authority: 'user',
     },
   },
 
