@@ -17,7 +17,7 @@ function renderField(props) {
   }
 
   if (renderFieldLayout) {
-    return renderFieldLayout(label, child, error);
+    return renderFieldLayout({ label, component: child, error });
   }
 
   // layout

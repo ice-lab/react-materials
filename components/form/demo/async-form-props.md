@@ -32,7 +32,7 @@ class App extends Component {
   async componentDidMount() {
     await sleep(1000);
     this.setState({
-      renderField: (label, component, error) => (
+      renderField: ({label, component, error}) => (
         <div style={{marginBottom: '15px'}}>
           <div>{label}</div>
           <span>{component}</span>

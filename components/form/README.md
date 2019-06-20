@@ -35,10 +35,9 @@ class App extends Component {
       <div>
         <Form onSubmit={this.onSubmit}>
           <div>Simple Form</div>
-          /* 使用原生 input 标签 */
-          <Field label="姓名：" name="username" component="input" />
-          /* 使用三方库 Input 组件 */
           <Field label="年龄：" name="age" component={Input} />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" />
+          <Field label="简介：" name="intro" component={Input.TextArea} />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>
@@ -56,11 +55,11 @@ ReactDOM.render((
 | ------ | ---- | ---- | ---- | ------ | ---- |
 | initialValues |  表单初始值    |  N    |   object   |    {}    |   -   |
 | onSubmit |  submit函数   |  Y    |   function   |    -    |   -   |
-| onChange |  表单变化回调   |  N    |   function   |    -    |   function(values: Object, item: Object) => void <br> 参数: <br> values: {Object} 表单数据 <br> item: {Object} 详细 <br> item.name: {String} 变化的组件名 <br> item.value: {String} 变化的数据 |
+| onChange |  表单变化回调   |  N    |   function   |    -    |   function(values: object, item: object) => void <br> 参数: <br> values: {object} 表单数据 <br> item: {object} 详细 <br> item.name: {string} 变化的组件名 <br> item.value: {string} 变化的数据 |
 | rules |  校验规则   |  N    |   object   |    {}    |   -   |
 | effects |  联动规则   |  N    |   array   |    []    |   -   |
 | layout |  表单布局   |  N    |   object   |      |   -   |
-| renderField |  自定义 Field 布局   |  N    |   function   |   -   |   function(label, component, error) => dom  <br> 参数: <br> label: {ReactElement} Field 的 label <br> component: {string \| function} 待渲染的控件 <br> error: {ReactElement} Field 错误提示信息  |
+| renderField |  自定义 Field 布局   |  N    |   function   |   -   |   function({label, component, error}) => dom  <br> 参数: <br> label: {string/element} Field 的 label <br> component: {string/function} 待渲染的控件 <br> error: {string/element} Field 错误提示信息  |
 
 其他属性比如 `style`、`className` 等均会传递到 `form` 标签上。
 
@@ -120,19 +119,19 @@ ReactDOM.render((
 </Form>
 ```
 
-数组的每一项是个对象，对象的 `field` 表示监听哪一个 `Field`，`handler` 表示联动逻辑。监听该 `Field` 的 `onChange` 事件，然后设置其他表单项的数据，从而达到联动效果。`handler` 的参数是 `formCore` 对象，该对象暴露一些 api 可以设置 value、error、show/hide 等。
+监听该 `field` 的 `onChange` 事件，然后设置其他表单项的数据，从而达到联动效果。`handler` 的参数是 `formCore` 对象，该对象暴露一些 api 可以设置 value、error、show/hide 等。
 
 ## Field 组件
 | 参数名 | 说明 | 必填 | 类型 | 默认值 | 备注 |
 | ------ | ---- | ---- | ---- | ------ | ---- |
-| label |  表单项的 label    |  N    |   React Element   |    -    |   -   |
+| label |  表单项的 label    |  N    |   string/element   |    -    |   -   |
 | name |  表单项的 name   |  Y    |   string   |    -    |   -   |
-| component |  表单类型，原生 html 标签或者三方组件   |  N    |  string \| function   |    -    | 'input' 'textarea' Input Radio   |
+| component |  表单类型，原生 html 标签或者三方组件   |  N    |  string/function   |    -    | 'input' 'textarea' Input Radio   |
 | value |  表单项的值    |  N    |  -  |    ''    |   -   |
 | rules |  校验规则   |  N    |   object or array   |    -    |   -   |
 | effects |  联动规则   |  N    |   object   |    -    |   -   |
 | visible |  显示隐藏当前 Field   |  N    |   boolean   |  true  |   true/false  |
-| setValueFormatter |  格式化控件渲染值，和 getValueFormatter 一起使用 |  N    |   function   |    |  function(savedValue) => renderValue  |
+| setValueFormatter |  格式化控件渲染值  |  N    |   function   |    |  function(savedValue) => renderValue  |
 | getValueFormatter |  格式化控件提交值  |  N    |   function   |    |  function(renderValue) => savedValue  |
 | layout |  设置当前 Field 的布局   |  N    |   object   |   同 Form layout   |  当前 Field 的 layout 会覆盖 Form 的 layout |
 | tips |  提示信息   |  N    |   string   |    |    |
@@ -243,7 +242,7 @@ FieldArray 表示渲染数组类型的数据，属性同 Field：
 
 如上图所示，整个表单的数据都放在 FormCore 这一层，同时 FormCore 会暴露一些 API，以便获取、设置、处理数据。Form、Field 组件通过 Sub/Pub 模式与 FormCore 通信，FormCore 通知组件何时重新渲染。表单提供了校验、联动以及结合 Fusion、Antd 三方组件库使用等能力。
 
-### 为什么不？
+### 竞品对比
 
 **[NoForm](https://github.com/alibaba/nopage)**
 

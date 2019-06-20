@@ -77,7 +77,7 @@ class App extends Component {
         {!this.state.isFormBinder && (
           <Form
             onSubmit={this.onSubmit}
-            renderField={(label, component, error) => (
+            renderField={({label, component, error}) => (
               <div style={{marginBottom: '10px'}}>
                 <span style={{display: 'inline-block', width: '80px'}}>{label}</span>
                 <div style={{position: 'relative', display: 'inline-block'}}>
