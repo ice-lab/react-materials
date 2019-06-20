@@ -1,6 +1,6 @@
 import React from 'react';
 import Exception from '@/components/Exception';
-import stores from '@/stores/index';
+import cookie from 'cookie';
 
 /**
  * 权限组件，可控制页面或者组件
@@ -27,9 +27,9 @@ import stores from '@/stores/index';
  *     </Auth>
  */
 const Auth = ({ children, authorities = [] }) => {
-  const userProfile = stores.useStore('userProfile');
-  // 获取当前用户的权限
-  const { authority } = userProfile;
+  // 服务端将 authority 保存在 cookie 中，前端只负责取 cookie
+  const cookies = cookie.parse(document.cookie);
+  const { authority } = cookies;
 
   if (authorities.indexOf(authority) === -1) {
     // 也可以跳转到统一的无权限页面，具体看业务需求

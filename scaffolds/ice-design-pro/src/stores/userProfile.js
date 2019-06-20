@@ -8,18 +8,12 @@ export default {
     avatar: '',
   },
   userid: '',
-  authority: 'guest',
 
   async fetchData() {
-    try {
-      const { data } = await request(userProfile);
-      const { name, department, avatar, userid, authority } = data.data;
-      this.userinfo = { name, department, avatar };
-      this.userid = userid;
-      this.authority = authority;
-    } catch (err) {
-      console.log(err);
-    }
+    const { data } = await request(userProfile);
+    const { name, department, avatar, userid } = data.data;
+    this.userinfo = { name, department, avatar };
+    this.userid = userid;
   },
 
   async login(params, callback) {
@@ -30,17 +24,15 @@ export default {
         ...params,
       },
     });
-    this.authority = data.authority;
     if (callback) {
-      callback();
+      callback(data);
     }
   },
 
   async logout(callback) {
     const { data } = await request(userLogout);
-    this.authority = data.authority;
     if (callback) {
-      callback();
+      callback(data);
     }
   },
 };

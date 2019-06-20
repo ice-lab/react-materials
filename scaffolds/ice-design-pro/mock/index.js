@@ -6,43 +6,41 @@ module.exports = {
       department: '技术部',
       avatar: 'https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png',
       userid: 10001,
-      // 个人信息中返回当前用户的角色
-      authority: 'user',
     },
   },
 
   'POST /api/login': (req, res) => {
     const { password, username } = req.body;
+    const responseData = {
+      status: '',
+      authority: 'guest',
+    };
     if (username === 'admin' && password === 'admin') {
-      res.send({
-        status: 'SUCCESS',
-        authority: 'admin',
-      });
+      responseData.status = 'SUCCESS';
+      responseData.authority = 'admin';
     } else if (username === 'user' && password === 'user') {
-      res.send({
-        status: 'SUCCESS',
-        authority: 'user',
-      });
+      responseData.status = 'SUCCESS';
+      responseData.authority = 'user';
     } else {
-      res.send({
-        status: 'FAIL',
-        authority: 'guest',
-        message: '用户名或者密码错误',
-      });
+      responseData.status = 'FAIL';
+      responseData.authority = 'guest';
+      responseData.message = '用户名或者密码错误';
     }
+    res.cookie('authority', responseData.authority);
+    res.send(responseData);
   },
 
   'POST /api/register': (req, res) => {
+    res.cookie('authority', 'user');
     res.send({
       status: 'SUCCESS',
-      authority: 'user',
     });
   },
 
   'POST /api/logout': (req, res) => {
+    res.cookie('authority', '');
     res.send({
       status: 'SUCCESS',
-      authority: 'guest',
     });
   },
 };

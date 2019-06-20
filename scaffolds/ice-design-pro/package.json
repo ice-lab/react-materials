@@ -30,6 +30,7 @@
     "axios": "^0.17.1",
     "bizcharts": "^3.2.2",
     "classnames": "^2.2.5",
+    "cookie": "^0.4.0",
     "enquire-js": "^0.1.2",
     "history": "^4.7.2",
     "hoist-non-react-statics": "^2.5.5",
