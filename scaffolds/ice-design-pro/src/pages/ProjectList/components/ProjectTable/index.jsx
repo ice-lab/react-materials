@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Table, Progress, Pagination, Dialog } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
 import DATA from './data';
 import styles from './index.module.scss';
-
-function renderProduct(value, index, record) {
-  return (
-    <div style={styles.product}>
-      <p style={styles.prodyctTitle}>{record.title}</p>
-    </div>
-  );
-}
 
 function handleRemove() {
   Dialog.confirm({
@@ -133,4 +125,4 @@ export default withRouter(injectIntl((props) => {
       <Pagination current={1} total={10} className={styles.pagination} />
     </IceContainer>
   );
-}))
+}));

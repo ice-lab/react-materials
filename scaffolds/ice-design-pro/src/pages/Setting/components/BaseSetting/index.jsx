@@ -43,17 +43,8 @@ export default injectIntl((props) => {
     description: '',
   });
 
-  function onDragOver() {
-    console.log('dragover callback');
-  }
-
-  function onDrop(fileList) {
-    console.log('drop callback : ', fileList);
-  }
-
-  function formChange(value) {
-    console.log('value', value);
-    setValue(value);
+  function formChange(val) {
+    setValue(val);
   }
 
   function validateAllFormField(values, errors) {
@@ -208,5 +199,5 @@ export default injectIntl((props) => {
       </IceContainer>
     </div>
   );
-})
+});
 

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Progress } from '@alifd/next';
 import { injectIntl } from 'react-intl';
-import styles from './index.module.scss';
 
 const DATA = [
   {

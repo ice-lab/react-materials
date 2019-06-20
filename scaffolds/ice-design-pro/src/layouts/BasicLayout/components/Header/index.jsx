@@ -43,11 +43,11 @@ function Header(props) {
     intl: { formatMessage },
   } = props;
 
-  const {  userinfo, fetchData } = userProfile;
+  const { userinfo, fetchData } = userProfile;
   const { name, department, avatar } = userinfo;
 
   useEffect(() => {
-    userProfile.fetchData();
+    fetchData();
   }, []);
 
   return (
@@ -72,7 +72,7 @@ function Header(props) {
               } else {
                 linkProps.to = nav.path;
               }
-              const name = formatMessage({ id: getLocaleKey(nav) });
+              const linkName = formatMessage({ id: getLocaleKey(nav) });
               return (
                 <Nav.Item key={idx}>
                   {linkProps.to ? (
@@ -80,14 +80,14 @@ function Header(props) {
                       {nav.icon ? (
                         <FoundationSymbol type={nav.icon} size="small" />
                       ) : null}{' '}
-                      {!isMobile ? name : null}
+                      {!isMobile ? linkName : null}
                     </Link>
                   ) : (
                     <a {...linkProps}>
                       {nav.icon ? (
                         <FoundationSymbol type={nav.icon} size="small" />
                       ) : null}{' '}
-                      {!isMobile ? name : null}
+                      {!isMobile ? linkName : null}
                     </a>
                   )}
                 </Nav.Item>

@@ -10,18 +10,6 @@ const Icon = FoundationSymbol;
 const { Row } = Grid;
 const FormItem = Form.Item;
 
-function checkPasswd(rule, values, callback) {
-  if (!values) {
-    callback('请输入正确的密码');
-  } else if (values.length < 8) {
-    callback('密码必须大于8位');
-  } else if (values.length > 16) {
-    callback('密码必须小于16位');
-  } else {
-    callback();
-  }
-}
-
 function checkPasswd2(rule, values, callback, stateValues) {
   if (!values) {
     callback('请输入正确的密码');
@@ -40,8 +28,8 @@ const UserRegister = withRouter((props) => {
     rePasswd: '',
   });
 
-  function formChange(value) {
-    useValue(value);
+  function formChange(val) {
+    useValue(val);
   }
 
   function handleSubmit(values, errors) {
@@ -54,9 +42,10 @@ const UserRegister = withRouter((props) => {
 
   async function handleRegister() {
     try {
-      const { data } = await request(userRegister);
+      await request(userRegister);
       Message.success('注册成功');
       props.history.push('/user/login');
+    /* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
     } catch (err) {
     }
   }

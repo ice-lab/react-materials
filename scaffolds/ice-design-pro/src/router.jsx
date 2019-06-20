@@ -25,11 +25,10 @@ const router = () => {
                         {/* 普通路由 */}
                         {children.filter(routeChild => routeChild.path && routeChild.component)
                           .map((routeChild, idx) => {
-                            const { component } = routeChild;
                             return (
                               <Route
                                 key={`route-${id}-${idx}`}
-                                component={component}
+                                component={routeChild.component}
                                 path={path.join(route.path, routeChild.path)}
                               />
                             );
@@ -50,11 +49,10 @@ const router = () => {
                         {/* 未匹配路由 */}
                         {children.filter(routeChild => !routeChild.path)
                           .map((routeChild, idx) => {
-                            const { component } = routeChild;
                             return (
                               <Route
                                 key={`notfound-${id}-${idx}`}
-                                component={component}
+                                component={routeChild.component}
                               />
                             );
                           })}

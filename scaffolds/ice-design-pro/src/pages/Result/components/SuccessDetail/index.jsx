@@ -65,5 +65,5 @@ export default withRouter(injectIntl((props) => {
       </div>
     </IceContainer>
   );
-}))
+}));
 
