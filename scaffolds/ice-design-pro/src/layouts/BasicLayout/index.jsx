@@ -5,7 +5,7 @@ import { enquire } from 'enquire-js';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import PageLoading from '../../components/PageLoading';
+import PageLoading from '@/components/PageLoading';
 import './index.scss';
 
 export default function BasicLayout(props) {

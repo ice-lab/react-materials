@@ -7,7 +7,7 @@ import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 
 import Logo from '../Logo';
-import { asideMenuConfig } from '../../../../menuConfig';
+import { asideMenuConfig } from '@/menuConfig';
 import './index.scss';
 
 const SubNav = Nav.SubNav;
