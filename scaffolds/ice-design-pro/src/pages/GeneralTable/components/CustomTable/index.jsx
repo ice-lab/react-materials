@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import PropTypes from 'prop-types';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function CustomTable(props) {
   const { dataSource, columns, style = {}, isLoading = false } = props;
@@ -18,7 +18,7 @@ export default function CustomTable(props) {
         loading={isLoading}
         dataSource={dataSource}
         hasBorder={false}
-        className="custom-table"
+        className={styles.customTable}
         style={{ minHeight: '500px' }}
       >
         {columns.map((item) => {
@@ -35,7 +35,7 @@ export default function CustomTable(props) {
         })}
       </Table>
       <Pagination
-        className="pagination"
+        className={styles.pagination}
         current={current}
         onChange={handlePagination}
       />

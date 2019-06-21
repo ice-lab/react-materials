@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function Exception(props) {
   const { statusCode, description, image, backText, redirect } = props;
+  
   return (
     <IceContainer>
-      <div className="exception-content">
-        <img src={image} className="exception-image" alt="页面不存在" />
+      <div className={styles.exceptionContent}>
+        <img src={image} className={styles.exceptionImage} alt="页面不存在" />
         <div className="exception-prompt">
-          <h1 className="statuscode">{statusCode}</h1>
-          <p className="description">{description}</p>
+          <h1 className={styles.statuscode}>{statusCode}</h1>
+          <p className={styles.description}>{description}</p>
           <Button type="primary">
-            <Link to={redirect} className="back-text">
+            <Link to={redirect} className={styles.backText}>
               {backText}
             </Link>
           </Button>

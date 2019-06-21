@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.editable-table {
+.editableTable {
   .celleditor {
     &:hover .celleditor-trigger {
       display: inline-block;
@@ -9,4 +9,13 @@
   .celleditor-trigger {
     display: none;
   }
+}
+
+.addNewItem {
+  background: #F5F5F5;
+  height: 32;
+  line-height: 32px;
+  margin-top: 20;
+  cursor: pointer;
+  text-align: center;
 }

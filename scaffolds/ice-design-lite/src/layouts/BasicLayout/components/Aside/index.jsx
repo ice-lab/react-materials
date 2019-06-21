@@ -6,7 +6,7 @@ import { Icon, Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 import Logo from '../Logo';
 import { asideMenuConfig } from '../../../../menuConfig';
-import './index.modules.scss';
+import './index.scss';
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;

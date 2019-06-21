@@ -33,7 +33,7 @@ const router = () => {
                                 to={redirect}
                               />
                             );
-                          } else {
+                          }
                             return (
                               <Route
                                 key={`${id}-${idx}`}
@@ -41,7 +41,6 @@ const router = () => {
                                 {...childPath ? { path: path.join(route.path, childPath) } : {}}
                               />
                             );
-                          }
                         })}
                       </Switch>
                     )}
