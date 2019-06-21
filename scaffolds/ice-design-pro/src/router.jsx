@@ -22,40 +22,27 @@ const router = () => {
                   <RouteComponent key={id} {...props}>
                     {children && (
                       <Switch>
-                        {/* 普通路由 */}
-                        {children.filter(routeChild => routeChild.path && routeChild.component)
-                          .map((routeChild, idx) => {
-                            return (
-                              <Route
-                                key={`route-${id}-${idx}`}
-                                component={routeChild.component}
-                                path={path.join(route.path, routeChild.path)}
-                              />
-                            );
-                          })}
-                        {/* Redirect路由 */}
-                        {children.filter(routeChild => routeChild.redirect)
-                          .map((routeChild, idx) => {
-                            const { redirect } = routeChild;
+                        {children.map((routeChild, idx) => {
+                          const { redirect, path: childPath, component: childComponent } = routeChild;
+                          if (redirect) {
                             return (
                               <Redirect
-                                key={`redirect-${id}-${idx}`}
+                                key={`${id}-${idx}`}
                                 exact
-                                from={path.join(route.path, routeChild.path)}
+                                from={path.join(route.path, childPath)}
                                 to={redirect}
                               />
                             );
-                          })}
-                        {/* 未匹配路由 */}
-                        {children.filter(routeChild => !routeChild.path)
-                          .map((routeChild, idx) => {
+                          } else {
                             return (
                               <Route
-                                key={`notfound-${id}-${idx}`}
-                                component={routeChild.component}
+                                key={`${id}-${idx}`}
+                                component={childComponent}
+                                {...childPath ? { path: path.join(route.path, childPath) } : {}}
                               />
                             );
-                          })}
+                          }
+                        })}
                       </Switch>
                     )}
                   </RouteComponent>
