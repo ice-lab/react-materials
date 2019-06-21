@@ -39,8 +39,8 @@ class App extends Component {
             }]
           }}
         >
-          <Field label="姓名：" name="username" component={Input} />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" />
+          <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" />
           <Button htmlType="submit">Submit</Button>
         </Form>
       </div>

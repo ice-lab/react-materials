@@ -1,6 +1,6 @@
 ---
 title: Fusion 表单组件
-order: 17
+order: 23
 ---
 
 Fusion 表单组件
@@ -27,9 +27,9 @@ class App extends Component {
         <Form
           onSubmit={this.onSubmit}
         >
-          <Field label="Password:" name="password" htmlType="password" component={Input} />
+          <Field label="Password:" name="password" htmlType="password" component={Input} placeholder="请输入密码" />
           <Field label="NumberPicker:" name="numberPicker" defaultValue={3} component={NumberPicker} />
-          <Field label="Switch:" name="switch" component={Switch} />
+          <Field label="Switch:" name="switch" component={Switch} valueName="checked" value={false} />
           <Field label="Range:" name="range" defaultValue={30} scales={[0, 100]} marks={[0, 100]} component={Range} />
           <Field label="Select:" name="select" component={Select} defaultValue='lucy'>
             <Option value="jack">jack</Option>

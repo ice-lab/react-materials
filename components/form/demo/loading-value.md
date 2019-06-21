@@ -55,9 +55,9 @@ class App extends Component {
           }]}
         >
           {this.state.loading && <div className="loading">loading...</div>}
-          <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component={Input} />
-          <Field name="age" label={Age} component={Input} />
-          <Field name="desc" label="描述：" component={Input.TextArea} />
+          <Field name="name" label={<span style={{color: 'red'}}>名称：</span>} component={Input} placeholder="请输入名字" />
+          <Field name="age" label={Age} component={Input} placeholder="请输入年龄" />
+          <Field name="desc" label="简介：" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
           <Field label="">
             <Button htmlType="submit">Submit</Button>
           </Field>

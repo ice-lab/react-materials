@@ -1,7 +1,15 @@
 ---
-title: FieldArray
+title: FieldArray 组件
 order: 22
+importStyle: true
 ---
+
+````css
+.field-array-item [class*='ice-col-'] {
+  padding-top: 0;
+  padding-left: 0;
+}
+````
 
 ````jsx
 import React, { Component } from 'react';
@@ -25,9 +33,9 @@ class App extends Component {
         >
           <h2>新增顾客名单</h2>
           <FieldArray label="新增顾客：" name="customers">
-            <Field name="customer0" component={Input} placeholder="customer name" />
-            <Field name="customer1" component={Input} placeholder="customer name" />
-            <Field name="customer2" component={Input} placeholder="customer name" />
+            <Field className="field-array-item" name="customer0" component={Input} placeholder="请输入顾客的名字" />
+            <Field className="field-array-item" name="customer1" component={Input} placeholder="请输入顾客的名字" />
+            <Field className="field-array-item" name="customer2" component={Input} placeholder="请输入顾客的名字" />
           </FieldArray>
           <Field label="日期：" name="date" component={DatePicker} />
           <Field label="">

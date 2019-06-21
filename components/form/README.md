@@ -135,7 +135,7 @@ ReactDOM.render((
 | getValueFormatter |  格式化控件提交值  |  N    |   function   |    |  function(renderValue) => savedValue  |
 | layout |  设置当前 Field 的布局   |  N    |   object   |   同 Form layout   |  当前 Field 的 layout 会覆盖 Form 的 layout |
 | tips |  提示信息   |  N    |   string   |    |    |
-| valueName |  控件值的名称，比如，radio 的 valueName 为 'checked'，value 为 true/false  |  N    |   string   |    |  多用于非常规三方控件  |
+| valueName |  控件值的名称，比如，radio 的 valueName 为 'checked'，value 为 true/false  |  N    |   string   |    |  比如 Fusion 的 Switch 组件  |
 | errorRender |  自定义 error 渲染   |  N    |   function(error) {}   |    |   |
 | onChange |  自定义 onChange 函数   |  N    |   function() {}   |    | 默认情况下已处理表单的 onChange(eventOrValue) 事件，如果接入的三方控件 onChange 的第一个参数不是 event 或者 value，可以主动设置对应的值。比如，接入控件的 onChange(xxx, value) 第二个参数才是 value，则可以手动设置 `formCore.setValue(fieldname, value)` |
 

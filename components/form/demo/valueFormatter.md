@@ -9,7 +9,7 @@ Format Feild's value
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Form, Field } from '@ice/form';
-import { Button, Input } from '@alifd/next';
+import { Button, DatePicker, Input } from '@alifd/next';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -23,17 +23,15 @@ class App extends Component {
     return (
       <div>
         <Form onSubmit={this.onSubmit}>
-          <h4>名称显示值为小写，昵称保存值为小写</h4>
-          <Field name="name" label="名称：" component={Input} setValueFormatter={
+          <h4>姓名显示、存储均为小写，日期存储格式为时间戳</h4>
+          <Field name="name" label="姓名：" component={Input} placeholder="请输入姓名" setValueFormatter={
             value => value && value.toLowerCase()
           } getValueFormatter={
-            value => value && value.toUpperCase()
-          } />
-          <Field name="nickname" label="昵称：" component={Input} getValueFormatter={
             value => value && value.toLowerCase()
           } />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
+          <Field label="生日:" name="date" component={DatePicker} getValueFormatter={
+            value => Date.parse(value)
+          } />
           <Field label="">
             <Button htmlType="submit">Submit</Button>
           </Field>

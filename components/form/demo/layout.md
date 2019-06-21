@@ -40,11 +40,11 @@ class App extends Component {
           }}
         >
           <h2>个人资料</h2>
-          <Field label="姓名：" name="username" component={Input} errorRender={ 
+          <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" errorRender={ 
             error => <span style={{color: '#ff7000'}}>{error}</span>
           } />
-          <Field label="年龄：" name="age" component={Input} tips="身份证上的年龄" />
-          <Field label="简介：" name="intro" layout={{tipsCol: 2}} component={Input.TextArea} tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
+          <Field label="年龄：" name="age" component={Input} tips="身份证上的年龄" placeholder="请输入年龄" />
+          <Field label="简介：" name="intro" layout={{tipsCol: 2}} component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
           <Field label="" name="submit">
             <Button htmlType="submit">Submit</Button>
           </Field>

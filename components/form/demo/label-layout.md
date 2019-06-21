@@ -21,9 +21,9 @@ class App extends Component {
           }}
         >
           <h2>标签靠左(labelTextAlign: left)</h2>
-          <Field label="name: " name="name" component={Input} />
-          <Field label="age: " name="age" component={Input} />
-          <Field label="intro: " name="intro" component={Input} />
+          <Field label="name: " name="name" component={Input} placeholder="please input name" />
+          <Field label="age: " name="age" component={Input} placeholder="please input age" />
+          <Field label="intro: " name="intro" component={Input} placeholder="please input intro" />
         </Form>
         <Form
           layout = {{
@@ -31,9 +31,9 @@ class App extends Component {
           }}
         >
           <h2>标签靠右(labelTextAlign: right)</h2>
-          <Field label="name: " name="name" component={Input} />
-          <Field label="age: " name="age" component={Input} />
-          <Field label="intro: " name="intro" component={Input} />
+          <Field label="name: " name="name" component={Input} placeholder="please input name" />
+          <Field label="age: " name="age" component={Input} placeholder="please input age" />
+          <Field label="intro: " name="intro" component={Input} placeholder="please input intro" />
         </Form>
         <Form
           layout = {{
@@ -42,9 +42,9 @@ class App extends Component {
           }}
         >
           <h2>标签在上面(labelAlign: top)</h2>
-          <Field label="name: " name="name" component={Input} />
-          <Field label="age: " name="age" component={Input} />
-          <Field label="intro: " name="intro" component={Input} />
+          <Field label="name: " name="name" component={Input} placeholder="please input name" />
+          <Field label="age: " name="age" component={Input} placeholder="please input age" />
+          <Field label="intro: " name="intro" component={Input} placeholder="please input intro" />
         </Form>
         <Form
           layout = {{
@@ -52,9 +52,9 @@ class App extends Component {
           }}
         >
           <h2>标签在左边(labelAlign: left)</h2>
-          <Field label="name: " name="name" component={Input} />
-          <Field label="age: " name="age" component={Input} />
-          <Field label="intro: " name="intro" component={Input} />
+          <Field label="name: " name="name" component={Input} placeholder="please input name" />
+          <Field label="age: " name="age" component={Input} placeholder="please input age" />
+          <Field label="intro: " name="intro" component={Input} placeholder="please input intro" />
         </Form>
       </div>
     );
