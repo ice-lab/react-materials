@@ -1,3 +1,4 @@
+const Fun = Function;
 export function EffectsInser({ data, context }) {
   const { effects } = context;
   const { name } = data;
@@ -16,23 +17,23 @@ export function Effects({ data }) {
   if (Array.isArray(effects)) {
     // 应当先执行一遍 effects
     data.effects = {
-      handler: (formCore) => {
+      handler(formCore) {
         const thisValue = formCore.getFieldValue(name);
-        effects.map(({ conditions, actions }) => {
+        effects.forEach(({ conditions, actions }) => {
           const allChecked = conditions.every(({ symbol, value, type }) => {
             let checkValue;
             if (type !== 'number') {
-              checkValue = new Function(`"use strict";return "${thisValue}" ${symbol} "${value}"`)();
+              checkValue = new Fun(`return "${thisValue}" ${symbol} "${value}"`)();
             } else {
               // number 类型
               checkValue = isNaN(+thisValue)
                 ? false
-                : new Function(`"use strict";return ${+thisValue} ${symbol} ${+value}`)();
+                : new Fun(`return ${+thisValue} ${symbol} ${+value}`)();
             }
             return checkValue;
           });
           if (allChecked) {
-            actions.map(({ target, type, value }) => {
+            actions.forEach(({ target, type, value }) => {
               switch (type) {
                 case 'setValue':
                   formCore.setFieldValue(name, value);

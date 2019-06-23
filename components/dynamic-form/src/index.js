@@ -1,3 +1,4 @@
+import React from 'react';
 import classnames from 'classnames';
 import { Form } from '@ice/form';
 
@@ -19,8 +20,6 @@ export default function DynamicForm(props) {
     // events
     onChange = () => { },
     onSubmit,
-    onBeforeChange, // ?
-    onBeforeSubmit, // ?
     labelStyle = {},
     buttonsStyle = {},
   } = props;
@@ -29,7 +28,7 @@ export default function DynamicForm(props) {
     components,
     status,
     effects,
-    labelStyle
+    labelStyle,
   }).pipe(EffectsInser)
     .pipe(Effects)
     .end(ItemRender);
@@ -38,11 +37,9 @@ export default function DynamicForm(props) {
     <Form
       layout={layout}
       initialValues={value}
-      // onBeforeChange={onBeforeChange}
-      // onBeforeSubmit={onBeforeSubmit}
       onChange={onChange}
       onSubmit={(...arg) => {
-        onSubmit && onSubmit.apply(null,arg);
+        onSubmit && onSubmit(...arg);
       }}
     >
       {
@@ -50,19 +47,21 @@ export default function DynamicForm(props) {
           const Buttons = new Godzilla(buttons, {
             components,
             buttonsStyle,
-            formCore
+            formCore,
           }).end(ButtonsRender);
 
-          return (<>
-            {
+          return (
+            <React.Fragment>
+              {
               Fields
             }
-            <div className={classnames('icedesign_form_buttons')}>
-              {
+              <div className={classnames('icedesign_form_buttons')}>
+                {
                 Buttons
               }
-            </div>
-          </>)
+              </div>
+            </React.Fragment>
+          );
         }
       }
     </Form>

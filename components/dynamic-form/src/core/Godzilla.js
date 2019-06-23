@@ -12,15 +12,16 @@ export default class Godzilla {
     return this;
   }
 
-  init(data, index, arr) {
+  init(data) {
     let ln = this.initFn.length;
     let rezult = data;
     let n = 0;
-    while (ln--) {
+    while (ln) {
+      ln -= 1;
       const fn = this.initFn[n];
       const params = { data: rezult, context: this.context };
       rezult = fn(params);
-      n++;
+      n += 1;
     }
     return rezult;
   }
@@ -30,14 +31,14 @@ export default class Godzilla {
     return this.start();
   }
 
-  ouput(data, index, arr) {
+  ouput(data, index) {
     return this.outputFn({ data, index, context: this.context });
   }
 
   start() {
     return this.arrayData.map((data, index, arr) => {
-      const _data = this.init(data, index, arr);
-      return this.ouput(_data, index, arr);
+      const dataResult = this.init(data, index, arr);
+      return this.ouput(dataResult, index, arr);
     });
   }
 }
