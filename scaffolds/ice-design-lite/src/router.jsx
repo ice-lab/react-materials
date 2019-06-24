@@ -1,66 +1,68 @@
-/**
- * 定义应用路由
- */
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import React from 'react';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import React, { Suspense } from 'react';
 import path from 'path';
-import routes from './routerConfig';
+import routes from '@/routerConfig';
+import PageLoading from '@/components/PageLoading';
+
+const ChildRoute = (props) => {
+  const { redirect, path: routePath, component, key } = props;
+  if (redirect) {
+    return (
+      <Redirect
+        exact
+        key={key}
+        from={routePath}
+        to={redirect}
+      />
+    );
+  }
+  return (
+    <Route
+      key={key}
+      component={component}
+      path={routePath}
+    />
+  );
+};
 
 const router = () => {
   return (
     <Router>
       <Switch>
         {routes.map((route, id) => {
-          const { component, children, ...others } = route;
-          const RouteComponent = component;
+          const { component: RouteComponent, children, ...others } = route;
           return (
             <Route
               key={id}
               {...others}
               component={(props) => {
                 return (
-                  <RouteComponent key={id} {...props}>
-                    {children && (
-                      <Switch>
-                        {/* 普通路由 */}
-                        {children.filter(routeChild => routeChild.path && routeChild.component)
-                          .map((routeChild, idx) => {
-                            const { component } = routeChild;
-                            return (
-                              <Route
-                                key={`route-${id}-${idx}`}
-                                component={component}
-                                path={path.join(route.path, routeChild.path)}
-                              />
-                            );
+                  children ? (
+                    <RouteComponent key={id} {...props}>
+                      <Suspense fallback={<PageLoading />}>
+                        <Switch>
+                          {children.map((routeChild, idx) => {
+                            const { redirect, path: childPath, component } = routeChild;
+                            return ChildRoute({
+                              key: `${id}-${idx}`,
+                              redirect,
+                              path: childPath && path.join(route.path, childPath),
+                              component,
+                            });
                           })}
-                        {/* Redirect路由 */}
-                        {children.filter(routeChild => routeChild.redirect)
-                          .map((routeChild, idx) => {
-                            const { redirect } = routeChild;
-                            return (
-                              <Redirect
-                                key={`redirect-${id}-${idx}`}
-                                exact
-                                from={path.join(route.path, routeChild.path)}
-                                to={redirect}
-                              />
-                            );
-                          })}
-                        {/* 未匹配路由 */}
-                        {children.filter(routeChild => !routeChild.path)
-                          .map((routeChild, idx) => {
-                            const { component } = routeChild;
-                            return (
-                              <Route
-                                key={`notfound-${id}-${idx}`}
-                                component={component}
-                              />
-                            );
-                          })}
-                      </Switch>
-                    )}
-                  </RouteComponent>
+                        </Switch>
+                      </Suspense>
+                    </RouteComponent>
+                  ) : (
+                    <Suspense fallback={<PageLoading />}>
+                      {
+                        ChildRoute({
+                          key: id,
+                          ...props,
+                        })
+                      }
+                    </Suspense>
+                  )
                 );
               }}
             />

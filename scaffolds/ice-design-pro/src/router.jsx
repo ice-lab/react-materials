@@ -9,8 +9,8 @@ const ChildRoute = (props) => {
   if (redirect) {
     return (
       <Redirect
-        key={key}
         exact
+        key={key}
         from={routePath}
         to={redirect}
       />
@@ -42,27 +42,25 @@ const router = () => {
                       <Suspense fallback={<PageLoading />}>
                         <Switch>
                           {children.map((routeChild, idx) => {
-                            const { redirect, path: childPath, component: ChildComponent } = routeChild;
-                            const routeKey = `${id}-${idx}`;
-                            const routePath = childPath ? path.join(route.path, childPath) : null;
-                            return (
-                              <ChildRoute
-                                key={routeKey}
-                                redirect={redirect}
-                                path={routePath}
-                                component={ChildComponent}
-                              />
-                            );
+                            const { redirect, path: childPath, component } = routeChild;
+                            return ChildRoute({
+                              key: `${id}-${idx}`,
+                              redirect,
+                              path: childPath && path.join(route.path, childPath),
+                              component,
+                            });
                           })}
                         </Switch>
                       </Suspense>
                     </RouteComponent>
                   ) : (
                     <Suspense fallback={<PageLoading />}>
-                      <ChildRoute
-                        key={id}
-                        {...props}
-                      />
+                      {
+                        ChildRoute({
+                          key: id,
+                          ...props,
+                        })
+                      }
                     </Suspense>
                   )
                 );

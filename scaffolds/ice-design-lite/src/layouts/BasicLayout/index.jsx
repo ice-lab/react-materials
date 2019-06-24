@@ -1,15 +1,15 @@
 /* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@icedesign/layout';
 import { enquire } from 'enquire-js';
 
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import PageLoading from '../../components/PageLoading';
 import './index.scss';
 
 const BasicLayout = (props) => {
+
   const [isScreen, setIsScreen] = useState();
 
   function enquireScreenHandle(type) {
@@ -40,7 +40,7 @@ const BasicLayout = (props) => {
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
-  const layoutClassName = 'ice-design-layout-dark ice-design-layout';
+  const layoutClassName = `ice-design-layout-dark ice-design-layout`;
 
   return (
     <div className={layoutClassName}>
@@ -51,9 +51,7 @@ const BasicLayout = (props) => {
             <Aside isMobile={isMobile} />
           </Layout.Aside>
           <Layout.Main>
-            <Suspense fallback={<PageLoading />}>
-              {props.children}
-            </Suspense>
+            {props.children}
           </Layout.Main>
         </Layout.Section>
         <Footer />
