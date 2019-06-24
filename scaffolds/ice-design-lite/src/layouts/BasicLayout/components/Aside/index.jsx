@@ -86,7 +86,6 @@ function getDefaultOpenKeys(location = {}) {
 }
 
 const Aside = withRouter((props) => {
-
   const defaultOpenKeys = getDefaultOpenKeys(props.location);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openKeys, setOpenKeys] = useState(defaultOpenKeys);

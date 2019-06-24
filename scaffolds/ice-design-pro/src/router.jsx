@@ -1,14 +1,27 @@
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import path from 'path';
 import routes from '@/routerConfig';
 import PageLoading from '@/components/PageLoading';
 
-const Loading = (props) => {
+const ChildRoute = (props) => {
+  const { redirect, path: routePath, component, key } = props;
+  if (redirect) {
+    return (
+      <Redirect
+        key={key}
+        exact
+        from={routePath}
+        to={redirect}
+      />
+    );
+  }
   return (
-    <Suspense fallback={<PageLoading />}>
-      {props.children}
-    </Suspense>
+    <Route
+      key={key}
+      component={component}
+      path={routePath}
+    />
   );
 };
 
@@ -17,8 +30,7 @@ const router = () => {
     <Router>
       <Switch>
         {routes.map((route, id) => {
-          const { component, children, ...others } = route;
-          const RouteComponent = component;
+          const { component: RouteComponent, children, ...others } = route;
           return (
             <Route
               key={id}
@@ -27,35 +39,31 @@ const router = () => {
                 return (
                   children ? (
                     <RouteComponent key={id} {...props}>
-                      <Loading>
+                      <Suspense fallback={<PageLoading />}>
                         <Switch>
                           {children.map((routeChild, idx) => {
-                            const { redirect, path: childPath, component: childComponent } = routeChild;
-                            if (redirect) {
-                              return (
-                                <Redirect
-                                  key={`${id}-${idx}`}
-                                  exact
-                                  from={path.join(route.path, childPath)}
-                                  to={redirect}
-                                />
-                              );
-                            }
+                            const { redirect, path: childPath, component: ChildComponent } = routeChild;
+                            const routeKey = `${id}-${idx}`;
+                            const routePath = childPath ? path.join(route.path, childPath) : null;
                             return (
-                              <Route
-                                key={`${id}-${idx}`}
-                                component={childComponent}
-                                {...childPath ? { path: path.join(route.path, childPath) } : {}}
+                              <ChildRoute
+                                key={routeKey}
+                                redirect={redirect}
+                                path={routePath}
+                                component={ChildComponent}
                               />
                             );
                           })}
                         </Switch>
-                      </Loading>
+                      </Suspense>
                     </RouteComponent>
                   ) : (
-                    <Loading>
-                      <RouteComponent key={id} {...props} />
-                    </Loading>
+                    <Suspense fallback={<PageLoading />}>
+                      <ChildRoute
+                        key={id}
+                        {...props}
+                      />
+                    </Suspense>
                   )
                 );
               }}

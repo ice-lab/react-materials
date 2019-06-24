@@ -20,7 +20,7 @@ function getLocaleKey(item) {
 export default function Header(props) {
   const { isMobile, className, style } = props;
   const userProfile = stores.useStore('userProfile');
-  const {  userinfo, fetchData } = userProfile;
+  const { userinfo, fetchData } = userProfile;
   const { name, department, avatar } = userinfo;
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export default function Header(props) {
 
   return (
     <Layout.Header
-      theme={'dark'}
+      theme="dark"
       className={cx('ice-design-layout-header', className)}
       style={{ ...style }}
     >
@@ -50,7 +50,7 @@ export default function Header(props) {
                 linkProps.to = nav.path;
               }
               return (
-                <Nav.Item key={idx} icon={nav.icon ? nav.icon: null}>
+                <Nav.Item key={idx} icon={nav.icon ? nav.icon : null}>
                   {linkProps.to ? (
                     <Link {...linkProps}>
                       {!isMobile ? <FormattedMessage id={getLocaleKey(nav)} /> : null}
