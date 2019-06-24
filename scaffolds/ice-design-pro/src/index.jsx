@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 // 引入默认全局样式
 import '@alifd/next/reset.scss';
+import './global.scss';
 
 // 引入基础配置文件
 import router from './router';

@@ -4,7 +4,7 @@ import { enquire } from 'enquire-js';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function BasicLayout(props) {
   const [isScreen, setIsScreen] = useState('isDesktop');
@@ -37,10 +37,9 @@ export default function BasicLayout(props) {
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
-  const layoutClassName = 'ice-design-layout-dark ice-design-layout';
 
   return (
-    <div className={layoutClassName}>
+    <div className={styles.iceDesignLayoutDark}>
       <Layout>
         <Header
           isMobile={isMobile}
