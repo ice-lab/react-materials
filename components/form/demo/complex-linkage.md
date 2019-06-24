@@ -52,8 +52,8 @@ class App extends Component {
             }
           ]}
         >
-          <Field label="Number1：" name="number1" component={Input} htmlType="number" />
-          <Field label="Number2：" name="number2" component={Input} htmlType="number" />
+          <Field label="Number1：" name="number1" component={Input} htmlType="number" placeholder="number1 必须大于等于 number2" />
+          <Field label="Number2：" name="number2" component={Input} htmlType="number" placeholder="number2 必须小于等于 number1" />
           <Field label="">
             <Button htmlType="submit">Submit</Button>
           </Field>

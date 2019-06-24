@@ -68,12 +68,12 @@ class App extends Component {
               this.handleSubmit = formCore.submit.bind(formCore);
               return (
                 <div>
-                  <Field name="name" label="名称：" component={Input} />
-                  <Field name="age" label="年龄：" component={Input} />
-                  <Field name="desc" label="描述：" component={Input.TextArea} />
-                  <Field name="open" label="是否打开：" component={Switch} />
-                  <Field name="openDesc" label="打开时的描述：" component={Input} />
-                  <Field name="closeDesc" label="关闭时的描述：" component={Input} />
+                  <Field name="name" label="名称：" component={Input} placeholder="请输入名字" />
+                  <Field name="age" label="年龄：" component={Input} placeholder="请输入年龄" />
+                  <Field name="desc" label="简介：" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
+                  <Field name="open" label="是否打开：" component={Switch} valueName="checked" value={true} />
+                  <Field name="openDesc" label="打开时的描述：" component={Input} placeholder="description when opening"/>
+                  <Field name="closeDesc" label="关闭时的描述：" component={Input} placeholder="description when closing" />
                 </div>
               )
             }}
