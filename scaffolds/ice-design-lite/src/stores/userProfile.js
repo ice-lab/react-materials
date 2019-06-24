@@ -17,6 +17,6 @@ export default {
       this.userid = userid;
     } catch (err) {
     }
-  }
+  },
 
 };

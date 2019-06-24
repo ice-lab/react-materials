@@ -10,7 +10,6 @@ import PageLoading from '../../components/PageLoading';
 import './index.scss';
 
 const BasicLayout = (props) => {
-
   const [isScreen, setIsScreen] = useState();
 
   function enquireScreenHandle(type) {
@@ -41,7 +40,7 @@ const BasicLayout = (props) => {
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
-  const layoutClassName = `ice-design-layout-dark ice-design-layout`;
+  const layoutClassName = 'ice-design-layout-dark ice-design-layout';
 
   return (
     <div className={layoutClassName}>

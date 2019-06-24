@@ -16,13 +16,13 @@ const routerConfig = [
       },
       {
         path: '/',
-        redirect: '/dashboard'
+        redirect: '/dashboard',
       },
       {
         component: NotFound,
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 export default routerConfig;
