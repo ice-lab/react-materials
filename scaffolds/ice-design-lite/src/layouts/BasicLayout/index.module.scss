@@ -1,16 +1,17 @@
-.ice-design-layout-dark.ice-design-layout {
+.iceDesignLayoutDark.iceDesignLayout {
     background-image: url(https://img.alicdn.com/tfs/TB1_YvwXTtYBeNjy1XdXXXXyVXa-1680-370.png);
     background-color: #2e323f;
   }
     
-  .ice-design-layout-dark {
-    &.ice-design-layout {
-      min-height: 100vh;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-  
+.iceDesignLayoutDark {
+  &.iceDesignLayout {
+    min-height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  :global {
     .ice-layout {
       width: 100%;
       min-height: 100vh;
@@ -26,4 +27,5 @@
       margin: 20px 0 0;
     }
   }
+}
   

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import cx from 'classnames';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -130,9 +129,7 @@ const Aside = withRouter((props) => {
   const openDrawerClassName = openDrawer ? styles.openDrawer : '';
 
   return (
-    <div
-      className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside} ${openDrawerClassName}`}
-    >
+    <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside} ${openDrawerClassName}`}>
       {isMobile && <Logo />}
 
       {isMobile && !openDrawer && (

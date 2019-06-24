@@ -1,20 +1,21 @@
-
-.ice-layout {
-  .ice-design-layout-aside {
-    .next-nav, .next-nav-sub-nav-item  {
-      background: transparent;
-    }
-    .next-nav .next-nav-item.next-menu-item {
-      background: transparent;
-      color: white;
-    }
-    .next-nav .next-menu-sub-menu .next-menu-item {
-      &.next-selected, &:hover {
-        background: $color-brand1-6;
-        border-radius: $corner-2;
+.iceDesignLiteAside {
+  &.iceDesignLayoutAside {
+    :global {
+      .next-nav, .next-nav-sub-nav-item  {
+        background: transparent;
+      }
+      .next-nav .next-nav-item.next-menu-item {
+        background: transparent;
+        color: white;
+      }
+      .next-nav .next-menu-sub-menu .next-menu-item {
+        &.next-selected, &:hover {
+          background: $color-brand1-6;
+          border-radius: $corner-2;
+        }
       }
     }
-    .menu-btn {
+    .menuBtn {
       position: fixed;
       left: 0;
       top: 82px;
@@ -36,8 +37,8 @@
 }
 
 @media screen and (max-width: 1199px) {
-  .ice-layout {
-    .ice-design-layout-aside {
+  .iceDesignLiteAside {
+    &.iceDesignLayoutAside {
       position: fixed;
       left: -256px;
       top: 0px;
@@ -47,12 +48,15 @@
       z-index: 9999;
     }
 
-    .open-drawer {
+    .openDrawer {
       transform: translateX(256px);
-      .logo {
-        width: 200px;
-        margin: 20px 0;
-        text-align: center;
+
+      :global {
+        .logo {
+          width: 200px;
+          margin: 20px 0;
+          text-align: center;
+        }
       }
     }
   }

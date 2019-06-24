@@ -2,7 +2,7 @@ $ice-header-text-color: #fff !default;
 $ice-header-icon-down-color: #fff !default;
 
 /* HEADER */
-  .ice-design-layout-header {
+  .iceDesignLayoutHeader {
     width: 100%;
     padding: 10px 0px;
     margin: 0px auto;
@@ -11,63 +11,67 @@ $ice-header-icon-down-color: #fff !default;
     align-items: center;
     box-shadow: none;
     background: transparent;
-    .user-avatar {
+    .userAvatar {
       margin-right: 12px;
       border-radius: 4px;
     }
-    .ice-design-layout-header-menu {
+    .iceDesignLayoutHeaderMenu {
       display: flex;
-      .ice-menu {
-        background: transparent;
-        color: $ice-header-text-color;
-        .ice-menu-item:hover,
-        .ice-menu-item > a:hover {
-          color: #2077ff;
+      :global {
+        .ice-menu {
+          background: transparent;
+          color: $ice-header-text-color;
+          .ice-menu-item:hover,
+          .ice-menu-item > a:hover {
+            color: #2077ff;
+          }
         }
       }
     }
-    .ice-design-header-userpannel {
+    .iceDesignHeaderUserpannel {
       display: flex;
       align-items: center;
       font-size: 12px;
       margin-left: 20px;
       cursor: pointer;
-      .user-profile {
+      .userProfile {
         display: inline-block;
         text-align: center;
         margin-bottom: 2px;
         color: $ice-header-text-color;
-        .user-name {
+        .userName {
           font-size: 13px;
         }
-        .user-department {
+        .userDepartment {
           font-size: 12px;
           color: #999;
         }
       }
-      .icon-down {
+      .iconDown {
         margin-left: 2px;
         color: $ice-header-icon-down-color;
       }
     }
 
-    .next-nav {
-      background: transparent;
-      .next-nav-item.next-menu-item {
+    :global {
+      .next-nav {
         background: transparent;
-        &:hover {
+        .next-nav-item.next-menu-item {
           background: transparent;
-          color: $color-brand1-6;
+          &:hover {
+            background: transparent;
+            color: $color-brand1-6;
+          }
         }
-      }
-    } 
+      } 
+    }
   }
 
-.user-profile-menu {
+.userProfileMenu {
   width: 130px;
   border-radius: 6px;
   padding: 0 16px;
-  .user-profile-menu-item {
+  .userProfileMenuItem {
     height: 40px;
     line-height: 40px;
     font-size: 12px;
@@ -79,16 +83,16 @@ $ice-header-icon-down-color: #fff !default;
 }
 
 @media screen and (max-width: 1199px) {
-  .ice-layout-theme-dark {
-    &.ice-design-layout-header {
-      width: 100%;
-      .user-avatar {
-        margin-left: 4px;
-      }
-      .ice-design-header-userpannel {
-        margin-left: 0;
-      }
-      .ice-design-layout-header-menu {
+  &.iceDesignLayoutHeader {
+    width: 100%;
+    .userAvatar {
+      margin-left: 4px;
+    }
+    .iceDesignHeaderUserpannel {
+      margin-left: 0;
+    }
+    .iceDesignLayoutHeaderMenu {
+      :global {
         .ice-menu .ice-menu-item {
           padding: 0 5px;
         }

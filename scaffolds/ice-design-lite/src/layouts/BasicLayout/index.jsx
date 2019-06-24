@@ -2,12 +2,12 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import Layout from '@icedesign/layout';
 import { enquire } from 'enquire-js';
+import PageLoading from '@/components/PageLoading';
 
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import PageLoading from '../../components/PageLoading';
-import './index.scss';
+import styles from './index.module.scss';
 
 const BasicLayout = (props) => {
   const [isScreen, setIsScreen] = useState();
@@ -40,10 +40,9 @@ const BasicLayout = (props) => {
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
-  const layoutClassName = 'ice-design-layout-dark ice-design-layout';
 
   return (
-    <div className={layoutClassName}>
+    <div className={`${styles.iceDesignLayoutDark} ${styles.iceDesignLayout}`}>
       <Layout >
         <Header isMobile={isMobile} />
         <Layout.Section scrollable>
