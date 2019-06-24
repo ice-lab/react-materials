@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function Logo() {
   return (
     <div className="logo">
-      <Link to="/" className="logo-text">
+      <Link to="/" className={styles.logo}>
         LOGO
       </Link>
     </div>

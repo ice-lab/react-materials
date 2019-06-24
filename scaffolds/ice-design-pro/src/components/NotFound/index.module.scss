@@ -1,9 +1,18 @@
+.exceptionContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #333;
+}
+.description {
+  color: #666;
+}
+
 @media screen and (max-width: 720px) {
-  .exceptioncontent {
+  .exceptionContent {
     min-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .imgException {
     max-width: 100px;
@@ -12,20 +21,15 @@
   .title {
     font-size: 14px;
     margin: 10px 0;
-    color: #333;
   }
   .description {
     font-size: 12px;
-    color: #666;
   }
 }
 
 @media screen and (min-width: 721px) and (max-width: 1199px) {
-  .exceptioncontent {
+  .exceptionContent {
     min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .imgException {
     max-width: 180px;
@@ -33,21 +37,16 @@
   }
   .title {
     font-size: 20px;
-    color: #333;
     margin: 10px 0;
   }
   .description {
     font-size: 14px;
-    color: #666;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .exceptioncontent {
+  .exceptionContent {
     min-height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .imgException {
     max-width: 260px;
@@ -56,10 +55,8 @@
   .title {
     font-size: 24px;
     margin: 20px 0;
-    color: #333;
   }
   .description {
     font-size: 16px;
-    color: #666;
   }
 }

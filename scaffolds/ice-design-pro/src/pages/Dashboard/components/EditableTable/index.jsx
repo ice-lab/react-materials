@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Table, Button } from '@alifd/next';
 import CellEditor from './CellEditor';
-import './index.scss';
+import styles from './index.module.scss';
 
 function EditableTable(props) {
   const {
@@ -80,7 +80,7 @@ function EditableTable(props) {
       <Table
         dataSource={dataSource}
         hasBorder={false}
-        className="editable-table"
+        className={styles.editableTable}
       >
         <Table.Column
           width={80}
@@ -108,7 +108,7 @@ function EditableTable(props) {
           cell={renderOperation}
         />
       </Table>
-      <div onClick={addNewItem} style={styles.addNewItem}>
+      <div onClick={addNewItem} className={styles.addNewItem}>
         + <FormattedMessage id="app.dashboard.todo.newline" />
       </div>
     </IceContainer>
@@ -116,16 +116,5 @@ function EditableTable(props) {
 }
 
 EditableTable.displayName = 'EditableTable';
-
-const styles = {
-  addNewItem: {
-    background: '#F5F5F5',
-    height: 32,
-    lineHeight: '32px',
-    marginTop: 20,
-    cursor: 'pointer',
-    textAlign: 'center',
-  },
-};
 
 export default injectIntl(EditableTable);
