@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Input, Checkbox, Grid, Form, Message } from '@alifd/next';
 import stores from '@/stores/index';
+import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -42,23 +43,23 @@ function UserLogin(props) {
   }
 
   return (
-    <div className="user-login">
-      <div className="formContainer">
+    <div className={styles.userLogin}>
+      <div className={styles.formContainer}>
         <Form value={value} onChange={formChange}>
-          <FormItem required requiredMessage="必填" className="formItem">
+          <FormItem required requiredMessage="必填" className={styles.formItem}>
             <Input
               innerBefore={
-                <Icon type="person" size="small" className="inputIcon" />
+                <Icon type="person" size="small" className={styles.inputIcon} />
               }
               name="username"
               maxLength={20}
               placeholder="用户名"
             />
           </FormItem>
-          <FormItem required requiredMessage="必填" className="formItem">
+          <FormItem required requiredMessage="必填" className={styles.formItem}>
             <Input
               innerBefore={
-                <Icon type="lock" size="small" className="inputIcon" />
+                <Icon type="lock" size="small" className={styles.inputIcon} />
               }
               name="password"
               htmlType="password"
@@ -66,29 +67,29 @@ function UserLogin(props) {
             />
           </FormItem>
           <FormItem>
-            <Checkbox name="checkbox" className="checkbox">
+            <Checkbox name="checkbox" className={styles.checkbox}>
               记住账号
             </Checkbox>
           </FormItem>
-          <Row className="formItem">
+          <Row className={styles.formItem}>
             <Form.Submit
               type="primary"
               validate
               onClick={handleSubmit}
-              className="submitBtn"
+              className={styles.submitBtn}
             >
               登 录
             </Form.Submit>
-            <p className="account">
-              <span className="tips-text" style={{ marginRight: '20px' }}>
+            <p className={styles.account}>
+              <span className={styles.tipsText} style={{ marginRight: '20px' }}>
                 管理员登录：admin/admin
               </span>
-              <span className="tips-text">用户登录：user/user</span>
+              <span className={styles.tipsText}>用户登录：user/user</span>
             </p>
           </Row>
 
           <Row className="tips">
-            <Link to="/user/register" className="tips-text">
+            <Link to="/user/register" className={styles.tipsText}>
               立即注册
             </Link>
           </Row>
