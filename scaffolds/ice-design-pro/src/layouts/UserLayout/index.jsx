@@ -1,16 +1,16 @@
 import React from 'react';
 import Layout from '@icedesign/layout';
 import Footer from './components/Footer';
-import './index.scss';
+import styles from './index.module.scss';
 
 export default function UserLayout(props) {
   return (
-    <Layout className="user-layout">
-      <div className="header">
-        <a href="#" className="meta">
-          <span className="title">LOGO</span>
+    <Layout className={styles.userLayout}>
+      <div className={styles.header}>
+        <a href="#" className={styles.meta}>
+          <span className={styles.title}>LOGO</span>
         </a>
-        <p className="desc">让前端开发简单而友好</p>
+        <p className={styles.desc}>让前端开发简单而友好</p>
       </div>
       {props.children}
       <Footer />

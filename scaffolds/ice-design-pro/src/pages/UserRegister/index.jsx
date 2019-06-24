@@ -5,6 +5,7 @@ import { Input, Grid, Form, Message } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import request from '@/utils/request';
 import { userRegister } from '@/dataSourceConfig';
+import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;
 const { Row } = Grid;
@@ -51,17 +52,17 @@ const UserRegister = withRouter((props) => {
   }
 
   return (
-    <div className="user-register">
-      <div className="formContainer">
+    <div className={styles.userRegister}>
+      <div className={styles.formContainer}>
         <Form value={value} onChange={formChange}>
           <FormItem
             required
             requiredMessage="请输入正确的用户名"
-            className="formItem"
+            className={styles.formItem}
           >
             <Input
               innerBefore={
-                <Icon type="person" size="small" className="inputIcon" />
+                <Icon type="person" size="small" className={styles.inputIcon} />
               }
               name="name"
               maxLength={20}
@@ -71,11 +72,11 @@ const UserRegister = withRouter((props) => {
           <FormItem
             required
             requiredMessage="请输入正确的邮箱"
-            className="formItem"
+            className={styles.formItem}
           >
             <Input
               innerBefore={
-                <Icon type="mail" size="small" className="inputIcon" />
+                <Icon type="mail" size="small" className={styles.inputIcon} />
               }
               name="email"
               maxLength={20}
@@ -85,7 +86,7 @@ const UserRegister = withRouter((props) => {
           <FormItem
             required
             requiredMessage="请输入正确的密码"
-            className="formItem"
+            className={styles.formItem}
           >
             <Input
               innerBefore={
@@ -93,7 +94,7 @@ const UserRegister = withRouter((props) => {
                   type="lock"
                   size="small"
                   todo="lock"
-                  className="inputIcon"
+                  className={styles.inputIcon}
                 />
               }
               name="passwd"
@@ -107,7 +108,7 @@ const UserRegister = withRouter((props) => {
             validator={(rule, values, callback) =>
               checkPasswd2(rule, values, callback, value)
             }
-            className="formItem"
+            className={styles.formItem}
           >
             <Input
               innerBefore={
@@ -115,7 +116,7 @@ const UserRegister = withRouter((props) => {
                   type="lock"
                   size="small"
                   todo="lock"
-                  className="inputIcon"
+                  className={styles.inputIcon}
                 />
               }
               name="rePasswd"
@@ -123,19 +124,19 @@ const UserRegister = withRouter((props) => {
               placeholder="至少8位密码"
             />
           </FormItem>
-          <Row className="formItem">
+          <Row className={styles.formItem}>
             <Form.Submit
               type="primary"
               validate
               onClick={handleSubmit}
-              className="submitBtn"
+              className={styles.submitBtn}
             >
               注 册
             </Form.Submit>
           </Row>
 
-          <Row className="tips">
-            <Link to="/user/login" className="tips-text">
+          <Row className={styles.tips}>
+            <Link to="/user/login" className={styles.tipsText}>
               使用已有账户登录
             </Link>
           </Row>
