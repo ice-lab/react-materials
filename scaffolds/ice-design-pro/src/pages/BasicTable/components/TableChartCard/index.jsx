@@ -25,4 +25,3 @@ export default function TableChartCard() {
     </IceContainer>
   );
 }
-TableChartCard.displayName = 'TableChartCard';

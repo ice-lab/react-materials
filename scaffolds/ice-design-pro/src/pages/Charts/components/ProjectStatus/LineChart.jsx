@@ -24,5 +24,3 @@ export default function AreaStackChart() {
     </Chart>
   );
 }
-
-AreaStackChart.displayName = 'AreaStackChart';

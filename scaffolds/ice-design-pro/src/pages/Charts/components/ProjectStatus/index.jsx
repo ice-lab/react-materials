@@ -77,6 +77,4 @@ function ProjectStatus(props) {
   );
 }
 
-ProjectStatus.displayName = 'ProjectStatus';
-
 export default injectIntl(ProjectStatus);

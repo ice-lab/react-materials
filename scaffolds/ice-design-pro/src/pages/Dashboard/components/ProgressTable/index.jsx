@@ -57,5 +57,3 @@ export default function ProgressTable() {
     </div>
   );
 }
-
-ProgressTable.displayName = 'ProgressTable';

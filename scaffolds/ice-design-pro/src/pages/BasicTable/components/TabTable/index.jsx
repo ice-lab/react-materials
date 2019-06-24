@@ -99,6 +99,4 @@ function TabTable(props) {
   );
 }
 
-TabTable.displayName = 'TabTable';
-
 export default injectIntl(TabTable);

@@ -88,6 +88,4 @@ function SearchHistory(props) {
   );
 }
 
-SearchHistory.displayName = 'SearchHistory';
-
 export default injectIntl(SearchHistory);

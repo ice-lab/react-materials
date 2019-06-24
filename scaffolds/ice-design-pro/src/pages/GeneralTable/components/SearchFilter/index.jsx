@@ -266,6 +266,4 @@ function SearchFilter(props) {
   );
 }
 
-SearchFilter.displayName = 'SearchFilter';
-
 export default injectIntl(SearchFilter);

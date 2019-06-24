@@ -74,6 +74,4 @@ function GeneralTable(props) {
   );
 }
 
-GeneralTable.displayName = 'GeneralTable';
-
 export default injectIntl(GeneralTable);

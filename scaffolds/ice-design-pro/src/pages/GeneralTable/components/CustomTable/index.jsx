@@ -43,7 +43,6 @@ export default function CustomTable(props) {
   );
 }
 
-CustomTable.displayName = 'CustomTable';
 CustomTable.defaultProps = {
   columns: [],
   dataSource: [],

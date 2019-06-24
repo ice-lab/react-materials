@@ -120,7 +120,6 @@ export default function CustomForm(props) {
   );
 }
 
-CustomForm.displayName = 'CustomForm';
 CustomForm.propTypes = {
   value: PropTypes.object.isRequired,
   config: PropTypes.array.isRequired,

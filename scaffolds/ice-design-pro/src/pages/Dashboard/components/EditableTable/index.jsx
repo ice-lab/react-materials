@@ -115,6 +115,4 @@ function EditableTable(props) {
   );
 }
 
-EditableTable.displayName = 'EditableTable';
-
 export default injectIntl(EditableTable);

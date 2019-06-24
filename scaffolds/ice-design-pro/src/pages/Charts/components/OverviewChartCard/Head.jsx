@@ -27,7 +27,6 @@ export default function Head(props) {
   );
 }
 
-Head.displayName = 'Head';
 Head.propTypes = {
   title: PropTypes.string,
   content: PropTypes.string,

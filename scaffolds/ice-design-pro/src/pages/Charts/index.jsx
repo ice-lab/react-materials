@@ -14,5 +14,3 @@ export default function Charts() {
     </div>
   );
 }
-
-Charts.displayName = 'Charts';

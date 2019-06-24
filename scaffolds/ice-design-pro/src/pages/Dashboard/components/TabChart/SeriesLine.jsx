@@ -69,8 +69,6 @@ export default function SeriesLine() {
   );
 }
 
-SeriesLine.displayName = 'SeriesLine';
-
 const styles = {
   point: {
     stroke: '#fff',

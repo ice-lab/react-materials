@@ -85,6 +85,4 @@ function OrderStatusChart(props) {
   );
 }
 
-OrderStatusChart.displayName = 'OrderStatusChart';
-
 export default injectIntl(OrderStatusChart);

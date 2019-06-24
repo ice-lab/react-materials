@@ -29,5 +29,3 @@ export default function Trend() {
     </div>
   );
 }
-
-Trend.displayName = 'Field';
