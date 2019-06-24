@@ -108,8 +108,6 @@ function PieDoughnutChart(props) {
   );
 }
 
-PieDoughnutChart.displayName = 'PieDoughnutChart';
-
 const styles = {};
 
 export default injectIntl(PieDoughnutChart);

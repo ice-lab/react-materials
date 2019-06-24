@@ -87,7 +87,6 @@ export default function ContractTable(props) {
   return <CustomTable {...props} columns={columnsConfig()} />;
 }
 
-ContractTable.displayName = 'ContractTable';
 ContractTable.propTypes = {
   dataSource: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,

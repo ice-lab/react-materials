@@ -99,8 +99,6 @@ export default function EditDialog(props) {
   );
 }
 
-EditDialog.displayName = 'EditDialog';
-
 const styles = {
   editDialog: {
     display: 'inline-block',

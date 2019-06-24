@@ -13,7 +13,6 @@ export default function Field(props) {
   );
 }
 
-Field.displayName = 'Field';
 Field.propTypes = {
   value: PropTypes.string,
   label: PropTypes.string,

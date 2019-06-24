@@ -57,6 +57,4 @@ function LatestActivity(props) {
   );
 }
 
-LatestActivity.displayName = 'LatestActivity';
-
 export default injectIntl(LatestActivity);

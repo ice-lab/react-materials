@@ -46,8 +46,6 @@ export default function BasicLine() {
   );
 }
 
-BasicLine.displayName = 'BasicLine';
-
 const styles = {
   point: {
     stroke: '#fff',

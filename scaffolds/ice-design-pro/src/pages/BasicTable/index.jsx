@@ -12,8 +12,6 @@ function BasicTable() {
   );
 }
 
-BasicTable.displayName = 'BasicTable';
-
 export default withAuth({
   authorities: ['admin'],
 })(BasicTable);

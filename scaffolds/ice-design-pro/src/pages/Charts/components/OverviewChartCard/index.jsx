@@ -91,6 +91,4 @@ function OverviewChartCard(props) {
   );
 }
 
-OverviewChartCard.displayName = 'OverviewChartCard';
-
 export default injectIntl(OverviewChartCard);

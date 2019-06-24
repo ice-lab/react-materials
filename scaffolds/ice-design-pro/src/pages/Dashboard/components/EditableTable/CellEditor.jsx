@@ -75,8 +75,6 @@ export default function CellEditor(props) {
   );
 }
 
-CellEditor.displayName = 'CellEditor';
-
 const styles = {
   cellInput: {
     width: 'calc(100% - 44px)',

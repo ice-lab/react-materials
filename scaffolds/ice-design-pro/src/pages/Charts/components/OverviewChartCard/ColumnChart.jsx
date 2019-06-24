@@ -41,7 +41,6 @@ export default function ColumnChart(props) {
   );
 }
 
-ColumnChart.displayName = 'ColumnChart';
 ColumnChart.propTypes = {
   type: PropTypes.string,
 };

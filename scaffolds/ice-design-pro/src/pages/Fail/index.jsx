@@ -11,5 +11,3 @@ export default function Fail() {
     </div>
   );
 }
-
-Fail.displayName = 'Fail';

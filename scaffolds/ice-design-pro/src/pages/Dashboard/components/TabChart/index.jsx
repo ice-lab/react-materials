@@ -37,6 +37,4 @@ function TabChart(props) {
   );
 }
 
-TabChart.displayName = 'TabChart';
-
 export default injectIntl(TabChart);

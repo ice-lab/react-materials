@@ -39,7 +39,6 @@ export default function Card(props) {
   );
 }
 
-Card.displayName = 'Card';
 Card.propTypes = {
   content: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
