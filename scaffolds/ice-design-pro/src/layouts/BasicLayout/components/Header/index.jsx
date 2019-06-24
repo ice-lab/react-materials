@@ -12,7 +12,7 @@ import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 function Header(props) {
   const userProfile = stores.useStore('userProfile');
@@ -53,12 +53,12 @@ function Header(props) {
   return (
     <Layout.Header
       theme="dark"
-      className={cx('ice-design-layout-header', className)}
+      className={`${styles.iceDesignLayoutHeader} ${className}`}
       style={{ ...style }}
     >
       <Logo />
 
-      <div className="ice-design-layout-header-menu">
+      <div className={styles.iceDesignLayoutHeaderMenu}>
         {/* Header 菜单项 begin */}
         {headerMenuConfig && headerMenuConfig.length > 0 ? (
           <Nav direction="hoz" type="secondary" selectedKeys={[]}>
@@ -103,42 +103,42 @@ function Header(props) {
         {/* Header 右侧内容块 */}
         <Balloon
           trigger={
-            <div className="ice-design-header-userpannel">
+            <div className={styles.iceDesignHeaderUserpannel}>
               <IceImg
                 height={40}
                 width={40}
                 src={avatar}
-                className="user-avatar"
+                className={styles.userAvatar}
               />
-              <div className="user-profile">
-                <span className="user-name">
+              <div className={styles.userProfile}>
+                <span className={styles.userName}>
                   {name}
                 </span>
                 <br />
-                <span className="user-department">
+                <span className={styles.userDepartment}>
                   {department}
                 </span>
               </div>
               <FoundationSymbol
                 type="angle-down"
                 size="small"
-                className="icon-down"
+                className={styles.iconDown}
               />
             </div>
           }
           closable={false}
-          className="user-profile-menu"
+          className={styles.userProfileMenu}
         >
           <ul>
             <li
-              className="user-profile-menu-item"
+              className={styles.userProfileMenuItem}
               onClick={handleSetting}
             >
               <FoundationSymbol type="repair" size="small" />
               <FormattedMessage id="app.header.user.setting" />
             </li>
             <li
-              className="user-profile-menu-item"
+              className={styles.userProfileMenuItem}
               onClick={handleLogout}
             >
               <FoundationSymbol type="person" size="small" />
