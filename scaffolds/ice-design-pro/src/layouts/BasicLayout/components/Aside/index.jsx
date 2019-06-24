@@ -7,7 +7,7 @@ import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 import { asideMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
-import './index.scss';
+import styles from './index.module.scss';
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
@@ -127,16 +127,16 @@ const Aside = withRouter((props) => {
     isMobile,
   } = props;
 
+  const openDrawerClassName = openDrawer ? styles.openDrawer : '';
+
   return (
     <div
-      className={cx('ice-design-layout-aside', {
-        'open-drawer': openDrawer,
-      })}
+      className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside} ${openDrawerClassName}`}
     >
       {isMobile && <Logo />}
 
       {isMobile && !openDrawer && (
-        <a className="menu-btn" onClick={toggleMenu}>
+        <a className={styles.menuBtn} onClick={toggleMenu}>
           <FoundationSymbol type="menu" size="small" />
         </a>
       )}
