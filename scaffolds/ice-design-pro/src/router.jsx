@@ -4,7 +4,7 @@ import path from 'path';
 import routes from '@/routerConfig';
 import PageLoading from '@/components/PageLoading';
 
-const ChildRoute = (props) => {
+const RouteItem = (props) => {
   const { redirect, path: routePath, component, key } = props;
   if (redirect) {
     return (
@@ -43,7 +43,7 @@ const router = () => {
                         <Switch>
                           {children.map((routeChild, idx) => {
                             const { redirect, path: childPath, component } = routeChild;
-                            return ChildRoute({
+                            return RouteItem({
                               key: `${id}-${idx}`,
                               redirect,
                               path: childPath && path.join(route.path, childPath),
@@ -56,7 +56,7 @@ const router = () => {
                   ) : (
                     <Suspense fallback={<PageLoading />}>
                       {
-                        ChildRoute({
+                        RouteItem({
                           key: id,
                           ...props,
                         })

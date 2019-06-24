@@ -37,7 +37,6 @@
     "intl": "^1.2.5",
     "invariant": "^2.2.4",
     "lodash": "^4.17.10",
-    "path": "^0.12.7",
     "path-to-regexp": "^2.2.1",
     "prop-types": "^15.5.8",
     "react": "^16.2.0",
