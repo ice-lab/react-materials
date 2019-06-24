@@ -28,8 +28,7 @@ import cookie from 'cookie';
  */
 const Auth = ({ children, authorities = [] }) => {
   // 服务端将 authority 保存在 cookie 中，前端只负责取 cookie
-  const cookies = cookie.parse(document.cookie);
-  const { authority } = cookies;
+  const { authority } = cookie.parse(document.cookie);
 
   if (authorities.indexOf(authority) === -1) {
     // 也可以跳转到统一的无权限页面，具体看业务需求
@@ -44,11 +43,11 @@ const Auth = ({ children, authorities = [] }) => {
   return children;
 };
 
-const withAuth = (params) => (TargetElement) => {
+const withAuth = (params) => (WrapperedComponent) => {
   return (props) => {
     return (
       <Auth {...params}>
-        <TargetElement {...props} />
+        <WrapperedComponent {...props} />
       </Auth>
     );
   };

@@ -1,11 +1,9 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '@icedesign/layout';
 import { enquire } from 'enquire-js';
-
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import PageLoading from '@/components/PageLoading';
 import './index.scss';
 
 export default function BasicLayout(props) {
@@ -52,10 +50,7 @@ export default function BasicLayout(props) {
             <Aside isMobile={isMobile} />
           </Layout.Aside>
           <Layout.Main>
-            <Suspense fallback={<PageLoading />}>
-              {props.children}
-            </Suspense>
-            {/* <MainRoutes /> */}
+            {props.children}
           </Layout.Main>
         </Layout.Section>
 

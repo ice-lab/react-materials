@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
-
-import Logo from '../Logo';
 import { asideMenuConfig } from '@/menuConfig';
+import Logo from '../Logo';
 import './index.scss';
 
 const SubNav = Nav.SubNav;
