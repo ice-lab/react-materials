@@ -29,9 +29,9 @@ class App extends Component {
           {formCore => (
             <div>
               <h2>Antd 组件</h2>
-              <Field label="姓名：" name="username" component={Input} />
-              <Field label="年龄：" name="age" component={Input} type="number" />
-              <Field label="简介：" name="intro" component={Input.TextArea} />
+              <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
+              <Field label="年龄：" name="age" component={Input} type="number" placeholder="请输入年龄" />
+              <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
               <Field label="性别：" name="gender" rules={[{
                 required: true,
                 message: '性别必选'
@@ -45,7 +45,7 @@ class App extends Component {
                 <Checkbox value="vue">Vue</Checkbox>
                 <Checkbox value="angular">Angular</Checkbox>
               </Field>
-              <Field label="加班：" name="switch" component={Switch} checkedChildren="on" unCheckedChildren="off" />
+              <Field label="加班：" name="switch" component={Switch} valueName='checked' value={true} checkedChildren="on" unCheckedChildren="off" />
               <Field label="职级：" name="grade" component={Select}>
                 <Select.Option value="p6">P6</Select.Option>
                 <Select.Option value="p7">P7</Select.Option>

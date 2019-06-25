@@ -56,6 +56,7 @@
     "arrow-parens": 0,
     "global-require": 0,
     "react/forbid-prop-types": 0,
-    "no-unused-expressions": ["error", { "allowShortCircuit": true }]
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "no-plusplus": 0
   }
 }

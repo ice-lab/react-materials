@@ -24,7 +24,7 @@ class App extends Component {
       <div>
         <Form onSubmit={this.onSubmit}>
           <h2>个人资料</h2>
-          <Field name="name" label="名称：" component={Input} autoComplete="off" rules={{
+          <Field name="name" label="名称：" component={Input} autoComplete="off" placeholder="请输入名字" rules={{
               async asyncValidator(rule, value, callback) {
                 if (!value) {
                   callback('名称必填');
@@ -39,12 +39,12 @@ class App extends Component {
                 }
               }
             }} />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" rules={[{
+          <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" rules={[{
             message: '年龄必填且大于18岁',
             required: true,
             validator: (rule, value) => value > 18
           }]} />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
+          <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
           <Field label="">
             <Button htmlType="submit">Submit</Button>
           </Field>

@@ -33,12 +33,11 @@ class App extends Component {
           onChange={this.onChange}
         >
           <h2>个人资料</h2>
-          <Field label="姓名：" name="username" component={Input} />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Field label="描述：" name="intro" component={Input.TextArea} />
+          <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" />
+          <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
           <Field label="开关：" name="open" component={Switch} />
-          <Field label="尺寸：" name="size" component={Select}>
+          <Field label="尺寸：" name="size" component={Select} placeholder="请选择尺寸">
             <Option value="small" key="small">小</Option>
             <Option value="medium" key="medium">中</Option>
             <Option value="large" key="large">大</Option>

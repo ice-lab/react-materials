@@ -64,14 +64,14 @@ class App extends Component {
           ]}
         >
           <h2>个人资料</h2>
-          <Field label="姓名：" name="username" component={Input} />
+          <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
           <Field label="性别：" name="gender" component={Radio.Group}>
             <Radio value="male">男</Radio>
             <Radio value="female">女</Radio>
             <Radio value="x">X</Radio>
           </Field>
-          <Field label="年龄：" name="age" component={Input} htmlType="number" />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
+          <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" />
+          <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
           <Field label="">
             <Button htmlType="submit">Submit</Button>
           </Field>
