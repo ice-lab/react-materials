@@ -46,7 +46,7 @@ $ npm run build
 - [issue 反馈](https://github.com/alibaba/ice/issues/new)
 - [ice-devtools](https://ice.work/docs/advanced/custom-materials)
 - [Fusion 组件](https://fusion.design/)
-- [ice-scripts](https://ice.work/docs/basis/ice-scripts)
+- [ice-scripts](https://github.com/ice-lab/ice-scripts)
 
 ## License
 
