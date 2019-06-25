@@ -1,8 +1,24 @@
 import React, { createElement, cloneElement } from 'react';
+import PropTypes from 'prop-types';
 import cs from 'classnames';
 
-function renderField(props) {
-  const { label, component, error, visible = true, children, renderFieldLayout, errorRender, formLevelLayout, layout, tips, fieldType, className, style, ...rest } = props;
+function RenderField(props) {
+  const {
+    label,
+    component,
+    error,
+    visible,
+    children,
+    renderFieldLayout,
+    errorRender,
+    formLevelLayout,
+    layout,
+    tips,
+    fieldType,
+    className,
+    style,
+    ...rest
+  } = props;
 
   if (!visible) return null;
 
@@ -42,7 +58,7 @@ function renderField(props) {
 
   return (
     <div className={className ? `ice-field ${className}` : 'ice-field'} style={style}>
-      { (label !== undefined) && <div className={fieldLabelClass}>{label}</div> }
+      { (label !== null) && <div className={fieldLabelClass}>{label}</div> }
       <div className={fieldControlClass}>
         <div>{child}</div>
         { tips && <div className="ice-field-tips">{tips}</div> }
@@ -58,4 +74,43 @@ function renderField(props) {
   );
 }
 
-export default renderField;
+RenderField.propTypes = {
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  error: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  name: PropTypes.string,
+  visible: PropTypes.bool,
+  renderFieldLayout: PropTypes.func,
+  errorRender: PropTypes.func,
+  formLevelLayout: PropTypes.object,
+  layout: PropTypes.object,
+  tips: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element,
+  ]),
+  fieldType: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.object,
+};
+
+RenderField.defaultProps = {
+  label: null,
+  error: null,
+  name: null,
+  visible: true,
+  renderFieldLayout: null,
+  errorRender: null,
+  formLevelLayout: {},
+  layout: {},
+  tips: null,
+  fieldType: '',
+  className: '',
+  style: {},
+};
+
+export default RenderField;

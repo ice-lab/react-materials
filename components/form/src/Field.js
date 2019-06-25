@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import FormContext from './context';
-import renderField from './renderField';
+import RenderField from './RenderField';
 import getComponentProps from './getComponentProps';
 
 class Field extends React.Component {
@@ -96,10 +98,16 @@ class Field extends React.Component {
   }
 
   render() {
-    const { valueName = 'value', name, component, onChange, children, fieldArrayName, fieldArrayKey } = this.props;
+    const { valueName, name, component, onChange, children, fieldArrayName, fieldArrayKey } = this.props;
     const store = this.context;
     const state = this.state;
-    let value = state.value || '';
+    let value = state.value;
+    if (value === undefined) {
+      value = '';
+      if (valueName === 'checked') {
+        value = false;
+      }
+    }
     let error = state.error;
     if (fieldArrayName !== undefined) {
       value = store.getFieldValue(fieldArrayName)[fieldArrayKey];
@@ -121,10 +129,33 @@ class Field extends React.Component {
       }
     }
 
-    return renderField(renderProps);
+    return <RenderField {...renderProps} />;
   }
 }
 
 Field.contextType = FormContext;
+
+Field.propTypes = {
+  name: PropTypes.string,
+  valueName: PropTypes.string,
+  rules: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
+  effects: PropTypes.object,
+  onChange: PropTypes.func,
+  setValueFormatter: PropTypes.func,
+  getValueFormatter: PropTypes.func,
+};
+
+Field.defaultProps = {
+  name: null,
+  valueName: 'value',
+  rules: null,
+  effects: null,
+  onChange: null,
+  setValueFormatter: null,
+  getValueFormatter: null,
+};
 
 export default Field;

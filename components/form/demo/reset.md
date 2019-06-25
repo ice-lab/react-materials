@@ -20,10 +20,17 @@ class App extends Component {
   }
 
   render() {
+    const initialValues = {
+      username: 'icer',
+      age: 3,
+      intro: '让前端开发简单而友好'
+    };
+
     return (
       <div>
         <Form
           onSubmit={this.onSubmit}
+          initialValues={initialValues}
         >
           {formCore => (
             <div>
@@ -34,7 +41,8 @@ class App extends Component {
               <Field label="">
                 <div>
                   <Button htmlType="submit" style={{marginRight: '20px'}}>Submit</Button>
-                  <Button onClick={() => formCore.reset()}>Reset</Button>
+                  <Button style={{marginRight: '20px'}} onClick={() => formCore.reset()}>Clear</Button>
+                  <Button onClick={() => formCore.reset(initialValues)}>Reset</Button>
                 </div>
               </Field>
             </div>

@@ -210,8 +210,8 @@ FieldArray 表示渲染数组类型的数据，属性同 Field：
   设置某一 `Field` 的属性值
 - `submit()`
   提交表单
-- `reset()`
-  重置表单
+- `reset(initialValues)`
+  重置表单的值为 initialValues，若不传参数则默认清空表单
 
 也可以通过属性的方式获取到一些数据：
 - `formCore.values`

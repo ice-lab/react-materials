@@ -76,10 +76,7 @@ Form.propTypes = {
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   initialValues: PropTypes.object,
-  rules: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]),
+  rules: PropTypes.object,
   effects: PropTypes.array,
 };
 
@@ -87,7 +84,7 @@ Form.defaultProps = {
   onChange: () => {},
   onSubmit: () => {},
   initialValues: {},
-  rules: [],
+  rules: {},
   effects: [],
 };
 
