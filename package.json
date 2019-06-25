@@ -1,11 +1,5 @@
 {
-  "name": "react-materials",
-  "version": "1.0.1",
   "private": true,
-  "description": "",
-  "files": [
-    "build/"
-  ],
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
@@ -15,6 +9,8 @@
   },
   "materialConfig": {
     "type": "react"
+  },
+  "dependencies": {
   },
   "devDependencies": {
     "fs-extra": "^8.0.1",
