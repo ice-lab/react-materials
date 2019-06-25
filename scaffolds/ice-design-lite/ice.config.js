@@ -12,9 +12,6 @@ module.exports = {
     }],
   ],
   alias: {
-    '@': path.resolve(__dirname, './src/')
-  },
-  devServer: {
-    historyApiFallback: true,
+    '@': path.resolve(__dirname, './src/'),
   },
 };

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Progress } from '@alifd/next';
 import { injectIntl } from 'react-intl';
-import styles from './index.module.scss';
 
 const DATA = [
   {
@@ -63,37 +62,28 @@ const DATA = [
   },
 ];
 
-@injectIntl
-export default class TopActiveChart extends Component {
-  renderProduct = (value, index, record) => {
-    return (
-      <div className={styles.product}>
-        <p className={styles.prodyctTitle}>{record.title}</p>
-      </div>
-    );
-  };
+function TopActiveChart(props) {
+  const {
+    intl: { formatMessage },
+  } = props;
 
-  render() {
-    const {
-      intl: { formatMessage },
-    } = this.props;
-
-    return (
-      <IceContainer
-        title={formatMessage({ id: 'app.dashboard.project.table.title' })}
-      >
-        <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
-          <Table.Column title="项目名称" dataIndex="name" />
-          <Table.Column title="项目成员" dataIndex="member" />
-          <Table.Column
-            title="项目进度"
-            dataIndex="percent"
-            cell={(value, index, record) => (
-              <Progress percent={record.percent} state={record.state} />
-            )}
-          />
-        </Table>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer
+      title={formatMessage({ id: 'app.dashboard.project.table.title' })}
+    >
+      <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
+        <Table.Column title="项目名称" dataIndex="name" />
+        <Table.Column title="项目成员" dataIndex="member" />
+        <Table.Column
+          title="项目进度"
+          dataIndex="percent"
+          cell={(value, index, record) => (
+            <Progress percent={record.percent} state={record.state} />
+          )}
+        />
+      </Table>
+    </IceContainer>
+  );
 }
+
+export default injectIntl(TopActiveChart);

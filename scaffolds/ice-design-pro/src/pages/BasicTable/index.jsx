@@ -1,21 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withAuth } from '@/components/Auth';
 import TableChartCard from './components/TableChartCard';
 import TabTable from './components/TabTable';
 
-export default class BasicTable extends Component {
-  static displayName = 'BasicTable';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="basic-table-page">
-        <TabTable />
-        <TableChartCard />
-      </div>
-    );
-  }
+function BasicTable() {
+  return (
+    <div>
+      <TabTable />
+      <TableChartCard />
+    </div>
+  );
 }
+
+export default withAuth({
+  authorities: ['admin'],
+})(BasicTable);

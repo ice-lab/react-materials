@@ -1,45 +1,19 @@
-import React, { Component, Suspense } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import PageLoading from '../../components/PageLoading';
-import Footer from './Footer';
-import { routerData } from '../../routerConfig';
-import './index.scss';
+import Footer from './components/Footer';
+import styles from './index.module.scss';
 
-export default class UserLayout extends Component {
-  static displayName = 'UserLayout';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  render() {
-    return (
-      <Layout className="user-layout">
-        <div className="header">
-          <a href="#" className="meta">
-            <span className="title">LOGO</span>
-          </a>
-          <p className="desc">让前端开发简单而友好</p>
-        </div>
-        <Suspense fallback={<PageLoading />}>
-          <Switch>
-            {routerData.map((item, index) => {
-              return item.component ? (
-                <Route
-                  key={index}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              ) : null;
-            })}
-
-            <Redirect exact from="/user" to="/user/login" />
-          </Switch>
-        </Suspense>
-        <Footer />
-      </Layout>
-    );
-  }
+export default function UserLayout(props) {
+  return (
+    <Layout className={styles.userLayout}>
+      <div className={styles.header}>
+        <a href="#" className={styles.meta}>
+          <span className={styles.title}>LOGO</span>
+        </a>
+        <p className={styles.desc}>让前端开发简单而友好</p>
+      </div>
+      {props.children}
+      <Footer />
+    </Layout>
+  );
 }

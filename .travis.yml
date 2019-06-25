@@ -11,4 +11,3 @@ deploy:
   script: npm run deploy
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^master|production$

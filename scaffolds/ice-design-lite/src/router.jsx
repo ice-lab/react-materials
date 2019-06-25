@@ -1,60 +1,72 @@
-/**
- * 定义应用路由
- */
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React from 'react';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import React, { Suspense } from 'react';
 import path from 'path';
-import routes from './routerConfig';
+import routes from '@/routerConfig';
+import PageLoading from '@/components/PageLoading';
+
+const RouteItem = (props) => {
+  const { redirect, path: routePath, component, key } = props;
+  if (redirect) {
+    return (
+      <Redirect
+        exact
+        key={key}
+        from={routePath}
+        to={redirect}
+      />
+    );
+  }
+  return (
+    <Route
+      key={key}
+      component={component}
+      path={routePath}
+    />
+  );
+};
 
 const router = () => {
   return (
-    <Router basename="/">
+    <Router>
       <Switch>
         {routes.map((route, id) => {
-          const { component, layout, children, ...others } = route;
-
-          if (!children) {
-            // eslint-disable-next-line
-            const RouteLayout = layout && require(`./${layout}`).default;
-            // eslint-disable-next-line
-            const RouteComponent = require(`./${component}`).default;
-
-            return (
-              <Route
-                key={id}
-                {...others}
-                component={(props) => {
-                  return (
-                    <RouteLayout key={id}>
-                      <RouteComponent {...props} />
-                    </RouteLayout>
-                  );
-                }}
-              />
-            );
-            // eslint-disable-next-line
-          } else {
-            // eslint-disable-next-line
-            const RouteLayout = component && require(`./${component}`).default;
-            return (
-              <RouteLayout key={id}>
-                <Switch>
-                  {route.children.map((routeChild, idx) => {
-                    routeChild.path = path.join(route.path, routeChild.path);
-                    // eslint-disable-next-line
-                    const RouteComponent = require(`./${routeChild.component}`).default;
-                    return (
-                      <Route
-                        key={`${id}-${idx}`}
-                        {...routeChild}
-                        component={RouteComponent}
-                      />
-                    );
-                  })}
-                </Switch>
-              </RouteLayout>
-            );
-          }
+          const { component: RouteComponent, children, ...others } = route;
+          return (
+            <Route
+              key={id}
+              {...others}
+              component={(props) => {
+                return (
+                  children ? (
+                    <RouteComponent key={id} {...props}>
+                      <Suspense fallback={<PageLoading />}>
+                        <Switch>
+                          {children.map((routeChild, idx) => {
+                            const { redirect, path: childPath, component } = routeChild;
+                            return RouteItem({
+                              key: `${id}-${idx}`,
+                              redirect,
+                              path: childPath && path.join(route.path, childPath),
+                              component,
+                            });
+                          })}
+                        </Switch>
+                      </Suspense>
+                    </RouteComponent>
+                  ) : (
+                    <Suspense fallback={<PageLoading />}>
+                      {
+                        RouteItem({
+                          key: id,
+                          ...props,
+                        })
+                      }
+                    </Suspense>
+                  )
+                );
+              }}
+            />
+          );
         })}
       </Switch>
     </Router>

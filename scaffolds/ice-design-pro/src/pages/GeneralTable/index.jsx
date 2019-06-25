@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid } from '@alifd/next';
 import { injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';
@@ -22,76 +22,56 @@ const mockData = () => {
   });
 };
 
-@injectIntl
-export default class GeneralTable extends Component {
-  static displayName = 'GeneralTable';
+function GeneralTable(props) {
+  const {
+    intl: { formatMessage },
+  } = props;
 
-  static propTypes = {};
+  const [dataSource, setData] = useState([]);
+  const [isLoading, setLoading] = useState(false);
 
-  static defaultProps = {};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: [],
-      isLoading: false,
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  mockApi = () => {
+  function mockApi() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(mockData());
       }, 600);
     });
-  };
-
-  fetchData = () => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi().then((dataSource) => {
-          this.setState({
-            dataSource,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  render() {
-    const { isLoading, dataSource } = this.state;
-    const {
-      intl: { formatMessage },
-    } = this.props;
-    return (
-      <Row gutter={20} wrap>
-        <Col l="18">
-          <IceContainer style={{ padding: '0' }}>
-            <ContainerTitle
-              title={formatMessage({ id: 'app.general.table.title' })}
-            />
-            <div style={{ padding: '20px' }}>
-              <SearchFilter fetchData={this.fetchData} />
-              <ContractTable
-                isLoading={isLoading}
-                dataSource={dataSource}
-                fetchData={this.fetchData}
-              />
-            </div>
-          </IceContainer>
-        </Col>
-        <Col l="6">
-          <SearchHistory fetchData={this.fetchData} />
-        </Col>
-      </Row>
-    );
   }
+
+  async function fetchData() {
+    await setLoading(true);
+    mockApi().then((data) => {
+      setData(data);
+      setLoading(false);
+    });
+  }
+
+  return (
+    <Row gutter={20} wrap>
+      <Col l="18">
+        <IceContainer style={{ padding: '0' }}>
+          <ContainerTitle
+            title={formatMessage({ id: 'app.general.table.title' })}
+          />
+          <div style={{ padding: '20px' }}>
+            <SearchFilter fetchData={fetchData} />
+            <ContractTable
+              isLoading={isLoading}
+              dataSource={dataSource}
+              fetchData={fetchData}
+            />
+          </div>
+        </IceContainer>
+      </Col>
+      <Col l="6">
+        <SearchHistory fetchData={fetchData} />
+      </Col>
+    </Row>
+  );
 }
+
+export default injectIntl(GeneralTable);

@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox, Input, Button, Grid, Select, DatePicker } from '@alifd/next';
 import {
@@ -13,31 +13,18 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { RangePicker } = DatePicker;
 
-class CustomForm extends Component {
-  static displayName = 'CustomForm';
+export default function CustomForm(props) {
+  const { value, config, extraContent, handleReset } = props;
+  let form;
 
-  static propTypes = {
-    value: PropTypes.object.isRequired,
-    config: PropTypes.array.isRequired,
-    handleSubmit: PropTypes.func,
-    handleReset: PropTypes.func,
-    extraContent: PropTypes.element,
-  };
-
-  static defaultProps = {
-    extraContent: null,
-    handleReset: () => {},
-    handleSubmit: () => {},
-  };
-
-  handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    this.refs.form.validateAll((errors, values) => {
-      this.props.handleSubmit(errors, values);
+    form.validateAll((errors, values) => {
+      props.handleSubmit(errors, values);
     });
-  };
+  }
 
-  renderInput = (item) => {
+  function renderInput(item) {
     return (
       <Col xs="12" l="8" key={item.label}>
         <div className={styles.formItem}>
@@ -53,9 +40,9 @@ class CustomForm extends Component {
         </div>
       </Col>
     );
-  };
+  }
 
-  renderCheckbox = (item) => {
+  function renderCheckbox(item) {
     return (
       <Col xs="12" l="8" key={item.label}>
         <div className={styles.formItem}>
@@ -65,9 +52,9 @@ class CustomForm extends Component {
         </div>
       </Col>
     );
-  };
+  }
 
-  renderDatePicker = (item) => {
+  function renderDatePicker(item) {
     return (
       <Col xs="12" l="8" key={item.label}>
         <div className={styles.formItem}>
@@ -78,9 +65,9 @@ class CustomForm extends Component {
         </div>
       </Col>
     );
-  };
+  }
 
-  renderSelect = (item) => {
+  function renderSelect(item) {
     return (
       <Col xs="12" l="8" key={item.label}>
         <div className={styles.formItem}>
@@ -91,50 +78,57 @@ class CustomForm extends Component {
         </div>
       </Col>
     );
-  };
+  }
 
-  renderFromItem = (config) => {
-    return config.map((item) => {
+  function renderFromItem(dataConfig) {
+    return dataConfig.map((item) => {
       if (item.component === 'Input') {
-        return this.renderInput(item);
+        return renderInput(item);
       } else if (item.component === 'Checkbox') {
-        return this.renderCheckbox(item);
+        return renderCheckbox(item);
       } else if (item.component === 'Select') {
-        return this.renderSelect(item);
+        return renderSelect(item);
       } else if (item.component === 'RangePicker') {
-        return this.renderDatePicker(item);
+        return renderDatePicker(item);
       }
     });
-  };
-
-  render() {
-    const { value, config, extraContent, handleReset } = this.props;
-
-    return (
-      <div className={styles.formContainer}>
-        <IceFormBinderWrapper value={value} ref="form">
-          <div className={styles.formItems}>
-            <Row wrap gutter={40}>
-              {this.renderFromItem(config)}
-            </Row>
-            <div className={styles.buttons}>
-              <Button
-                type="primary"
-                style={{ marginRight: '10px' }}
-                onClick={this.handleSubmit}
-              >
-                <FormattedMessage id="app.general.table.btn.search" />
-              </Button>
-              <Button type="normal" onClick={handleReset}>
-                <FormattedMessage id="app.general.table.btn.reset" />
-              </Button>
-            </div>
-            {extraContent}
-          </div>
-        </IceFormBinderWrapper>
-      </div>
-    );
   }
+
+  return (
+    <div className={styles.formContainer}>
+      <IceFormBinderWrapper value={value} ref={formRef => (form = formRef)}>
+        <div className={styles.formItems}>
+          <Row wrap gutter={40}>
+            {renderFromItem(config)}
+          </Row>
+          <div className={styles.buttons}>
+            <Button
+              type="primary"
+              style={{ marginRight: '10px' }}
+              onClick={handleSubmit}
+            >
+              <FormattedMessage id="app.general.table.btn.search" />
+            </Button>
+            <Button type="normal" onClick={handleReset}>
+              <FormattedMessage id="app.general.table.btn.reset" />
+            </Button>
+          </div>
+          {extraContent}
+        </div>
+      </IceFormBinderWrapper>
+    </div>
+  );
 }
 
-export default CustomForm;
+CustomForm.propTypes = {
+  value: PropTypes.object.isRequired,
+  config: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func,
+  handleReset: PropTypes.func,
+  extraContent: PropTypes.element,
+};
+CustomForm.defaultProps = {
+  extraContent: null,
+  handleReset: () => {},
+  handleSubmit: () => {},
+};

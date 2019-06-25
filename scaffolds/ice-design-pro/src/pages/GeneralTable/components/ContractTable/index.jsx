@@ -1,52 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Message } from '@alifd/next';
 import CustomTable from '../CustomTable';
 import styles from './index.module.scss';
 
-export default class ContractTable extends Component {
-  static displayName = 'ContractTable';
-
-  static propTypes = {
-    dataSource: PropTypes.array.isRequired,
-    isLoading: PropTypes.bool.isRequired,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  handleUpdate = () => {
+export default function ContractTable(props) {
+  function handleUpdate() {
     Message.success('暂不支持修改合同');
-  };
+  }
 
-  handleMore = () => {
+  function handleMore() {
     Message.success('暂不支持查看详情');
-  };
+  }
 
-  renderState = (value) => {
+  function renderState(value) {
     return (
       <div className={styles.state}>
         <span className={styles.stateText}>{value}</span>
       </div>
     );
-  };
+  }
 
-  renderOper = () => {
+  function renderOper() {
     return (
       <div>
-        <a className={styles.link} onClick={this.handleUpdate}>
+        <a className={styles.link} onClick={handleUpdate}>
           修改
         </a>
         <span className={styles.separator} />
-        <a className={styles.link} onClick={this.handleMore}>
+        <a className={styles.link} onClick={handleMore}>
           查看
         </a>
       </div>
     );
-  };
+  }
 
-  columnsConfig = () => {
+  function columnsConfig() {
     return [
       {
         title: '合同编号',
@@ -82,20 +71,23 @@ export default class ContractTable extends Component {
         title: '合同状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
         width: 100,
       },
       {
         title: '操作',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
         width: 200,
       },
     ];
-  };
-
-  render() {
-    return <CustomTable {...this.props} columns={this.columnsConfig()} />;
   }
+
+  return <CustomTable {...props} columns={columnsConfig()} />;
 }
+
+ContractTable.propTypes = {
+  dataSource: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+};

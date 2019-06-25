@@ -3,17 +3,19 @@ const path = require('path');
 const fs = require('fs');
 const request = require('request');
 const scaffolds = require('./scaffolds');
+const pkgData = require('../package.json');
 
 const bucket = 'iceworks';
 const accessKeyId = process.env.ACCESS_KEY_ID;
 const accessKeySecret = process.env.ACCESS_KEY_SECRET;
 const branch = process.env.TRAVIS_BRANCH;
-const assetsPath = branch === 'production' ? 'assets' : 'pre-assets';
+const dirPath = pkgData.kitVersion === '3.x' ? 'materials/' : '/';
+let assetsPath;
 
-if (['master', 'production'].indexOf(branch) === -1) {
-  console.log('当前分支非 master/production, 不执行物料源同步脚本');
-  console.log(`TRAVIS_BRANCH=${branch}`);
-  process.exit(0);
+if (['master', 'stable/kit-2.x'].indexOf(branch) === -1) {
+  assetsPath = 'pre-assets';
+} else {
+  assetsPath = 'assets';
 }
 
 const ossClient = oss({
@@ -25,7 +27,7 @@ const ossClient = oss({
 });
 
 const materialPath = path.resolve(__dirname, '../build/materials.json');
-const toPath = path.join(assetsPath, 'react-materials.json');
+const toPath = path.join(assetsPath, dirPath, 'react-materials.json');
 
 console.log('start upload oss', materialPath, toPath);
 

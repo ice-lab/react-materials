@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import cx from 'classnames';
 import { Icon, Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
+import { asideMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
-import { asideMenuConfig } from '../../../../menuConfig';
-import './index.modules.scss';
+import styles from './index.module.scss';
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
@@ -32,7 +31,7 @@ function getSubMenuOrItem(item, index) {
           key={index}
           icon={item.icon ? item.icon : null}
           label={
-            <span className="ice-menu-collapse-hide">
+            <span className={styles.iceMenuCollapseHide}>
               <FormattedMessage id={getLocaleKey(item)} />
             </span>
           }
@@ -86,11 +85,9 @@ function getDefaultOpenKeys(location = {}) {
 }
 
 const Aside = withRouter((props) => {
-
   const defaultOpenKeys = getDefaultOpenKeys(props.location);
   const [openDrawer, setOpenDrawer] = useState(false);
   const [openKeys, setOpenKeys] = useState(defaultOpenKeys);
-  let openKeysCache = defaultOpenKeys;
 
   /**
    * 响应式通过抽屉形式切换菜单
@@ -109,9 +106,8 @@ const Aside = withRouter((props) => {
   /**
    * 当前展开的菜单项
    */
-  function onOpenChange(openKeys) {
-    setOpenKeys(openKeys);
-    openKeysCache = openKeys;
+  function onOpenChange(keys) {
+    setOpenKeys(keys);
   }
 
 
@@ -120,14 +116,14 @@ const Aside = withRouter((props) => {
     isMobile,
   } = props;
 
+  const openDrawerClassName = openDrawer ? styles.openDrawer : '';
+
   return (
-    <div
-      className={cx('ice-design-layout-aside', { 'open-drawer': openDrawer })}
-    >
+    <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignLiteAside} ${openDrawerClassName}`}>
       {isMobile && <Logo />}
 
       {isMobile && !openDrawer && (
-        <a className="menu-btn" onClick={toggleMenu}>
+        <a className={styles.menuBtn} onClick={toggleMenu}>
           <Icon type="calendar" size="small" />
         </a>
       )}

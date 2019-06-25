@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withAuth } from '@/components/Auth';
 import OverviewPieChart from './components/OverviewPieChart';
 import BizchartsBarBasicColumn from './components/BizchartsBarBasicColumn';
 import BizchartsLineCurved from './components/BizchartsLineCurved';
 import BizchartsOtherBubbleImage from './components/BizchartsOtherBubbleImage';
 
-export default class BasicCharts extends Component {
-  render() {
-    return (
-      <div>
-        <OverviewPieChart />
-        <BizchartsBarBasicColumn />
-        <BizchartsLineCurved />
-        <BizchartsOtherBubbleImage />
-      </div>
-    );
-  }
+function BasicCharts() {
+  return (
+    <div>
+      <OverviewPieChart />
+      <BizchartsBarBasicColumn />
+      <BizchartsLineCurved />
+      <BizchartsOtherBubbleImage />
+    </div>
+  );
 }
+
+export default withAuth({
+  authorities: ['admin', 'user'],
+})(BasicCharts);

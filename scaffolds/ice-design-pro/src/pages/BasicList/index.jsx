@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { withAuth } from '@/components/Auth';
 import Table from './components/Table';
 
-export default class BaiscList extends Component {
-  render() {
-    return (
-      <div className="list-page">
-        <Table />
-      </div>
-    );
-  }
+function BasicList() {
+  return (
+    <div className="list-page">
+      <Table />
+    </div>
+  );
 }
+
+export default withAuth({
+  authorities: ['admin', 'user'],
+})(BasicList);

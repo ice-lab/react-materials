@@ -1,77 +1,67 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Balloon } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 
-export default class DeleteBalloon extends Component {
-  static propTypes = {
-    handleRemove: PropTypes.func,
-  };
+export default function DeleteBalloon(props) {
+  const [balloonVisible, setVisible] = useState(false);
 
-  static defaultProps = {
-    handleRemove: () => {},
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-    };
-  }
-
-  handleHide = (visible, code) => {
+  function handleHide(visible, code) {
     if (code === 1) {
-      this.props.handleRemove();
+      props.handleRemove();
     }
-    this.setState({
-      visible: false,
-    });
-  };
-
-  handleVisible = (visible) => {
-    this.setState({ visible });
-  };
-
-  render() {
-    const visibleTrigger = (
-      <Button type="secondary" warning>
-        <FormattedMessage id="app.base.table.btn.delete" />
-      </Button>
-    );
-
-    const content = (
-      <div>
-        <div style={styles.contentText}>确认删除？</div>
-        <Button
-          id="confirmBtn"
-          type="normal"
-          warning
-          style={{ marginRight: '5px' }}
-          onClick={(visible) => this.handleHide(visible, 1)}
-        >
-          确认
-        </Button>
-        <Button
-          id="cancelBtn"
-          onClick={(visible) => this.handleHide(visible, 0)}
-        >
-          关闭
-        </Button>
-      </div>
-    );
-
-    return (
-      <Balloon
-        trigger={visibleTrigger}
-        triggerType="click"
-        visible={this.state.visible}
-        onVisibleChange={this.handleVisible}
-      >
-        {content}
-      </Balloon>
-    );
+    setVisible(false);
   }
+
+  function handleVisible(visible) {
+    setVisible(visible);
+  }
+  const visibleTrigger = (
+    <Button type="secondary" warning>
+      <FormattedMessage id="app.base.table.btn.delete" />
+    </Button>
+  );
+
+  const content = (
+    <div>
+      <div style={styles.contentText}>确认删除？</div>
+      <Button
+        id="confirmBtn"
+        type="normal"
+        warning
+        style={{ marginRight: '5px' }}
+        onClick={(visible) => handleHide(visible, 1)}
+      >
+        确认
+      </Button>
+      <Button
+        id="cancelBtn"
+        onClick={(visible) => handleHide(visible, 0)}
+      >
+        关闭
+      </Button>
+    </div>
+  );
+
+  return (
+    <Balloon
+      trigger={visibleTrigger}
+      triggerType="click"
+      visible={balloonVisible}
+      onVisibleChange={handleVisible}
+    >
+      {content}
+    </Balloon>
+  );
 }
+
+DeleteBalloon.propTypes = {
+  handleRemove: PropTypes.func,
+};
+
+DeleteBalloon.defaultProps = {
+  handleRemove: () => {},
+};
 
 const styles = {
   contentText: {

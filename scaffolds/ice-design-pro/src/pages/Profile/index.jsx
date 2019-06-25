@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import BasicDetailInfo from './components/BasicDetailInfo';
 
@@ -6,23 +6,14 @@ import CollapseCard from './components/CollapseCard';
 
 import DetailTable from './components/DetailTable';
 
-export default class Profile extends Component {
-  static displayName = 'Profile';
+export default function Profile() {
+  return (
+    <div className="profile-page">
+      <BasicDetailInfo />
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+      <CollapseCard />
 
-  render() {
-    return (
-      <div className="profile-page">
-        <BasicDetailInfo />
-
-        <CollapseCard />
-
-        <DetailTable />
-      </div>
-    );
-  }
+      <DetailTable />
+    </div>
+  );
 }

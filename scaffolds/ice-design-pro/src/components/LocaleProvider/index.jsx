@@ -1,5 +1,5 @@
 /* eslint camelcase:0 */
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';
 import { ConfigProvider } from '@alifd/next';
@@ -13,8 +13,8 @@ import enUS from '@alifd/next/lib/locale/en-us';
 import zhCN from '@alifd/next/lib/locale/zh-cn';
 
 // 引入 locale 配置文件
-import en_US from '../../locales/en-US';
-import zh_CN from '../../locales/zh-CN';
+import en_US from '@/locales/en-US';
+import zh_CN from '@/locales/zh-CN';
 
 // 设置语言包
 addLocaleData([...en, ...zh]);
@@ -32,22 +32,20 @@ const localeInfo = {
   },
 };
 
-class LocaleProvider extends PureComponent {
-  render() {
-    const { locale, children } = this.props;
+function LocaleProvider(props) {
+  const { locale, children } = props;
 
-    const myLocale = localeInfo[locale]
-      ? localeInfo[locale]
-      : localeInfo['en-US'];
+  const myLocale = localeInfo[locale]
+    ? localeInfo[locale]
+    : localeInfo['en-US'];
 
-    return (
-      <IntlProvider locale={myLocale.appLocale} messages={myLocale.appMessages}>
-        <ConfigProvider locale={myLocale.nextLocale}>
-          {React.Children.only(children)}
-        </ConfigProvider>
-      </IntlProvider>
-    );
-  }
+  return (
+    <IntlProvider locale={myLocale.appLocale} messages={myLocale.appMessages}>
+      <ConfigProvider locale={myLocale.nextLocale}>
+        {React.Children.only(children)}
+      </ConfigProvider>
+    </IntlProvider>
+  );
 }
 
 LocaleProvider.propTypes = {
