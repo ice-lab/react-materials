@@ -37,7 +37,6 @@ class App extends Component {
               handler: formCore => {
                 const province = formCore.getFieldValue('province')
                 formCore.setValues({
-                  province,
                   city: '',
                   population: 0
                 })
@@ -48,7 +47,6 @@ class App extends Component {
               field: 'city',
               handler: formCore => {
                 const city = formCore.getFieldValue('city')
-                formCore.setFieldValue('city', city);
                 if (city === 'Suzhou') {
                   formCore.setFieldProps('population', {disabled: true})
                   formCore.setFieldValue('population', 0)

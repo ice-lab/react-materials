@@ -1,7 +1,11 @@
 const fieldPropWhiteList = [
   'rules',
   'effects',
-  'format',
+  'setValueFormatter',
+  'getValueFormatter',
+  'fieldArrayName', // belong to which FeildArray
+  'fieldArrayKey',
+  'valueName',
 ];
 
 const getComponentProps = props => {

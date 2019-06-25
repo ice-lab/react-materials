@@ -99,13 +99,23 @@ export default class FormCore {
     }
   }
 
-  setValues(values) {
+  async setValues(values, runEffects = false) {
     if (Object.prototype.toString.call(values) !== '[object Object]') {
       throw new Error(
         'values should be an object for setValues(values)'
       );
     }
-    Object.keys(values).forEach(key => this.setFieldValue(key, values[key]));
+    await Promise.all(Object.keys(values).map(async key => {
+      await this.setFieldValue(key, values[key]);
+    }));
+
+    runEffects && this.runEffects();
+  }
+
+  runEffects() {
+    this.effects.forEach(effect => {
+      effect.handler(this);
+    });
   }
 
   setFieldValueWithoutNotify(name, value) {

@@ -8,54 +8,34 @@ class Field extends React.Component {
     super(props, context);
     const store = context;
 
-    const { name, rules, effects, value, defaultValue, format } = props;
+    const { name, rules, effects, value, defaultValue, setValueFormatter, getValueFormatter } = props;
 
     const componentProps = getComponentProps(props);
     store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
     !!effects && store.addEffects(name, effects);
     !!status && store.setStatus(name, status, false);
+    !!value && store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(value) : value);
+    !!defaultValue && store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(defaultValue) : defaultValue);
 
-    const isCheckbox = props.type && props.type === 'checkbox';
-    const isRadio = props.type && props.type === 'radio';
-    if (isCheckbox || isRadio && !value) {
-      throw new Error("'value' prop is required for type='checkbox' and type='radio'.");
-    }
-    if (value) {
-      if (isCheckbox) {
-        const currentValue = store.getFieldValue(name) || [];
-        if (props.checked) {
-          currentValue.push(value);
-        }
-        store.setFieldValueWithoutNotify(name, currentValue);
-      } else if (isRadio) {
-        if (props.checked) {
-          store.setFieldValueWithoutNotify(name, value);
-        }
-      } else {
-        store.setFieldValueWithoutNotify(name, value);
-      }
-    }
-    if (defaultValue) {
-      store.setFieldValueWithoutNotify(name, defaultValue);
-    }
-
+    // with prop getValueFormatter, use renderValue to render
+    this.renderValue = undefined;
     this.state = {
-      value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
+      value: setValueFormatter ? setValueFormatter(store.getFieldValue(name)) : store.getFieldValue(name),
       error: store.getFieldError(name),
-      componentProps: store.getFieldProps(name),
     };
   }
 
   componentDidMount() {
     const store = this.context;
-    const { name, format } = this.props;
+    const { name, setValueFormatter } = this.props;
     this.unsubscribe = store.subscribe(n => {
       if (n === name || n === '*') {
+        const value = this.renderValue ? this.renderValue : store.getFieldValue(name);
+        const error = store.getFieldError(name);
         this.setState({
-          value: format ? format(store.getFieldValue(name)) : store.getFieldValue(name),
-          error: store.getFieldError(name),
-          componentProps: store.getFieldProps(name),
+          value: setValueFormatter ? setValueFormatter(value) : value,
+          error,
         });
       }
     });
@@ -70,7 +50,7 @@ class Field extends React.Component {
 
   onChange = e => {
     const store = this.context;
-    const { name } = this.props;
+    const { name, getValueFormatter, fieldArrayName, fieldArrayKey } = this.props;
 
     if (!name) {
       throw new Error(
@@ -78,53 +58,61 @@ class Field extends React.Component {
       );
     }
 
-    let value;
-
-    if (e && e.target && e.target.type === 'checkbox') {
-      const checked = e.target.checked;
-      value = e.target.value;
-      let currentValue = store.getFieldValue(name) || [];
-      if (checked) {
-        currentValue.push(value);
-      } else {
-        const index = currentValue.indexOf(value);
-        if (index !== -1) {
-          currentValue = currentValue.slice(0, index).concat(currentValue.slice(index + 1));
-        }
+    const getTargetValue = target => {
+      const type = target.type;
+      let value;
+      switch (type) {
+        case 'radio':
+        case 'checkbox':
+          value = target.checked;
+          break;
+        default:
+          value = target.value;
       }
-      store.setFieldValue(name, currentValue, store);
-    } else {
-      value = e && e.target
-        ? e.target.value
-        : e;
-      store.setFieldValue(name, value, store);
+      return value;
+    };
+
+    let value = e && e.target
+      ? getTargetValue(e.target)
+      : e;
+
+    if (getValueFormatter) {
+      this.renderValue = value;
     }
+
+    if (fieldArrayName !== undefined) {
+      const fieldArrayValue = store.getFieldValue(fieldArrayName);
+      fieldArrayValue[fieldArrayKey] = value;
+      value = fieldArrayValue;
+
+      const fieldArrayGetValueFormatter = store.getFieldProps(fieldArrayName).getValueFormatter;
+      store.setFieldValueWithoutNotify(fieldArrayName, fieldArrayGetValueFormatter ? fieldArrayGetValueFormatter(value) : value, store);
+      store.notify(name);
+    } else {
+      store.setFieldValue(name, getValueFormatter ? getValueFormatter(value) : value, store);
+    }
+
     store.onChange(store.getValues(), { name, value });
   }
 
   render() {
-    const { value, type, component, onChange, children } = this.props;
-    const isCheckbox = type && (type === 'checkbox');
-    const isRadio = type && (type === 'radio');
+    const { valueName = 'value', name, component, onChange, children, fieldArrayName, fieldArrayKey } = this.props;
     const store = this.context;
     const state = this.state;
-    const renderFieldLayout = store.getRenderField();
-    const layout = store.getLayout();
-    let renderProps = {
-      ...state.componentProps,
-      renderFieldLayout,
-      formLevelLayout: layout,
-      error: state.error,
-      value: (isCheckbox || isRadio) ? value : (state.value || ''),
-    };
-    if (isCheckbox) {
-      const index = state.value.indexOf(value);
-      if (index < 0) {
-        renderProps = { ...renderProps, checked: false };
-      } else {
-        renderProps = { ...renderProps, checked: true };
-      }
+    let value = state.value || '';
+    let error = state.error;
+    if (fieldArrayName !== undefined) {
+      value = store.getFieldValue(fieldArrayName)[fieldArrayKey];
+      error = store.getFieldError(fieldArrayName);
     }
+    let renderProps = {
+      ...store.getFieldProps(name),
+      renderFieldLayout: store.getRenderField(),
+      formLevelLayout: store.getLayout(),
+      error,
+      [valueName]: value,
+    };
+
     if (component || (children && children.props && !children.props.onChange)) {
       if (onChange) {
         renderProps = Object.assign({}, renderProps, { onChange });
