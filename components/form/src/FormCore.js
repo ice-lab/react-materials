@@ -146,8 +146,11 @@ export default class FormCore {
     Object.keys(errors).forEach(key => this.setFieldError(key, errors[key]));
   }
 
-  reset() {
-    this.values = Object.assign({}, this.initialValues);
+  reset(initialValues) {
+    if (initialValues) {
+      this.initialValues = { ...initialValues };
+    }
+    this.values = { ...this.initialValues };
     this.errors = {};
     this.notify('*');
   }

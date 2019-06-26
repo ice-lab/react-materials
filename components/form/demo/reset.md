@@ -20,10 +20,17 @@ class App extends Component {
   }
 
   render() {
+    const initialValues = {
+      username: 'icer',
+      age: 3,
+      intro: '让前端开发简单而友好'
+    };
+
     return (
       <div>
         <Form
           onSubmit={this.onSubmit}
+          initialValues={initialValues}
         >
           {formCore => (
             <div>
