@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Select } from '@alifd/next';
 import TopBar from '../../components/TopBar';
 import Cards from './components/Cards';
 import Trend from './components/Trend';
 
-export default class Analysis extends Component {
-  static displayName = 'Analysis';
-
-  renderExtraAfter = () => {
+export default function Analysis() {
+  const renderExtraAfter = () => {
     const dataSource1 = [
       { label: 'weather', value: 'weather' },
       { label: 'joke', value: 'joke' },
@@ -29,14 +27,11 @@ export default class Analysis extends Component {
       </div>
     );
   };
-
-  render() {
-    return (
-      <div>
-        <TopBar title="数据统计" extraAfter={this.renderExtraAfter()} />
-        <Cards />
-        <Trend />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TopBar title="数据统计" extraAfter={renderExtraAfter()} />
+      <Cards />
+      <Trend />
+    </div>
+  );
 }

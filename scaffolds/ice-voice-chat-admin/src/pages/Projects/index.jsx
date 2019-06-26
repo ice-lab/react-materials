@@ -1,5 +1,5 @@
 /* eslint no-mixed-operators:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Input } from '@alifd/next';
 import TopBar from '../../components/TopBar';
 import GeneralDialog from '../../components/GeneralDialog';
@@ -24,13 +24,11 @@ const getData = () => {
   });
 };
 
-export default class Projects extends Component {
-  state = {
-    data: getData(),
-  };
+export default function Projects() {
+  const [cardData, setCadData] = useState(getData());
 
-  getFormValue = (value) => {
-    const { data } = this.state;
+  const getFormValue = (value) => {
+    const data = [...cardData];
     data.push({
       appid: `0000${data.length + 1}`,
       title: value.title,
@@ -38,32 +36,21 @@ export default class Projects extends Component {
       time: '2018-09-30 14:30:19',
       icon: ICONS[random(0, 5)],
     });
-    this.setState({
-      data,
-    });
+    setCadData(data);
   };
 
-  renderExtraAfter = () => {
-    return (
-      <GeneralDialog buttonText="新建项目" getFormValue={this.getFormValue} />
-    );
-  };
-
-  render() {
-    const { data } = this.state;
-    return (
-      <div>
-        <TopBar
-          extraBefore={
-            <Input
-              placeholder="请输入关键字进行搜索"
-              style={{ width: '240px' }}
-            />
-          }
-          extraAfter={this.renderExtraAfter()}
-        />
-        <Card data={data} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TopBar
+        extraBefore={
+          <Input
+            placeholder="请输入关键字进行搜索"
+            style={{ width: '240px' }}
+          />
+        }
+        extraAfter={<GeneralDialog buttonText="新建项目" getFormValue={getFormValue} />}
+      />
+      <Card data={cardData} />
+    </div>
+  );
 }
