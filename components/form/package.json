@@ -48,7 +48,7 @@
     "react": "^16.3.0"
   },
   "componentConfig": {
-    "name": "iceform",
+    "name": "ice-form",
     "title": "ICE 表单组件",
     "categories": [
       "其他"
