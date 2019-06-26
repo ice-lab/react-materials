@@ -148,12 +148,10 @@ export default class FormCore {
 
   reset(initialValues) {
     if (initialValues) {
-      if (Object.keys(initialValues).length === 0) {
-        this.values = {};
-      } else {
+      if (Object.keys(initialValues).length > 0) {
         this.initialValues = Object.assign({}, initialValues);
-        this.values = Object.assign({}, initialValues);
       }
+      this.values = Object.assign({}, initialValues);
     } else {
       this.values = Object.assign({}, this.initialValues);
     }
