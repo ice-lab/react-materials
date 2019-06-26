@@ -149,10 +149,8 @@ export default class FormCore {
   reset(initialValues) {
     if (initialValues) {
       this.initialValues = { ...initialValues };
-      this.values = { ...initialValues };
-    } else {
-      this.values = { ...this.initialValues };
     }
+    this.values = { ...this.initialValues };
     this.errors = {};
     this.notify('*');
   }

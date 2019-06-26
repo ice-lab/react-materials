@@ -108,7 +108,7 @@ class Field extends React.Component {
     }
     let renderProps = {
       ...store.getFieldProps(name),
-      renderFieldLayout: store.getRenderField(),
+      renderField: store.getRenderField(),
       formLevelLayout: store.getLayout(),
       error,
       [valueName]: value,

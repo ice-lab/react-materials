@@ -9,7 +9,7 @@ function RenderField(props) {
     error,
     visible,
     children,
-    renderFieldLayout,
+    renderField,
     errorRender,
     formLevelLayout,
     layout,
@@ -36,8 +36,8 @@ function RenderField(props) {
     }
   }
 
-  if (renderFieldLayout) {
-    return renderFieldLayout({ label, component: child, error });
+  if (renderField) {
+    return renderField({ label, component: child, error });
   }
 
   // layout
@@ -89,7 +89,7 @@ RenderField.propTypes = {
   ]),
   name: PropTypes.string,
   visible: PropTypes.bool,
-  renderFieldLayout: PropTypes.func,
+  renderField: PropTypes.func,
   errorRender: PropTypes.func,
   formLevelLayout: PropTypes.object,
   layout: PropTypes.object,
@@ -107,7 +107,7 @@ RenderField.defaultProps = {
   error: null,
   name: null,
   visible: true,
-  renderFieldLayout: null,
+  renderField: null,
   errorRender: null,
   formLevelLayout: {},
   layout: {},
