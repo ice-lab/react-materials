@@ -29,7 +29,11 @@ function RenderField(props) {
   } else if (component) {
     child = createElement(component, { children, ...rest, className: (error && !errorRender) ? 'next-error' : null });
   } else if (children) {
-    child = cloneElement(children, { ...rest });
+    if (React.Children.toArray(children).length > 1) {
+      child = children;
+    } else {
+      child = cloneElement(children, { ...rest });
+    }
   }
 
   if (renderFieldLayout) {

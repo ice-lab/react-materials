@@ -147,7 +147,16 @@ export default class FormCore {
   }
 
   reset(initialValues) {
-    this.values = Object.assign({}, initialValues);
+    if (initialValues) {
+      if (Object.keys(initialValues).length === 0) {
+        this.values = {};
+      } else {
+        this.initialValues = Object.assign({}, initialValues);
+        this.values = Object.assign({}, initialValues);
+      }
+    } else {
+      this.values = Object.assign({}, this.initialValues);
+    }
     this.errors = {};
     this.notify('*');
   }

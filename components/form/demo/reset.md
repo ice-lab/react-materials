@@ -41,8 +41,7 @@ class App extends Component {
               <Field label="">
                 <div>
                   <Button htmlType="submit" style={{marginRight: '20px'}}>Submit</Button>
-                  <Button style={{marginRight: '20px'}} onClick={() => formCore.reset()}>Clear</Button>
-                  <Button onClick={() => formCore.reset(initialValues)}>Reset</Button>
+                  <Button onClick={() => formCore.reset()}>Reset</Button>
                 </div>
               </Field>
             </div>
