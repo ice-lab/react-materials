@@ -2,23 +2,23 @@ export default class Godzilla {
   constructor(arrayData, context = {}) {
     this.context = context;
     this.arrayData = arrayData;
-    this.initFn = [({ data }) => data];
+    this.plumbers = [];
     this.outputFn = (v) => v;
     return this;
   }
 
   pipe(handle) {
-    this.initFn.push(handle);
+    this.plumbers.push(handle);
     return this;
   }
 
   init(data) {
-    let ln = this.initFn.length;
+    let ln = this.plumbers.length;
     let rezult = data;
     let n = 0;
     while (ln) {
       ln -= 1;
-      const fn = this.initFn[n];
+      const fn = this.plumbers[n];
       const params = { data: rezult, context: this.context };
       rezult = fn(params);
       n += 1;
