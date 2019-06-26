@@ -3,12 +3,17 @@
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
 import Dashboard from './pages/Dashboard';
+import BlankLayout from './layouts/BlankLayout';
 
 const routerConfig = [
   {
-    path: '/dashboard',
-    component: Dashboard,
-  },
+    path: '',
+    component: BlankLayout,
+    children: [{
+      path: '/dashboard',
+      component: Dashboard,
+    }]
+  }
 ];
 
 export default routerConfig;
