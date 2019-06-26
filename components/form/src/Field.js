@@ -101,14 +101,7 @@ class Field extends React.Component {
     const { valueName, name, component, onChange, children, fieldArrayName, fieldArrayKey } = this.props;
     const store = this.context;
     const state = this.state;
-    let value = state.value;
-    if (value === undefined) {
-      value = '';
-      if (valueName === 'checked') {
-        value = false;
-      }
-    }
-    let error = state.error;
+    let { value, error } = state;
     if (fieldArrayName !== undefined) {
       value = store.getFieldValue(fieldArrayName)[fieldArrayKey];
       error = store.getFieldError(fieldArrayName);

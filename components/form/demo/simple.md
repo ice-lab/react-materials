@@ -41,8 +41,8 @@ class App extends Component {
           <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
           <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" />
           <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" />
-          <Field label="开关：" name="open" component={Switch} valueName='checked' />
-          <Field label="尺寸：" name="size" component={Select} value='medium' placeholder="请选择尺寸">
+          <Field label="开关：" name="open" component={Switch} valueName="checked" />
+          <Field label="尺寸：" name="size" component={Select} value="medium" placeholder="请选择尺寸">
             <Option value="small" key="small">小</Option>
             <Option value="medium" key="medium">中</Option>
             <Option value="large" key="large">大</Option>
