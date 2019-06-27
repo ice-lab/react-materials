@@ -21,8 +21,8 @@ class App extends Component {
 
   render() {
     const layout = {
-      labelCol: 1,
-      wrapperCol: 2,
+      labelCol: 2,
+      wrapperCol: 4,
       labelTextAlign: 'left',
       labelAlign: 'top'
     };
@@ -44,7 +44,7 @@ class App extends Component {
             error => <span style={{color: '#ff7000'}}>{error}</span>
           } />
           <Field label="年龄：" name="age" component={Input} tips="身份证上的年龄" placeholder="请输入年龄" />
-          <Field label="简介：" name="intro" layout={{tipsCol: 2}} component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
+          <Field label="简介：" name="intro" component={Input.TextArea} placeholder="请简单介绍一下自己的工作经历" tips="介绍自己的经历介绍自己的经历介绍自己的经历介绍自己的经历" />
           <Field label="" name="submit">
             <Button htmlType="submit">Submit</Button>
           </Field>
