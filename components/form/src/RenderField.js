@@ -44,8 +44,8 @@ function RenderField(props) {
   const {
     labelAlign = 'left',
     labelTextAlign = 'right',
-    labelCol = 1,
-    wrapperCol = 3,
+    labelCol = 2,
+    wrapperCol = 6,
   } = { ...formLevelLayout, ...layout };
 
   const fieldLabelClass = cs({
