@@ -1,54 +1,13 @@
-## 安装方法
+---
+title: IceForm
+category: Components
+chinese: 表单组件
+---
 
-```bash
-$ npm install @ice/form --save
-```
+表单组件
 
-## 引用方法
+## 参数（Props）
 
-```js
-import { Form, Field, FieldArray } from '@ice/form';
-```
-
-## 快速上手
-
-下面例子演示了如何创建一个简单的 form：
-
-```js
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Form, Field } from '@ice/form';
-import { Button, Input } from '@alifd/next';
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-class App extends Component {
-  async onSubmit(values) {
-    await sleep(300)
-    window.alert(JSON.stringify(values, 0, 2))
-  }
-
-  render() {
-    return (
-      <div>
-        <Form onSubmit={this.onSubmit}>
-          <div>Simple Form</div>
-          <Field label="姓名：" name="username" component={Input} placeholder="请输入名字" />
-          <Field label="年龄：" name="age" component={Input} htmlType="number" placeholder="请输入年龄" />
-          <Field label="简介：" name="intro" component={Input.TextArea} />
-          <Button htmlType="submit">Submit</Button>
-        </Form>
-      </div>
-    );
-  }
-}
-
-ReactDOM.render((
-  <App />
-), mountNode);
-```
-
-## Form 组件
 | 参数名 | 说明 | 必填 | 类型 | 默认值 | 备注 |
 | ------ | ---- | ---- | ---- | ------ | ---- |
 | initialValues |  表单初始值    |  N    |   object   |    {}    |   -   |
@@ -62,6 +21,7 @@ ReactDOM.render((
 其他属性比如 `style`、`className` 等均会传递到 `form` 标签上。
 
 `layout` 是个对象，包含 4 个属性：
+
 ```js
 {
   labelAlign: 'left',       // label 的位置，'left'、'top'，默认 'left'
@@ -120,6 +80,7 @@ ReactDOM.render((
 监听该 `field` 的 `onChange` 事件，然后设置其他表单项的数据，从而达到联动效果。`handler` 的参数是 `formCore` 对象，该对象暴露一些 api 可以设置 value、error、show/hide 等。
 
 ## Field 组件
+
 | 参数名 | 说明 | 必填 | 类型 | 默认值 | 备注 |
 | ------ | ---- | ---- | ---- | ------ | ---- |
 | label |  表单项的 label    |  N    |   string/element   |    -    |   -   |
@@ -166,6 +127,7 @@ ReactDOM.render((
 ```
 
 ## FieldArray 组件
+
 FieldArray 表示渲染数组类型的数据，属性同 Field：
 
 ```js
@@ -188,42 +150,29 @@ FieldArray 表示渲染数组类型的数据，属性同 Field：
 
 `formCore` 会暴露一些 API，使用这些 API 可以获取、设置表单的数据、状态等。
 
-- `getFieldValue(name)`
-  获取某一 `Field` 的值
-- `setFieldValue(name, value)`
-  设置某一 `Field` 的值
-- `getValues()`
-  获取表单的 values
-- `setValues(values, runEffects)`
-  设置表单的 values，runEffects 为 Boolean，表示设置 values 之后是否需要执行表单的 effects，默认 false
-- `getFieldError(name)`
-  获取某一 `Field` 的 error 信息
-- `setFieldError(name, errMsg)`
-  设置某一 `Field` 的 error 信息
-- `getErrors()`
-  获取所有 `Field` 的 error 信息
-- `setErrors(errors)`
-  设置某些 `Field` 的 error 信息
-- `getFieldProps(name)`
-  获取某一 `Field` 的属性值
-- `setFieldProps(name, prop)`
-  设置某一 `Field` 的属性值
-- `submit()`
-  提交表单
-- `reset(initialValues)`
-  重置表单值为表单初始化时的默认值，如果表单初始化时没有默认值，则清空表单；
-  如果传了参数 initialValues，则 initialValues 会成为新的表单默认值
+- `getFieldValue(name)`：获取某一 `Field` 的值
+- `setFieldValue(name, value)`：设置某一 `Field` 的值
+- `getValues()`：获取表单的 values
+- `setValues(values, runEffects)`：设置表单的 values，runEffects 为 Boolean，表示设置 values 之后是否需要执行表单的 effects，默认 false
+- `getFieldError(name)`：获取某一 `Field` 的 error 信息
+- `setFieldError(name, errMsg)`：设置某一 `Field` 的 error 信息
+- `getErrors()`：获取所有 `Field` 的 error 信息
+- `setErrors(errors)`：设置某些 `Field` 的 error 信息
+- `getFieldProps(name)`：获取某一 `Field` 的属性值
+- `setFieldProps(name, prop)`：设置某一 `Field` 的属性值
+- `submit()`：提交表单
+- `reset(initialValues)`：重置表单值为表单初始化时的默认值，如果表单初始化时没有默认值，则清空表单；如果传了参数 initialValues，则 initialValues 会成为新的表单默认值
 
 也可以通过属性的方式获取到一些数据：
-- `formCore.values`
-  获取表单的所有值
-- `formCore.errors`
-  获取表单校验的错误信息
-- `formCore.pristine`
-  表单当前的 `values` 是否与 `initialValues` 相等
+
+- `formCore.values`：获取表单的所有值
+- `formCore.errors`：获取表单校验的错误信息
+- `formCore.pristine`：表单当前的 `values` 是否与 `initialValues` 相等
 
 ## 延伸阅读
+
 ### 开发 @ice/form 表单背景
+
 对于前端，表单开发是一件特别繁琐的事情，尤其在中后台业务中，大家常常会被各种五花八门的表单折磨，又不得不面对现实地去寻找最佳方案，但最终都会发现过度设计的表单组件性能不好，使用简单的表单组件还是需要写大量的业务代码。经过长期的积累以及在社区的调研，我们开发了一个表单组件帮助大家快速地创建一个高性能表单。
 
 ### 组件特性
