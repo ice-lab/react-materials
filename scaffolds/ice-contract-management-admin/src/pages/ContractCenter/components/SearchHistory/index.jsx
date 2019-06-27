@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -52,96 +53,56 @@ const mockData = [
   },
 ];
 
-export default class SearchHistory extends Component {
-  static displayName = 'SearchHistory';
+export default function SearchHistory(props) {
 
-  static propTypes = {
-    onSearchHistory: PropTypes.func,
-  };
-
-  static defaultProps = {
-    onSearchHistory: () => {},
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  onSearchAgain = (data) => {
+  function onSearchAgain(data) {
     const query = {};
     data.keywords.forEach((item) => {
       query[item.name] = item.value;
     });
-    this.props.onSearchHistory(query);
+    props.onSearchHistory(query);
   };
 
-  render() {
-    return (
-      <IceContainer style={styles.container}>
-        <ContainerTitle title="搜索历史" />
-        <div style={styles.historyList}>
-          {mockData.map((item, index) => {
-            return (
-              <div style={styles.historyItem} key={index}>
-                <div style={styles.itemInfo}>
-                  <span style={styles.time}>{item.time}</span>
-                  <Button
-                    text
-                    style={styles.query}
-                    onClick={this.onSearchAgain.bind(this, item)}
-                  >
-                    再次查询
-                  </Button>
-                </div>
-                <div style={styles.keywords}>
-                  {item.keywords.map((keyword, key) => {
-                    return (
-                      <div style={styles.keyword} key={key}>
-                        <span style={styles.label}>{keyword.label}：</span>
-                        <span style={styles.value}>{keyword.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
+  return (
+    <IceContainer className={styles.container}>
+      <ContainerTitle title="搜索历史" />
+      <div className={styles.historyList}>
+        {mockData.map((item, index) => {
+          return (
+            <div className={styles.historyItem} key={index}>
+              <div className={styles.itemInfo}>
+                <span className={styles.time}>{item.time}</span>
+                <Button
+                  text
+                  className={styles.query}
+                  onClick={onSearchAgain.bind(null, item)}
+                >
+                  再次查询
+                </Button>
               </div>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+              <div className={styles.keywords}>
+                {item.keywords.map((keyword, key) => {
+                  return (
+                    <div className={styles.keyword} key={key}>
+                      <span className={styles.label}>{keyword.label}：</span>
+                      <span className={styles.value}>{keyword.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }
 
-const styles = {
-  container: {
-    padding: '0',
-    minHeight: '100vh',
-  },
-  historyItem: {
-    padding: '20px 20px 10px',
-    borderBottom: '1px solid #f2f2f2',
-  },
-  itemInfo: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: '15px',
-    fontSize: '12px',
-  },
-  time: {
-    color: 'rgba(0,0,0,.6)',
-  },
-  keyword: {
-    display: 'inline-block',
-    padding: '6px 10px',
-    backgroundColor: 'rgba(31,56,88,0.06)',
-    borderRadius: '3px',
-    marginBottom: '8px',
-    marginRight: '8px',
-    maxWidth: '100%',
-    fontSize: '12px',
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden',
-  },
+SearchHistory.propTypes = {
+  onSearchHistory: PropTypes.func,
 };
+
+SearchHistory.defaultProps = {
+  onSearchHistory: () => {},
+};
+

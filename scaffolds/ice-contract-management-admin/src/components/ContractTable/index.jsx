@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import cloneDeep from 'lodash.clonedeep';
 import PropTypes from 'prop-types';
 import { Table, Pagination, Button, Message } from '@alifd/next';
@@ -20,56 +20,21 @@ const defaultSearchQuery = {
   checkbox: 'false',
 };
 
-export default class ContractTable extends Component {
-  static displayName = 'ContractTable';
+export default function ContractTable(props) {
+  const { enableFilter } = props;
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState(cloneDeep(defaultSearchQuery));
+  const [pageIndex, setPageIndex] = useState(1);
+  const [dataSource, setData] = useState([]);
 
-  static propTypes = {
-    enableFilter: PropTypes.bool,
-    searchQueryHistory: PropTypes.object,
-  };
+  useEffect(() => {
+    fetchDataSource();
+  }, []);
 
-  static defaultProps = {
-    enableFilter: true,
-    searchQueryHistory: null,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: true,
-      searchQuery: cloneDeep(defaultSearchQuery),
-      pageIndex: 1,
-      dataSource: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchDataSource();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.hasOwnProperty('searchQueryHistory')) {
-      this.setState(
-        {
-          searchQuery: Object.assign(
-            cloneDeep(defaultSearchQuery),
-            nextProps.searchQueryHistory
-          ),
-          pageIndex: 1,
-        },
-        this.fetchDataSource
-      );
-    }
-  }
-
-  fetchDataSource = () => {
-    this.setState({
-      loading: true,
-    });
+  function fetchDataSource() {
+    setLoading(true);
 
     // 根据当前的 searchQuery/pageIndex 获取列表数据，使用 setTimeout 模拟异步请求
-    // const { searchQuery, pageIndex } = this.state;
-
     setTimeout(() => {
       const dataSource = Array.from({ length: 20 }).map((item, index) => {
         return {
@@ -83,53 +48,35 @@ export default class ContractTable extends Component {
         };
       });
 
-      this.setState({
-        loading: false,
-        dataSource,
-      });
+      setLoading(false);
+      setData(dataSource);
     }, 1 * 1000);
-  };
+  }
 
-  onSearchChange = (searchQuery) => {
-    this.setState({
-      searchQuery,
-    });
-  };
+  async function onSearchSubmit(searchQuery) {
+    await setSearchQuery(searchQuery);
+    await setPageIndex(1);
+    await fetchDataSource();
+  }
 
-  onSearchSubmit = (searchQuery) => {
-    this.setState(
-      {
-        searchQuery,
-        pageIndex: 1,
-      },
-      this.fetchDataSource
-    );
-  };
+  async function onSearchReset() {
+    await setSearchQuery(cloneDeep(defaultSearchQuery));
+  }
 
-  onSearchReset = () => {
-    this.setState({
-      searchQuery: cloneDeep(defaultSearchQuery),
-    });
-  };
+  async function onPaginationChange(pageIndex) {
+    await setPageIndex(pageIndex);
+    await fetchDataSource();
+  }
 
-  onPaginationChange = (pageIndex) => {
-    this.setState(
-      {
-        pageIndex,
-      },
-      this.fetchDataSource
-    );
-  };
-
-  renderState = (value) => {
+  function renderState(value) {
     return (
       <div className={styles.state}>
         <span className={styles.stateText}>{value}</span>
       </div>
     );
-  };
+  }
 
-  renderOper = () => {
+  function renderOper() {
     return (
       <div>
         <Button
@@ -153,7 +100,7 @@ export default class ContractTable extends Component {
     );
   };
 
-  getTableColumns = () => {
+  function getTableColumns() {
     return [
       {
         title: '合同编号',
@@ -197,54 +144,58 @@ export default class ContractTable extends Component {
         title: '合同状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
         width: 100,
       },
       {
         title: '操作',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
         width: 200,
       },
     ];
   };
 
-  render() {
-    const { enableFilter } = this.props;
-    const { searchQuery, dataSource, loading, pageIndex } = this.state;
-
-    return (
-      <div>
-        {enableFilter && (
-          <SearchFilter
-            value={searchQuery}
-            onChange={this.onSeacrhChange}
-            onSubmit={this.onSearchSubmit}
-            onReset={this.onSearchReset}
-          />
-        )}
-        <Table dataSource={dataSource} hasBorder={false} loading={loading}>
-          {this.getTableColumns().map((item) => {
-            return (
-              <Table.Column
-                title={item.title}
-                dataIndex={item.dataIndex}
-                key={item.key}
-                sortable={item.sortable || false}
-                cell={item.cell}
-                width={item.width || 'auto'}
-                lock={item.lock}
-              />
-            );
-          })}
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={pageIndex}
-          onChange={this.onPaginationChange}
+  return (
+    <div>
+      {enableFilter && (
+        <SearchFilter
+          value={searchQuery}
+          onSubmit={onSearchSubmit}
+          onReset={onSearchReset}
         />
-      </div>
-    );
-  }
+      )}
+      <Table dataSource={dataSource} hasBorder={false} loading={loading}>
+        {getTableColumns().map((item) => {
+          return (
+            <Table.Column
+              title={item.title}
+              dataIndex={item.dataIndex}
+              key={item.key}
+              sortable={item.sortable || false}
+              cell={item.cell}
+              width={item.width || 'auto'}
+              lock={item.lock}
+            />
+          );
+        })}
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={pageIndex}
+        onChange={onPaginationChange}
+      />
+    </div>
+  );
 }
+
+ContractTable.propTypes = {
+  enableFilter: PropTypes.bool,
+  searchQueryHistory: PropTypes.object,
+};
+
+ContractTable.defaultProps = {
+  enableFilter: true,
+  searchQueryHistory: null,
+};

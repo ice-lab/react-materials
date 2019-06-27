@@ -1,5 +1,5 @@
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import React, { Suspense } from 'react';
+import React from 'react';
 import path from 'path';
 import routes from '@/routerConfig';
 
@@ -51,10 +51,12 @@ const router = () => {
                       </Switch>
                     </RouteComponent>
                   ) : (
+                    <div>
                       {RouteItem({
                         key: id,
                         ...props,
                       })}
+                    </div>
                   )
                 );
               }}

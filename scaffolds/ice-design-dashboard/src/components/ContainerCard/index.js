@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class ContainerCard extends Component {
-  render() {
-    const {
-      title,
-      extraContent,
-      children,
-      cardStyle,
-      contentStyle,
-    } = this.props;
-    return (
-      <div className="container-card" style={{ ...cardStyle }}>
-        {title || extraContent ? (
-          <div>
-            <div className="container-card-head">
-              {title ? <h3 className="container-card-title">{title}</h3> : null}
-              {extraContent}
-            </div>
+export default function ContainerCard(props) {
+  const {
+    title,
+    extraContent,
+    children,
+    cardStyle,
+    contentStyle,
+  } = props;
+  return (
+    <div className={styles.containerCard} style={{ ...cardStyle }}>
+      {title || extraContent ? (
+        <div>
+          <div className={styles.containerCardHead}>
+            {title ? <h3 className={styles.containerCardTitle}>{title}</h3> : null}
+            {extraContent}
           </div>
-        ) : null}
-
-        <div className="container-card-content" style={{ ...contentStyle }}>
-          {children}
         </div>
+      ) : null}
+
+      <div className={styles.containerCardContent} style={{ ...contentStyle }}>
+        {children}
       </div>
-    );
-  }
+    </div>
+  );
 }

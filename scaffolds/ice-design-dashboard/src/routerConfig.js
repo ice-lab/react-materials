@@ -3,15 +3,18 @@
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
 import Dashboard from './pages/Dashboard';
+import NotFound from '@/components/NotFound';
 import BlankLayout from './layouts/BlankLayout';
 
 const routerConfig = [
   {
-    path: '',
+    path: '/',
     component: BlankLayout,
     children: [{
       path: '/dashboard',
       component: Dashboard,
+    }, {
+      component: NotFound,
     }]
   }
 ];

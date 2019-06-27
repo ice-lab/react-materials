@@ -1,6 +1,6 @@
 import React from 'react';
 import { Message } from '@alifd/next';
-import './index.scss';
+import style from './index.module.scss';
 
 const CustomNotice = () => {
   const renderNum = (num, color) => {
@@ -10,7 +10,7 @@ const CustomNotice = () => {
   return (
     <Message
       closeable
-      className="custom-notice"
+      className={style.customNotice}
       style={styles.notice}
       title={
         <div style={styles.title}>
