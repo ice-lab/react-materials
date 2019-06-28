@@ -28,21 +28,19 @@ const MOCK_DARA = {
   ],
 };
 
-class ReserveChart extends React.Component {
-  render() {
-    return (
-      <IceContainer title="预约概况">
-        <Row>
-          <Col l="12">
-            <DoughnutChart text="预付金额" data={MOCK_DARA.income} />
-          </Col>
-          <Col l="12">
-            <DoughnutChart text="预约订单" data={MOCK_DARA.order} />
-          </Col>
-        </Row>
-      </IceContainer>
-    );
-  }
+function ReserveChart() {
+  return (
+    <IceContainer title="预约概况">
+      <Row>
+        <Col l="12">
+          <DoughnutChart text="预付金额" data={MOCK_DARA.income} />
+        </Col>
+        <Col l="12">
+          <DoughnutChart text="预约订单" data={MOCK_DARA.order} />
+        </Col>
+      </Row>
+    </IceContainer>
+  );
 }
 
 export default ReserveChart;
