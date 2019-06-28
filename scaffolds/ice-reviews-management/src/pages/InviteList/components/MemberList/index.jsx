@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Dialog } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
@@ -6,31 +6,26 @@ import ContainerTitle from '../../../../components/ContainerTitle';
 import mockData from './data';
 import styles from './index.module.scss';
 
-@withRouter
-export default class MemberList extends Component {
-  state = {
-    data: mockData,
+function MemberList(props) {
+  const [dataSource, setDataSource] = useState(mockData);
+
+  const handleAdd = () => {
+    props.history.push('/invite/add');
   };
 
-  handleAdd = () => {
-    this.props.history.push('/invite/add');
-  };
-
-  handleDelete = (index) => {
+  const handleDelete = (index) => {
     Dialog.confirm({
       content: '确认删除吗',
       onOk: () => {
-        const { data } = this.state;
-
-        data.splice(index, index + 1);
-        this.setState({
-          data,
-        });
+        const data = [...dataSource];
+        console.log(index);
+        data.splice(index, 1);
+        setDataSource(data);
       },
     });
   };
 
-  renderProfile = (value, index, record) => {
+  const renderProfile = (value, index, record) => {
     return (
       <div className={styles.profile}>
         <img src={record.avatar} alt="" className={styles.avatar} />
@@ -39,14 +34,14 @@ export default class MemberList extends Component {
     );
   };
 
-  renderOper = (value) => {
+  const renderOper = (value, index) => {
     return (
       <div>
         <Link to="/invite/add" className={styles.edit}>
           修改
         </Link>
         <a
-          onClick={() => this.handleDelete(value)}
+          onClick={() => handleDelete(index)}
           className={styles.link}
         >
           删除
@@ -55,23 +50,22 @@ export default class MemberList extends Component {
     );
   };
 
-  render() {
-    const { data } = this.state;
-    return (
-      <IceContainer className={styles.container}>
-        <ContainerTitle
-          title="邀请列表"
-          buttonText="新增成员"
-          className={styles.title}
-          onClick={this.handleAdd}
-        />
-        <Table dataSource={data} hasHeader={false} hasBorder={false}>
-          <Table.Column dataIndex="name" cell={this.renderProfile} />
-          <Table.Column dataIndex="email" />
-          <Table.Column dataIndex="role" />
-          <Table.Column dataIndex="id" cell={this.renderOper} />
-        </Table>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className={styles.container}>
+      <ContainerTitle
+        title="邀请列表"
+        buttonText="新增成员"
+        className={styles.title}
+        onClick={handleAdd}
+      />
+      <Table dataSource={dataSource} hasHeader={false} hasBorder={false}>
+        <Table.Column dataIndex="name" cell={renderProfile} />
+        <Table.Column dataIndex="email" />
+        <Table.Column dataIndex="role" />
+        <Table.Column dataIndex="id" cell={renderOper} />
+      </Table>
+    </IceContainer>
+  );
 }
+
+export default withRouter(MemberList);

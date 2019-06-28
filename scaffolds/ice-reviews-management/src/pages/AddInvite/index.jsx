@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AddForm from './components/AddForm';
 
-export default class AddInvite extends Component {
-  render() {
-    return (
-      <div>
-        <AddForm />
-      </div>
-    );
-  }
+export default function AddInvite() {
+  return (
+    <div>
+      <AddForm />
+    </div>
+  );
 }

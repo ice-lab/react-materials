@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Axis, Tooltip, Geom } from 'bizcharts';
 import DataSet from '@antv/data-set';
@@ -48,56 +48,57 @@ dv.transform({
   value: '数量',
 });
 
-export default class ReviewDataChart extends Component {
-  static displayName = 'ReviewDataChart';
-
-  render() {
-    return (
-      <IceContainer title="数据图表">
-        <div className={styles.coreDataTitle}>近一月</div>
-        <div className={styles.coreDataWrapper}>
-          <div className={styles.coreData}>
-            <div className={styles.coreDataCount}>135</div>
-            <div className={styles.coreDataDesc}>
-              <span
-                style={{backgroundColor: '#5e83fb'}} className={styles.indicator}
-              />
-              <span>已完成</span>
-            </div>
-          </div>
-          <div className={styles.coreData}>
-            <div className={styles.coreDataCount}>242</div>
-            <div className={styles.coreDataDesc}>
-              <span
-                style={{backgroundColor: '#ee706d'}} className={styles.indicator}
-              />
-              <span>已邀请</span>
-            </div>
-          </div>
-          <div className={styles.coreData}>
-            <div className={styles.coreDataCount}>22</div>
-            <div className={styles.coreDataDesc}>
-              <span
-                style={{backgroundColor: '#58ca9a'}} className={styles.indicator}
-              />
-              <span>已回绝</span>
-            </div>
-          </div>
-        </div>
-        <div className={styles.coreDataChartWrapper}>
-          <Chart padding={[40, 40, 40, 40]} height={300} data={dv} forceFit>
-            <Axis name="月份" />
-            <Axis name="数量" />
-            <Tooltip crosshairs={{ type: 'y' }} />
-            <Geom
-              type="interval"
-              position="月份*数量"
-              color={['name', ['#5e83fb', '#ee706d', '#58ca9a']]}
-              adjust={[{ type: 'dodge', marginRatio: 1 / 32 }]}
+export default function ReviewDataChart() {
+  return (
+    <IceContainer title="数据图表">
+      <div className={styles.coreDataTitle}>近一月</div>
+      <div className={styles.coreDataWrapper}>
+        <div className={styles.coreData}>
+          <div className={styles.coreDataCount}>135</div>
+          <div className={styles.coreDataDesc}>
+            <span
+              style={{ backgroundColor: '#5e83fb' }}
+              className={styles.indicator}
             />
-          </Chart>
+            <span>已完成</span>
+          </div>
         </div>
-      </IceContainer>
-    );
-  }
+        <div className={styles.coreData}>
+          <div className={styles.coreDataCount}>242</div>
+          <div className={styles.coreDataDesc}>
+            <span
+              style={{ backgroundColor: '#ee706d' }}
+              className={styles.indicator}
+            />
+            <span>已邀请</span>
+          </div>
+        </div>
+        <div className={styles.coreData}>
+          <div className={styles.coreDataCount}>22</div>
+          <div className={styles.coreDataDesc}>
+            <span
+              style={{ backgroundColor: '#58ca9a' }}
+              className={styles.indicator}
+            />
+            <span>已回绝</span>
+          </div>
+        </div>
+      </div>
+      <div className={styles.coreDataChartWrapper}>
+        <Chart padding={[40, 40, 40, 40]} height={300} data={dv} forceFit>
+          <Axis name="月份" />
+          <Axis name="数量" />
+          <Tooltip crosshairs={{ type: 'y' }} />
+          <Geom
+            type="interval"
+            position="月份*数量"
+            color={['name', ['#5e83fb', '#ee706d', '#58ca9a']]}
+            adjust={[{ type: 'dodge', marginRatio: 1 / 32 }]}
+          />
+        </Chart>
+      </div>
+    </IceContainer>
+  );
 }
+
+ReviewDataChart.displayName = 'ReviewDataChart';
