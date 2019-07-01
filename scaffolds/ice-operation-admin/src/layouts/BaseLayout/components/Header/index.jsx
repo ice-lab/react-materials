@@ -5,29 +5,28 @@ import { Icon, Balloon, Nav } from '@alifd/next';
 import { Link, withRouter } from 'react-router-dom';
 import { asideMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
-import './index.scss';
+import styles from './index.module.scss';
 
-@withRouter
-class Header extends React.Component {
-  getSelectKeys() {
-    const selectKeys = this.props.location.pathname.split('/').filter((i) => i);
+function Header(props) {
+  function getSelectKeys() {
+    const selectKeys = props.location.pathname.split('/').filter((i) => i);
     if (selectKeys.length === 0) {
       selectKeys.push('home');
     }
     return selectKeys;
   }
 
-  renderUser = () => {
+  function renderUser() {
     const trigger = (
-      <div className="ice-header-userpannel">
+      <div className={styles.headerUserpannel}>
         <img
           src="https://img.alicdn.com/tfs/TB1FJSxwMHqK1RjSZFgXXa7JXXa-80-80.png"
           alt=""
-          className="ice-header-user-avatar"
+          className={styles.userAvatar}
         />
-        <span className="ice-header-user-name">
+        <span className={styles.userName}>
           淘小宝
-          <Icon className="ice-header-arrow" size="xs" type="arrow-down" />
+          <Icon className={styles.headerArrow} size="xs" type="arrow-down" />
         </span>
       </div>
     );
@@ -39,21 +38,21 @@ class Header extends React.Component {
         align="br"
         alignEdge
         closable={false}
-        className="ice-header-balloon"
+        className={styles.headerBalloon}
         style={{ width: '80px' }}
       >
-        <div className="ice-header-personal-menu">
+        <div className={styles.personalMenu}>
           <Link to="/user/login">退出</Link>
         </div>
       </Balloon>
     );
-  };
+  }
 
-  renderHeader() {
-    const selectedKeys = this.getSelectKeys();
+  function renderHeader() {
+    const selectedKeys = getSelectKeys();
 
     return (
-      <div className="ice-admin-layout-header">
+      <div className={styles.adminLayoutHeader}>
         <Logo />
         {asideMenuConfig && asideMenuConfig.length > 0 ? (
           <Nav direction="hoz" type="secondary" selectedKeys={selectedKeys}>
@@ -66,16 +65,14 @@ class Header extends React.Component {
             })}
           </Nav>
         ) : null}
-        {this.renderUser()}
+        {renderUser()}
       </div>
     );
   }
 
-  render() {
-    return (
-      <Layout.Header type="secondary">{this.renderHeader()}</Layout.Header>
-    );
-  }
+  return (
+    <Layout.Header type="secondary">{renderHeader()}</Layout.Header>
+  );
 }
 
-export default Header;
+export default withRouter(Header);

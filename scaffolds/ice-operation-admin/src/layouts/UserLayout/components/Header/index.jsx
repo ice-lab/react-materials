@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@alifd/next';
 import { Link } from 'react-router-dom';
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default () => {
   return (
@@ -42,4 +42,4 @@ export default () => {
       </ul>
     </div>
   );
-};
+}
