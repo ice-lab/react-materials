@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-};
+}
 .title {
   color: #333;
-};
+}
 .description {
   color: #666;
-};
+}
 
 :global {
   @media screen and (max-width: 720px) {
