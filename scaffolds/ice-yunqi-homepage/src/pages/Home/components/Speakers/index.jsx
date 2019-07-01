@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -55,43 +55,32 @@ const data = [
   },
 ];
 
-export default class Speakers extends Component {
-  static displayName = 'Speakers';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.mainTitle}>SPEAKERS</div>
-          <div className={styles.mainDesc}>精彩演讲回顾</div>
-          <Row wrap gutter="20" className={styles.row}>
-            {data.map((item, index) => {
-              return (
-                <Col l="6" key={index}>
-                  <div className={styles.item}>
-                    <img src={item.avatar} alt="" className={styles.avatar} />
-                    <div className={styles.mask} />
-                    <div className={styles.line} />
-                    <div className={styles.info}>
-                      <div className={styles.name}>{item.name}</div>
-                      <div className={styles.job}>{item.job}</div>
-                    </div>
+export default function Speakers() {
+  return (
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <div className={styles.mainTitle}>SPEAKERS</div>
+        <div className={styles.mainDesc}>精彩演讲回顾</div>
+        <Row wrap gutter="20" className={styles.row}>
+          {data.map((item, index) => {
+            return (
+              <Col l="6" key={index}>
+                <div className={styles.item}>
+                  <img src={item.avatar} alt="" className={styles.avatar} />
+                  <div className={styles.mask} />
+                  <div className={styles.line} />
+                  <div className={styles.info}>
+                    <div className={styles.name}>{item.name}</div>
+                    <div className={styles.job}>{item.job}</div>
                   </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+Speakers.displayName = 'Speakers';

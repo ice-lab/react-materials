@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import ScrollAnim from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
@@ -45,51 +45,39 @@ const MOCK_DATA = [
   },
 ];
 
-export default class FrontierContent extends Component {
-  static displayName = 'FrontierContent';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <ScrollOverPack always={false}>
-          <QueueAnim type="bottom" delay={100} duration={1000}>
-            <div className={styles.content} key="content">
-              <Row wrap gutter={20}>
-                <Col xs="24" m="12" l="8">
-                  <div className={styles.titleWrap}>
-                    <div className={styles.bigTitle}>FRONTIER</div>
-                    <div className={styles.subTitle}>前沿内容</div>
-                  </div>
-                </Col>
-                {MOCK_DATA.map((item, index) => {
-                  return (
-                    <Col xs="24" m="12" l="8" key={index}>
-                      <div className={styles.item}>
-                        <div className={styles.itemNum}>{item.num}</div>
-                        <div className={styles.itemBox}>
-                          <div className={styles.itemTitle}>{item.title}</div>
-                          <div className={styles.itemSubtit}>{item.subtit}</div>
-                          <div className={styles.itemDesc}>{item.desc}</div>
-                        </div>
+export default function FrontierContent() {
+  return (
+    <div className={styles.container}>
+      <ScrollOverPack always={false}>
+        <QueueAnim type="bottom" delay={100} duration={1000}>
+          <div className={styles.content} key="content">
+            <Row wrap gutter={20}>
+              <Col xs="24" m="12" l="8">
+                <div className={styles.titleWrap}>
+                  <div className={styles.bigTitle}>FRONTIER</div>
+                  <div className={styles.subTitle}>前沿内容</div>
+                </div>
+              </Col>
+              {MOCK_DATA.map((item, index) => {
+                return (
+                  <Col xs="24" m="12" l="8" key={index}>
+                    <div className={styles.item}>
+                      <div className={styles.itemNum}>{item.num}</div>
+                      <div className={styles.itemBox}>
+                        <div className={styles.itemTitle}>{item.title}</div>
+                        <div className={styles.itemSubtit}>{item.subtit}</div>
+                        <div className={styles.itemDesc}>{item.desc}</div>
                       </div>
-                    </Col>
-                  );
-                })}
-              </Row>
-            </div>
-          </QueueAnim>
-        </ScrollOverPack>
-      </div>
-    );
-  }
+                    </div>
+                  </Col>
+                );
+              })}
+            </Row>
+          </div>
+        </QueueAnim>
+      </ScrollOverPack>
+    </div>
+  );
 }
 
+FrontierContent.displayName = 'FrontierContent';

@@ -1,99 +1,103 @@
 .container {
-    min-height: 680px;
-    padding: 50px 0;
-    background: #000;
+  min-height: 680px;
+  padding: 50px 0;
+  background: #000;
 }
 
-content {
-    width: 1200px;
-    margin: 0 auto;
+.content {
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .mainTitle {
-    font-size: 60px;
-    color: #fff;
-    letter-spacing: 0.77px;
-    line-height: 72px;
-    margin: 0;
-    font-weight: 700;
+  font-size: 60px;
+  color: #fff;
+  letter-spacing: 0.77px;
+  line-height: 72px;
+  margin: 0;
+  font-weight: 700;
 }
 
 .mainDesc {
-    font-size: 24px;
-    line-height: 30px;
-    color: #fff;
-    margin-top: 8px;
-    font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 700;
 }
 
 .items {
-    margin-top: 70px;
-    height: 400px;
+  margin-top: 70px;
+  height: 400px;
+}
+
+a.item {
+  color: #fff;
 }
 
 .item {
-    position: relative;
-    width: 18.7%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s linear;
+  position: relative;
+  width: 18.7%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  
+  text-decoration: none;
+  transition: all 0.3s linear;
 }
 
 .image {
-    position: relative;
-    width: 1200px;
-    height: 100%;
-    left: 50%;
-    margin-left: -600px;
-    filter: grayscale(100%);
-    transition: all 0.3s linear;
+  position: relative;
+  width: 1200px;
+  height: 100%;
+  left: 50%;
+  margin-left: -600px;
+  filter: grayscale(100%);
+  transition: all 0.3s linear;
 }
 
 .title {
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    text-align: center;
-    top: 167px;
-    font-size: 26px;
-    line-height: 1;
-    opacity: 0.8;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-    transition: all 0.3s linear;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  top: 167px;
+  font-size: 26px;
+  line-height: 1;
+  opacity: 0.8;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s linear;
 }
 
 .desc {
-    position: absolute;
-    z-index: 2;
-    width: 547px;
-    top: 148px;
-    left: 73px;
-    opacity: 0;
-    font-size: 14px;
-    line-height: 22px;
-    transition: all 0.3s linear;
+  position: absolute;
+  z-index: 2;
+  width: 547px;
+  top: 148px;
+  left: 73px;
+  opacity: 0;
+  font-size: 14px;
+  line-height: 22px;
+  transition: all 0.3s linear;
 }
 
 .selected {
-    width: 62.5%;
+  width: 62.5%;
 }
 
 .selectedImage {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .selectedTitle {
-    opacity: 1;
-    top: 108px;
-    left: 72px;
-    text-align: left;
+  opacity: 1;
+  top: 108px;
+  left: 72px;
+  text-align: left;
 }
 
 .selectedDesc {
-    opacity: 1;
+  opacity: 1;
 }

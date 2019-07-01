@@ -1,145 +1,145 @@
 .container {
-    height: 100vh;
-    padding: 50px 0;
-    background: #000;
+  height: 100vh;
+  padding: 50px 0;
+  background: #000;
 }
 
 .content {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .mainTitle {
-    font-size: 60px;
-    color: #fff;
-    letter-spacing: 0.77px;
-    line-height: 72px;
-    margin: 0;
-    font-weight: 700;
+  font-size: 60px;
+  color: #fff;
+  letter-spacing: 0.77px;
+  line-height: 72px;
+  margin: 0;
+  font-weight: 700;
 }
 
 .mainDesc {
-    font-size: 24px;
-    line-height: 30px;
-    color: #fff;
-    margin-top: 8px;
-    font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 700;
 }
 
 .tipsList {
-    background: #191a1e;
-    width: 100%;
-    padding: 2px 24px 14px;
-    margin: 70px 0 20px;
-    overflow: hidden;
+  background: #191a1e;
+  width: 100%;
+  padding: 2px 24px 14px;
+  margin: 70px 0 20px;
+  overflow: hidden;
 }
 
 .tipsText {
-    float: left;
-    margin: 0;
-    font-size: 14px;
-    color: hsla(0, 0%, 100%, .7);
-    line-height: 28px;
-    margin-right: 30px;
-    padding-top: 12px;
+  float: left;
+  margin: 0;
+  font-size: 14px;
+  color: hsla(0, 0%, 100%, .7);
+  line-height: 28px;
+  margin-right: 30px;
+  padding-top: 12px;
 }
 
 .tipsNum {
-    font-size: 24px;
-    line-height: 24px;
-    color: #236cff;
-    padding: 0 6px;
+  font-size: 24px;
+  line-height: 24px;
+  color: #236cff;
+  padding: 0 6px;
 }
 
 .tipsLink {
-    color: hsla(0, 0%, 100%, .7) !important;
+  color: hsla(0, 0%, 100%, .7) !important;
 }
 
 .itemBox {
-    padding: 32px 24px;
-    background: #191a1e;
+  padding: 32px 24px;
+  background: #191a1e;
 }
 
 .itemTitle {
-    font-size: 18px;
-    color: #fff;
-    line-height: 30px;
-    white-space: nowrap;
-    overflow: hidden;
+  font-size: 18px;
+  color: #fff;
+  line-height: 30px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .itemTime {
-    font-size: 26px;
-    color: #fff;
-    line-height: 32px;
-    white-space: nowrap;
-    overflow: hidden;
-    margin-top: 6px;
-    margin-bottom: 17px;
-    letter-spacing: 0.72px;
-    font-weight: 600;
+  font-size: 26px;
+  color: #fff;
+  line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 6px;
+  margin-bottom: 17px;
+  letter-spacing: 0.72px;
+  font-weight: 600;
 }
 
 .itemTextList {
-    padding-top: 16px;
-    border-top: 2px solid #fff;
-    height: 118px;
-    overflow: hidden;
+  padding-top: 16px;
+  border-top: 2px solid #fff;
+  height: 118px;
+  overflow: hidden;
 }
 
 .textList {
-    font-size: 12px;
-    line-height: 20px;
-    color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
 }
 
 .itemPriceList {
-    margin-top: 24px;
+  margin-top: 24px;
 }
 
 .priceList {
-    margin-bottom: 8px;
-    overflow: hidden;
+  margin-bottom: 8px;
+  overflow: hidden;
 }
 
 .priceText {
-    float: left;
-    width: 60%;
-    font-size: 12px;
-    color: #fff;
-    line-height: 26px;
-    white-space: nowrap;
-    overflow: hidden;
+  float: left;
+  width: 60%;
+  font-size: 12px;
+  color: #fff;
+  line-height: 26px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .price {
-    font-size: 26px;
-    letter-spacing: 0.14px;
-    padding-left: 2px;
+  font-size: 26px;
+  letter-spacing: 0.14px;
+  padding-left: 2px;
 }
 
 .btnWrap {
-    margin-top: 8px;
-    display: block;
-    width: 100%;
+  margin-top: 8px;
+  display: block;
+  width: 100%;
 }
 
 .buyLink {
-    display: block;
-    height: 32px;
-    line-height: 32px;
-    text-align: center;
-    font-size: 14px;
-    color: #fff !important;
-    transition: all .3s;
-    text-decoration: none;
-    background: #236cff;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff !important;
+  transition: all .3s;
+  text-decoration: none;
+  background: #236cff;
 }
 
 .unSale {
-    background: #a1a1a1;
+  background: #a1a1a1;
 }
 
 .isSale {
-    background: #236cff;
+  background: #236cff;
 }

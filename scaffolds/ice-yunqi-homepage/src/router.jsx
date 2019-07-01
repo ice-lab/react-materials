@@ -1,18 +1,76 @@
-/**
- * 定义应用路由
- */
-import React from 'react';
-import { HashRouter, Switch, Route } from 'react-router-dom';
-import HeaderFooterLayout from './layouts/HeaderFooterLayout';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import path from 'path';
+import routes from './routerConfig';
+import PageLoading from './components/PageLoading';
 
-const router = () => {
+const RouteItem = (props) => {
+  const { redirect, path: routePath, component, key } = props;
+  if (redirect) {
+    return (
+      <Redirect
+        exact
+        key={key}
+        from={routePath}
+        to={redirect}
+      />
+    );
+  }
   return (
-    <HashRouter>
-      <Switch>
-        <Route path="/" component={HeaderFooterLayout} />
-      </Switch>
-    </HashRouter>
+    <Route
+      key={key}
+      component={component}
+      path={routePath}
+    />
   );
 };
 
-export default router();
+const router = () => {
+  return (
+    <Router>
+      <Switch>
+        {routes.map((route, id) => {
+          const { component: RouteComponent, children, ...others } = route;
+          return (
+            <Route
+              key={id}
+              {...others}
+              component={(props) => {
+                return (
+                  children ? (
+                    <RouteComponent key={id} {...props}>
+                      <Suspense fallback={<PageLoading />}>
+                        <Switch>
+                          {children.map((routeChild, idx) => {
+                            const { redirect, path: childPath, component } = routeChild;
+                            return RouteItem({
+                              key: `${id}-${idx}`,
+                              redirect,
+                              path: childPath && path.join(route.path, childPath),
+                              component,
+                            });
+                          })}
+                        </Switch>
+                      </Suspense>
+                    </RouteComponent>
+                  ) : (
+                    <Suspense fallback={<PageLoading />}>
+                      {
+                        RouteItem({
+                          key: id,
+                          ...props,
+                        })
+                      }
+                    </Suspense>
+                  )
+                );
+              }}
+            />
+          );
+        })}
+      </Switch>
+    </Router>
+  );
+};
+
+export default router;
