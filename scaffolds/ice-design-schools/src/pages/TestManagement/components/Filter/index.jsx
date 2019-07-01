@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import cx from 'classnames';
 import styles from './index.module.scss';
@@ -23,55 +23,47 @@ const data = [
   },
 ];
 
-export default class Filter extends Component {
-  static displayName = 'Filter';
+export default function Filter() {
+  const [activeIndex] = useState(0);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: 0,
-    };
-  }
-
-  handleClick = (value) => {
+  const handleClick = (value) => {
     console.log(value);
   };
 
-  render() {
-    const { activeIndex } = this.state;
-    return (
-      <IceContainer title="精确筛选">
-        <div className={styles.filterContent}>
-          {data.map((item, index) => {
-            const lastItem = index === data.length - 1;
-            const lastItemStyle = lastItem ? { marginBottom: 0 } : null;
-            return (
-              <div
-                className={styles.filterItem}
-                style={lastItemStyle}
-                key={index}
-              >
-                <div className={styles.filterLabel}>{item.label}:</div>
-                <div className={styles.filterList}>
-                  {item.value.map((text, idx) => {
-                    const activeStyle =
-                      activeIndex === idx ? styles.active : null;
-                    return (
-                      <span
-                        onClick={() => this.handleClick(text)}
-                        className={cx(styles.filterText, activeStyle)}
-                        key={idx}
-                      >
-                        {text}
-                      </span>
-                    );
-                  })}
-                </div>
+  return (
+    <IceContainer title="精确筛选">
+      <div className={styles.filterContent}>
+        {data.map((item, index) => {
+          const lastItem = index === data.length - 1;
+          const lastItemStyle = lastItem ? { marginBottom: 0 } : null;
+          return (
+            <div
+              className={styles.filterItem}
+              style={lastItemStyle}
+              key={index}
+            >
+              <div className={styles.filterLabel}>{item.label}:</div>
+              <div className={styles.filterList}>
+                {item.value.map((text, idx) => {
+                  const activeStyle =
+                    activeIndex === idx ? styles.active : null;
+                  return (
+                    <span
+                      onClick={() => handleClick(text)}
+                      className={cx(styles.filterText, activeStyle)}
+                      key={idx}
+                    >
+                      {text}
+                    </span>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+            </div>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }
+
+Filter.displayName = 'Filter';

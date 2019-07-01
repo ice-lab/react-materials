@@ -6,40 +6,40 @@
   font-weight: bold;
   margin: 0;
   padding: 0;
-};
+}
 .item{
   position: relative;
   border-bottom: 1px solid #eee;
   padding: 20px 0;
-};
+}
 .title{
   margin: 0 0 10px;
-};
+}
 .metaWrap{
   display: flex;
   padding-left: 15px;
-};
+}
 .meta{
   font-size: 13px;
   color: #999;
   margin-right: 15px;
-};
+}
 .operWrap{
   position: absolute;
   right: 0;
   top: 36px;
   display: flex;
   cursor: pointer;
-};
+}
 .oper{
   margin-left: 15px;
   font-size: 13px;
   color: #999;
-};
+}
 .operIcon{
   margin-right: 8px !important;
-};
+}
 .pagination{
   margin-top: 20px !important;
   text-align: right !important;
-};
+}

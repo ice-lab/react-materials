@@ -1,38 +1,36 @@
 /* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol/lib';
 import { asideMenuConfig } from '../../../../menuConfig';
-import './index.scss';
+import styles from './index.module.scss';
 
-@withRouter
-export default class BasicLayout extends Component {
-  render() {
-    const { location } = this.props;
-    const { pathname } = location;
+function Aside(props) {
+  const { location: { pathname } } = props;
 
-    return (
-      <Nav
-        selectedKeys={[pathname]}
-        className="ice-menu-custom"
-        activeDirection="right"
-      >
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav) => {
-            return (
-              <Nav.Item key={nav.path}>
-                <Link to={nav.path} className="ice-menu-link">
-                  {nav.icon ? (
-                    <FoundationSymbol size="small" type={nav.icon} />
-                  ) : null}
-                  <span className="ice-nav-item-text">{nav.name}</span>
-                </Link>
-              </Nav.Item>
-            );
-          })}
-      </Nav>
-    );
-  }
+  return (
+    <Nav
+      selectedKeys={[pathname]}
+      className={styles.iceMenuCustom}
+      activeDirection="right"
+    >
+      {Array.isArray(asideMenuConfig) &&
+        asideMenuConfig.length > 0 &&
+        asideMenuConfig.map((nav) => {
+          return (
+            <Nav.Item key={nav.path}>
+              <Link to={nav.path} className={styles.iceMenuLink}>
+                {nav.icon ? (
+                  <FoundationSymbol size="small" type={nav.icon} />
+                ) : null}
+                <span className={styles.iceNavItemText}>{nav.name}</span>
+              </Link>
+            </Nav.Item>
+          );
+        })}
+    </Nav>
+  );
 }
+
+export default withRouter(Aside);

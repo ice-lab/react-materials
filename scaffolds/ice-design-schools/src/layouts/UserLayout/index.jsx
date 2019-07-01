@@ -1,43 +1,28 @@
-import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
-import routerData from '../../routerConfig';
 import styles from './index.module.scss';
+import Header from './components/Header';
 
 const { Row, Col } = Grid;
 
-export default class UserLayout extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <Row wrap className={styles.row}>
-          <Col l="12">
-            <Intro />
-          </Col>
-          <Col l="12">
-            <div className={styles.form}>
-              <Switch>
-                {routerData.map((item, index) => {
-                  return item.component ? (
-                    <Route
-                      key={index}
-                      path={item.path}
-                      component={item.component}
-                      exact={item.exact}
-                    />
-                  ) : null;
-                })}
-
-                <Redirect exact from="/user" to="/user/login" />
-              </Switch>
-            </div>
-          </Col>
-        </Row>
-        <Footer />
-      </div>
-    );
-  }
+export default function UserLayout(props) {
+  return (
+    <div className={styles.container}>
+      <Header />
+      <Row wrap className={styles.row}>
+        <Col l="12">
+          <Intro />
+        </Col>
+        <Col l="12">
+          <div className={styles.form}>
+            {props.children}
+          </div>
+        </Col>
+      </Row>
+      <Footer />
+    </div>
+  );
 }
 

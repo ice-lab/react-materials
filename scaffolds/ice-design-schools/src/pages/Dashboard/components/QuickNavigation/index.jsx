@@ -1,5 +1,5 @@
 /* eslint global-require: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -57,39 +57,28 @@ const navigation = [
   },
 ];
 
-export default class QuickNavigation extends Component {
-  static displayName = 'QuickNavigation';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Row wrap gutter={20}>
-        {navigation.map((item, index) => {
-          return (
-            <Col xxs="12" l="6" key={index}>
-              <IceContainer style={{ background: item.color }}>
-                <div className={styles.navItem}>
-                  <div className={styles.imgWrap}>
-                    <img src={item.img} alt="" className={styles.img} />
-                  </div>
-                  <div className={styles.infoWrap}>
-                    <p className={styles.count}>{item.count}</p>
-                    <h5 className={styles.title}>{item.title}</h5>
-                  </div>
+export default function QuickNavigation() {
+  return (
+    <Row wrap gutter={20}>
+      {navigation.map((item, index) => {
+        return (
+          <Col xxs="12" l="6" key={index}>
+            <IceContainer style={{ background: item.color }}>
+              <div className={styles.navItem}>
+                <div className={styles.imgWrap}>
+                  <img src={item.img} alt="" className={styles.img} />
                 </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+                <div className={styles.infoWrap}>
+                  <p className={styles.count}>{item.count}</p>
+                  <h5 className={styles.title}>{item.title}</h5>
+                </div>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
+
+QuickNavigation.displayName = 'QuickNavigation';
