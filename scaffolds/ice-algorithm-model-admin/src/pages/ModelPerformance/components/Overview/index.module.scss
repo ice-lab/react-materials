@@ -1,0 +1,29 @@
+.box {
+  display: flex;
+  height: 100px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  color: #fff;
+}
+.value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  color: #c6cad6;
+}
+.count {
+  font-size: 36px;
+  margin-bottom: 2px;
+}
+.desc {
+  font-size: 13px;
+}

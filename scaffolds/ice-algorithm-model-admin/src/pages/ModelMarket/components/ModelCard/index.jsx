@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon, Dialog } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -42,60 +42,59 @@ const getData = () => {
   });
 };
 
-export default class ModelCard extends Component {
-  handleInvoke = () => {
+export default function ModelCard() {
+  const mockData = getData();
+
+  function handleInvoke() {
     Dialog.confirm({
       content: '请先申请权限在查看调用示例',
     });
-  };
+  }
 
-  handleOnline = () => {
+  function handleOnline() {
     Dialog.confirm({
       content: '只有超级权限才能设置在线预测',
     });
-  };
-
-  render() {
-    const mockData = getData();
-    return (
-      <Row wrap gutter="40" className={styles.row}>
-        {mockData.map((data, index) => {
-          return (
-            <Col l="6" key={index}>
-              <div className={styles.modelCard}>
-                <div className={styles.head}>
-                  <Icon type="electronics" className={styles.icon} /> {data.title}
-                </div>
-                <div className={styles.body}>
-                  {data.body.map((item, key) => {
-                    return (
-                      <div className={styles.item} key={key}>
-                        <span className={styles.label}>{item.label}：</span>
-                        <span className={styles.value}>{item.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className={styles.footer}>
-                  <a
-                    onClick={this.handleInvoke}
-                    className={styles.button1}
-                  >
-                    调用示例
-                  </a>
-                  <a
-                    onClick={this.handleOnline}
-                    className={styles.button2}
-                  >
-                    在线预测
-                  </a>
-                </div>
-              </div>
-            </Col>
-          );
-        })}
-      </Row>
-    );
   }
+
+  return (
+    <Row wrap gutter="40" className={styles.row}>
+      {mockData.map((data, index) => {
+        return (
+          <Col l="6" key={index}>
+            <div className={styles.modelCard}>
+              <div className={styles.head}>
+                <Icon type="electronics" className={styles.icon} /> {data.title}
+              </div>
+              <div className={styles.body}>
+                {data.body.map((item, key) => {
+                  return (
+                    <div className={styles.item} key={key}>
+                      <span className={styles.label}>{item.label}：</span>
+                      <span className={styles.value}>{item.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={styles.footer}>
+                <a
+                  onClick={handleInvoke}
+                  className={styles.button1}
+                >
+                  调用示例
+                </a>
+                <a
+                  onClick={handleOnline}
+                  className={styles.button2}
+                >
+                  在线预测
+                </a>
+              </div>
+            </div>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
 

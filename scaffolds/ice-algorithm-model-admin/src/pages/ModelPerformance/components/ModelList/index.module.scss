@@ -1,0 +1,33 @@
+.modelList {
+  height: 500px;
+  padding: 0;
+  overflow-y: scroll;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.name {
+  color: #666;
+  font-size: 12px;
+}
+
+.count {
+  background: #58ca9a;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+}
