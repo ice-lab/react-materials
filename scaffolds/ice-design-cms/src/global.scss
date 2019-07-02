@@ -1,13 +1,6 @@
 // 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
 @import '@alifd/next/reset.scss';
 
-.ice-layout {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0 20px;
-  background: transparent;
-}
-
 .ice-layout-main {
   padding: 0 0 0 20px;
 }
@@ -17,24 +10,35 @@
 }
 
 .ice-layout {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 20px;
+  background: transparent;
+
   .ice-layout-aside {
     background-color: transparent !important;
+
     .next-nav {
       background-color: transparent !important;
+
       .next-nav-item {
         background-color: transparent !important;
         border-radius: $corner-1;
+
         &.next-open {
           background-color: transparent !important;
         }
+
         &.next-selected {
           background-color: $color-brand1-6 !important;
+
           &::before {
             display: none;
           }
         }
       }
     }
+
     i ~ .ice-menu-collapse {
       margin-left: 5px;
     }
@@ -54,6 +58,7 @@
     list-style: disc;
     margin-left: 1em;
   }
+
   ol {
     list-style: decimal;
     margin-left: 1em;
@@ -286,14 +291,14 @@
     outline: 2px solid blue;
   }
 
-  .check-list-item + .check-list-item {
-    margin-top: 0;
-  }
-
   .check-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  .check-list-item + .check-list-item {
+    margin-top: 0;
   }
 
   .check-list-item.checked {

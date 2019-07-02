@@ -12,6 +12,7 @@
   cursor: pointer;
   z-index: 9;
   text-decoration: none;
+
   &:hover {
     color: #e7e7e7;
   }
@@ -21,7 +22,7 @@
   .iceDesignLayoutAside {
     position: fixed;
     left: -256px;
-    top: 0px;
+    top: 0;
     bottom: 0;
     padding: 0 20px;
     background: #2e323e !important;
@@ -30,6 +31,7 @@
 
   .openDrawer {
     transform: translateX(256px);
+
     :global {
       .logo {
         width: 200px;

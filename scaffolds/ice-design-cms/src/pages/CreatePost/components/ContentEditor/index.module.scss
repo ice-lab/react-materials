@@ -23,6 +23,7 @@
 }
 
 :global .material-icons {
+  /* stylelint-disable-next-line */
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -37,4 +38,3 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
-

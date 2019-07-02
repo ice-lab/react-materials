@@ -1,10 +1,9 @@
 .container {
   position: relative;
-  width: 100wh;
+  width: 100vw;
   min-width: 1200px;
   height: 100vh;
-  background-image:
-    url(https://img.alicdn.com/tfs/TB1zsNhXTtYBeNjy1XdXXXXyVXa-2252-1500.png);
+  background-image: url(https://img.alicdn.com/tfs/TB1zsNhXTtYBeNjy1XdXXXXyVXa-2252-1500.png);
   background-size: cover;
   display: flex;
   flex-direction: column;

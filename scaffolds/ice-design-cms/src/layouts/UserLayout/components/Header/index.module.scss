@@ -1,4 +1,6 @@
 .navMenu {
+  position: relative;
+
   .arrowUpIcon,
   .arrowDownIcon {
     position: absolute;
@@ -11,6 +13,13 @@
   .subNavs,
   .arrowUpIcon {
     display: none;
+  }
+
+  .subNavs {
+    position: absolute;
+    left: 0;
+    width: 140px;
+    background: #272b2f;
   }
 
   &:hover {
@@ -47,10 +56,6 @@
   display: flex;
 }
 
-.navMenu {
-  position: relative;
-}
-
 .navLink {
   display: block;
   height: 60px;
@@ -63,13 +68,6 @@
 
 .NavIconLink {
   padding: 0 30px;
-}
-
-.subNavs {
-  position: absolute;
-  left: 0;
-  width: 140px;
-  background: #272B2F;
 }
 
 .subNavMenu {
@@ -100,5 +98,4 @@
   font-size: 15px;
   color: #fff;
   text-decoration: none;
-  padding: 0 30px;
 }
