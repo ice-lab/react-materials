@@ -1,6 +1,6 @@
 /* eslint no-mixed-operators:0 */
 import React from 'react';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 import styles from './index.module.scss';
 
 // Random Numbers

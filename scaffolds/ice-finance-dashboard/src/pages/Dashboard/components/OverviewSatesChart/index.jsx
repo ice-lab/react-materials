@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import CountUp from 'react-countup';
+import ContainerCard from '@/components/ContainerCard';
 import ColumnChart from '../ColumnChart';
-import ContainerCard from '../../../../components/ContainerCard';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;

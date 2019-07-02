@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@alifd/next';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 import RadarChart from './RadarChart';
 import BrushChart from './BrushChart';
 

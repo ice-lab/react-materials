@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import CountUp from 'react-countup';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 
 const data = [
   { month: '1月', earnings: 38 },
