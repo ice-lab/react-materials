@@ -26,8 +26,8 @@ chinese: 表单组件
 {
   labelAlign: 'left',       // label 的位置，'left'、'top'，默认 'left'
   labelTextAlign: 'right',  // label 文字对齐方式，'left'、'right'，默认 'right'
-  labelCol: 1,             // label 占的栅格宽度，共 6 等分，默认 1
-  wrapperCol: 3,           // 控件占的栅格宽度，共 6 等分，默认 3
+  labelCol: 1,             // label 占的栅格宽度，共 12 等分，默认 2
+  wrapperCol: 3,           // 控件占的栅格宽度，共 12 等分，默认 6
 }
 ```
 
