@@ -3,7 +3,7 @@
  */
 import React, { useState } from 'react';
 import { Table, Dialog, Breadcrumb } from '@alifd/next';
-import FormView from '../../components/FormView';
+import FormView from '@/components/FormView';
 import {
   formConfig,
   mockFormData,

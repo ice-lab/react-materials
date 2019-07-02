@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '@icedesign/layout';
 import { Icon, Balloon, Nav } from '@alifd/next';
 import { Link, withRouter } from 'react-router-dom';
-import { asideMenuConfig } from '../../../../menuConfig';
+import { asideMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 

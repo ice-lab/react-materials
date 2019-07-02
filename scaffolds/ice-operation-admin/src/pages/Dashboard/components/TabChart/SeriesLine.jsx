@@ -48,7 +48,7 @@ export default function SeriesLine() {
         padding={[40, 35, 40, 35]}
       >
         <Axis name="month" />
-        <Axis name="temperature" label={{ formatter: (val) => `${val}` }} />
+        <Axis name="temperature" label={{ formatter: val => `${val}` }} />
         <Tooltip crosshairs={{ type: 'y' }} />
         <Geom
           type="line"
@@ -69,5 +69,3 @@ export default function SeriesLine() {
     </div>
   );
 }
-
-SeriesLine.displayName = 'SeriesLine';

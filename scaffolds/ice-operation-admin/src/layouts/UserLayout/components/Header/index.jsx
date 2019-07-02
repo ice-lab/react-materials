@@ -42,4 +42,4 @@ export default () => {
       </ul>
     </div>
   );
-}
+};

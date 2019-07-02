@@ -134,9 +134,7 @@ export default function TopActiveChart() {
             <Table.Column
               title="产品"
               dataIndex="title"
-              cell={(value, index, record) =>
-                renderProduct(value, index, record)
-              }
+              cell={(value, index, record) => renderProduct(value, index, record)}
               width="20%"
             />
             <Table.Column title="分类" dataIndex="cate" width="20%" />
@@ -148,5 +146,3 @@ export default function TopActiveChart() {
     </Row>
   );
 }
-
-TopActiveChart.displayName = 'TopActiveChart';

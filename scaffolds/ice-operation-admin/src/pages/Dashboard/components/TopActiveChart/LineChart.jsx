@@ -24,5 +24,3 @@ export default function LintChart() {
     </Chart>
   );
 }
-
-LintChart.displayName = 'LintChart';

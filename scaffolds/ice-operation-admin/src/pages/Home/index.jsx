@@ -29,7 +29,7 @@ const mockData = () => {
     };
   });
 };
-const fetchData = () =>
+const fetchData = () => (
   new Promise((resolve) => {
     setTimeout(() => {
       resolve({
@@ -40,7 +40,8 @@ const fetchData = () =>
         },
       });
     }, 1000);
-  });
+  })
+);
 
 function Home() {
   const [isLoading, setLoading] = useState(true);

@@ -46,5 +46,3 @@ export default function BasicLine() {
     </div>
   );
 }
-
-BasicLine.displayName = 'BasicLine';

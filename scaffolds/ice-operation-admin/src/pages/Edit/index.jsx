@@ -141,5 +141,3 @@ export default function DonationForm() {
     </IceContainer>
   );
 }
-
-DonationForm.displayName = 'DonationForm';
