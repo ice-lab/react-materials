@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 
-xxx
-
 export default () => {
   const [changelogs] = useState([
     {
