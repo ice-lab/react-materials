@@ -10,7 +10,8 @@ export default () => {
       </div>
       <div className={styles.btitle}>
         阿里巴巴集团
-        <br />© 2018 版权所有
+        <br />
+        © 2018 版权所有
       </div>
     </div>
   );
