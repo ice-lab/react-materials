@@ -11,6 +11,11 @@
   "materialConfig": {
     "type": "react"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
   "dependencies": {
   },
   "devDependencies": {
