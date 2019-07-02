@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 import styles from './index.module.scss';
 
@@ -26,12 +26,12 @@ const cols = {
   },
 };
 
-export default class BarChart extends Component {
-  formatAxis = (text) => {
+export default function BarChart() {
+  const formatAxis = (text) => {
     return `${text}件`;
   };
 
-  formatTooltip = (index, number) => {
+  const formatTooltip = (index, number) => {
     return {
       name: index,
       title: index,
@@ -39,56 +39,54 @@ export default class BarChart extends Component {
     };
   };
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <h4 className={styles.average}>
-          平均执行天数: <span className={styles.number}>{mock.average}</span>
-        </h4>
-        <Chart
-          width={220}
-          height={220}
-          data={mock.index}
-          scale={cols}
-          padding={[40, 10, 40, 60]}
-        >
-          <Axis
-            name="index"
-            label={{
-              offset: 4,
-              textStyle: {
-                textAlign: 'center',
-                fill: '#666',
-                fontSize: '12',
-                fontWeight: 'normal',
-                rotate: 0,
-                textBaseline: 'top',
-              },
-              autoRotate: false,
-            }}
-          />
-          <Axis
-            name="number"
-            label={{
-              formatter: this.formatAxis,
-            }}
-          />
-          <Tooltip
-            crosshairs={{
-              type: 'y',
-            }}
-          />
-          <Geom
-            type="interval"
-            color="#5e83fb"
-            position="index*number"
-            shape={['index', ['circle', 'rect']]}
-            tooltip={['index*number', this.formatTooltip]}
-          />
-        </Chart>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.container}>
+      <h4 className={styles.average}>
+        平均执行天数: <span className={styles.number}>{mock.average}</span>
+      </h4>
+      <Chart
+        width={220}
+        height={220}
+        data={mock.index}
+        scale={cols}
+        padding={[40, 10, 40, 60]}
+      >
+        <Axis
+          name="index"
+          label={{
+            offset: 4,
+            textStyle: {
+              textAlign: 'center',
+              fill: '#666',
+              fontSize: '12',
+              fontWeight: 'normal',
+              rotate: 0,
+              textBaseline: 'top',
+            },
+            autoRotate: false,
+          }}
+        />
+        <Axis
+          name="number"
+          label={{
+            formatter: formatAxis,
+          }}
+        />
+        <Tooltip
+          crosshairs={{
+            type: 'y',
+          }}
+        />
+        <Geom
+          type="interval"
+          color="#5e83fb"
+          position="index*number"
+          shape={['index', ['circle', 'rect']]}
+          tooltip={['index*number', formatTooltip]}
+        />
+      </Chart>
+    </div>
+  );
 }
 
 

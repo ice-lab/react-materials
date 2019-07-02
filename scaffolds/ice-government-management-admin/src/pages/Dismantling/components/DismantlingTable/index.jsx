@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Table, Pagination, Message } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -47,94 +47,82 @@ const mockData = [
   },
 ];
 
-export default class DismantlingTable extends Component {
-  static displayName = 'DismantlingTable';
+export default function DismantlingTable() {
+  const [rowSelection, setRowSelection] = useState({
+    onChange: onTableChange,
+    onSelect(selected, record, records) {
+      console.log('onSelect', selected, record, records);
+    },
+    onSelectAll(selected, records) {
+      console.log('onSelectAll', selected, records);
+    },
+    selectedRowKeys: [],
+    mode: 'single',
+  });
+  const [current, setCurrent] = useState(2);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      rowSelection: {
-        onChange: this.onTableChange.bind(this),
-        onSelect(selected, record, records) {
-          console.log('onSelect', selected, record, records);
-        },
-        onSelectAll(selected, records) {
-          console.log('onSelectAll', selected, records);
-        },
-        selectedRowKeys: [],
-        mode: 'single',
-      },
-      current: 2,
-    };
-  }
-
-  onTableChange = (ids, records) => {
-    const { rowSelection } = this.state;
+  const onTableChange = (ids, records) => {
     rowSelection.selectedRowKeys = ids;
     console.log('onChange', ids, records);
-    this.setState({ rowSelection });
+    setRowSelection(rowSelection);
   };
 
-  onPageChange = (current) => {
-    this.setState({
-      current,
-    });
+  const onPageChange = (current) => {
+    setCurrent(current);
   };
 
-  handleClick = (text) => {
+  const handleClick = (text) => {
     Message.success(`暂不支持${text}`);
   };
 
-  render() {
-    const buttons = [
-      '编辑',
-      '补正',
-      '材料退回',
-      '申请人主动撤回',
-      '立案前化解',
-      '发送办理',
-      '删除',
-    ];
-    return (
-      <div className={styles.container}>
-        <div className={styles.buttons}>
-          {buttons.map((text, index) => {
-            return (
-              <Button
-                key={index}
-                className={styles.button}
-                onClick={() => this.handleClick(text)}
-              >
-                {text}
-              </Button>
-            );
-          })}
-        </div>
-        <Table
-          dataSource={mockData}
-          rowSelection={this.state.rowSelection}
-          primaryKey="number"
-          className={styles.table}
-        >
-          <Table.Column align="center" title="案号" dataIndex="number" />
-          <Table.Column align="center" title="案由" dataIndex="reason" />
-          <Table.Column align="center" title="立案日期" dataIndex="date" />
-          <Table.Column align="center" title="立案人" dataIndex="holder" />
-          <Table.Column
-            align="center"
-            title="承办部门"
-            dataIndex="department"
-          />
-        </Table>
-        <div className={styles.pagination}>
-          <Pagination
-            current={this.state.current}
-            onChange={this.onPageChange}
-          />
-        </div>
+  const buttons = [
+    '编辑',
+    '补正',
+    '材料退回',
+    '申请人主动撤回',
+    '立案前化解',
+    '发送办理',
+    '删除',
+  ];
+  return (
+    <div className={styles.container}>
+      <div className={styles.buttons}>
+        {buttons.map((text, index) => {
+          return (
+            <Button
+              key={index}
+              className={styles.button}
+              onClick={() => handleClick(text)}
+            >
+              {text}
+            </Button>
+          );
+        })}
       </div>
-    );
-  }
+      <Table
+        dataSource={mockData}
+        rowSelection={rowSelection}
+        primaryKey="number"
+        className={styles.table}
+      >
+        <Table.Column align="center" title="案号" dataIndex="number" />
+        <Table.Column align="center" title="案由" dataIndex="reason" />
+        <Table.Column align="center" title="立案日期" dataIndex="date" />
+        <Table.Column align="center" title="立案人" dataIndex="holder" />
+        <Table.Column
+          align="center"
+          title="承办部门"
+          dataIndex="department"
+        />
+      </Table>
+      <div className={styles.pagination}>
+        <Pagination
+          current={current}
+          onChange={onPageChange}
+        />
+      </div>
+    </div>
+  );
 }
 
 

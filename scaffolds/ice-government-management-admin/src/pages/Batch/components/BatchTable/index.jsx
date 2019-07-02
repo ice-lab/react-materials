@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Table, Pagination, Message } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -40,80 +40,68 @@ const mockData = [
   },
 ];
 
-export default class BatchTable extends Component {
-  static displayName = 'BatchTable';
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      rowSelection: {
-        onChange: this.onTableChange.bind(this),
-        onSelect: (selected, record, records) => {
-          console.log('onSelect', selected, record, records);
-        },
-        onSelectAll: (selected, records) => {
-          console.log('onSelectAll', selected, records);
-        },
-        selectedRowKeys: [],
-      },
-      current: 2,
-    };
-  }
-
-  onTableChange = (ids, records) => {
-    const { rowSelection } = this.state;
+export default function BatchTable() {
+  const onTableChange = (ids, records) => {
     rowSelection.selectedRowKeys = ids;
     console.log('onChange', ids, records);
-    this.setState({ rowSelection });
+    setRowSelection({ rowSelection });
   };
 
-  onPageChange = (current) => {
-    this.setState({
-      current,
-    });
+  const [rowSelection, setRowSelection] = useState({
+    onChange: onTableChange,
+    onSelect: (selected, record, records) => {
+      console.log('onSelect', selected, record, records);
+    },
+    onSelectAll: (selected, records) => {
+      console.log('onSelectAll', selected, records);
+    },
+    selectedRowKeys: [],
+  });
+  const [current, setCurrent] = useState(2);
+
+  const onPageChange = (current) => {
+    setCurrent(current);
   };
 
-  handleClick = () => {
+  const handleClick = () => {
     Message.success('您暂无无权限查看');
   };
 
-  render() {
-    const actionRender = () => {
-      return (
-        <Button className={styles.button} onClick={this.handleClick}>
-          查看
-        </Button>
-      );
-    };
-
+  const actionRender = () => {
     return (
-      <div className={styles.container}>
-        <Table
-          dataSource={mockData}
-          primaryKey="number"
-          rowSelection={this.state.rowSelection}
-          className={styles.table}
-        >
-          <Table.Column align="center" title="案号" dataIndex="number" />
-          <Table.Column align="center" title="申请人" dataIndex="applicant" />
-          <Table.Column align="center" title="被执行人" dataIndex="execution" />
-          <Table.Column
-            align="center"
-            title="执预承办人"
-            dataIndex="contracting"
-          />
-          <Table.Column align="center" title="立案日期" dataIndex="date" />
-          <Table.Column align="center" title="操作" cell={actionRender} />
-        </Table>
-        <div className={styles.pagination}>
-          <Pagination
-            current={this.state.current}
-            onChange={this.onPageChange}
-          />
-        </div>
-      </div>
+      <Button className={styles.button} onClick={handleClick}>
+        查看
+      </Button>
     );
-  }
+  };
+
+  return (
+    <div className={styles.container}>
+      <Table
+        dataSource={mockData}
+        primaryKey="number"
+        rowSelection={rowSelection}
+        className={styles.table}
+      >
+        <Table.Column align="center" title="案号" dataIndex="number" />
+        <Table.Column align="center" title="申请人" dataIndex="applicant" />
+        <Table.Column align="center" title="被执行人" dataIndex="execution" />
+        <Table.Column
+          align="center"
+          title="执预承办人"
+          dataIndex="contracting"
+        />
+        <Table.Column align="center" title="立案日期" dataIndex="date" />
+        <Table.Column align="center" title="操作" cell={actionRender} />
+      </Table>
+      <div className={styles.pagination}>
+        <Pagination
+          current={current}
+          onChange={onPageChange}
+        />
+      </div>
+    </div>
+  );
 }
 
 

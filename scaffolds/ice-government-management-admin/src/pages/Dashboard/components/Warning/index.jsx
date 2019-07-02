@@ -31,43 +31,41 @@ const mock = [
   },
 ];
 
-export default class Warning extends Component {
-  handleClick = () => {
+export default function Warning() {
+  const handleClick = () => {
     Message.success('可以使用 Iceworks 按需添加页面');
   };
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h4 className={styles.title}>预警区</h4>
-          <div className={styles.content}>
-            {mock.map((item, index) => {
-              return (
+  return (
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h4 className={styles.title}>预警区</h4>
+        <div className={styles.content}>
+          {mock.map((item, index) => {
+            return (
+              <div
+                className={styles.item}
+                key={index}
+                onClick={handleClick}
+              >
                 <div
-                  className={styles.item}
-                  key={index}
-                  onClick={this.handleClick}
+                  className={styles.image}
+                  style={{ background: `${item.backgroundColor}` }}
                 >
-                  <div
-                    className={styles.image}
-                    style={{ background: `${item.backgroundColor}` }}
-                  >
-                    <img
-                      alt=""
-                      src={timeIcon}
-                      className={styles.iconImage}
-                      style={{ transform: `rotate(${index * 72}deg)` }}
-                    />
-                    <div className={styles.count}>{item.count}</div>
-                  </div>
-                  <p className={styles.itemTitle}>{item.title}</p>
+                  <img
+                    alt=""
+                    src={timeIcon}
+                    className={styles.iconImage}
+                    style={{ transform: `rotate(${index * 72}deg)` }}
+                  />
+                  <div className={styles.count}>{item.count}</div>
                 </div>
-              );
-            })}
-          </div>
+                <p className={styles.itemTitle}>{item.title}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

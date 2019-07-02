@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Button, Checkbox, Grid, Message } from '@alifd/next';
 import {
@@ -8,123 +8,109 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import Icon from '@icedesign/foundation-symbol';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-@withRouter
-class UserLogin extends Component {
-  static displayName = 'UserLogin';
+let form;
+function UserLogin(props) {
+  const [value, setValue] = useState({
+    username: '',
+    password: '',
+    checkbox: false,
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {
-        username: '',
-        password: '',
-        checkbox: false,
-      },
-    };
-  }
-
-  formChange = (value) => {
-    this.setState({
-      value,
-    });
+  const formChange = (value) => {
+    setValue(value);
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.refs.form.validateAll((errors, values) => {
+    form.validateAll((errors, values) => {
       if (errors) {
         console.log('errors', errors);
         return;
       }
       console.log(values);
       Message.success('登录成功');
-      this.props.history.push('/');
+      props.history.push('/');
     });
   };
 
-  render() {
-    return (
-      <div className="formContainer">
-        <h4 className="formTitle">登 录</h4>
-        <IceFormBinderWrapper
-          value={this.state.value}
-          onChange={this.formChange}
-          ref="form"
-        >
-          <div className="formItems">
-            <Row className="formItem">
-              <Col className="formItemCol">
-                <Icon type="person" size="small" className="inputIcon" />
-                <IceFormBinder name="username" required message="必填">
-                  <Input
-                    className="next-input-single"
-                    maxLength={20}
-                    placeholder="用户名"
-                  />
-                </IceFormBinder>
-              </Col>
-              <Col>
-                <IceFormError name="username" />
-              </Col>
-            </Row>
+  return (
+    <div className={styles.formContainer}>
+      <h4 className={styles.formTitle}>登 录</h4>
+      <IceFormBinderWrapper
+        value={value}
+        onChange={formChange}
+        ref={formRef => form = formRef}
+      >
+        <div className={styles.formItems}>
+          <Row className={styles.formItem}>
+            <Col className={styles.formItemCol}>
+              <Icon type="person" size="small" className={styles.inputIcon} />
+              <IceFormBinder name="username" required message="必填">
+                <Input
+                  className={styles.nextInputSingle}
+                  maxLength={20}
+                  placeholder="用户名"
+                />
+              </IceFormBinder>
+            </Col>
+            <Col>
+              <IceFormError name="username" />
+            </Col>
+          </Row>
 
-            <Row className="formItem">
-              <Col className="formItemCol">
-                <Icon type="lock" size="small" className="inputIcon" />
-                <IceFormBinder name="password" required message="必填">
-                  <Input
-                    className="next-input-single"
-                    htmlType="password"
-                    placeholder="密码"
-                  />
-                </IceFormBinder>
-              </Col>
-              <Col>
-                <IceFormError name="password" />
-              </Col>
-            </Row>
+          <Row className={styles.formItem}>
+            <Col className={styles.formItemCol}>
+              <Icon type="lock" size="small" className={styles.inputIcon} />
+              <IceFormBinder name="password" required message="必填">
+                <Input
+                  className={styles.nextInputSingle}
+                  htmlType="password"
+                  placeholder="密码"
+                />
+              </IceFormBinder>
+            </Col>
+            <Col>
+              <IceFormError name="password" />
+            </Col>
+          </Row>
 
-            <Row className="formItem">
-              <Col>
-                <IceFormBinder name="checkbox">
-                  <Checkbox className="checkbox">记住账号</Checkbox>
-                </IceFormBinder>
-              </Col>
-            </Row>
+          <Row className={styles.formItem}>
+            <Col>
+              <IceFormBinder name="checkbox">
+                <Checkbox className={styles.checkbox}>记住账号</Checkbox>
+              </IceFormBinder>
+            </Col>
+          </Row>
 
-            <Row className="formItem">
-              <Button
-                type="primary"
-                onClick={this.handleSubmit}
-                className="submitBtn"
-              >
-                登 录
-              </Button>
-              <p className="account">
-                <span className="tips-text" style={{ marginRight: '20px' }}>
-                  管理员登录：admin/admin
-                </span>
-                <span className="tips-text">学生登录：user/user</span>
-              </p>
-            </Row>
+          <Row className={styles.formItem}>
+            <Button
+              type="primary"
+              onClick={handleSubmit}
+              className={styles.submitBtn}
+            >
+              登 录
+            </Button>
+            <p className={styles.account}>
+              <span className={styles.tipsText} style={{ marginRight: '20px' }}>
+                管理员登录：admin/admin
+              </span>
+              <span className={styles.tipsText}>学生登录：user/user</span>
+            </p>
+          </Row>
 
-            <Row className="tips">
-              <Link to="/user/register" className="tips-text">
-                立即注册
-              </Link>
-            </Row>
-          </div>
-        </IceFormBinderWrapper>
-      </div>
-    );
-  }
+          <Row className={styles.tips}>
+            <Link to="/user/register" className={styles.tipsText}>
+              立即注册
+            </Link>
+          </Row>
+        </div>
+      </IceFormBinderWrapper>
+    </div>
+  );
 }
 
-export default UserLogin;
+export default withRouter(UserLogin);

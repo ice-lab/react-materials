@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Table, Pagination, Message } from '@alifd/next';
 import SearchBar from './SearchBar';
 import styles from './index.module.scss';
@@ -41,54 +41,43 @@ const mockData = [
   },
 ];
 
-export default class SelfhelpTable extends Component {
-  static displayName = 'SelfhelpTable';
+export default function SelfhelpTable() {
+  const [current, setCurrent] = useState(2);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 2,
-    };
-  }
-
-  onPageChange = (current) => {
-    this.setState({
-      current,
-    });
+  const onPageChange = (current) => {
+    setCurrent(current);
   };
 
-  handleClick = () => {
+  const handleClick = () => {
     Message.success('暂不支持办理');
   };
 
-  render() {
-    const actionRender = () => {
-      return (
-        <Button className={styles.button} onClick={this.handleClick}>
-          办理
-        </Button>
-      );
-    };
-
+  const actionRender = () => {
     return (
-      <div className={styles.container}>
-        <SearchBar />
-        <Table dataSource={mockData} primaryKey="number" className={styles.table}>
-          <Table.Column align="center" title="案号" dataIndex="number" />
-          <Table.Column align="center" title="案件来源" dataIndex="resource" />
-          <Table.Column align="center" title="登记人" dataIndex="applicant" />
-          <Table.Column align="center" title="收案日期" dataIndex="date" />
-          <Table.Column align="center" title="案件状态" dataIndex="status" />
-          <Table.Column align="center" title="操作" cell={actionRender} />
-        </Table>
-        <div className={styles.pagination}>
-          <Pagination
-            current={this.state.current}
-            onChange={this.onPageChange}
-          />
-        </div>
-      </div>
+      <Button className={styles.button} onClick={handleClick}>
+        办理
+      </Button>
     );
-  }
+  };
+
+  return (
+    <div className={styles.container}>
+      <SearchBar />
+      <Table dataSource={mockData} primaryKey="number" className={styles.table}>
+        <Table.Column align="center" title="案号" dataIndex="number" />
+        <Table.Column align="center" title="案件来源" dataIndex="resource" />
+        <Table.Column align="center" title="登记人" dataIndex="applicant" />
+        <Table.Column align="center" title="收案日期" dataIndex="date" />
+        <Table.Column align="center" title="案件状态" dataIndex="status" />
+        <Table.Column align="center" title="操作" cell={actionRender} />
+      </Table>
+      <div className={styles.pagination}>
+        <Pagination
+          current={current}
+          onChange={onPageChange}
+        />
+      </div>
+    </div>
+  );
 }
 

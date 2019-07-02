@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import addIcon from './images/add.svg';
 import pcIcon from './images/pc.svg';
 import targetIcon from './images/target.svg';
@@ -32,29 +32,27 @@ const mockData = [
   },
 ];
 
-export default class CountBar extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        {mockData.map((item, index) => {
-          return (
-            <div className={styles.counter} key={index}>
-              <div className={styles.card}>
-                <div className={styles.cardLeft}>
-                  <img src={item.icon} className={styles.icon} alt="" />
-                </div>
-                <div className={styles.cardRight}>
-                  <h3 className={styles.countTitle}>{item.title}</h3>
-                  <span>{item.count}</span>
-                </div>
+export default function CountBar() {
+  return (
+    <div className={styles.container}>
+      {mockData.map((item, index) => {
+        return (
+          <div className={styles.counter} key={index}>
+            <div className={styles.card}>
+              <div className={styles.cardLeft}>
+                <img src={item.icon} className={styles.icon} alt="" />
               </div>
-              <p className={styles.instrument}>说明: {item.instrument}</p>
+              <div className={styles.cardRight}>
+                <h3 className={styles.countTitle}>{item.title}</h3>
+                <span>{item.count}</span>
+              </div>
             </div>
-          );
-        })}
-      </div>
-    );
-  }
+            <p className={styles.instrument}>说明: {item.instrument}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 
