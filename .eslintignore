@@ -1,15 +1,49 @@
 # 忽略目录
 build/
 node_modules/
-
-# node 覆盖率文件
-coverage/
-
-components/*/lib
-blocks
-scaffolds
-
-# 忽略文件
 **/*-min.js
 **/*.min.js
+coverage/
 
+# 有很多 lint 问题，逐渐迭代
+# components/* 仅包含根目录的 components
+# components/ 包含所有 components 目录
+components/*
+# 有很多 lint 问题，逐渐迭代
+blocks/*
+
+scaffolds/ice-algorithm-model-admin
+scaffolds/ice-government-management-admin
+scaffolds/ice-application-management-admin
+scaffolds/ice-hr-management-admin
+scaffolds/ice-asset-management-admin
+scaffolds/ice-library-management-admin
+scaffolds/ice-build-platfrom
+scaffolds/ice-monitor-dashboard
+scaffolds/ice-commodity-management-admin
+scaffolds/ice-open-platform-landingpage
+scaffolds/ice-contract-management-admin
+scaffolds/ice-operation-admin
+scaffolds/ice-creator-admin
+scaffolds/ice-order-management-admin
+scaffolds/ice-creator-landingpage
+scaffolds/ice-project-management-admin
+scaffolds/ice-customer-analysis-admin
+scaffolds/ice-reviews-management
+scaffolds/ice-design-analysis
+scaffolds/ice-scroll-screen-homepage
+scaffolds/ice-design-cms
+scaffolds/ice-task-management-admin
+scaffolds/ice-design-dashboard
+scaffolds/ice-typescript-starter
+scaffolds/ice-design-ecommerce
+scaffolds/ice-universal-homepage
+# scaffolds/ice-design-iceworks
+scaffolds/ice-usertrack-admin
+scaffolds/ice-design-lite
+scaffolds/ice-voice-chat-admin
+scaffolds/ice-design-pro
+scaffolds/ice-website-homepage
+scaffolds/ice-design-schools
+scaffolds/ice-yunqi-homepage
+scaffolds/ice-finance-dashboard
