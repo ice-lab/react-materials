@@ -5,13 +5,15 @@
   font-size: 14px;
   line-height: 28px;
 }
+
 .features {
   max-width: 640px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 5px;
-  min-height: 100vh
+  min-height: 100vh;
 }
+
 .featureTag {
   display: flex;
   flex-direction: row;
@@ -19,9 +21,11 @@
   font-size: 20px;
   margin: 55px auto 20px auto;
 }
+
 .featureDate {
-  font-size: 14px
+  font-size: 14px;
 }
+
 .featureTitle {
   text-align: center;
   font-size: 45px;
