@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
-import { Tab, Select } from '@alifd/next';
+import { Select } from '@alifd/next';
 import LineChart from './LineChart';
 import styles from './index.module.scss';
 
@@ -110,58 +110,41 @@ const typeToButtons = {
   ],
 };
 
-export default class TrendAnalysis extends Component {
-  static displayName = 'TrendAnalysis';
+export default function TrendAnalysis() {
+  const [type, setType] = useState('calculate');
+  const buttons = typeToButtons[type];
 
-  static propTypes = {};
+  const changeType = (type) => {
+    setType(type);
+  };
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      type: 'calculate',
-    };
-  }
-
-  changeType = (type) => {
-    this.setState({
-      type,
-    });
-  }
-
-  handleClick = (value) => {
+  const handleClick = (value) => {
     console.log('handleClick:', value);
   };
 
-  render() {
-    const { type } = this.state;
-    const buttons = typeToButtons[type];
+  return (
+    <IceContainer className={`${styles.container} trend-analysis`}>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>趋势分析</div>
+        <Select onChange={changeType} value={type} size="small">
+          {
+            ['calculate', 'memory', 'cost'].map((item) => {
+              return <Select.Option value={item} key={item}>{item}</Select.Option>;
+            })
+          }
+        </Select>
+      </div>
 
-    return (
-      <IceContainer className={`${styles.container} trend-analysis`}>
-        <div className={styles.titleContainer}>
-          <div className={styles.title}>趋势分析</div>
-          <Select onChange={this.changeType} value={type} size="small">
-            {
-              ['calculate', 'memory', 'cost'].map((item) => {
-                return <Select.Option value={item} key={item}>{item}</Select.Option>;
-              })
-            }
-          </Select>
-        </div>
-
-        <div className={styles.chartContent}>
-          <LineChart
-            onChange={this.handleClick}
-            fields={fields}
-            data={chartData}
-            buttons={buttons}
-          />
-        </div>
-      </IceContainer>
-    );
-  }
+      <div className={styles.chartContent}>
+        <LineChart
+          onChange={handleClick}
+          fields={fields}
+          data={chartData}
+          buttons={buttons}
+        />
+      </div>
+    </IceContainer>
+  );
 }
 
 

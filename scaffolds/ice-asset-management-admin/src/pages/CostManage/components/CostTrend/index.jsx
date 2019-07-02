@@ -1,5 +1,5 @@
 /* eslint no-mixed-operators: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import LineChart from './LineChart';
@@ -74,53 +74,31 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export default class CostTrend extends Component {
-  state = {
-    data: mockData,
-    type: 'allCost',
+export default function CostTrend() {
+  const [data] = useState(mockData);
+  const [type, setType] = useState('allCost');
+
+  const changeType = (type) => {
+    setType(type);
   };
 
-  changeType = (type) => {
-    this.setState({
-      type,
-    });
-  }
+  return (
+    <IceContainer className={`${styles.container} cost-trend`}>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>费用趋势</div>
+        <Select onChange={changeType} value={type} size="small">
+          {
+            ['allCost', 'cost'].map((item) => {
+              return <Select.Option value={item} key={item}>{item}</Select.Option>;
+            })
+          }
+        </Select>
+      </div>
 
-
-  handleTabChange = () => {
-    const { data } = this.state;
-    const newData = data.map((item) => {
-      return {
-        year: item.year,
-        computationalCosts: item.computationalCosts + random(0.1, 0.2),
-        storageCosts: item.storageCosts + random(0.2, 0.3),
-      };
-    });
-    this.setState({
-      data: newData,
-    });
-  };
-
-  render() {
-    const { data, type } = this.state;
-    return (
-      <IceContainer className={`${styles.container} cost-trend`}>
-        <div className={styles.titleContainer}>
-          <div className={styles.title}>费用趋势</div>
-          <Select onChange={this.changeType} value={type} size="small">
-            {
-              ['allCost', 'cost'].map((item) => {
-                return <Select.Option value={item} key={item}>{item}</Select.Option>;
-              })
-            }
-          </Select>
-        </div>
-
-        <div className={styles.chartContent}>
-          <LineChart data={data} />
-        </div>
-      </IceContainer>
-    );
-  }
+      <div className={styles.chartContent}>
+        <LineChart data={data} />
+      </div>
+    </IceContainer>
+  );
 }
 

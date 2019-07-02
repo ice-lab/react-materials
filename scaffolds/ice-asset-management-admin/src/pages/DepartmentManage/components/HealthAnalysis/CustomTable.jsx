@@ -13,28 +13,15 @@ const getData = () => {
   });
 };
 
-export default class CustomTable extends Component {
-  static displayName = 'CustomTable';
+export default function CustomTable() {
+  const dataSource = getData();
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const dataSource = getData();
-
-    return (
-      <Table dataSource={dataSource} hasBorder={false}>
-        <Table.Column title="排名" dataIndex="rank" />
-        <Table.Column title="开发者" dataIndex="developer" />
-        <Table.Column title="计算费用" dataIndex="cost" />
-        <Table.Column title="健康分" dataIndex="score" />
-      </Table>
-    );
-  }
+  return (
+    <Table dataSource={dataSource} hasBorder={false}>
+      <Table.Column title="排名" dataIndex="rank" />
+      <Table.Column title="开发者" dataIndex="developer" />
+      <Table.Column title="计算费用" dataIndex="cost" />
+      <Table.Column title="健康分" dataIndex="score" />
+    </Table>
+  );
 }

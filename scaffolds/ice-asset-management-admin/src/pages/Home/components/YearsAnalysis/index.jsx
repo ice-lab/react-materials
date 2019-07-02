@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import LineChart from './LineChart';
@@ -26,48 +26,31 @@ const MOCK_DATA = {
     dayAmount: '67',
   },
 };
-export default class YearsAnalysis extends Component {
-  static displayName = 'YearsAnalysis';
+export default function YearsAnalysis() {
+  const [type, setType] = useState('memory');
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      type: 'memory',
-    };
+  const changeType = (type) => {
+    setType(type);
   }
 
-  changeType = (type) => {
-    this.setState({
-      type,
-    });
-  }
-
-  render() {
-    const { type } = this.state;
-
-    return (
-      <IceContainer className={`${styles.container} years-analysis` }>
-        <div className={styles.titleContainer}>
-          <div className={styles.title}>财年分析</div>
-          <Select onChange={this.changeType} value={type} size="small">
-            {
-              ['memory', 'calculate', 'cost'].map((item) => {
-                return <Select.Option value={item} key={item}>{item}</Select.Option>;
-              })
-            }
-          </Select>
-        </div>
-        <div className={styles.chartContent}>
-          <Head data={MOCK_DATA[type]} />
-          <LineChart />
-        </div>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className={`${styles.container} years-analysis` }>
+      <div className={styles.titleContainer}>
+        <div className={styles.title}>财年分析</div>
+        <Select onChange={changeType} value={type} size="small">
+          {
+            ['memory', 'calculate', 'cost'].map((item) => {
+              return <Select.Option value={item} key={item}>{item}</Select.Option>;
+            })
+          }
+        </Select>
+      </div>
+      <div className={styles.chartContent}>
+        <Head data={MOCK_DATA[type]} />
+        <LineChart />
+      </div>
+    </IceContainer>
+  );
 }
 
 

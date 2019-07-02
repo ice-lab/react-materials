@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
@@ -25,36 +25,23 @@ const mockData = [
   },
 ];
 
-export default class Overview extends Component {
-  static displayName = 'Overview';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer>
-        <Row>
-          {mockData.map((item, index) => {
-            return (
-              <Col l="6" key={index}>
-                <div className={styles.box}>
-                  <div className={styles.name}>{item.name}</div>
-                  <div className={styles.value}>{item.value}</div>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </IceContainer>
-    );
-  }
+export default function Overview() {
+  return (
+    <IceContainer>
+      <Row>
+        {mockData.map((item, index) => {
+          return (
+            <Col l="6" key={index}>
+              <div className={styles.box}>
+                <div className={styles.name}>{item.name}</div>
+                <div className={styles.value}>{item.value}</div>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </IceContainer>
+  );
 }
 
 
