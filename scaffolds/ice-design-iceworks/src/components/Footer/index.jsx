@@ -1,6 +1,6 @@
-import React from "react";
-import Logo from "../Logo";
-import styles from "./index.module.scss";
+import React from 'react';
+import Logo from '../Logo';
+import styles from './index.module.scss';
 
 export default () => {
   return (

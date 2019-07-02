@@ -18,17 +18,14 @@
     "start": "ice-scripts dev",
     "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
-    "lint": "eslint . --ext '.js,.jsx' --fix"
+    "lint": "eslint . --ext '.js,.jsx'"
   },
   "dependencies": {
     "@alifd/next": "^1.x",
     "@icedesign/theme": "^1.x",
     "@icedesign/container": "^1.x",
     "@icedesign/layout": "^1.x",
-    "moment": "^2.23.0",
     "prop-types": "^15.5.8",
-    "rc-queue-anim": "^1.5.0",
-    "rc-scroll-anim": "^2.5.1",
     "react": "^16.4.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.4.1",
