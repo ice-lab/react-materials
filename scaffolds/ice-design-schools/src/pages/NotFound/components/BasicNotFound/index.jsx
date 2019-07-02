@@ -24,5 +24,3 @@ export default function BasicNotFound() {
     </div>
   );
 }
-
-BasicNotFound.displayName = 'BasicNotFound';

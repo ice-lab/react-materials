@@ -96,5 +96,3 @@ export default function Content() {
     </IceContainer>
   );
 }
-
-Content.displayName = 'Content';

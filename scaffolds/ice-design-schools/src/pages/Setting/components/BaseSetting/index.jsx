@@ -233,5 +233,3 @@ export default function BaseSetting() {
     </IceContainer>
   );
 }
-
-BaseSetting.displayName = 'BaseSetting';

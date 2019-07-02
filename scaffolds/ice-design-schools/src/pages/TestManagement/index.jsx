@@ -10,5 +10,3 @@ export default function TestManagement() {
     </div>
   );
 }
-
-TestManagement.displayName = 'TestManagement';

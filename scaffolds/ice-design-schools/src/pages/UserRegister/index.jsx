@@ -118,9 +118,7 @@ function UserRegister(props) {
             <IceFormBinder
               name="rePasswd"
               required
-              validator={(rule, values, callback) =>
-                checkPasswd2(rule, values, callback, formValue)
-              }
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, formValue)}
             >
               <Input
                 htmlType="password"
@@ -150,7 +148,5 @@ function UserRegister(props) {
     </div>
   );
 }
-
-UserRegister.displayName = 'UserRegister';
 
 export default withRouter(UserRegister);

@@ -45,8 +45,7 @@ export default function Filter() {
               <div className={styles.filterLabel}>{item.label}:</div>
               <div className={styles.filterList}>
                 {item.value.map((text, idx) => {
-                  const activeStyle =
-                    activeIndex === idx ? styles.active : null;
+                  const activeStyle = activeIndex === idx ? styles.active : null;
                   return (
                     <span
                       onClick={() => handleClick(text)}
@@ -65,5 +64,3 @@ export default function Filter() {
     </IceContainer>
   );
 }
-
-Filter.displayName = 'Filter';

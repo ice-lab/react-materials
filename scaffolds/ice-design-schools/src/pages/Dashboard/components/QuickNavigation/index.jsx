@@ -80,5 +80,3 @@ export default function QuickNavigation() {
     </Row>
   );
 }
-
-QuickNavigation.displayName = 'QuickNavigation';

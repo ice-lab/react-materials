@@ -95,6 +95,4 @@ function UserLogin(props) {
   );
 }
 
-UserLogin.displayName = 'UserLogin';
-
 export default withRouter(UserLogin);

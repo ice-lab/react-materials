@@ -3,7 +3,7 @@ import React from 'react';
 import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol/lib';
-import { asideMenuConfig } from '../../../../menuConfig';
+import { asideMenuConfig } from '@/menuConfig';
 import styles from './index.module.scss';
 
 function Aside(props) {
@@ -15,9 +15,9 @@ function Aside(props) {
       className={styles.iceMenuCustom}
       activeDirection="right"
     >
-      {Array.isArray(asideMenuConfig) &&
-        asideMenuConfig.length > 0 &&
-        asideMenuConfig.map((nav) => {
+      {Array.isArray(asideMenuConfig)
+        && asideMenuConfig.length > 0
+        && asideMenuConfig.map((nav) => {
           return (
             <Nav.Item key={nav.path}>
               <Link to={nav.path} className={styles.iceMenuLink}>
