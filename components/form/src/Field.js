@@ -16,7 +16,6 @@ class Field extends React.Component {
     store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
     !!effects && store.addEffects(name, effects);
-    !!status && store.setStatus(name, status, false);
     !!value && store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(value) : value);
     !!defaultValue && store.setFieldValueWithoutNotify(name, getValueFormatter ? getValueFormatter(defaultValue) : defaultValue);
 

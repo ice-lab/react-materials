@@ -10,8 +10,8 @@ export default class FormCore {
     this.errors = {};
     this.props = {};
 
-    this.rules = rules;
-    this.effects = effects;
+    this.rules = { ...rules };
+    this.effects = [...effects];
     this.listeners = [];
     this.validators = {};
     this.renderField = null;
