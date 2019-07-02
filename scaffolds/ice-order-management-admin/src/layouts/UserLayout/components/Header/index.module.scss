@@ -22,17 +22,18 @@
     }
   }
 }
+
 .container{
   height: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-between;
-}
-.logoLink{
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-  padding-left: 20px;
-  color: #fff;
+  .logoLink{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #fff;
+  }
 }

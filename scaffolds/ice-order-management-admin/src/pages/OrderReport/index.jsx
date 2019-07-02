@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PageHead from '../../components/PageHead';
-import Overview from '../../components/Overview';
+import React from 'react';
+import PageHead from '@/components/PageHead';
+import Overview from '@/components/Overview';
 import OrderStatusChart from './components/OrderStatusChart';
 
 const MOCK_DATA = [
@@ -30,14 +30,12 @@ const MOCK_DATA = [
   },
 ];
 
-export default class OrderReport extends Component {
-  render() {
-    return (
-      <div>
-        <PageHead title="订单报表" />
-        <Overview data={MOCK_DATA} col="6" />
-        <OrderStatusChart />
-      </div>
-    );
-  }
+export default function OrderReport() {
+  return (
+    <div>
+      <PageHead title="订单报表" />
+      <Overview data={MOCK_DATA} col="6" />
+      <OrderStatusChart />
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination, Button, Dialog } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Filter from '../Filter';
@@ -11,7 +11,6 @@ const random = (min, max) => {
 };
 
 // MOCK 数据，实际业务按需进行替换
-
 const getOverviewData = () => {
   return [
     {
@@ -48,19 +47,17 @@ const getTableData = (length = 10) => {
   });
 };
 
-export default class ReserveTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-    overviewData: getOverviewData(),
-  };
+export default function ReserveTable() {
+  const [current, setCurrent] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [overviewData, setOverviewData] = useState(getOverviewData());
 
-  componentDidMount() {
-    this.fetchData();
-  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  mockApi = (len) => {
+  const mockApi = (len) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getTableData(len));
@@ -68,108 +65,90 @@ export default class ReserveTable extends Component {
     });
   };
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-            overviewData: getOverviewData(),
-          });
-        });
-      }
-    );
+  const fetchData = async (len) => {
+    await setLoading(true);
+    mockApi(len).then((data) => {
+      setData(data);
+      setLoading(false);
+      setOverviewData(getOverviewData());
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
+  const handlePaginationChange = async (current) => {
+    await setCurrent(current);
+    fetchData();
   };
 
-  handleFilterChange = () => {
-    this.fetchData(5);
+  const handleFilterChange = () => {
+    fetchData(5);
   };
 
-  handleDelete = () => {
+  const handleDelete = () => {
     Dialog.confirm({
       title: '提示',
       content: '确认删除吗',
       onOk: () => {
-        this.fetchData(10);
+        fetchData(10);
       },
     });
   };
 
-  handleDetail = () => {
+  const handleDetail = () => {
     Dialog.confirm({
       title: '提示',
       content: '暂不支持查看详情',
     });
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
         <Button
           type="primary"
           className={styles.btn}
-          onClick={this.handleDetail}
+          onClick={handleDetail}
         >
           详情
         </Button>
-        <Button type="normal" warning onClick={this.handleDelete}>
+        <Button type="normal" warning onClick={handleDelete}>
           删除
         </Button>
       </div>
     );
   };
 
-  render() {
-    const { isLoading, data, current, overviewData } = this.state;
-
-    return (
-      <div className={styles.container}>
-        <IceContainer>
-          <Filter onChange={this.handleFilterChange} />
-        </IceContainer>
-        <Overview data={overviewData} />
-        <IceContainer>
-          <Table loading={isLoading} dataSource={data} hasBorder={false}>
-            <Table.Column title="流水号" dataIndex="serialNumber" />
-            <Table.Column title="订单号" dataIndex="orderNumber" />
-            <Table.Column title="商品名称" dataIndex="name" />
-            <Table.Column title="商品规格" dataIndex="spec" />
-            <Table.Column title="发货时间" dataIndex="dispatchTime" />
-            <Table.Column title="下单时间" dataIndex="orderTime" />
-            <Table.Column title="订购数量" dataIndex="quantity" />
-            <Table.Column title="已发货数量" dataIndex="delivery" />
-            <Table.Column title="已发货商品金额" dataIndex="amount" />
-            <Table.Column
-              title="操作"
-              width={200}
-              dataIndex="oper"
-              cell={this.renderOper}
-            />
-          </Table>
-          <Pagination
-            className={styles.pagination}
-            current={current}
-            onChange={this.handlePaginationChange}
+  return (
+    <div className={styles.container}>
+      <IceContainer>
+        <Filter onChange={handleFilterChange} />
+      </IceContainer>
+      <Overview data={overviewData} />
+      <IceContainer>
+        <Table loading={isLoading} dataSource={data} hasBorder={false}>
+          <Table.Column title="流水号" dataIndex="serialNumber" />
+          <Table.Column title="订单号" dataIndex="orderNumber" />
+          <Table.Column title="商品名称" dataIndex="name" />
+          <Table.Column title="商品规格" dataIndex="spec" />
+          <Table.Column title="发货时间" dataIndex="dispatchTime" />
+          <Table.Column title="下单时间" dataIndex="orderTime" />
+          <Table.Column title="订购数量" dataIndex="quantity" />
+          <Table.Column title="已发货数量" dataIndex="delivery" />
+          <Table.Column title="已发货商品金额" dataIndex="amount" />
+          <Table.Column
+            title="操作"
+            width={200}
+            dataIndex="oper"
+            cell={renderOper}
           />
-        </IceContainer>
-      </div>
-    );
-  }
+        </Table>
+        <Pagination
+          className={styles.pagination}
+          current={current}
+          onChange={handlePaginationChange}
+        />
+      </IceContainer>
+    </div>
+  );
 }
 
 

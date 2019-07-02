@@ -1,9 +1,10 @@
-.ice-design-layout-footer-body {
+.iceDesignLayoutFooterBody {
   width: 100%;
   margin: 20px auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  line-height: 36px;
   align-items: center;
   .copyright {
     color: #666;
@@ -11,14 +12,11 @@
     font-size: 12px;
     text-align: left;
   }
-  .copyright-link {
+  .copyrightLink {
     color: #666;
   }
-}
-.designLayout{
-  filter: grayscale(100%);
-  opacity: 0.3;
-}
-.footer{
-  line-height: 36px;
+  .designLayout{
+    filter: grayscale(100%);
+    opacity: 0.3;
+  }
 }

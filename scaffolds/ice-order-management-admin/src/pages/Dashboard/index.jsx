@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
-import PageHead from '../../components/PageHead';
+import PageHead from '@/components/PageHead';
 import SalesChart from './components/SalesChart';
 import OrderTrend from './components/OrderTrend';
 import OrderCate from './components/OrderCate';
@@ -12,36 +12,34 @@ import RevenueCate from './components/RevenueCate';
 
 const { Row, Col } = Grid;
 
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        <PageHead title="工作台" />
-        <SalesChart />
-        <Row gutter="20" wrap>
-          <Col l="12">
-            <OrderTrend />
-          </Col>
-          <Col l="6">
-            <OrderCate />
-          </Col>
-          <Col l="6">
-            <CustomerTrend />
-          </Col>
-          <Col l="16">
-            <RecentOrders />
-          </Col>
-          <Col l="8">
-            <TopOrders />
-          </Col>
-          <Col l="16">
-            <TotalRevenue />
-          </Col>
-          <Col l="8">
-            <RevenueCate />
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+export default function Dashboard() {
+  return (
+    <div>
+      <PageHead title="工作台" />
+      <SalesChart />
+      <Row gutter="20" wrap>
+        <Col l="12">
+          <OrderTrend />
+        </Col>
+        <Col l="6">
+          <OrderCate />
+        </Col>
+        <Col l="6">
+          <CustomerTrend />
+        </Col>
+        <Col l="16">
+          <RecentOrders />
+        </Col>
+        <Col l="8">
+          <TopOrders />
+        </Col>
+        <Col l="16">
+          <TotalRevenue />
+        </Col>
+        <Col l="8">
+          <RevenueCate />
+        </Col>
+      </Row>
+    </div>
+  );
 }

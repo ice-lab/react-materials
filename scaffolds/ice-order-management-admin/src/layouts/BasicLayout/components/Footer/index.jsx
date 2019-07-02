@@ -1,37 +1,34 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
 import cx from 'classnames';
 import Logo from '../Logo';
 
-import './Footer.scss';
+import styles from './index.module.scss';
 
-export default class Footer extends PureComponent {
-  render() {
-    const { className, style } = this.props;
-    return (
-      <Layout.Footer
-        className={cx('ice-design-layout-footer', className)}
-        type={null}
-        className="footer" 
-        style = {style}
-      >
-        <div className="ice-design-layout-footer-body">
-          <div className="designLayout"  >
-            <Logo isDark />
-          </div>
-          <div className="copyright">
-            © 2018 Theme designed by{' '}
-            <a
-              href="https://github.com/alibaba/ice"
-              target="_blank"
-              className="copyright-link"
-              rel="noopener noreferrer"
-            >
-              ICE
-            </a>
-          </div>
+export default function Footer(props) {
+  const { className, style } = props;
+  return (
+    <Layout.Footer
+      className={cx(styles.iceDesignLayoutFooter, className)}
+      type={null}
+      style={style}
+    >
+      <div className={styles.iceDesignLayoutFooterBody}>
+        <div className={styles.designLayout}>
+          <Logo isDark />
         </div>
-      </Layout.Footer>
-    );
-  }
+        <div className={styles.copyright}>
+          © 2018 Theme designed by{' '}
+          <a
+            href="https://github.com/alibaba/ice"
+            target="_blank"
+            className={styles.copyrightLink}
+            rel="noopener noreferrer"
+          >
+            ICE
+          </a>
+        </div>
+      </div>
+    </Layout.Footer>
+  );
 }

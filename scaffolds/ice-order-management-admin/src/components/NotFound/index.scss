@@ -1,5 +1,5 @@
 @media screen and (max-width: 720px) {
-  .exception-content {
+  .exceptionContent {
     min-height: 200px;
     .imgException {
       max-width: 100px;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (min-width: 721px) and (max-width: 1199px) {
-  .exception-content {
+  .exceptionContent {
     min-height: 300px;
     .imgException {
       max-width: 180px;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .exception-content {
+  .exceptionContent {
     min-height: 500px;
     .imgException {
       max-width: 260px;
@@ -49,15 +49,15 @@
   }
 }
 
-  .exceptionContent{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .title {
-    color: #333;
-  }
-  .description {
-    color: #666;
-  }
+.exceptionContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  color: #333;
+}
+.description {
+  color: #666;
+}
 
