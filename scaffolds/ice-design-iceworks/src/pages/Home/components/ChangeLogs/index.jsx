@@ -50,8 +50,8 @@ export default () => {
                   v{v.version} <span className={styles.featureDate}>{v.releaseDate}</span>
                 </h3>
                 <ol key={`${v.version}-content`}>
-                  {Array.isArray(v.changelog) &&
-                    v.changelog.map((desc, idx) => <li key={idx}>{desc}</li>)}
+                  {Array.isArray(v.changelog)
+                    && v.changelog.map((desc, idx) => <li key={idx}>{desc}</li>)}
                 </ol>
               </div>
             );
