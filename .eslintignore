@@ -6,9 +6,11 @@ node_modules/
 coverage/
 
 # 有很多 lint 问题，逐渐迭代
-./components/
+# components/* 仅包含根目录的 components
+# components/ 包含所有 components 目录
+components/*
 # 有很多 lint 问题，逐渐迭代
-./blocks/
+blocks/*
 
 scaffolds/ice-algorithm-model-admin
 scaffolds/ice-government-management-admin
