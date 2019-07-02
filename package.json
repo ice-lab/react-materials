@@ -16,12 +16,8 @@
       "pre-push": "npm run lint"
     }
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "fs-extra": "^8.0.1",
-    "glob": "^7.1.4",
-    "request-promise": "^4.2.4",
     "ali-oss": "^6.1.0",
     "babel-eslint": "^8.1.2",
     "eslint": "^4.14.0",
@@ -30,6 +26,10 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "ice-devtools": "^2.2.0"
+    "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
+    "husky": "^3.0.0",
+    "ice-devtools": "^2.2.0",
+    "request-promise": "^4.2.4"
   }
 }
