@@ -32,7 +32,7 @@ scaffolds/ice-customer-analysis-admin
 scaffolds/ice-reviews-management
 scaffolds/ice-design-analysis
 scaffolds/ice-scroll-screen-homepage
-scaffolds/ice-design-cms
+# scaffolds/ice-design-cms
 scaffolds/ice-task-management-admin
 scaffolds/ice-design-dashboard
 scaffolds/ice-typescript-starter
