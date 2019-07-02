@@ -42,29 +42,27 @@ const router = () => {
                 return (
                   children ? (
                     <RouteComponent key={id} {...props}>
-                      <Suspense fallback={<div>loading...</div>}>
-                        <Switch>
-                          {children.map((routeChild, idx) => {
-                            const { redirect, path: childPath, component } = routeChild;
-                            return RouteItem({
-                              key: `${id}-${idx}`,
-                              redirect,
-                              path: childPath && path.join(route.path, childPath),
-                              component,
-                            });
-                          })}
-                        </Switch>
-                      </Suspense>
+                      <Switch>
+                        {children.map((routeChild, idx) => {
+                          const { redirect, path: childPath, component } = routeChild;
+                          return RouteItem({
+                            key: `${id}-${idx}`,
+                            redirect,
+                            path: childPath && path.join(route.path, childPath),
+                            component,
+                          });
+                        })}
+                      </Switch>
                     </RouteComponent>
                   ) : (
-                    <Suspense fallback={<div>loading...</div>}>
+                    <>
                       {
                         RouteItem({
                           key: id,
                           ...props,
                         })
                       }
-                    </Suspense>
+                    </>
                   )
                 );
               }}
