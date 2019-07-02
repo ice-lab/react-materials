@@ -1,5 +1,5 @@
 /* eslint react/no-children-prop:0 */
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@alifd/next';
 import TextLoop from 'react-text-loop';
 import PieChart from './PieChart';
@@ -86,21 +86,10 @@ const data = {
   ],
 };
 
-export default class DataAnalysis extends Component {
-  static displayName = 'DataAnalysis';
+export default function DataAnalysis() {
+  const [currentDate, setCurrentDate] = useState('');
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '',
-    };
-  }
-
-  updateDate = () => {
+  const updateDate = () => {
     const date = new Date();
     const year = date.getFullYear();
     const month = date.getMonth();
@@ -108,54 +97,54 @@ export default class DataAnalysis extends Component {
     const hour = date.getHours();
     const minute = date.getMinutes();
     const second = date.getSeconds();
-    this.setState({
-      date: `${year}-${month + 1}-${day} ${hour}:${
-        minute < 10 ? `0${minute}` : minute
-      }:${second < 10 ? `0${second}` : second}`,
-    });
+    setCurrentDate(`${year}-${month + 1}-${day} ${hour}:${
+      minute < 10 ? `0${minute}` : minute
+    }:${second < 10 ? `0${second}` : second}`);
   };
 
-  componentDidMount() {
-    setInterval(this.updateDate, 1000);
-  }
+  useEffect(() => {
+    const timer = setInterval(updateDate, 1000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.main}>
-          <div className={styles.side}>
-            <PieChart data={data.source} title="交易来源占比" />
-            <TopList data={data.topShop} title="成交额top店铺" />
-            <LineChart data={data.source} title="渠道销售排行" />
-          </div>
-          <div className={styles.middle}>
-            <div className={styles.header}>
-              <h1 className={styles.pageTitle}>某某某品牌 电商实时状况</h1>
-              <p className={styles.time}>
-                <Icon type="clock" size="xs" /> {this.state.date}
-              </p>
-              <Title data="今日交易额" />
-              <h2 className={styles.sum}>
-                1682
-                <TextLoop
-                  speed={1000}
-                  children={['1242.12', '5356.32', '6518.28', '8739.69']}
-                />
-                元
-              </h2>
-            </div>
-          </div>
-          <div className={styles.side}>
-            <PieChart data={data.target} title="销售目标达成率" />
-            <TopList data={data.topItem} title="成交额top商品" />
-            <PieChart data={data.member} title="会员等级占比" />
+  return (
+    <div className={styles.container}>
+      <div className={styles.main}>
+        <div className={styles.side}>
+          <PieChart data={data.source} title="交易来源占比" />
+          <TopList data={data.topShop} title="成交额top店铺" />
+          <LineChart data={data.source} title="渠道销售排行" />
+        </div>
+        <div className={styles.middle}>
+          <div className={styles.header}>
+            <h1 className={styles.pageTitle}>某某某品牌 电商实时状况</h1>
+            <p className={styles.time}>
+              <Icon type="clock" size="xs" /> {currentDate}
+            </p>
+            <Title data="今日交易额" />
+            <h2 className={styles.sum}>
+              1682
+              <TextLoop
+                speed={1000}
+                children={['1242.12', '5356.32', '6518.28', '8739.69']}
+              />
+              元
+            </h2>
           </div>
         </div>
-        <div className={styles.bg}>
-          <Map />
+        <div className={styles.side}>
+          <PieChart data={data.target} title="销售目标达成率" />
+          <TopList data={data.topItem} title="成交额top商品" />
+          <PieChart data={data.member} title="会员等级占比" />
         </div>
       </div>
-    );
-  }
+      <div className={styles.bg}>
+        <Map />
+      </div>
+    </div>
+  );
 }
 
+DataAnalysis.displayName = 'DataAnalysis';

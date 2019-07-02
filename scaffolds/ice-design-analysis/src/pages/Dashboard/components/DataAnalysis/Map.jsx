@@ -1,5 +1,5 @@
 /* eslint no-plusplus:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import 'echarts/lib/chart/map';
 import 'echarts/map/js/world';
@@ -312,23 +312,12 @@ const option = {
   ],
 };
 
-export default class Map extends Component {
-  static displayName = 'Map';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <ReactEcharts option={option} style={{ height: '650px' }} />
-      </div>
-    );
-  }
+export default function ChartMap() {
+  return (
+    <div>
+      <ReactEcharts option={option} style={{ height: '650px' }} />
+    </div>
+  );
 }
+
+ChartMap.displayName = 'ChartMap';
