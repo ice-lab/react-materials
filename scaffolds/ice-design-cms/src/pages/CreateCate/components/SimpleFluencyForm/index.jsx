@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Input, Button, Message } from '@alifd/next';
 import {
@@ -12,31 +12,18 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const Toast = Message;
 
-export default class SimpleFluencyForm extends Component {
-  static displayName = 'SimpleFluencyForm';
+const SimpleFluencyForm = () => {
+  let formRef;
 
-  static propTypes = {};
+  const [formValue, setFormValue] = useState({
+    name: '',
+    shortName: '',
+  });
 
-  static defaultProps = {};
+  const formChange = newValue => setFormValue(newValue);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      formValue: {
-        name: '',
-        shortName: '',
-      },
-    };
-  }
-
-  formChange = (newValue) => {
-    this.setState({
-      formValue: newValue,
-    });
-  };
-
-  handleSubmit = () => {
-    this.form.validateAll((errors, values) => {
+  const handleSubmit = () => {
+    formRef.validateAll((errors, values) => {
       if (errors) {
         console.log('errors', errors);
         return;
@@ -47,59 +34,60 @@ export default class SimpleFluencyForm extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className={cx('simple-fluency-form', styles.simpleFluencyForm)}>
-        <IceContainer className={styles.form}>
-          <FormBinderWrapper
-            ref={(form) => {
-              this.form = form;
-            }}
-            value={this.state.formValue}
-            onChange={this.formChange}
-          >
-            <div className={styles.formContent}>
-              <h2 className={styles.formTitle}>添加分类</h2>
-              <Row className={styles.formRow}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  <span>分类名称：</span>
-                </Col>
-                <Col xxs="16" s="10" l="6">
-                  <FormBinder name="name" required message="必填项">
-                    <Input />
-                  </FormBinder>
-                  <div className={styles.formErrorWrapper}>
-                    <FormError name="name" />
-                  </div>
-                </Col>
-              </Row>
-              <Row className={styles.formRow}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  <span>缩略名称：</span>
-                </Col>
-                <Col xxs="16" s="10" l="6">
-                  <FormBinder name="shortName" required message="必填项">
-                    <Input />
-                  </FormBinder>
-                  <div className={styles.formErrorWrapper}>
-                    <FormError name="shortName" />
-                  </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col offset="3">
-                  <Button
-                    onClick={this.handleSubmit}
-                    type="primary"
-                  >
-                    确认
-                  </Button>
-                </Col>
-              </Row>
-            </div>
-          </FormBinderWrapper>
-        </IceContainer>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={cx('simple-fluency-form', styles.simpleFluencyForm)}>
+      <IceContainer className={styles.form}>
+        <FormBinderWrapper
+          ref={(form) => {
+            formRef = form;
+          }}
+          value={formValue}
+          onChange={formChange}
+        >
+          <div className={styles.formContent}>
+            <h2 className={styles.formTitle}>添加分类</h2>
+            <Row className={styles.formRow}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                <span>分类名称：</span>
+              </Col>
+              <Col xxs="16" s="10" l="6">
+                <FormBinder name="name" required message="必填项">
+                  <Input />
+                </FormBinder>
+                <div className={styles.formErrorWrapper}>
+                  <FormError name="name" />
+                </div>
+              </Col>
+            </Row>
+            <Row className={styles.formRow}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                <span>缩略名称：</span>
+              </Col>
+              <Col xxs="16" s="10" l="6">
+                <FormBinder name="shortName" required message="必填项">
+                  <Input />
+                </FormBinder>
+                <div className={styles.formErrorWrapper}>
+                  <FormError name="shortName" />
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col offset="3">
+                <Button
+                  onClick={handleSubmit}
+                  type="primary"
+                >
+                  确认
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        </FormBinderWrapper>
+      </IceContainer>
+    </div>
+  );
+};
+
+export default SimpleFluencyForm;
+

@@ -38,3 +38,12 @@
 .name {
   font-size: 12px;
 }
+.latestNews {
+  :global .link {
+    text-decoration: none;
+    color: $color-text1-2;
+    &:hover {
+      color: $color-brand1-6;
+    }
+  }
+}
