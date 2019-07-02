@@ -30,7 +30,7 @@ export default function DeleteBalloon(props) {
         type="normal"
         warning
         style={{ marginRight: '5px' }}
-        onClick={visible => this.handleHide(visible, 1)}
+        onClick={visible => handleHide(visible, 1)}
       >
         确认
       </Button>

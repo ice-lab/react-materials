@@ -100,5 +100,3 @@ export default function ReviewDataChart() {
     </IceContainer>
   );
 }
-
-ReviewDataChart.displayName = 'ReviewDataChart';

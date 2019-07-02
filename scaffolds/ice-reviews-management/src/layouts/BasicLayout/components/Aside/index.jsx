@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
-import { asideMenuConfig } from '../../../../menuConfig';
+import { asideMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 
@@ -55,14 +55,14 @@ function Aside(props) {
         className={styles.customMenu}
         type="line"
       >
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav, index) => {
+        {Array.isArray(asideMenuConfig)
+          && asideMenuConfig.length > 0
+          && asideMenuConfig.map((nav, index) => {
             if (nav.children && nav.children.length > 0) {
               return (
                 <Nav.SubNav
                   key={index}
-                  label={
+                  label={(
                     <span>
                       {nav.icon ? (
                         <FoundationSymbol
@@ -75,7 +75,7 @@ function Aside(props) {
                         {nav.name}
                       </span>
                     </span>
-                  }
+                  )}
                 >
                   {nav.children.map((item) => {
                     const linkProps = {};

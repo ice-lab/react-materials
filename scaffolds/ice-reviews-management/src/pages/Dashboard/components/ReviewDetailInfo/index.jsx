@@ -130,5 +130,3 @@ export default function ReviewDetailInfo() {
     </Row>
   );
 }
-
-ReviewDetailInfo.displayName = 'ReviewDetailInfo';

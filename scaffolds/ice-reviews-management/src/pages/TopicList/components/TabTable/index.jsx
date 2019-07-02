@@ -113,5 +113,3 @@ export default function TabTable() {
     </div>
   );
 }
-
-TabTable.displayName = 'TabTable';

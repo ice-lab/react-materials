@@ -120,5 +120,3 @@ export default function ReviewOverview() {
     </Row>
   );
 }
-
-ReviewOverview.displayName = 'ReviewOverview';

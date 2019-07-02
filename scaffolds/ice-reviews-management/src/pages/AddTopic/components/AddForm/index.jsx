@@ -171,6 +171,4 @@ function AddForm(props) {
   );
 }
 
-AddForm.displayName = 'AddForm';
-
 export default withRouter(AddForm);

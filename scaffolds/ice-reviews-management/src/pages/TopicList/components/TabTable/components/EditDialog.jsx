@@ -98,5 +98,3 @@ const styles = {
     marginRight: '5px',
   },
 };
-
-EditDialog.displayName = 'EditDialog';

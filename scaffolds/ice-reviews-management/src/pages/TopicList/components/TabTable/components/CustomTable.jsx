@@ -30,10 +30,10 @@ export default function CustomTable(props) {
   return <Table {...props}>{renderColumns()}</Table>;
 }
 
-CustomTable.displayName = 'CustomTable';
-
 CustomTable.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   dataSource: PropTypes.array,
+  // eslint-disable-next-line react/forbid-prop-types
   columns: PropTypes.array.isRequired,
 };
 

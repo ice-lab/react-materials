@@ -162,5 +162,3 @@ export default function ReviewRequestTable() {
     </IceContainer>
   );
 }
-
-ReviewRequestTable.displayName = 'ReviewRequestTable';
