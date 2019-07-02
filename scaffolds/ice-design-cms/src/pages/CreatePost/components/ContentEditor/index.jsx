@@ -13,7 +13,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const FormItem = Form.Item;
 
-const ContentEditor = () => {
+export default function ContentEditor() {
   let formRef;
 
   const [value, setValue] = useState({
@@ -24,7 +24,7 @@ const ContentEditor = () => {
     cats: [],
   });
 
-  const formChange = value => setValue(value);
+  const formChange = formValue => setValue(formValue);
 
   const handleSubmit = () => {
     formRef.validateAll((errors, values) => {
@@ -101,7 +101,10 @@ const ContentEditor = () => {
                             {errors.map(item => item.message).join(',')}
                           </span>
                           <span className={styles.mr}>
-                            不知道选择什么分类？请 <a href="#">点击这里</a>{' '}
+                            不知道选择什么分类？请
+                            {' '}
+                            <a href="#">点击这里</a>
+                            {' '}
                             查看
                           </span>
                         </div>
@@ -131,6 +134,4 @@ const ContentEditor = () => {
       </IceFormBinderWrapper>
     </div>
   );
-};
-
-export default ContentEditor;
+}

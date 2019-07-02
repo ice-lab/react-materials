@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Breadcrumb } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 
-const CustomBreadcrumb = (props) => {
+export default function CustomBreadcrumb(props) {
   const { dataSource } = props;
   return (
     <IceContainer>
@@ -18,7 +18,7 @@ const CustomBreadcrumb = (props) => {
       </Breadcrumb>
     </IceContainer>
   );
-};
+}
 
 CustomBreadcrumb.propTypes = {
   dataSource: PropTypes.array,
@@ -26,5 +26,3 @@ CustomBreadcrumb.propTypes = {
 CustomBreadcrumb.defaultProps = {
   dataSource: [],
 };
-
-export default CustomBreadcrumb;

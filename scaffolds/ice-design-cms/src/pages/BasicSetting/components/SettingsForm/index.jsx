@@ -1,4 +1,3 @@
-/* eslint  react/no-string-refs: 0 */
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import {
@@ -41,7 +40,9 @@ function formChange(value) {
   console.log('value', value);
 }
 
-const SettingsForm = () => {
+
+export default function SettingsForm() {
+  /* eslint-disable */
   const [value, setValue] = useState({
     name: '',
     gender: 'male',
@@ -53,10 +54,11 @@ const SettingsForm = () => {
     twitterUrl: '',
     description: '',
   });
+  /* eslint-enable */
 
   const formRef = React.createRef();
 
-  function validateAllFormField() {
+  const validateAllFormField = () => {
     formRef.current.validateAll((errors, values) => {
       if (errors) {
         return;
@@ -64,7 +66,7 @@ const SettingsForm = () => {
       console.log(values);
       Message.success('提交成功');
     });
-  }
+  };
 
   return (
     <div className={styles.SettingsForm}>
@@ -239,6 +241,4 @@ const SettingsForm = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default SettingsForm;
+}

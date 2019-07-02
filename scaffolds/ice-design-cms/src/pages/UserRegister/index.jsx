@@ -42,9 +42,7 @@ const UserRegister = (props) => {
     }
   };
 
-  const formChange = (value) => {
-    setValue(value);
-  };
+  const formChange = formValue => setValue(formValue);
 
   const handleSubmit = () => {
     formRef.validateAll((errors, values) => {
@@ -119,8 +117,7 @@ const UserRegister = (props) => {
             <IceFormBinder
               name="rePasswd"
               required
-              validator={(rule, values, callback) =>
-                checkPasswd2(rule, values, callback, value)
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, value)
               }
             >
               <Input

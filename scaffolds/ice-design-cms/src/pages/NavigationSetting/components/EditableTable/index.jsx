@@ -33,7 +33,7 @@ const data = [
   },
 ];
 
-const EditableTable = () => {
+export default function EditableTable() {
   const [dataSource, setDataSource] = useState(data);
 
   const renderOrder = (value, index) => {
@@ -111,6 +111,4 @@ const EditableTable = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default EditableTable;
+}

@@ -19,8 +19,8 @@ const UserLogin = (props) => {
 
   let formRef;
 
-  const formChange = (value) => {
-    setValue(value);
+  const formChange = (newValue) => {
+    setValue(newValue);
   };
 
   const handleSubmit = (e) => {

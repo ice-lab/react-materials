@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const Toast = Message;
 
-const SimpleFluencyForm = () => {
+export default function SimpleFluencyForm() {
   let formRef;
 
   const [formValue, setFormValue] = useState({
@@ -87,6 +87,4 @@ const SimpleFluencyForm = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default SimpleFluencyForm;
+}

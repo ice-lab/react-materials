@@ -3,7 +3,7 @@ import { Button, Balloon } from '@alifd/next';
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
 
-const DeleteBalloon = (props) => {
+export default function DeleteBalloon(props) {
   const [visible, setVisible] = useState(false);
 
   function handleHide(code) {
@@ -54,7 +54,7 @@ const DeleteBalloon = (props) => {
       {content}
     </Balloon>
   );
-};
+}
 
 
 DeleteBalloon.propTypes = {
@@ -63,5 +63,3 @@ DeleteBalloon.propTypes = {
 DeleteBalloon.defaultProps = {
   handleRemove: () => {},
 };
-
-export default DeleteBalloon;

@@ -13,7 +13,7 @@ const isItalicHotkey = isKeyHotkey('mod+i');
 const isUnderlinedHotkey = isKeyHotkey('mod+u');
 const isCodeHotkey = isKeyHotkey('mod+`');
 
-const RichEditor = (props) => {
+export default function RichEditor(props) {
   const [value, setValue] = useState(props.value ? Value.fromJSON(props.value) : Plain.deserialize(''));
 
   const hasMark = (type) => {
@@ -24,11 +24,11 @@ const RichEditor = (props) => {
     return value.blocks.some(node => node.type === type);
   };
 
-  const onChange = ({ value }) => {
-    setValue(value);
+  const onChange = ({ value: newValue }) => {
+    setValue(newValue);
     // 如果上层有传递 onChange 回调，则应该传递上去
     if (props.onChange && typeof props.onChange === 'function') {
-      props.onChange(value.toJSON());
+      props.onChange(newValue.toJSON());
     }
   };
 
@@ -129,8 +129,8 @@ const RichEditor = (props) => {
   };
 
   // 配置 block type 对应在富文本里面的渲染组件
-  const renderNode = (props) => {
-    const { attributes, children, node } = props;
+  const renderNode = (nodeProps) => {
+    const { attributes, children, node } = nodeProps;
     switch (node.type) {
       case 'block-quote':
         return <blockquote {...attributes}>{children}</blockquote>;
@@ -150,8 +150,8 @@ const RichEditor = (props) => {
   };
 
   // 配置 mark 对应在富文本里面的渲染组件
-  const renderMark = (props) => {
-    const { children, mark } = props;
+  const renderMark = (markProps) => {
+    const { children, mark } = markProps;
     switch (mark.type) {
       case 'bold':
         return <strong>{children}</strong>;
@@ -197,7 +197,4 @@ const RichEditor = (props) => {
       </IceContainer>
     </div>
   );
-};
-
-
-export default RichEditor;
+}

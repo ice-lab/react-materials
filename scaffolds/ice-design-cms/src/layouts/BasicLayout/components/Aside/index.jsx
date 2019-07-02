@@ -52,7 +52,7 @@ function getSubMenuOrItem(item, index) {
       return (
         <Nav.SubNav
           key={index}
-          label={
+          label={(
             <span>
               {item.icon ? (
                 <FoundationSymbol size="small" type={item.icon} />
@@ -61,7 +61,7 @@ function getSubMenuOrItem(item, index) {
                 {item.name}
               </span>
             </span>
-          }
+          )}
         >
           {childrenItems}
         </Nav.SubNav>

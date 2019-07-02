@@ -74,4 +74,3 @@ export default () => (
     </Col>
   </Row>
 );
-

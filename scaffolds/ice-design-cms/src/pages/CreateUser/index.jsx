@@ -2,7 +2,7 @@ import React from 'react';
 import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import UserForm from './components/UserForm';
 
-const CreateUser = () => {
+export default function CreateUser() {
   const breadcrumb = [
     { text: '用户管理', link: '' },
     { text: '添加用户', link: '#/user/list' },
@@ -13,6 +13,4 @@ const CreateUser = () => {
       <UserForm />
     </div>
   );
-};
-
-export default CreateUser;
+}

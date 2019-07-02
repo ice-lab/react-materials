@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const Toast = Message;
 
-const UserForm = () => {
+export default function UserForm() {
   const [value, setValue] = useState({
     username: '',
     displayName: '',
@@ -46,7 +46,7 @@ const UserForm = () => {
     }
   };
 
-  const formChange = value => setValue(value);
+  const formChange = formValue => setValue(formValue);
 
   const validateAllFormField = () => {
     formRef.validateAll((errors, values) => {
@@ -178,13 +178,12 @@ const UserForm = () => {
                 <IceFormBinder
                   name="rePasswd"
                   required
-                  validator={(rule, values, callback) =>
-                    checkPasswd2(
-                      rule,
-                      values,
-                      callback,
-                      value
-                    )
+                  validator={(rule, values, callback) => checkPasswd2(
+                    rule,
+                    values,
+                    callback,
+                    value
+                  )
                   }
                 >
                   <Input
@@ -211,6 +210,4 @@ const UserForm = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default UserForm;
+}

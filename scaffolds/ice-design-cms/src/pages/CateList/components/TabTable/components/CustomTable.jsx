@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from '@alifd/next';
 
-const CustomTable = (props) => {
+export default function CustomTable(props) {
   function renderColumns() {
     const { columns } = props;
     return columns.map((item) => {
@@ -29,7 +29,7 @@ const CustomTable = (props) => {
   }
 
   return <Table {...props}>{renderColumns()}</Table>;
-};
+}
 
 CustomTable.propTypes = {
   dataSource: PropTypes.array,
@@ -39,5 +39,3 @@ CustomTable.propTypes = {
 CustomTable.defaultProps = {
   dataSource: [],
 };
-
-export default CustomTable;

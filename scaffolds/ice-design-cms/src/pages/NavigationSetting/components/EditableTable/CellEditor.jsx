@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Icon, Input } from '@alifd/next';
 import styles from './index.module.scss';
 
-const CellEditor = (props) => {
+export default function CellEditor(props) {
   const [editMode, setEditMode] = useState(false);
   const [value, setValue] = useState(props.value || '');
   let tempValue;
@@ -14,7 +14,7 @@ const CellEditor = (props) => {
     setEditMode(true);
   };
 
-  const onValueChange = value => setValue(value);
+  const onValueChange = newValue => setValue(newValue);
 
   const updateValue = () => {
     setEditMode(false);
@@ -58,8 +58,7 @@ const CellEditor = (props) => {
     <div className="celleditor">
       <span>{value}</span>
       <span
-        className={styles.operationIcon}
-        className="celleditor-trigger"
+        className={`${styles.operationIcon} celleditor-trigger`}
         title="编辑"
         onClick={editThisCell}
       >
@@ -67,6 +66,4 @@ const CellEditor = (props) => {
       </span>
     </div>
   );
-};
-
-export default CellEditor;
+}

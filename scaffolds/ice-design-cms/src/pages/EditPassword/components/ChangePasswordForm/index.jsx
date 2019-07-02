@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const Toast = Message;
 
-const ChangePasswordForm = () => {
+export default function ChangePasswordForm() {
   const [value, setValue] = useState({
     passwd: '',
     rePasswd: '',
@@ -39,7 +39,7 @@ const ChangePasswordForm = () => {
     }
   };
 
-  const formChange = value => setValue(value);
+  const formChange = formValue => setValue(formValue);
 
   const validateAllFormField = () => {
     formRef.validateAll((errors, values) => {
@@ -93,13 +93,12 @@ const ChangePasswordForm = () => {
                 <IceFormBinder
                   name="rePasswd"
                   required
-                  validator={(rule, values, callback) =>
-                    checkPasswd2(
-                      rule,
-                      values,
-                      callback,
-                      value
-                    )
+                  validator={(rule, values, callback) => checkPasswd2(
+                    rule,
+                    values,
+                    callback,
+                    value
+                  )
                   }
                 >
                   <Input
@@ -126,6 +125,4 @@ const ChangePasswordForm = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default ChangePasswordForm;
+}

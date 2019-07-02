@@ -79,7 +79,7 @@ const dataSource = {
   ],
 };
 
-const DataStatistics = () => {
+export default function DataStatistics() {
   const cols = {
     users: { tickInterval: 20 },
   };
@@ -129,6 +129,4 @@ const DataStatistics = () => {
       </Row>
     </IceContainer>
   );
-};
-
-export default DataStatistics;
+}

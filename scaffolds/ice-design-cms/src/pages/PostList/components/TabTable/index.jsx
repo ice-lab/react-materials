@@ -15,7 +15,7 @@ const tabs = [
   { tab: '已拒绝', key: 'rejected' },
 ];
 
-const TabTable = () => {
+export default function TabTable() {
   const [dataSource, setDataSource] = useState({});
   const [tabKey, setTabKey] = useState('all');
 
@@ -109,6 +109,4 @@ const TabTable = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default TabTable;
+}

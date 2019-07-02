@@ -33,7 +33,7 @@ const dataSource = [
   },
 ];
 
-const StatisticalCard = () => {
+export default function StatisticalCard() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -63,11 +63,11 @@ const StatisticalCard = () => {
                 <Balloon
                   align="t"
                   alignEdge
-                  trigger={
+                  trigger={(
                     <span>
                       <Icon type="help" className={styles.helpIcon} size="xs" />
                     </span>
-                  }
+)}
                   closable={false}
                 >
                   {data.desc}
@@ -86,6 +86,4 @@ const StatisticalCard = () => {
       <Row wrap>{renderItem()}</Row>
     </IceContainer>
   );
-};
-
-export default StatisticalCard;
+}

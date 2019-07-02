@@ -1,6 +1,7 @@
 .container {
   width: 100%;
 }
+
 .title {
   color: #333;
   margin: 0;
@@ -9,12 +10,14 @@
   border-bottom: 1px solid #eee;
   padding-bottom: 15px;
 }
+
 .items {
   display: flex;
   flex-wrap: wrap;
   margin-left: 30px;
   flex-direction: row;
 }
+
 .itemBox {
   width: 50%;
   display: flex;
@@ -22,22 +25,28 @@
   align-items: center;
   flex-direction: row;
 }
+
 .itemBox:nth-child(2n) {
   justify-content: flex-end;
 }
+
 .itemIcon {
   margin-right: 10px;
 }
+
 .icon {
   color: $color-brand1-6;
 }
+
 .value {
   color: $color-brand1-9;
   font-size: 20px;
 }
+
 .name {
   font-size: 12px;
 }
+
 .latestNews {
   :global .link {
     text-decoration: none;

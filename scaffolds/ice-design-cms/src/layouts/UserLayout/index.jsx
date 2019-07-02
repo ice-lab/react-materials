@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-const UserLayout = (props) => (
+export default props => (
   <div className={styles.container}>
     <div className={styles.mask} />
     <Row wrap className={styles.row}>
@@ -22,4 +22,3 @@ const UserLayout = (props) => (
     <Footer />
   </div>
 );
-export default UserLayout;

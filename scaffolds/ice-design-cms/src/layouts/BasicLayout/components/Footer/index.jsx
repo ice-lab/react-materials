@@ -4,14 +4,15 @@ import Logo from '../Logo';
 
 import styles from './index.module.scss';
 
-const Footer = () => (
+export default () => (
   <Layout.Footer className={styles.iceDesignLayoutFooter}>
     <div className={styles.iceDesignLayoutFooterBody}>
       <div className={styles.logo}>
         <Logo />
       </div>
       <div className={styles.copyright}>
-        © 2018 Theme designed by{' '}
+        © 2018 Theme designed by
+        {' '}
         <a
           href="https://github.com/alibaba/ice"
           target="_blank"
@@ -24,5 +25,3 @@ const Footer = () => (
     </div>
   </Layout.Footer>
 );
-
-export default Footer;

@@ -3,7 +3,7 @@ import { Form, Field } from '@ice/form';
 import { Dialog, Button, Input } from '@alifd/next';
 import styles from './index.module.scss';
 
-const EditDialog = (props) => {
+export default function EditDialog(props) {
   const [visible, setVisible] = useState(false);
   const [dataIndex, setDataIndex] = useState(null);
   const [initialValues, setInitialValues] = useState({});
@@ -64,6 +64,4 @@ const EditDialog = (props) => {
       </Dialog>
     </div>
   );
-};
-
-export default EditDialog;
+}

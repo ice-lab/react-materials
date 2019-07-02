@@ -101,8 +101,8 @@ const routerConfig = [
       {
         component: NotFound,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default routerConfig;

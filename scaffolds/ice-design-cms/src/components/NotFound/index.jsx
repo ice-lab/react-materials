@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
-const NotFound = () => (
+export default () => (
   <div className="basic-not-found">
     <IceContainer>
       <div className={styles.exceptionContent}>
@@ -26,5 +26,3 @@ const NotFound = () => (
     </IceContainer>
   </div>
 );
-
-export default NotFound;

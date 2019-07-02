@@ -47,7 +47,7 @@ const MOCK_DATA = [
   },
 ];
 
-const TabTable = () => {
+export default function TabTable() {
   const [dataSource, setDataSource] = useState(MOCK_DATA);
   const columns = [
     {
@@ -110,6 +110,4 @@ const TabTable = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default TabTable;
+}

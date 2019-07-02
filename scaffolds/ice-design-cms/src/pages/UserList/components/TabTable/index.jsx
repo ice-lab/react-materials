@@ -10,7 +10,7 @@ const TabPane = Tab.Item;
 
 const tabs = [{ tab: '全部', key: 'all' }, { tab: '审核中', key: 'review' }];
 
-const TabTable = () => {
+export default function TabTable() {
   const [dataSource, setDataSource] = useState({});
   const [tabKey, setTabKey] = useState('all');
 
@@ -128,6 +128,4 @@ const TabTable = () => {
       </IceContainer>
     </div>
   );
-};
-
-export default TabTable;
+}

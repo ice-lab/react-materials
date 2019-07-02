@@ -2,7 +2,7 @@ import React from 'react';
 import CustomBreadcrumb from '../../components/CustomBreadcrumb';
 import ChangePasswordForm from './components/ChangePasswordForm';
 
-const EditPassword = () => {
+export default function EditPassword() {
   const breadcrumb = [
     { text: '用户管理', link: '' },
     { text: '修改密码', link: '#/user/list' },
@@ -13,6 +13,4 @@ const EditPassword = () => {
       <ChangePasswordForm />
     </div>
   );
-};
-
-export default EditPassword;
+}

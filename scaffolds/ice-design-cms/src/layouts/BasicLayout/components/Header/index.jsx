@@ -9,7 +9,7 @@ import { headerMenuConfig } from '../../../../menuConfig';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 
-const Header = (props) => {
+export default function Header(props) {
   const { isMobile, className, style } = props;
   return (
     <Layout.Header
@@ -58,7 +58,7 @@ const Header = (props) => {
 
         {/* Header 右侧内容块 */}
         <Balloon
-          trigger={
+          trigger={(
             <div className={styles.iceDesignHeaderUserpannel}>
               <IceImg
                 height={40}
@@ -77,7 +77,7 @@ const Header = (props) => {
                 className={styles.iconDown}
               />
             </div>
-          }
+          )}
           closable={false}
           className={styles.userProfileMenu}
         >
@@ -99,5 +99,4 @@ const Header = (props) => {
       </div>
     </Layout.Header>
   );
-};
-export default Header;
+}
