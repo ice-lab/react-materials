@@ -1,6 +1,6 @@
 import React from 'react';
+import PageHead from '@/components/PageHead';
 import Table from './components/Table';
-import PageHead from '../../components/PageHead';
 
 export default function Membership() {
   return (

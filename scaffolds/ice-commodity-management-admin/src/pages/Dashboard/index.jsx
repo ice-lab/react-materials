@@ -1,5 +1,5 @@
 import React from 'react';
-import Overview from '../../components/Overview';
+import Overview from '@/components/Overview';
 import QuickNav from './components/QuickNav';
 import SalesChart from './components/SalesChart';
 import RevenueChart from './components/RevenueChart';

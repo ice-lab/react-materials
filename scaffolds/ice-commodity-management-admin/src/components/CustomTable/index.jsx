@@ -77,8 +77,6 @@ export default function CustomTable(props) {
   );
 }
 
-CustomTable.displayName = 'CustomTable';
-
 CustomTable.propTypes = {
   enableFilter: PropTypes.bool,
   searchQueryHistory: PropTypes.object,
@@ -90,4 +88,3 @@ CustomTable.defaultProps = {
   searchQueryHistory: null,
   dataSource: [],
 };
-

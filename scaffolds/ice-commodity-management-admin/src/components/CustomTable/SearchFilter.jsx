@@ -65,8 +65,6 @@ const styles = {
   },
 };
 
-SearchFilter.displayName = 'SearchFilter';
-
 SearchFilter.propTypes = {
   formConfig: PropTypes.array.isRequired,
   value: PropTypes.object.isRequired,

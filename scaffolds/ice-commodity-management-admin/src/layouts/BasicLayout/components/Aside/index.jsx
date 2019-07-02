@@ -4,8 +4,8 @@ import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import IceImg from '@icedesign/img';
+import { asideMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
-import { asideMenuConfig } from '../../../../menuConfig';
 import styles from './index.module.scss';
 
 function BasicLayout(props) {
@@ -43,9 +43,9 @@ function BasicLayout(props) {
         className={styles.iceMenuCustom}
         activeDirection="right"
       >
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav) => {
+        {Array.isArray(asideMenuConfig)
+          && asideMenuConfig.length > 0
+          && asideMenuConfig.map((nav) => {
             return (
               <Nav.Item key={nav.path}>
                 <Link to={nav.path} className={styles.iceMenuLink}>

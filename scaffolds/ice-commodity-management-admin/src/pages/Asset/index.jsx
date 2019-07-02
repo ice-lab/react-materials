@@ -1,6 +1,6 @@
 import React from 'react';
-import Overview from '../../components/Overview';
-import PageHead from '../../components/PageHead';
+import Overview from '@/components/Overview';
+import PageHead from '@/components/PageHead';
 import AssetTab from './components/AssetTab';
 
 const MOCK_DATA = [

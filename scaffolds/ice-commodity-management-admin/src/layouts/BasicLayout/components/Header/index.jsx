@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-import { headerMenuConfig } from '../../../../menuConfig';
+import { headerMenuConfig } from '@/menuConfig';
 import styles from './index.module.scss';
 
 function Header(props) {
@@ -18,22 +18,22 @@ function Header(props) {
           direction="hoz"
           type="secondary"
         >
-          {headerMenuConfig &&
-            headerMenuConfig.length > 0 &&
-            headerMenuConfig.map((nav, index) => {
+          {headerMenuConfig
+            && headerMenuConfig.length > 0
+            && headerMenuConfig.map((nav, index) => {
               if (nav.children && nav.children.length > 0) {
                 return (
                   <Nav.SubNav
                     triggerType="click"
                     key={index}
-                    title={
+                    title={(
                       <span>
                         {nav.icon ? (
                           <FoundationSymbol size="small" type={nav.icon} />
                         ) : null}
                         <span>{nav.name}</span>
                       </span>
-                    }
+                    )}
                   >
                     {nav.children.map((item) => {
                       const linkProps = {};

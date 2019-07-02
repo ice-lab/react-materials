@@ -44,8 +44,7 @@ export default function FilterTag({ onChange }) {
             <div className={styles.filterLabel}>{item.label}:</div>
             <div className={styles.filterList}>
               {item.value.map((text, idx) => {
-                const activeStyle =
-                  item.selected === text ? styles.activeText : styles.filterText;
+                const activeStyle = item.selected === text ? styles.activeText : styles.filterText;
                 return (
                   <span
                     onClick={() => handleClick(text, index)}

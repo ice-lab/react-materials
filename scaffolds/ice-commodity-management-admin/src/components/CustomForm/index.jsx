@@ -82,15 +82,24 @@ function CustomForm(props) {
 
   const renderFromItem = (config) => {
     return config.map((item) => {
-      if (item.component === 'Input') {
-        return renderInput(item);
-      } else if (item.component === 'Checkbox') {
-        return renderCheckbox(item);
-      } else if (item.component === 'Select') {
-        return renderSelect(item);
-      } else if (item.component === 'RangePicker') {
-        return renderDatePicker(item);
+      let content = null;
+      switch (item.component) {
+        case 'Input':
+          content = renderInput(item);
+          break;
+        case 'Checkbox':
+          content = renderCheckbox(item);
+          break;
+        case 'Select':
+          content = renderSelect(item);
+          break;
+        case 'RangePicker':
+          content = renderDatePicker(item);
+          break;
+        default:
+          break;
       }
+      return content;
     });
   };
 
@@ -125,8 +134,6 @@ function CustomForm(props) {
     </div>
   );
 }
-
-CustomForm.displayName = 'CustomForm';
 
 CustomForm.propTypes = {
   value: PropTypes.object.isRequired,
