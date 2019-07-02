@@ -1,5 +1,5 @@
 import React from 'react';
-import TopBar from '../../components/TopBar';
+import TopBar from '@/components/TopBar';
 import InfoForm from './components/InfoForm';
 
 export default function Setting() {

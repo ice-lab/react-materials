@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Tab } from '@alifd/next';
-import SmallCard from './../../../../components/SmallCard';
+import SmallCard from '@/components/SmallCard';
 
 const TabPane = Tab.Item;
 

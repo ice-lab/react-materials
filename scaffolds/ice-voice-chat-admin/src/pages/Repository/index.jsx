@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Input, Button, Icon, Dialog, Message } from '@alifd/next';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
-import SmallCard from '../../components/SmallCard';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
+import SmallCard from '@/components/SmallCard';
 import styles from './index.module.scss';
 
 export default function Repository() {

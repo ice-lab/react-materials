@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import GeneralizationTable from './components/GeneralizationTable';
 
 // MOCK 数据，实际业务按需进行替换

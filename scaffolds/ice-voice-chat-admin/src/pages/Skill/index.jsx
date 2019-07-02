@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Message } from '@alifd/next';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import Tabs from './components/Tabs';
 
 const mockData = [

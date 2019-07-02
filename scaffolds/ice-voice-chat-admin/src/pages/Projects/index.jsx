@@ -1,8 +1,8 @@
 /* eslint no-mixed-operators:0 */
 import React, { useState } from 'react';
 import { Input } from '@alifd/next';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import Card from './components/Card';
 
 const ICONS = ['box', 'process', 'electronics', 'favorite', 'lights', 'auto'];
@@ -42,12 +42,12 @@ export default function Projects() {
   return (
     <div>
       <TopBar
-        extraBefore={
+        extraBefore={(
           <Input
             placeholder="请输入关键字进行搜索"
             style={{ width: '240px' }}
           />
-        }
+        )}
         extraAfter={<GeneralDialog buttonText="新建项目" getFormValue={getFormValue} />}
       />
       <Card data={cardData} />

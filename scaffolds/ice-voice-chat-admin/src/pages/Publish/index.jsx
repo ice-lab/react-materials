@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dialog } from '@alifd/next';
-import TopBar from '../../components/TopBar';
+import TopBar from '@/components/TopBar';
 import PublishTable from './components/PublishTable';
 import Overview from './components/Overview';
 import styles from './index.module.scss';
@@ -38,4 +38,3 @@ export default function Projects() {
     </div>
   );
 }
-

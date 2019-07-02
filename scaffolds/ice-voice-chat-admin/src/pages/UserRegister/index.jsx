@@ -118,9 +118,7 @@ function UserRegister(props) {
             <IceFormBinder
               name="rePasswd"
               required
-              validator={(rule, values, callback) =>
-                checkPasswd2(rule, values, callback, formData)
-              }
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, formData)}
             >
               <Input
                 htmlType="password"

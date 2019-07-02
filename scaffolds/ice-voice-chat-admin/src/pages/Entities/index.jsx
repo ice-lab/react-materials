@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import EntitlesTable from './components/EntitlesTable';
 import mockdata from './data';
 

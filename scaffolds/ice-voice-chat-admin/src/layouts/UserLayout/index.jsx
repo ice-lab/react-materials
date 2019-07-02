@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default function UserLayout(props) {
+export default function UserLayout({ children }) {
   return (
     <div className={styles.container}>
       <Row wrap className={styles.row}>
@@ -15,7 +15,7 @@ export default function UserLayout(props) {
         </Col>
         <Col l="12">
           <div className={styles.form}>
-            {props.children}
+            {children}
           </div>
         </Col>
       </Row>

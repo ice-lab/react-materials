@@ -5,7 +5,7 @@ import Aside from './components/Aside';
 import Footer from './components/Footer';
 import styles from './index.module.scss';
 
-export default function BasicLayout(props) {
+export default function BasicLayout({ children }) {
   return (
     <Layout
       fixable
@@ -19,7 +19,7 @@ export default function BasicLayout(props) {
           <Aside />
         </Layout.Aside>
         <Layout.Main scrollable>
-          {props.children}
+          {children}
           <Footer />
         </Layout.Main>
       </Layout.Section>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import FunctionTable from './components/FunctionTable';
 import mockdata from './data';
 
