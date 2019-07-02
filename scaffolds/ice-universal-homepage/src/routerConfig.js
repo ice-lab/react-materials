@@ -2,13 +2,20 @@
 // 你可以调整 routerConfig 里的内容
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
-import HomePage from './pages/HomePage';
+import HomePage from '@/pages/HomePage';
+import BlankLayout from '@/layouts/BlankLayout';
 
 const routerConfig = [
   {
     path: '/',
-    component: HomePage,
-  },
+    component: BlankLayout,
+    children: [
+      {
+        path: '/',
+        component: HomePage,
+      }
+    ]
+  }
 ];
 
 export default routerConfig;

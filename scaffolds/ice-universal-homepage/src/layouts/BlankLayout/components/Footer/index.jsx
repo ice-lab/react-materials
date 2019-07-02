@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 
 const { Row, Col } = Grid;
 
-const Footer = () => {
+export default function Footer() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -37,5 +37,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;
