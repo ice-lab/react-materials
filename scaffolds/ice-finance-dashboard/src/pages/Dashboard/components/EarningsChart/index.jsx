@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import CountUp from 'react-countup';
 import ContainerCard from '../../../../components/ContainerCard';
@@ -21,48 +21,46 @@ const cols = {
   earnings: { tickInterval: 20, alias: '总收入' },
 };
 
-export default class EarningsChart extends Component {
-  render() {
-    return (
-      <ContainerCard contentStyle={{ padding: '10px 20px' }}>
-        <div style={styles.head}>
-          <h3 style={styles.title}>总收入</h3>
-          <p style={styles.description}>2018年12月份总收入：</p>
-          <h1 style={styles.earnings}>
-            ￥ <CountUp start={0} end="6723918" />
-          </h1>
-          <p style={styles.description}>28.12% (￥ 23,945)</p>
-        </div>
-        <div style={styles.content}>
-          <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
-            <Tooltip
-              crosshairs={{
-                type: 'y',
-              }}
-            />
-            <Geom
-              type="interval"
-              position="month*earnings"
-              color="#ee706d"
-              shape="smooth"
-            />
-          </Chart>
-        </div>
-        <div style={styles.footer}>
-          <p style={styles.description}>2019年01月份总收入：</p>
-          <h1
-            style={{
-              ...styles.earnings,
-              color: '#447eff',
+export default function EarningsChart() {
+  return (
+    <ContainerCard contentStyle={{ padding: '10px 20px' }}>
+      <div style={styles.head}>
+        <h3 style={styles.title}>总收入</h3>
+        <p style={styles.description}>2018年12月份总收入：</p>
+        <h1 style={styles.earnings}>
+          ￥ <CountUp start={0} end="6723918" />
+        </h1>
+        <p style={styles.description}>28.12% (￥ 23,945)</p>
+      </div>
+      <div style={styles.content}>
+        <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
+          <Tooltip
+            crosshairs={{
+              type: 'y',
             }}
-          >
-            ￥ <CountUp start={0} end="2238831" />
-          </h1>
-          <p style={styles.description}>11.83% (￥ 38,237)</p>
-        </div>
-      </ContainerCard>
-    );
-  }
+          />
+          <Geom
+            type="interval"
+            position="month*earnings"
+            color="#ee706d"
+            shape="smooth"
+          />
+        </Chart>
+      </div>
+      <div style={styles.footer}>
+        <p style={styles.description}>2019年01月份总收入：</p>
+        <h1
+          style={{
+            ...styles.earnings,
+            color: '#447eff',
+          }}
+        >
+          ￥ <CountUp start={0} end="2238831" />
+        </h1>
+        <p style={styles.description}>11.83% (￥ 38,237)</p>
+      </div>
+    </ContainerCard>
+  );
 }
 
 const styles = {

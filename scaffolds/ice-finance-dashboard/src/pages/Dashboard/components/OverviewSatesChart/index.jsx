@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import CountUp from 'react-countup';
 import ColumnChart from '../ColumnChart';
@@ -84,54 +84,52 @@ const MOCK_DATA = [
   },
 ];
 
-export default class OverviewSatesChart extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <Row wrap gutter={20}>
-          {MOCK_DATA.map((item, index) => {
-            const col = item.footer ? 4 : 8;
-            return (
-              <Col xxs="24" l={col} key={index}>
-                <ContainerCard>
-                  <div className={styles.summary}>
-                    <p className={styles.title}>{item.title}</p>
-                    <div className={styles.data}>
-                      <h2 className={styles.amount}>
-                        <CountUp start={0} end={item.amount} />万
-                      </h2>
-                      <div className={styles.percent}>
-                        {item.percent}{' '}
-                        <Icon
-                          type={`arrow-${
-                            item.increase ? 'up' : 'down'
-                          }-filling`}
-                          size="xs"
-                          className={styles.arrowIcon}
-                        />
-                      </div>
+export default function OverviewSatesChart() {
+  return (
+    <div className={styles.container}>
+      <Row wrap gutter={20}>
+        {MOCK_DATA.map((item, index) => {
+          const col = item.footer ? 4 : 8;
+          return (
+            <Col xxs="24" l={col} key={index}>
+              <ContainerCard>
+                <div className={styles.summary}>
+                  <p className={styles.title}>{item.title}</p>
+                  <div className={styles.data}>
+                    <h2 className={styles.amount}>
+                      <CountUp start={0} end={item.amount} />万
+                    </h2>
+                    <div className={styles.percent}>
+                      {item.percent}{' '}
+                      <Icon
+                        type={`arrow-${
+                          item.increase ? 'up' : 'down'
+                        }-filling`}
+                        size="xs"
+                        className={styles.arrowIcon}
+                      />
                     </div>
                   </div>
-                  {item.footer && Array.isArray(item.footer) ? (
-                    <div className={styles.footer}>
-                      {item.footer.map((info, idx) => {
-                        return (
-                          <div className={styles.itemBody} key={idx}>
-                            <div className={styles.itemLabel}>{info.label}</div>
-                            <div className={styles.itemValue}>{info.value}</div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <ColumnChart color={item.background} />
-                  )}
-                </ContainerCard>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+                </div>
+                {item.footer && Array.isArray(item.footer) ? (
+                  <div className={styles.footer}>
+                    {item.footer.map((info, idx) => {
+                      return (
+                        <div className={styles.itemBody} key={idx}>
+                          <div className={styles.itemLabel}>{info.label}</div>
+                          <div className={styles.itemValue}>{info.value}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <ColumnChart color={item.background} />
+                )}
+              </ContainerCard>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }

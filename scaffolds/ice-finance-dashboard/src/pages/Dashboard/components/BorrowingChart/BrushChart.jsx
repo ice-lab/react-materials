@@ -1,5 +1,5 @@
 /* eslint react/no-multi-comp:0, no-shadow:0, no-new:0 */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 import DataSet from '@antv/data-set';
 import Brush from '@antv/g2-brush';
@@ -37,8 +37,8 @@ function getComponent(data) {
   };
   let chart2;
 
-  class DoubleChart extends React.Component {
-    componentDidMount() {
+  function DoubleChart() {
+    useEffect(() => {
       new Brush({
         canvas: chart2.get('canvas'),
         chart: chart2,
@@ -55,62 +55,57 @@ function getComponent(data) {
           ds.setState('dates', date);
         },
       });
-    }
-
-    render() {
-      return (
-        <div>
-          <Chart
-            height={400}
-            data={data}
-            padding={[40, 40, 40, 80]}
-            scale={scale}
-            onGetG2Instance={(g2Chart) => {
-              chart2 = g2Chart;
+    }, []);
+    return (
+      <div>
+        <Chart
+          height={400}
+          data={data}
+          padding={[40, 40, 40, 80]}
+          scale={scale}
+          onGetG2Instance={(g2Chart) => {
+            chart2 = g2Chart;
+          }}
+          forceFit
+        >
+          <Tooltip />
+          <Axis
+            name="price"
+            label={{
+              textStyle: {
+                fill: '#fff',
+              },
             }}
-            forceFit
-          >
-            <Tooltip />
-            <Axis
-              name="price"
-              label={{
-                textStyle: {
-                  fill: '#fff',
-                },
-              }}
-            />
-            <Axis
-              name="date"
-              label={{
-                textStyle: {
-                  fill: '#fff',
-                },
-              }}
-            />
-            <Geom
-              type="area"
-              position="date*price"
-              shape="smooth"
-              acitve={false}
-              opacity={0.85}
-            />
-          </Chart>
-        </div>
-      );
-    }
+          />
+          <Axis
+            name="date"
+            label={{
+              textStyle: {
+                fill: '#fff',
+              },
+            }}
+          />
+          <Geom
+            type="area"
+            position="date*price"
+            shape="smooth"
+            acitve={false}
+            opacity={0.85}
+          />
+        </Chart>
+      </div>
+    );
   }
   return DoubleChart;
 }
 
-class Brushdsstate extends React.Component {
-  render() {
-    const DoubleChart = getComponent(data);
-    return (
-      <div>
-        <DoubleChart />
-      </div>
-    );
-  }
+function Brushdsstate() {
+  const DoubleChart = getComponent(data);
+  return (
+    <div>
+      <DoubleChart />
+    </div>
+  );
 }
 
 export default Brushdsstate;
