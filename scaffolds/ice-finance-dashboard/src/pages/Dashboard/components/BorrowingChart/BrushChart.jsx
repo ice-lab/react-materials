@@ -1,12 +1,11 @@
-/* eslint react/no-multi-comp:0, no-shadow:0, no-new:0 */
 import React, { useEffect } from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 import DataSet from '@antv/data-set';
 import Brush from '@antv/g2-brush';
 import $ from 'jquery';
-import data from './mock.json';
+import dataSource from './mock.json';
 
-function getComponent(data) {
+function getComponent(chartData) {
   $('#mountNode').html('<div id="canvas1"></div><div id="canvas2"></div>');
   const ds = new DataSet({
     state: {
@@ -14,7 +13,7 @@ function getComponent(data) {
     },
   });
   const dv = ds.createView();
-  dv.source(data).transform({
+  dv.source(chartData).transform({
     type: 'filter',
     callback: (obj) => {
       if (ds.state.dates) {
@@ -39,6 +38,7 @@ function getComponent(data) {
 
   function DoubleChart() {
     useEffect(() => {
+      // eslint-disable-next-line no-new
       new Brush({
         canvas: chart2.get('canvas'),
         chart: chart2,
@@ -60,7 +60,7 @@ function getComponent(data) {
       <div>
         <Chart
           height={400}
-          data={data}
+          data={chartData}
           padding={[40, 40, 40, 80]}
           scale={scale}
           onGetG2Instance={(g2Chart) => {
@@ -100,7 +100,7 @@ function getComponent(data) {
 }
 
 function Brushdsstate() {
-  const DoubleChart = getComponent(data);
+  const DoubleChart = getComponent(dataSource);
   return (
     <div>
       <DoubleChart />

@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   z-index: 0;
   padding: 0 20px 20px;
+
   &::before {
     position: absolute;
     content: '';
@@ -20,6 +21,7 @@
     opacity: 1;
     z-index: 1;
   }
+
   .blankLayoutContent {
     position: relative;
     z-index: 2;
