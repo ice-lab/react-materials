@@ -3,6 +3,7 @@
   left: 0;
   right: 0;
   z-index: 999;
+
   .headercontent {
     max-width: 1200px;
     width: 100%;
@@ -11,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
   }
+
   .headernavbar {
     display: flex;
     flex-direction: row;
