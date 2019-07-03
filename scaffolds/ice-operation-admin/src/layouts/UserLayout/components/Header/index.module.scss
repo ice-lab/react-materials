@@ -1,4 +1,13 @@
+.subNavs {
+  position: absolute;
+  left: 0;
+  width: 140px;
+  background: #272b2f;
+}
+
 .navMenu {
+  position: relative;
+
   .arrowUpIcon,
   .arrowDownIcon {
     position: absolute !important;
@@ -7,30 +16,34 @@
     z-index: 1 !important;
     transition: 0.3s ease !important;
   }
+
   .subNavs,
   .arrowUpIcon {
     display: none !important;
   }
+
   &:hover {
     background: #272b2f;
+
     .subNavs,
     .arrowUpIcon {
       display: block !important;
     }
+
     .arrowDownIcon {
       display: none !important;
     }
   }
 }
 
-
-.container{
+.container {
   height: 60px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-between;
 }
-.logoLink{
+
+.logoLink {
   display: flex !important;
   align-items: center !important;
   font-size: 24px !important;
@@ -38,13 +51,12 @@
   padding-left: 20px !important;
   color: #fff !important;
 }
-.navs{
+
+.navs {
   display: flex;
 }
-.navMenu{
-  position: relative;
-}
-.navLink{
+
+.navLink {
   display: block;
   height: 60px;
   line-height: 60px;
@@ -53,37 +65,35 @@
   color: #fff;
   text-decoration: none;
 }
-.NavIconLink{
+
+.NavIconLink {
   padding: 0 30px;
 }
-.subNavs{
-  position: absolute;
-  left: 0;
-  width: 140px;
-  background: #272B2F;
-}
-.subNavMenu{
+
+.subNavMenu {
   height: 38px;
   line-height: 38px;
 }
-.subNavLink{
+
+.subNavLink {
   padding-left: 12px;
   display: block;
   color: #fff;
   font-size: 14px;
 }
-.internationalImg{
+
+.internationalImg {
   width: 16px;
   height: 16px;
   position: absolute;
   left: 10px;
   top: 22px;
 }
-.hb{
+
+.hb {
   display: block;
   height: 60px;
   line-height: 60px;
-  padding: 0 20px;
   font-size: 15px;
   color: #fff;
   text-decoration: none;

@@ -12,7 +12,7 @@ scaffolds/ice-monitor-dashboard
 scaffolds/ice-commodity-management-admin
 scaffolds/ice-open-platform-landingpage
 scaffolds/ice-contract-management-admin
-scaffolds/ice-operation-admin
+# scaffolds/ice-operation-admin
 scaffolds/ice-creator-admin
 scaffolds/ice-order-management-admin
 scaffolds/ice-creator-landingpage

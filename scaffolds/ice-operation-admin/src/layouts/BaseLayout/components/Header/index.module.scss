@@ -6,29 +6,34 @@
   color: #999;
   display: flex;
   align-items: center;
+
   :global {
     .next-nav {
       margin-left: 40px;
       background: transparent;
+
       .next-menu-item {
         margin-right: 1px solid $color-white;
       }
     }
   }
-  
+
   .headerUserpannel {
     position: absolute;
     right: 20px;
     color: $color-white;
     display: flex;
     align-items: center;
+
     .userAvatar {
       width: 40px;
       height: 40px;
       margin-right: 10px;
     }
+
     .userName {
       cursor: pointer;
+
       .headerArrow {
         margin-left: 5px;
       }

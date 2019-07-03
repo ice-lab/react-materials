@@ -1,4 +1,3 @@
-/* eslint arrow-parens:0 */
 import React from 'react';
 import Layout from '@icedesign/layout';
 import { Icon, Balloon, Nav } from '@alifd/next';
@@ -9,7 +8,7 @@ import styles from './index.module.scss';
 
 function Header(props) {
   function getSelectKeys() {
-    const selectKeys = props.location.pathname.split('/').filter((i) => i);
+    const selectKeys = props.location.pathname.split('/').filter(i => i);
     if (selectKeys.length === 0) {
       selectKeys.push('home');
     }
