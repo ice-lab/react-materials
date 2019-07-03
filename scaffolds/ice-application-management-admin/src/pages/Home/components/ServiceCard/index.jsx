@@ -38,7 +38,7 @@ export default function ServiceCard() {
         return (
           <Col l="12" key={index}>
             <IceContainer style={styles.container}>
-              <a href="#/app" >
+              <a href="#/app">
                 <div style={styles.body}>
                   <h5 style={styles.name}>{item.name}</h5>
                   <p style={styles.desc}>{item.desc}</p>

@@ -17,7 +17,7 @@ export default function Footer() {
       <div style={styles.copyright}>阿里巴巴集团 © 2018 版权所有</div>
     </div>
   );
-};
+}
 
 const styles = {
   footer: {

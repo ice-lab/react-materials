@@ -105,4 +105,4 @@ export default function Overview() {
       </Row>
     </IceContainer>
   );
-};
+}

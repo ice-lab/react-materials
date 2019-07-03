@@ -25,15 +25,15 @@ function Header(props) {
             defaultSelectedKeys={[pathname]}
             direction="hoz"
           >
-            {headerMenuConfig &&
-              headerMenuConfig.length > 0 &&
-              headerMenuConfig.map((nav, index) => {
+            {headerMenuConfig
+              && headerMenuConfig.length > 0
+              && headerMenuConfig.map((nav, index) => {
                 if (nav.children && nav.children.length > 0) {
                   return (
                     <SubNav
                       triggerType="click"
                       key={index}
-                      title={
+                      title={(
                         <span>
                           {nav.icon ? (
                             <FoundationSymbol size="small" type={nav.icon} />
@@ -42,7 +42,7 @@ function Header(props) {
                             {nav.name}
                           </span>
                         </span>
-                      }
+)}
                     >
                       {nav.children.map((item, idx) => {
                         const linkProps = {};
@@ -109,7 +109,7 @@ function Header(props) {
               })}
           </Nav>
           <Balloon
-            trigger={
+            trigger={(
               <div
                 className={styles['ice-design-header-userpannel']}
                 style={{
@@ -127,7 +127,7 @@ function Header(props) {
                 <div className={styles['user-profile']}>
                   <span
                     className={styles['user-name']}
-                    style={{ fontSize: '13px', }}
+                    style={{ fontSize: '13px' }}
                   >
                     淘小宝
                   </span>
@@ -140,7 +140,7 @@ function Header(props) {
                   className={styles['icon-down']}
                 />
               </div>
-            }
+)}
             closable={false}
             className={styles['user-profile-menu']}
           >

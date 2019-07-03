@@ -18,7 +18,7 @@ export default function Filter(props) {
         <Row wrap>
           <Col xxs={24} xs={12} l={8} style={styles.filterCol}>
             <label style={styles.filterTitle}>应用名</label>
-            <IceFormBinder name="app" >
+            <IceFormBinder name="app">
               <Input />
             </IceFormBinder>
           </Col>

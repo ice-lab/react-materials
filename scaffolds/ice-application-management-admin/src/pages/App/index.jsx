@@ -11,7 +11,7 @@ const { Row, Col } = Grid;
 
 export default function App() {
   return (
-    <div className="app-page" >
+    <div className="app-page">
       <OverView />
       <Row gutter="20">
         <Col>
@@ -25,4 +25,4 @@ export default function App() {
       <BaseInfo />
     </div>
   );
-};
+}

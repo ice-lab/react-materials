@@ -26,7 +26,7 @@ function RouteItem(props) {
       path={routePath}
     />
   );
-};
+}
 
 const router = () => {
   return (

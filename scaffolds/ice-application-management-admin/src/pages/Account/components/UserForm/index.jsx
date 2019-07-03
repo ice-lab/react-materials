@@ -56,7 +56,7 @@ export default function UserForm() {
               <Col s="12" l="10">
                 <IceFormBinder name="operationType">
                   <Select
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                     value={formValue.operationType}
                     dataSource={[
                       { label: '账号添加', value: 'add' },
@@ -75,7 +75,7 @@ export default function UserForm() {
               <Col s="12" l="10">
                 <IceFormBinder name="os">
                   <Select
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                     value={formValue.os}
                     dataSource={[{ label: 'Linux', value: 'Linux' }]}
                   />
@@ -91,7 +91,7 @@ export default function UserForm() {
               <Col s="12" l="10">
                 <IceFormBinder name="permission">
                   <Select
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                     value={formValue.permission}
                     dataSource={[
                       { label: '一般用户', value: '1' },
@@ -111,7 +111,7 @@ export default function UserForm() {
               <Col s="12" l="10">
                 <IceFormBinder name="term">
                   <Select
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                     value={formValue.term}
                     dataSource={[
                       { label: '一周', value: 'week' },
@@ -135,7 +135,7 @@ export default function UserForm() {
                   message="请输入申请内容"
                 >
                   <Input.TextArea
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                     value={formValue.content}
                     placeholder="请输入机器ip，支持多个，逗号或换行分割"
                   />
@@ -156,7 +156,7 @@ export default function UserForm() {
                 >
                   <Input.TextArea
                     value={formValue.reason}
-                    style={{ width: '100%', }}
+                    style={{ width: '100%' }}
                   />
                 </IceFormBinder>
                 <IceFormError name="reason" />
@@ -165,7 +165,7 @@ export default function UserForm() {
           </div>
         </IceFormBinderWrapper>
 
-        <Row style={{ marginTop: 20, }}>
+        <Row style={{ marginTop: 20 }}>
           <Col offset="3">
             <Button type="primary" onClick={validateAllFormField}>
               提 交
@@ -175,7 +175,7 @@ export default function UserForm() {
       </IceContainer>
     </div>
   );
-};
+}
 
 const styles = {
   formContent: {

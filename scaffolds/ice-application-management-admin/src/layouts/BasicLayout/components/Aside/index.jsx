@@ -11,9 +11,9 @@ function Aside(props) {
 
   return (
     <Nav selectedKeys={[pathname]} mode="inline" className="ice-menu-custom">
-      {asideMenuConfig &&
-        asideMenuConfig.length > 0 &&
-        asideMenuConfig.map((nav, index) => {
+      {asideMenuConfig
+        && asideMenuConfig.length > 0
+        && asideMenuConfig.map((nav, index) => {
           if (nav.children && nav.children.length > 0) {
             return (
               <SubNav key={index} title={<span>{nav.name}</span>}>
