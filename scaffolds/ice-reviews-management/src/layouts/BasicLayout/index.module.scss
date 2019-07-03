@@ -1,0 +1,14 @@
+.iceLayout {
+  min-width: 1200px;
+
+  :global {
+    .ice-layout-main {
+      padding: 0;
+      background: #f2f2f2;
+    }
+  }
+}
+
+.mainContainer {
+  padding: 20px;
+}

@@ -29,7 +29,7 @@ scaffolds/ice-order-management-admin
 scaffolds/ice-creator-landingpage
 scaffolds/ice-project-management-admin
 scaffolds/ice-customer-analysis-admin
-scaffolds/ice-reviews-management
+# scaffolds/ice-reviews-management
 scaffolds/ice-design-analysis
 scaffolds/ice-scroll-screen-homepage
 scaffolds/ice-design-cms

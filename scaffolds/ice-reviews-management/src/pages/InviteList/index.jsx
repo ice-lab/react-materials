@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Overview from './components/Overview';
 import MemberList from './components/MemberList';
 
-export default class InviteList extends Component {
-  render() {
-    return (
-      <div>
-        <Overview />
-        <MemberList />
-      </div>
-    );
-  }
+export default function InviteList() {
+  return (
+    <div>
+      <Overview />
+      <MemberList />
+    </div>
+  );
 }
