@@ -8,17 +8,20 @@
     padding-top: 20px;
     border-radius: 6px;
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
-  
+
     :global {
+      .next-menu-item {
+        color: #fff !important;
+      }
+
       .next-menu-sub-menu {
         background: #2c2e39;
+
         .next-menu-item {
           -webkit-font-smoothing: antialiased;
         }
       }
-      .next-menu-item {
-        color: #fff !important;
-      }
+
       .next-selected {
         background: #447eff !important;
       }
@@ -34,5 +37,3 @@
   justify-content: center;
   background: #2f323f;
 }
-
-
