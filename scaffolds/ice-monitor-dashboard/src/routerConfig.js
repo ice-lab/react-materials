@@ -12,6 +12,7 @@ import NotFound from '@/components/NotFound';
 
 const routerConfig = [{
   path: '/account',
+  component: UserLayout,
   children: [
     {
       path: '/login',
