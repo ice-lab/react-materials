@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React from 'react';
 import { Grid, DatePicker, Select } from '@alifd/next';
 import {

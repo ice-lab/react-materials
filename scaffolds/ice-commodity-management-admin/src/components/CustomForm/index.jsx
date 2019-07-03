@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox, Input, Button, Grid, Select, DatePicker } from '@alifd/next';
@@ -136,7 +135,9 @@ function CustomForm(props) {
 }
 
 CustomForm.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   config: PropTypes.array.isRequired,
   handleSubmit: PropTypes.func,
   formChange: PropTypes.func,

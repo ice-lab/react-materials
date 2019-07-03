@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React from 'react';
 import { DatePicker, Button } from '@alifd/next';
 import {

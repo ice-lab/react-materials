@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0,react/forbid-prop-types:0 */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from '@alifd/next';
@@ -66,7 +65,9 @@ const styles = {
 };
 
 SearchFilter.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   formConfig: PropTypes.array.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.object.isRequired,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
