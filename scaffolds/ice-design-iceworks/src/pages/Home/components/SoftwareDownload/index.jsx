@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Message } from '@alifd/next';
 import styles from './index.module.scss';
 
-export default () => {
+export default function SoftwareDownload() {
   return (
     <div className={styles.wrapperContainer}>
       <div className={styles.bgImage2} />
@@ -50,4 +50,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

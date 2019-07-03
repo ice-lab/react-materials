@@ -1,4 +1,4 @@
-.blank-layout {
+.blankLayout {
   min-height: 100vh;
   min-width: 1200px;
   // background-image: url(https://img.alicdn.com/tfs/TB1T_EKC4TpK1RjSZFGXXcHqFXa-5751-3871.jpg);
@@ -8,6 +8,7 @@
   background-repeat: no-repeat;
   z-index: 0;
   padding: 0 20px 20px;
+
   &::before {
     position: absolute;
     content: '';
@@ -20,7 +21,8 @@
     opacity: 1;
     z-index: 1;
   }
-  &-content {
+
+  .blankLayoutContent {
     position: relative;
     z-index: 2;
   }
