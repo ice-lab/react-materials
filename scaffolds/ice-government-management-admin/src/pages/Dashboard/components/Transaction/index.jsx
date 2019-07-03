@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Message } from '@alifd/next';
 import goalIcon from './images/goal.svg';
 import linkIcon from './images/link.svg';
@@ -61,42 +61,41 @@ const mockData = [
   },
 ];
 
-export default class Transaction extends Component {
-  handleClick = () => {
+export default function Transaction() {
+  const handleClick = () => {
     Message.success('可以使用 Iceworks 按需添加页面');
   };
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h4 className={styles.title}>任务区</h4>
-          <div className={styles.content}>
-            {mockData.map((item, index) => {
-              return (
+  return (
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h4 className={styles.title}>任务区</h4>
+        <div className={styles.content}>
+          {mockData.map((item, index) => {
+            return (
+              <div
+                className={styles.item}
+                key={index}
+                onClick={handleClick}
+              >
                 <div
-                  className={styles.item}
-                  key={index}
-                  onClick={this.handleClick}
+                  className={styles.image}
+                  style={{
+                    background: `${item.backgroundColor}`,
+                  }}
                 >
-                  <div
-                    className={styles.image}
-                    style={{
-                      background: `${item.backgroundColor}`,
-                    }}
-                  >
-                    <img src={item.img} className={styles.iconImage} alt="" />
-                  </div>
-                  <p className={styles.itemTitle}>
-                    {item.title}{' '}
-                    <span className={styles.count}>{item.count}</span>
-                  </p>
+                  <img src={item.img} className={styles.iconImage} alt="" />
                 </div>
-              );
-            })}
-          </div>
+                <p className={styles.itemTitle}>
+                  {item.title}
+                  {' '}
+                  <span className={styles.count}>{item.count}</span>
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

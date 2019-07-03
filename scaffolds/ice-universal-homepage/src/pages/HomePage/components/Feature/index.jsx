@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -27,33 +27,20 @@ const dataSource = [
   },
 ];
 
-export default class Feature extends Component {
-  static displayName = 'Feature';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <Row wrap className={styles.content}>
-          {dataSource.map((item, index) => {
-            return (
-              <Col xxs="12" s="6" l="6" key={index} className={styles.item}>
-                <img src={item.pic} className={styles.pic} alt="" />
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.desc}>{item.desc}</p>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+export default function Feature() {
+  return (
+    <div className={styles.container}>
+      <Row wrap className={styles.content}>
+        {dataSource.map((item, index) => {
+          return (
+            <Col xxs="12" s="6" l="6" key={index} className={styles.item}>
+              <img src={item.pic} className={styles.pic} alt="" />
+              <h3 className={styles.title}>{item.title}</h3>
+              <p className={styles.desc}>{item.desc}</p>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }

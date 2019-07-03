@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Dialog, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { withRouter } from 'react-router-dom';
@@ -189,13 +189,12 @@ const mockData = Array.from({ length: 10 }).map(() => {
   };
 });
 
-@withRouter
-export default class OrderList extends Component {
-  handleClick = () => {
-    this.props.history.push('add/goods');
+function OrderList(props) {
+  const handleClick = () => {
+    props.history.push('add/goods');
   };
 
-  renderState = (value) => {
+  const renderState = (value) => {
     return (
       <div className={styles.state}>
         <span className={styles.stateText}>{value}</span>
@@ -203,35 +202,35 @@ export default class OrderList extends Component {
     );
   };
 
-  handleDelete = () => {
+  const handleDelete = () => {
     Dialog.confirm({
       title: '提示',
       content: '确认删除吗',
     });
   };
 
-  handleDetail = () => {
+  const handleDetail = () => {
     Dialog.confirm({
       title: '提示',
       content: '只有管理员才能查看具体的订单信息',
     });
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
-        <Button text onClick={this.handleDetail}>
+        <Button text onClick={handleDetail}>
           查看
         </Button>
         <span className={styles.separator} />
-        <Button text onClick={this.handleDelete}>
+        <Button text onClick={handleDelete}>
           删除
         </Button>
       </div>
     );
   };
 
-  getTableColumns = () => {
+  const getTableColumns = () => {
     return [
       {
         title: '订单编号',
@@ -274,36 +273,35 @@ export default class OrderList extends Component {
         title: '订单状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
       },
       {
         title: '操作',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
       },
     ];
   };
 
-  render() {
-    return (
-      <div>
-        <PageHead
-          title="订单管理"
-          buttonText="添加订单"
-          onClick={this.handleClick}
+  return (
+    <div>
+      <PageHead
+        title="订单管理"
+        buttonText="添加订单"
+        onClick={handleClick}
+      />
+      <IceContainer>
+        <CustomTable
+          columns={getTableColumns()}
+          dataSource={mockData}
+          searchQueryHistory={defaultSearchQuery}
+          formConfig={formConfig}
+          hasAdvance
         />
-        <IceContainer>
-          <CustomTable
-            columns={this.getTableColumns()}
-            dataSource={mockData}
-            searchQueryHistory={defaultSearchQuery}
-            formConfig={formConfig}
-            hasAdvance
-          />
-        </IceContainer>
-      </div>
-    );
-  }
+      </IceContainer>
+    </div>
+  );
 }
 
+export default withRouter(OrderList);

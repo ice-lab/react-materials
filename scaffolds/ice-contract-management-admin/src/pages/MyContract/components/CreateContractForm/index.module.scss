@@ -1,0 +1,20 @@
+.formContainer {
+  padding: 0 40px;
+}
+
+.formItem {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.formLabel {
+  width: 100px;
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}

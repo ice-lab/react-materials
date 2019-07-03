@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
 
@@ -26,61 +26,59 @@ dv.transform({
   value: '完成率',
 });
 
-export default class GroupedBarChart extends Component {
-  formatAxis = (text) => {
+export default function GroupedBarChart() {
+  const formatAxis = (text) => {
     return `${text}%`;
   };
 
-  onTooltipChange = (event) => {
+  const onTooltipChange = (event) => {
     event.items.forEach((item) => {
       item.value += '%';
     });
   };
 
-  render() {
-    return (
-      <Chart
-        width={280}
-        height={220}
-        data={dv}
-        padding={[40, 8, 40, 40]}
-        onTooltipChange={this.onTooltipChange}
-      >
-        <Axis
-          name="工作指标"
-          label={{
-            offset: 4,
-            textStyle: {
-              textAlign: 'center',
-              fill: '#666',
-              fontSize: '12',
-              fontWeight: 'normal',
-              rotate: 0,
-              textBaseline: 'top',
-            },
-            autoRotate: false,
-          }}
-        />
-        <Axis
-          name="完成率"
-          label={{
-            formatter: this.formatAxis,
-          }}
-        />
-        <Legend position="top-center" />
-        <Tooltip crosshairs={{ type: 'y' }} />
-        <Geom
-          type="interval"
-          position="工作指标*完成率"
-          color={['name', ['#5e83fb', '#58ca9a']]}
-          adjust={[
-            {
-              type: 'dodge',
-              marginRatio: 1 / 32,
-            },
-          ]}
-        />
-      </Chart>
-    );
-  }
+  return (
+    <Chart
+      width={280}
+      height={220}
+      data={dv}
+      padding={[40, 8, 40, 40]}
+      onTooltipChange={onTooltipChange}
+    >
+      <Axis
+        name="工作指标"
+        label={{
+          offset: 4,
+          textStyle: {
+            textAlign: 'center',
+            fill: '#666',
+            fontSize: '12',
+            fontWeight: 'normal',
+            rotate: 0,
+            textBaseline: 'top',
+          },
+          autoRotate: false,
+        }}
+      />
+      <Axis
+        name="完成率"
+        label={{
+          formatter: formatAxis,
+        }}
+      />
+      <Legend position="top-center" />
+      <Tooltip crosshairs={{ type: 'y' }} />
+      <Geom
+        type="interval"
+        position="工作指标*完成率"
+        color={['name', ['#5e83fb', '#58ca9a']]}
+        adjust={[
+          {
+            type: 'dodge',
+            marginRatio: 1 / 32,
+          },
+        ]}
+      />
+    </Chart>
+  );
 }

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import Overview from '@/components/Overview';
 import TableFilter from './TableFilter';
-import Overview from '../../../../components/Overview';
 import styles from './index.module.scss';
 
 // Random Numbers
@@ -41,19 +41,17 @@ const getTableData = (length = 10) => {
   });
 };
 
-export default class ChargeBackTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-    overviewData: getOverviewData(),
-  };
+export default function ChargeBackTable() {
+  const [current, setCurrent] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [overviewData, setOverviewData] = useState(getOverviewData());
 
-  componentDidMount() {
-    this.fetchData();
-  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  mockApi = (len) => {
+  const mockApi = (len) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getTableData(len));
@@ -61,72 +59,43 @@ export default class ChargeBackTable extends Component {
     });
   };
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-            overviewData: getOverviewData(),
-          });
-        });
-      }
-    );
+  const fetchData = async (len) => {
+    await setLoading(true);
+    mockApi(len).then((mockData) => {
+      setData(mockData);
+      setLoading(false);
+      setOverviewData(getOverviewData());
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
+    fetchData();
   };
 
-  handleFilterChange = () => {
-    this.fetchData(5);
+  const handleFilterChange = () => {
+    fetchData(5);
   };
 
-  renderOper = () => {
-    return (
-      <div>
-        <a className={styles.link}>详情</a>
-        <span className={styles.separator} />
-        <a className={styles.link}>申请权限</a>
-      </div>
-    );
-  };
-
-  render() {
-    const { isLoading, data, current, overviewData } = this.state;
-
-    return (
-      <div>
-        <TableFilter onChange={this.handleFilterChange} />
-        <Overview data={overviewData} col="3" />
-        <IceContainer>
-          <Table loading={isLoading} dataSource={data} hasBorder={false}>
-            <Table.Column title="退单号" dataIndex="backOrder" />
-            <Table.Column title="客户名称" dataIndex="customerName" />
-            <Table.Column title="下单时间" dataIndex="orderTime" />
-            <Table.Column title="商品编码" dataIndex="commodityCode" />
-            <Table.Column title="商品名称" dataIndex="commodityName" />
-            <Table.Column title="价格" dataIndex="price" />
-          </Table>
-          <Pagination
-            className={styles.pagination}
-            current={current}
-            onChange={this.handlePaginationChange}
-          />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TableFilter onChange={handleFilterChange} />
+      <Overview data={overviewData} col="3" />
+      <IceContainer>
+        <Table loading={isLoading} dataSource={data} hasBorder={false}>
+          <Table.Column title="退单号" dataIndex="backOrder" />
+          <Table.Column title="客户名称" dataIndex="customerName" />
+          <Table.Column title="下单时间" dataIndex="orderTime" />
+          <Table.Column title="商品编码" dataIndex="commodityCode" />
+          <Table.Column title="商品名称" dataIndex="commodityName" />
+          <Table.Column title="价格" dataIndex="price" />
+        </Table>
+        <Pagination
+          className={styles.pagination}
+          current={current}
+          onChange={handlePaginationChange}
+        />
+      </IceContainer>
+    </div>
+  );
 }
-

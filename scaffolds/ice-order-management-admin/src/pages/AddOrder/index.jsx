@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import OrderForm from './components/OrderForm';
 
-export default class AddOrder extends Component {
-  render() {
-    return <OrderForm />;
-  }
+export default function AddOrder() {
+  return <OrderForm />;
 }
