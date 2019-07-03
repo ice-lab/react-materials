@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+export default function Footer() {
   return (
     <div style={styles.footer}>
       <div style={styles.links}>
@@ -17,7 +17,7 @@ export default () => {
       <div style={styles.copyright}>阿里巴巴集团 © 2018 版权所有</div>
     </div>
   );
-};
+}
 
 const styles = {
   footer: {

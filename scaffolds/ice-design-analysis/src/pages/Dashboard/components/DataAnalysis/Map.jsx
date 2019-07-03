@@ -1,5 +1,4 @@
-/* eslint no-plusplus:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import 'echarts/lib/chart/map';
 import 'echarts/map/js/world';
@@ -188,7 +187,7 @@ function formtGCData(geoData, gcData, srcNam, dest) {
 
 function formtVData(geoData, vData, srcNam) {
   const tGeoDt = [];
-  for (let i = 0, len = vData.length; i < len; i++) {
+  for (let i = 0, len = vData.length; i < len; i += 1) {
     const tNam = vData[i].name;
     if (srcNam !== tNam) {
       tGeoDt.push({
@@ -312,23 +311,12 @@ const option = {
   ],
 };
 
-export default class Map extends Component {
-  static displayName = 'Map';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <ReactEcharts option={option} style={{ height: '650px' }} />
-      </div>
-    );
-  }
+export default function ChartMap() {
+  return (
+    <div>
+      <ReactEcharts option={option} style={{ height: '650px' }} />
+    </div>
+  );
 }
+
+ChartMap.displayName = 'ChartMap';

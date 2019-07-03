@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Table, Progress } from '@alifd/next';
 import styles from './index.module.scss';
@@ -91,19 +91,8 @@ const ViewedProducts = [
   },
 ];
 
-export default class TopActiveChart extends Component {
-  static displayName = 'TopActiveChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderProduct = (value, index, record) => {
+export default function TopActiveChart() {
+  const renderProduct = (value, index, record) => {
     return (
       <div className={styles.product}>
         <p className={styles.prodyctTitle}>{record.title}</p>
@@ -111,54 +100,49 @@ export default class TopActiveChart extends Component {
     );
   };
 
-  render() {
-    return (
-      <Row wrap gutter="20">
-        <Col xxs="24" l="14">
-          <IceContainer title="销售最多">
-            <Table
-              dataSource={activePages}
-              hasBorder={false}
-              hasHeader={false}
-              style={{ width: '100%', height: '341px' }}
-            >
-              <Table.Column title="ID" dataIndex="id" width="5%" />
-              <Table.Column title="页面" dataIndex="page" />
-              <Table.Column title="销售数量" dataIndex="amount" />
-              <Table.Column
-                title="销售占比"
-                dataIndex="page"
-                cell={(value, index, record) => (
-                  <Progress percent={record.percent} state={record.state} />
-                )}
-              />
-            </Table>
-          </IceContainer>
-        </Col>
-        <Col xxs="24" l="10">
-          <IceContainer title="浏览最多">
-            <Table
-              dataSource={ViewedProducts}
-              hasBorder={false}
-              hasHeader={false}
-              style={{ width: '100%', height: '341px' }}
-            >
-              <Table.Column
-                title="产品"
-                dataIndex="title"
-                cell={(value, index, record) =>
-                  this.renderProduct(value, index, record)
-                }
-                width="20%"
-              />
-              <Table.Column title="分类" dataIndex="cate" width="20%" />
+  return (
+    <Row wrap gutter="20">
+      <Col xxs="24" l="14">
+        <IceContainer title="销售最多">
+          <Table
+            dataSource={activePages}
+            hasBorder={false}
+            hasHeader={false}
+            style={{ width: '100%', height: '341px' }}
+          >
+            <Table.Column title="ID" dataIndex="id" width="5%" />
+            <Table.Column title="页面" dataIndex="page" />
+            <Table.Column title="销售数量" dataIndex="amount" />
+            <Table.Column
+              title="销售占比"
+              dataIndex="page"
+              cell={(value, index, record) => (
+                <Progress percent={record.percent} state={record.state} />
+              )}
+            />
+          </Table>
+        </IceContainer>
+      </Col>
+      <Col xxs="24" l="10">
+        <IceContainer title="浏览最多">
+          <Table
+            dataSource={ViewedProducts}
+            hasBorder={false}
+            hasHeader={false}
+            style={{ width: '100%', height: '341px' }}
+          >
+            <Table.Column
+              title="产品"
+              dataIndex="title"
+              cell={(value, index, record) => renderProduct(value, index, record)}
+              width="20%"
+            />
+            <Table.Column title="分类" dataIndex="cate" width="20%" />
 
-              <Table.Column title="销售数量" dataIndex="amount" width="20%" />
-            </Table>
-          </IceContainer>
-        </Col>
-      </Row>
-    );
-  }
+            <Table.Column title="销售数量" dataIndex="amount" width="20%" />
+          </Table>
+        </IceContainer>
+      </Col>
+    </Row>
+  );
 }
-

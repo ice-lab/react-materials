@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import Title from './Title';
 
@@ -51,33 +51,20 @@ const option = {
   ],
 };
 
-export default class LineChart extends Component {
-  static displayName = 'LineChart';
+export default function LineChart({ data, title }) {
+  option.xAxis[0].data = data.map((d) => {
+    return d.name;
+  });
+  option.series[0].data = data.map((d) => {
+    return d.value;
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { data } = this.props;
-
-    option.xAxis[0].data = data.map((d) => {
-      return d.name;
-    });
-    option.series[0].data = data.map((d) => {
-      return d.value;
-    });
-
-    return (
-      <div style={{ height: '33%' }}>
-        <Title data={this.props.title} />
-        <ReactEcharts option={option} style={{ height: '100%' }} />
-      </div>
-    );
-  }
+  return (
+    <div style={{ height: '33%' }}>
+      <Title data={title} />
+      <ReactEcharts option={option} style={{ height: '100%' }} />
+    </div>
+  );
 }
+
+LineChart.displayName = 'LineChart';

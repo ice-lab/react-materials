@@ -1,35 +1,30 @@
-import React, { Component } from 'react';
-import cx from 'classnames';
+import React from 'react';
 import Layout from '@icedesign/layout';
-import MainRoutes from './MainRoutes';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
+import styles from './index.module.scss';
 
-import './index.scss';
+export default function BasicLayout(props) {
+  return (
+    <Layout
+      fixable
+      style={{ minHeight: '100vh' }}
+      className={styles.iceLayout}
+      type="secondary"
+    >
+      <Header />
 
-export default class BasicLayout extends Component {
-  render() {
-    return (
-      <Layout
-        fixable
-        style={{ minHeight: '100vh' }}
-        className={cx('ice-design-layout')}
-        type="secondary"
-      >
-        <Header />
+      <Layout.Section>
+        <Layout.Aside width={240}>
+          <Aside />
+        </Layout.Aside>
 
-        <Layout.Section>
-          <Layout.Aside width={240}>
-            <Aside />
-          </Layout.Aside>
-
-          <Layout.Main scrollable>
-            <MainRoutes />
-            <Footer />
-          </Layout.Main>
-        </Layout.Section>
-      </Layout>
-    );
-  }
+        <Layout.Main scrollable>
+          {props.children}
+          <Footer />
+        </Layout.Main>
+      </Layout.Section>
+    </Layout>
+  );
 }
