@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export default () => {
+export default function VisualAssembly() {
   return (
     <div className={styles.wrapperContainer}>
       <div className={styles.cover}>

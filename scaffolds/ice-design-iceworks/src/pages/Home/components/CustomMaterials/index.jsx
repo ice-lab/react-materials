@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export default () => {
+export default function CustomMaterials() {
   return (
     <div className={styles.wrapperContainer}>
       <div className={styles.wrapper}>
@@ -24,4 +24,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

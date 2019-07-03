@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 
-export default () => {
+export default function ChangeLogs() {
   const [changelogs] = useState([
     {
       changelog: [
@@ -63,4 +63,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

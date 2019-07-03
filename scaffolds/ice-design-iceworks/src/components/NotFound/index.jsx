@@ -4,7 +4,7 @@ import IceContainer from '@icedesign/container';
 
 import styles from './index.module.scss';
 
-export default () => {
+export default function NotFound() {
   return (
     <div className={styles.basicnotfound}>
       <IceContainer>
@@ -20,12 +20,11 @@ export default () => {
             </h3>
             <p className={styles.description}>
               您要找的页面没有找到，请返回
-              <Link to="/">首页</Link>
-继续浏览
+              <Link to="/">首页</Link>继续浏览
             </p>
           </div>
         </div>
       </IceContainer>
     </div>
   );
-};
+}
