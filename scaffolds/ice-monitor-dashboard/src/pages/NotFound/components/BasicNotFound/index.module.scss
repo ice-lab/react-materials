@@ -1,21 +1,22 @@
 
-    .notfoundContent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 500px;
-    }
-    .imgNotfound {
-      margin-right: 50px;
-    }
-    .title {
-      color: #333;
-      font-size: 24px;
-      margin: 20px 0;
-    }
-    .description {
-      color: #666;
-      font-size: 16px;
-    }
+.notfoundContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+}
 
-  
+.imgNotfound {
+  margin-right: 50px;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+}

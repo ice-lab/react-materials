@@ -77,22 +77,19 @@ class UserLogin extends Component {
             <FormItem>
               <Checkbox name="checkbox" className="checkbox">记住账号</Checkbox>
             </FormItem>
-            <Row className="formItem">
+            <div>
               <Form.Submit
                 type="primary"
                 validate
                 onClick={this.handleSubmit}
                 className="submitBtn"
               >
-                登 录
-                </Form.Submit>
-            </Row>
-
-            <Row className="tips">
-              <Link to="/account/register" className="tips-text">
+               登 录
+              </Form.Submit>
+              <Link to="/account/register" className={styles.registry}>
                 立即注册
-                </Link>
-            </Row>
+              </Link>
+            </div>
           </Form>
       </div>
     );

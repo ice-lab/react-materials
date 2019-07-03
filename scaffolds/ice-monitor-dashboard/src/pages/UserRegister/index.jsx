@@ -127,7 +127,7 @@ class UserRegister extends Component {
                 size="large"
                 placeholder="至少8位密码" />
             </FormItem>
-            <Row className="formItem">
+            <div>
               <Form.Submit
                 type="primary"
                 validate
@@ -136,13 +136,11 @@ class UserRegister extends Component {
               >
                 注 册
                 </Form.Submit>
-            </Row>
 
-            <Row className="tips">
-              <Link to="/account/login" className="tips-text">
+              <Link to="/account/login" className={styles.login}>
                 使用已有账户登录
                 </Link>
-            </Row>
+              </div>
           </Form>
       </div>
     );
