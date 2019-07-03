@@ -17,6 +17,24 @@
   justify-content: space-between;
 }
 
+.userProfileMenuItem {
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+
+  a {
+    color: #666;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
 .headerNavbar {
   display: flex;
   flex-direction: row;
@@ -30,8 +48,10 @@
       background: transparent;
       color: #fff;
       box-shadow: none;
+
       .next-menu-item {
         font-size: 14px;
+
         &:hover,
         a:hover {
           color: rgba(255, 255, 255, 0.8);
@@ -61,6 +81,7 @@
 .iceHeaderUserpannel {
   margin-left: 20px;
   cursor: pointer;
+
   .iconDown {
     margin-left: 2px;
     color: #fff;
@@ -71,19 +92,4 @@
   width: 130px;
   border-radius: 6px;
   padding: 0 16px;
-}
-
-.userProfileMenuItem {
-  height: 40px;
-  line-height: 40px;
-  font-size: 12px;
-  a {
-    color: #666;
-    &:hover {
-      color: #1890ff;
-    }
-  }
-  i {
-    margin-right: 5px;
-  }
 }

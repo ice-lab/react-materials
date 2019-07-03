@@ -2,7 +2,7 @@
   position: fixed;
   top: 62px;
   left: 240px;
-  right: 0px;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,5 +10,5 @@
   padding: 0 20px;
   z-index: 99;
   background: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 2px 0px 4px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 0 4px;
 }

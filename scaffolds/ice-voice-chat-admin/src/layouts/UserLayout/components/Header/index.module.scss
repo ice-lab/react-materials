@@ -7,16 +7,20 @@
     z-index: 1;
     transition: 0.3s ease;
   }
+
   .sub-navs,
   .arrow-up-icon {
     display: none;
   }
+
   &:hover {
     background: #272b2f;
+
     .sub-navs,
     .arrow-up-icon {
       display: block;
     }
+
     .arrow-down-icon {
       display: none;
     }
@@ -51,7 +55,6 @@
   display: block;
   height: 60px;
   line-height: 60px;
-  padding: 0 20px;
   font-size: 15px;
   color: #fff;
   text-decoration: none;
@@ -66,7 +69,7 @@
   position: absolute;
   left: 0;
   width: 140px;
-  background: #272B2F;
+  background: #272b2f;
 }
 
 .subNavMenu {
