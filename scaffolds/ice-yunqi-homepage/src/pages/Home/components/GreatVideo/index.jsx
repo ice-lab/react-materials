@@ -41,5 +41,3 @@ export default function GreatVideo() {
     </div>
   );
 }
-
-GreatVideo.displayName = 'GreatVideo';

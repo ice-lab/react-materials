@@ -79,5 +79,3 @@ export default function FrontierContent() {
     </div>
   );
 }
-
-FrontierContent.displayName = 'FrontierContent';

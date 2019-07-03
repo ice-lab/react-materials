@@ -8,5 +8,3 @@ export default function PartnerPage() {
     </div>
   );
 }
-
-PartnerPage.displayName = 'PartnerPage';

@@ -79,5 +79,3 @@ export default function Exhibition() {
     </div>
   );
 }
-
-Exhibition.displayName = 'Exhibition';

@@ -26,5 +26,3 @@ export default function Home() {
     </div>
   );
 }
-
-Home.displayName = 'Home';

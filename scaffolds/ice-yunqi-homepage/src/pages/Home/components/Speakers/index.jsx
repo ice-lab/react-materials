@@ -82,5 +82,3 @@ export default function Speakers() {
     </div>
   );
 }
-
-Speakers.displayName = 'Speakers';

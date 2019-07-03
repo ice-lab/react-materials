@@ -38,5 +38,3 @@ export default function Banner() {
     </div>
   );
 }
-
-Banner.displayName = 'Banner';

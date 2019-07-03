@@ -31,6 +31,3 @@ export default function GuestList() {
     </div>
   );
 }
-
-GuestList.displayName = 'GuestList';
-

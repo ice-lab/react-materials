@@ -55,6 +55,3 @@ export default function About() {
     </div>
   );
 }
-
-About.displayName = 'About';
-

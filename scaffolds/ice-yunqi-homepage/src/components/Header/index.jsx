@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
-import { headerMenuConfig } from '../../menuConfig';
+import { headerMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 
@@ -19,13 +19,12 @@ function Header(props) {
           triggerType="click"
           activeDirection={null}
         >
-          {headerMenuConfig &&
-            headerMenuConfig.length > 0 &&
-            headerMenuConfig.map((nav, index) => {
+          {headerMenuConfig
+            && headerMenuConfig.length > 0
+            && headerMenuConfig.map((nav, index) => {
               if (nav.children && nav.children.length > 0) {
                 return (
                   <Nav.SubNav
-
                     key={index}
                     title={<span>{nav.name}</span>}
                   >

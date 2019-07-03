@@ -44,11 +44,9 @@
   cursor: pointer;
   font-size: 26px;
   line-height: 30px;
-  color: hsla(0, 0%, 100%, .5);
   margin-left: 30px;
   padding: 14px 0;
-  border-bottom: 1px solid transparent;
-  transition: all .3s;
+  transition: all 0.3s;
   color: #fff;
   border-bottom: 1px solid #fff;
 }
@@ -63,11 +61,11 @@
   cursor: pointer;
   font-size: 26px;
   line-height: 30px;
-  color: hsla(0, 0%, 100%, .5);
+  color: hsla(0, 0%, 100%, 0.5);
   margin-left: 30px;
   padding: 14px 0;
   border-bottom: 1px solid transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .items {
@@ -81,7 +79,7 @@
   position: relative;
   padding-right: 40px;
   margin-top: 20px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .middle {
@@ -125,7 +123,7 @@
 .desc {
   font-size: 14px;
   line-height: 24px;
-  color: hsla(0, 0%, 100%, .8);
+  color: hsla(0, 0%, 100%, 0.8);
   margin-top: 28px;
   white-space: nowrap;
   overflow: hidden;
@@ -148,5 +146,5 @@
   color: #fff;
   text-decoration: none;
   text-align: center;
-  transition: all .3s;
+  transition: all 0.3s;
 }

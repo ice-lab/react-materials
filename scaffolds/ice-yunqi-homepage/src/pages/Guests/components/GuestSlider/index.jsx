@@ -39,5 +39,3 @@ export default function GuestSlider() {
     </div>
   );
 }
-
-GuestSlider.displayName = 'GuestSlider';

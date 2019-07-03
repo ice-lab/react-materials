@@ -38,7 +38,7 @@
   float: left;
   margin: 0;
   font-size: 14px;
-  color: hsla(0, 0%, 100%, .7);
+  color: hsla(0, 0%, 100%, 0.7);
   line-height: 28px;
   margin-right: 30px;
   padding-top: 12px;
@@ -52,7 +52,7 @@
 }
 
 .tipsLink {
-  color: hsla(0, 0%, 100%, .7) !important;
+  color: hsla(0, 0%, 100%, 0.7) !important;
 }
 
 .itemBox {
@@ -131,7 +131,7 @@
   text-align: center;
   font-size: 14px;
   color: #fff !important;
-  transition: all .3s;
+  transition: all 0.3s;
   text-decoration: none;
   background: #236cff;
 }

@@ -33,5 +33,3 @@ export default function Partner() {
     </div>
   );
 }
-
-Partner.displayName = 'Partner';

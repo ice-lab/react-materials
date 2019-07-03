@@ -46,7 +46,6 @@ export default function Tickets() {
             </div>
             <Row wrap gutter={20}>
               {MOCK_DATA.map((item, index) => {
-                const saleStyle = item.issale ? styles.isSale : styles.unSale;
                 return (
                   <Col l="6" key={index}>
                     <div className={styles.itemBox}>
@@ -91,5 +90,3 @@ export default function Tickets() {
     </div>
   );
 }
-
-Tickets.displayName = 'Tickets';

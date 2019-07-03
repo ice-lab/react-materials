@@ -25,5 +25,3 @@ export default function Sponsor() {
     </div>
   );
 }
-
-Sponsor.displayName = 'Sponsor';

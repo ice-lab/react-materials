@@ -53,5 +53,3 @@ export default function Events() {
     </div>
   );
 }
-
-Events.displayName = 'Events';
