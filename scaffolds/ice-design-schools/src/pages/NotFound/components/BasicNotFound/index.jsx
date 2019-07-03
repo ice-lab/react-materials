@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 export default function BasicNotFound() {
   return (
-    <div className="basic-not-found">
+    <div className={styles.basicNotFound}>
       <IceContainer>
         <div className={styles.notfoundContent}>
           <img
