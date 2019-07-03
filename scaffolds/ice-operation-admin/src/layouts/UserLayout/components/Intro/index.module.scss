@@ -1,24 +1,27 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-};
-.content{
+}
+
+.content {
   width: 350px;
   color: #fff;
-};
-.title{
+}
+
+.title {
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 38px;
   line-height: 1.5;
-};
-.description{
+}
+
+.description {
   margin: 0;
   font-size: 14px;
   color: #fff;
   letter-spacing: 0.45px;
   line-height: 32px;
-};
+}
