@@ -191,7 +191,7 @@ export default class EnhanceTable extends Component {
           href="#"
           className={styles.operationItem}
           target="_blank"
-          onClick={(e) => this.publish(record, e)}
+          onClick={e => this.publish(record, e)}
         >
           发布
         </a>
@@ -199,7 +199,7 @@ export default class EnhanceTable extends Component {
           href="#"
           className={styles.operationItem}
           target="_blank"
-          onClick={(e) => this.offline(record, e)}
+          onClick={e => this.offline(record, e)}
         >
           下线
         </a>

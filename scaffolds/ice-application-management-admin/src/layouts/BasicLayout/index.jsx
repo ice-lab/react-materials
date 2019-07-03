@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Layout from '@icedesign/layout';
-import MainRoutes from './MainRoutes';
 import Header from './components/Header';
 import Asdie from './components/Aside';
 import Footer from './components/Footer';
@@ -21,7 +20,7 @@ export default class BasicLayout extends Component {
           </Layout.Aside>
 
           <Layout.Main className={styles.iceLayoutMain} scrollable>
-            <MainRoutes />
+            {this.props.children}
             <Footer />
           </Layout.Main>
         </Layout.Section>

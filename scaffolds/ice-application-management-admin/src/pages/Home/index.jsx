@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid } from '@alifd/next';
-import styles from  './index.module.scss';
+import styles from './index.module.scss';
 
 import ServiceCard from './components/ServiceCard';
 import PublishTime from './components/PublishTime';

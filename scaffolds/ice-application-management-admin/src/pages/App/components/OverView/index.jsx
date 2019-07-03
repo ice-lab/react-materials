@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { Grid, Icon } from "@alifd/next";
-import IceContainer from "@icedesign/container";
-import styles from "./index.module.scss";
+import React, { Component } from 'react';
+import { Grid, Icon } from '@alifd/next';
+import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 export default class History extends Component {
-  static displayName = "History";
+  static displayName = 'History';
 
   constructor(props) {
     super(props);
