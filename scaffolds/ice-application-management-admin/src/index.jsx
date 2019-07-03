@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
-import router from '@/router';
 
 import '@/global.scss';
+import router from '@/router';
 
 const ICE_CONTAINER = document.getElementById('ice-container');
 

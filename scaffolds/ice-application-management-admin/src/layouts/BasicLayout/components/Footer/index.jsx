@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo';
 
-export default () => {
+export default function BasicLayout() {
   return (
     <div
       style={{

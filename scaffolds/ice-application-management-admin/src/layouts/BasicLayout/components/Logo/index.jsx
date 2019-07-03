@@ -1,14 +1,12 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 
-export default class Logo extends PureComponent {
-  render() {
-    return (
-      <Link to="/" className={styles.logoStyle} style={this.props.style}>
-        应用管理系统
-      </Link>
-    );
-  }
+export default function Logo(props) {
+  return (
+    <Link to="/" className={styles.logoStyle} style={props.style}>
+      应用管理系统
+    </Link>
+  );
 }
 

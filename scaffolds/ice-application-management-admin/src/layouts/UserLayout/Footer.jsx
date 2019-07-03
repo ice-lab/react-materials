@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default () => {
+export default function Footer() {
   return (
     <div style={styles.footer}>
       <div style={styles.links}>

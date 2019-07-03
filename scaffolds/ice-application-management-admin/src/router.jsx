@@ -7,7 +7,7 @@ import path from 'path';
 
 import routes from '@/routerConfig';
 
-const RouteItem = (props) => {
+function RouteItem(props) {
   const { redirect, path: routePath, component, key } = props;
   if (redirect) {
     return (
