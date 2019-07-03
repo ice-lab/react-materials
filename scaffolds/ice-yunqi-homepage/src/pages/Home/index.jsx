@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Banner from './components/Banner';
 import Tickets from './components/Tickets';
 import GreatVideo from './components/GreatVideo';
@@ -10,32 +10,19 @@ import Address from './components/Address';
 import About from './components/About';
 import Sponsor from './components/Sponsor';
 
-export default class Home extends Component {
-  static displayName = 'Home';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <Banner />
-        <Tickets />
-        <GreatVideo />
-        <FrontierContent />
-        <Exhibition />
-        <Events />
-        <Speakers />
-        <Address />
-        <About />
-        <Sponsor />
-      </div>
-    );
-  }
+export default function Home() {
+  return (
+    <div>
+      <Banner />
+      <Tickets />
+      <GreatVideo />
+      <FrontierContent />
+      <Exhibition />
+      <Events />
+      <Speakers />
+      <Address />
+      <About />
+      <Sponsor />
+    </div>
+  );
 }
