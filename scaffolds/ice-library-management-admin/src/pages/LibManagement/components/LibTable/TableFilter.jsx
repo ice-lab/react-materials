@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Grid, Input, Select } from '@alifd/next';
 import {
   FormBinderWrapper as IceFormBinderWrapper,
@@ -10,29 +9,23 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { Option } = Select;
 
-export default class TableFilter extends Component {
-  static displayName = 'TableFilter';
+export default function TableFilter(props) {
+  /* eslint-disable */
+  const [value, setValue] = useState({});
+  /* eslint-enable */
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {},
-    };
-  }
-
-  formChange = (value) => {
-    this.props.onChange(value);
+  const formChange = (v) => {
+    props.onChange(v);
   };
 
-  renderSelect = (item) => {
+  const renderSelect = (item) => {
     return (
       <Col span="8">
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <Select
               mode="multiple"
@@ -54,11 +47,14 @@ export default class TableFilter extends Component {
     );
   };
 
-  renderInput = (item) => {
+  const renderInput = (item) => {
     return (
       <Col span="8" key={item.formBinderProps.name}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <Input {...item.componnetProps} />
           </IceFormBinder>
@@ -67,30 +63,25 @@ export default class TableFilter extends Component {
     );
   };
 
-  renderFormItem = (item) => {
+  const renderFormItem = (item) => {
     if (item.component === 'Input') {
-      return this.renderInput(item);
-    } else if (item.component === 'Select') {
-      return this.renderSelect(item);
+      return renderInput(item);
+    } if (item.component === 'Select') {
+      return renderSelect(item);
     }
     return null;
   };
 
-  render() {
-    const { config } = this.props;
+  const { config } = props;
 
-    return (
-      <IceFormBinderWrapper
-        value={this.state.value}
-        onChange={this.formChange}
-        ref="form"
-      >
-        <Row wrap gutter="20" className={styles.formRow}>
-          {config.map(this.renderFormItem)}
-        </Row>
-      </IceFormBinderWrapper>
-    );
-  }
+  return (
+    <IceFormBinderWrapper
+      value={value}
+      onChange={formChange}
+    >
+      <Row wrap gutter="20" className={styles.formRow}>
+        {config.map(renderFormItem)}
+      </Row>
+    </IceFormBinderWrapper>
+  );
 }
-
-
