@@ -15,7 +15,7 @@ export default function UserStatChart(props) {
         extraAfter={
           <DatePicker onChange={(val, str) => console.log(val, str)} />
         }
-        style={{ marginBottom: '20px', }}
+        style={{ marginBottom: '20px' }}
       />
       <Row wrap gutter="20">
         <Col xxs="24" s="15" l="15">
@@ -72,7 +72,7 @@ export default function UserStatChart(props) {
                     };
                   },
                 ]}
-                style={{ lineWidth: 1, stroke: '#fff',}}
+                style={{ lineWidth: 1, stroke: '#fff' }}
               >
                 <Label
                   content="percent"

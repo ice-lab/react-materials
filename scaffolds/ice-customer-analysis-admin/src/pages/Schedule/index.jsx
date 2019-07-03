@@ -53,8 +53,8 @@ export default function Schedule() {
   /**
    * 页码发生改变时的回调函数
    */
-  const handleChange = async (current) => {
-    await setCurrent(current);
+  const handleChange = async (crt) => {
+    await setCurrent(crt);
     fetchData();
   };
 
@@ -127,7 +127,7 @@ export default function Schedule() {
         alignEdge
         triggerType="click"
         closable={false}
-        style={{ width: 300, }}
+        style={{ width: 300 }}
       >
         <div className={styles.balloonContent}>
           <h3 className={styles.balloonTitle}>详细信息</h3>
@@ -152,7 +152,7 @@ export default function Schedule() {
         dataSource={dataSource}
         loading={isLoading}
         className={styles.customTable}
-        style={{ minHeight: '400px', }}
+        style={{ minHeight: '400px' }}
       >
         <Table.Column
           align="center"
@@ -200,4 +200,3 @@ export default function Schedule() {
     </div>
   );
 }
-

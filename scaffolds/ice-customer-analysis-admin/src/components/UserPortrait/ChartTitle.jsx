@@ -10,4 +10,3 @@ export default function ChartTitle(props) {
     </h5>
   );
 }
-

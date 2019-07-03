@@ -88,7 +88,7 @@ const UserLogin = (props) => {
               登 录
             </Button>
             <p className="account">
-              <span className={styles.tipsText} style={{ marginRight: '20px', }}>
+              <span className={styles.tipsText} style={{ marginRight: '20px' }}>
                 管理员登录：admin/admin
               </span>
               <span className={styles.tipsText}>用户登录：user/user</span>
@@ -104,6 +104,6 @@ const UserLogin = (props) => {
       </IceFormBinderWrapper>
     </div>
   );
-}
+};
 
 export default withRouter(UserLogin);

@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-const UserRegister = props => {
+const UserRegister = (props) => {
   const [value, setValue] = useState({
     name: '',
     email: '',
@@ -127,13 +127,12 @@ const UserRegister = props => {
                 <IceFormBinder
                   name="rePasswd"
                   required
-                  validator={(rule, values, callback) =>
-                    checkPasswd2(
-                      rule,
-                      values,
-                      callback,
-                      value
-                    )
+                  validator={(rule, values, callback) => checkPasswd2(
+                    rule,
+                    values,
+                    callback,
+                    value
+                  )
                   }
                 >
                   <Input className="next-input-single"
@@ -168,6 +167,6 @@ const UserRegister = props => {
       </div>
     </div>
   );
-}
+};
 
 export default withRouter(UserRegister);

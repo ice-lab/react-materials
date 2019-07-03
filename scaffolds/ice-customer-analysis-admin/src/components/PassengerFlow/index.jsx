@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { DatePicker, Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from '../ContainerTitle';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const mockData = [
@@ -48,8 +49,7 @@ export default function PassengerFlow(props) {
                   <Icon
                     type={`arrow-${item.change}-filling`}
                     size="small"
-                    className={styles[`arrow${item.change}Icon`]}
-                    className={styles.arrowIcon}
+                    className={`${styles[`arrow${item.change}Icon`]} styles.arrowIcon`}
                   />
                   环比上涨 {item.ratio}
                 </div>
@@ -61,5 +61,3 @@ export default function PassengerFlow(props) {
     </IceContainer>
   );
 }
-
-

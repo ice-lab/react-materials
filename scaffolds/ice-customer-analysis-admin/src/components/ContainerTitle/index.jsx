@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 export default function Index({ title, style, ...props }) {
   return (
-    <div style={{...style }} className={styles.container}>
+    <div style={{ ...style }} className={styles.container}>
       <h3 className={styles.title}>{title}</h3>
       {props.buttonText ? (
         <Button type="primary" size="large">
@@ -17,7 +17,7 @@ export default function Index({ title, style, ...props }) {
       ) : null}
     </div>
   );
-};
+}
 
 Index.propTypes = {
   title: PropTypes.string.isRequired,

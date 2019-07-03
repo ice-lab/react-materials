@@ -1,18 +1,18 @@
 import React from 'react';
-import {Nav} from '@alifd/next';
+import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { asideMenuConfig } from '../../../../menuConfig';
 
-const BasicLayout = props => {
+const BasicLayout = (props) => {
   const { location } = props;
   const { pathname } = location;
 
   return (
     <Nav selectedKeys={[pathname]} className="ice-menu-custom">
-      {Array.isArray(asideMenuConfig) &&
-        asideMenuConfig.length > 0 &&
-        asideMenuConfig.map((nav) => {
+      {Array.isArray(asideMenuConfig)
+        && asideMenuConfig.length > 0
+        && asideMenuConfig.map((nav) => {
           return (
             <Nav.Item key={nav.path}>
               <Link to={nav.path} className="ice-menu-link">
@@ -26,6 +26,6 @@ const BasicLayout = props => {
         })}
     </Nav>
   );
-}
+};
 
 export default withRouter(BasicLayout);

@@ -31,7 +31,7 @@ const routerConfig = [
       {
         component: NotFound,
       },
-    ]
+    ],
   },
   {
     path: '/',
@@ -56,8 +56,8 @@ const routerConfig = [
       {
         component: NotFound,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default routerConfig;

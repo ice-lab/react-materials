@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '@icedesign/layout';
 import Footer from './Footer';
-import styles from  './index.module.scss';
+import styles from './index.module.scss';
 
 export default function Index(props) {
   return (
