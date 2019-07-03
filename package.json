@@ -5,26 +5,36 @@
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
     "generate:ci": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org idev generate",
-    "lint": "eslint --cache --ext .js .jsx ./",
+    "lint": "eslint --cache --ext .js,.jsx ./ && npm run stylelint",
+    "stylelint": "stylelint ./**/*.scss",
     "deploy": "idev -V && npm run generate:ci && npm run upload-oss"
   },
   "materialConfig": {
     "type": "react"
   },
-  "dependencies": {
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
   },
+  "dependencies": {},
   "devDependencies": {
-    "fs-extra": "^8.0.1",
-    "glob": "^7.1.4",
-    "request-promise": "^4.2.4",
     "ali-oss": "^6.1.0",
     "babel-eslint": "^8.1.2",
-    "eslint": "^4.14.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "ice-devtools": "^2.2.0"
+    "fs-extra": "^8.0.1",
+    "glob": "^7.1.4",
+    "husky": "^3.0.0",
+    "ice-devtools": "^2.2.0",
+    "request-promise": "^4.2.4",
+    "stylelint": "^10.1.0",
+    "stylelint-config-css-modules": "^1.4.0",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-scss": "^3.8.0"
   }
 }

@@ -1,4 +1,4 @@
-.box{
+.box {
   max-width: 1200px;
   margin: 20px auto;
   line-height: 36px;
@@ -7,11 +7,13 @@
   align-items: center;
   justify-content: space-between;
 }
-.logo{
+
+.logo {
   filter: grayscale(100%);
-  opacity:0.3
+  opacity: 0.3;
 }
-.btitle{
+
+.btitle {
   color: #999;
   line-height: 1.5;
   font-size: 12px;

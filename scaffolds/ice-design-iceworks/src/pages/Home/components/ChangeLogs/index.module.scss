@@ -1,28 +1,32 @@
-.container{
+.container {
   margin: 0 auto;
   padding: 45px 0;
   overflow: hidden;
   font-size: 14px;
   line-height: 28px;
 }
-.features{
+
+.features {
   max-width: 640px;
   margin: 0 auto;
   background-color: #fff;
   border-radius: 5px;
-  min-height: 100vh
+  min-height: 100vh;
 }
-.featureTag{
+
+.featureTag {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 20px;
   margin: 55px auto 20px auto;
 }
-.featureDate{
-  font-size: 14px
+
+.featureDate {
+  font-size: 14px;
 }
-.featureTitle{
+
+.featureTitle {
   text-align: center;
   font-size: 45px;
   font-weight: 100;

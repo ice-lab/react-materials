@@ -1,16 +1,18 @@
-.wrapperContainer{
-   background-color: #f6f6f6;
-   background-image: url(./images/TB1P7ELpwmTBuNjy1XbXXaMrVXa-3798-1000.png);
-   background-size: cover;
+.wrapperContainer {
+  background-color: #f6f6f6;
+  background-image: url('./images/TB1P7ELpwmTBuNjy1XbXXaMrVXa-3798-1000.png');
+  background-size: cover;
 }
-.wrapper{
+
+.wrapper {
   position: relative;
   height: 500px;
   overflow: hidden;
   max-width: 1190px;
   margin: 0 auto;
 }
-.feature{
+
+.feature {
   padding-top: 160px;
   padding-bottom: 160px;
   padding-left: 30px;
@@ -22,35 +24,41 @@
   right: 70%;
   position: absolute;
 }
-.line{
+
+.line {
   height: 2px;
   width: 140px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   margin: 20px 0;
 }
-.lineHeader{
+
+.lineHeader {
   height: 2px;
   width: 33px;
   background-color: #fff;
 }
-.title{
+
+.title {
   color: #fff;
   font-size: 36px;
-  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-.desc{
+
+.desc {
   font-size: 16px;
   color: #fff;
   line-height: 26px;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
-.cover{
-  position: absolute;;
+
+.cover {
+  position: absolute;
   left: 40%;
   bottom: 0;
   z-index: 1;
 }
-.coverImage{
+
+.coverImage {
   max-height: 430px;
   display: block;
 }

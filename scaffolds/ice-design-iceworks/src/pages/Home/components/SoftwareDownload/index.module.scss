@@ -1,61 +1,69 @@
-.iceworksdownloadbtn{
+.iceworksdownloadbtn {
   color: $color-brand1-6 !important;
   font-size: 16px !important;
   padding: 0 40px !important;
   height: 48px !important;
   line-height: 48px !important;
 }
-.wrapperContainer{
+
+.wrapperContainer {
   margin-bottom: -400px;
   height: 1150px;
   position: relative;
 }
-.bgImage2{
+
+.bgImage2 {
   width: 1400px;
   height: 782px;
   border-radius: 391px;
-  background: linear-gradient(135deg, rgba(94,136,255,1) 0%,rgba(111,48,254,1) 100%);
+  background: linear-gradient(135deg, rgba(94, 136, 255, 1) 0%, rgba(111, 48, 254, 1) 100%);
   transform: rotate(-45deg);
-  box-shadow: 2px 2px 60px rgba(0,0,0,0.06);
+  box-shadow: 2px 2px 60px rgba(0, 0, 0, 0.06);
   position: absolute;
   left: 35%;
   bottom: 550px;
   z-index: 1;
 }
-.wrapper{
+
+.wrapper {
   height: 750px;
   background-color: #f6f6f6;
   position: relative;
   width: 100%;
 }
-.wrapperBody{
+
+.wrapperBody {
   max-width: 1190px;
   height: 750px;
   position: relative;
   margin: 0 auto;
   z-index: 2;
 }
-.softwareIntro{
+
+.softwareIntro {
   position: absolute;
   left: 5%;
   margin-top: 230px;
   z-index: 3;
 }
-.title{
+
+.title {
   font-size: 46px;
   color: #fff;
   font-weight: 500;
   line-height: 66px;
-  text-shadow: 0 0 3px rgba(0,0,0,0.3);
-  margin-bottom: 16px
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  margin-bottom: 16px;
 }
-.slogan{
+
+.slogan {
   font-size: 24px;
   color: #fff;
   line-height: 34px;
-  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-.softwareDetail{
+
+.softwareDetail {
   padding-top: 24px;
   display: flex;
   flex-direction: row;
@@ -66,7 +74,8 @@
   justify-content: space-between;
   align-content: center;
 }
-.software{
+
+.software {
   background-image: url(./images/TB1uPagpQyWBuNjy0FpXXassXXa-1446-1148.png);
   width: 723px;
   height: 574px;
@@ -75,54 +84,65 @@
   top: 100px;
   left: 38%;
 }
-.separator{
+
+.separator {
   width: 1px;
   height: 20px;
   background-color: #fff;
 }
-.version{
+
+.version {
   width: 80px;
   line-height: 20px;
   text-align: center;
 }
-.history{
+
+.history {
   width: 80px;
   line-height: 20px;
   text-align: center;
 }
-.bgImage{
+
+.bgImage {
   position: absolute;
   width: 100%;
   height: 750px;
   background-size: cover;
-  background-image: url(./images/TB1eoehpKOSBuNjy0FdXXbDnVXa-3798-1500.jpg)
+  background-image: url(./images/TB1eoehpKOSBuNjy0FdXXbDnVXa-3798-1500.jpg);
 }
-.bgImageMask{
+
+.bgImageMask {
   width: 100%;
   height: 750px;
-  background: linear-gradient(135deg, rgba(94,136,255,0.85) 0%,rgba(111,48,254,0.85) 100%)
+  background: linear-gradient(135deg, rgba(94, 136, 255, 0.85) 0%, rgba(111, 48, 254, 0.85) 100%);
 }
-.btndiv{
+
+.btndiv {
   margin-left: -45px;
   padding-top: 45px;
   text-align: center;
 }
-.spanone{
-  display: block
+
+.spanone {
+  display: block;
 }
-.spantwo{
+
+.spantwo {
   display: block;
   font-size: 12px;
 }
-.down{
+
+.down {
   padding-top: 20px;
   width: 200px;
   text-align: center;
 }
-.downd{
+
+.downd {
   font-size: 12px;
   color: #fff;
 }
-.downa{
+
+.downa {
   color: #fff !important;
 }
