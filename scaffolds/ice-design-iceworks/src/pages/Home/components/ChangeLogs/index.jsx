@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 
-export default () => {
+export default function ChangeLogs() {
   const [changelogs] = useState([
     {
       changelog: [
@@ -47,7 +47,10 @@ export default () => {
             return (
               <div>
                 <h3 key={`${v.version}-title`} className={styles.featureTag}>
-                  v{v.version} <span className={styles.featureDate}>{v.releaseDate}</span>
+                  v
+                  {v.version}
+                  {' '}
+                  <span className={styles.featureDate}>{v.releaseDate}</span>
                 </h3>
                 <ol key={`${v.version}-content`}>
                   {Array.isArray(v.changelog)
@@ -60,4 +63,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

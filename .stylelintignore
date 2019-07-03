@@ -3,7 +3,7 @@ blocks/*
 
 scaffolds/ice-algorithm-model-admin
 scaffolds/ice-government-management-admin
-scaffolds/ice-application-management-admin
+# scaffolds/ice-application-management-admin
 scaffolds/ice-hr-management-admin
 scaffolds/ice-asset-management-admin
 scaffolds/ice-library-management-admin

@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 
-export default () => {
+export default function Footer() {
   return (
     <div className={styles.box}>
       <div className={styles.logo}>
@@ -15,4 +15,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}
