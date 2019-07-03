@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { Button } from '@alifd/next';
 import styles from './index.module.scss';
 
-const ContainerTitle = ({ title, style, ...props }) => {
+const ContainerTitle = ({ title, buttonText }) => {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>{title}</h3>
-      {props.buttonText ? (
-        <Button type="primary" >
-          {props.buttonText}
+      {buttonText ? (
+        <Button type="primary">
+          {buttonText}
         </Button>
       ) : null}
     </div>

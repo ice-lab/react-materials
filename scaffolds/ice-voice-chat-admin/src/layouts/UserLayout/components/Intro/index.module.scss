@@ -1,27 +1,27 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .content {
-    width: 350px;
-    color: #fff;
+  width: 350px;
+  color: #fff;
 }
 
 .title {
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 38px;
-    line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.5;
 }
 
 .description {
-    margin: 0;
-    font-size: 14px;
-    color: #fff;
-    letter-spacing: 0.45px;
-    line-height: 32px;
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 0.45px;
+  line-height: 32px;
 }
