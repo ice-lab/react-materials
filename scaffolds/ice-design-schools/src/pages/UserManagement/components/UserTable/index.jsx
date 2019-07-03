@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-state, no-plusplus */
 import React, { useState, useEffect } from 'react';
 import {
   Table,
@@ -16,7 +15,7 @@ import styles from './index.module.scss';
 
 const getData = (len = 10) => {
   const result = [];
-  for (let i = 0; i < len; i++) {
+  for (let i = 0; i < len; i += 1) {
     result.push({
       id: i + 1,
       name: `王尼玛${i + 1}`,
