@@ -1,34 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import Footer from './Footer';
-import routerData from '../../routerConfig';
-import './UserLayout.scss';
+import styles from  './index.module.scss';
 
-export default class Index extends Component {
-  render() {
-    return (
-      <Layout className="user-layout">
-        <div className="layer-mask" />
-        <div className="user-content">
-          <Switch>
-            {routerData.map((item, index) => {
-              return item.component ? (
-                <Route
-                  key={index}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              ) : null;
-            })}
+export default function Index(props) {
+  return (
+    <Layout className={styles.userLayout}>
+      <div className={styles.layerMask} />
+      <div className={styles.userContent}>
+        {props.children}
+      </div>
 
-            <Redirect exact from="/user" to="/user/login" />
-          </Switch>
-        </div>
-
-        <Footer />
-      </Layout>
-    );
-  }
+      <Footer />
+    </Layout>
+  );
 }

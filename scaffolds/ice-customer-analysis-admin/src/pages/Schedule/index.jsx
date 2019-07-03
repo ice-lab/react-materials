@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Icon, Pagination, Balloon } from '@alifd/next';
 import Ellipsis from '@icedesign/ellipsis';
-import styles from './index.module.scss'
-import './index.scss';
-
+import styles from './index.module.scss';
 
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
@@ -27,27 +25,16 @@ const getData = () => {
   });
 };
 
-export default class Schedule extends Component {
-  static displayName = 'Schedule';
+export default function Schedule() {
+  const [current, setCurrent] = useState(1);
+  const [isLoading, setIsloading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  static propTypes = {};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-      isLoading: false,
-      dataSource: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  mockApi = () => {
+  const mockApi = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData());
@@ -55,37 +42,23 @@ export default class Schedule extends Component {
     });
   };
 
-  fetchData = () => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi().then((data) => {
-          this.setState({
-            dataSource: data,
-            isLoading: false,
-          });
-        });
-      }
-    );
+  const fetchData = async () => {
+    await setIsloading(true);
+    mockApi().then((data) => {
+      setDataSource(data);
+      setIsloading(false);
+    });
   };
 
   /**
    * 页码发生改变时的回调函数
    */
-  handleChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
+  const handleChange = async (current) => {
+    await setCurrent(current);
+    fetchData();
   };
 
-  renderId = (value, index) => {
+  const renderId = (value, index) => {
     const ranking = {
       1: { color: 'red' },
       2: { color: 'rgba(255, 0, 0, 0.8)' },
@@ -99,7 +72,7 @@ export default class Schedule extends Component {
     );
   };
 
-  renderName = (value) => {
+  const renderName = (value) => {
     return (
       <div className={styles.name}>
         <div className={styles.zh}>{value.zh}</div>
@@ -108,7 +81,7 @@ export default class Schedule extends Component {
     );
   };
 
-  renderDayReturns = (value) => {
+  const renderDayReturns = (value) => {
     return (
       <div className={styles.dayReturns}>
         <div className={styles.returns}>{value.returns}</div>
@@ -121,7 +94,7 @@ export default class Schedule extends Component {
     );
   };
 
-  renderOrigin = (value) => {
+  const renderOrigin = (value) => {
     const Info = (ellipsis = false) => {
       return (
         <div className={styles.origin}>
@@ -154,7 +127,7 @@ export default class Schedule extends Component {
         alignEdge
         triggerType="click"
         closable={false}
-        style={{ width: 300 }}
+        style={{ width: 300, }}
       >
         <div className={styles.balloonContent}>
           <h3 className={styles.balloonTitle}>详细信息</h3>
@@ -164,71 +137,67 @@ export default class Schedule extends Component {
     );
   };
 
-  renderScore = (value) => {
+  const renderScore = (value) => {
     return <div className={styles.score}>{value}</div>;
   };
 
-  render() {
-    const { dataSource, isLoading } = this.state;
-
-    return (
-      <div className={styles.container}>
-        <div className={styles.head}>
-          <h3 className={styles.title}>2018年10月01日票房</h3>
-          <p className={styles.desc}>更新时间：2018年10月01日 12：00</p>
-        </div>
-        <div className={styles.summary}>全国单日总票房：100 亿</div>
-        <Table
-          dataSource={dataSource}
-          loading={isLoading}
-          className="custom-table"
-          style={{ minHeight: '400px' }}
-        >
-          <Table.Column
-            align="center"
-            title="排名"
-            dataIndex="id"
-            cell={this.renderId}
-          />
-          <Table.Column
-            align="center"
-            title="影片名称"
-            dataIndex="name"
-            cell={this.renderName}
-          />
-          <Table.Column
-            align="center"
-            title="影片出品"
-            dataIndex="origin"
-            cell={this.renderOrigin}
-          />
-          <Table.Column align="center" title="影片类型" dataIndex="type" />
-          <Table.Column
-            align="center"
-            title="日票房"
-            dataIndex="dayReturns"
-            cell={this.renderDayReturns}
-          />
-          <Table.Column
-            align="center"
-            title="累计票房"
-            dataIndex="accReturns"
-          />
-          <Table.Column align="center" title="上映日期" dataIndex="date" />
-          <Table.Column
-            align="center"
-            title="评分"
-            dataIndex="score"
-            cell={this.renderScore}
-          />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={this.state.current}
-          onChange={this.handleChange}
-        />
+  return (
+    <div className={styles.container}>
+      <div className={styles.head}>
+        <h3 className={styles.title}>2018年10月01日票房</h3>
+        <p className={styles.desc}>更新时间：2018年10月01日 12：00</p>
       </div>
-    );
-  }
+      <div className={styles.summary}>全国单日总票房：100 亿</div>
+      <Table
+        dataSource={dataSource}
+        loading={isLoading}
+        className={styles.customTable}
+        style={{ minHeight: '400px', }}
+      >
+        <Table.Column
+          align="center"
+          title="排名"
+          dataIndex="id"
+          cell={renderId}
+        />
+        <Table.Column
+          align="center"
+          title="影片名称"
+          dataIndex="name"
+          cell={renderName}
+        />
+        <Table.Column
+          align="center"
+          title="影片出品"
+          dataIndex="origin"
+          cell={renderOrigin}
+        />
+        <Table.Column align="center" title="影片类型" dataIndex="type" />
+        <Table.Column
+          align="center"
+          title="日票房"
+          dataIndex="dayReturns"
+          cell={renderDayReturns}
+        />
+        <Table.Column
+          align="center"
+          title="累计票房"
+          dataIndex="accReturns"
+        />
+        <Table.Column align="center" title="上映日期" dataIndex="date" />
+        <Table.Column
+          align="center"
+          title="评分"
+          dataIndex="score"
+          cell={renderScore}
+        />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handleChange}
+      />
+    </div>
+  );
 }
 
