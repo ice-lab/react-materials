@@ -44,8 +44,8 @@ const mockData = [
 export default function SelfhelpTable() {
   const [current, setCurrent] = useState(2);
 
-  const onPageChange = (current) => {
-    setCurrent(current);
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
   const handleClick = () => {
@@ -80,4 +80,3 @@ export default function SelfhelpTable() {
     </div>
   );
 }
-

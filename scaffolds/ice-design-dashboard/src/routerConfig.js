@@ -2,9 +2,9 @@
 // 你可以调整 routerConfig 里的内容
 // 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
 
-import Dashboard from './pages/Dashboard';
 import NotFound from '@/components/NotFound';
-import BlankLayout from './layouts/BlankLayout';
+import Dashboard from '@/pages/Dashboard';
+import BlankLayout from '@/layouts/BlankLayout';
 
 const routerConfig = [
   {
@@ -15,8 +15,8 @@ const routerConfig = [
       component: Dashboard,
     }, {
       component: NotFound,
-    }]
-  }
+    }],
+  },
 ];
 
 export default routerConfig;

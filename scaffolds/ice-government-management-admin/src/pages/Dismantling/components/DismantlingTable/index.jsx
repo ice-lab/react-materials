@@ -67,8 +67,8 @@ export default function DismantlingTable() {
     setRowSelection(rowSelection);
   };
 
-  const onPageChange = (current) => {
-    setCurrent(current);
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
   const handleClick = (text) => {
@@ -124,5 +124,3 @@ export default function DismantlingTable() {
     </div>
   );
 }
-
-

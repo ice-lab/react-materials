@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
-import CustomTable from '../HealthAnalysis/CustomTable';
-import PirChart from '../HealthAnalysis/PieChart';
+import CustomTable from './CustomTable';
+import PirChart from './PieChart';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
@@ -22,5 +22,3 @@ export default function HealthAnalysis() {
     </IceContainer>
   );
 }
-
-

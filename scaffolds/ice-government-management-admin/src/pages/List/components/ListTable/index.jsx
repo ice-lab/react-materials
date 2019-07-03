@@ -60,8 +60,8 @@ export default function ListTable() {
     Message.success('暂不支持办理');
   };
 
-  const onPageChange = (current) => {
-    setCurrent(current);
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
   const actionRender = () => {
@@ -98,5 +98,3 @@ export default function ListTable() {
     </div>
   );
 }
-
-

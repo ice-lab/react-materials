@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Balloon, Icon, Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
@@ -24,22 +24,22 @@ function Header(props) {
             type="secondary"
             direction="hoz"
           >
-            {headerMenuConfig &&
-              headerMenuConfig.length > 0 &&
-              headerMenuConfig.map((nav, index) => {
+            {headerMenuConfig
+              && headerMenuConfig.length > 0
+              && headerMenuConfig.map((nav, index) => {
                 if (nav.children && nav.children.length > 0) {
                   return (
                     <SubMenu
                       triggerType="click"
                       key={index}
-                      title={
+                      title={(
                         <span>
                           {nav.icon ? (
                             <FoundationSymbol size="small" type={nav.icon} />
                           ) : null}
                           <span>{nav.name}</span>
                         </span>
-                      }
+)}
                     >
                       {nav.children.map((item) => {
                         const linkProps = {};
@@ -106,7 +106,7 @@ function Header(props) {
         </div>
 
         <Balloon
-          trigger={
+          trigger={(
             <div
               className={styles.iceDesignHeaderUserpannel}
               style={{
@@ -134,7 +134,7 @@ function Header(props) {
                 className={styles.iconDown}
               />
             </div>
-          }
+)}
           closable={false}
           className={styles.userProfileMenu}
         >

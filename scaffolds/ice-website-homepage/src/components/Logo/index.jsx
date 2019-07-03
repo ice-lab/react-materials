@@ -1,9 +1,7 @@
 import React from 'react';
 
-const LIGHT =
-  require('./images/TB1KmB6nntYBeNjy1XdXXXXyVXa-224-60.png');
-const DARK =
-  require('./images/TB1saOBbYGYBuNjy0FoXXciBFXa-218-58.png');
+const LIGHT = require('./images/TB1KmB6nntYBeNjy1XdXXXXyVXa-224-60.png');
+const DARK = require('./images/TB1saOBbYGYBuNjy0FoXXciBFXa-218-58.png');
 
 export default function Logo(props) {
   const { isDark } = props;

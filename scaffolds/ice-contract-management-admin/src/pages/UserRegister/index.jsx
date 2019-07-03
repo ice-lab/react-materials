@@ -11,7 +11,7 @@ import IceIcon from '@icedesign/foundation-symbol';
 
 const { Row, Col } = Grid;
 
-function UserRegister(props)  {
+function UserRegister(props) {
   const [value, setValue] = useState({
     name: '',
     email: '',
@@ -30,7 +30,7 @@ function UserRegister(props)  {
     } else {
       callback();
     }
-  };
+  }
 
   function checkPasswd2(rule, values, callback, stateValues) {
     if (!values) {
@@ -40,11 +40,11 @@ function UserRegister(props)  {
     } else {
       callback();
     }
-  };
+  }
 
-  function formChange(value) {
-    setValue(value);
-  };
+  function formChange(formValue) {
+    setValue(formValue);
+  }
 
   function handleSubmit() {
     form.current.validateAll((errors, values) => {
@@ -56,7 +56,7 @@ function UserRegister(props)  {
       Message.success('注册成功');
       props.history.push('/user/login');
     });
-  };
+  }
 
   return (
     <div className="user-register">
@@ -128,13 +128,12 @@ function UserRegister(props)  {
                 <IceFormBinder
                   name="rePasswd"
                   required
-                  validator={(rule, values, callback) =>
-                    checkPasswd2(
-                      rule,
-                      values,
-                      callback,
-                      value
-                    )
+                  validator={(rule, values, callback) => checkPasswd2(
+                    rule,
+                    values,
+                    callback,
+                    value
+                  )
                   }
                 >
                   <Input

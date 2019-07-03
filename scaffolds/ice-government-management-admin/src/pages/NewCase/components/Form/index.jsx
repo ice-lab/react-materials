@@ -18,8 +18,8 @@ export default function DonationForm() {
     status: 'pending',
   });
 
-  const formChange = (value) => {
-    console.log('value', value);
+  const formChange = (formValue) => {
+    console.log('formValue', formValue);
     setValue(value);
   };
 
@@ -53,7 +53,7 @@ export default function DonationForm() {
             >
               <Input
                 placeholder="请输入案件名称"
-                className={styles.inputNme }
+                className={styles.inputNme}
               />
             </IceFormBinder>
             <div className={styles.formError}>
@@ -70,7 +70,7 @@ export default function DonationForm() {
             >
               <Input
                 placeholder="图书背面右下角条纹码处"
-                className= { styles.inputNme}
+                className={styles.inputNme}
               />
             </IceFormBinder>
             <div className={styles.formError}>
@@ -100,7 +100,7 @@ export default function DonationForm() {
               message="立案人不能为空"
               name="donator"
             >
-              <Input placeholder="请输入" className={styles.inputNme } />
+              <Input placeholder="请输入" className={styles.inputNme} />
             </IceFormBinder>
             <div className={styles.formError}>
               <IceFormError name="donator" />
@@ -109,7 +109,7 @@ export default function DonationForm() {
           <div className={styles.formItem}>
             <div className={styles.formLabel}>立案时间</div>
             <IceFormBinder name="time">
-              <DatePicker className={styles.inputNme } />
+              <DatePicker className={styles.inputNme} />
             </IceFormBinder>
           </div>
           <div className={styles.formItem}>
@@ -141,5 +141,3 @@ export default function DonationForm() {
     </IceContainer>
   );
 }
-
-

@@ -29,12 +29,12 @@ const MOCK_DATA = {
 export default function YearsAnalysis() {
   const [type, setType] = useState('memory');
 
-  const changeType = (type) => {
-    setType(type);
-  }
+  const changeType = (selectedType) => {
+    setType(selectedType);
+  };
 
   return (
-    <IceContainer className={`${styles.container} years-analysis` }>
+    <IceContainer className={`${styles.container} years-analysis`}>
       <div className={styles.titleContainer}>
         <div className={styles.title}>财年分析</div>
         <Select onChange={changeType} value={type} size="small">
@@ -52,5 +52,3 @@ export default function YearsAnalysis() {
     </IceContainer>
   );
 }
-
-

@@ -4,6 +4,7 @@
   background: #fff;
   border-radius: 6px;
 }
+
 .title {
   margin: 0 0 40px;
   color: rgba(0, 0, 0, 0.8);
@@ -11,23 +12,28 @@
   font-weight: 500;
   text-align: center;
 }
+
 .formItem {
   position: relative;
   margin-bottom: 20px;
 }
+
 .inputIcon {
   position: absolute;
   left: 12px;
   top: 12px;
   color: #666;
 }
+
 .inputCol {
   width: 100%;
   padding-left: 20px;
 }
+
 .submitBtn {
   width: 100%;
 }
+
 .tips {
   margin-top: 20px;
   display: block;

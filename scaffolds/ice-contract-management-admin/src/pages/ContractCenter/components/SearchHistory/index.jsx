@@ -54,14 +54,13 @@ const mockData = [
 ];
 
 export default function SearchHistory(props) {
-
   function onSearchAgain(data) {
     const query = {};
     data.keywords.forEach((item) => {
       query[item.name] = item.value;
     });
     props.onSearchHistory(query);
-  };
+  }
 
   return (
     <IceContainer className={styles.container}>
@@ -75,7 +74,7 @@ export default function SearchHistory(props) {
                 <Button
                   text
                   className={styles.query}
-                  onClick={onSearchAgain.bind(null, item)}
+                  onClick={() => onSearchAgain(item)}
                 >
                   再次查询
                 </Button>
@@ -84,7 +83,10 @@ export default function SearchHistory(props) {
                 {item.keywords.map((keyword, key) => {
                   return (
                     <div className={styles.keyword} key={key}>
-                      <span className={styles.label}>{keyword.label}：</span>
+                      <span className={styles.label}>
+                        {keyword.label}
+：
+                      </span>
                       <span className={styles.value}>{keyword.value}</span>
                     </div>
                   );
@@ -105,4 +107,3 @@ SearchHistory.propTypes = {
 SearchHistory.defaultProps = {
   onSearchHistory: () => {},
 };
-

@@ -10,7 +10,7 @@ export default () => {
         LOGO
       </Link>
       <ul className={styles.navs}>
-        <li className="nav-menu" className={styles.navMenu}>
+        <li className={styles.navMenu}>
           <a href="#" className={{ ...styles.navLink, ...styles.NavIconLink }}>
             <img
               src="https://img.alicdn.com/tfs/TB1crknwzDpK1RjSZFrXXa78VXa-32-32.png"
@@ -21,7 +21,7 @@ export default () => {
             <Icon type="arrow-up" size="xs" className="arrow-up-icon" />
             <Icon type="arrow-down" size="xs" className="arrow-down-icon" />
           </a>
-          <ul className="sub-navs" className={styles.subNavs}>
+          <ul className={styles.subNavs}>
             <li className={styles.subNavMenu}>
               <a href="#" className={styles.subNavLink}>
                 International

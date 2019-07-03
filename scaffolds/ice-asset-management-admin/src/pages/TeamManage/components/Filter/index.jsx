@@ -34,5 +34,3 @@ export default function Filter() {
     </IceContainer>
   );
 }
-
-

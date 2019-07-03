@@ -12,6 +12,7 @@
   .headerNavbar {
     display: flex;
     flex-direction: row;
+
     :global {
       .next-menu-item-text {
         color: #666;
@@ -32,12 +33,14 @@
   .iceDesignHeaderUserpannel {
     margin-left: 20px;
     cursor: pointer;
+
     .userProfile {
       display: inline-block;
       text-align: center;
       margin-bottom: 2px;
       color: #666;
     }
+
     .iconDown {
       margin-left: 2px;
       color: #666;
@@ -49,16 +52,20 @@
   width: 130px;
   border-radius: 6px;
   padding: 0 16px;
+
   .userProfileMenuItem {
     height: 40px;
     line-height: 40px;
     font-size: 12px;
+
     a {
       color: #666;
+
       &:hover {
         color: #447eff;
       }
     }
+
     i {
       margin-right: 5px;
     }

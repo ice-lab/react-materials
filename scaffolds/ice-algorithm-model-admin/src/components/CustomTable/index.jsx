@@ -7,9 +7,9 @@ export default function Home(props) {
   const [current, setCurrent] = useState(1);
   const { dataSource, columns } = props;
 
-  function handlePagination(current) {
-    setCurrent(current);
-  };
+  function handlePagination(currentPage) {
+    setCurrent(currentPage);
+  }
 
   return (
     <div>

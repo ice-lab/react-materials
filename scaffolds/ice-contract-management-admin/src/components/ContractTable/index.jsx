@@ -36,7 +36,7 @@ export default function ContractTable(props) {
 
     // 根据当前的 searchQuery/pageIndex 获取列表数据，使用 setTimeout 模拟异步请求
     setTimeout(() => {
-      const dataSource = Array.from({ length: 20 }).map((item, index) => {
+      const list = Array.from({ length: 20 }).map((item, index) => {
         return {
           id: `00000${index}`,
           name: '聘用合同',
@@ -49,12 +49,12 @@ export default function ContractTable(props) {
       });
 
       setLoading(false);
-      setData(dataSource);
+      setData(list);
     }, 1 * 1000);
   }
 
-  async function onSearchSubmit(searchQuery) {
-    await setSearchQuery(searchQuery);
+  async function onSearchSubmit(query) {
+    await setSearchQuery(query);
     await setPageIndex(1);
     await fetchDataSource();
   }
@@ -63,8 +63,8 @@ export default function ContractTable(props) {
     await setSearchQuery(cloneDeep(defaultSearchQuery));
   }
 
-  async function onPaginationChange(pageIndex) {
-    await setPageIndex(pageIndex);
+  async function onPaginationChange(currentPageIndex) {
+    await setPageIndex(currentPageIndex);
     await fetchDataSource();
   }
 
@@ -98,7 +98,7 @@ export default function ContractTable(props) {
         </Button>
       </div>
     );
-  };
+  }
 
   function getTableColumns() {
     return [
@@ -155,7 +155,7 @@ export default function ContractTable(props) {
         width: 200,
       },
     ];
-  };
+  }
 
   return (
     <div>
@@ -192,10 +192,8 @@ export default function ContractTable(props) {
 
 ContractTable.propTypes = {
   enableFilter: PropTypes.bool,
-  searchQueryHistory: PropTypes.object,
 };
 
 ContractTable.defaultProps = {
   enableFilter: true,
-  searchQueryHistory: null,
 };

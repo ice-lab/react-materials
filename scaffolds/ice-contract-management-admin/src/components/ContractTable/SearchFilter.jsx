@@ -161,13 +161,13 @@ export default function SearchFilter(props) {
   /**
    * 提交回调函数
    */
-  function handleSubmit(errors, value) {
+  function handleSubmit(errors, formValue) {
     if (errors) {
       console.log({ errors });
       return;
     }
 
-    onSubmit(value);
+    onSubmit(formValue);
   }
 
   /**
@@ -183,7 +183,8 @@ export default function SearchFilter(props) {
   function renderExtraContent() {
     return (
       <Button text style={styles.extraContent} onClick={handleAdvancedSearch}>
-        高级搜索{' '}
+        高级搜索
+        {' '}
         <Icon
           size="xs"
           type={showAdvancedFields ? 'arrow-up' : 'arrow-down'}
@@ -228,4 +229,4 @@ SearchFilter.defaultProps = {
   onChange: () => {},
   onSubmit: () => {},
   onReset: () => {},
-}
+};

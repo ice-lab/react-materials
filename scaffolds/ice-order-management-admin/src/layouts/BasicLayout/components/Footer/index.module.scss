@@ -6,16 +6,19 @@
   justify-content: space-between;
   line-height: 36px;
   align-items: center;
+
   .copyright {
     color: #666;
     line-height: 1.5;
     font-size: 12px;
     text-align: left;
   }
+
   .copyrightLink {
     color: #666;
   }
-  .designLayout{
+
+  .designLayout {
     filter: grayscale(100%);
     opacity: 0.3;
   }

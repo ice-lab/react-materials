@@ -1,86 +1,103 @@
-.container{
+.container {
   width: 1200px;
   padding: 80px 0;
   margin: 0 auto;
 }
-.content{
+
+.content {
   padding: 40px;
-  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.10);
-  display: flex
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
 }
-.leftContent{
+
+.leftContent {
   border-right: 1px solid #f0f0f0;
 }
-.cell{
+
+.cell {
   width: 50%;
   padding: 40px;
 }
-.title{
+
+.title {
   line-height: 38px;
   font-weight: bold;
   font-size: 40px;
   margin: 0 0 24px;
-  text-align: center
+  text-align: center;
 }
-.subTitle{
+
+.subTitle {
   margin: 0 0 15px;
-  color:rgba(0,0,0,0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   font-size: 18px;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
-.desc{
+
+.desc {
   font-size: 14px;
   text-align: justify;
-  color: rgba(0,0,0,0.6);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 24px;
   margin-bottom: 15px;
 }
-.link{
+
+.link {
   font-size: 14px;
   font-weight: 500;
-  margin-top: 24px
+  margin-top: 24px;
 }
-.itemBody{
-  display: flex
+
+.itemBody {
+  display: flex;
 }
-.topItemBody{
+
+.topItemBody {
   padding-bottom: 80px;
   margin-bottom: 80px;
-  border-bottom: 1px solid #f0f0f0
+  border-bottom: 1px solid #f0f0f0;
 }
-.itemBodyImg{
+
+.itemBodyImg {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
-.cellleftContent{
+
+.cellleftContent {
   width: 50%;
   padding: 40px;
   border-right: 1px solid #f0f0f0;
 }
-.cellrightContent{
+
+.cellrightContent {
   width: 50%;
   padding: 40px;
 }
-.topItemBodyitemBody{
+
+.topItemBodyitemBody {
   display: flex;
   padding-bottom: 80px;
   margin-bottom: 80px;
-  border-bottom: 1px solid #f0f0f0
+  border-bottom: 1px solid #f0f0f0;
 }
-.bottomItemBodyitemBody{
-  display: flex
+
+.bottomItemBodyitemBody {
+  display: flex;
 }
-.imga{
+
+.imga {
   width: 392px;
   margin-top: 60px;
 }
-.imgt{
+
+.imgt {
   width: 144px;
-  margin-right: 40px
+  margin-right: 40px;
 }
-.imgtr{
+
+.imgtr {
   width: 144px;
   margin-left: 40px;
 }

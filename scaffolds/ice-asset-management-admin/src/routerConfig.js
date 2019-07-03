@@ -57,8 +57,8 @@ const routerConfig = [
         path: '/account/setting',
         component: Setting,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default routerConfig;

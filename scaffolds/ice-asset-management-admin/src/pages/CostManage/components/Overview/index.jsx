@@ -3,6 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Grid, Balloon, Icon } from '@alifd/next';
 import DonutChart from './DonutChart';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 export default function Overview() {
@@ -17,13 +18,13 @@ export default function Overview() {
           <div className={styles.profile}>
             <div className={styles.cell}>
               <div className={styles.head}>
-                <span className={`${styles.circle} ${styles.purple }`} />
+                <span className={`${styles.circle} ${styles.purple}`} />
                 <div className={styles.cellTitle}>当日计算费用</div>
                 <Balloon
                   trigger={<Icon type="prompt" size="small" />}
                   align="t"
                   closable={false}
-                  alignEdge={true}
+                  alignEdge
                   triggerType="hover"
                   className={styles.balloonWidth}
                 >
@@ -41,13 +42,13 @@ export default function Overview() {
             </div>
             <div className={styles.cell}>
               <div className={styles.head}>
-                <span className={`${styles.circle} ${styles.green }`} />
+                <span className={`${styles.circle} ${styles.green}`} />
                 <div className={styles.cellTitle}>当日存储费用</div>
                 <Balloon
                   trigger={<Icon type="prompt" size="small" />}
                   align="t"
                   closable={false}
-                  alignEdge={true}
+                  alignEdge
                   triggerType="hover"
                   className={styles.balloonWidth}
                 >
@@ -69,4 +70,3 @@ export default function Overview() {
     </IceContainer>
   );
 }
-

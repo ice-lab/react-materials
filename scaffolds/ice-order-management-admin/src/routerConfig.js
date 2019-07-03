@@ -67,8 +67,8 @@ const routerConfig = [
         path: '/add/goods',
         component: AddGoods,
       },
-    ]
-  }
+    ],
+  },
 ];
 
 export default routerConfig;

@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Checkbox,
@@ -23,8 +23,8 @@ let form;
 function CustomForm(props) {
   const { value, config, extraContent, hasAdvance, handleReset } = props;
 
-  const formChange = (value) => {
-    props.formChange(value);
+  const formChange = (formValue) => {
+    props.formChange(formValue);
   };
 
   const handleSubmit = (e) => {
@@ -38,7 +38,10 @@ function CustomForm(props) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <Input {...item.componentProps} className={styles.inputProp} />
           </IceFormBinder>
@@ -66,7 +69,10 @@ function CustomForm(props) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <RangePicker {...item.componentProps} className={styles.inputProp} />
           </IceFormBinder>
@@ -79,7 +85,10 @@ function CustomForm(props) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <Select {...item.componentProps} className={styles.inputProp} />
           </IceFormBinder>
@@ -88,15 +97,15 @@ function CustomForm(props) {
     );
   };
 
-  const renderFromItem = (config) => {
-    return config.map((item) => {
+  const renderFromItem = (formConfig) => {
+    return formConfig.map((item) => {
       if (item.component === 'Input') {
         return renderInput(item);
-      } else if (item.component === 'Checkbox') {
+      } if (item.component === 'Checkbox') {
         return renderCheckbox(item);
-      } else if (item.component === 'Select') {
+      } if (item.component === 'Select') {
         return renderSelect(item);
-      } else if (item.component === 'RangePicker') {
+      } if (item.component === 'RangePicker') {
         return renderDatePicker(item);
       }
     });

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 // MOCK 数据，实际业务替换掉
@@ -44,8 +45,7 @@ export default function BaseInfo() {
   return (
     <Row gutter={20}>
       {mockData.map((item, index) => {
-        const scoreColor =
-          item.score.value > 90 ? styles.green : styles.orange;
+        const scoreColor = item.score.value > 90 ? styles.green : styles.orange;
 
         return (
           <Col l="12" key={index}>
@@ -54,19 +54,19 @@ export default function BaseInfo() {
               <div className={styles.body}>
                 <div className={styles.cell}>
                   <div className={styles.cellName}>{item.score.name}</div>
-                  <div className={`${styles.cellValue} ${scoreColor }`}>
+                  <div className={`${styles.cellValue} ${scoreColor}`}>
                     {item.score.value}
                   </div>
-                  <div className={`${styles.cellDesc} ${styles.grey }`}>
+                  <div className={`${styles.cellDesc} ${styles.grey}`}>
                     {item.score.desc}
                   </div>
                 </div>
                 <div className={styles.cell}>
                   <div className={styles.cellName}>{item.consume.name}</div>
-                  <div className={`${styles.cellValue} ${styles.black }`}>
+                  <div className={`${styles.cellValue} ${styles.black}`}>
                     {item.consume.value}
                   </div>
-                  <div className={`${styles.cellDesc} ${styles.grey }`}>
+                  <div className={`${styles.cellDesc} ${styles.grey}`}>
                     <span className={styles.ratioLabel}>环比</span>
                     <span className={styles.ratioValue}>
                       {item.consume.ratio}

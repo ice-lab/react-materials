@@ -18,9 +18,9 @@ function UserLogin(props) {
     checkbox: false,
   });
 
-  function formChange(value) {
-    setValue(value);
-  };
+  function formChange(formValue) {
+    setValue(formValue);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -33,7 +33,7 @@ function UserLogin(props) {
       Message.success('登录成功');
       props.history.push('/');
     });
-  };
+  }
 
   return (
     <div className={styles.container}>

@@ -14,7 +14,7 @@ function Aside(props) {
 
   function toggleCollapse() {
     setCollapse(!collapse);
-  };
+  }
 
   return (
     <div className={styles.asideContainer}>
@@ -29,14 +29,14 @@ function Aside(props) {
         selectedKeys={[pathname]}
         defaultSelectedKeys={[pathname]}
       >
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav, index) => {
+        {Array.isArray(asideMenuConfig)
+          && asideMenuConfig.length > 0
+          && asideMenuConfig.map((nav, index) => {
             if (nav.children && nav.children.length > 0) {
               return (
                 <Nav.SubNav
                   key={index}
-                  title={
+                  title={(
                     <span>
                       {nav.icon ? (
                         <FoundationSymbol size="small" type={nav.icon} />
@@ -50,7 +50,7 @@ function Aside(props) {
                         {nav.name}
                       </span>
                     </span>
-                  }
+)}
                 >
                   {nav.children.map((item) => {
                     const linkProps = {};

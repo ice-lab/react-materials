@@ -21,8 +21,8 @@ function UserLogin(props) {
   });
   const form = useRef();
 
-  function formChange(value) {
-    setValue(value);
+  function formChange(formValue) {
+    setValue(formValue);
   }
 
   function handleSubmit(e) {
@@ -36,7 +36,7 @@ function UserLogin(props) {
       Message.success('登录成功');
       props.history.push('/contract');
     });
-  };
+  }
 
   return (
     <div className="formContainer">

@@ -40,9 +40,9 @@ function BasicLayout(props) {
         className={styles.iceMenuCustom}
         activeDirection="right"
       >
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav) => {
+        {Array.isArray(asideMenuConfig)
+          && asideMenuConfig.length > 0
+          && asideMenuConfig.map((nav) => {
             return (
               <Nav.Item key={nav.path}>
                 <Link to={nav.path} className={styles.iceMenuLink}>

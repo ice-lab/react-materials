@@ -26,8 +26,8 @@ let form;
 export default function GoodsForm() {
   const [value] = useState({});
 
-  const formChange = (value) => {
-    console.log('value', value);
+  const formChange = (formValue) => {
+    console.log('value', formValue);
   };
 
   const validateAllFormField = () => {
@@ -66,7 +66,7 @@ export default function GoodsForm() {
             <IceFormBinder name="code">
               <Input
                 placeholder="请输入数字条形码"
-                className={styles.goodsName }
+                className={styles.goodsName}
               />
             </IceFormBinder>
           </div>
@@ -82,7 +82,7 @@ export default function GoodsForm() {
               <Select
                 placeholder="请选择"
                 mode="multiple"
-                className={styles.goodsName }
+                className={styles.goodsName}
               >
                 <Option value="1">新品</Option>
                 <Option value="2">数码</Option>
@@ -96,7 +96,7 @@ export default function GoodsForm() {
             <IceFormBinder name="price" required message="商品价格必填">
               <Input
                 placeholder="请输入商品价格: ￥199.99"
-                className={styles.goodsName }
+                className={styles.goodsName}
               />
             </IceFormBinder>
             <div className={styles.formError}>
@@ -106,7 +106,7 @@ export default function GoodsForm() {
           <div className={styles.formItem}>
             <div className={styles.formLabel}>预售时间：</div>
             <IceFormBinder name="reverseTime">
-              <RangePicker className={styles.goodsName } />
+              <RangePicker className={styles.goodsName} />
             </IceFormBinder>
           </div>
           <div className={styles.formItem}>
@@ -154,5 +154,3 @@ export default function GoodsForm() {
     </div>
   );
 }
-
-

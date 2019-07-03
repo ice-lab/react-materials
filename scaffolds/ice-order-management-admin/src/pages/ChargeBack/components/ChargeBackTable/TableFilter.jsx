@@ -14,8 +14,8 @@ const { Row, Col } = Grid;
 export default function Filter(props) {
   const [value] = useState({});
 
-  const formChange = (value) => {
-    props.onChange(value);
+  const formChange = (formValue) => {
+    props.onChange(formValue);
   };
 
   return (
@@ -51,7 +51,7 @@ export default function Filter(props) {
             <div className={styles.formItem}>
               <span className={styles.formLabel}>下单方式：</span>
               <IceFormBinder triggerType="onBlur" name="orderMethod">
-                <Select className={styles.onBlur }>
+                <Select className={styles.onBlur}>
                   <Select.Option value="1">代下单</Select.Option>
                   <Select.Option value="2">自主下单</Select.Option>
                 </Select>
@@ -66,6 +66,3 @@ export default function Filter(props) {
     </IceContainer>
   );
 }
-
-
-

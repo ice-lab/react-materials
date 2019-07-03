@@ -6,12 +6,14 @@
   background: #fff;
   border-radius: 4px;
 }
+
 .link {
   color: transparentize($color-brand1-6, 0.9);
   margin: 0 5px;
   cursor: pointer;
   text-decoration: none;
 }
+
 .separator {
   width: 1px;
   margin: 0 8px;
@@ -20,6 +22,7 @@
   background: $color-fill1-1;
   vertical-align: middle;
 }
+
 .pagination {
   margin: 20px 0;
   text-align: center;

@@ -47,7 +47,7 @@ export default function BaseSetting() {
     form.validateAll((errors, values) => {
       console.log('errors', errors, 'values', values);
     });
-  };
+  }
 
   return (
     <IceContainer>

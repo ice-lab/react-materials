@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Message } from '@alifd/next';
 import timeIcon from './images/time.svg';
 import styles from './index.module.scss';
@@ -39,7 +39,9 @@ export default function Warning() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h4 className={styles.title}>预警区</h4>
+        <h4 className={styles.title}>
+          预警区
+        </h4>
         <div className={styles.content}>
           {mock.map((item, index) => {
             return (

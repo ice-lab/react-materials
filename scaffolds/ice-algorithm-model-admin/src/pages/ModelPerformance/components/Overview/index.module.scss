@@ -5,6 +5,7 @@
   border-radius: 4px;
   margin-bottom: 20px;
 }
+
 .symbol {
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@
   width: 40%;
   color: #fff;
 }
+
 .value {
   display: flex;
   flex-direction: column;
@@ -20,10 +22,12 @@
   width: 60%;
   color: #c6cad6;
 }
+
 .count {
   font-size: 36px;
   margin-bottom: 2px;
 }
+
 .desc {
   font-size: 13px;
 }

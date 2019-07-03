@@ -38,14 +38,14 @@ function Memory(props) {
 
   const fetchData = async (len) => {
     await setLoading(true);
-    mockApi(len).then(async (data) => {
-      await setData(data);
+    mockApi(len).then(async (mockData) => {
+      await setData(mockData);
       await setLoading(false);
     });
   };
 
-  const handlePaginationChange = async (current) => {
-    await setCurrent(current);
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
     fetchData();
   };
 

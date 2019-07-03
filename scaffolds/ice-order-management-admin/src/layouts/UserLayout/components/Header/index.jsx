@@ -11,6 +11,3 @@ export default () => {
     </div>
   );
 };
-
-
-

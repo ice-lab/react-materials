@@ -31,5 +31,3 @@ TopBar.defaultProps = {
   extraAfter: null,
   extraBefore: null,
 };
-
-

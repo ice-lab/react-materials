@@ -22,7 +22,7 @@ const getData = (length = 10) => {
   });
 };
 
-export default function QualityTable(props) {
+export default function QualityTable() {
   const [current, setCurrent] = useState(1);
   const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -41,29 +41,19 @@ export default function QualityTable(props) {
 
   const fetchData = async (len) => {
     await setLoading(true);
-    mockApi(len).then(async (data) => {
-      await setData(data);
+    mockApi(len).then(async (mockData) => {
+      await setData(mockData);
       await setLoading(false);
     });
   };
 
-  const handlePaginationChange = async (current) => {
-    await setCurrent(current);
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
     fetchData();
   };
 
   const handleFilterChange = () => {
     fetchData(5);
-  };
-
-  const renderOper = () => {
-    return (
-      <div>
-        <a className={styles.link}>详情</a>
-        <span className={styles.separator} />
-        <a className={styles.link}>申请权限</a>
-      </div>
-    );
   };
 
   return (

@@ -50,7 +50,7 @@ export default function Header() {
 
         {/* Header 右侧内容块 */}
         <Balloon
-          trigger={
+          trigger={(
             <div className={styles.userPanel}>
               <IceImg
                 height={40}
@@ -69,7 +69,7 @@ export default function Header() {
                 className={styles.iconDown}
               />
             </div>
-          }
+)}
           closable={false}
           className={styles.userProfileMenu}
         >

@@ -45,9 +45,9 @@ export default function OrderTrend() {
   const renderProductStatus = (status) => {
     return (
       <div className={styles.status}>
-        <span className={ styles.dot}
-        style = {{background: STATUS[status]}}
-         />
+        <span className={styles.dot}
+          style={{ background: STATUS[status] }}
+        />
         {status}
       </div>
     );
@@ -78,5 +78,3 @@ export default function OrderTrend() {
     </IceContainer>
   );
 }
-
-

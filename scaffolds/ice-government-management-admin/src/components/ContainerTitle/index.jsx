@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 const ContainerTitle = ({ title, style, ...props }) => {
   return (
-    <div className={`${styles.container} ${{style}}`}>
+    <div className={styles.container} style={style}>
       <h3 className={styles.title}>{title}</h3>
       {props.buttonText ? (
         <Button type="primary">{props.buttonText}</Button>
@@ -13,8 +13,6 @@ const ContainerTitle = ({ title, style, ...props }) => {
     </div>
   );
 };
-
-
 
 ContainerTitle.propTypes = {
   title: PropTypes.string.isRequired,

@@ -52,7 +52,10 @@ export default function SelectBar() {
               <Icon type={item.icon} size="large" />
             </h2>
             <h3 className={styles.title}>{item.title}</h3>
-            <p className={styles.instrument}>说明: {item.instrument}</p>
+            <p className={styles.instrument}>
+说明:
+              {item.instrument}
+            </p>
           </div>
         );
       })}

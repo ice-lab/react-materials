@@ -41,7 +41,7 @@ export default function LineChart() {
       padding={[30, 30, 30, 60]}
     >
       <Axis name="month" />
-      <Axis name="temperature" label={{ formatter: (val) => `${val}` }} />
+      <Axis name="temperature" label={{ formatter: val => `${val}` }} />
       <Tooltip crosshairs={{ type: 'y' }} />
       <Geom type="line" position="month*temperature" size={2} color="city" />
       <Geom

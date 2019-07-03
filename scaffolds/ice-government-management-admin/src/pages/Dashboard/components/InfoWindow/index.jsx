@@ -42,7 +42,11 @@ export default function InfoWindow() {
                   <span className={styles.circle} />
                   {item.title}
                 </span>
-                <span className={styles.date}>[{item.date}]</span>
+                <span className={styles.date}>
+[
+                  {item.date}
+]
+                </span>
               </li>
             );
           })}

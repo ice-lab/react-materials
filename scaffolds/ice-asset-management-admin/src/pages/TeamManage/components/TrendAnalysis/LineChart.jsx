@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 export default function LineChart(props) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const { data, fields } = props;
+  const { data, fields, buttons } = props;
 
   const ds = new DataSet();
   const dv = ds.createView().source(data);
@@ -32,9 +32,8 @@ export default function LineChart(props) {
   return (
     <div className={styles.container}>
       <div className={styles.head}>
-        {props.buttons.map((item, index) => {
-          const actived =
-            currentIndex === index ? styles.actived : {};
+        {buttons.map((item, index) => {
+          const actived = currentIndex === index ? styles.actived : {};
           return (
             <a
               key={index}
@@ -52,7 +51,7 @@ export default function LineChart(props) {
         <Axis
           name="temperature"
           label={{
-            formatter: (val) => `${val}`,
+            formatter: val => `${val}`,
           }}
         />
         <Tooltip

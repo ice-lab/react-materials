@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Title from './components/Title';
 import OverviewSatesChart from './components/OverviewSatesChart';

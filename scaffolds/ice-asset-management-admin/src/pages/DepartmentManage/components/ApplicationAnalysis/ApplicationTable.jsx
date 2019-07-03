@@ -41,14 +41,14 @@ export default function ApplicationTable() {
 
   const fetchData = async (len) => {
     await setLoading(true);
-    mockApi(len).then(async (data) => {
-      await setData(data);
-      await setLoading(false);
+    mockApi(len).then((mockData) => {
+      setData(mockData);
+      setLoading(false);
     });
   };
 
-  const handlePaginationChange = async (current) => {
-    await setCurrent(current);
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
     fetchData();
   };
 
@@ -81,5 +81,3 @@ export default function ApplicationTable() {
     </div>
   );
 }
-
-

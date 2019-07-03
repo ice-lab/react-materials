@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+import BaseInfo from '@/components/BaseInfo';
 import Filter from './components/Filter';
 import Overview from './components/Overview';
 import HealthAnalysis from './components/HealthAnalysis';
 import ApplicationAnalysis from './components/ApplicationAnalysis';
-import BaseInfo from '@/components/BaseInfo';
 
 export default function DepartmentManage() {
   return (

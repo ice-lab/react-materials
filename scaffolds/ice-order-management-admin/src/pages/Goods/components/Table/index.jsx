@@ -24,7 +24,7 @@ const getData = (length = 10) => {
 };
 
 export default function GoodsTable() {
-  const [current] = useState(1);
+  const [current, setCurrent] = useState(1);
   const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -42,14 +42,14 @@ export default function GoodsTable() {
 
   const fetchData = (len) => {
     setLoading(true);
-    mockApi(len).then((data) => {
-      setData(data);
+    mockApi(len).then((mockData) => {
+      setData(mockData);
       setLoading(false);
     });
   };
 
-  const handlePaginationChange = async (current) => {
-    await setCurrent(current);
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
     fetchData();
   };
 
@@ -79,7 +79,7 @@ export default function GoodsTable() {
       <div>
         <Button
           type="primary"
-          className={styles.btn  }
+          className={styles.btn}
           onClick={handleDetail}
         >
           详情
@@ -120,4 +120,3 @@ export default function GoodsTable() {
     </div>
   );
 }
-

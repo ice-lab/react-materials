@@ -42,7 +42,10 @@ export default function BarChart() {
   return (
     <div className={styles.container}>
       <h4 className={styles.average}>
-        平均执行天数: <span className={styles.number}>{mock.average}</span>
+        平均执行天数:
+        <span className={styles.number}>
+          {mock.average}
+        </span>
       </h4>
       <Chart
         width={220}
@@ -88,5 +91,3 @@ export default function BarChart() {
     </div>
   );
 }
-
-

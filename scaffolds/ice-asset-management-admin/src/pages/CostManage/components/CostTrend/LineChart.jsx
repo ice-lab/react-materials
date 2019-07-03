@@ -42,7 +42,7 @@ export default class LineChart extends React.Component {
           <Axis
             name="temperature"
             label={{
-              formatter: (val) => `${val}万元`,
+              formatter: val => `${val}万元`,
             }}
           />
           <Tooltip
@@ -73,4 +73,3 @@ export default class LineChart extends React.Component {
     );
   }
 }
-

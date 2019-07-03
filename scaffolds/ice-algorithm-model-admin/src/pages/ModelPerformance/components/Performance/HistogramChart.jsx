@@ -101,9 +101,9 @@ function Clusteredstacked() {
         let type;
 
         if (
-          key === 'Under 5 Years' ||
-          key === '5 to 13 Years' ||
-          key === '14 to 17 Years'
+          key === 'Under 5 Years'
+          || key === '5 to 13 Years'
+          || key === '14 to 17 Years'
         ) {
           type = 'a';
         } else if (key === '18 to 24 Years') {

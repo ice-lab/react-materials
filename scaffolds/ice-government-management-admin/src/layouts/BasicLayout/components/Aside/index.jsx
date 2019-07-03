@@ -1,5 +1,5 @@
 /* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Nav } from '@alifd/next';
 import Icon from '@icedesign/foundation-symbol';
 import { withRouter, Link } from 'react-router-dom';
@@ -16,9 +16,9 @@ function BasicLayout(props) {
     <div className={styles.iceAsideCustom}>
       <div className={styles.iceAsideLogo}>LOGO</div>
       <Nav className={styles.iceNav} selectedKeys={[pathname]}>
-        {Array.isArray(asideMenuConfig) &&
-          asideMenuConfig.length > 0 &&
-          asideMenuConfig.map((nav) => {
+        {Array.isArray(asideMenuConfig)
+          && asideMenuConfig.length > 0
+          && asideMenuConfig.map((nav) => {
             return (
               <Item key={nav.path}>
                 <Link to={nav.path}>

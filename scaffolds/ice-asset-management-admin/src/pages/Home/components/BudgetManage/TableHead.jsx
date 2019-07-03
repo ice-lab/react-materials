@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Input, Select } from '@alifd/next';
 import {
   FormBinderWrapper as IceFormBinderWrapper,
@@ -7,12 +7,13 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const value = {};
 export default function TableHead(props) {
-  const formChange = (value) => {
-    props.onChange(value);
+  const formChange = (formValue) => {
+    props.onChange(formValue);
   };
 
   return (
@@ -62,5 +63,3 @@ export default function TableHead(props) {
     </IceFormBinderWrapper>
   );
 }
-
-

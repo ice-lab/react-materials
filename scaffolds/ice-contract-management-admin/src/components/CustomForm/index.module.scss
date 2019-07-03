@@ -1,22 +1,27 @@
-.formContainer{
-  position: relative;;
+.formContainer {
+  position: relative;
   background: #fff;
 }
-.formItem{
+
+.formItem {
   display: flex;
   align-items: center;
   margin: 10px 0;
 }
-.formLabel{
+
+.formLabel {
   min-width: 70px;
 }
-.buttons{
+
+.buttons {
   margin: 10px 0 20px;
   text-align: center;
 }
-.leftbtn{
-  margin-right: 10px
+
+.leftbtn {
+  margin-right: 10px;
 }
-.inputw{
+
+.inputw {
   width: 100%;
 }

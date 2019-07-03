@@ -33,7 +33,9 @@ export default function Overview(props) {
               className={`${styles.item} ${hasBorder}`}
             >
               <div className={styles.title}>
-                {item.title} {renderHelp()}
+                {item.title}
+                {' '}
+                {renderHelp()}
               </div>
               <div className={styles.value}>{item.value}</div>
             </Col>
@@ -43,5 +45,3 @@ export default function Overview(props) {
     </IceContainer>
   );
 }
-
-

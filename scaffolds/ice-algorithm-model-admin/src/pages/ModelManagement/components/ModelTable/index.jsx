@@ -37,14 +37,14 @@ export default function ModelTable() {
 
   async function fetchData(len) {
     await setLoading(true);
-    mockApi(len).then((data) => {
-      setData(data);
+    mockApi(len).then((mockData) => {
+      setData(mockData);
       setLoading(false);
     });
   }
 
-  async function handlePaginationChange(current) {
-    await setCurrent(current);
+  async function handlePaginationChange(currentPage) {
+    await setCurrent(currentPage);
     fetchData();
   }
 

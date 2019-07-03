@@ -61,15 +61,15 @@ export default function ChargeBackTable() {
 
   const fetchData = async (len) => {
     await setLoading(true);
-    mockApi(len).then((data) => {
-      setData(data);
+    mockApi(len).then((mockData) => {
+      setData(mockData);
       setLoading(false);
       setOverviewData(getOverviewData());
     });
   };
 
-  const handlePaginationChange = async (current) => {
-    await setCurrent(current);
+  const handlePaginationChange = async (currentPage) => {
+    await setCurrent(currentPage);
     fetchData();
   };
 
@@ -99,4 +99,3 @@ export default function ChargeBackTable() {
     </div>
   );
 }
-

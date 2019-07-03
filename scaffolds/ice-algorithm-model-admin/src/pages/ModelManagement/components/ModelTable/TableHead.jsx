@@ -12,8 +12,8 @@ const { Row, Col } = Grid;
 export default function TableHead(props) {
   const [value] = useState({});
 
-  function formChange(value) {
-    props.onChange(value);
+  function formChange(formValue) {
+    props.onChange(formValue);
   }
 
   return (
@@ -28,7 +28,9 @@ export default function TableHead(props) {
             <IceFormBinder name="modelname" triggerType="onBlur">
               <Select
 
-                style={{ width: '200px' }}
+                style={{
+                  width: '200px',
+                }}
               >
                 <Select.Option value="option1">强化学习</Select.Option>
                 <Select.Option value="option2">无监督学习</Select.Option>

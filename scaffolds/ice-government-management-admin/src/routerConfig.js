@@ -63,7 +63,7 @@ const routerConfig = [
         component: NewCase,
       },
     ],
-  }
+  },
 ];
 
 export default routerConfig;

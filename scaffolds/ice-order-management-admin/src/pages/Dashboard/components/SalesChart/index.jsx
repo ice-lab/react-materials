@@ -48,7 +48,8 @@ export default function SalesChart() {
                       color: item.increase ? 'red' : 'green',
                     }}
                   >
-                    {item.percent}{' '}
+                    {item.percent}
+                    {' '}
                     <Icon
                       type={`arrow-${item.increase ? 'up' : 'down'}-filling`}
                       size="xs"

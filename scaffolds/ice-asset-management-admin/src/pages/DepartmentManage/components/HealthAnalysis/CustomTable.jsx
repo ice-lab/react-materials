@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from '@alifd/next';
 
 // MOCK 数据，实际业务按需进行替换

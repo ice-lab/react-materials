@@ -14,8 +14,8 @@ const { Row, Col } = Grid;
 export default function Filter(props) {
   const [value] = useState({});
 
-  const formChange = (value) => {
-    props.onChange(value);
+  const formChange = (formValue) => {
+    props.onChange(formValue);
   };
 
   return (
@@ -55,5 +55,3 @@ export default function Filter(props) {
     </IceFormBinderWrapper>
   );
 }
-
-

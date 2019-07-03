@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, DatePicker } from '@alifd/next';
+import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Calculate from './Calculate';
 import Memory from './Memory';
@@ -23,7 +23,7 @@ export default function BudgetManage() {
     <IceContainer className={styles.container}>
       <Tab
         onChange={handleChange}
-        navStyle={{fontWeight:'500',fontSize:'14px',color:'rgba(0, 0, 0, 0.85)'}}
+        navStyle={{ fontWeight: '500', fontSize: '14px', color: 'rgba(0, 0, 0, 0.85)' }}
       >
         {tabs.map((item) => {
           return (
@@ -40,5 +40,3 @@ export default function BudgetManage() {
     </IceContainer>
   );
 }
-
-

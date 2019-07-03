@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Balloon, Icon, Message, Nav } from '@alifd/next';
 
@@ -27,29 +27,29 @@ function Header(props) {
       <Logo />
       <div className={styles.headerNavbar}>
         <Nav
-          className={styles['header-navbar-menu']}
+          className={styles.headerNavbarMenu}
           selectedKeys={[pathname]}
           defaultSelectedKeys={[pathname]}
           direction="hoz"
           type="secondary"
           onClick={handleClick}
         >
-          {headerMenuConfig &&
-            headerMenuConfig.length > 0 &&
-            headerMenuConfig.map((nav, index) => {
+          {headerMenuConfig
+            && headerMenuConfig.length > 0
+            && headerMenuConfig.map((nav, index) => {
               if (nav.children && nav.children.length > 0) {
                 return (
                   <Item
                     triggerType="click"
                     key={index}
-                    title={
+                    title={(
                       <span>
                         {nav.icon ? (
                           <Icon size="small" type={nav.icon} />
                         ) : null}
                         <span>{nav.name}</span>
                       </span>
-                    }
+                    )}
                   >
                     {nav.children.map((item) => {
                       const linkProps = {};
@@ -115,9 +115,9 @@ function Header(props) {
         </Nav>
         <Balloon
           triggerType="hover"
-          trigger={
+          trigger={(
             <div
-              className={styles['ice-design-header-userpannel']}
+              className={styles.iceDesignHeaderUserpannel}
               style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -128,27 +128,27 @@ function Header(props) {
                 height={40}
                 width={40}
                 src={require('./images/avatar.png')}
-                className={styles['user-avatar']}
+                className={styles.userAvatar}
               />
-              <div className={styles['user-profile']}>
+              <div className={styles.userProfile}>
                 <span className="user-name" style={{ fontSize: '13px' }}>
                   淘小宝
                 </span>
                 <br />
-                <span className={styles['user-department']}>技术部</span>
+                <span className={styles.userDepartment}>技术部</span>
               </div>
               <Icon
                 type="arrow-down"
                 size="xxs"
-                className={styles['icon-down']}
+                className={styles.iconDown}
               />
             </div>
-          }
+          )}
           closable={false}
-          className={styles['user-profile-menu']}
+          className={styles.userProfileMenu}
         >
           <ul>
-            <li className={styles['user-profile-menu-item']}>
+            <li className={styles.userProfileMenuItem}>
               <Link to="/user/login">
                 <Icon type="compass" size="small" />
                 退出

@@ -27,7 +27,7 @@ const routerConfig = [
         path: '/',
         redirect: '/user/login',
       },
-    ]
+    ],
   },
   {
     path: '/contract',
@@ -49,7 +49,7 @@ const routerConfig = [
         path: '/',
         redirect: '/contract/index',
       },
-    ]
+    ],
   },
 ];
 

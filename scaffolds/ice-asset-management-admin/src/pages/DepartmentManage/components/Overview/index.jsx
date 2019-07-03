@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
@@ -51,4 +51,3 @@ export default function Overview() {
     </IceContainer>
   );
 }
-

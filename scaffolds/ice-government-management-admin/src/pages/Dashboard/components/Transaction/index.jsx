@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Message } from '@alifd/next';
 import goalIcon from './images/goal.svg';
 import linkIcon from './images/link.svg';
@@ -87,7 +87,8 @@ export default function Transaction() {
                   <img src={item.img} className={styles.iconImage} alt="" />
                 </div>
                 <p className={styles.itemTitle}>
-                  {item.title}{' '}
+                  {item.title}
+                  {' '}
                   <span className={styles.count}>{item.count}</span>
                 </p>
               </div>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
 import cx from 'classnames';
 import Logo from '../Logo';
@@ -17,10 +17,11 @@ export default function Footer(props) {
     >
       <div className={styles.iceDesignLayoutFooterBody}>
         <div style={{ filter: 'grayscale(100%)', opacity: 0.3 }}>
-          <Logo className={ { color: '#666' }} />
+          <Logo className={{ color: '#666' }} />
         </div>
         <div className={styles.copyright}>
-          © 2018 Theme designed by{' '}
+          © 2018 Theme designed by
+          {' '}
           <a
             href="https://github.com/alibaba/ice"
             target="_blank"

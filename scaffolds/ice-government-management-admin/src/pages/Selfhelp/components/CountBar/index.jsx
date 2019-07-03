@@ -47,12 +47,13 @@ export default function CountBar() {
                 <span>{item.count}</span>
               </div>
             </div>
-            <p className={styles.instrument}>说明: {item.instrument}</p>
+            <p className={styles.instrument}>
+              说明:
+              {item.instrument}
+            </p>
           </div>
         );
       })}
     </div>
   );
 }
-
-

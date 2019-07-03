@@ -1,49 +1,44 @@
+.container {
+  letter-spacing: 2px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+  flex-direction: column;
+}
 
-    .container {
-      margin: 0 20px;
-      letterSpacing: 2px;
-    }
-    .button {
-      margin: 0 8px;
-      padding: 0 16px;
-      letter-spacing: 2px;
-    }
-    .table {
-      margin: 20px 0;
-    }
-    .pagination {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  
- 
-    .container {
-      margin: 20px 0;
-      letter-spacing: 2px;
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 0;
-      align-items: center;
-      flex-direction: column;
-    }
-    .form {
-      text-align: center;
-      margin-bottom: 16px;
-      word-break: keep-all;
-    }
-    .input {
-      background-color: rgba(0, 0, 0, 0);
-      width: 110px;
-    }
-    .label {
-      margin: 0 6px;
-      font-size: 12px;
-    }
-    .select{
-      vertical-align: middle;
-    }
-    .button {
-      margin: 0 8px;
-      padding: 0 16px;
-      letter-spacing: 2px;
-    }
+.button {
+  margin: 0 8px;
+  padding: 0 16px;
+  letter-spacing: 2px;
+}
+
+.table {
+  margin: 20px 0;
+}
+
+.pagination {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  text-align: center;
+  margin-bottom: 16px;
+  word-break: keep-all;
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0);
+  width: 110px;
+}
+
+.label {
+  margin: 0 6px;
+  font-size: 12px;
+}
+
+.select {
+  vertical-align: middle;
+}

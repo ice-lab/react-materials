@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 export default function Head(props) {
@@ -34,5 +35,3 @@ export default function Head(props) {
     </Row>
   );
 }
-
-

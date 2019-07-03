@@ -14,18 +14,20 @@ export default function SearchBar() {
       <span className={styles.caseNumber}>
         <label>
           案号: (
-          <Input className={`${styles.input} ${styles.shortInput}`} />)
+          <Input className={`${styles.input} ${styles.shortInput}`} />
+          )
         </label>
         <Select
           placeholder="浙高拆预"
-          className={`${styles.select} ${styles.shortInput}`} 
+          className={`${styles.select} ${styles.shortInput}`}
         >
           <Option value="small">浙执1</Option>
           <Option value="medium">浙执2</Option>
           <Option value="large">浙执3</Option>
         </Select>
         字第
-        <Input className={`${styles.input} ${styles.shortInput}`} />号
+        <Input className={`${styles.input} ${styles.shortInput}`} />
+        号
       </span>
       <span className={styles.date}>
         <label>
@@ -45,5 +47,3 @@ export default function SearchBar() {
     </div>
   );
 }
-
-

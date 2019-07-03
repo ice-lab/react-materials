@@ -69,17 +69,12 @@ const mockData = [
   },
 ];
 
-// Random Numbers
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 export default function CostTrend() {
   const [data] = useState(mockData);
   const [type, setType] = useState('allCost');
 
-  const changeType = (type) => {
-    setType(type);
+  const changeType = (selectedType) => {
+    setType(selectedType);
   };
 
   return (
@@ -101,4 +96,3 @@ export default function CostTrend() {
     </IceContainer>
   );
 }
-

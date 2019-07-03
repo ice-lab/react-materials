@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -34,10 +34,6 @@ const mockData = [
 ];
 
 export default function Overview() {
-  const onChange = (value) => {
-    console.log({ value });
-  };
-
   return (
     <div className={styles.overview}>
       <IceContainer className={styles.alignRight}>
@@ -47,11 +43,10 @@ export default function Overview() {
         <h4 className={styles.containerTitle}>概览</h4>
         <Row gutter={20} className={styles.row}>
           {mockData.map((items, index) => {
-            const borderNone =
-              index === mockData.length - 1 ? styles.borderNone : {};
+            const borderNone = index === mockData.length - 1 ? styles.borderNone : {};
             return (
               <Col l="6" key={index}>
-                <div className={`${styles.box} ${borderNone }`}>
+                <div className={`${styles.box} ${borderNone}`}>
                   {items.map((item, key) => {
                     return (
                       <div className={styles.boxCell} key={key}>
@@ -69,5 +64,3 @@ export default function Overview() {
     </div>
   );
 }
-
-

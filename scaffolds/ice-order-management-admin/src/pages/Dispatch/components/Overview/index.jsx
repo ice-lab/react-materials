@@ -13,8 +13,8 @@ export default function Overview(props) {
         return (
           <Col l={8} key={index} className={styles.item}>
             <IceContainer
-              className={styles.IceContainer } 
-              style = {{background: item.background}}
+              className={styles.IceContainer}
+              style={{ background: item.background }}
             >
               <div className={styles.title}>{item.title}</div>
               <div className={styles.value}>{item.value}</div>
@@ -25,5 +25,3 @@ export default function Overview(props) {
     </Row>
   );
 }
-
-

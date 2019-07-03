@@ -13,8 +13,8 @@ const { Row, Col } = Grid;
 export default function Filter(props) {
   const [value] = useState({});
 
-  const formChange = (value) => {
-    props.onChange(value);
+  const formChange = (formValue) => {
+    props.onChange(formValue);
   };
 
   return (
@@ -53,7 +53,7 @@ export default function Filter(props) {
           <div className={styles.formItem}>
             <span className={styles.formLabel}>归属门店：</span>
             <IceFormBinder triggerType="onBlur" name="store">
-              <Select  className={styles.input}>
+              <Select className={styles.input}>
                 <Select.Option value="1">余杭店</Select.Option>
                 <Select.Option value="2">滨江店</Select.Option>
                 <Select.Option value="3">西湖店</Select.Option>
@@ -68,5 +68,3 @@ export default function Filter(props) {
     </IceFormBinderWrapper>
   );
 }
-
-

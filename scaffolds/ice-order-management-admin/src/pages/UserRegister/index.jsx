@@ -41,8 +41,8 @@ function UserRegister(props) {
     }
   };
 
-  const formChange = (value) => {
-    setValue(value);
+  const formChange = (formValue) => {
+    setValue(formValue);
   };
 
   const handleSubmit = () => {
@@ -118,8 +118,7 @@ function UserRegister(props) {
             <IceFormBinder
               name="rePasswd"
               required
-              validator={(rule, values, callback) =>
-                checkPasswd2(rule, values, callback, value)
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, value)
               }
             >
               <Input
@@ -150,7 +149,6 @@ function UserRegister(props) {
     </div>
   );
 }
-
 
 
 export default withRouter(UserRegister);

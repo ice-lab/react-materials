@@ -64,13 +64,18 @@ export default function ModelCard() {
           <Col l="6" key={index}>
             <div className={styles.modelCard}>
               <div className={styles.head}>
-                <Icon type="electronics" className={styles.icon} /> {data.title}
+                <Icon type="electronics" className={styles.icon} />
+                {' '}
+                {data.title}
               </div>
               <div className={styles.body}>
                 {data.body.map((item, key) => {
                   return (
                     <div className={styles.item} key={key}>
-                      <span className={styles.label}>{item.label}：</span>
+                      <span className={styles.label}>
+                        {item.label}
+：
+                      </span>
                       <span className={styles.value}>{item.value}</span>
                     </div>
                   );
@@ -97,4 +102,3 @@ export default function ModelCard() {
     </Row>
   );
 }
-

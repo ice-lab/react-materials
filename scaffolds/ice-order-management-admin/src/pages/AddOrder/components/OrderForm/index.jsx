@@ -14,8 +14,8 @@ let form;
 export default function OrderForm() {
   const [value] = useState({});
 
-  const formChange = (value) => {
-    console.log('value', value);
+  const formChange = (formValue) => {
+    console.log('value', formValue);
   };
 
   const validateAllFormField = () => {
@@ -31,7 +31,7 @@ export default function OrderForm() {
   return (
     <div>
       <PageHead title="添加订单" />
-      <IceContainer className={styles.iceContainer }>
+      <IceContainer className={styles.iceContainer}>
         <IceFormBinderWrapper
           value={value}
           onChange={formChange}
@@ -86,5 +86,3 @@ export default function OrderForm() {
     </div>
   );
 }
-
-

@@ -18,7 +18,8 @@ export default function Footer(props) {
           <Logo isDark />
         </div>
         <div className={styles.copyright}>
-          © 2018 Theme designed by{' '}
+          © 2018 Theme designed by
+          {' '}
           <a
             href="https://github.com/alibaba/ice"
             target="_blank"

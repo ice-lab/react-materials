@@ -18,7 +18,7 @@ export default function CreateFrom(props) {
 
   function onCancel() {
     props.onSubmitCancel();
-  };
+  }
 
   function onSubmit() {
     if (submitting) {
@@ -49,7 +49,16 @@ export default function CreateFrom(props) {
     >
       <div className={styles.formContainer}>
         <div className={styles.formItem}>
-          <label htmlFor="id" className={styles.formLabel}>编号：<span style={{ color: 'red' }}>*</span></label>
+          <label htmlFor="id" className={styles.formLabel}>
+            编号：
+            <span
+              style={{
+                color: 'red',
+              }}
+            >
+              *
+            </span>
+          </label>
           <FormBinder name="id" required message="请选择编号">
             <Select
               id="id"

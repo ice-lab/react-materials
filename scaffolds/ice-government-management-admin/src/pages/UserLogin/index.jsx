@@ -20,8 +20,8 @@ function UserLogin(props) {
     checkbox: false,
   });
 
-  const formChange = (value) => {
-    setValue(value);
+  const formChange = (formValue) => {
+    setValue(formValue);
   };
 
   const handleSubmit = (e) => {

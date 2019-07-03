@@ -14,7 +14,8 @@ export default function SearchBar() {
       <span className={styles.caseNumber}>
         <label>
           案号: (
-          <Input className={`${styles.input} ${styles.shortInput}`} />)
+          <Input className={`${styles.input} ${styles.shortInput}`} />
+)
         </label>
         <Select
           placeholder="浙执"
@@ -25,7 +26,8 @@ export default function SearchBar() {
           <Option value="large">浙执3</Option>
         </Select>
         字第
-        <Input className={`${styles.input} ${styles.shortInput}`} />号
+        <Input className={`${styles.input} ${styles.shortInput}`} />
+号
       </span>
       <span>
         <Button
@@ -39,5 +41,3 @@ export default function SearchBar() {
     </div>
   );
 }
-
-

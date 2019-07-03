@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
-import ColumnChart from './ColumnChart';
 import ContainerCard from '@/components/ContainerCard';
+import ColumnChart from './ColumnChart';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
@@ -53,7 +53,8 @@ export default function OverviewSatesChart() {
                   <div className={styles.data}>
                     <h2 className={styles.amount}>{item.amount}</h2>
                     <div className={styles.percent}>
-                      {item.percent}{' '}
+                      {item.percent}
+                      {' '}
                       <Icon
                         type={`arrow-${
                           item.increase ? 'up' : 'down'
@@ -73,5 +74,3 @@ export default function OverviewSatesChart() {
     </div>
   );
 }
-
-

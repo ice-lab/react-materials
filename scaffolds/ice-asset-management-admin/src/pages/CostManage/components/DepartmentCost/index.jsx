@@ -7,9 +7,9 @@ import styles from './index.module.scss';
 export default function DepartmentCost() {
   const [type, setType] = useState('all');
 
-  const changeType = (type) => {
-    setType(type);
-  }
+  const changeType = (selectedType) => {
+    setType(selectedType);
+  };
 
   return (
     <IceContainer className={`${styles.container} department-cost`}>
@@ -29,5 +29,3 @@ export default function DepartmentCost() {
     </IceContainer>
   );
 }
-
-

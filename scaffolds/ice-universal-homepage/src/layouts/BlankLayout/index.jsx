@@ -6,6 +6,7 @@ export default function NormalLayout({ children }) {
   return (
     <div>
       <Header />
+      {children}
       <Footer />
     </div>
   );

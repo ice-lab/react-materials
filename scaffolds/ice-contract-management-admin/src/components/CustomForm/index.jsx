@@ -15,7 +15,7 @@ import {
   FormError as IceFormError,
 } from '@icedesign/form-binder';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { RangePicker } = DatePicker;
@@ -24,8 +24,8 @@ let formRef;
 function CustomForm(props) {
   const { value, config, extraContent, handleReset } = props;
 
-  function formChange(value) {
-    props.formChange(value);
+  function formChange(formValue) {
+    props.formChange(formValue);
   }
 
   function handleSubmit(e) {
@@ -39,9 +39,12 @@ function CustomForm(props) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
-            <Input {...item.componentProps} className={styles.inputw}/>
+            <Input {...item.componentProps} className={styles.inputw} />
           </IceFormBinder>
           <div className={styles.formError}>
             <IceFormError name={item.formBinderProps.name} />
@@ -49,7 +52,7 @@ function CustomForm(props) {
         </div>
       </Col>
     );
-  };
+  }
 
   function renderCheckbox(item) {
     return (
@@ -61,54 +64,65 @@ function CustomForm(props) {
         </div>
       </Col>
     );
-  };
+  }
 
   function renderDatePicker(item) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
-            <RangePicker {...item.componentProps} className={styles.inputw}/>
+            <RangePicker {...item.componentProps} className={styles.inputw} />
           </IceFormBinder>
         </div>
       </Col>
     );
-  };
+  }
 
   function renderSelect(item) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
-            <Select {...item.componentProps} style={{ width: '100%' }} />
+            <Select
+              {...item.componentProps}
+              style={{
+                width: '100%',
+              }}
+            />
           </IceFormBinder>
         </div>
       </Col>
     );
-  };
+  }
 
-  function renderFromItem(config) {
-    return config.map((item) => {
+  function renderFromItem(formConfig) {
+    return formConfig.map((item) => {
       if (item.component === 'Input') {
         return renderInput(item);
-      } else if (item.component === 'Checkbox') {
+      } if (item.component === 'Checkbox') {
         return renderCheckbox(item);
-      } else if (item.component === 'Select') {
+      } if (item.component === 'Select') {
         return renderSelect(item);
-      } else if (item.component === 'RangePicker') {
+      } if (item.component === 'RangePicker') {
         return renderDatePicker(item);
       }
     });
-  };
+  }
 
   return (
     <div className={styles.formContainer}>
       <IceFormBinderWrapper
         value={value}
         onChange={formChange}
-        ref={(ref) => formRef = ref}
+        ref={ref => formRef = ref}
       >
         <div className={styles.formItems}>
           <Row wrap gutter={40}>

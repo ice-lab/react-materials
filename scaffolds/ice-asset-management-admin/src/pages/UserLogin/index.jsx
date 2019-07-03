@@ -18,8 +18,8 @@ function UserLogin(props) {
     checkbox: false,
   });
 
-  function formChange(value) {
-    setValue(value);
+  function formChange(formValue) {
+    setValue(formValue);
   }
 
   function handleSubmit(e) {
@@ -94,7 +94,6 @@ function UserLogin(props) {
     </div>
   );
 }
-
 
 
 export default withRouter(UserLogin);

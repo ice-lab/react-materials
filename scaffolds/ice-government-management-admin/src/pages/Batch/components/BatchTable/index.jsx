@@ -59,8 +59,8 @@ export default function BatchTable() {
   });
   const [current, setCurrent] = useState(2);
 
-  const onPageChange = (current) => {
-    setCurrent(current);
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
   const handleClick = () => {
@@ -103,5 +103,3 @@ export default function BatchTable() {
     </div>
   );
 }
-
-

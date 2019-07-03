@@ -134,7 +134,7 @@ export default function DoubleaxesChart() {
           const checked = ev.checked;
           const geoms = chartIns.getAllGeoms();
 
-          for (let i = 0; i < geoms.length; i++) {
+          for (let i = 0; i < geoms.length; i + 1) {
             const geom = geoms[i];
 
             if (geom.getYScale().field === value) {

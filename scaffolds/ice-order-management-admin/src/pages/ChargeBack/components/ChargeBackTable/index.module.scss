@@ -1,19 +1,18 @@
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
 
+.formItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
 
-    .pagination {
-      margin-top: 20px;
-      text-align: right;
-    }
+.formLabel {
+  min-width: 70px;
+}
 
-
-    .formItem {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-    }
-    .formLabel {
-      min-width: 70px;
-    }
-    .onBlur{
-        width: 200px;
-    }
+.onBlur {
+  width: 200px;
+}

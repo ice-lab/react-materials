@@ -114,8 +114,8 @@ export default function TrendAnalysis() {
   const [type, setType] = useState('calculate');
   const buttons = typeToButtons[type];
 
-  const changeType = (type) => {
-    setType(type);
+  const changeType = (selectedType) => {
+    setType(selectedType);
   };
 
   const handleClick = (value) => {
@@ -146,5 +146,3 @@ export default function TrendAnalysis() {
     </IceContainer>
   );
 }
-
-

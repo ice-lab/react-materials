@@ -3,6 +3,7 @@
   padding: 10px;
   box-sizing: border-box;
 }
+
 .card {
   width: 100%;
   color: $color-black;
@@ -13,6 +14,7 @@
   border-radius: 16px;
   background-color: $color-white;
 }
+
 .title {
   margin-top: 0;
   border-left: 5px solid $color-brand1-6;
@@ -20,6 +22,7 @@
   padding-left: 10px;
   margin-bottom: 20px;
 }
+
 .content {
   height: 200px;
   margin: 0;
@@ -29,6 +32,7 @@
   padding-top: 56px;
   justify-content: space-between;
 }
+
 .item {
   width: 20%;
   cursor: pointer;
@@ -37,6 +41,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .image {
   width: 50px;
   height: 50px;
@@ -45,14 +50,17 @@
   text-align: center;
   border-radius: 8px;
 }
+
 .itemTitle {
   font-size: 12px;
   text-align: center;
 }
+
 .iconImage {
   width: 30px;
   height: 30px;
 }
+
 .count {
   top: -6px;
   color: $color-white;

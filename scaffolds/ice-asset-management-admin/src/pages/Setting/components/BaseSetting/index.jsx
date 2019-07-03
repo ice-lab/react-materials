@@ -1,5 +1,5 @@
 /* eslint  react/no-string-refs: 0 */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Button, Radio, Switch, Grid } from '@alifd/next';
 import {
@@ -12,24 +12,8 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { Group: RadioGroup } = Radio;
 
-function beforeUpload(info) {
-  console.log('beforeUpload callback : ', info);
-}
-
-function onChange(info) {
-  console.log('onChane callback : ', info);
-}
-
-function onSuccess(res, file) {
-  console.log('onSuccess callback : ', res, file);
-}
-
-function onError(file) {
-  console.log('onError callback : ', file);
-}
-
-let form;
 export default function BaseSetting() {
+  const formRef = useRef(null);
   const [value] = useState({
     name: '',
     gender: 'male',
@@ -43,14 +27,14 @@ export default function BaseSetting() {
   });
 
   const validateAllFormField = () => {
-    form.validateAll((errors, values) => {
+    formRef.current.validateAll((errors, values) => {
       console.log('errors', errors, 'values', values);
     });
   };
 
   return (
     <IceContainer>
-      <IceFormBinderWrapper value={value} ref={formRef => form = formRef}>
+      <IceFormBinderWrapper value={value} ref={formRef}>
         <div className={styles.formContent}>
           <h2 className={styles.formTitle}>个人设置</h2>
 
@@ -199,7 +183,7 @@ export default function BaseSetting() {
         </div>
       </IceFormBinderWrapper>
 
-      <Row className={ styles.rowMargin}>
+      <Row className={styles.rowMargin}>
         <Col offset="3">
           <Button
             type="primary"
@@ -213,4 +197,3 @@ export default function BaseSetting() {
     </IceContainer>
   );
 }
-

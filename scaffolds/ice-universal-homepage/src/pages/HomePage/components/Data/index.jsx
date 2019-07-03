@@ -3,7 +3,7 @@ import { Grid } from '@alifd/next';
 import BarChart from './BarChart';
 import PieChart from './PieChart';
 import LineChart from './LineChart';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 

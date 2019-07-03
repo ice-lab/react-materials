@@ -41,9 +41,9 @@ function UserRegister(props) {
     }
   }
 
-  function formChange(value) {
-    setValue(value);
-  };
+  function formChange(formValue) {
+    setValue(formValue);
+  }
 
   function handleSubmit() {
     form.validateAll((errors, values) => {
@@ -55,7 +55,7 @@ function UserRegister(props) {
       Message.success('注册成功');
       props.history.push('/user/login');
     });
-  };
+  }
 
   return (
     <div className={styles.container}>
@@ -118,8 +118,7 @@ function UserRegister(props) {
             <IceFormBinder
               name="rePasswd"
               required
-              validator={(rule, values, callback) =>
-                checkPasswd2(rule, values, callback, value)
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, value)
               }
             >
               <Input

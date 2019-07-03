@@ -27,8 +27,8 @@ export default function CustomTable(props) {
     }, 1 * 1000);
   };
 
-  const onSearchSubmit = async (searchQuery) => {
-    await setSearchQuery(searchQuery);
+  const onSearchSubmit = async (query) => {
+    await setSearchQuery(query);
     await setPageIndex(1);
     fetchDataSource();
   };
@@ -37,13 +37,9 @@ export default function CustomTable(props) {
     setSearchQuery(cloneDeep(props.searchQueryHistory));
   };
 
-  const onPaginationChange = (pageIndex) => {
-    this.setState(
-      {
-        pageIndex,
-      },
-      this.fetchDataSource
-    );
+  const onPaginationChange = async (currentPageIndex) => {
+    await setPageIndex(currentPageIndex);
+    fetchDataSource();
   };
 
   return (
@@ -52,7 +48,6 @@ export default function CustomTable(props) {
         <SearchFilter
           formConfig={formConfig}
           value={searchQuery}
-          onChange={onSeacrhChange}
           onSubmit={onSearchSubmit}
           onReset={onSearchReset}
           hasAdvance={hasAdvance}

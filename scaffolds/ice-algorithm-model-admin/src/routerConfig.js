@@ -27,8 +27,8 @@ const routerConfig = [
       {
         path: '/',
         redirect: '/user/login',
-      }
-    ]
+      },
+    ],
   },
   {
     path: '/',
@@ -53,9 +53,9 @@ const routerConfig = [
       {
         path: '/',
         redirect: '/management',
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];
 
 export default routerConfig;

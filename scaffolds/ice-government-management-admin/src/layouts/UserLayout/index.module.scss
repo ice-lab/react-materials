@@ -10,12 +10,14 @@
   background-size: cover;
   align-items: center;
   justify-content: center;
+
   .userContent {
     position: absolute;
     width: 450px;
     background: $color-white;
     border-radius: 5px;
   }
+
   .layerMask {
     background: transparentize($color-black, 0.7);
     position: absolute;

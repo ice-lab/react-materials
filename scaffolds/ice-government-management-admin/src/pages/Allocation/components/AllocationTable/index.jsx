@@ -60,8 +60,8 @@ export default function AllocationTable() {
     Message.success('需要管理员账户才能分配账号');
   };
 
-  const onPageChange = (current) => {
-    setCurrent(current);
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
   const actionRender = () => {
@@ -96,4 +96,3 @@ export default function AllocationTable() {
     </div>
   );
 }
-

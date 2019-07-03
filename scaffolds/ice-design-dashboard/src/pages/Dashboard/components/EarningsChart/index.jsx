@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import ContainerCard from '../../../../components/ContainerCard';
 import styles from './index.module.scss';
@@ -50,7 +50,7 @@ export default function EarningsChart() {
         <h1
           className={styles.earnings}
 
-          style = {{color: '#447eff'}}
+          style={{ color: '#447eff' }}
         >
           ￥ 12,238,83
         </h1>
@@ -59,5 +59,3 @@ export default function EarningsChart() {
     </ContainerCard>
   );
 }
-
-
