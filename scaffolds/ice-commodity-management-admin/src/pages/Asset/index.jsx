@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Overview from '../../components/Overview';
-import PageHead from '../../components/PageHead';
+import React from 'react';
+import Overview from '@/components/Overview';
+import PageHead from '@/components/PageHead';
 import AssetTab from './components/AssetTab';
 
 const MOCK_DATA = [
@@ -18,14 +18,12 @@ const MOCK_DATA = [
   },
 ];
 
-export default class Asset extends Component {
-  render() {
-    return (
-      <div>
-        <PageHead title="资产管理" />
-        <Overview data={MOCK_DATA} col="3" />
-        <AssetTab />
-      </div>
-    );
-  }
+export default function Asset() {
+  return (
+    <div>
+      <PageHead title="资产管理" />
+      <Overview data={MOCK_DATA} col="3" />
+      <AssetTab />
+    </div>
+  );
 }
