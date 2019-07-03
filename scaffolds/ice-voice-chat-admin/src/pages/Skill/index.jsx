@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Message } from '@alifd/next';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import Tabs from './components/Tabs';
 
 const mockData = [
@@ -17,49 +17,41 @@ const mockData = [
   },
 ];
 
-export default class Skill extends Component {
-  state = {
-    data: mockData,
-  };
+export default function Skill() {
+  const [skillData, setSkillData] = useState(mockData);
 
-  handleImport = () => {
+  const handleImport = () => {
     Message.error('暂不支持导入');
   };
 
-  getFormValue = (value) => {
-    const { data } = this.state;
+  const getFormValue = (value) => {
+    const data = [...skillData];
     data.push({
       name: value.title,
       desc: value.desc,
       tag: '预置',
     });
-    this.setState({
-      data,
-    });
+    setSkillData(data);
   };
 
-  renderExtraAfter = () => {
-    return (
-      <div style={{ display: 'flex' }}>
-        <Button
-          type="normal"
-          style={{ marginRight: '10px' }}
-          onClick={this.handleImport}
-        >
-          导入技能
-        </Button>
-        <GeneralDialog buttonText="新建技能" getFormValue={this.getFormValue} />
-      </div>
-    );
-  };
-
-  render() {
-    const { data } = this.state;
-    return (
-      <div>
-        <TopBar title="全部技能" extraAfter={this.renderExtraAfter()} />
-        <Tabs data={data} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TopBar
+        title="全部技能"
+        extraAfter={(
+          <div style={{ display: 'flex' }}>
+            <Button
+              type="normal"
+              style={{ marginRight: '10px' }}
+              onClick={handleImport}
+            >
+              导入技能
+            </Button>
+            <GeneralDialog buttonText="新建技能" getFormValue={getFormValue} />
+          </div>
+        )}
+      />
+      <Tabs data={skillData} />
+    </div>
+  );
 }

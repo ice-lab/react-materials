@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableFilter from './TableFilter';
@@ -23,18 +23,13 @@ const getData = (length = 10) => {
   });
 };
 
-export default class MembersshipTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
 
-  componentDidMount() {
-    this.fetchData();
-  }
+export default function MembersshipTable() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  mockApi = (len) => {
+  const mockApi = (len) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData(len));
@@ -42,71 +37,45 @@ export default class MembersshipTable extends Component {
     });
   };
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
+  const fetchData = (len) => {
+    setLoading(true);
+    mockApi(len).then((data) => {
+      setLoading(false);
+      setDataSource(data);
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const handlePaginationChange = (current) => {
+    setCurrentPage(current);
+    fetchData();
   };
 
-  handleFilterChange = () => {
-    this.fetchData(5);
+  const handleFilterChange = () => {
+    fetchData(5);
   };
 
-  renderOper = () => {
-    return (
-      <div>
-        <a className={styles.link}>详情</a>
-        <span className={styles.separator} />
-        <a className={styles.link}>申请权限</a>
-      </div>
-    );
-  };
-
-  render() {
-    const { isLoading, data, current } = this.state;
-
-    return (
-      <div>
-        <TableFilter onChange={this.handleFilterChange} />
-        <IceContainer>
-          <Table loading={isLoading} dataSource={data} hasBorder={false}>
-            <Table.Column title="申请时间" dataIndex="applyTime" />
-            <Table.Column title="交易号" dataIndex="transactionId" />
-            <Table.Column title="金额(万元)" dataIndex="amount" />
-            <Table.Column title="处理完成时间" dataIndex="endTime" />
-            <Table.Column title="申请人" dataIndex="applicant" />
-            <Table.Column title="状态" dataIndex="state" />
-          </Table>
-          <Pagination
-            className={styles.pagination}
-            current={current}
-            onChange={this.handlePaginationChange}
-          />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TableFilter onChange={handleFilterChange} />
+      <IceContainer>
+        <Table loading={isLoading} dataSource={dataSource} hasBorder={false}>
+          <Table.Column title="申请时间" dataIndex="applyTime" />
+          <Table.Column title="交易号" dataIndex="transactionId" />
+          <Table.Column title="金额(万元)" dataIndex="amount" />
+          <Table.Column title="处理完成时间" dataIndex="endTime" />
+          <Table.Column title="申请人" dataIndex="applicant" />
+          <Table.Column title="状态" dataIndex="state" />
+        </Table>
+        <Pagination
+          className={styles.pagination}
+          current={currentPage}
+          onChange={handlePaginationChange}
+        />
+      </IceContainer>
+    </div>
+  );
 }
-
-

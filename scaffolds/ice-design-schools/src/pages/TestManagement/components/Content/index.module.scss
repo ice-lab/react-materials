@@ -1,4 +1,4 @@
-.cardTitle{
+.cardTitle {
   height: 16px;
   line-height: 16px;
   font-size: 16px;
@@ -6,40 +6,48 @@
   font-weight: bold;
   margin: 0;
   padding: 0;
-};
-.item{
+}
+
+.item {
   position: relative;
   border-bottom: 1px solid #eee;
   padding: 20px 0;
-};
-.title{
+}
+
+.title {
   margin: 0 0 10px;
-};
-.metaWrap{
+}
+
+.metaWrap {
   display: flex;
   padding-left: 15px;
-};
-.meta{
+}
+
+.meta {
   font-size: 13px;
   color: #999;
   margin-right: 15px;
-};
-.operWrap{
+}
+
+.operWrap {
   position: absolute;
   right: 0;
   top: 36px;
   display: flex;
   cursor: pointer;
-};
-.oper{
+}
+
+.oper {
   margin-left: 15px;
   font-size: 13px;
   color: #999;
-};
-.operIcon{
+}
+
+.operIcon {
   margin-right: 8px !important;
-};
-.pagination{
+}
+
+.pagination {
   margin-top: 20px !important;
   text-align: right !important;
-};
+}

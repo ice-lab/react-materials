@@ -1,139 +1,136 @@
 .container {
-    min-height: 1000px;
-    padding: 50px 0;
-    background: #000;
+  min-height: 1000px;
+  padding: 50px 0;
+  background: #000;
 }
 
 .summary {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .mainTitle {
-    font-size: 60px;
-    color: #fff;
-    letter-spacing: 0.77px;
-    line-height: 72px;
-    margin: 0;
-    font-weight: 700;
+  font-size: 60px;
+  color: #fff;
+  letter-spacing: 0.77px;
+  line-height: 72px;
+  margin: 0;
+  font-weight: 700;
 }
 
 .mainDesc {
-    font-size: 24px;
-    line-height: 30px;
-    color: #fff;
-    margin-top: 8px;
-    font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #fff;
+  margin-top: 8px;
+  font-weight: 700;
 }
 
 .items {
-    margin-top: 70px;
-    overflow: hidden;
+  margin-top: 70px;
+  overflow: hidden;
 }
 
 .item {
-    float: left;
-    height: 360px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    position: relative;
+  float: left;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
 }
 
 .itemFull {
-    width: 100%;
-    background-image: url(https://img.alicdn.com/tfs/TB1Ylpwn5OYBuNjSsD4XXbSkFXa-2884-720.png);
-    background-size: cover;
-    float: left;
-    height: 360px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    position: relative;
+  width: 100%;
+  background-image: url(https://img.alicdn.com/tfs/TB1Ylpwn5OYBuNjSsD4XXbSkFXa-2884-720.png);
+  background-size: cover;
+  float: left;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
 }
 
 .itemLeft {
-    width: 46%;
-    background-image: url(https://img.alicdn.com/tfs/TB1SQ5cwXOWBuNjy0FiXXXFxVXa-1340-720.png);
-    background-size: cover;
-    float: left;
-    height: 360px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    position: relative;
+  width: 46%;
+  background-image: url(https://img.alicdn.com/tfs/TB1SQ5cwXOWBuNjy0FiXXXFxVXa-1340-720.png);
+  background-size: cover;
+  float: left;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
 }
 
 .itemRight {
-    width: 54%;
-    background-size: cover;
-    background-image: url(https://img.alicdn.com/tfs/TB15sxxwgmTBuNjy1XbXXaMrVXa-1556-720.png);
-    float: left;
-    height: 360px;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    position: relative;
+  width: 54%;
+  background-size: cover;
+  background-image: url(https://img.alicdn.com/tfs/TB15sxxwgmTBuNjy1XbXXaMrVXa-1556-720.png);
+  float: left;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
 }
 
 .itemBox {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 158px;
-    padding: 28px 90px;
-    background: rgba(0, 0, 0, .7);
-    transition: all .3s;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 158px;
+  padding: 28px 90px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
 }
 
 .itemFullBox {
-    padding-right: 39.5%;
-    left: 46%;
-    max-width: 54%;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 158px;
-    padding: 28px 90px;
-    background: rgba(0, 0, 0, .7);
-    transition: all .3s;
+  left: 46%;
+  max-width: 54%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 158px;
+  padding: 28px 90px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
 }
 
 .itemLeftBox {
-    padding-left: 39.5%;
-    right: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 158px;
-    padding: 28px 90px;
-    background: rgba(0, 0, 0, .7);
-    transition: all .3s;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 158px;
+  padding: 28px 90px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
 }
 
 .itemRightBox {
-    padding-right: 39.5%;
-    left: 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 158px;
-    padding: 28px 90px;
-    background: rgba(0, 0, 0, .7);
-    transition: all .3s;
+  left: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 158px;
+  padding: 28px 90px;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
 }
 
 .subtit {
-    font-size: 20px;
-    line-height: 30px;
-    color: #fff;
-    font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+  font-weight: 700;
 }
 
 .desc {
-    font-size: 14px;
-    line-height: 22px;
-    color: #fff;
-    height: 66px;
-    margin-top: 6px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
+  font-size: 14px;
+  line-height: 22px;
+  color: #fff;
+  height: 66px;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
 }

@@ -4,15 +4,18 @@
   align-items: center;
   margin-bottom: 20px;
 }
+
 .filterLabel {
   width: 80px;
   font-size: 14px;
 }
+
 .filterText {
   cursor: pointer;
   font-size: 12px;
   margin-right: 15px;
 }
+
 .activeText {
   composes: filterText;
   color: #fff;

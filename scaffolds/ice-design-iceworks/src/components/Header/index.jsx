@@ -17,7 +17,7 @@ const MENUS = [
   },
 ];
 
-export default () => {
+export default function Header() {
   return (
     <div className={styles.headercontainer}>
       <div className={styles.headercontent}>
@@ -34,4 +34,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

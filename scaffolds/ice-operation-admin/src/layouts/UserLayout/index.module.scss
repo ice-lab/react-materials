@@ -1,22 +1,23 @@
-.container{
+.container {
   position: relative;
-  width: 100wh;
+  width: 100vw;
   min-width: 1200px;
   height: 100vh;
-  background-image:
-    url('https://img.alicdn.com/tfs/TB1cpTewMHqK1RjSZFEXXcGMXXa-2872-1580.png');
+  background-image: url('https://img.alicdn.com/tfs/TB1cpTewMHqK1RjSZFEXXcGMXXa-2872-1580.png');
   background-size: cover;
   display: flex;
   flex-direction: column;
-};
-.row{
+}
+
+.row {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex: 1 !important;
-};
-.form{
+}
+
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
-};
+}

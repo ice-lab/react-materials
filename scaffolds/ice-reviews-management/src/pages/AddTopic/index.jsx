@@ -1,15 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AddForm from './components/AddForm';
 
-export default class AddTopic extends Component {
-  static displayName = 'AddTopic';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return <AddForm />;
-  }
-}
+export default () => <AddForm />;
