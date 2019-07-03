@@ -1,4 +1,3 @@
-/* eslint react/no-children-prop:0 */
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@alifd/next';
 import TextLoop from 'react-text-loop';
@@ -128,8 +127,9 @@ export default function DataAnalysis() {
               1682
               <TextLoop
                 speed={1000}
-                children={['1242.12', '5356.32', '6518.28', '8739.69']}
-              />
+              >
+                {['1242.12', '5356.32', '6518.28', '8739.69']}
+              </TextLoop>
               元
             </h2>
           </div>

@@ -4,38 +4,46 @@
   position: relative;
   height: 100vh;
 }
+
 .main {
   padding: 20px;
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
+
 .bg {
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
 }
+
 .side {
   z-index: 1;
   width: 320px;
   padding: 10px;
 }
+
 .middle {
   flex: 1;
 }
+
 .header {
   position: relative;
   z-index: 9;
   text-align: center;
 }
-.pageTitle{
+
+.pageTitle {
   font-size: 36px;
   margin: 0;
 }
+
 .time {
   margin-bottom: 20;
 }
+
 .sum {
   height: 44px;
   line-height: 44px;
@@ -55,18 +63,21 @@
   color: #f7d947;
   text-align: center;
 }
+
 .list {
   color: #fff;
   line-height: 36px;
   margin-top: 20px;
 }
+
 .item {
-  border-bottom: 1px solid #00F0FF;
+  border-bottom: 1px solid #00f0ff;
   width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 .name {
   margin-left: 10px;
 }

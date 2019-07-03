@@ -1,4 +1,3 @@
-/* eslint no-plusplus:0 */
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 import 'echarts/lib/chart/map';
@@ -188,7 +187,7 @@ function formtGCData(geoData, gcData, srcNam, dest) {
 
 function formtVData(geoData, vData, srcNam) {
   const tGeoDt = [];
-  for (let i = 0, len = vData.length; i < len; i++) {
+  for (let i = 0, len = vData.length; i < len; i += 1) {
     const tNam = vData[i].name;
     if (srcNam !== tNam) {
       tGeoDt.push({
