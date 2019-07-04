@@ -5,48 +5,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .header-navbar-menu {
+
+  .headerNavbarMenu {
     box-shadow: none !important;
   }
+
   .headerNavbar {
     display: flex;
     flex-direction: row;
-    .ice-menu {
-      background: transparent;
-      color: $color-white;
-      .ice-menu-item {
-        font-size: 14px;
-        a {
-          color: $color-white;
-        }
-        &:hover,
-        a:hover {
-          color: transparentize($color-white, 0.8);
-        }
-      }
-    }
   }
 
-  .user-avatar {
+  .userAvatar {
     margin-right: 12px;
     border-radius: 4px;
   }
 
-  .user-department {
+  .userDepartment {
     font-size: 12px;
     color: #fff;
   }
 
-  .ice-design-header-userpannel {
+  .iceHeaderUserpannel {
     margin-left: 20px;
     cursor: pointer;
-    .user-profile {
+
+    .userProfile {
       display: inline-block;
       text-align: center;
       margin-bottom: 2px;
       color: #fff;
     }
-    .icon-down {
+
+    .iconDown {
       font-weight: bold;
       margin-left: 2px;
       color: #fff;
@@ -54,20 +44,24 @@
   }
 }
 
-.user-profile-menu {
+.userProfileMenu {
   width: 130px;
   border-radius: 6px;
   padding: 0 16px;
-  .user-profile-menu-item {
+
+  .userProfileMenuItem {
     height: 40px;
     line-height: 40px;
     font-size: 12px;
+
     a {
       color: #666;
+
       &:hover {
         color: #1890ff;
       }
     }
+
     i {
       margin-right: 5px;
     }

@@ -1,4 +1,4 @@
-.textCardItem{
+.textCardItem {
   border-right: 1px solid #f0f0f0;
   height: 90px;
   width: 33%;
@@ -7,18 +7,22 @@
   justify-content: center;
   align-items: center;
 }
-.textCardSubtitle{
+
+.textCardSubtitle {
   font-size: 12px;
   margin-bottom: 10px;
 }
-.textCardTitle{
+
+.textCardTitle {
   font-size: 16px;
 }
-.textCardNumber{
+
+.textCardNumber {
   font-size: 24px;
-  font-weight: bold
+  font-weight: bold;
 }
-.textCardItemr{
+
+.textCardItemr {
   border-right: 0;
   height: 90px;
   width: 33%;
