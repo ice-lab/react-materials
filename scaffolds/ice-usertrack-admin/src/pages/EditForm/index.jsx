@@ -19,7 +19,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { Group: RadioGroup } = Radio;
 
-export default function EditForm(props) {
+export default function EditForm() {
   const formRef = useRef(null);
   const [value, setValue] = useState({});
 
