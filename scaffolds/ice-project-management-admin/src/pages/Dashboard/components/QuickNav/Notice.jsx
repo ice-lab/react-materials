@@ -1,9 +1,8 @@
-/* eslint global-require: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Icon } from '@alifd/next';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const ITEMS = [
   {
@@ -38,28 +37,26 @@ const ITEMS = [
   },
 ];
 
-export default class Notice extends Component {
-  render() {
-    return (
-      <IceContainer>
-        {ITEMS.map((item, index) => {
-          return (
-            <div className={styles.item} key={index}>
-              <Icon type={item.icon} className={styles.icon} />
-              <span className={styles.title}>{item.title}</span>
-              <span
-                style={{
-                  color: item.color,
-                  border: `1px solid ${item.color}`,
-                }}
-                className={styles.badge}
-              >
-                {item.badge}
-              </span>
-            </div>
-          );
-        })}
-      </IceContainer>
-    );
-  }
+export default function Notice() {
+  return (
+    <IceContainer>
+      {ITEMS.map((item, index) => {
+        return (
+          <div className={styles.item} key={index}>
+            <Icon type={item.icon} className={styles.icon} />
+            <span className={styles.title}>{item.title}</span>
+            <span
+              style={{
+                color: item.color,
+                border: `1px solid ${item.color}`,
+              }}
+              className={styles.badge}
+            >
+              {item.badge}
+            </span>
+          </div>
+        );
+      })}
+    </IceContainer>
+  );
 }

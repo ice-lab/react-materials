@@ -1,32 +1,35 @@
 
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .item {
-      margin: 40px 0;
-    }
-    .title {
-      margin: 20px 0 10px;
-    }
-    .value {
-      margin: 10px 0;
-      color: #333;
-    }
-    .table{
-        width: 100%;
-        height: 341px;
-    }
-    .icon{
-        width: 52px;
-    }
-    .nweIcon{
-        padding-left: 10px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.item {
+  margin: 40px 0;
+}
 
-   
+.title {
+  margin: 20px 0 10px;
+}
+
+.value {
+  margin: 10px 0;
+  color: #333;
+}
+
+.table {
+  width: 100%;
+  height: 341px;
+}
+
+.icon {
+  width: 52px;
+}
+
+.nweIcon {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

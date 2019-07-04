@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.flowStatistics {
+  .nextTabs {
+    overflow: visible;
+  }
+
+  .nextTabsBar {
+    position: absolute;
+    top: -48px;
+    right: 0;
+  }
+
+  .nextTabsText > .nextTabsBar .nextTabsTab::after {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .flowStatistics {
+    .nextTabsSmall .nextTabsTabInner {
+      padding: 0 5px;
+    }
+  }
+}

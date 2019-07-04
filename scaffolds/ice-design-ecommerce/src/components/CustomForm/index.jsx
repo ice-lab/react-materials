@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox, Input, Button, Grid, Select, DatePicker } from '@alifd/next';
 import {
@@ -12,41 +12,31 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 const { RangePicker } = DatePicker;
 
-class CustomForm extends Component {
-  static displayName = 'CustomForm';
+export default function CustomForm(props) {
+  const form = useRef(null);
+  const { value, config, extraContent, hasAdvance, handleReset } = props;
 
-  static propTypes = {
-    value: PropTypes.object.isRequired,
-    config: PropTypes.array.isRequired,
-    handleSubmit: PropTypes.func,
-    formChange: PropTypes.func,
-    handleReset: PropTypes.func,
-    extraContent: PropTypes.element,
-  };
+  function formChange(val) {
+    props.formChange(val);
+  }
 
-  static defaultProps = {
-    extraContent: null,
-    handleReset: () => {},
-    handleSubmit: () => {},
-    formChange: () => {},
-  };
-
-  formChange = (value) => {
-    this.props.formChange(value);
-  };
-
-  handleSubmit = (e) => {
+  function handleSubmit(e) {
     e.preventDefault();
-    this.refs.form.validateAll((errors, values) => {
-      this.props.handleSubmit(errors, values);
+    form.current.validateAll((errors, values) => {
+      props.handleSubmit(errors, values);
     });
-  };
+  }
 
-  renderInput = (item) => {
+  function renderInput(item) {
     return (
-      <Col l="8" key={item.label}>
+      <Col l="8"
+        key={item.label}
+      >
         <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
+          <span className={styles.formLabel}>
+            {item.label}
+            ：
+          </span>
           <IceFormBinder {...item.formBinderProps}>
             <Input {...item.componentProps} className={styles.itemIput} />
           </IceFormBinder>
@@ -56,94 +46,116 @@ class CustomForm extends Component {
         </div>
       </Col>
     );
-  };
-
-  renderCheckbox = (item) => {
+  }
+  function renderCheckbox(item) {
     return (
       <Col l="8" key={item.label}>
         <div className={styles.formItem}>
           <IceFormBinder {...item.formBinderProps}>
-            <Checkbox {...item.componentProps}>{item.label}</Checkbox>
+            <Checkbox {...item.componentProps}>
+              {item.label}
+            </Checkbox>
           </IceFormBinder>
         </div>
       </Col>
-    );
-  };
-
-  renderDatePicker = (item) => {
-    return (
-      <Col l="8" key={item.label}>
-        <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
-          <IceFormBinder {...item.formBinderProps}>
-            <RangePicker {...item.componentProps} className={styles.rangePicker } />
-          </IceFormBinder>
-        </div>
-      </Col>
-    );
-  };
-
-  renderSelect = (item) => {
-    return (
-      <Col l="8" key={item.label}>
-        <div className={styles.formItem}>
-          <span className={styles.formLabel}>{item.label}：</span>
-          <IceFormBinder {...item.formBinderProps}>
-            <Select {...item.componentProps} className={styles.itemSelect } />
-          </IceFormBinder>
-        </div>
-      </Col>
-    );
-  };
-
-  renderFromItem = (config) => {
-    return config.map((item) => {
-      if (item.component === 'Input') {
-        return this.renderInput(item);
-      } else if (item.component === 'Checkbox') {
-        return this.renderCheckbox(item);
-      } else if (item.component === 'Select') {
-        return this.renderSelect(item);
-      } else if (item.component === 'RangePicker') {
-        return this.renderDatePicker(item);
-      }
-    });
-  };
-
-  render() {
-    const { value, config, extraContent, hasAdvance, handleReset } = this.props;
-
-    return (
-      <div className={styles.formContainer}>
-        <IceFormBinderWrapper
-          value={value}
-          onChange={this.formChange}
-          ref="form"
-        >
-          <div className={styles.formItems}>
-            <Row wrap gutter={40}>
-              {this.renderFromItem(config)}
-            </Row>
-            <div className={styles.buttons}>
-              <Button
-                type="primary"
-                style={{ marginRight: '10px' }}
-                onClick={this.handleSubmit}
-              >
-                搜 索
-              </Button>
-              <Button type="normal" onClick={handleReset}>
-                重 置
-              </Button>
-            </div>
-            {hasAdvance ? extraContent : null}
-          </div>
-        </IceFormBinderWrapper>
-      </div>
     );
   }
+
+  function renderDatePicker(item) {
+    return (
+      <Col l="8"
+        key={item.label}
+      >
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>
+            {item.label}
+            ：
+          </span>
+          <IceFormBinder {...item.formBinderProps}>
+            <RangePicker {...item.componentProps} className={styles.rangePicker} />
+          </IceFormBinder>
+        </div>
+      </Col>
+    );
+  }
+
+  function renderSelect(item) {
+    return (
+      <Col l="8" key={item.label}>
+        <div className={styles.formItem}>
+          <span className={styles.formLabel}>
+            {item.label}
+            ：
+          </span>
+          <IceFormBinder {...item.formBinderProps}>
+            <Select {...item.componentProps} className={styles.itemSelect} />
+          </IceFormBinder>
+        </div>
+      </Col>
+    );
+  }
+
+  function renderFromItem(configuration) {
+    return configuration.map((item) => {
+      if (item.component === 'Input') {
+        return renderInput(item);
+      }
+      if (item.component === 'Checkbox') {
+        return renderCheckbox(item);
+      }
+      if (item.component === 'Select') {
+        return renderSelect(item);
+      }
+      if (item.component === 'RangePicker') {
+        return renderDatePicker(item);
+      }
+    });
+  }
+
+  return (
+    <div className={styles.formContainer}>
+      <IceFormBinderWrapper
+        value={value}
+        onChange={formChange}
+        ref={form}
+      >
+        <div className={styles.formItems}>
+          <Row wrap gutter={40}>
+            {renderFromItem(config)}
+          </Row>
+          <div className={styles.buttons}>
+            <Button
+              type="primary"
+              style={{ marginRight: '10px' }}
+              onClick={handleSubmit}
+            >
+              搜 索
+            </Button>
+            <Button type="normal" onClick={handleReset}>
+              重 置
+            </Button>
+          </div>
+          {hasAdvance ? extraContent : null}
+        </div>
+      </IceFormBinderWrapper>
+    </div>
+  );
 }
 
+CustomForm.displayName = 'CustomForm';
 
+CustomForm.propTypes = {
+  value: PropTypes.object.isRequired,
+  config: PropTypes.array.isRequired,
+  handleSubmit: PropTypes.func,
+  formChange: PropTypes.func,
+  handleReset: PropTypes.func,
+  extraContent: PropTypes.element,
+};
 
-export default CustomForm;
+CustomForm.defaultProps = {
+  extraContent: null,
+  handleReset: () => {},
+  handleSubmit: () => {},
+  formChange: () => {},
+};

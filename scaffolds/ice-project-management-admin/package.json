@@ -19,6 +19,7 @@
     "@antv/data-set": "^0.9.6",
     "@icedesign/container": "^1.x",
     "@icedesign/form-binder": "^0.1.7",
+    "@icedesign/foundation-symbol": "^1.0.4",
     "@icedesign/icon": "^0.1.1",
     "@icedesign/img": "^1.x",
     "@icedesign/layout": "^1.x",

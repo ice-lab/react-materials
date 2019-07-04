@@ -16,6 +16,8 @@ const routerConfig = [{
   }, {
     path: '/',
     redirect: '/user/login',
+  }, {
+    component: NotFound,
   }],
 }, {
   path: '/',

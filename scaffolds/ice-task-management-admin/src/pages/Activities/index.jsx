@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ActiveTimeline from './components/ActiveTimeline';
 
-export default class Activities extends Component {
-  render() {
-    return (
-      <div>
-        <ActiveTimeline />
-      </div>
-    );
-  }
+export default function Activities() {
+  return (
+    <div>
+      <ActiveTimeline />
+    </div>
+  );
 }

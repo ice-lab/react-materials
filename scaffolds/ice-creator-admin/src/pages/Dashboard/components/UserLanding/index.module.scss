@@ -1,16 +1,19 @@
 .container {
   display: flex;
 }
+
 .avatarWrapper {
   width: 64px;
   height: 65px;
   position: relative;
 }
+
 .avatar {
   width: 100%;
   height: 100%;
   border-radius: 5px;
 }
+
 .level {
   right: -2px;
   width: 22px;
@@ -18,16 +21,19 @@
   height: 22px;
   position: absolute;
 }
+
 .userInfo {
   flex: auto;
   color: #999;
   margin-left: 20px;
 }
+
 .userDetail {
   height: 24px;
   display: flex;
   align-items: center;
 }
+
 .userName {
   color: #666;
   display: inline-block;
@@ -38,6 +44,7 @@
   margin-right: 5px;
   text-overflow: ellipsis;
 }
+
 .userLabel {
   color: $color-warning-3;
   height: 16px;
@@ -50,14 +57,17 @@
   border-radius: 2px;
   background-color: $color-warning-1;
 }
+
 .userOther {
   font-size: 12px;
   line-height: 20px;
 }
+
 .userLevelWrapper {
   display: flex;
   position: relative;
 }
+
 .userlevelItem {
   border: 1px solid $color-warning-3;
   padding: 2px 6px;
@@ -67,6 +77,7 @@
   background-color: #fff;
   color: $color-text1-3;
 }
+
 .userlevelItemCurrent {
   composes: userlevelItem;
   background-color: $color-warning-3;
@@ -81,6 +92,7 @@
   position: absolute;
   font-size: 12px;
 }
+
 .userLevelLine {
   top: 11px;
   left: 0;

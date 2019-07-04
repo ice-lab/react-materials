@@ -8,10 +8,12 @@
   text-decoration: none;
   margin-right: 8px;
 }
+
 .detailButton {
   composes: button;
   background: $color-success-3;
 }
+
 .borrowButton {
   composes: button;
   background: $color-notice-3;

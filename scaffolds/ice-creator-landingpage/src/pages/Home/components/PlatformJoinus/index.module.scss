@@ -4,10 +4,12 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .titleWrapper {
   text-align: center;
   padding-top: 200px;
 }
+
 .title {
   color: #333;
   font-size: 32px;
@@ -15,10 +17,12 @@
   line-height: 48px;
   letter-spacing: 2px;
 }
+
 .buttons {
   text-align: center;
   margin-top: 60px;
 }
+
 .primaryButton {
   color: #fff !important;
   height: 50px !important;
@@ -26,6 +30,7 @@
   font-size: 16px !important;
   line-height: 50px !important;
 }
+
 .secondaryButton {
   color: $color-brand1-6 !important;
   height: 50px !important;

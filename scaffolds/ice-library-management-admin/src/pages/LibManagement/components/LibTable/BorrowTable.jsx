@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Message } from '@alifd/next';
+import React, { useState, useEffect } from 'react';
 import CustomTable from './CustomTable';
 import TableFilter from './TableFilter';
 import styles from './index.module.scss';
@@ -20,26 +19,15 @@ const getData = () => {
   });
 };
 
-export default class BorrowTable extends Component {
-  static displayName = 'BorrowTable';
+export default function BorrowTable() {
+  const [isLoading, setIsloading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  static propTypes = {};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: false,
-      dataSource: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  mockApi = () => {
+  const mockApi = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData());
@@ -47,130 +35,109 @@ export default class BorrowTable extends Component {
     });
   };
 
-  fetchData = () => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi().then((dataSource) => {
-          this.setState({
-            dataSource,
-            isLoading: false,
-          });
-        });
-      }
-    );
+  const fetchData = async () => {
+    await setIsloading(true);
+    mockApi().then((data) => {
+      setDataSource(data);
+      setIsloading(false);
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.fetchData(current);
+  const handlePaginationChange = (current) => {
+    fetchData(current);
   };
 
-  handleBorrowClick = () => {
-    Message.success('借阅成功');
+  const handleFilter = () => {
+    fetchData();
   };
 
-  handleDetailClick = () => {
-    Message.success('暂无详细信息');
-  };
-
-  handleFilter = () => {
-    this.fetchData();
-  };
-
-  renderOper = () => {
+  const renderOper = () => {
     return <a className={`${styles.button} ${styles.detailButton}`}>查看</a>;
   };
 
-  render() {
-    const { isLoading, dataSource } = this.state;
-    const config = [
-      {
-        label: '图书名称',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'bookName',
-          triggerType: 'onBlur',
-        },
+  const config = [
+    {
+      label: '图书名称',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        label: 'ISBN 号',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'isbn',
-          triggerType: 'onBlur',
-        },
+      formBinderProps: {
+        name: 'bookName',
+        triggerType: 'onBlur',
       },
-      {
-        label: '出版社',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'publisher',
-          triggerType: 'onBlur',
-        },
+    },
+    {
+      label: 'ISBN 号',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-    ];
-    const columns = [
-      {
-        title: '借阅编号',
-        dataIndex: 'number',
+      formBinderProps: {
+        name: 'isbn',
+        triggerType: 'onBlur',
       },
-      {
-        title: '图书 ISBN 号',
-        dataIndex: 'isbn',
+    },
+    {
+      label: '出版社',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        title: '图书名称',
-        dataIndex: 'bookName',
+      formBinderProps: {
+        name: 'publisher',
+        triggerType: 'onBlur',
       },
-      {
-        title: '图书类型',
-        dataIndex: 'cate',
-      },
-      {
-        title: '读者证件号',
-        dataIndex: 'idCard',
-      },
-      {
-        title: '读者名称',
-        dataIndex: 'authorName',
-      },
-      {
-        title: '借阅日期',
-        dataIndex: 'borrowDate',
-      },
-      {
-        title: '归还日期',
-        dataIndex: 'returnDate',
-      },
-      {
-        title: '操作',
-        dataIndex: 'oper',
-        cell: this.renderOper,
-      },
-    ];
-    return (
-      <div>
-        <TableFilter config={config} onChange={this.handleFilter} />
-        <CustomTable
-          isLoading={isLoading}
-          dataSource={dataSource}
-          columns={columns}
-          paginationChange={this.handlePaginationChange}
-        />
-      </div>
-    );
-  }
+    },
+  ];
+  const columns = [
+    {
+      title: '借阅编号',
+      dataIndex: 'number',
+    },
+    {
+      title: '图书 ISBN 号',
+      dataIndex: 'isbn',
+    },
+    {
+      title: '图书名称',
+      dataIndex: 'bookName',
+    },
+    {
+      title: '图书类型',
+      dataIndex: 'cate',
+    },
+    {
+      title: '读者证件号',
+      dataIndex: 'idCard',
+    },
+    {
+      title: '读者名称',
+      dataIndex: 'authorName',
+    },
+    {
+      title: '借阅日期',
+      dataIndex: 'borrowDate',
+    },
+    {
+      title: '归还日期',
+      dataIndex: 'returnDate',
+    },
+    {
+      title: '操作',
+      dataIndex: 'oper',
+      cell: renderOper,
+    },
+  ];
+  return (
+    <div>
+      <TableFilter config={config} onChange={handleFilter} />
+      <CustomTable
+        isLoading={isLoading}
+        dataSource={dataSource}
+        columns={columns}
+        paginationChange={handlePaginationChange}
+      />
+    </div>
+  );
 }
-
-

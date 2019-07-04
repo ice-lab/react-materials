@@ -1,112 +1,67 @@
-import React, { Component } from 'react';
-import { Dialog, Button, Form, Input, Field } from '@alifd/next';
+import React, { useState } from 'react';
+import { Form, Field } from '@ice/form';
+import { Dialog, Button, Input } from '@alifd/next';
 import styles from './index.module.scss';
-const FormItem = Form.Item;
 
-export default class EditDialog extends Component {
-  static displayName = 'EditDialog';
+export default function EditDialog(props) {
+  const [visible, setVisible] = useState(false);
+  const [dataIndex, setDataIndex] = useState(null);
+  const [initialValues, setInitialValues] = useState({});
 
-  static defaultProps = {};
+  let handleSubmit = null;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      dataIndex: null,
-    };
-    this.field = new Field(this);
-  }
-
-  handleSubmit = () => {
-    this.field.validate((errors, values) => {
-      if (errors) {
-        console.log('Errors in form!!!');
-        return;
-      }
-
-      const { dataIndex } = this.state;
-      this.props.getFormValues(dataIndex, values);
-      this.setState({
-        visible: false,
-      });
-    });
+  const onSubmit = (values) => {
+    console.log(values, dataIndex);
+    setVisible(false);
+    props.getFormValues(dataIndex, values);
   };
 
-  onOpen = (index, record) => {
-    this.field.setValues({ ...record });
-    this.setState({
-      visible: true,
-      dataIndex: index,
-    });
+  const onOpen = (index, record) => {
+    setInitialValues(record);
+    setVisible(true);
+    setDataIndex(index);
   };
 
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
+  const onClose = () => {
+    setVisible(false);
   };
 
-  render() {
-    const init = this.field.init;
-    const { index, record } = this.props;
-    const formItemLayout = {
-      labelCol: {
-        fixedSpan: 6,
-      },
-      wrapperCol: {
-        span: 14,
-      },
-    };
+  const { index, record } = props;
 
-    return (
-      <div className={styles.editDialog}>
-        <Button type="primary" onClick={() => this.onOpen(index, record)}>
-          编辑
-        </Button>
-        <Dialog
-          className={styles.w}
-          visible={this.state.visible}
-          onOk={this.handleSubmit}
-          closeable="esc,mask,close"
-          onCancel={this.onClose}
-          onClose={this.onClose}
-          title="编辑"
+  return (
+    <div className={styles.editDialog}>
+      <Button type="primary" onClick={() => onOpen(index, record)}>
+        编辑
+      </Button>
+      <Dialog
+        className={styles.w}
+        visible={visible}
+        onOk={e => handleSubmit(e)}
+        closeable="esc,mask,close"
+        onCancel={onClose}
+        onClose={onClose}
+        title="编辑"
+      >
+        <Form
+          onSubmit={onSubmit}
+          initialValues={initialValues}
+          layout={{
+            wrapperCol: 10,
+          }}
         >
-          <Form field={this.field}>
-            <FormItem label="标题：" {...formItemLayout}>
-              <Input
-                {...init('title', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="作者：" {...formItemLayout}>
-              <Input
-                {...init('author', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="状态：" {...formItemLayout}>
-              <Input
-                {...init('status', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-
-            <FormItem label="发布时间：" {...formItemLayout}>
-              <Input
-                {...init('date', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-          </Form>
-        </Dialog>
-      </div>
-    );
-  }
+          {(formCore) => {
+            handleSubmit = formCore.submit.bind(formCore);
+            return (
+              <React.Fragment>
+                <Field label="标题：" name="title" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="作者：" name="author" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="状态：" name="status" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="发布时间：" name="date" component={Input} rules={{ required: true, message: '必填选项' }} />
+              </React.Fragment>
+            );
+          }}
+        </Form>
+      </Dialog>
+    </div>
+  );
 }

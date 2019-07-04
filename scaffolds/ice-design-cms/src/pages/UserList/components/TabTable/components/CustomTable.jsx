@@ -1,27 +1,11 @@
 /* eslint react/prop-types: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from '@alifd/next';
 
-export default class CustomTable extends Component {
-  static displayName = 'CustomTable';
-
-  static propTypes = {
-    dataSource: PropTypes.array,
-    columns: PropTypes.array.isRequired,
-  };
-
-  static defaultProps = {
-    dataSource: [],
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderColumns = () => {
-    const { columns } = this.props;
+export default function CustomTable(props) {
+  const renderColumns = () => {
+    const { columns } = props;
     return columns.map((item) => {
       if (typeof item.render === 'function') {
         return (
@@ -45,7 +29,13 @@ export default class CustomTable extends Component {
     });
   };
 
-  render() {
-    return <Table {...this.props}>{this.renderColumns()}</Table>;
-  }
+  return <Table {...props}>{renderColumns()}</Table>;
 }
+
+CustomTable.propTypes = {
+  dataSource: PropTypes.array,
+  columns: PropTypes.array.isRequired,
+};
+CustomTable.defaultProps = {
+  dataSource: [],
+};
