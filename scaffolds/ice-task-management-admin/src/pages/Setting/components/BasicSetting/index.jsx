@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Button, Message } from '@alifd/next';
 import {
@@ -10,29 +9,19 @@ import {
 import ContainerTitle from '../../../../components/ContainerTitle';
 import styles from './index.module.scss';
 
-export default class BasicSetting extends Component {
-  static displayName = 'BasicSetting';
+export default function BasicSetting() {
+  const [value] = useState({
+    zhName: '飞冰',
+    cName: 'ICE',
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {
-        zhName: '飞冰',
-        cName: 'ICE',
-      },
-    };
-  }
-
-  formChange = (value) => {
-    console.log('value', value);
+  const formChange = (v) => {
+    console.log('value', v);
   };
 
-  validateAllFormField = () => {
-    this.refs.form.validateAll((errors, values) => {
+  let formRef;
+  const validateAllFormField = () => {
+    formRef.validateAll((errors, values) => {
       if (errors) {
         return;
       }
@@ -41,86 +30,83 @@ export default class BasicSetting extends Component {
     });
   };
 
-  render() {
-    return (
-      <div>
-        <ContainerTitle title="基本设置" />
-        <IceContainer className={styles.container}>
-          <IceFormBinderWrapper
-            value={this.state.value}
-            onChange={this.formChange}
-            ref="form"
-          >
-            <div>
-              <div className={styles.formItem}>
-                <div className={styles.formLabel}>英文名：</div>
-                <IceFormBinder name="cnName">
-                  <Input
-                    disabled
-                    style={{ width: '400px' }}
-                  />
-                </IceFormBinder>
-              </div>
-              <div className={styles.formItem}>
-                <div className={styles.formLabel}>中文名：</div>
-                <IceFormBinder name="zhName">
-                  <Input
-                    disabled
-                    style={{ width: '400px' }}
-                  />
-                </IceFormBinder>
-              </div>
-              <div className={styles.formItem}>
-                <div className={styles.formLabel}>项目简介：</div>
-                <IceFormBinder name="description">
-                  <Input.TextArea style={{ width: '400px' }} />
-                </IceFormBinder>
-              </div>
-              <div className={styles.formItem}>
-                <div className={styles.formLabel}>仓库地址：</div>
-                <IceFormBinder
-                  required
-                  triggerType="onBlur"
-                  message="验证地址必填"
-                  name="url"
-                >
-                  <Input
-                    type="url"
-                    style={{ width: '400px' }}
-                  />
-                </IceFormBinder>
-                <div className={styles.formError}>
-                  <IceFormError name="url" />
-                </div>
-              </div>
-              <div className={styles.formItem}>
-                <div className={styles.formLabel}>反馈邮箱：</div>
-                <IceFormBinder
-                  required
-                  triggerType="onBlur"
-                  message="邮箱地址必填"
-                  name="email"
-                >
-                  <Input
-                    type="email"
-                    style={{ width: '400px' }}
-                  />
-                </IceFormBinder>
-                <div className={styles.formError}>
-                  <IceFormError name="email" />
-                </div>
-              </div>
-              <Button
-                type="primary"
-                onClick={this.validateAllFormField}
-              >
-                提 交
-              </Button>
+  return (
+    <div>
+      <ContainerTitle title="基本设置" />
+      <IceContainer className={styles.container}>
+        <IceFormBinderWrapper
+          value={value}
+          onChange={formChange}
+          ref={form => formRef = form}
+        >
+          <div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>英文名：</div>
+              <IceFormBinder name="cnName">
+                <Input
+                  disabled
+                  style={{ width: '400px' }}
+                />
+              </IceFormBinder>
             </div>
-          </IceFormBinderWrapper>
-        </IceContainer>
-      </div>
-    );
-  }
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>中文名：</div>
+              <IceFormBinder name="zhName">
+                <Input
+                  disabled
+                  style={{ width: '400px' }}
+                />
+              </IceFormBinder>
+            </div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>项目简介：</div>
+              <IceFormBinder name="description">
+                <Input.TextArea style={{ width: '400px' }} />
+              </IceFormBinder>
+            </div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>仓库地址：</div>
+              <IceFormBinder
+                required
+                triggerType="onBlur"
+                message="验证地址必填"
+                name="url"
+              >
+                <Input
+                  type="url"
+                  style={{ width: '400px' }}
+                />
+              </IceFormBinder>
+              <div className={styles.formError}>
+                <IceFormError name="url" />
+              </div>
+            </div>
+            <div className={styles.formItem}>
+              <div className={styles.formLabel}>反馈邮箱：</div>
+              <IceFormBinder
+                required
+                triggerType="onBlur"
+                message="邮箱地址必填"
+                name="email"
+              >
+                <Input
+                  type="email"
+                  style={{ width: '400px' }}
+                />
+              </IceFormBinder>
+              <div className={styles.formError}>
+                <IceFormError name="email" />
+              </div>
+            </div>
+            <Button
+              type="primary"
+              onClick={validateAllFormField}
+            >
+                提 交
+            </Button>
+          </div>
+        </IceFormBinderWrapper>
+      </IceContainer>
+    </div>
+  );
 }
-
