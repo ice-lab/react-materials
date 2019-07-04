@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.flowStatistics {
+  .nextTabs {
+    overflow: visible;
+  }
+
+  .nextTabsBar {
+    position: absolute;
+    top: -48px;
+    right: 0;
+  }
+
+  .nextTabsTabActive {
+    border-bottom: 1px solid #2077ff;
+  }
+
+  .nextTabsText > .nextTabsBar .nextTabsTab::after {
+    width: 0;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .flowStatistics {
+    .nextTabsSmall .nextTabsTabInner {
+      padding: 0 5px;
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.textLabel {
+  margin: 0;
+  color: #666;
+}
+
+.counterNum {
+  margin: 10px;
+  font-size: 28px;
+}

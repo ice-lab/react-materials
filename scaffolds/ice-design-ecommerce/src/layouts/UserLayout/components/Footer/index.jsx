@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export default () => {
+export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.links}>
@@ -15,9 +15,9 @@ export default () => {
           条款
         </a>
       </div>
-      <div className={styles.copyright}>阿里巴巴集团 © 2018 版权所有</div>
+      <div className={styles.copyright}>
+        阿里巴巴集团 © 2018 版权所有
+      </div>
     </div>
   );
-};
-
-
+}

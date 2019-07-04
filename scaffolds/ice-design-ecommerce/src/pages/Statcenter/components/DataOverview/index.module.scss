@@ -1,21 +1,35 @@
 
-    .container{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    .overviewItem {
-      flex: 0 0 25%;
-      display: flex;
-      padding: 20px 0;
-    }
-    .overviewItemTitle {
-      font-size: 12px;
-      line-height: 20px;
-      color: #999;
-    }
-    .overviewItemTotal {
-      font-size: 24;
-      line-height: 30px;
-      color: #333;
-    }
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.overviewItem {
+  flex: 0 0 25%;
+  display: flex;
+  padding: 20px 0;
+}
+
+.overviewItemTitle {
+  font-size: 12px;
+  line-height: 20px;
+  color: #999;
+}
+
+.overviewItemTotal {
+  font-size: 24;
+  line-height: 30px;
+  color: #333;
+}
+
+.icon {
+  width: 52px;
+}
+
+.nweIcon {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

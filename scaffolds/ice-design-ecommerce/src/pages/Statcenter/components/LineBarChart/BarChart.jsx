@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 
@@ -31,32 +31,20 @@ const cols = {
   },
 };
 
-export default class BarChart extends Component {
-  static displayName = 'BarChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer title="店铺会员">
-        <Chart height={400} padding={[40]} data={data} scale={cols} forceFit>
-          <Axis name="name" />
-          <Axis name="value" />
-          <Tooltip
-            crosshairs={{
-              type: 'y',
-            }}
-          />
-          <Geom type="interval" position="name*value" />
-        </Chart>
-      </IceContainer>
-    );
-  }
+export default function BarChart() {
+  return (
+    <IceContainer title="店铺会员">
+      <Chart height={400} padding={[40]} data={data} scale={cols} forceFit>
+        <Axis name="name" />
+        <Axis name="value" />
+        <Tooltip
+          crosshairs={{
+            type: 'y',
+          }}
+        />
+        <Geom type="interval" position="name*value" />
+      </Chart>
+    </IceContainer>
+  );
 }
+BarChart.displayName = 'BarChart';

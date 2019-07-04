@@ -36,7 +36,7 @@ scaffolds/ice-open-platform-landingpage
 # scaffolds/ice-reviews-management
 # scaffolds/ice-design-dashboard
 scaffolds/ice-typescript-starter
-scaffolds/ice-design-ecommerce
+# scaffolds/ice-design-ecommerce
 # scaffolds/ice-universal-homepage
 # scaffolds/ice-design-iceworks
 scaffolds/ice-usertrack-admin

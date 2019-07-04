@@ -42,7 +42,7 @@ const asideMenuConfig = [
   },
   {
     name: '订单',
-    path: '/order/list',
+    path: '/orderlist',
     icon: 'filter',
   },
   {
