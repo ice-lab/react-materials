@@ -1,16 +1,22 @@
 .container {
   margin: 20px;
-  padding: 10px 20px 20px;
+  padding: 0;
 }
 
-.row {
-  margin: 4px 0 20px;
+.table {
+  margin: 20px;
 }
 
-.label {
-  display: flex;
-  align-items: center;
-  height: 32px;
+.title {
+  margin: 0 0 20px;
+  padding: 20px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
 }
 
 .link {
@@ -30,6 +36,6 @@
 }
 
 .pagination {
-  margin-top: 20px;
+  padding: 20px;
   text-align: right;
 }
