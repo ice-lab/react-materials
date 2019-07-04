@@ -1,5 +1,5 @@
 import Container from '@icedesign/container';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Grid } from '@alifd/next';
 
 import HotPostRankItem from './HotPostRankItem';
@@ -23,64 +23,49 @@ function mockData(page = 1) {
   });
 }
 
-export default class HotPostRank extends Component {
-  static displayName = 'HotPostRank';
+export default function HotPostRank() {
+  const [dataSource] = useState(mockData(1));
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: mockData(1),
-    };
-  }
-
-  render() {
-    return (
-      <Container>
-        <div style={styles.header}>
-          <h3 style={{ fontSize: 16, color: '#333', margin: 0 }}>
+  return (
+    <Container>
+      <div>
+        <h3 style={{ fontSize: 16, color: '#333', margin: 0 }}>
             粉丝最新关注点
-          </h3>
-          <span style={{ fontSize: 12, color: '#999' }}>
+        </h3>
+        <span style={{ fontSize: 12, color: '#999' }}>
             每日计算分析产出粉丝近期最新关注点
-          </span>
-        </div>
+        </span>
+      </div>
 
-        <Row wrap>
-          <Col style={{ borderRight: '1px solid #eee' }}>
-            {this.state.dataSource
-              .filter((item, index) => {
-                return Math.floor(index / 5) % 3 === 0; // 前10个
-              })
-              .map((item, index) => {
-                return <HotPostRankItem key={index} data={item} />;
-              })}
-          </Col>
-          <Col style={{ borderRight: '1px solid #eee' }}>
-            {this.state.dataSource
-              .filter((item, index) => {
-                return Math.floor(index / 5) % 3 === 1; // 前20个
-              })
-              .map((item, key) => {
-                return <HotPostRankItem key={key} data={item} />;
-              })}
-          </Col>
-          <Col>
-            {this.state.dataSource
-              .filter((item, index) => {
-                return Math.floor(index / 5) % 3 === 2; // 前15个
-              })
-              .map((item, key) => {
-                return <HotPostRankItem key={key} data={item} />;
-              })}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+      <Row wrap>
+        <Col style={{ borderRight: '1px solid #eee' }}>
+          {dataSource
+            .filter((item, index) => {
+              return Math.floor(index / 5) % 3 === 0; // 前10个
+            })
+            .map((item, index) => {
+              return <HotPostRankItem key={index} data={item} />;
+            })}
+        </Col>
+        <Col style={{ borderRight: '1px solid #eee' }}>
+          {dataSource
+            .filter((item, index) => {
+              return Math.floor(index / 5) % 3 === 1; // 前20个
+            })
+            .map((item, key) => {
+              return <HotPostRankItem key={key} data={item} />;
+            })}
+        </Col>
+        <Col>
+          {dataSource
+            .filter((item, index) => {
+              return Math.floor(index / 5) % 3 === 2; // 前15个
+            })
+            .map((item, key) => {
+              return <HotPostRankItem key={key} data={item} />;
+            })}
+        </Col>
+      </Row>
+    </Container>
+  );
 }
-
-const styles = {
-  header: {
-    marginBottom: 20,
-  },
-};
