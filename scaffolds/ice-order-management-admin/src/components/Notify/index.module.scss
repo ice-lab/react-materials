@@ -3,9 +3,9 @@
     position: absolute;
     top: -20px;
     right: -4px;
-    height: 25px;
-    width: 25px;
     z-index: 10;
+    width: 25px;
+    height: 25px;
     border: 5px solid #ef5350;
     border-radius: 70px;
     -webkit-animation: heartbit 1s ease-out;
@@ -14,13 +14,13 @@
   }
 
   .point {
+    position: absolute;
+    top: -10px;
+    right: 6px;
     width: 6px;
     height: 6px;
-    border-radius: 30px;
     background-color: #ef5350;
-    position: absolute;
-    right: 6px;
-    top: -10px;
+    border-radius: 30px;
   }
 }
 

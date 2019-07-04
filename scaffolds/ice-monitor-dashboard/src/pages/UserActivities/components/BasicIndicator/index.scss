@@ -1,7 +1,7 @@
 
 .basic-indicator-tab {
-  background: #f7f7f7;
   margin-top: 20px;
+  background: #f7f7f7;
 
   .next-tabs-tab.active {
     background: #fff !important;
@@ -10,22 +10,22 @@
 
 .tabTitle {
   padding: 0;
-  font-size: 14px;
-  font-weight: 500;
   color: #666;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .tabValue {
   margin: 12px 0;
-  font-size: 24px;
-  font-weight: 500;
   color: #5e83fb;
+  font-weight: 500;
+  font-size: 24px;
 }
 
 .tabDesc {
   padding: 0 0 10px;
-  font-size: 12px;
   color: #999;
+  font-size: 12px;
 }
 
 .complexTab {

@@ -1,7 +1,7 @@
 .aside {
   flex: 0 0 auto;
-  margin: 20px 0 0 20px;
   height: 540px;
+  margin: 20px 0 0 20px;
 
   :global {
     .next-nav {
@@ -9,8 +9,8 @@
     }
 
     .next-opened {
-      background: transparent !important;
       color: #333;
+      background: transparent !important;
     }
 
     .ice-menu-collapse-hide {

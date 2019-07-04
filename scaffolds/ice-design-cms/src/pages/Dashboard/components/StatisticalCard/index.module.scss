@@ -4,19 +4,19 @@
 
 .statisticalCardItem {
   display: flex;
-  padding: 10px 0;
   justify-content: center;
+  padding: 10px 0;
 }
 
 .circleWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 70px;
   height: 70px;
-  display: flex;
-  position: relative;
-  align-items: center;
   margin-right: 10px;
   border-radius: 50%;
-  justify-content: center;
 }
 
 .imgStyle {
@@ -24,8 +24,8 @@
 }
 
 .helpIcon {
-  color: #b8b8b8;
   margin-left: 5px;
+  color: #b8b8b8;
 }
 
 .statisticalCardDesc {
@@ -35,11 +35,11 @@
 }
 
 .statisticalCardText {
-  color: $color-text1-3;
   position: relative;
-  font-size: 12px;
-  font-weight: bold;
   margin-bottom: 4px;
+  color: $color-text1-3;
+  font-weight: bold;
+  font-size: 12px;
 }
 
 .statisticalCardNumber {
@@ -48,9 +48,9 @@
 }
 
 .itemHelp {
-  top: 1px;
-  width: 12px;
-  right: -15px;
-  height: 12px;
   position: absolute;
+  top: 1px;
+  right: -15px;
+  width: 12px;
+  height: 12px;
 }

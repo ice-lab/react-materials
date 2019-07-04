@@ -5,21 +5,21 @@
 }
 
 .overviewItem {
-  flex: 0 0 25%;
   display: flex;
+  flex: 0 0 25%;
   padding: 10px 0;
 }
 
 .overviewItemTitle {
+  color: #999;
   font-size: 12px;
   line-height: 20px;
-  color: #999;
 }
 
 .overviewItemTotal {
+  color: #333;
   font-size: 24px;
   line-height: 30px;
-  color: #333;
 }
 
 .img {
@@ -27,8 +27,8 @@
 }
 
 .padding {
-  padding-left: 10px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
 }

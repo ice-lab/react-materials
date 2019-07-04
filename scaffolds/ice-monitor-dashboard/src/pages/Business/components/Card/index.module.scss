@@ -4,21 +4,21 @@
 }
 
 .content {
-  border-right: 1px solid #f0f0f0;
   padding: 20px;
+  border-right: 1px solid #f0f0f0;
 }
 
 .head {
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .title {
   margin: 0;
-  font-size: 16px;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
+  font-size: 16px;
 }
 
 .summary {
@@ -32,8 +32,8 @@
 }
 
 .itemLabel {
-  color: #999;
   margin-right: 6px;
+  color: #999;
 }
 
 .itemValue {
@@ -43,9 +43,9 @@
 .subTitle {
   margin: 0;
   padding: 20px 20px 10px;
-  font-size: 16px;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
+  font-size: 16px;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -54,19 +54,19 @@
 }
 
 .footer {
-  height: 40px;
-  padding: 0 20px;
-  background: #fff;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  position: relative;
+  height: 40px;
+  padding: 0 20px;
+  background: #fff;
 }
 
 .link {
-  color: #447eff;
-  cursor: pointer;
   position: absolute;
   right: 20px;
+  color: #447eff;
   font-size: 13px;
+  cursor: pointer;
 }

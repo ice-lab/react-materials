@@ -11,8 +11,8 @@
 }
 
 .ice-menu-custom {
-  box-shadow: 4px 1px 12px $color-brand1-6;
   height: 100vh;
+  box-shadow: 4px 1px 12px $color-brand1-6;
 
   .ice-menu-link {
     display: flex;
@@ -40,8 +40,8 @@
       line-height: normal;
 
       .next-menu-item-inner {
-        height: auto !important;
         width: 100%;
+        height: auto !important;
       }
 
       &.next-selected {

@@ -1,9 +1,9 @@
 .wrapper {
   height: 740px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .body {
@@ -11,10 +11,10 @@
 }
 
 .title {
+  margin-top: 130px;
+  margin-bottom: 20px;
   color: #fff;
   font-size: 24px;
-  margin-bottom: 20px;
-  margin-top: 130px;
 }
 
 .text {
@@ -25,9 +25,9 @@
 }
 
 .extraBody {
-  text-align: center;
   position: relative;
   margin-top: 80px;
+  text-align: center;
 }
 
 .image {
@@ -36,9 +36,9 @@
 }
 
 .extraText {
+  display: flex;
   width: 706px;
   margin: 0 auto;
-  display: flex;
   color: #fff;
 }
 

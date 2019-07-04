@@ -7,10 +7,10 @@
   align-items: center;
   justify-content: center;
   height: 190px;
-  cursor: pointer;
   margin-bottom: 20px;
   background: #fff;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .card {
@@ -27,14 +27,14 @@
 }
 
 .title {
-  margin: 0 0 5px;
   width: 90%;
+  margin: 0 0 5px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 16px;
-  font-weight: 500;
   color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .desc {
@@ -57,11 +57,11 @@
 }
 
 .eyeIcon {
-  right: 48px;
-  top: 20px;
   position: absolute;
-  cursor: pointer;
+  top: 20px;
+  right: 48px;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .addIcon {
@@ -69,15 +69,15 @@
 }
 
 .editIcon {
-  right: 17px;
-  top: 20px;
   position: absolute;
-  cursor: pointer;
+  top: 20px;
+  right: 17px;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .icon {
   position: absolute;
-  cursor: pointer;
   font-size: 12px;
+  cursor: pointer;
 }

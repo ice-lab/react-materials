@@ -1,29 +1,29 @@
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   min-width: 1200px;
   height: 100vh;
   background-image: url(https://img.alicdn.com/tfs/TB1QZgkBHvpK1RjSZPiXXbmwXXa-1950-1300.jpg);
   background-size: cover;
-  display: flex;
-  flex-direction: column;
 }
 
 .mask {
   position: absolute;
-  left: 0;
-  right: 0;
   top: 0;
+  right: 0;
   bottom: 0;
+  left: 0;
   background: #000;
   opacity: 0.4;
 }
 
 .row {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 .form {

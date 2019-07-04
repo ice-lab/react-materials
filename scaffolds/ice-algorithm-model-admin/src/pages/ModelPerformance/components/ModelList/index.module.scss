@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
   height: 44px;
+  padding: 0 20px;
   line-height: 44px;
   border-bottom: 1px solid #eee;
   cursor: pointer;
@@ -21,13 +21,13 @@
 }
 
 .count {
-  background: #58ca9a;
-  width: 28px;
-  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  width: 28px;
+  height: 28px;
   color: #fff;
   font-size: 12px;
+  background: #58ca9a;
+  border-radius: 4px;
 }

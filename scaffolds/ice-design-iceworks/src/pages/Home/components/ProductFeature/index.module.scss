@@ -3,19 +3,19 @@
 }
 
 .wrapper {
-  height: 500px;
-  margin: 0 auto;
   position: relative;
   max-width: 1190px;
+  height: 500px;
+  margin: 0 auto;
   background-color: #f6f6f6;
 }
 
 .feature {
+  margin-right: 10%;
   margin-left: 50%;
   padding-top: 160px;
-  margin-right: 10%;
-  padding-left: 30px;
   padding-bottom: 160px;
+  padding-left: 30px;
   background-image: url('./images/TB1fFH5pAyWBuNjy0FpXXassXXa-66-66.png');
   background-repeat: no-repeat;
   background-position: 10px 120px;
@@ -40,16 +40,16 @@
 }
 
 .desc {
+  max-width: 400px;
   color: #6d7a82;
   font-size: 16px;
-  max-width: 400px;
   line-height: 26px;
 }
 
 .cover {
+  position: absolute;
   right: 55%;
   bottom: 0;
-  position: absolute;
 }
 
 .coverImage {

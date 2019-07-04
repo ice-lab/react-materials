@@ -1,22 +1,22 @@
 .wrapper {
-  height: 750px;
-  display: flex;
   position: relative;
-  overflow: hidden;
-  margin-top: -100px;
+  display: flex;
   align-items: center;
   justify-content: center;
+  height: 750px;
+  margin-top: -100px;
+  overflow: hidden;
 }
 
 .inntroContent {
-  color: #fff;
-  width: 466px;
+  position: relative;
   z-index: 2;
   display: flex;
-  position: relative;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 466px;
+  color: #fff;
 }
 
 .titleLine {
@@ -37,68 +37,68 @@
 }
 
 .desc {
-  font-size: 16px;
   margin-top: 34px;
-  text-align: center;
+  font-size: 16px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .extraButton {
-  color: #fff;
   margin-top: 85px;
+  color: #fff;
   background: transparent;
   border-color: #fff;
 }
 
 .background {
+  position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  position: absolute;
+  left: 0;
   background: #ccc;
 }
 
 .grayOverlay {
+  position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   z-index: 1;
-  position: absolute;
   background: rgba(0, 0, 0, 0.76);
 }
 
 .backgroundImage {
+  position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  position: absolute;
-  background-size: cover;
+  left: 0;
   background-image: url('./images/TB18Na6iHSYBuNjSspiXXXNzpXa-3800-2026.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .topClipTriange {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 150px;
-  z-index: 1;
   position: absolute;
-  clip-path: polygon(0 0, 0 100%, 100% 0);
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 150px;
   background: #fff;
+  clip-path: polygon(0 0, 0 100%, 100% 0);
 }
 
 .bottomClipTriange {
-  left: 0;
+  position: absolute;
   right: 0;
   bottom: 0;
-  height: 150px;
+  left: 0;
   z-index: 1;
-  position: absolute;
-  clip-path: polygon(0 100%, 100% 0%, 100% 100%);
+  height: 150px;
   background: #fff;
+  clip-path: polygon(0 100%, 100% 0%, 100% 100%);
 }

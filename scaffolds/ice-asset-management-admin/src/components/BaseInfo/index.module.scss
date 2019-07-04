@@ -4,10 +4,10 @@
 
 .cardTitle {
   padding: 20px;
-  opacity: 0.8;
-  font-size: 16px;
   color: #000;
+  font-size: 16px;
   line-height: 16px;
+  opacity: 0.8;
 }
 
 .body {
@@ -27,11 +27,11 @@
 }
 
 .cellValue {
-  font-size: 40px;
-  font-weight: 500;
   height: 40px;
-  line-height: 40px;
   margin: 15px 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 .ratioLabel {
@@ -55,16 +55,16 @@
 }
 
 .footer {
-  padding: 10px 20px;
-  background: #f1f7fe;
   display: flex;
   justify-content: space-between;
+  padding: 10px 20px;
+  background: #f1f7fe;
 }
 
 .item {
   display: flex;
-  line-height: 30px;
   font-size: 12px;
+  line-height: 30px;
 }
 
 .itemLabel {

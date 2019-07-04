@@ -1,31 +1,31 @@
 .head {
-  padding: 15px 0;
   margin-bottom: 20px;
+  padding: 15px 0;
   border-bottom: 1px solid $color-line1-1;
 }
 
 .title {
-  color: rgba(0, 0, 0, 0.85);
   margin: 0 0 5px;
+  color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
 }
 
 .desc {
-  color: $color-text1-2;
   margin: 0;
+  color: $color-text1-2;
   font-size: 12px;
 }
 
 .balloonTitle {
   margin: 0 0 15px;
-  border-left: 4px solid $color-brand1-6;
-  font-weight: 500;
   padding-left: 10px;
+  font-weight: 500;
+  border-left: 4px solid $color-brand1-6;
 }
 
 .ranking {
-  font-size: 15px;
   font-weight: 500;
+  font-size: 15px;
 }
 
 .zh {
@@ -45,10 +45,10 @@
 }
 
 .summary {
-  color: rgba(0, 0, 0, 0.85);
-  text-align: right;
-  font-weight: 500;
   margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  text-align: right;
 }
 
 .returns {
@@ -56,15 +56,15 @@
 }
 
 .arrowUpIcon {
-  color: $color-error-3;
   margin-right: 5px;
+  color: $color-error-3;
 }
 
 .score {
   color: $color-data1-1;
+  font-weight: bold;
   font-size: 15px;
   font-style: italic;
-  font-weight: bold;
 }
 
 .pagination {
@@ -74,8 +74,8 @@
 
 .customTable {
   th {
-    background: #eff5f8;
     color: #333;
     font-weight: bold;
+    background: #eff5f8;
   }
 }

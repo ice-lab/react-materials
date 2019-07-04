@@ -10,27 +10,27 @@
 .title {
   margin: 0 0 20px;
   padding: 20px;
-  font-size: 16px;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   border-bottom: 1px solid #eee;
 }
 
 .link {
   margin: 0 5px;
   color: rgba(49, 128, 253, 0.65);
-  cursor: pointer;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .separator {
-  margin: 0 8px;
   display: inline-block;
-  height: 12px;
   width: 1px;
+  height: 12px;
+  margin: 0 8px;
   vertical-align: middle;
   background: #e8e8e8;
 }

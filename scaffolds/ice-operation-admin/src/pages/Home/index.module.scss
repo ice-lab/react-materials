@@ -5,13 +5,13 @@
 
 .head {
   display: flex;
-  margin-bottom: 20px;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .pagination {
-  text-align: right;
   padding-top: 20px;
+  text-align: right;
 }
 
 .split {
@@ -23,17 +23,17 @@
 }
 
 .dot {
+  display: inline-block;
   width: 8px;
   height: 8px;
-  display: inline-block;
-  background: #ee6f6d;
   margin-right: 4px;
+  background: #ee6f6d;
   border-radius: 50%;
 }
 
 .breadcrumb {
-  margin: 0 20px 20px;
   height: 16px;
+  margin: 0 20px 20px;
   line-height: 16px;
 
   :global {

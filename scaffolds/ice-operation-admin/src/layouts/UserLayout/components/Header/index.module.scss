@@ -11,8 +11,8 @@
   .arrowUpIcon,
   .arrowDownIcon {
     position: absolute !important;
-    right: 15px !important;
     top: 0 !important;
+    right: 15px !important;
     z-index: 1 !important;
     transition: 0.3s ease !important;
   }
@@ -37,19 +37,19 @@
 }
 
 .container {
-  height: 60px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .logoLink {
   display: flex !important;
   align-items: center !important;
-  font-size: 24px !important;
-  font-weight: bold !important;
   padding-left: 20px !important;
   color: #fff !important;
+  font-weight: bold !important;
+  font-size: 24px !important;
 }
 
 .navs {
@@ -59,10 +59,10 @@
 .navLink {
   display: block;
   height: 60px;
-  line-height: 60px;
   padding: 0 20px;
-  font-size: 15px;
   color: #fff;
+  font-size: 15px;
+  line-height: 60px;
   text-decoration: none;
 }
 
@@ -76,26 +76,26 @@
 }
 
 .subNavLink {
-  padding-left: 12px;
   display: block;
+  padding-left: 12px;
   color: #fff;
   font-size: 14px;
 }
 
 .internationalImg {
+  position: absolute;
+  top: 22px;
+  left: 10px;
   width: 16px;
   height: 16px;
-  position: absolute;
-  left: 10px;
-  top: 22px;
 }
 
 .hb {
   display: block;
   height: 60px;
-  line-height: 60px;
-  font-size: 15px;
-  color: #fff;
-  text-decoration: none;
   padding: 0 30px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 60px;
+  text-decoration: none;
 }
