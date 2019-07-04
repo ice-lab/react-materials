@@ -5,46 +5,25 @@ blocks/*
 # scaffolds/ice-government-management-admin
 # scaffolds/ice-application-management-admin
 scaffolds/ice-hr-management-admin
-<<<<<<< HEAD
-scaffolds/ice-asset-management-admin
 # scaffolds/ice-library-management-admin
-=======
 # scaffolds/ice-asset-management-admin
-scaffolds/ice-library-management-admin
->>>>>>> release/upgrade-kit-2.x
 scaffolds/ice-build-platfrom
 scaffolds/ice-monitor-dashboard
 # scaffolds/ice-commodity-management-admin
 scaffolds/ice-open-platform-landingpage
-<<<<<<< HEAD
-scaffolds/ice-contract-management-admin
-scaffolds/ice-operation-admin
 # scaffolds/ice-creator-admin
-scaffolds/ice-order-management-admin
 # scaffolds/ice-creator-landingpage
 # scaffolds/ice-project-management-admin
 # scaffolds/ice-customer-analysis-admin
-scaffolds/ice-reviews-management
-scaffolds/ice-design-analysis
 # scaffolds/ice-scroll-screen-homepage
 # scaffolds/ice-design-cms
 # scaffolds/ice-task-management-admin
-scaffolds/ice-design-dashboard
-=======
 # scaffolds/ice-contract-management-admin
 # scaffolds/ice-operation-admin
-scaffolds/ice-creator-admin
 # scaffolds/ice-order-management-admin
-scaffolds/ice-creator-landingpage
-scaffolds/ice-project-management-admin
-scaffolds/ice-customer-analysis-admin
 # scaffolds/ice-design-analysis
 # scaffolds/ice-reviews-management
-scaffolds/ice-scroll-screen-homepage
-scaffolds/ice-design-cms
-scaffolds/ice-task-management-admin
 # scaffolds/ice-design-dashboard
->>>>>>> release/upgrade-kit-2.x
 scaffolds/ice-typescript-starter
 scaffolds/ice-design-ecommerce
 # scaffolds/ice-universal-homepage
