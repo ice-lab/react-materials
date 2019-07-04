@@ -1,31 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Nav } from '@alifd/next';
+import { headerMenuConfig } from '@/menuConfig';
 import Logo from '../Logo';
-import { headerMenuConfig } from '../../menuConfig';
-import './index.scss';
+import styles from './index.module.scss';
 
-console.log(headerMenuConfig);
-export default class Header extends Component {
-  renderBalloonContent = (menu, idx) => {
+export default function Header() {
+  const renderBalloonContent = (menu, idx) => {
     return (
-      <Nav.SubNav key={idx} label={menu.name + ' '}>
-          {menu.children.map((subMenu, index) => {
-            return (
-              <Nav.Item key={index}>
-                <a href={subMenu.path} className="custom-sub-menu">
-                  {subMenu.name}
-                </a>
-              </Nav.Item>
-            );
-          })}
+      <Nav.SubNav key={idx} label={`${menu.name} `}>
+        {menu.children.map((subMenu, index) => {
+          return (
+            <Nav.Item key={index}>
+              <a href={subMenu.path} className={styles.customSubMenu}>
+                {subMenu.name}
+              </a>
+            </Nav.Item>
+          );
+        })}
       </Nav.SubNav>
     );
   };
 
-  renderMenuItem = () => {
+  const renderMenuItem = () => {
     return headerMenuConfig.map((menu, idx) => {
       if (menu.children) {
-        return this.renderBalloonContent(menu, idx);
+        return renderBalloonContent(menu, idx);
       }
       return (
         <Nav.Item key={menu.path}>
@@ -35,18 +34,16 @@ export default class Header extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="header-container">
-        <div className="header-content">
-          <Logo />
-          <div className="header-navbar">
-            <Nav className="header-navbar-menu" direction="hoz">
-              {this.renderMenuItem()}
-            </Nav>
-          </div>
+  return (
+    <div className={styles.headerContainer}>
+      <div className={styles.headerContent}>
+        <Logo />
+        <div className={styles.headerNavbar}>
+          <Nav className={styles.headerNavbarMenu} direction="hoz">
+            {renderMenuItem()}
+          </Nav>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
