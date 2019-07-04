@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 // MOCK 数据，实际业务替换掉
@@ -40,125 +41,57 @@ const mockData = [
   },
 ];
 
-export default class BaseInfo extends Component {
-  render() {
-    return (
-      <Row gutter={20}>
-        {mockData.map((item, index) => {
-          const scoreColor =
-            item.score.value > 90 ? styles.green : styles.orange;
+export default function BaseInfo() {
+  return (
+    <Row gutter={20}>
+      {mockData.map((item, index) => {
+        const scoreColor = item.score.value > 90 ? styles.green : styles.orange;
 
-          return (
-            <Col l="12" key={index}>
-              <IceContainer className={styles.container}>
-                <div className={styles.cardTitle}>{item.title}</div>
-                <div className={styles.body}>
-                  <div className={styles.cell}>
-                    <div className={styles.cellName}>{item.score.name}</div>
-                    <div className={`${styles.cellValue} ${scoreColor }`}>
-                      {item.score.value}
-                    </div>
-                    <div className={`${styles.cellDesc} ${styles.grey }`}>
-                      {item.score.desc}
-                    </div>
+        return (
+          <Col l="12" key={index}>
+            <IceContainer className={styles.container}>
+              <div className={styles.cardTitle}>{item.title}</div>
+              <div className={styles.body}>
+                <div className={styles.cell}>
+                  <div className={styles.cellName}>{item.score.name}</div>
+                  <div className={`${styles.cellValue} ${scoreColor}`}>
+                    {item.score.value}
                   </div>
-                  <div className={styles.cell}>
-                    <div className={styles.cellName}>{item.consume.name}</div>
-                    <div className={`${styles.cellValue} ${styles.black }`}>
-                      {item.consume.value}
-                    </div>
-                    <div className={`${styles.cellDesc} ${styles.grey }`}>
-                      <span className={styles.ratioLabel}>环比</span>
-                      <span className={styles.ratioValue}>
-                        {item.consume.ratio}
-                      </span>
-                    </div>
+                  <div className={`${styles.cellDesc} ${styles.grey}`}>
+                    {item.score.desc}
                   </div>
                 </div>
-                <div className={styles.footer}>
-                  <div className={styles.item}>
-                    <div className={styles.itemLabel}>当日计算费用： </div>
-                    <div className={styles.itemValue}>{item.cost}</div>
+                <div className={styles.cell}>
+                  <div className={styles.cellName}>{item.consume.name}</div>
+                  <div className={`${styles.cellValue} ${styles.black}`}>
+                    {item.consume.value}
                   </div>
-                  <div className={styles.item}>
-                    <div className={styles.itemLabel}>当日公司排名： </div>
-                    <div className={styles.itemValue}>{item.rank}</div>
-                  </div>
-                  <div className={styles.item}>
-                    <div className={styles.itemLabel}>财年累计费用： </div>
-                    <div className={styles.itemValue}>{item.accumulative}</div>
+                  <div className={`${styles.cellDesc} ${styles.grey}`}>
+                    <span className={styles.ratioLabel}>环比</span>
+                    <span className={styles.ratioValue}>
+                      {item.consume.ratio}
+                    </span>
                   </div>
                 </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+              </div>
+              <div className={styles.footer}>
+                <div className={styles.item}>
+                  <div className={styles.itemLabel}>当日计算费用： </div>
+                  <div className={styles.itemValue}>{item.cost}</div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.itemLabel}>当日公司排名： </div>
+                  <div className={styles.itemValue}>{item.rank}</div>
+                </div>
+                <div className={styles.item}>
+                  <div className={styles.itemLabel}>财年累计费用： </div>
+                  <div className={styles.itemValue}>{item.accumulative}</div>
+                </div>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
-
-// const styles = {
-//   container: {
-//     padding: '0',
-//   },
-//   cardTitle: {
-//     padding: '20px',
-//     opacity: '0.8',
-//     fontSize: '16px',
-//     color: '#000',
-//     lineHeight: '16px',
-//   },
-//   body: {
-//     display: 'flex',
-//     marginBottom: '20px',
-//     padding: '20px',
-//   },
-//   cell: {
-//     width: '50%',
-//   },
-//   cellName: {
-//     color: '#666',
-//     fontSize: '14px',
-//     lineHeight: '14px',
-//   },
-//   cellValue: {
-//     fontSize: '40px',
-//     fontWeight: '500',
-//     height: '40px',
-//     lineHeight: '40px',
-//     margin: '15px 0',
-//   },
-//   ratioLabel: {
-//     marginRight: '20px',
-//   },
-//   orange: {
-//     color: '#f7da47',
-//   },
-//   green: {
-//     color: '#ee706d',
-//   },
-//   black: {
-//     color: '#444',
-//   },
-//   grey: {
-//     color: '#666',
-//   },
-//   footer: {
-//     padding: '10px 20px',
-//     background: '#f1f7fe',
-//     display: 'flex',
-//     justifyContent: 'space-between',
-//   },
-//   item: {
-//     display: 'flex',
-//     lineHeight: '30px',
-//     fontSize: '12px',
-//   },
-//   itemLabel: {
-//     color: 'rgba(0, 0, 0, .4)',
-//   },
-//   itemValue: {
-//     color: 'rgba(0, 0, 0, .8)',
-//   },
-// };

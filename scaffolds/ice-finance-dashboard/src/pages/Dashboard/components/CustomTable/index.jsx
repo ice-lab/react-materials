@@ -1,7 +1,6 @@
-/* eslint no-mixed-operators:0 */
-import React, { Component } from 'react';
-import ContainerCard from '../../../../components/ContainerCard';
-import './index.scss';
+import React from 'react';
+import ContainerCard from '@/components/ContainerCard';
+import styles from './index.module.scss';
 
 // Random Numbers
 const random = (min, max) => {
@@ -21,33 +20,31 @@ const getData = () => {
   });
 };
 
-export default class CustomTable extends Component {
-  render() {
-    return (
-      <ContainerCard title="借款列表">
-        <table className="custom-table">
-          <tbody>
-            <tr className="thead">
-              <td>用户名</td>
-              <td>借款金额</td>
-              <td>借款用途</td>
-              <td>借款时长</td>
-              <td>借款利率</td>
-            </tr>
-            {getData().map((item, index) => {
-              return (
-                <tr key={index}>
-                  <td>{item.name}</td>
-                  <td className="custom-th">{item.amount}</td>
-                  <td>{item.usage}</td>
-                  <td>{item.duration}</td>
-                  <td className="custom-th">{item.rate}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </ContainerCard>
-    );
-  }
+export default function CustomTable() {
+  return (
+    <ContainerCard title="借款列表">
+      <table className={styles.customTable}>
+        <tbody>
+          <tr className={styles.thead}>
+            <td>用户名</td>
+            <td>借款金额</td>
+            <td>借款用途</td>
+            <td>借款时长</td>
+            <td>借款利率</td>
+          </tr>
+          {getData().map((item, index) => {
+            return (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td className={styles.customTh}>{item.amount}</td>
+                <td>{item.usage}</td>
+                <td>{item.duration}</td>
+                <td className={styles.customTh}>{item.rate}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </ContainerCard>
+  );
 }

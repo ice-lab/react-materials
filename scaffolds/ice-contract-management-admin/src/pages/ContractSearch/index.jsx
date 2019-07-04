@@ -1,34 +1,13 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
-import ContractTable from '../../components/ContractTable';
+import ContractTable from '@/components/ContractTable';
 
-export default class ContractSearch extends Component {
-  static displayName = 'ContractSearch';
+export default function ContractSearch() {
+  const [searchQuery] = useState({});
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchQuery: {},
-    };
-  }
-
-  onSearch = (searchQuery) => {
-    this.setState({
-      searchQuery,
-    });
-  }
-
-  render() {
-    const { searchQuery } = this.state;
-
-    return (
-      <IceContainer>
-        <ContractTable searchQuery={searchQuery} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <ContractTable searchQuery={searchQuery} />
+    </IceContainer>
+  );
 }

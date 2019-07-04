@@ -1,30 +1,37 @@
 .label {
   text-align: right;
-};
+}
+
 .formContent {
   width: 100%;
   position: relative;
-};
+}
+
 .formItem {
   align-items: center;
   margin-bottom: 25;
-};
+}
+
 .formTitle {
   margin: 0 0 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
   color: #333;
-};
+}
+
 .inputItem {
   width: 100%;
-};
-.buttonWidth{
+}
+
+.buttonWidth {
   width: 100px;
 }
-.rowMargin{
+
+.rowMargin {
   margin-top: 20px;
 }
-.switchBorder{
+
+.switchBorder {
   background: #2077ff;
   border-color: #2077ff;
 }

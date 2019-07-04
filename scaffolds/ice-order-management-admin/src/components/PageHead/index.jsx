@@ -16,8 +16,6 @@ const PageHead = ({ title, style, ...props }) => {
   );
 };
 
-
-
 PageHead.propTypes = {
   title: PropTypes.string.isRequired,
   buttonText: PropTypes.string,

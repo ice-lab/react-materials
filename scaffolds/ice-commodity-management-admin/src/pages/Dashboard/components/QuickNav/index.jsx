@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import IceContainer from '@icedesign/container';
 import { Grid, Icon } from '@alifd/next';
@@ -45,30 +45,26 @@ const MOCK_DATA = [
   },
 ];
 
-export default class QuickNav extends Component {
-  render() {
-    return (
-      <IceContainer title="常用导航">
-        <Row wrap gutter="20" style={{ marginBottom: '20px' }}>
-          {MOCK_DATA.map((item, index) => {
-            return (
-              <Col xxs="12" s="12" l="8" key={index} className={styles.item}>
-                <Link to={item.to} className={styles.link}>
-                  <IceContainer
-                    className={styles.card}
-                    style= {{backgroundColor: item.color}}
-                  >
-                    <Icon type={item.icon} className={styles.icon} />
-                    <div className={styles.title}>{item.title}</div>
-                  </IceContainer>
-                </Link>
-              </Col>
-            );
-          })}
-        </Row>
-      </IceContainer>
-    );
-  }
+export default function QuickNav() {
+  return (
+    <IceContainer title="常用导航">
+      <Row wrap gutter="20" style={{ marginBottom: '20px' }}>
+        {MOCK_DATA.map((item, index) => {
+          return (
+            <Col xxs="12" s="12" l="8" key={index} className={styles.item}>
+              <Link to={item.to} className={styles.link}>
+                <IceContainer
+                  className={styles.card}
+                  style={{ backgroundColor: item.color }}
+                >
+                  <Icon type={item.icon} className={styles.icon} />
+                  <div className={styles.title}>{item.title}</div>
+                </IceContainer>
+              </Link>
+            </Col>
+          );
+        })}
+      </Row>
+    </IceContainer>
+  );
 }
-
-

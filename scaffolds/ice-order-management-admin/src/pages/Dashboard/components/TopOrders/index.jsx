@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
 
 // Random Numbers
 const random = (min, max) => {
@@ -19,18 +19,16 @@ const getData = (length = 9) => {
   });
 };
 
-export default class TopOrders extends Component {
-  render() {
-    const dataSource = getData();
-    return (
-      <IceContainer style={{ padding: 0 }}>
-        <ContainerTitle title="最近的订单" />
-        <Table dataSource={dataSource} hasBorder={false}>
-          <Table.Column title="客户名称" dataIndex="name" />
-          <Table.Column title="订单数量" dataIndex="num" />
-          <Table.Column title="订单金额" dataIndex="amount" />
-        </Table>
-      </IceContainer>
-    );
-  }
+export default function TopOrders() {
+  const dataSource = getData();
+  return (
+    <IceContainer style={{ padding: 0 }}>
+      <ContainerTitle title="最近的订单" />
+      <Table dataSource={dataSource} hasBorder={false}>
+        <Table.Column title="客户名称" dataIndex="name" />
+        <Table.Column title="订单数量" dataIndex="num" />
+        <Table.Column title="订单金额" dataIndex="amount" />
+      </Table>
+    </IceContainer>
+  );
 }

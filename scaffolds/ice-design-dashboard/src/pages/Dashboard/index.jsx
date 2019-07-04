@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Title from './components/Title';
 import OverviewSatesChart from './components/OverviewSatesChart';
@@ -13,43 +13,41 @@ import TopCategories from './components/TopCategories';
 
 const { Row, Col } = Grid;
 
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        <Title />
-        <OverviewSatesChart />
-        <Row wrap gutter="20">
-          <Col l="14">
-            <InternetSalesChart />
-          </Col>
-          <Col l="10">
-            <Row gutter="20" wrap>
-              <Col l="12">
-                <BounceRateChart />
-              </Col>
-              <Col>
-                <TotalUserChart />
-              </Col>
-              <Col l="24" style={{ marginBottom: '20px' }}>
-                <PaymentChart />
-              </Col>
-            </Row>
-          </Col>
-          <Col l="8">
-            <EarningsChart />
-          </Col>
-          <Col l="8">
-            <TopProducts />
-          </Col>
-          <Col l="8">
-            <TopCategories />
-          </Col>
-          <Col l="24">
-            <OverviewPieChart />
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+export default function Dashboard() {
+  return (
+    <div>
+      <Title />
+      <OverviewSatesChart />
+      <Row wrap gutter="20">
+        <Col l="14">
+          <InternetSalesChart />
+        </Col>
+        <Col l="10">
+          <Row gutter="20" wrap>
+            <Col l="12">
+              <BounceRateChart />
+            </Col>
+            <Col>
+              <TotalUserChart />
+            </Col>
+            <Col l="24" style={{ marginBottom: '20px' }}>
+              <PaymentChart />
+            </Col>
+          </Row>
+        </Col>
+        <Col l="8">
+          <EarningsChart />
+        </Col>
+        <Col l="8">
+          <TopProducts />
+        </Col>
+        <Col l="8">
+          <TopCategories />
+        </Col>
+        <Col l="24">
+          <OverviewPieChart />
+        </Col>
+      </Row>
+    </div>
+  );
 }

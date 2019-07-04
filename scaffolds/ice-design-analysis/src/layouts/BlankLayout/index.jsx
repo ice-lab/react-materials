@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import MainRoutes from './MainRoutes';
+import React from 'react';
 import styles from './index.module.scss';
 
-export default class BlankLayout extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <MainRoutes />
-      </div>
-    );
-  }
+export default function BlankLayout(props) {
+  return (
+    <div className={styles.container}>
+      {props.children}
+    </div>
+  );
 }
-
-

@@ -1,72 +1,83 @@
 .container {
-    background-color: #000;
-    color: #fff;
-    position: relative;
-    height: 100vh;
-  }
-  .main {
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-  }
-  .bg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-  }
-  .side {
-    z-index: 1;
-    width: 320px;
-    padding: 10px;
-  }
-  .middle {
-    flex: 1;
-  }
-  .header {
-    position: relative;
-    z-index: 9;
-    text-align: center;
-  }
-  .pageTitle{
-    font-size: 36px;
-    margin: 0;
-  }
-  .time {
-    margin-bottom: 20;
-  }
-  .sum {
-    height: 44px;
-    line-height: 44px;
-    margin: 25px 0 0;
-    color: #f7d947;
-    font-size: 62px;
-    font-weight: 400;
-  }
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  height: 100vh;
+}
 
-  .title {
-    max-width: 340px;
-    margin: 0 auto;
-    padding: 4px 2px;
-    border-radius: 2px;
-    font-size: 16px;
-    background-color: rgba(26, 72, 78, 0.6);
-    color: #f7d947;
-    text-align: center;
-  }
-  .list {
-    color: #fff;
-    line-height: 36px;
-    margin-top: 20px;
-  }
-  .item {
-    border-bottom: 1px solid #00F0FF;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .name {
-    margin-left: 10px;
-  }
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.side {
+  z-index: 1;
+  width: 320px;
+  padding: 10px;
+}
+
+.middle {
+  flex: 1;
+}
+
+.header {
+  position: relative;
+  z-index: 9;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 36px;
+  margin: 0;
+}
+
+.time {
+  margin-bottom: 20;
+}
+
+.sum {
+  height: 44px;
+  line-height: 44px;
+  margin: 25px 0 0;
+  color: #f7d947;
+  font-size: 62px;
+  font-weight: 400;
+}
+
+.title {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 4px 2px;
+  border-radius: 2px;
+  font-size: 16px;
+  background-color: rgba(26, 72, 78, 0.6);
+  color: #f7d947;
+  text-align: center;
+}
+
+.list {
+  color: #fff;
+  line-height: 36px;
+  margin-top: 20px;
+}
+
+.item {
+  border-bottom: 1px solid #00f0ff;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.name {
+  margin-left: 10px;
+}

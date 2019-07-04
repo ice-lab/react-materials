@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import ColumnChart from './ColumnChart';
 import styles from './index.module.scss';
@@ -43,36 +43,35 @@ const mockData = [
   },
 ];
 
-export default class SalesChart extends Component {
-  render() {
-    return (
-      <Row wrap gutter={20} style={{ marginBottom: '20px' }}>
-        {mockData.map((item, index) => {
-          return (
-            <Col xxs="24" l="6" key={index}>
-              <div className={styles.content}
-              style = {{background: item.background}}>
-                <div className={styles.summary}>
-                  <p className={styles.title}>{item.title}</p>
-                  <div className={styles.data}>
-                    <h2 className={styles.amount}>{item.amount}</h2>
-                    <div className={styles.percent}>
-                      {item.percent}{' '}
-                      <Icon
-                        type={`arrow-${item.increase ? 'up' : 'down'}-filling`}
-                        size="xs"
-                        className={styles.arrowIcon}
-                      />
-                    </div>
+export default function SalesChart() {
+  return (
+    <Row wrap gutter={20} style={{ marginBottom: '20px' }}>
+      {mockData.map((item, index) => {
+        return (
+          <Col xxs="24" l="6" key={index}>
+            <div
+              className={styles.content}
+              style={{ background: item.background }}
+            >
+              <div className={styles.summary}>
+                <p className={styles.title}>{item.title}</p>
+                <div className={styles.data}>
+                  <h2 className={styles.amount}>{item.amount}</h2>
+                  <div className={styles.percent}>
+                    {item.percent}{' '}
+                    <Icon
+                      type={`arrow-${item.increase ? 'up' : 'down'}-filling`}
+                      size="xs"
+                      className={styles.arrowIcon}
+                    />
                   </div>
                 </div>
-                <ColumnChart color="#fff" />
               </div>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+              <ColumnChart color="#fff" />
+            </div>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
-

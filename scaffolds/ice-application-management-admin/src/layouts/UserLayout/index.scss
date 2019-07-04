@@ -10,12 +10,14 @@
   background-size: cover;
   align-items: center;
   justify-content: center;
+
   .user-content {
     position: absolute;
     width: 450px;
     background: #fff;
     border-radius: 5px;
   }
+
   .layer-mask {
     background: rgba(0, 0, 0, 0.3);
     position: absolute;
@@ -24,6 +26,7 @@
     right: 0;
     left: 0;
   }
+
   .formContainer {
     display: flex;
     justify-content: center;
@@ -31,18 +34,22 @@
     max-width: 368px;
     margin: 0 auto;
   }
+
   .formItems {
     padding-bottom: 40px;
   }
+
   .formItem {
     position: relative;
     margin-bottom: 25px;
     flex-direction: column;
   }
+
   .formItemCol {
     position: relative;
     margin-bottom: 5px;
   }
+
   .formTitle {
     padding: 40px 0;
     margin: 0;
@@ -51,6 +58,7 @@
     font-weight: 500;
     text-align: center;
   }
+
   .inputIcon {
     position: absolute;
     left: 12px;
@@ -58,6 +66,7 @@
     transform: translateY(-50%);
     color: $color-text1-2;
   }
+
   .submitBtn {
     font-size: 16px;
     height: 40px;
@@ -65,21 +74,26 @@
     background: $color-brand1-6;
     border-radius: 4px;
   }
+
   .checkbox {
     margin-left: 5px;
   }
+
   .account {
     margin: 4px 0;
     text-align: center;
   }
+
   .tips {
     justify-content: center;
   }
+
   .tips-text {
     color: $color-text1-2;
     text-decoration: none;
     font-size: 13px;
   }
+
   .line {
     color: #dcd6d6;
     margin: 0 8px;
@@ -89,11 +103,13 @@
     width: 368px;
     height: 38px;
     line-height: 38px;
+
     input {
       padding-left: 32px;
       font-size: 13px;
     }
   }
+
   .next-checkbox-label {
     color: $color-text1-2;
     font-size: 13px;

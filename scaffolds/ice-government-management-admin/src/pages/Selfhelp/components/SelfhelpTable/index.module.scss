@@ -1,45 +1,39 @@
+.container {
+  margin: 0 20px;
+  letter-spacing: 2px;
+}
 
+.button {
+  margin: 0 8px;
+  letter-spacing: 2px;
+}
 
-    .container {
-      margin: 0 20px;
-      letter-spacing: 2px;
-    }
-    .button{
-      margin: 0 8px;
-      letter-spacing: 2px;
-    }
-    .table {
-      margin: 20px 0;
-    }
-    .pagination {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.table {
+  margin: 20px 0;
+}
 
+.pagination {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-    .container {
-      margin: 20px;
-      letter-spacing: 2px;
-    }
-    .input {
-      margin: 0 4px;
-    }
-    .select{
-      vertical-align: middle;
-      width: 200px;
-    }
-    .shortInput {
-      width: 110px;
-    }
-    .caseNumber {
-      margin-right: 20px;
-    }
-    .date{
-      margin-right: 40px;
-    }
-    .button {
-      margin: 0 8px;
-      letter-spacing: 2px;
-    }
-  
-  
+.input {
+  margin: 0 4px;
+}
+
+.select {
+  vertical-align: middle;
+  width: 200px;
+}
+
+.shortInput {
+  width: 110px;
+}
+
+.caseNumber {
+  margin-right: 20px;
+}
+
+.date {
+  margin-right: 40px;
+}

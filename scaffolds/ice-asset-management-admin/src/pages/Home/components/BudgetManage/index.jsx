@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Tab, DatePicker } from '@alifd/next';
+import React from 'react';
+import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Calculate from './Calculate';
 import Memory from './Memory';
@@ -18,29 +18,25 @@ function handleClick(key) {
   console.log('click', key);
 }
 
-export default class BudgetManage extends Component {
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <Tab
-          onChange={handleChange}
-          navStyle={{fontWeight:'500',fontSize:'14px',color:'rgba(0, 0, 0, 0.85)'}}
-        >
-          {tabs.map((item) => {
-            return (
-              <Tab.Item
-                key={item.key}
-                title={item.tab}
-                onClick={handleClick}
-              >
-                {item.content}
-              </Tab.Item>
-            );
-          })}
-        </Tab>
-      </IceContainer>
-    );
-  }
+export default function BudgetManage() {
+  return (
+    <IceContainer className={styles.container}>
+      <Tab
+        onChange={handleChange}
+        navStyle={{ fontWeight: '500', fontSize: '14px', color: 'rgba(0, 0, 0, 0.85)' }}
+      >
+        {tabs.map((item) => {
+          return (
+            <Tab.Item
+              key={item.key}
+              title={item.tab}
+              onClick={handleClick}
+            >
+              {item.content}
+            </Tab.Item>
+          );
+        })}
+      </Tab>
+    </IceContainer>
+  );
 }
-
-

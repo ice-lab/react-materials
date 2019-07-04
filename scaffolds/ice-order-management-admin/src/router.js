@@ -1,23 +1,71 @@
-/**
- * 定义应用路由
- */
-import { HashRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import React from 'react';
-import UserLayout from './layouts/UserLayout';
-import BasicLayout from './layouts/BasicLayout';
+import path from 'path';
+import routes from '@/routerConfig';
 
-// 按照 Layout 分组路由
-// UserLayout 对应的路由：/user/xxx
-// BasicLayout 对应的路由：/xxx
-const router = () => {
+const RouteItem = (props) => {
+  const { redirect, path: routePath, component, key } = props;
+  if (redirect) {
+    return (
+      <Redirect
+        exact
+        key={key}
+        from={routePath}
+        to={redirect}
+      />
+    );
+  }
   return (
-    <HashRouter>
-      <Switch>
-        <Route path="/user" component={UserLayout} />
-        <Route path="/" component={BasicLayout} />
-      </Switch>
-    </HashRouter>
+    <Route
+      key={key}
+      component={component}
+      path={routePath}
+    />
   );
 };
 
-export default router();
+const router = () => {
+  return (
+    <Router>
+      <Switch>
+        {routes.map((route, id) => {
+          const { component: RouteComponent, children, ...others } = route;
+          return (
+            <Route
+              key={id}
+              {...others}
+              component={(props) => {
+                return (
+                  children ? (
+                    <RouteComponent key={id} {...props}>
+                      <Switch>
+                        {children.map((routeChild, idx) => {
+                          const { redirect, path: childPath, component } = routeChild;
+                          return RouteItem({
+                            key: `${id}-${idx}`,
+                            redirect,
+                            path: childPath && path.join(route.path, childPath),
+                            component,
+                          });
+                        })}
+                      </Switch>
+                    </RouteComponent>
+                  ) : (
+                    <>
+                      {RouteItem({
+                        key: id,
+                        ...props,
+                      })}
+                    </>
+                  )
+                );
+              }}
+            />
+          );
+        })}
+      </Switch>
+    </Router>
+  );
+};
+
+export default router;

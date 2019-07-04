@@ -115,5 +115,3 @@ export default class CustomTable extends Component {
     );
   }
 }
-
-
