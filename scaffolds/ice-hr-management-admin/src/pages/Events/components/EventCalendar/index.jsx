@@ -1,21 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Calendar } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+import styles from './index.module.scss';
 
-import styles from './index.module.scss'
-
-export default class EventCalendar extends Component {
-  dateCellRender = (calendarDate) => {
-    const style = {
-      position: 'absolute',
-      width: 'calc(100% - 8px)',
-      height: '2px',
-      textAlign: 'center',
-      background: '#ff0000',
-      top: 0,
-      left: 4,
-    };
-
+export default function EventCalendar() {
+  function dateCellRender(calendarDate) {
     return calendarDate.week() > 5 ? (
       <div>
         <span className={styles.calendarDate} />
@@ -24,13 +13,11 @@ export default class EventCalendar extends Component {
     ) : (
       <div>{calendarDate.date()}</div>
     );
-  };
-
-  render() {
-    return (
-      <IceContainer title="待办事项">
-        <Calendar dateCellRender={this.dateCellRender} />
-      </IceContainer>
-    );
   }
+
+  return (
+    <IceContainer title="待办事项">
+      <Calendar dateCellRender={dateCellRender} />
+    </IceContainer>
+  );
 }

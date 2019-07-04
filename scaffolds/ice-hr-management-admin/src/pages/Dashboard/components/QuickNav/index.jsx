@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import goalIcon from './images/goal.svg';
 import linkIcon from './images/link.svg';
@@ -8,6 +8,7 @@ import checkIcon from './images/check.svg';
 import sendIcon from './images/send.svg';
 import checkinIcon from './images/checkin.svg';
 import sendMailIcon from './images/send-mail.svg';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -60,68 +61,29 @@ const mockData = [
   },
 ];
 
-export default class QuickNav extends Component {
-  render() {
-    return (
-      <IceContainer title="快捷导航">
-        <div style={styles.content}>
-          {mockData.map((item, index) => {
-            return (
-              <div style={styles.item} key={index}>
-                <div
-                  style={{
-                    ...styles.image,
-                    background: `${item.backgroundColor}`,
-                  }}
-                >
-                  <img src={item.img} style={styles.iconImage} alt="" />
-                </div>
-                <p style={styles.itemTitle}>
-                  {item.title} <span style={styles.count}>{item.count}</span>
-                </p>
+export default function QuickNav() {
+  return (
+    <IceContainer title="快捷导航">
+      <div className={styles.content}>
+        {mockData.map((item, index) => {
+          return (
+            <div className={styles.item} key={index}>
+              <div
+                className={styles.image}
+                style={{
+                  background: `${item.backgroundColor}`,
+                }}
+              >
+                <img src={item.img} className={styles.iconImage} alt="" />
               </div>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+              <p className={styles.itemTitle}>
+                {item.title}
+                <span className={styles.count}>{item.count}</span>
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }
-
-const styles = {
-  content: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-    height: '200px',
-  },
-  item: {
-    width: '25%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    margin: '10px 0',
-  },
-  itemTitle: {
-    color: '#666',
-    fontSize: '12px',
-    textAlign: 'center',
-  },
-  image: {
-    height: '40px',
-    width: '40px',
-    textAlign: 'center',
-    padding: '8px 0',
-    borderRadius: '8px',
-  },
-  iconImage: {
-    width: '24px',
-    height: '24px',
-  },
-  count: {
-    color: '#ff363b',
-  },
-};

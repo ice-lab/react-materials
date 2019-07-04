@@ -1,29 +1,36 @@
-.label{
+.label {
   text-align: center;
 }
-.formContent{
+
+.formContent {
   width: 100%;
   position: relative;
 }
-.formItem{
+
+.formItem {
   align-items: center;
-  margin-bottom: 25px
+  margin-bottom: 25px;
 }
-.formTitle{
+
+.formTitle {
   margin: 0 0 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
-  color: #333
+  color: #333;
 }
-.inputItem{
+
+.inputItem {
   width: 100%;
 }
-.btn{
+
+.btn {
   width: 100px;
 }
-.row{
+
+.row {
   margin-top: 20px;
 }
-.IceFormError{
+
+.IceFormError {
   margin-left: 10px;
 }

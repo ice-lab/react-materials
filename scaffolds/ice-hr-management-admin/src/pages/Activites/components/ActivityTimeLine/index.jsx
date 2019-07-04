@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Timeline } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import data from './data';
-
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Item: TimelineItem } = Timeline;
 
-export default class Activites extends Component {
-  renderAvatar = (items) => {
+export default function Activites() {
+  function renderAvatar(items) {
     return (
       <div>
         {items.map((item, index) => {
@@ -16,35 +15,32 @@ export default class Activites extends Component {
         })}
       </div>
     );
-  };
+  }
 
-  renderContent = (content) => {
+  function renderContent(content) {
     return (
       <div className={styles.content}>
         <p className={styles.time}>{content.time}</p>
         <p className={styles.desc}>{content.desc}</p>
-        {this.renderAvatar(content.avatar)}
+        {renderAvatar(content.avatar)}
       </div>
     );
-  };
-
-  render() {
-    return (
-      <IceContainer title="动态列表">
-        <Timeline>
-          {data.map((item, index) => {
-            return (
-              <TimelineItem
-                key={index}
-                title={item.title}
-                content={this.renderContent(item.content)}
-                state={item.state}
-              />
-            );
-          })}
-        </Timeline>
-      </IceContainer>
-    );
   }
-}
 
+  return (
+    <IceContainer title="动态列表">
+      <Timeline>
+        {data.map((item, index) => {
+          return (
+            <TimelineItem
+              key={index}
+              title={item.title}
+              content={renderContent(item.content)}
+              state={item.state}
+            />
+          );
+        })}
+      </Timeline>
+    </IceContainer>
+  );
+}

@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom';
 import moment from 'moment';
-// 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
-import '@alifd/next/reset.scss';
+import './global.scss';
 import router from './router';
 
 moment.locale('zh-cn');
@@ -12,4 +11,4 @@ if (!ICE_CONTAINER) {
   throw new Error('当前页面不存在 <div id="ice-container"></div> 节点.');
 }
 
-ReactDOM.render(router, ICE_CONTAINER);
+ReactDOM.render(router(), ICE_CONTAINER);

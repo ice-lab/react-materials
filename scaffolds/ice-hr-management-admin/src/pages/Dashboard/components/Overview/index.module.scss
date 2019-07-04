@@ -1,0 +1,38 @@
+.container {
+  padding: 10px 20px;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.info {
+  margin-left: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.label {
+  margin: 10px 0 5px;
+  font-size: 12px;
+}
+
+.value {
+  margin: 5px 0 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.border {
+  border-bottom: 1px solid #eee;
+}
