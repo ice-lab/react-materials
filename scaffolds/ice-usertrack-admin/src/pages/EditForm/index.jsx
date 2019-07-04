@@ -130,12 +130,12 @@ export default class EditForm extends Component {
           </div>
         </IceFormBinderWrapper>
 
-        <Row style={{marginTop: 20}}>
+        <Row style={{ marginTop: 20 }}>
           <Col offset="3">
             <Button
 
               type="primary"
-              style={{width: 100}}
+              style={{ width: 100 }}
               onClick={this.validateAllFormField}
             >
               保存
@@ -146,4 +146,3 @@ export default class EditForm extends Component {
     );
   }
 }
-

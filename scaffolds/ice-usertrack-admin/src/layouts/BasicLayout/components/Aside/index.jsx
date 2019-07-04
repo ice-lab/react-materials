@@ -19,6 +19,7 @@ export default class Aside extends Component {
     };
     this.openKeysCache = openKeys;
   }
+
   /**
    * 当前展开的菜单项
    */
@@ -28,6 +29,7 @@ export default class Aside extends Component {
     });
     this.openKeysCache = openKeys;
   };
+
   /**
    * 获取当前展开的菜单项
    */
@@ -60,14 +62,14 @@ export default class Aside extends Component {
           openKeys={this.state.openKeys}
           className="custom-menu"
         >
-          {Array.isArray(asideMenuConfig) &&
-            asideMenuConfig.length > 0 &&
-            asideMenuConfig.map((nav, index) => {
+          {Array.isArray(asideMenuConfig)
+            && asideMenuConfig.length > 0
+            && asideMenuConfig.map((nav, index) => {
               if (nav.children && nav.children.length > 0) {
                 return (
                   <SubNav
                     key={index}
-                    label={
+                    label={(
                       <span>
                         {nav.icon ? (
                           <FoundationSymbol size="small" type={nav.icon} />
@@ -76,7 +78,7 @@ export default class Aside extends Component {
                           {nav.name}
                         </span>
                       </span>
-                    }
+)}
                   >
                     {nav.children.map((item) => {
                       const linkProps = {};

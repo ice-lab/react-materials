@@ -132,8 +132,7 @@ class UserRegister extends Component {
               <IceFormBinder
                 name="rePasswd"
                 required
-                validator={(rule, values, callback) =>
-                  this.checkPasswd2(rule, values, callback, this.state.value)
+                validator={(rule, values, callback) => this.checkPasswd2(rule, values, callback, this.state.value)
                 }
               >
                 <Input

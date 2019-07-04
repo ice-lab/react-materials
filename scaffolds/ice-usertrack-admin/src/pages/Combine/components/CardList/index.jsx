@@ -49,13 +49,13 @@ export default class CardList extends Component {
                   <div style={styles.head}>
                     <h4 style={styles.title}>{item.title}</h4>
                     <Balloon
-                      trigger={
+                      trigger={(
                         <FoundationSymbol
                           size="small"
                           type="eye"
                           style={{ ...styles.eyeIcon, ...styles.icon }}
                         />
-                      }
+)}
                       align="t"
                       closable={false}
                       triggerType="hover"
@@ -65,14 +65,14 @@ export default class CardList extends Component {
                     </Balloon>
 
                     <Balloon
-                      trigger={
+                      trigger={(
                         <FoundationSymbol
                           size="small"
                           type="edit2"
                           onClick={this.handleEdit}
                           style={{ ...styles.editIcon, ...styles.icon }}
                         />
-                      }
+)}
                       align="t"
                       closable={false}
                       triggerType="hover"

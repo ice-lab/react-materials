@@ -25,24 +25,24 @@ export default class Header extends Component {
               defaultSelectedKeys={[pathname]}
               direction="hoz"
               type="primary"
-              embeddable={true}
+              embeddable
             >
-              {headerMenuConfig &&
-                headerMenuConfig.length > 0 &&
-                headerMenuConfig.map((nav, index) => {
+              {headerMenuConfig
+                && headerMenuConfig.length > 0
+                && headerMenuConfig.map((nav, index) => {
                   if (nav.children && nav.children.length > 0) {
                     return (
                       <SubNav
                         triggerType="click"
                         key={index}
-                        title={
+                        title={(
                           <span>
                             {nav.icon ? (
                               <FoundationSymbol size="small" type={nav.icon} />
                             ) : null}
                             <span className="nav-name-text">{nav.name}</span>
                           </span>
-                        }
+)}
                       >
                         {nav.children.map((item) => {
                           const linkProps = {};
@@ -109,7 +109,7 @@ export default class Header extends Component {
           </div>
 
           <Balloon
-            trigger={
+            trigger={(
               <div
                 className="ice-design-header-userpannel"
                 style={{
@@ -137,7 +137,7 @@ export default class Header extends Component {
                   className="icon-down"
                 />
               </div>
-            }
+)}
             closable={false}
             className="user-profile-menu"
           >

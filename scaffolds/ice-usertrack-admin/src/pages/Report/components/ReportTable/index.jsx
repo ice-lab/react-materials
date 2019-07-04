@@ -105,4 +105,3 @@ export default class ReportTable extends Component {
     );
   }
 }
-

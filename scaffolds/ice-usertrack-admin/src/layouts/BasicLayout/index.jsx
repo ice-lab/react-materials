@@ -11,7 +11,7 @@ import styles from './index.module.scss';
 export default class BasicLayout extends Component {
   render() {
     return (
-      <Layout fixable className='layout'>
+      <Layout fixable className="layout">
         {/* 顶部导航  */}
         <Header />
 
