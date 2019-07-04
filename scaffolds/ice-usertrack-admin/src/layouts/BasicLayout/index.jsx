@@ -5,8 +5,8 @@ import { withRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Aside from './components/Aside';
-import MainRoutes from './MainRoutes';
 import styles from './index.module.scss';
+
 @withRouter
 export default class BasicLayout extends Component {
   render() {
@@ -21,7 +21,7 @@ export default class BasicLayout extends Component {
 
           {/* 主体内容 */}
           <Layout.Main scrollable className={styles.main}>
-            <MainRoutes />
+            {this.props.children}
 
             {/* 底部页脚 */}
             <Footer />
