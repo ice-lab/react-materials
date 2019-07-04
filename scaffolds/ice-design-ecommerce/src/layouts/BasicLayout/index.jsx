@@ -3,10 +3,9 @@ import Layout from '@icedesign/layout';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer/index.jsx';
-import MainRoutes from './MainRoutes';
 import styles from './index.module.scss';
 
-export default function BasicLayout() {
+export default function BasicLayout(props) {
   return (
     <Layout
       fixable
@@ -23,7 +22,7 @@ export default function BasicLayout() {
         </Layout.Aside>
         <Layout.Main className={styles.iceLayoutMain} scrollable>
           <div className={styles.mainContainer}>
-            <MainRoutes />
+            {props.children}
           </div>
           <Footer className={styles.iceLayoutFooter} />
         </Layout.Main>

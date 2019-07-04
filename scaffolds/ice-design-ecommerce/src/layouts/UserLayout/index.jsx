@@ -1,14 +1,13 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+// import { Switch, Route, Redirect } from 'react-router-dom';
 import { Grid } from '@alifd/next';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
-import routerData from '../../routerConfig';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default function UserLayout() {
+export default function UserLayout(props) {
   return (
     <div className={styles.container}>
       <div className={styles.mask} />
@@ -18,20 +17,7 @@ export default function UserLayout() {
         </Col>
         <Col l="12">
           <div className={styles.form}>
-            <Switch>
-              {routerData.map((item, index) => {
-                return item.component ? (
-                  <Route
-                    key={index}
-                    path={item.path}
-                    component={item.component}
-                    exact={item.exact}
-                  />
-                ) : null;
-              })}
-
-              <Redirect exact from="/user" to="/user/login" />
-            </Switch>
+            {props.children}
           </div>
         </Col>
       </Row>
