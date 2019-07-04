@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
-// 载入默认全局样式 normalize
-import '@alifd/next/reset.scss';
+import './global.scss';
 import router from './router';
 
 const ICE_CONTAINER = document.getElementById('ice-container');
