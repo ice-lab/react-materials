@@ -1,7 +1,7 @@
 .headerContainer {
   width: 100%;
   padding: 10px 20px;
-  margin: 0px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,14 +32,17 @@
   margin-right: 12px;
   border-radius: 4px;
 }
+
 .userProfile {
   display: inline-block;
   text-align: center;
   margin-bottom: 2px;
 }
+
 .userName {
   font-size: 13px;
 }
+
 .iconDown {
   margin-left: 2px;
 }
@@ -49,6 +52,7 @@
   border-radius: 0;
   padding: 0 16px;
 }
+
 .userProfileMenuItem {
   height: 40px;
   line-height: 40px;
@@ -56,9 +60,11 @@
   color: #666;
   cursor: pointer;
 }
+
 .menuItemLink {
   display: block;
 }
+
 .menuItemIcon {
   margin-right: 5px;
 }

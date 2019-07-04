@@ -36,52 +36,48 @@ function getComponent(data) {
     },
   };
 
-  class DoubleChart extends React.Component {
-    render() {
-      return (
-        <Chart
-          height={435}
-          data={dv}
-          padding={[60, 40, 40, 40]}
-          scale={scale1}
-          animate={false}
-          forceFit
-        >
-          <Axis
-            name="price"
-            label={{
-              textStyle: {
-                fill: '#fff',
-              },
-            }}
-          />
-          <Axis
-            name="date"
-            label={{
-              textStyle: {
-                fill: '#fff',
-              },
-            }}
-          />
-          <Tooltip />
-          <Geom
-            type="area"
-            position="date*price"
-            shape="smooth"
-            opacity={0.85}
-          />
-        </Chart>
-      );
-    }
+  function DoubleChart() {
+    return (
+      <Chart
+        height={435}
+        data={dv}
+        padding={[60, 40, 40, 40]}
+        scale={scale1}
+        animate={false}
+        forceFit
+      >
+        <Axis
+          name="price"
+          label={{
+            textStyle: {
+              fill: '#fff',
+            },
+          }}
+        />
+        <Axis
+          name="date"
+          label={{
+            textStyle: {
+              fill: '#fff',
+            },
+          }}
+        />
+        <Tooltip />
+        <Geom
+          type="area"
+          position="date*price"
+          shape="smooth"
+          opacity={0.85}
+        />
+      </Chart>
+    );
   }
   return DoubleChart;
 }
 
-class Brushdsstate extends React.Component {
-  render() {
-    const DoubleChart = getComponent(data);
-    return <DoubleChart />;
-  }
+function Brushdsstate() {
+  const DoubleChart = getComponent(data);
+  return <DoubleChart />;
 }
 
 export default Brushdsstate;

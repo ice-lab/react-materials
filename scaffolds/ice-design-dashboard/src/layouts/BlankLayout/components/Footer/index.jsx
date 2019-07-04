@@ -11,8 +11,9 @@ export default () => {
         <a href="#" className={styles.link}>
           隐私
         </a>
-        <a href="#" className={styles.link}
-        style = {{ marginRight: '0'}}
+        <a href="#"
+          className={styles.link}
+          style={{ marginRight: '0' }}
         >
           条款
         </a>
@@ -21,4 +22,3 @@ export default () => {
     </div>
   );
 };
-

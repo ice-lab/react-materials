@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
 import LibTable from './LibTable';
@@ -13,34 +12,19 @@ const tabs = [
   { tab: '借阅信息', key: '2', content: <BorrowTable /> },
 ];
 
-export default class DonationForm extends Component {
-  static displayName = 'DonationForm';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer>
-        <div className={styles.title}>图书管理</div>
-        <Tab>
-          {tabs.map((item) => {
-            return (
-              <TabPane key={item.key} title={item.tab}>
-                {item.content}
-              </TabPane>
-            );
-          })}
-        </Tab>
-      </IceContainer>
-    );
-  }
+export default function DonationForm() {
+  return (
+    <IceContainer>
+      <div className={styles.title}>图书管理</div>
+      <Tab>
+        {tabs.map((item) => {
+          return (
+            <TabPane key={item.key} title={item.tab}>
+              {item.content}
+            </TabPane>
+          );
+        })}
+      </Tab>
+    </IceContainer>
+  );
 }
-
-

@@ -1,93 +1,93 @@
 .container {
-    height: 316px;
+  height: 316px;
 }
 
 .reviewRatingWrapper {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .reviewRatingDesc {
-    color: #999;
-    text-align: center;
+  color: #999;
+  text-align: center;
 }
 
 .reviewRating {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reviewRatingScore {
-    font-size: 36px;
-    position: absolute;
-    right: calc(100% + 20px);
+  font-size: 36px;
+  position: absolute;
+  right: calc(100% + 20px);
 }
 
 .reviewRatingIcon {
-    position: relative;
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reviewRatingRatePositive {
-    font-size: 26px;
-    color: #2ecc71;
-    position: absolute;
-    left: calc(100% + 20px);
+  font-size: 26px;
+  color: #2ecc71;
+  position: absolute;
+  left: calc(100% + 20px);
 }
 
 .reviewRatingRateNegative {
-    font-size: 26px;
-    color: #e74c3c;
-    position: absolute;
-    left: calc(100% + 20px);
+  font-size: 26px;
+  color: #e74c3c;
+  position: absolute;
+  left: calc(100% + 20px);
 }
 
 .reviewRatingIconPositive {
-    color: #2ecc71;
+  color: #2ecc71;
 }
 
 .reviewRatingIconNegative {
-    color: #e74c3c;
+  color: #e74c3c;
 }
 
 .reviewRatingDivideLine {
-    border-top: 1px solid #eee;
-    width: 100px;
-    margin: 0 auto;
+  border-top: 1px solid #eee;
+  width: 100px;
+  margin: 0 auto;
 }
 
 .reviewTargetProgressWrapper {
-    padding: 30px 0 20px 0;
-    display: flex;
-    justify-content: center;
+  padding: 30px 0 20px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .reviewRatingGoalDesc {
-    text-align: center;
+  text-align: center;
 }
 
 .reviewLeaderboardItem {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: space-between;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
 }
 
 .reviewLeaderboardItemAvatar {
-    border-radius: 50%;
-    overflow: hidden;
-    display: inline-block;
-    margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 15px;
 }
 
 .reviewLeaderboardItemAvatarImg {
-    display: block;
+  display: block;
 }
 
 .reviewLeaderboardItemName {
-    flex: 1;
+  flex: 1;
 }

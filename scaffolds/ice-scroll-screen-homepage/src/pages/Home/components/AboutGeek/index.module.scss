@@ -1,79 +1,79 @@
 .container {
-    height: 100%;
-    background: url(./images/bg.png);
-    background-size: contain;
+  height: 100%;
+  background: url(./images/bg.png);
+  background-size: contain;
 }
 
 .content {
-    position: relative;
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 180px;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 180px;
 }
 
 .summary {
-    margin-right: 100px;
-    display: inline-block;
+  margin-right: 100px;
+  display: inline-block;
 }
 
 .num {
-    font-size: 64px;
-    color: #fff;
-    line-height: 56px;
-    margin-bottom: 30px;
-    font-weight: 700;
+  font-size: 64px;
+  color: #fff;
+  line-height: 56px;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
 .title {
-    font-size: 42px;
-    color: #fff;
-    line-height: 42px;
-    margin-bottom: 15px;
-    font-weight: 700;
+  font-size: 42px;
+  color: #fff;
+  line-height: 42px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .subtitle {
-    font-size: 20px;
-    color: #fff;
-    line-height: 20px;
-    margin-bottom: 15px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 20px;
+  margin-bottom: 15px;
 }
 
 .introOne {
-    margin-bottom: 85px;
-    display: inline-block;
-    width: 720px;
-    position: relative;
-    top: 54px;
+  margin-bottom: 85px;
+  display: inline-block;
+  width: 720px;
+  position: relative;
+  top: 54px;
 }
 
 .introTwo {
-    left: 40%;
-    display: inline-block;
-    width: 720px;
-    position: relative;
-    top: 54px;
+  left: 40%;
+  display: inline-block;
+  width: 720px;
+  position: relative;
+  top: 54px;
 }
 
 .item {
-    display: inline-block;
-    width: 720px;
-    position: relative;
-    top: 54px;
+  display: inline-block;
+  width: 720px;
+  position: relative;
+  top: 54px;
 }
 
 .itemTitle {
-    font-size: 32px;
-    line-height: 32px;
-    padding-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #fff;
+  font-size: 32px;
+  line-height: 32px;
+  padding-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
 .itemDesc {
-    font-size: 14px;
-    line-height: 25px;
-    color: #fff;
-    font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: 400;
 }

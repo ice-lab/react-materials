@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
 import { Balloon, Icon, Grid } from '@alifd/next';
@@ -33,32 +33,23 @@ const dataSource = [
   },
 ];
 
-export default class StatisticalCard extends Component {
-  static displayName = 'StatisticalCard';
+export default function StatisticalCard() {
+  const [isMobile, setIsMobile] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false,
-    };
-  }
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
 
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setIsMobile(mobile);
     }, mediaCondition);
   };
 
-  renderItem = () => {
-    const itemStyle = this.state.isMobile ? { justifyContent: 'left' } : {};
+  const renderItem = () => {
+    const itemStyle = isMobile ? { justifyContent: 'left' } : {};
     return dataSource.map((data, idx) => {
       return (
         <Col xxs="24" s="12" l="6" key={idx}>
@@ -72,11 +63,11 @@ export default class StatisticalCard extends Component {
                 <Balloon
                   align="t"
                   alignEdge
-                  trigger={
+                  trigger={(
                     <span>
                       <Icon type="help" className={styles.helpIcon} size="xs" />
                     </span>
-                  }
+)}
                   closable={false}
                 >
                   {data.desc}
@@ -90,11 +81,9 @@ export default class StatisticalCard extends Component {
     });
   };
 
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <Row wrap>{this.renderItem()}</Row>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className={styles.container}>
+      <Row wrap>{renderItem()}</Row>
+    </IceContainer>
+  );
 }

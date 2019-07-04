@@ -8,7 +8,7 @@ import SoftwareDownload from './components/SoftwareDownload';
 import ChangeLogs from './components/ChangeLogs';
 import styles from './index.module.scss';
 
-export default () => {
+export default function Home() {
   return (
     <div className={styles.homepage}>
       <Header />
@@ -55,4 +55,4 @@ export default () => {
       <Footer />
     </div>
   );
-};
+}

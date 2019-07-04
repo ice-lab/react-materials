@@ -1,16 +1,18 @@
+.container {
+  margin: 0 20px;
+  letter-spacing: 2px;
+}
 
-    .container {
-      margin: 0 20px;
-      letter-spacing: 2px;
-    }
-    .button{
-      margin: 0 8px;
-      letter-spacing: 2px;
-    }
-    .table {
-      margin: 20px 0;
-    }
-    .pagination {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+.button {
+  margin: 0 8px;
+  letter-spacing: 2px;
+}
+
+.table {
+  margin: 20px 0;
+}
+
+.pagination {
+  text-align: center;
+  margin-bottom: 20px;
+}

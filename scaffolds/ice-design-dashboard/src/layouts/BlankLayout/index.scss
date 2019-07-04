@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   z-index: 0;
   padding: 0 20px 20px;
+
   &::before {
     position: absolute;
     content: '';
@@ -19,6 +20,7 @@
     opacity: 0.92;
     z-index: 1;
   }
+
   &-content {
     position: relative;
     z-index: 2;

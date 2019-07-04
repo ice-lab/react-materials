@@ -1,0 +1,14 @@
+.logo {
+  display: block;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.logo {
+  color: #fff;
+}

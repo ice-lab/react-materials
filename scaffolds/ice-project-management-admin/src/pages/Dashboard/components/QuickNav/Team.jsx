@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const MEMBERS = [
   {
@@ -36,25 +36,22 @@ const MEMBERS = [
   },
 ];
 
-export default class Team extends Component {
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <ul>
-          {MEMBERS.map((member, index) => {
-            return (
-              <li className={styles.memberItem} key={index}>
-                <img src={member.avatar} alt="" className={styles.memberAvatar} />
-                <div className={styles.memberInfo}>
-                  <h6 className={styles.memberName}>{member.name}</h6>
-                  <p className={styles.memberTitle}>{member.title}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      </IceContainer>
-    );
-  }
+export default function Team() {
+  return (
+    <IceContainer className={styles.container}>
+      <ul>
+        {MEMBERS.map((member, index) => {
+          return (
+            <li className={styles.memberItem} key={index}>
+              <img src={member.avatar} alt="" className={styles.memberAvatar} />
+              <div className={styles.memberInfo}>
+                <h6 className={styles.memberName}>{member.name}</h6>
+                <p className={styles.memberTitle}>{member.title}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </IceContainer>
+  );
 }
-

@@ -9,6 +9,7 @@
 }
 
 .material-icons {
+  /* stylelint-disable-next-line */
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
@@ -36,6 +37,7 @@
     list-style: disc;
     margin-left: 1em;
   }
+
   ol {
     list-style: decimal;
     margin-left: 1em;
@@ -268,14 +270,14 @@
     outline: 2px solid blue;
   }
 
-  .check-list-item + .check-list-item {
-    margin-top: 0;
-  }
-
   .check-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+
+  .check-list-item + .check-list-item {
+    margin-top: 0;
   }
 
   .check-list-item.checked {
@@ -301,7 +303,4 @@
     background-color: #ebebeb;
     display: inline-block;
   }
-}
-.styleseditor{
-  min-height: 200px
 }

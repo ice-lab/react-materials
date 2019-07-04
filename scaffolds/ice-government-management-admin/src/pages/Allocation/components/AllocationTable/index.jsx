@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, Table, Pagination, Message } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -53,56 +53,46 @@ const mockData = [
   },
 ];
 
-export default class AllocationTable extends Component {
-  handleClick = () => {
+export default function AllocationTable() {
+  const [current, setCurrent] = useState(1);
+
+  const handleClick = () => {
     Message.success('需要管理员账户才能分配账号');
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
-  }
-
-  onPageChange = (current) => {
-    this.setState({
-      current,
-    });
+  const onPageChange = (currentPage) => {
+    setCurrent(currentPage);
   };
 
-  render() {
-    const actionRender = () => {
-      return (
-        <Button className={styles.button} onClick={this.handleClick}>
-          分配账号
-        </Button>
-      );
-    };
-
+  const actionRender = () => {
     return (
-      <div className={styles.container}>
-        <Table dataSource={mockData} primaryKey="number" className={styles.table}>
-          <Table.Column align="center" title="案号" dataIndex="number" />
-          <Table.Column align="center" title="申请人" dataIndex="applicant" />
-          <Table.Column align="center" title="被执行人" dataIndex="execution" />
-          <Table.Column
-            align="center"
-            title="承办部门"
-            dataIndex="department"
-          />
-          <Table.Column align="center" title="承办人" dataIndex="holder" />
-          <Table.Column align="center" title="案件状态" dataIndex="status" />
-          <Table.Column align="center" title="操作" cell={actionRender} />
-        </Table>
-        <div className={styles.pagination}>
-          <Pagination
-            current={this.state.current}
-            onChange={this.onPageChange}
-          />
-        </div>
-      </div>
+      <Button className={styles.button} onClick={handleClick}>
+        分配账号
+      </Button>
     );
-  }
-}
+  };
 
+  return (
+    <div className={styles.container}>
+      <Table dataSource={mockData} primaryKey="number" className={styles.table}>
+        <Table.Column align="center" title="案号" dataIndex="number" />
+        <Table.Column align="center" title="申请人" dataIndex="applicant" />
+        <Table.Column align="center" title="被执行人" dataIndex="execution" />
+        <Table.Column
+          align="center"
+          title="承办部门"
+          dataIndex="department"
+        />
+        <Table.Column align="center" title="承办人" dataIndex="holder" />
+        <Table.Column align="center" title="案件状态" dataIndex="status" />
+        <Table.Column align="center" title="操作" cell={actionRender} />
+      </Table>
+      <div className={styles.pagination}>
+        <Pagination
+          current={current}
+          onChange={onPageChange}
+        />
+      </div>
+    </div>
+  );
+}

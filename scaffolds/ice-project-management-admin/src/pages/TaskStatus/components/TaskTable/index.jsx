@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination, Dialog } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableHead from './TableHead';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 // MOCK 数据，实际业务按需进行替换
 const getData = (length = 10) => {
@@ -20,18 +20,16 @@ const getData = (length = 10) => {
   });
 };
 
-export default class TaskTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
+export default function TaskTable() {
+  const [current, setCurrent] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
-  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  mockApi = (len) => {
+  const mockApi = (len) => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData(len));
@@ -39,63 +37,49 @@ export default class TaskTable extends Component {
     });
   };
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
+  const fetchData = async (len) => {
+    await setIsLoading(true);
+    mockApi(len).then((newData) => {
+      setData(newData);
+      setIsLoading(false);
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
+  const handlePaginationChange = async (crt) => {
+    await setCurrent(crt);
+    fetchData();
   };
 
-  handleFilterChange = () => {
-    this.fetchData(5);
+  const handleFilterChange = () => {
+    fetchData(5);
   };
 
-  handlePublish = () => {
+  const handlePublish = () => {
     Dialog.confirm({
       content: '暂不支持编辑',
     });
   };
 
-  handleDelete = () => {
+  const handleDelete = () => {
     Dialog.confirm({
       content: '确认删除该任务吗',
       onOk: () => {
-        this.fetchData();
+        fetchData();
       },
     });
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
         <a
-          onClick={this.handlePublish}
+          onClick={handlePublish}
           className={styles.btnl}
         >
           编辑
         </a>
         <a
-          onClick={this.handleDelete}
+          onClick={handleDelete}
           className={styles.btnr}
         >
           删除
@@ -104,7 +88,7 @@ export default class TaskTable extends Component {
     );
   };
 
-  renderState = (value) => {
+  const renderState = (value) => {
     return (
       <span className={styles.state}>
         <i className={styles.dot} />
@@ -113,39 +97,34 @@ export default class TaskTable extends Component {
     );
   };
 
-  render() {
-    const { isLoading, data, current } = this.state;
-
-    return (
-      <IceContainer className={styles.container}>
-        <h3 className={styles.title}>任务列表</h3>
-        <TableHead onChange={this.handleFilterChange} />
-        <Table
-          loading={isLoading}
-          dataSource={data}
-          hasBorder={false}
-          className={styles.table}
-        >
-          <Table.Column title="编号" dataIndex="id" />
-          <Table.Column title="Assign By" dataIndex="by" />
-          <Table.Column title="Assign To" dataIndex="to" />
-          <Table.Column title="邮箱" dataIndex="email" />
-          <Table.Column title="标题" dataIndex="subject" />
-          <Table.Column title="日期" dataIndex="date" />
-          <Table.Column
-            title="状态"
-            dataIndex="state"
-            cell={this.renderState}
-          />
-          <Table.Column title="操作" cell={this.renderOper} />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
+  return (
+    <IceContainer className={styles.container}>
+      <h3 className={styles.title}>任务列表</h3>
+      <TableHead onChange={handleFilterChange} />
+      <Table
+        loading={isLoading}
+        dataSource={data}
+        hasBorder={false}
+        className={styles.table}
+      >
+        <Table.Column title="编号" dataIndex="id" />
+        <Table.Column title="Assign By" dataIndex="by" />
+        <Table.Column title="Assign To" dataIndex="to" />
+        <Table.Column title="邮箱" dataIndex="email" />
+        <Table.Column title="标题" dataIndex="subject" />
+        <Table.Column title="日期" dataIndex="date" />
+        <Table.Column
+          title="状态"
+          dataIndex="state"
+          cell={renderState}
         />
-      </IceContainer>
-    );
-  }
+        <Table.Column title="操作" cell={renderOper} />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handlePaginationChange}
+      />
+    </IceContainer>
+  );
 }
-

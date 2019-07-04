@@ -10,7 +10,6 @@ const ContainerTitle = ({ title, style, ...props }) => {
   );
 };
 
-
 ContainerTitle.propTypes = {
   title: PropTypes.string.isRequired,
 };

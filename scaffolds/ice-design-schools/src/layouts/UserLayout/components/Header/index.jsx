@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@alifd/next';
 import { Link } from 'react-router-dom';
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 export default () => {
   return (
@@ -11,7 +11,7 @@ export default () => {
       </Link>
       <ul className={styles.navs}>
         <li className={styles.navMenu}>
-          <a href="#" style={{ ...styles.navLink, ...styles.NavIconLink }}>
+          <a href="#" className={`${styles.navLink} ${styles.NavIconLink}`}>
             <img
               src="https://img.alicdn.com/tfs/TB1crknwzDpK1RjSZFrXXa78VXa-32-32.png"
               alt=""

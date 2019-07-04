@@ -1,23 +1,23 @@
 .container {
-    position: relative;
-    width: 100wh;
-    min-width: 1200px;
-    height: 100vh;
-    background-image: url(https://img.alicdn.com/tfs/TB16CEMwxnaK1RjSZFBXXcW7VXa-1350-900.jpg);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  width: 100vw;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url(https://img.alicdn.com/tfs/TB16CEMwxnaK1RjSZFBXXcW7VXa-1350-900.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 
 .form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import ContainerCard from '../../../../components/ContainerCard';
 import styles from './index.module.scss';
@@ -21,45 +21,41 @@ const cols = {
   earnings: { tickInterval: 20, alias: '总收入' },
 };
 
-export default class EarningsChart extends Component {
-  render() {
-    return (
-      <ContainerCard contentStyle={{ padding: '10px 20px' }}>
-        <div className={styles.head}>
-          <h3 className={styles.title}>总收入</h3>
-          <p className={styles.description}>2018年12月份总收入：</p>
-          <h1 className={styles.earnings}>￥ 67,239,18</h1>
-          <p className={styles.description}>28.12% (￥ 23,945)</p>
-        </div>
-        <div className={styles.content}>
-          <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
-            <Tooltip
-              crosshairs={{
-                type: 'y',
-              }}
-            />
-            <Geom
-              type="interval"
-              position="month*earnings"
-              color="#ee706d"
-              shape="smooth"
-            />
-          </Chart>
-        </div>
-        <div className={styles.footer}>
-          <p className={styles.description}>2019年01月份总收入：</p>
-          <h1
-            className={styles.earnings}
+export default function EarningsChart() {
+  return (
+    <ContainerCard contentStyle={{ padding: '10px 20px' }}>
+      <div className={styles.head}>
+        <h3 className={styles.title}>总收入</h3>
+        <p className={styles.description}>2018年12月份总收入：</p>
+        <h1 className={styles.earnings}>￥ 67,239,18</h1>
+        <p className={styles.description}>28.12% (￥ 23,945)</p>
+      </div>
+      <div className={styles.content}>
+        <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
+          <Tooltip
+            crosshairs={{
+              type: 'y',
+            }}
+          />
+          <Geom
+            type="interval"
+            position="month*earnings"
+            color="#ee706d"
+            shape="smooth"
+          />
+        </Chart>
+      </div>
+      <div className={styles.footer}>
+        <p className={styles.description}>2019年01月份总收入：</p>
+        <h1
+          className={styles.earnings}
 
-            style = {{color: '#447eff'}}
-          >
-            ￥ 12,238,83
-          </h1>
-          <p className={styles.description}>11.83% (￥ 38,237)</p>
-        </div>
-      </ContainerCard>
-    );
-  }
+          style={{ color: '#447eff' }}
+        >
+          ￥ 12,238,83
+        </h1>
+        <p className={styles.description}>11.83% (￥ 38,237)</p>
+      </div>
+    </ContainerCard>
+  );
 }
-
-

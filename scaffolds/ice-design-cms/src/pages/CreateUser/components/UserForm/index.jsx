@@ -1,5 +1,5 @@
 /* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Grid, Button, Select, Message } from '@alifd/next';
 import {
@@ -11,29 +11,21 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const Toast = Message;
-export default class UserForm extends Component {
-  static displayName = 'UserForm';
 
-  static propTypes = {};
+export default function UserForm() {
+  const [value, setValue] = useState({
+    username: '',
+    displayName: '',
+    email: '',
+    userGroup: null,
+    userState: null,
+    passwd: '',
+    rePasswd: '',
+  });
 
-  static defaultProps = {};
+  let formRef;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {
-        username: '',
-        displayName: '',
-        email: '',
-        userGroup: null,
-        userState: null,
-        passwd: '',
-        rePasswd: '',
-      },
-    };
-  }
-
-  checkPasswd = (rule, values, callback) => {
+  const checkPasswd = (rule, values, callback) => {
     if (!values) {
       callback('请输入新密码');
     } else if (values.length < 8) {
@@ -45,7 +37,7 @@ export default class UserForm extends Component {
     }
   };
 
-  checkPasswd2 = (rule, values, callback, stateValues) => {
+  const checkPasswd2 = (rule, values, callback, stateValues) => {
     console.log('stateValues:', stateValues);
     if (values && values !== stateValues.passwd) {
       callback('两次输入密码不一致');
@@ -54,14 +46,10 @@ export default class UserForm extends Component {
     }
   };
 
-  formChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
+  const formChange = formValue => setValue(formValue);
 
-  validateAllFormField = () => {
-    this.refs.form.validateAll((errors, values) => {
+  const validateAllFormField = () => {
+    formRef.validateAll((errors, values) => {
       if (errors) {
         console.log('errors', errors);
         return;
@@ -72,155 +60,154 @@ export default class UserForm extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className="userForm">
-        <IceContainer>
-          <IceFormBinderWrapper
-            value={this.state.value}
-            onChange={this.formChange}
-            ref="form"
-          >
-            <div className={styles.formContent}>
-              <h2 className={styles.formTitle}>添加用户</h2>
+  return (
+    <div className="userForm">
+      <IceContainer>
+        <IceFormBinderWrapper
+          value={value}
+          onChange={formChange}
+          ref={(form) => {
+            formRef = form;
+          }}
+        >
+          <div className={styles.formContent}>
+            <h2 className={styles.formTitle}>添加用户</h2>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  用户名：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder name="username" required message="必填">
-                    <Input placeholder="请输入用户名" />
-                  </IceFormBinder>
-                  <IceFormError name="username" />
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                用户名：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder name="username" required message="必填">
+                  <Input placeholder="请输入用户名" />
+                </IceFormBinder>
+                <IceFormError name="username" />
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  昵称：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder name="displayName">
-                    <Input placeholder="请输入昵称" />
-                  </IceFormBinder>
-                  <IceFormError name="displayName" />
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                昵称：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder name="displayName">
+                  <Input placeholder="请输入昵称" />
+                </IceFormBinder>
+                <IceFormError name="displayName" />
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  邮箱：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder
-                    type="email"
-                    name="email"
-                    required
-                    message="请输入正确的邮箱"
-                  >
-                    <Input
-                      placeholder="ice-admin@alibaba-inc.com"
-                    />
-                  </IceFormBinder>
-                  <IceFormError name="email" />
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                邮箱：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder
+                  type="email"
+                  name="email"
+                  required
+                  message="请输入正确的邮箱"
+                >
+                  <Input
+                    placeholder="ice-admin@alibaba-inc.com"
+                  />
+                </IceFormBinder>
+                <IceFormError name="email" />
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  用户组：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder name="userGroup">
-                    <Select
-                      placeholder="请选择..."
-                      dataSource={[
-                        { label: '管理员', value: 'administrator' },
-                        { label: '投稿者', value: 'contributor' },
-                      ]}
-                    />
-                  </IceFormBinder>
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                用户组：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder name="userGroup">
+                  <Select
+                    placeholder="请选择..."
+                    dataSource={[
+                      { label: '管理员', value: 'administrator' },
+                      { label: '投稿者', value: 'contributor' },
+                    ]}
+                  />
+                </IceFormBinder>
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  状态：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder name="userState">
-                    <Select
-                      placeholder="请选择..."
-                      dataSource={[
-                        { label: '有效', value: 'valid' },
-                        { label: '禁用', value: 'disabled' },
-                        { label: '过期', value: 'invalid' },
-                      ]}
-                    />
-                  </IceFormBinder>
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                状态：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder name="userState">
+                  <Select
+                    placeholder="请选择..."
+                    dataSource={[
+                      { label: '有效', value: 'valid' },
+                      { label: '禁用', value: 'disabled' },
+                      { label: '过期', value: 'invalid' },
+                    ]}
+                  />
+                </IceFormBinder>
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  新密码：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder
-                    name="passwd"
-                    required
-                    validator={this.checkPasswd}
-                  >
-                    <Input
-                      htmlType="password"
-                      placeholder="请重新输入新密码"
-                    />
-                  </IceFormBinder>
-                  <IceFormError name="passwd" />
-                </Col>
-              </Row>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                新密码：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder
+                  name="passwd"
+                  required
+                  validator={checkPasswd}
+                >
+                  <Input
+                    htmlType="password"
+                    placeholder="请重新输入新密码"
+                  />
+                </IceFormBinder>
+                <IceFormError name="passwd" />
+              </Col>
+            </Row>
 
-              <Row className={styles.formItem}>
-                <Col xxs="6" s="4" l="3" className={styles.formLabel}>
-                  确认密码：
-                </Col>
-                <Col xxs="16" s="12" l="10">
-                  <IceFormBinder
-                    name="rePasswd"
-                    required
-                    validator={(rule, values, callback) =>
-                      this.checkPasswd2(
-                        rule,
-                        values,
-                        callback,
-                        this.state.value
-                      )
-                    }
-                  >
-                    <Input
-                      htmlType="password"
-                      placeholder="两次输入密码保持一致"
-                    />
-                  </IceFormBinder>
-                  <IceFormError name="rePasswd" />
-                </Col>
-              </Row>
-            </div>
-          </IceFormBinderWrapper>
+            <Row className={styles.formItem}>
+              <Col xxs="6" s="4" l="3" className={styles.formLabel}>
+                确认密码：
+              </Col>
+              <Col xxs="16" s="12" l="10">
+                <IceFormBinder
+                  name="rePasswd"
+                  required
+                  validator={(rule, values, callback) => checkPasswd2(
+                    rule,
+                    values,
+                    callback,
+                    value
+                  )
+                  }
+                >
+                  <Input
+                    htmlType="password"
+                    placeholder="两次输入密码保持一致"
+                  />
+                </IceFormBinder>
+                <IceFormError name="rePasswd" />
+              </Col>
+            </Row>
+          </div>
+        </IceFormBinderWrapper>
 
-          <Row style={{ marginTop: 20 }}>
-            <Col offset="3">
-              <Button
-                type="primary"
-                onClick={this.validateAllFormField}
-              >
-                提 交
-              </Button>
-            </Col>
-          </Row>
-        </IceContainer>
-      </div>
-    );
-  }
+        <Row style={{ marginTop: 20 }}>
+          <Col offset="3">
+            <Button
+              type="primary"
+              onClick={validateAllFormField}
+            >
+              提 交
+            </Button>
+          </Col>
+        </Row>
+      </IceContainer>
+    </div>
+  );
 }

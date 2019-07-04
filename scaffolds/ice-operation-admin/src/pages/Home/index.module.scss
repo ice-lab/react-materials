@@ -2,21 +2,26 @@
   padding: 20px;
   background: #fff;
 }
+
 .head {
   display: flex;
   margin-bottom: 20px;
   justify-content: space-between;
 }
+
 .pagination {
   text-align: right;
   padding-top: 20px;
 }
+
 .split {
   color: #999;
 }
+
 .action {
   margin: 0 8px;
 }
+
 .dot {
   width: 8px;
   height: 8px;
@@ -25,14 +30,15 @@
   margin-right: 4px;
   border-radius: 50%;
 }
-.Breadcrumb {
+
+.breadcrumb {
   margin: 0 20px 20px;
   height: 16px;
   line-height: 16px;
+
   :global {
     .next-breadcrumb-text {
       font-size: $font-size-body-2;
     }
   }
 }
-

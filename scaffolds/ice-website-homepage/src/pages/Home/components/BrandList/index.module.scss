@@ -6,33 +6,38 @@
   flex-direction: column;
   padding-bottom: 60px;
 }
+
 .titleWrapper {
   margin-top: 60px;
 }
+
 .titleLine {
   width: 140px;
   height: 2px;
   margin-top: 17px;
   background: #eee;
-
 }
+
 .titleHighlightLine {
   width: 33px;
   height: 2px;
   background: $color-brand1-6;
 }
+
 .title {
-  color: #223C4E;
+  color: #223c4e;
   font-size: 36px;
 }
+
 .desc {
-  color: #6D7A82;
+  color: #6d7a82;
   width: 525px;
   font-size: 16px;
   margin-top: 24px;
   text-align: center;
   line-height: 1.5;
 }
+
 .brandListWrapper {
   width: 100%;
   display: flex;
@@ -41,6 +46,7 @@
   margin-top: 75px;
   justify-content: space-around;
 }
+
 .brandItem {
   display: flex;
   padding: 0 20px;
@@ -50,12 +56,14 @@
   margin-bottom: 60px;
   justify-content: center;
 }
+
 .brandImage {
   width: auto;
   height: auto;
   max-width: 150px;
   max-height: 40px;
 }
+
 .extraButton {
   color: $color-brand1-6;
   background: transparent;

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
-import ContainerTitle from '../../../../components/ContainerTitle';
-import CustomTable from '../../../../components/CustomTable';
+
+import ContainerTitle from '@/components/ContainerTitle';
+import CustomTable from '@/components/CustomTable';
 
 const dataSource = [
   {
@@ -59,13 +60,11 @@ const columns = [
   },
 ];
 
-export default class AccessSource extends Component {
-  render() {
-    return (
-      <IceContainer>
-        <ContainerTitle title="访问来源" />
-        <CustomTable columns={columns} dataSource={dataSource} />
-      </IceContainer>
-    );
-  }
+export default function AccessSource() {
+  return (
+    <IceContainer>
+      <ContainerTitle title="访问来源" />
+      <CustomTable columns={columns} dataSource={dataSource} />
+    </IceContainer>
+  );
 }

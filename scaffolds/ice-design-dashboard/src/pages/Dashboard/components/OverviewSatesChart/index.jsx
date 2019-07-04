@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
+import ContainerCard from '@/components/ContainerCard';
 import ColumnChart from './ColumnChart';
-import ContainerCard from '../../../../components/ContainerCard';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
@@ -40,40 +40,37 @@ const mockData = [
   },
 ];
 
-export default class OverviewSatesChart extends Component {
-  render() {
-    return (
-      <div className={styles.container}>
-        <Row wrap gutter={20}>
-          {mockData.map((item, index) => {
-            return (
-              <Col xxs="24" l="6" key={index}>
-                <ContainerCard>
-                  <div className={styles.summary}>
-                    <p className={styles.title}>{item.title}</p>
-                    <div className={styles.data}>
-                      <h2 className={styles.amount}>{item.amount}</h2>
-                      <div className={styles.percent}>
-                        {item.percent}{' '}
-                        <Icon
-                          type={`arrow-${
-                            item.increase ? 'up' : 'down'
-                          }-filling`}
-                          size="xs"
-                          className={styles.arrowIcon}
-                        />
-                      </div>
+export default function OverviewSatesChart() {
+  return (
+    <div className={styles.container}>
+      <Row wrap gutter={20}>
+        {mockData.map((item, index) => {
+          return (
+            <Col xxs="24" l="6" key={index}>
+              <ContainerCard>
+                <div className={styles.summary}>
+                  <p className={styles.title}>{item.title}</p>
+                  <div className={styles.data}>
+                    <h2 className={styles.amount}>{item.amount}</h2>
+                    <div className={styles.percent}>
+                      {item.percent}
+                      {' '}
+                      <Icon
+                        type={`arrow-${
+                          item.increase ? 'up' : 'down'
+                        }-filling`}
+                        size="xs"
+                        className={styles.arrowIcon}
+                      />
                     </div>
                   </div>
-                  <ColumnChart color={item.background} />
-                </ContainerCard>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+                </div>
+                <ColumnChart color={item.background} />
+              </ContainerCard>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }
-
-

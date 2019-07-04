@@ -1,21 +1,23 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
 
-    .item {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-    .title {
-      font-size: 12px;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .value {
-      font-size: 22px;
-      font-weight: bold;
-      color: #fff;
-    }
-    .IceContainer{
-        text-align: center;
-    }
+.title {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.IceContainer {
+  text-align: center;
+}

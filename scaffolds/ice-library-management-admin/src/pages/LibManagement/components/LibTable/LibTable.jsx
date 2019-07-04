@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Message, Button } from '@alifd/next';
 import TableFilter from './TableFilter';
 import CustomTable from './CustomTable';
@@ -21,26 +21,15 @@ const getData = () => {
   });
 };
 
-export default class LibTable extends Component {
-  static displayName = 'LibTable';
+export default function LibTable() {
+  const [isLoading, setIsloading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  static propTypes = {};
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: false,
-      dataSource: [],
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  mockApi = () => {
+  const mockApi = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData());
@@ -48,48 +37,40 @@ export default class LibTable extends Component {
     });
   };
 
-  fetchData = () => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi().then((dataSource) => {
-          this.setState({
-            dataSource,
-            isLoading: false,
-          });
-        });
-      }
-    );
+  const fetchData = async () => {
+    await setIsloading(true);
+    mockApi().then((data) => {
+      setDataSource(data);
+      setIsloading(false);
+    });
   };
 
-  handlePaginationChange = (current) => {
-    this.fetchData(current);
+  const handlePaginationChange = (current) => {
+    fetchData(current);
   };
 
-  handleBorrowClick = () => {
+  const handleBorrowClick = () => {
     Message.success('借阅成功');
   };
 
-  handleDetailClick = () => {
+  const handleDetailClick = () => {
     Message.success('暂无详细信息');
   };
 
-  handleFilter = () => {
-    this.fetchData();
+  const handleFilter = () => {
+    fetchData();
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
-        <Button className={styless.marginRight} onClick={this.handleDetailClick}>
+        <Button className={styless.marginRight} onClick={handleDetailClick}>
           查看
         </Button>
         <Button
           type="primary"
           className={styles.borrowButton}
-          onClick={this.handleBorrowClick}
+          onClick={handleBorrowClick}
         >
           借阅
         </Button>
@@ -97,139 +78,136 @@ export default class LibTable extends Component {
     );
   };
 
-  render() {
-    const { isLoading, dataSource } = this.state;
-    const columns = [
-      {
-        title: 'ISBN 号',
-        dataIndex: 'isbn',
+  const columns = [
+    {
+      title: 'ISBN 号',
+      dataIndex: 'isbn',
+    },
+    {
+      title: '图书类型',
+      dataIndex: 'cate',
+    },
+    {
+      title: '图书名称',
+      dataIndex: 'bookName',
+      width: 150,
+    },
+    {
+      title: '作者名称',
+      dataIndex: 'authName',
+    },
+    {
+      title: '出版社',
+      dataIndex: 'publisher',
+    },
+    {
+      title: '日期',
+      dataIndex: 'date',
+    },
+    {
+      title: '总数量',
+      dataIndex: 'total',
+    },
+    {
+      title: '在馆数量',
+      dataIndex: 'instore',
+    },
+    {
+      title: '价格',
+      dataIndex: 'price',
+    },
+    {
+      title: '操作',
+      dataIndex: 'oper',
+      cell: renderOper,
+      width: 150,
+    },
+  ];
+  const config = [
+    {
+      label: '图书名称',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        title: '图书类型',
-        dataIndex: 'cate',
+      formBinderProps: {
+        name: 'bookName',
+        triggerType: 'onBlur',
       },
-      {
-        title: '图书名称',
-        dataIndex: 'bookName',
-        width: 150,
+    },
+    {
+      label: '作者名称',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        title: '作者名称',
-        dataIndex: 'authName',
+      formBinderProps: {
+        name: 'authorName',
+        triggerType: 'onBlur',
       },
-      {
-        title: '出版社',
-        dataIndex: 'publisher',
+    },
+    {
+      label: 'ISBN 号',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        title: '日期',
-        dataIndex: 'date',
+      formBinderProps: {
+        name: 'isbn',
+        triggerType: 'onBlur',
       },
-      {
-        title: '总数量',
-        dataIndex: 'total',
+    },
+    {
+      label: '图书分类',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请选择',
+        options: [
+          {
+            lable: '技术领域',
+            value: 'technology',
+          },
+          {
+            lable: '专业领域',
+            value: 'professional',
+          },
+          {
+            lable: '管理沟通',
+            value: 'management',
+          },
+          {
+            lable: '其他',
+            value: 'other',
+          },
+        ],
       },
-      {
-        title: '在馆数量',
-        dataIndex: 'instore',
+      formBinderProps: {
+        name: 'cate',
+        triggerType: 'onBlur',
       },
-      {
-        title: '价格',
-        dataIndex: 'price',
+    },
+    {
+      label: '出版社',
+      component: 'Input',
+      componnetProps: {
+        placeholder: '请输入',
       },
-      {
-        title: '操作',
-        dataIndex: 'oper',
-        cell: this.renderOper,
-        width: 150,
+      formBinderProps: {
+        name: 'publisher',
+        triggerType: 'onBlur',
       },
-    ];
-    const config = [
-      {
-        label: '图书名称',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'bookName',
-          triggerType: 'onBlur',
-        },
-      },
-      {
-        label: '作者名称',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'authorName',
-          triggerType: 'onBlur',
-        },
-      },
-      {
-        label: 'ISBN 号',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'isbn',
-          triggerType: 'onBlur',
-        },
-      },
-      {
-        label: '图书分类',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请选择',
-          options: [
-            {
-              lable: '技术领域',
-              value: 'technology',
-            },
-            {
-              lable: '专业领域',
-              value: 'professional',
-            },
-            {
-              lable: '管理沟通',
-              value: 'management',
-            },
-            {
-              lable: '其他',
-              value: 'other',
-            },
-          ],
-        },
-        formBinderProps: {
-          name: 'cate',
-          triggerType: 'onBlur',
-        },
-      },
-      {
-        label: '出版社',
-        component: 'Input',
-        componnetProps: {
-          placeholder: '请输入',
-        },
-        formBinderProps: {
-          name: 'publisher',
-          triggerType: 'onBlur',
-        },
-      },
-    ];
+    },
+  ];
 
-    return (
-      <div>
-        <TableFilter config={config} onChange={this.handleFilter} />
-        <CustomTable
-          isLoading={isLoading}
-          dataSource={dataSource}
-          columns={columns}
-          paginationChange={this.handlePaginationChange}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TableFilter config={config} onChange={handleFilter} />
+      <CustomTable
+        isLoading={isLoading}
+        dataSource={dataSource}
+        columns={columns}
+        paginationChange={handlePaginationChange}
+      />
+    </div>
+  );
 }

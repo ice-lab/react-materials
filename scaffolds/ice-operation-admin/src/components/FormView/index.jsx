@@ -33,10 +33,10 @@ class FormView extends Component {
       const cols = arr
         .map((field) => {
           if (
-            !isShowAllData &&
-            (data[field] === null ||
-              data[field] === undefined ||
-              data[field] === '')
+            !isShowAllData
+            && (data[field] === null
+            || data[field] === undefined
+            || data[field] === '')
           ) {
             return null;
           }

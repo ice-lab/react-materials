@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import CustomTable from './components/CustomTable';
 import EditDialog from './components/EditDialog';
@@ -57,86 +57,68 @@ const MOCK_DATA = [
   },
 ];
 
-export default class TabTable extends Component {
-  static displayName = 'TabTable';
+export default function TabTable() {
+  const [dataSource, setDataSource] = useState(MOCK_DATA);
 
-  static propTypes = {};
+  const columns = [
+    {
+      title: '名称',
+      dataIndex: 'name',
+      key: 'name',
+      width: 200,
+    },
+    {
+      title: '缩写名',
+      dataIndex: 'shortName',
+      key: 'shortName',
+      width: 200,
+    },
+    {
+      title: '文章数',
+      dataIndex: 'articleNum',
+      key: 'articleNum',
+      width: 200,
+    },
+    {
+      title: '操作',
+      key: 'action',
+      width: 150,
+      render: (value, index, record) => {
+        return (
+          <span>
+            <EditDialog
+              index={index}
+              record={record}
+              getFormValues={getFormValues}
+            />
+            <DeleteBalloon
+              handleRemove={() => handleRemove(value, index, record)}
+            />
+          </span>
+        );
+      },
+    },
+  ];
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: MOCK_DATA,
-    };
-    this.columns = [
-      {
-        title: '名称',
-        dataIndex: 'name',
-        key: 'name',
-        width: 200,
-      },
-      {
-        title: '缩写名',
-        dataIndex: 'shortName',
-        key: 'shortName',
-        width: 200,
-      },
-      {
-        title: '文章数',
-        dataIndex: 'articleNum',
-        key: 'articleNum',
-        width: 200,
-      },
-      {
-        title: '操作',
-        key: 'action',
-        width: 150,
-        render: (value, index, record) => {
-          return (
-            <span>
-              <EditDialog
-                index={index}
-                record={record}
-                getFormValues={this.getFormValues}
-              />
-              <DeleteBalloon
-                handleRemove={() => this.handleRemove(value, index, record)}
-              />
-            </span>
-          );
-        },
-      },
-    ];
-  }
-
-  getFormValues = (dataIndex, values) => {
-    const { dataSource } = this.state;
+  const getFormValues = (dataIndex, values) => {
     dataSource[dataIndex] = values;
-    this.setState({
-      dataSource,
-    });
+    setDataSource([...dataSource]);
   };
 
-  handleRemove = (value, index) => {
-    const { dataSource } = this.state;
+  const handleRemove = (value, index) => {
     dataSource.splice(index, 1);
-    this.setState({
-      dataSource,
-    });
+    setDataSource([...dataSource]);
   };
 
-  render() {
-    return (
-      <div className="tab-table">
-        <IceContainer>
-          <CustomTable
-            dataSource={this.state.dataSource}
-            columns={this.columns}
-            hasBorder={false}
-          />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="tab-table">
+      <IceContainer>
+        <CustomTable
+          dataSource={dataSource}
+          columns={columns}
+          hasBorder={false}
+        />
+      </IceContainer>
+    </div>
+  );
 }

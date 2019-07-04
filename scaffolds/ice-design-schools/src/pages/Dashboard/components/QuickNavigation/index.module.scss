@@ -1,10 +1,11 @@
-.navItem{
+.navItem {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-};
-.imgWrap{
+}
+
+.imgWrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,20 +13,24 @@
   height: 62px;
   border-radius: 50%;
   background: #fff;
-};
-.img{
+}
+
+.img {
   width: 30px;
-};
-.infoWrap{
+}
+
+.infoWrap {
   display: flex;
   flex-direction: column;
   margin-left: 15px;
-};
-.count{
+}
+
+.count {
   font-weight: bold;
   font-size: 14px;
   margin: 0;
-};
-.title{
+}
+
+.title {
   margin: 2px 0;
-};
+}

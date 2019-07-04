@@ -1,6 +1,7 @@
 .container {
   padding: 0 !important;
-};
+}
+
 .title {
   margin: 0;
   padding: 15px 20px;
@@ -8,64 +9,77 @@
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
   border-bottom: 1px solid #f0f0f0;
-};
+}
+
 .profile {
   margin: 68px 0;
   display: flex;
-};
+}
+
 .head {
   display: flex;
   align-items: center;
-};
+}
+
 .circle {
   width: 10px;
   height: 10px;
   margin-right: 10px;
   display: inline-block;
   border-radius: 5px;
-};
+}
+
 .purple {
   background: #908ce1;
-};
+}
+
 .green {
   background: #26c9ad;
-};
+}
+
 .cell {
   width: 50%;
   padding: 0 10px;
-};
+}
+
 .cellTitle {
   color: #666;
   line-height: 14px;
   font-size: 14px;
   margin-right: 5px;
-};
+}
+
 .body {
   display: flex;
   align-items: baseline;
   margin-top: 20px;
-};
+}
+
 .costValue {
   font-size: 32px;
   font-weight: 500;
   line-height: 30px;
   height: 30px;
   color: #333;
-};
+}
+
 .costUnit {
   margin-left: 2px;
   font-size: 12px;
   color: #333;
-};
+}
+
 .footer {
   display: flex;
   margin-top: 10px;
   font-size: 12px;
   color: #999;
-};
+}
+
 .footerText {
   margin-right: 60px;
-};
-.balloonWidth{
+}
+
+.balloonWidth {
   width: 300px;
 }

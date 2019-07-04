@@ -1,11 +1,11 @@
 import React from 'react';
-import './index.scss';
+import styles from './index.module.scss';
 
 const Nofity = ({ style }) => {
   return (
-    <div className="notify" style={{ ...style }}>
-      <span className="heartbit" />
-      <span className="point" />
+    <div className={styles.notify} style={{ ...style }}>
+      <span className={styles.heartbit} />
+      <span className={styles.point} />
     </div>
   );
 };

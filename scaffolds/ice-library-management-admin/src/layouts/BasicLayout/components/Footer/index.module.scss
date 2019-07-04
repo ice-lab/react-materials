@@ -1,16 +1,20 @@
-:global {
-  .ice-design-layout-footer {
-    background-color: transparent;
-  }
+.iceDesignLayoutFooter {
+  margin-top: -20px;
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
 }
 
 .iceDesignLayoutFooterBody {
-  width: 100%;
-  margin: 20px auto 0;
-  padding: 0 20px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  filter: grayscale(100%) !important;
+  opacity: 0.3 !important;
 }
 
 .copyright {
@@ -21,5 +25,9 @@
 }
 
 .copyrightLink {
-  color: #666;
+  color: #666 !important;
+
+  &:hover {
+    text-decoration: none;
+  }
 }

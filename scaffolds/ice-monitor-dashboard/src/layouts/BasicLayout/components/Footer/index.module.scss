@@ -1,22 +1,25 @@
-.newDiv{
-    width: 100%;
-    padding: 20px 40px;
-    text-align: center;
-    line-height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .newFilter{
-    filter: grayscale(100%);
-     opacity: 0.3
-  }
-  .Logo{
-    color: #666;
-  }
-  .newBottom{
-    color: #999;
-    line-height: 1.5;
-    font-size: 12;
-    text-align: right;
-  }
+.newDiv {
+  width: 100%;
+  padding: 20px 40px;
+  text-align: center;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newFilter {
+  filter: grayscale(100%);
+  opacity: 0.3;
+}
+
+.Logo {
+  color: #666;
+}
+
+.newBottom {
+  color: #999;
+  line-height: 1.5;
+  font-size: 12;
+  text-align: right;
+}
