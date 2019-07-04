@@ -1,4 +1,3 @@
-// TODO: 这个图表数据改出问题了
 import React, { useState, useEffect } from 'react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
@@ -25,28 +24,30 @@ export default function SliderChart() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const newData = JSON.parse(JSON.stringify(data));
-      const now = new Date();
-      const time = now.getTime();
-      const temperature1 = parseInt(Math.random() * 5, 10) + 22;
-      const temperature2 = parseInt(Math.random() * 7, 10) + 17;
+      setData((data) => {
+        const newData = data.map(item => item);
+        const now = new Date();
+        const time = now.getTime();
+        const temperature1 = parseInt(Math.random() * 5, 10) + 22;
+        const temperature2 = parseInt(Math.random() * 7, 10) + 17;
 
-      if (newData.length >= 200) {
-        newData.shift();
-        newData.shift();
-      }
+        if (newData.length >= 200) {
+          newData.shift();
+          newData.shift();
+        }
 
-      newData.push({
-        time,
-        temperature: temperature1,
-        type: '记录1',
+        newData.push({
+          time,
+          temperature: temperature1,
+          type: '记录1',
+        });
+        newData.push({
+          time,
+          temperature: temperature2,
+          type: '记录2',
+        });
+        return newData;
       });
-      newData.push({
-        time,
-        temperature: temperature2,
-        type: '记录2',
-      });
-      setData(newData);
     }, 1000);
 
     return () => {

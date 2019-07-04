@@ -1,9 +1,7 @@
-// TODO: 图标数据出问题了
 import React, { useState, useEffect } from 'react';
 import { Chart, Axis, Tooltip, Geom, Legend, Guide } from 'bizcharts';
 
 const { Line, RegionFilter, DataMarker } = Guide;
-const defaultData = [];
 
 function findMax(data) {
   let maxValue = 0;
@@ -36,37 +34,35 @@ const scale = {
 };
 
 export default function RegionFilterRealtime() {
-  const [data, setData] = useState(defaultData);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const now = new Date();
-      const time = now.getTime();
-      const value1 = parseInt(30 + (Math.random() * 50), 10);
-      const direction = Math.random() > 0.5 ? 1 : -1;
-      const value2 = parseInt(value1 + (Math.random() * 20 * direction), 10);
-      const newData = data.map(rec => rec);
+      setData((data) => {
+        const now = new Date();
+        const time = now.getTime();
+        const value1 = parseInt(30 + (Math.random() * 50), 10);
+        const direction = Math.random() > 0.5 ? 1 : -1;
+        const value2 = parseInt(value1 + (Math.random() * 20 * direction), 10);
+        const newData = data.map(rec => rec);
 
-      if (newData.length >= 200) {
-        newData.shift();
-        newData.shift();
-      }
-      newData.push({
-        time,
-        value: value2,
-        type: '昨天',
-      });
-      newData.push({
-        time,
-        value: value1,
-        type: '今天',
-      });
+        if (newData.length >= 200) {
+          newData.shift();
+          newData.shift();
+        }
+        newData.push({
+          time,
+          value: value2,
+          type: '昨天',
+        });
+        newData.push({
+          time,
+          value: value1,
+          type: '今天',
+        });
 
-      if (newData.length > 20) {
-        newData.shift();
-        newData.shift();
-      }
-      setData(newData);
+        return newData;
+      });
     }, 1000);
 
     return () => {

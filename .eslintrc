@@ -17,6 +17,7 @@
   "rules": {
     "react/prefer-stateless-function": 0,
     "no-console": 0,
+    "no-shadow": 1,
     "no-use-before-define": 0,
     "no-prototype-builtins": 1,
     "jsx-a11y/label-has-associated-control": 1,

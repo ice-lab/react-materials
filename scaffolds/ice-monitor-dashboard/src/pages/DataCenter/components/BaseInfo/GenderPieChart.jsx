@@ -27,7 +27,6 @@ export default function GenderPieChart() {
         path.push(['z']);
       }
 
-      // path = this.parsePath(path, true);
       const rect = container.addShape('path', {
         attrs: {
           fill: cfg.color || '#00D9DF',
