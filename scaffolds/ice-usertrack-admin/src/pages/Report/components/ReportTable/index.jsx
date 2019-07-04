@@ -41,7 +41,7 @@ export default function ReportTable() {
         <a
           className={styles.link}
           onClick={() => {
-            Message.success('申请权限已发送，请十分钟之后再试')
+            Message.success('申请权限已发送，请十分钟之后再试');
           }}
         >
           详情

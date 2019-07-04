@@ -14,7 +14,7 @@ export default function Filter({ onChange }) {
   function handleFormChange(formValue) {
     setValue(formValue);
     onChange(formValue);
-  };
+  }
 
   return (
     <IceFormBinderWrapper
