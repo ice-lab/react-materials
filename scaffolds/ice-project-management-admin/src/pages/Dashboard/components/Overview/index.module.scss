@@ -1,18 +1,21 @@
-.navItem{
+.navItem {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: #fff;
 }
-.count{
+
+.count {
   font-weight: bold;
   font-size: 36px;
   margin: 0 0 10px;
 }
-.title{
-  margin: 2px 0
+
+.title {
+  margin: 2px 0;
 }
-.IceContainer{
+
+.IceContainer {
   padding: 30px 0 !important;
 }

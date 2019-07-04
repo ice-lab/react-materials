@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import LineChart from '../LineChart';
 
@@ -39,25 +39,12 @@ const cols = {
   },
 };
 
-export default class Commits extends Component {
-  static displaydate = 'Commits';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <IceContainer title="本周讨论">
-          <LineChart cols={cols} data={data} axisdate="date" />
-        </IceContainer>
-      </div>
-    );
-  }
+export default function Commits() {
+  return (
+    <div>
+      <IceContainer title="本周讨论">
+        <LineChart cols={cols} data={data} axisdate="date" />
+      </IceContainer>
+    </div>
+  );
 }

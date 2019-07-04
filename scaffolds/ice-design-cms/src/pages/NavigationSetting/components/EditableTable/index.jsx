@@ -1,11 +1,11 @@
 /* eslint react/jsx-no-bind: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Button } from '@alifd/next';
 import CellEditor from './CellEditor';
-import './index.module.scss';
+import styles from './index.module.scss';
 
-const dataSource = [
+const data = [
   {
     text: '首页',
     path: '/home',
@@ -33,112 +33,82 @@ const dataSource = [
   },
 ];
 
-export default class EditableTable extends Component {
-  static displayName = 'EditableTable';
+export default function EditableTable() {
+  const [dataSource, setDataSource] = useState(data);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource,
-    };
-  }
-
-  renderOrder = (value, index) => {
+  const renderOrder = (value, index) => {
     return <span>{index + 1}</span>;
   };
 
-  deleteItem = (index) => {
-    this.state.dataSource.splice(index, 1);
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+  const deleteItem = (index) => {
+    dataSource.splice(index, 1);
+    setDataSource([...dataSource]);
   };
 
-  renderOperation = (value, index) => {
+  const renderOperation = (value, index) => {
     return (
-      <Button onClick={this.deleteItem.bind(this, index)} text>
+      <Button onClick={() => deleteItem(index)} text>
         删除
       </Button>
     );
   };
 
-  changeDataSource = (index, valueKey, value) => {
+  const changeDataSource = (index, valueKey, value) => {
     // text 将修改后的表格数据发送接口，持久化
-    this.state.dataSource[index][valueKey] = value;
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+    dataSource[index][valueKey] = value;
+    setDataSource([...dataSource]);
   };
 
-  renderEditor = (valueKey, value, index, record) => {
+  const renderEditor = (valueKey, value, index, record) => {
     return (
       <CellEditor
         valueKey={valueKey}
         index={index}
         value={record[valueKey]}
-        onChange={this.changeDataSource}
+        onChange={changeDataSource}
       />
     );
   };
 
-  addNewItem = () => {
-    this.state.dataSource.push({
+  const addNewItem = () => {
+    dataSource.push({
       text: '暂无',
       path: '暂无',
       attr: '暂无',
     });
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+    setDataSource([...dataSource]);
   };
 
-  render() {
-    return (
-      <div className="editable-table">
-        <IceContainer>
-          <Table dataSource={this.state.dataSource} hasBorder={false}>
-            <Table.Column width={80} title="ID" cell={this.renderOrder} />
-            <Table.Column
-              width={280}
-              title="菜单文本"
-              cell={this.renderEditor.bind(this, 'text')}
-            />
-            <Table.Column
-              width={240}
-              title="菜单地址"
-              cell={this.renderEditor.bind(this, 'path')}
-            />
-            <Table.Column
-              width={180}
-              title="菜单属性"
-              cell={this.renderEditor.bind(this, 'attr')}
-            />
-            <Table.Column
-              width={180}
-              title="操作"
-              cell={this.renderOperation}
-            />
-          </Table>
-          <div onClick={this.addNewItem} style={styles.addNewItem}>
-            + 新增一行
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.editableTable}>
+      <IceContainer>
+        <Table dataSource={dataSource} hasBorder={false}>
+          <Table.Column width={80} title="ID" cell={(value, index, record) => renderOrder(value, index, record)} />
+          <Table.Column
+            width={280}
+            title="菜单文本"
+            cell={(value, index, record) => renderEditor('text', value, index, record)}
+          />
+          <Table.Column
+            width={240}
+            title="菜单地址"
+            cell={(value, index, record) => renderEditor('path', value, index, record)}
+          />
+          <Table.Column
+            width={180}
+            title="菜单属性"
+            cell={(value, index, record) => renderEditor('attr', value, index, record)}
+          />
+          <Table.Column
+            width={180}
+            title="操作"
+            cell={(value, index, record) => renderOperation(value, index, record)}
+          />
+        </Table>
+        <div onClick={() => addNewItem()} className={styles.addNewItem}>
+          + 新增一行
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-
-const styles = {
-  addNewItem: {
-    background: '#F5F5F5',
-    height: 32,
-    lineHeight: '32px',
-    marginTop: 20,
-    cursor: 'pointer',
-    textAlign: 'center',
-  },
-};

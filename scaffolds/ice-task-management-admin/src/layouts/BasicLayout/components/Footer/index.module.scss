@@ -1,0 +1,32 @@
+.iceDesignLayoutFooter {
+  width: 100%;
+  padding: 20px 20px;
+  background-color: transparent;
+}
+
+.iceDesignLayoutFooterBody {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  filter: grayscale(100%) !important;
+  opacity: 0.3 !important;
+}
+
+.copyright {
+  color: #666;
+  line-height: 1.5;
+  font-size: 12px;
+  text-align: left;
+}
+
+.copyrightLink {
+  color: #666 !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

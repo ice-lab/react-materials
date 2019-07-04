@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { Link } from 'react-router-dom';
@@ -17,49 +17,36 @@ const getData = () => {
   });
 };
 
-export default class ServiceCard extends Component {
-  static displayName = 'ServiceCard';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const mockData = getData();
-    return (
-      <Row wrap gutter="20">
-        {mockData.map((item, index) => {
-          return (
-            <Col l="8" key={index}>
-              <IceContainer className={styles.container}>
-                <div className={styles.body}>
-                  <h5 className={styles.name}>{item.name}</h5>
-                  <p className={styles.desc}>{item.desc}</p>
-                  <div className={styles.tag}>{item.tag}</div>
-                </div>
-                <div className={styles.footer}>
-                  <Link
-                    to="/activities"
-                    className={styles.line}
-                  >
-                    <Icon type="office" size="small" className={styles.icon} />{' '}
+export default function ServiceCard() {
+  const mockData = getData();
+  return (
+    <Row wrap gutter="20">
+      {mockData.map((item, index) => {
+        return (
+          <Col l="8" key={index}>
+            <IceContainer className={styles.container}>
+              <div className={styles.body}>
+                <h5 className={styles.name}>{item.name}</h5>
+                <p className={styles.desc}>{item.desc}</p>
+                <div className={styles.tag}>{item.tag}</div>
+              </div>
+              <div className={styles.footer}>
+                <Link
+                  to="/activities"
+                  className={styles.line}
+                >
+                  <Icon type="office" size="small" className={styles.icon} />{' '}
                     项目状态
-                  </Link>
-                  <Link to="/dashboard" className={styles.link}>
-                    <Icon type="box" size="small" className={styles.icon} />
+                </Link>
+                <Link to="/dashboard" className={styles.link}>
+                  <Icon type="box" size="small" className={styles.icon} />
                     项目概览
-                  </Link>
-                </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+                </Link>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }

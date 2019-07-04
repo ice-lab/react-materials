@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-const LoginIntro = () => {
+export default function LoginIntro() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -11,7 +11,4 @@ const LoginIntro = () => {
       </div>
     </div>
   );
-};
-
-
-export default LoginIntro;
+}

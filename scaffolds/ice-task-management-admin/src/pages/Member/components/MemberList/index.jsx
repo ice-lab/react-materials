@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Dialog } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
 import ContainerTitle from '../../../../components/ContainerTitle';
+import styles from './index.module.scss';
 
 const mockData = [
   {
@@ -39,48 +40,41 @@ const mockData = [
   },
 ];
 
-@withRouter
-export default class MemberList extends Component {
-  state = {
-    data: mockData,
+const MemberList = (props) => {
+  const [data, setData] = useState(mockData);
+
+  const handleAdd = () => {
+    props.history.push('/add/member');
   };
 
-  handleAdd = () => {
-    this.props.history.push('/add/member');
-  };
-
-  handleDelete = (index) => {
+  const handleDelete = (index) => {
     Dialog.confirm({
       content: '确认删除吗',
       onOk: () => {
-        const { data } = this.state;
-
-        data.splice(index, index + 1);
-        this.setState({
-          data,
-        });
+        data.splice(index, 1);
+        setData([...data]);
       },
     });
   };
 
-  renderProfile = (value, index, record) => {
+  const renderProfile = (value, index, record) => {
     return (
-      <div style={styles.profile}>
-        <img src={record.avatar} alt="" style={styles.avatar} />
-        <span style={styles.name}>{record.name}</span>
+      <div className={styles.profile}>
+        <img src={record.avatar} alt="" className={styles.avatar} />
+        <span className={styles.name}>{record.name}</span>
       </div>
     );
   };
 
-  renderOper = (value) => {
+  const renderOper = (value) => {
     return (
       <div>
-        <Link to="/add/member" style={{ ...styles.link, ...styles.edit }}>
+        <Link to="/add/member" className={`${styles.link} ${styles.edit}`}>
           修改
         </Link>
         <a
-          onClick={() => this.handleDelete(value)}
-          style={{ ...styles.link, ...styles.delete }}
+          onClick={() => handleDelete(value)}
+          className={`${styles.link} ${styles.delete}`}
         >
           删除
         </a>
@@ -88,55 +82,22 @@ export default class MemberList extends Component {
     );
   };
 
-  render() {
-    const { data } = this.state;
-    return (
-      <IceContainer style={styles.container}>
-        <ContainerTitle
-          title="项目成员"
-          buttonText="添加成员"
-          style={styles.title}
-          onClick={this.handleAdd}
-        />
-        <Table dataSource={data} hasHeader={false} hasBorder={false}>
-          <Table.Column dataIndex="name" cell={this.renderProfile} />
-          <Table.Column dataIndex="email" />
-          <Table.Column dataIndex="role" />
-          <Table.Column dataIndex="id" cell={this.renderOper} />
-        </Table>
-      </IceContainer>
-    );
-  }
-}
-
-const styles = {
-  container: {
-    padding: '0',
-  },
-  title: {
-    borderBottom: '0',
-  },
-  profile: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  avatar: {
-    width: '24px',
-    height: '24px',
-    border: '1px solid #eee',
-    background: '#eee',
-    borderRadius: '50px',
-  },
-  name: {
-    marginLeft: '15px',
-    color: '#314659',
-    fontSize: '14px',
-  },
-  link: {
-    cursor: 'pointer',
-    color: '#1890ff',
-  },
-  edit: {
-    marginRight: '5px',
-  },
+  return (
+    <IceContainer className={styles.container}>
+      <ContainerTitle
+        title="项目成员"
+        buttonText="添加成员"
+        className={styles.title}
+        onClick={handleAdd}
+      />
+      <Table dataSource={data} hasHeader={false} hasBorder={false}>
+        <Table.Column dataIndex="name" cell={renderProfile} />
+        <Table.Column dataIndex="email" />
+        <Table.Column dataIndex="role" />
+        <Table.Column dataIndex="id" cell={renderOper} />
+      </Table>
+    </IceContainer>
+  );
 };
+
+export default withRouter(MemberList);

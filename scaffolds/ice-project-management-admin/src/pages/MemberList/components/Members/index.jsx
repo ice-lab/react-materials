@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Button, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -49,41 +49,37 @@ const DATA = [
   },
 ];
 
-export default class Member extends Component {
-  render() {
-    return (
-      <Row wrap gutter="20">
-        {DATA.map((item, index) => {
-          return (
-            <Col l="6" key={index}>
-              <IceContainer className={styles.container}>
-                <img src={item.avatar} alt="" className={styles.avatar} />
-                <h4 className={styles.name}>{item.name}</h4>
-                <p className={styles.jobTitle}>{item.jobTitle}</p>
-                <div className={styles.action}>
-                  <Button type="primary">个人主页</Button>
-                  <Button type="secondary" style={{ marginLeft: '10px' }}>
+export default function Member() {
+  return (
+    <Row wrap gutter="20">
+      {DATA.map((item, index) => {
+        return (
+          <Col l="6" key={index}>
+            <IceContainer className={styles.container}>
+              <img src={item.avatar} alt="" className={styles.avatar} />
+              <h4 className={styles.name}>{item.name}</h4>
+              <p className={styles.jobTitle}>{item.jobTitle}</p>
+              <div className={styles.action}>
+                <Button type="primary">个人主页</Button>
+                <Button type="secondary" style={{ marginLeft: '10px' }}>
                     发送消息
-                  </Button>
-                </div>
-                <div className={styles.socials}>
-                  <a className={styles.icon}>
-                    <Icon type="good" size="small" />
-                  </a>
-                  <a className={styles.icon}>
-                    <Icon type="atm-away" size="small" />
-                  </a>
-                  <a className={styles.icon}>
-                    <Icon type="phone" size="small" />
-                  </a>
-                </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+                </Button>
+              </div>
+              <div className={styles.socials}>
+                <a className={styles.icon}>
+                  <Icon type="good" size="small" />
+                </a>
+                <a className={styles.icon}>
+                  <Icon type="atm-away" size="small" />
+                </a>
+                <a className={styles.icon}>
+                  <Icon type="phone" size="small" />
+                </a>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
-
-

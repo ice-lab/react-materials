@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Button } from '@alifd/next';
 import styles from './index.module.scss';
 
-const Index = ({ title, style, ...props }) => {
+export default function Index({ title, style, ...props }) {
   return (
-    <div style={{...style }} className={styles.container}>
+    <div style={{ ...style }} className={styles.container}>
       <h3 className={styles.title}>{title}</h3>
       {props.buttonText ? (
         <Button type="primary" size="large">
@@ -17,9 +17,7 @@ const Index = ({ title, style, ...props }) => {
       ) : null}
     </div>
   );
-};
-
-
+}
 
 Index.propTypes = {
   title: PropTypes.string.isRequired,
@@ -29,5 +27,3 @@ Index.propTypes = {
 Index.defaultProps = {
   buttonText: '',
 };
-
-export default Index;
