@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import MainRoutes from './MainRoutes';
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class BasicLayout extends Component {
-  render() {
-    return (
-      <Layout className="basic-layout">
-        <Header />
-        <div style={styles.mainContent}>
-          <MainRoutes />
-        </div>
-        <Footer />
-      </Layout>
-    );
-  }
+export default function BasicLayout(props) {
+  return (
+    <Layout className={styles.basicLayout}>
+      <Header />
+      <div className={styles.mainContent}>
+        {props.children}
+      </div>
+      <Footer />
+    </Layout>
+  );
 }
-
-const styles = {
-  mainContent: {
-    marginTop: '82px',
-    padding: '0 20px',
-  },
-};
