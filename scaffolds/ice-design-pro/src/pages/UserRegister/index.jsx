@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
@@ -46,8 +45,7 @@ const UserRegister = withRouter((props) => {
       await request(userRegister);
       Message.success('注册成功');
       props.history.push('/user/login');
-    /* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
-    } catch (err) {
+         } catch (err) {
     }
   }
 

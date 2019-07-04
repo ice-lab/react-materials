@@ -1,4 +1,3 @@
-/* eslint react/require-default-props: 0 */
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import PropTypes from 'prop-types';

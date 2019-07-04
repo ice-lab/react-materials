@@ -1,6 +1,6 @@
 import React from 'react';
 import { Select } from '@alifd/next';
-import { getLocale, setLocale } from '../../utils/locale';
+import { getLocale, setLocale } from '@/utils/locale';
 
 const Option = Select.Option;
 const LANG_CONFIG = {

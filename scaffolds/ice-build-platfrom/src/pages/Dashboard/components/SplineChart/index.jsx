@@ -1,4 +1,3 @@
-/* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
 import React, { useEffect } from 'react';
 
 const ReactHighcharts = require('react-highcharts');
@@ -13,7 +12,7 @@ const config = {
     marginRight: 10,
     height: 240,
     events: {
-      load: function() {
+      load() {
         // set up the updating of the chart each second
         const series = this.series[0];
         intervalId = setInterval(() => {
@@ -48,14 +47,14 @@ const config = {
     ],
   },
   tooltip: {
-    formatter: function() {
+    formatter() {
       return (
-        '<b>'
-        + this.series.name
-        + '</b><br/>'
-        + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x)
-        + '<br/>'
-        + Highcharts.numberFormat(this.y, 2)
+        `<b>${
+          this.series.name
+        }</b><br/>${
+          Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x)
+        }<br/>${
+          Highcharts.numberFormat(this.y, 2)}`
       );
     },
   },
@@ -72,7 +71,7 @@ const config = {
     {
       name: 'Random data',
       color: '#5e83fb',
-      data: (function() {
+      data: (function () {
         // generate an array of random data
         const data = [];
         const time = new Date().getTime();
@@ -86,7 +85,7 @@ const config = {
           });
         }
         return data;
-      })(),
+      }()),
     },
   ],
 };

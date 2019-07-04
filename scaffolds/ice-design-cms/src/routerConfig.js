@@ -1,24 +1,21 @@
-// 以下文件格式为描述路由的协议格式
-// 你可以调整 routerConfig 里的内容
-// 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
-import UserLayout from './layouts/UserLayout';
-import BasicLayout from './layouts/BasicLayout';
+import UserLayout from '@/layouts/UserLayout';
+import BasicLayout from '@/layouts/BasicLayout';
 
-import UserLogin from './pages/UserLogin';
-import UserRegister from './pages/UserRegister';
-import Dashboard from './pages/Dashboard';
-import PostList from './pages/PostList';
-import CreatePost from './pages/CreatePost';
-import CateList from './pages/CateList';
-import CreateCate from './pages/CreateCate';
-import TagList from './pages/TagList';
-import CreateTag from './pages/CreateTag';
-import UserList from './pages/UserList';
-import CreateUser from './pages/CreateUser';
-import EditPassword from './pages/EditPassword';
-import BasicSetting from './pages/BasicSetting';
-import NavigationSetting from './pages/NavigationSetting';
-import NotFound from './components/NotFound';
+import UserLogin from '@/pages/UserLogin';
+import UserRegister from '@/pages/UserRegister';
+import Dashboard from '@/pages/Dashboard';
+import PostList from '@/pages/PostList';
+import CreatePost from '@/pages/CreatePost';
+import CateList from '@/pages/CateList';
+import CreateCate from '@/pages/CreateCate';
+import TagList from '@/pages/TagList';
+import CreateTag from '@/pages/CreateTag';
+import UserList from '@/pages/UserList';
+import CreateUser from '@/pages/CreateUser';
+import EditPassword from '@/pages/EditPassword';
+import BasicSetting from '@/pages/BasicSetting';
+import NavigationSetting from '@/pages/NavigationSetting';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [
   {

@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { DatePicker, Input, Grid } from '@alifd/next';
 import {

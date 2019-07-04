@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 
 const data = [
   { month: '1', rate: 38 },

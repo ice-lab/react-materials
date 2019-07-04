@@ -1,9 +1,9 @@
 import React from 'react';
 
-import BasicLayout from './layouts/BasicLayout';
+import BasicLayout from '@/layouts/BasicLayout';
 
-const Dashboard = React.lazy(() => import('./pages/Dashboard'));
-const NotFound = React.lazy(() => import('./components/NotFound'));
+const Dashboard = React.lazy(() =>import('@/pages/Dashboard'));
+const NotFound = React.lazy(() =>import('@/pages/NotFound'));
 
 const routerConfig = [
   {

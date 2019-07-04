@@ -1,4 +1,3 @@
-/* eslint global-require: 0 */
 import React from 'react';
 import { Grid } from '@alifd/next';
 import Notice from './Notice';

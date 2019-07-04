@@ -1,8 +1,8 @@
 import React from 'react';
-import UserPortrait from '../../components/UserPortrait';
-import PassengerFlow from '../../components/PassengerFlow';
-import TimeDistribution from '../../components/TimeDistribution';
-import EventsOverview from '../../components/EventsOverview';
+import UserPortrait from '@/components/UserPortrait';
+import PassengerFlow from '@/components/PassengerFlow';
+import TimeDistribution from '@/components/TimeDistribution';
+import EventsOverview from '@/components/EventsOverview';
 
 const mockData = [
   {

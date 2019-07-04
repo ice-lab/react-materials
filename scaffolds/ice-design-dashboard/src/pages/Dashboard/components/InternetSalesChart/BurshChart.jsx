@@ -1,4 +1,3 @@
-/* eslint react/no-multi-comp:0, no-shadow:0, no-new:0 */
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 import DataSet from '@antv/data-set';

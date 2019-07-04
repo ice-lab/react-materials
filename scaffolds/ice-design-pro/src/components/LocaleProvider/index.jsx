@@ -1,4 +1,3 @@
-/* eslint camelcase:0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { IntlProvider, addLocaleData } from 'react-intl';

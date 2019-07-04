@@ -1,4 +1,3 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React from 'react';
 import { Nav } from '@alifd/next';
 import Icon from '@icedesign/foundation-symbol';

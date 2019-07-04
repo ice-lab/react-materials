@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState, useRef } from 'react';
 import { Dialog, Input, Message, Button } from '@alifd/next';
 import {
