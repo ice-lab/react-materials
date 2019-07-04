@@ -54,6 +54,7 @@ const UserRegister = withRouter((props) => {
                 className={styles.inputIcon}
               />
 )}
+            name="name"
             size="large"
             maxLength={20}
             placeholder="用户名"

@@ -1,6 +1,8 @@
 
-
 .basic-indicator-tab {
+  background: #f7f7f7;
+  margin-top: 20px;
+
   .next-tabs-tab.active {
     background: #fff !important;
   }
@@ -28,9 +30,4 @@
 
 .complexTab {
   padding: 0 40px;
-}
-
-.basic-indicator-tab {
-  background: #f7f7f7;
-  margin-top: 20px;
 }
