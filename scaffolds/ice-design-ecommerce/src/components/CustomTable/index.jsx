@@ -15,7 +15,7 @@ export default function CustomTable({ searchQueryHistory, ...props }) {
 
   const { enableFilter, columns, formConfig, hasAdvance } = props;
 
-  if (props.hasOwnProperty('searchQueryHistory') && searchQueryHistory !== prevSearchQueryHistory) {
+  if (prevSearchQueryHistory) {
     setSearchQuery(Object.assign(
       cloneDeep(prevSearchQueryHistory),
       searchQueryHistory
@@ -50,7 +50,7 @@ export default function CustomTable({ searchQueryHistory, ...props }) {
   }
 
   function onSearchReset() {
-    setSearchQuery(cloneDeep(props.searchQueryHistory));
+    setSearchQuery(cloneDeep(searchQueryHistory));
   }
 
   function onPaginationChange(index) {
