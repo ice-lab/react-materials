@@ -1,5 +1,5 @@
 /* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
 const ReactHighcharts = require('react-highcharts');
 const Highcharts = require('highcharts');
@@ -50,12 +50,12 @@ const config = {
   tooltip: {
     formatter: function() {
       return (
-        '<b>' +
-        this.series.name +
-        '</b><br/>' +
-        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +
-        '<br/>' +
-        Highcharts.numberFormat(this.y, 2)
+        '<b>'
+        + this.series.name
+        + '</b><br/>'
+        + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x)
+        + '<br/>'
+        + Highcharts.numberFormat(this.y, 2)
       );
     },
   },
@@ -81,8 +81,8 @@ const config = {
 
         for (i = -19; i <= 0; i += 1) {
           data.push({
-            x: time + i * 1000,
-            y: Math.random() * (2 - 1) + 1,
+            x: time + (i * 1000),
+            y: (Math.random() * (2 - 1)) + 1,
           });
         }
         return data;
@@ -91,23 +91,12 @@ const config = {
   ],
 };
 
-export default class SplineChart extends Component {
-  static displayName = 'SplineChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentWillUnmount() {
-    clearInterval(intervalId);
-  }
-
-  render() {
-    return <ReactHighcharts config={config} />;
-  }
+export default function SplineChart() {
+  useEffect(() => {
+    return () => {
+      clearInterval(intervalId);
+    };
+  });
+  return <ReactHighcharts config={config} />;
 }
+SplineChart.displayName = 'SplineChart';

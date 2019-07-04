@@ -1,77 +1,59 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import PropTypes from 'prop-types';
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class Home extends Component {
-  static displayName = 'Home';
+export default function Home(props) {
+  const [current, setCurrent] = useState(1);
 
-  static defaultProps = {
-    isLoading: false,
-    columns: [],
-    dataSource: [],
-  };
 
-  static propTypes = {
-    isLoading: PropTypes.bool,
-    columns: PropTypes.array,
-    dataSource: PropTypes.array,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
+  function handlePagination(cur) {
+    setCurrent(cur);
   }
 
-  handlePagination = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.props.onChange();
-      }
-    );
-  };
+  useEffect(() => {
+    props.onChange();
+  }, [current]);
 
-  render() {
-    const { isLoading, dataSource, columns } = this.props;
+  const { isLoading, dataSource, columns } = props;
 
-    return (
-      <div>
-        <Table
-          dataSource={dataSource}
-          hasBorder={false}
-          className="custom-table"
-          loading={isLoading}
-        >
-          {columns.map((item) => {
-            return (
-              <Table.Column
-                title={item.title}
-                dataIndex={item.dataIndex}
-                key={item.key}
-                sortable={item.sortable || false}
-                cell={item.cell || (value => value)}
-              />
-            );
-          })}
-        </Table>
-        <Pagination
-          style={styles.pagination}
-          current={this.state.current}
-          onChange={this.handlePagination}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Table
+        dataSource={dataSource}
+        hasBorder={false}
+        className={styles.customTable}
+        loading={isLoading}
+      >
+        {columns.map((item) => {
+          return (
+            <Table.Column
+              title={item.title}
+              dataIndex={item.dataIndex}
+              key={item.key}
+              sortable={item.sortable || false}
+              cell={item.cell || (value => value)}
+            />
+          );
+        })}
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handlePagination}
+      />
+    </div>
+  );
 }
 
-const styles = {
-  pagination: {
-    margin: '20px 0',
-    textAlign: 'center',
-  },
+Home.displayName = 'Home';
+Home.defaultProps = {
+  isLoading: false,
+  columns: [],
+  dataSource: [],
+};
+Home.propTypes = {
+  isLoading: PropTypes.bool,
+  columns: PropTypes.array,
+  dataSource: PropTypes.array,
 };

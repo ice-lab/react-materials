@@ -18,7 +18,8 @@ blocks/*
 # scaffolds/ice-hr-management-admin
 # scaffolds/ice-library-management-admin
 # scaffolds/ice-asset-management-admin
-scaffolds/ice-build-platfrom
+scaffolds/ice-library-management-admin
+# scaffolds/ice-build-platfrom
 # scaffolds/ice-monitor-dashboard
 # scaffolds/ice-commodity-management-admin
 # scaffolds/ice-open-platform-landingpage

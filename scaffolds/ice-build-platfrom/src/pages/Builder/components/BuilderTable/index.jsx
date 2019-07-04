@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { Radio } from '@alifd/next';
 import CustomTable from '../../../../components/CustomTable';
@@ -22,66 +22,55 @@ const getData = (length = 10) => {
   });
 };
 
-export default class BuilderTable extends Component {
-  state = {
-    isLoading: false,
-    data: [],
-    activeIndex: null,
-  };
+export default function BuilderTable() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  componentDidMount() {
-    this.fetchData(10);
-  }
+  useEffect(() => {
+    fetchData(10);
+  }, []);
 
-  mockApi = (len) => {
+  function mockApi(len) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData(len));
       }, 600);
     });
-  };
+  }
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
+  async function fetchData(len) {
+    await setIsLoading(true);
+    const d = await mockApi(len);
+    setData(d);
+    setIsLoading(false);
+  }
 
-  handleSubmit = (len) => {
-    this.setState({
-      activeIndex: len,
-    });
-    this.fetchData(len);
-  };
+  function handleSubmit(len) {
+    setActiveIndex(len);
+    fetchData(len);
+  }
 
-  renderState = (value) => {
+  function renderState(value) {
     return (
       <div className={styles.state}>
         <span className={styles.circle} />
         <span className={styles.stateText}>{value}</span>
       </div>
     );
-  };
+  }
 
-  renderOper = () => {
+  function renderOper() {
     return (
       <div className={styles.oper}>
-        <a href="/">查看</a>
+        <a href="/">
+          查看
+        </a>
       </div>
     );
-  };
+  }
 
-  columnsConfig = () => {
+  function columnsConfig() {
     return [
       {
         title: '构建对象',
@@ -122,66 +111,61 @@ export default class BuilderTable extends Component {
         title: '状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
       },
       {
         title: '详情',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
       },
     ];
-  };
-
-  render() {
-    const { isLoading, data, activeIndex } = this.state;
-    const buttonGroup = [
-      {
-        text: '已发布',
-        lenght: '10',
-      },
-      {
-        text: '开发中',
-        lenght: '3',
-      },
-      {
-        text: '我的',
-        lenght: '8',
-      },
-    ];
-
-    return (
-      <IceContainer>
-        <div className={styles.tableHead}>
-          <div className={styles.tableTitle}>构建器</div>
-          <Radio.Group
-            shape="button"
-            value={activeIndex}
-            onChange={(value) => this.handleSubmit(value)}
-          >
-            {buttonGroup.map((item, index) => {
-              return (
-                <Radio
-                  type="secondary"
-                  key={`button-${index}`}
-                  value={item.lenght}
-                >
-                  {item.text}
-                </Radio>
-              );
-            })}
-          </Radio.Group>
-        </div>
-        <TableFilter handleSubmit={() => this.handleSubmit(5)} />
-        <CustomTable
-          columns={this.columnsConfig()}
-          dataSource={data}
-          isLoading={isLoading}
-          onChange={this.fetchData}
-        />
-      </IceContainer>
-    );
   }
+
+  const buttonGroup = [
+    {
+      text: '已发布',
+      lenght: '10',
+    },
+    {
+      text: '开发中',
+      lenght: '3',
+    },
+    {
+      text: '我的',
+      lenght: '8',
+    },
+  ];
+
+  return (
+    <IceContainer>
+      <div className={styles.tableHead}>
+        <div className={styles.tableTitle}>构建器</div>
+        <Radio.Group
+          shape="button"
+          value={activeIndex}
+          onChange={value => handleSubmit(value)}
+        >
+          {buttonGroup.map((item, index) => {
+            return (
+              <Radio
+                type="secondary"
+                key={`button-${index}`}
+                value={item.lenght}
+              >
+                {item.text}
+              </Radio>
+            );
+          })}
+        </Radio.Group>
+      </div>
+      <TableFilter handleSubmit={() => handleSubmit(5)} />
+      <CustomTable
+        columns={columnsConfig()}
+        dataSource={data}
+        isLoading={isLoading}
+        onChange={fetchData}
+      />
+    </IceContainer>
+  );
 }
-
-
