@@ -1,103 +1,77 @@
-/* eslint react/no-multi-comp:0, no-unused-vars:0 */
-import React from 'react';
+// TODO: 这个图表数据改出问题了
+import React, { useState, useEffect } from 'react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
-function getComponent() {
-  const data = [];
-  let chart;
-  const scale = {
-    time: {
-      alias: '时间',
-      type: 'time',
-      mask: 'MM:ss',
-      tickCount: 10,
-      nice: false,
-    },
-    temperature: {
-      alias: '平均温度(°C)',
-      min: 10,
-      max: 35,
-    },
-    type: {
-      type: 'cat',
-    },
-  };
+const scale = {
+  time: {
+    alias: '时间',
+    type: 'time',
+    mask: 'MM:ss',
+    tickCount: 10,
+    nice: false,
+  },
+  temperature: {
+    alias: '平均温度(°C)',
+    min: 10,
+    max: 35,
+  },
+  type: {
+    type: 'cat',
+  },
+};
 
-  class SliderChart extends React.Component {
-    constructor() {
-      super();
-      this.state = {
-        data,
-      };
-    }
+export default function SliderChart() {
+  const [data, setData] = useState([]);
 
-    componentDidMount() {
-      setInterval(() => {
-        const now = new Date();
-        const time = now.getTime();
-        const temperature1 = parseInt(Math.random() * 5, 10) + 22;
-        const temperature2 = parseInt(Math.random() * 7, 10) + 17;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newData = JSON.parse(JSON.stringify(data));
+      const now = new Date();
+      const time = now.getTime();
+      const temperature1 = parseInt(Math.random() * 5, 10) + 22;
+      const temperature2 = parseInt(Math.random() * 7, 10) + 17;
 
-        if (data.length >= 200) {
-          data.shift();
-          data.shift();
-        }
+      if (newData.length >= 200) {
+        newData.shift();
+        newData.shift();
+      }
 
-        data.push({
-          time,
-          temperature: temperature1,
-          type: '记录1',
-        });
-        data.push({
-          time,
-          temperature: temperature2,
-          type: '记录2',
-        });
-        this.setState({
-          data,
-        });
-      }, 1000);
-    }
+      newData.push({
+        time,
+        temperature: temperature1,
+        type: '记录1',
+      });
+      newData.push({
+        time,
+        temperature: temperature2,
+        type: '记录2',
+      });
+      setData(newData);
+    }, 1000);
 
-    render() {
-      return (
-        <Chart
-          height={260}
-          padding={[40]}
-          data={this.state.data}
-          scale={scale}
-          forceFit
-          onGetG2Instance={(g2Chart) => {
-            chart = g2Chart;
-          }}
-        >
-          <Tooltip />
-          {this.state.data.length !== 0 ? <Axis /> : ''}
-          <Legend />
-          <Geom
-            type="line"
-            position="time*temperature"
-            color={['type', ['#ff7f0e', '#2ca02c']]}
-            shape="smooth"
-            size={2}
-          />
-        </Chart>
-      );
-    }
-  }
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
-  return SliderChart;
+  return (
+    <Chart
+      height={260}
+      padding={[40]}
+      data={data}
+      scale={scale}
+      forceFit
+    >
+      <Tooltip />
+      {data.length !== 0 ? <Axis /> : ''}
+      <Legend />
+      <Geom
+        type="line"
+        position="time*temperature"
+        color={['type', ['#ff7f0e', '#2ca02c']]}
+        shape="smooth"
+        size={2}
+      />
+    </Chart>
+  );
 }
-
-class RealtimeLineChart extends React.Component {
-  render() {
-    const SliderChart = getComponent();
-    return (
-      <div>
-        <SliderChart />
-      </div>
-    );
-  }
-}
-
-export default RealtimeLineChart;

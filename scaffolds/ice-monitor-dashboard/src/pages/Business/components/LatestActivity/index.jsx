@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+
 import Card from '../Card';
 import BarChart from './BarChart';
 
@@ -11,42 +12,34 @@ const getData = () => {
   });
 };
 
-export default class LatestActivity extends Component {
-  static displayName = 'LatestActivity';
+export default function LatestActivity() {
+  const dataSource = getData();
+  const columns = [
+    {
+      title: '空间名称',
+      dataIndex: 'name',
+      key: 'name',
+    },
+    {
+      title: '发布活动数',
+      dataIndex: 'num',
+      key: 'num',
+    },
+  ];
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  render() {
-    const dataSource = getData();
-    const columns = [
-      {
-        title: '空间名称',
-        dataIndex: 'name',
-        key: 'name',
-      },
-      {
-        title: '发布活动数',
-        dataIndex: 'num',
-        key: 'num',
-      },
-    ];
-
-    return (
-      <Card
-        title="最新发布活动"
-        subTitle="最近7日TOP 10"
-        summary={[
-          { label: '本周发布活动数', value: '123' },
-          { label: '上周发布活动数', value: '349' },
-          { label: '累计发布活动数', value: '23,239' },
-        ]}
-        link={{ text: '发布活动明细', to: '/traffic/statistics' }}
-        dataSource={dataSource}
-        columns={columns}
-        content={<BarChart />}
-      />
-    );
-  }
+  return (
+    <Card
+      title="最新发布活动"
+      subTitle="最近7日TOP 10"
+      summary={[
+        { label: '本周发布活动数', value: '123' },
+        { label: '上周发布活动数', value: '349' },
+        { label: '累计发布活动数', value: '23,239' },
+      ]}
+      link={{ text: '发布活动明细', to: '/traffic/statistics' }}
+      dataSource={dataSource}
+      columns={columns}
+      content={<BarChart />}
+    />
+  );
 }
