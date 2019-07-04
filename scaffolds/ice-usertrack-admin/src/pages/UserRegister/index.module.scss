@@ -26,8 +26,8 @@
 }
 
 .inputCol {
-  width: 100%;
-  padding-left: 20px;
+  width: 100% !important;
+  padding-left: 20px !important;
 }
 
 .submitBtn {
@@ -35,7 +35,7 @@
 }
 
 .tips {
-  margin-top: 20px;
-  display: block;
-  text-align: center;
+  margin-top: 20px !important;
+  display: block !important;
+  text-align: center !important;
 }

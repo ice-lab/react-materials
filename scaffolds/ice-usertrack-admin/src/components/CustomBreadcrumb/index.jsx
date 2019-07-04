@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Breadcrumb } from '@alifd/next';
+
 import styles from './index.module.scss';
 
 export default function CustomBreadcrumb({ title, items, summary }) {

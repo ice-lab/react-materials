@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Pagination, Message } from '@alifd/next';
+
 import styles from './index.module.scss';
 
 const getData = () => {
@@ -15,93 +16,68 @@ const getData = () => {
   });
 };
 
-export default class ReportTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
+export default function ReportTable() {
+  const [current, setCurrent] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
+  function fetchData(len, callback) {
+    setLoading(true);
+
+    setTimeout(() => {
+      setDataSource(getData(len));
+      setLoading(false);
+      callback && callback();
+    }, 1 * 1000);
   }
-
-  mockApi = (len) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(getData(len));
-      }, 600);
+  function handlePageChange(pageIndex) {
+    fetchData(10, () => {
+      setCurrent(pageIndex);
     });
-  };
-
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
-  };
-
-  handleApply = () => {
-    Message.success('申请权限已发送，请十分钟之后再试');
-  };
-
-  handleDetail = () => {
-    Message.prompt('需要管理员权限才能查看详情');
-  };
-
-  renderOper = () => {
+  }
+  function renderOper() {
     return (
       <div>
-        <a className={styles.link} onClick={this.handleDetail}>
+        <a
+          className={styles.link}
+          onClick={() => {
+            Message.success('申请权限已发送，请十分钟之后再试')
+          }}
+        >
           详情
         </a>
         <span className={styles.separator} />
-        <a className={styles.link} onClick={this.handleApply}>
+        <a
+          className={styles.link}
+          onClick={() => {
+            Message.prompt('需要管理员权限才能查看详情');
+          }}
+        >
           申请权限
         </a>
       </div>
     );
-  };
-
-  render() {
-    const { isLoading, data, current } = this.state;
-
-    return (
-      <IceContainer className={styles.container}>
-        <Table loading={isLoading} dataSource={data} hasBorder={false}>
-          <Table.Column title="测试时间" dataIndex="testTime" />
-          <Table.Column title="创建人" dataIndex="creator" />
-          <Table.Column title="报告名称" dataIndex="reportName" />
-          <Table.Column title="方案名称" dataIndex="schemeName" />
-          <Table.Column title="测试结果" dataIndex="result" />
-          <Table.Column title="操作" cell={this.renderOper} />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
-        />
-      </IceContainer>
-    );
   }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <IceContainer className={styles.container}>
+      <Table loading={loading} dataSource={dataSource} hasBorder={false}>
+        <Table.Column title="测试时间" dataIndex="testTime" />
+        <Table.Column title="创建人" dataIndex="creator" />
+        <Table.Column title="报告名称" dataIndex="reportName" />
+        <Table.Column title="方案名称" dataIndex="schemeName" />
+        <Table.Column title="测试结果" dataIndex="result" />
+        <Table.Column title="操作" cell={renderOper} />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handlePageChange}
+      />
+    </IceContainer>
+  );
 }
