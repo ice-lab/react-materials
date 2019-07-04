@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Dialog, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import CustomTable from '../../components/CustomTable';
@@ -174,7 +174,7 @@ const formConfig = [
 ];
 
 const random = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor((Math.random() * ((max - min) + 1)) + min);
 };
 
 const mockData = Array.from({ length: 10 }).map(() => {
@@ -191,44 +191,46 @@ const mockData = Array.from({ length: 10 }).map(() => {
   };
 });
 
-export default class OrderList extends Component {
-  renderState = (value) => {
+export default function OrderList() {
+  function renderState(value) {
     return (
       <div className={styles.state}>
-        <span className={styles.stateText}>{value}</span>
+        <span className={styles.stateText}>
+          {value}
+        </span>
       </div>
     );
-  };
+  }
 
-  handleDelete = () => {
+  function handleDelete() {
     Dialog.confirm({
       title: '提示',
       content: '确认删除吗',
     });
-  };
+  }
 
-  handleDetail = () => {
+  function handleDetail() {
     Dialog.confirm({
       title: '提示',
       content: '只有管理员才能查看具体的订单信息',
     });
-  };
+  }
 
-  renderOper = () => {
+  function renderOper() {
     return (
       <div>
-        <Button text onClick={this.handleDetail}>
+        <Button text onClick={handleDetail}>
           查看
         </Button>
         <span className={styles.separator} />
-        <Button text onClick={this.handleDelete}>
+        <Button text onClick={handleDelete}>
           删除
         </Button>
       </div>
     );
-  };
+  }
 
-  getTableColumns = () => {
+  function getTableColumns() {
     return [
       {
         title: '订单编号',
@@ -271,29 +273,26 @@ export default class OrderList extends Component {
         title: '订单状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
       },
       {
         title: '操作',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
       },
     ];
-  };
-
-  render() {
-    return (
-      <IceContainer title="订单列表">
-        <CustomTable
-          columns={this.getTableColumns()}
-          dataSource={mockData}
-          searchQueryHistory={defaultSearchQuery}
-          formConfig={formConfig}
-          hasAdvance
-        />
-      </IceContainer>
-    );
   }
-}
 
+  return (
+    <IceContainer title="订单列表">
+      <CustomTable
+        columns={getTableColumns()}
+        dataSource={mockData}
+        searchQueryHistory={defaultSearchQuery}
+        formConfig={formConfig}
+        hasAdvance
+      />
+    </IceContainer>
+  );
+}

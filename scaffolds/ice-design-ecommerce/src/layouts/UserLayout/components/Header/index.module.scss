@@ -1,23 +1,27 @@
-.nav-menu {
-  .arrow-up-icon,
-  .arrow-down-icon {
+.navMenus {
+  .arrowUpIcon,
+  .arrowDownIcon {
     position: absolute;
     right: 15px;
     top: 0;
     z-index: 1;
     transition: 0.3s ease;
   }
-  .sub-navs,
-  .arrow-up-icon {
+
+  .subNavs,
+  .arrowUpIcon {
     display: none;
   }
+
   &:hover {
     background: #272b2f;
-    .sub-navs,
-    .arrow-up-icon {
+
+    .subNavs,
+    .arrowUpIcon {
       display: block;
     }
-    .arrow-down-icon {
+
+    .arrowDownIcon {
       display: none;
     }
   }
@@ -29,7 +33,8 @@
   display: flex;
   justify-content: space-between;
 }
-.logoLin {
+
+.logoLink {
   display: flex;
   align-items: center;
   font-size: 24px;
@@ -37,12 +42,15 @@
   padding-left: 20px;
   color: #fff;
 }
+
 .navs {
   display: flex;
 }
+
 .navMenu {
   position: relative;
 }
+
 .navLink {
   display: block;
   height: 60px;
@@ -52,25 +60,30 @@
   color: #fff;
   text-decoration: none;
 }
-.NavIconLink {
+
+.navIconLink {
   padding: 0 30px;
 }
-.subNavs {
+
+.subNav {
   position: absolute;
   left: 0;
   width: 140px;
-  background: #272B2F;
+  background: #272b2f;
 }
+
 .subNavMenu {
   height: 38px;
   line-height: 38px;
 }
+
 .subNavLink {
   padding-left: 12px;
   display: block;
   color: #fff;
   font-size: 14px;
 }
+
 .internationalImg {
   width: 16px;
   height: 16px;
@@ -78,4 +91,3 @@
   left: 10px;
   top: 22px;
 }
-
