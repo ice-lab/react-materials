@@ -1,4 +1,3 @@
-/* eslint no-undef: 0 */
 import { Button } from '@alifd/next';
 import React from 'react';
 import styles from './index.module.scss';

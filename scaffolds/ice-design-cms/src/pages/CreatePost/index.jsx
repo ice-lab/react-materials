@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentEditor from './components/ContentEditor';
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
+import CustomBreadcrumb from '@/components/CustomBreadcrumb';
 
 export default function CreatePost() {
   const breadcrumb = [

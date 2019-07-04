@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { Radio } from '@alifd/next';
-import CustomTable from '../../../../components/CustomTable';
+import CustomTable from '@/components/CustomTable';
 import TableFilter from '../TableFilter';
 import styles from './index.module.scss';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
-import CustomTable from '../../../../components/CustomTable';
+import CustomTable from '@/components/CustomTable';
 import TableFilter from '../TableFilter';
 import styles from './index.module.scss';
 

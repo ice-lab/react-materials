@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 import styles from './index.module.scss';
 
 const data = [

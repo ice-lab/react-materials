@@ -1,4 +1,3 @@
-/* eslint  react/no-string-refs: 0 */
 import React, { useState } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';

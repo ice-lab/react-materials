@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
+import CustomBreadcrumb from '@/components/CustomBreadcrumb';
 import TabTable from './components/TabTable';
 
 export default function PostList() {

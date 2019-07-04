@@ -1,6 +1,6 @@
 import React from 'react';
-import PassengerFlow from '../../components/PassengerFlow';
-import UserStatChart from '../../components/UserStatChart';
+import PassengerFlow from '@/components/PassengerFlow';
+import UserStatChart from '@/components/UserStatChart';
 
 export default function Conversion() {
   return (

@@ -1,4 +1,3 @@
-/* eslint no-prototype-builtins:0, react/forbid-prop-types:0 */
 import React, { useState, useEffect } from 'react';
 import cloneDeep from 'lodash.clonedeep';
 import PropTypes from 'prop-types';

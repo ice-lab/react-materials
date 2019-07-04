@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState, useRef } from 'react';
 import { Button, Select, Input, Message } from '@alifd/next';
 import { FormBinderWrapper, FormBinder } from '@icedesign/form-binder';

@@ -1,4 +1,3 @@
-/* eslint no-mixed-operators: 0 */
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';

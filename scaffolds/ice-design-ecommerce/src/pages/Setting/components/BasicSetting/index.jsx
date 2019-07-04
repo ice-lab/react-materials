@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState, useRef } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Button, Message } from '@alifd/next';

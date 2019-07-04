@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Dialog } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
 import styles from './index.module.scss';
 
 const mockData = [

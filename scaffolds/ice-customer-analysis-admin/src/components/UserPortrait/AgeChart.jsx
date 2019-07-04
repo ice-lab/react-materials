@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle:0, no-mixed-operators:0 */
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Shape } from 'bizcharts';
 import ChartTitle from './ChartTitle';
@@ -45,8 +44,9 @@ const data = [
 Shape.registerShape('interval', 'textInterval', {
   drawShape(cfg, group) {
     const points = this.parsePoints(cfg.points); // 将0-1空间的坐标转换为画布坐标
+    const { _origin: cfgOrigin } = cfg.origin;
 
-    const value = cfg.origin._origin.value;
+    const value = cfgOrigin.value;
     group.addShape('text', {
       attrs: {
         text: value,
@@ -84,7 +84,9 @@ Shape.registerShape('interval', 'fallFlag', {
   },
 
   drawShape(cfg, group) {
-    if (cfg.origin._origin === data[data.length - 1]) {
+    const { _origin: cfgOrigin } = cfg.origin;
+
+    if (cfgOrigin === data[data.length - 1]) {
       return;
     }
 
@@ -92,7 +94,7 @@ Shape.registerShape('interval', 'fallFlag', {
 
     const p1 = points[0];
     const width = 9;
-    const washaway = cfg.origin._origin.washaway;
+    const washaway = cfgOrigin.washaway;
     group.addShape('text', {
       attrs: {
         text: `${(washaway * 100).toFixed(1)} %`,

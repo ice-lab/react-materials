@@ -7,8 +7,8 @@ import cookie from 'cookie';
  * @param {authorities} 权限列表
  *
  * 控制页面例子：
- *     import React from 'react';
- *     import { withAuth } from '@/components/Auth';
+ *    import React from 'react';
+ *    import { withAuth } from '@/components/Auth';
  *     function BasicList() {
  *       return (
  *         <div className="list-page">

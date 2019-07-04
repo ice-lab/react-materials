@@ -1,7 +1,6 @@
-/* eslint react/no-string-refs:0 */
 import React, { useEffect } from 'react';
 import ScrollAnim from 'rc-scroll-anim';
-import Logo from '../../../../components/Logo';
+import Logo from '@/components/Logo';
 import styles from './index.module.scss';
 
 const Link = ScrollAnim.Link;

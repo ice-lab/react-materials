@@ -12,7 +12,7 @@ import Monitor from '@/pages/Monitor';
 import MonitorDetail from '@/pages/MonitorDetail';
 import Setting from '@/pages/Setting';
 import EditForm from '@/pages/EditForm';
-import NotFound from '@/components/NotFound';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [
   {

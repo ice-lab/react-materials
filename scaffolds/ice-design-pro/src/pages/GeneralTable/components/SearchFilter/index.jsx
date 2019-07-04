@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { Icon } from '@alifd/next';
 import cloneDeep from 'lodash/cloneDeep';

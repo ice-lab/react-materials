@@ -1,4 +1,3 @@
-/* eslint no-nested-ternary:0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@alifd/next';
@@ -12,9 +11,7 @@ export default function Index({ title, style, ...props }) {
         <Button type="primary" size="large">
           {props.buttonText}
         </Button>
-      ) : props.extraAfter ? (
-        props.extraAfter
-      ) : null}
+      ) : props.extraAfter}
     </div>
   );
 }

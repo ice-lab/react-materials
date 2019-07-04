@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState, useRef } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Button, Checkbox, Message } from '@alifd/next';
