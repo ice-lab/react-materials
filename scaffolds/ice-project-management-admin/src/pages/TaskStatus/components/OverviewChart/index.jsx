@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Progress } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const mockData = [
@@ -28,24 +28,22 @@ const mockData = [
   },
 ];
 
-export default class OverviewPieChart extends Component {
-  render() {
-    return (
-      <Row gutter={20}>
-        {mockData.map((item, index) => {
-          return (
-            <Col xxs="24" l="6" key={index}>
-              <IceContainer className={styles.container}>
-                <Progress percent={item.percent} state="error" shape="circle" />
-                <div className={styles.content}>
-                  <p className={styles.value}>{item.value}</p>
-                  <h4 className={styles.title}>{item.title}</h4>
-                </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+export default function OverviewPieChart() {
+  return (
+    <Row gutter={20}>
+      {mockData.map((item, index) => {
+        return (
+          <Col xxs="24" l="6" key={index}>
+            <IceContainer className={styles.container}>
+              <Progress percent={item.percent} state="error" shape="circle" />
+              <div className={styles.content}>
+                <p className={styles.value}>{item.value}</p>
+                <h4 className={styles.title}>{item.title}</h4>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }

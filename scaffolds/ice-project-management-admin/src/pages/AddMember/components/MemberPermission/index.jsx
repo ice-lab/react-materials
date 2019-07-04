@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table, Checkbox } from '@alifd/next';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const DATA = [
   {
@@ -34,34 +34,31 @@ const DATA = [
   },
 ];
 
-export default class TopActiveChart extends Component {
-  renderCheckbox = (value) => {
+export default function TopActiveChart() {
+  const renderCheckbox = (value) => {
     return <Checkbox checked={value} />;
   };
-  render() {
-    return (
-      <div className={styles.MemberPermission}>
-        <h2 className={styles.title}>设置权限</h2>
-        <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
-          <Table.Column title="" dataIndex="type" />
-          <Table.Column
-            title="READ"
-            dataIndex="read"
-            cell={this.renderCheckbox}
-          />
-          <Table.Column
-            title="Write"
-            dataIndex="write"
-            cell={this.renderCheckbox}
-          />
-          <Table.Column
-            title="Delete"
-            dataIndex="delete"
-            cell={this.renderCheckbox}
-          />
-        </Table>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.MemberPermission}>
+      <h2 className={styles.title}>设置权限</h2>
+      <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
+        <Table.Column title="" dataIndex="type" />
+        <Table.Column
+          title="READ"
+          dataIndex="read"
+          cell={renderCheckbox}
+        />
+        <Table.Column
+          title="Write"
+          dataIndex="write"
+          cell={renderCheckbox}
+        />
+        <Table.Column
+          title="Delete"
+          dataIndex="delete"
+          cell={renderCheckbox}
+        />
+      </Table>
+    </div>
+  );
 }
-
