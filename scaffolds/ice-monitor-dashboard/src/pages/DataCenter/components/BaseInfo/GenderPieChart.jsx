@@ -16,7 +16,7 @@ export default function GenderPieChart() {
     draw(cfg, container) {
       // 将归一化后的数据转换为画布上的坐标
       const points = cfg.origin.points;
-      let path = [];
+      const path = [];
 
       for (let i = 0; i < cfg.origin.points.length; i += 4) {
         path.push(['M', points[i].x, points[i].y]);
@@ -27,7 +27,7 @@ export default function GenderPieChart() {
         path.push(['z']);
       }
 
-      path = this.parsePath(path, true);
+      // path = this.parsePath(path, true);
       const rect = container.addShape('path', {
         attrs: {
           fill: cfg.color || '#00D9DF',

@@ -19,9 +19,9 @@ const NavBar = withRouter((props) => {
       defaultSelectedKeys={[pathname]}
       direction="hoz"
     >
-      {headerMenuConfig &&
-        headerMenuConfig.length > 0 &&
-        headerMenuConfig.map((nav, index) => {
+      {headerMenuConfig
+        && headerMenuConfig.length > 0
+        && headerMenuConfig.map((nav, index) => {
           if (nav.children && nav.children.length > 0) {
             return (
               <SubNav

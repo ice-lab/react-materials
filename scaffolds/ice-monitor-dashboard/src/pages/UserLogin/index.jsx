@@ -30,49 +30,58 @@ const UserLogin = withRouter((props) => {
     <div className={styles.container}>
       <h4 className={styles.title}>登 录</h4>
       <Form
-          value={value}
-          onChange={handleFormChange}
-          size="large"
-        >
-          <FormItem required requiredMessage="必填">
-            <Input
-              innerBefore={<Icon
+        value={value}
+        onChange={handleFormChange}
+        size="large"
+      >
+        <FormItem required requiredMessage="必填">
+          <Input
+            innerBefore={(
+              <Icon
                 type="account"
                 size="small"
                 className={styles.inputIcon}
-              />}
-              name="username" size="large" maxLength={20} placeholder="用户名" />
-          </FormItem>
-          <FormItem required requiredMessage="必填">
-            <Input
-              innerBefore={<Icon
+              />
+)}
+            name="username"
+            size="large"
+            maxLength={20}
+            placeholder="用户名"
+          />
+        </FormItem>
+        <FormItem required requiredMessage="必填">
+          <Input
+            innerBefore={(
+              <Icon
                 type="account"
                 size="small"
                 todo="lock"
                 className={styles.inputIcon}
-              />}
-              name="password"
-              size="large"
-              htmlType="password"
-              placeholder="密码" />
-          </FormItem>
-          <FormItem>
-            <Checkbox name="checkbox" className="checkbox">记住账号</Checkbox>
-          </FormItem>
-          <div>
-            <Form.Submit
-              type="primary"
-              validate
-              onClick={handleSubmit}
-              className="submitBtn"
-            >
+              />
+)}
+            name="password"
+            size="large"
+            htmlType="password"
+            placeholder="密码"
+          />
+        </FormItem>
+        <FormItem>
+          <Checkbox name="checkbox" className="checkbox">记住账号</Checkbox>
+        </FormItem>
+        <div>
+          <Form.Submit
+            type="primary"
+            validate
+            onClick={handleSubmit}
+            className="submitBtn"
+          >
               登 录
-            </Form.Submit>
-            <Link to="/account/register" className={styles.registry}>
+          </Form.Submit>
+          <Link to="/account/register" className={styles.registry}>
               立即注册
-            </Link>
-          </div>
-        </Form>
+          </Link>
+        </div>
+      </Form>
     </div>
   );
 });

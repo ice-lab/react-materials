@@ -79,13 +79,13 @@ export default function SettingsForm() {
 
             </FormItem>
             <FormItem label="性别：" {...formItemLayout} required requiredMessage="必填">
-              <RadioGroup name="gender" >
+              <RadioGroup name="gender">
                 <Radio value="male">男</Radio>
                 <Radio value="female">女</Radio>
               </RadioGroup>
             </FormItem>
 
-            <FormItem label="通知：" {...formItemLayout} >
+            <FormItem label="通知：" {...formItemLayout}>
               <Switch name="notice" />
             </FormItem>
             <FormItem size="large" label="邮件：" {...formItemLayout} required requiredMessage="请输入正确的邮件">
@@ -114,7 +114,7 @@ export default function SettingsForm() {
               <Input name="twitterUrl" placeholder="https://twitter.com" />
             </FormItem>
 
-            <FormItem size="large" label="自我描述：" {...formItemLayout} >
+            <FormItem size="large" label="自我描述：" {...formItemLayout}>
               <Input.TextArea placeholder="请输入描述..." />
             </FormItem>
             <Row className={styles.row}>

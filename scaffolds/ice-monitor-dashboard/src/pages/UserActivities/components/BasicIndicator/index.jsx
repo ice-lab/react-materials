@@ -73,18 +73,18 @@ export default function BasicIndicator() {
   }
 
   const complexTab1 = (
-    <div className="complexTab" >
+    <div className="complexTab">
       <p className="tabTitle">用户评价访问频次</p>
-      <h5 className="tabValue" >1.08</h5>
-      <p className="tabDesc" >与上一周同期比 -10%</p>
+      <h5 className="tabValue">1.08</h5>
+      <p className="tabDesc">与上一周同期比 -10%</p>
     </div>
   );
 
   const complexTab2 = (
     <div className="complexTab">
       <p className="tabTitle">用户评价访问频次</p>
-      <h5 className="tabValue" >00:00:56</h5>
-      <p className="tabDesc" >与上一周同期比 20%</p>
+      <h5 className="tabValue">00:00:56</h5>
+      <p className="tabDesc">与上一周同期比 20%</p>
     </div>
   );
 

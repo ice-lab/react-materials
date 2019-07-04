@@ -41,78 +41,95 @@ const UserRegister = withRouter((props) => {
     <div className={styles.container}>
       <h4 className={styles.title}>注 册</h4>
       <Form
-          value={value}
-          onChange={handleFormChange}
-          size="large"
-        >
-          <FormItem required requiredMessage="请输入正确的用户名">
-            <Input
-              innerBefore={<Icon
+        value={value}
+        onChange={handleFormChange}
+        size="large"
+      >
+        <FormItem required requiredMessage="请输入正确的用户名">
+          <Input
+            innerBefore={(
+              <Icon
                 type="account"
                 size="small"
                 className={styles.inputIcon}
-              />}
-              name="name" size="large" maxLength={20} placeholder="用户名" />
-          </FormItem>
-          <FormItem required requiredMessage="请输入正确的邮箱">
-            <Input
-              innerBefore={<Icon
+              />
+)}
+            size="large"
+            maxLength={20}
+            placeholder="用户名"
+          />
+        </FormItem>
+        <FormItem required requiredMessage="请输入正确的邮箱">
+          <Input
+            innerBefore={(
+              <Icon
                 type="email"
                 size="small"
                 className={styles.inputIcon}
-              />}
-              name="email" size="large" maxLength={20} placeholder="邮箱" />
-          </FormItem>
-          <FormItem required requiredMessage="请输入正确的邮箱">
-            <Input
-              innerBefore={<Icon
+              />
+)}
+            name="email"
+            size="large"
+            maxLength={20}
+            placeholder="邮箱"
+          />
+        </FormItem>
+        <FormItem required requiredMessage="请输入正确的邮箱">
+          <Input
+            innerBefore={(
+              <Icon
                 type="ellipsis"
                 size="small"
                 todo="lock"
                 className={styles.inputIcon}
-              />}
-              name="passwd"
-              htmlType="password"
-              size="large"
-              placeholder="至少8位密码" />
-          </FormItem>
+              />
+)}
+            name="passwd"
+            htmlType="password"
+            size="large"
+            placeholder="至少8位密码"
+          />
+        </FormItem>
 
-          <FormItem required
-            validator={(rule, values, callback) =>
-              checkPasswd(
-                rule,
-                values,
-                callback,
-                value
-              )
-            }>
-            <Input
-              innerBefore={<Icon
+        <FormItem required
+          validator={(rule, values, callback) => checkPasswd(
+            rule,
+            values,
+            callback,
+            value
+          )
+            }
+        >
+          <Input
+            innerBefore={(
+              <Icon
                 type="ellipsis"
                 size="small"
                 todo="lock"
                 className={styles.inputIcon}
-              />}
-              name="rePasswd"
-              htmlType="password"
-              size="large"
-              placeholder="至少8位密码" />
-          </FormItem>
-          <div>
-            <Form.Submit
-              type="primary"
-              validate
-              onClick={handleSubmit}
-              className="submitBtn"
-            >
+              />
+)}
+            name="rePasswd"
+            htmlType="password"
+            size="large"
+            placeholder="至少8位密码"
+          />
+        </FormItem>
+        <div>
+          <Form.Submit
+            type="primary"
+            validate
+            onClick={handleSubmit}
+            className="submitBtn"
+          >
               注 册
-              </Form.Submit>
+          </Form.Submit>
 
-            <Link to="/account/login" className={styles.login}>
+          <Link to="/account/login" className={styles.login}>
               使用已有账户登录
-              </Link>
-            </div>
-        </Form>
+          </Link>
+        </div>
+      </Form>
     </div>
   );
 });

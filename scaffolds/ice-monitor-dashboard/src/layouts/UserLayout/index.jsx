@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Footer from './components/Footer';
 import Intro from './components/Intro';

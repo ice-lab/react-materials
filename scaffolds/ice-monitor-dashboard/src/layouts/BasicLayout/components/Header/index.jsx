@@ -13,7 +13,7 @@ const Header = withRouter(() => {
         <Logo isDark />
 
         <Balloon
-          trigger={
+          trigger={(
             <div
               className="ice-design-header-userpannel ice-dedign"
             >
@@ -24,7 +24,7 @@ const Header = withRouter(() => {
                 className="user-avatar"
               />
               <div className="user-profile">
-                <span className="user-name" >
+                <span className="user-name">
                   淘小宝
                 </span>
                 <br />
@@ -32,7 +32,7 @@ const Header = withRouter(() => {
               </div>
               <Icon type="arrow-down" size="xxs" className="icon-down" />
             </div>
-          }
+)}
           closable={false}
           className="user-profile-menu"
         >

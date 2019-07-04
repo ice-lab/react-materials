@@ -29,7 +29,7 @@ const routerConfig = [{
     {
       component: NotFound,
     },
-  ]
+  ],
 }, {
   path: '/',
   component: BasicLayout,

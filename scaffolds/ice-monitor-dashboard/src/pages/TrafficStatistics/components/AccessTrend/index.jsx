@@ -107,59 +107,59 @@ export default function AccessTrend() {
     {
       count: 4,
       date: 1489593600000,
-      time: null
+      time: null,
     },
     {
       count: 6,
       date: 1489680000000,
-      time: 18000
+      time: 18000,
     },
     {
       count: 0,
       date: 1489766400000,
-      time: 0
+      time: 0,
     },
     {
       count: 0,
       date: 1489852800000,
-      time: 0
+      time: 0,
     },
     {
       count: 4,
       date: 1489939200000,
-      time: 21157000
+      time: 21157000,
     },
     {
       count: 8,
       date: 1490025600000,
-      time: null
+      time: null,
     },
     {
       count: 14,
       date: 1490112000000,
-      time: null
+      time: null,
     },
     {
       count: 10,
       date: 1490198400000,
-      time: 24000
+      time: 24000,
     },
     {
       count: 2,
       date: 1490284800000,
-      time: 0
-    }
+      time: 0,
+    },
   ];
 
-  function pick(data, field) {
-    return data.map(item => {
+  function pick(data1, field) {
+    return data1.map((item) => {
       const result = {};
 
-      for (const key in item) {
+      Object.keys(item).forEach((key) => {
         if (item.hasOwnProperty(key) && field.indexOf(key) !== -1) {
           result[key] = item[key];
         }
-      }
+      });
 
       return result;
     });
@@ -169,21 +169,21 @@ export default function AccessTrend() {
     date: {
       alias: '日期',
       type: 'time',
-      mask: 'MM-DD'
+      mask: 'MM-DD',
     },
     pv: {
       alias: '进入次数',
-      min: 0
+      min: 0,
     },
     time: {
       alias: '平均时长',
-      formatter: value => {
+      formatter: (value) => {
         return humanizeDuration(value, 0);
-      }
+      },
     },
     count: {
-      alias: '次数'
-    }
+      alias: '次数',
+    },
   };
   return (
     <IceContainer>
@@ -194,8 +194,8 @@ export default function AccessTrend() {
         forceFit
         scale={{
           time: {
-            sync: true
-          }
+            sync: true,
+          },
         }}
       >
         <Tooltip />
@@ -212,7 +212,7 @@ export default function AccessTrend() {
             color="white"
             size={3}
             style={{
-              lineDash: [4, 4]
+              lineDash: [4, 4],
             }}
           />
         </View>

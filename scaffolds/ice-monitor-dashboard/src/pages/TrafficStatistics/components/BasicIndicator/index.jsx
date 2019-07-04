@@ -31,7 +31,7 @@ export default function BasicIndicator() {
           <div className={styles.count}>6,657</div>
           <div className={styles.desc}>
             <span>较前日 {down} -200</span>
-            <span className= {styles.sevenDay }>近7天 {up} +100</span>
+            <span className={styles.sevenDay}>近7天 {up} +100</span>
           </div>
         </Col>
         <Col xxs="24" s="12" l="6" className={styles.item}>
@@ -95,4 +95,3 @@ export default function BasicIndicator() {
     </IceContainer>
   );
 }
-
