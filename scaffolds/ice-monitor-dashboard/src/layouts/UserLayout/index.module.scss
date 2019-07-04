@@ -1,25 +1,24 @@
 
-    .container {
-      position: relative;
-      width: 100wh;
-      min-width: 1200px;
-      height: 100vh;
-      background-image:
-        url(https://img.alicdn.com/tfs/TB1Dc9.zFYqK1RjSZLeXXbXppXa-2704-1790.png);
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-    }
-    .row{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-    }
-    .form {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-  
+.container {
+  position: relative;
+  width: 100vw;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url(https://img.alicdn.com/tfs/TB1Dc9.zFYqK1RjSZLeXXbXppXa-2704-1790.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
