@@ -1,19 +1,22 @@
-.hy-friends-list {
+.hyFriendsList {
   max-width: 1920px;
   min-width: 1280px;
   margin: 0 auto;
   height: 400px;
+
   * {
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
-  .hy-friends-item {
+
+  .hyFriendsItem {
     position: relative;
-    width: 12.5%;
+    width: 25%;
     height: 100%;
     float: left;
     overflow: hidden;
     color: #fff;
     text-decoration: none;
+
     &::before {
       position: absolute;
       z-index: 1;
@@ -23,15 +26,17 @@
       height: 100%;
       content: "";
       background: #1e3259;
-      opacity: .73;
+      opacity: 0.73;
     }
-    .hy-friends-img {
+
+    .hyFriendsImg {
       position: relative;
       width: 1200px;
       height: 100%;
       left: 50%;
       margin-left: -600px;
     }
+
     h4 {
       position: absolute;
       z-index: 2;
@@ -40,11 +45,12 @@
       top: 167px;
       font-size: 26px;
       line-height: 1;
-      opacity: .8;
+      opacity: 0.8;
       font-weight: 400;
       margin: 0;
       padding: 0;
     }
+
     span {
       position: absolute;
       z-index: 2;
@@ -53,8 +59,9 @@
       top: 210px;
       font-size: 14px;
       line-height: 18px;
-      opacity: .7;
+      opacity: 0.7;
     }
+
     p {
       position: absolute;
       z-index: 2;
@@ -65,7 +72,8 @@
       font-size: 14px;
       line-height: 22px;
     }
-    .hy-friends-qr {
+
+    .hyFriendsQr {
       position: absolute;
       z-index: 2;
       width: 80px;
@@ -77,22 +85,26 @@
 
     &.selected {
       width: 62.5%;
+
       &::before {
         background: #2e5399;
-        opacity: .65;
+        opacity: 0.65;
       }
+
       h4 {
         opacity: 1;
         top: 107px;
         left: 73px;
         text-align: left;
       }
+
       span {
         top: 115px;
         left: 190px;
         opacity: 1;
         text-align: left;
       }
+
       p {
         opacity: 1;
       }

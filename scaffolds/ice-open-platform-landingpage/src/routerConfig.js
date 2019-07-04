@@ -8,8 +8,13 @@ import Home from './pages/Home';
 const routerConfig = [
   {
     path: '/',
-    layout: BlankLayout,
-    component: Home,
+    component: BlankLayout,
+    children: [
+      {
+        path: '/',
+        component: Home,
+      },
+    ],
   },
 ];
 
