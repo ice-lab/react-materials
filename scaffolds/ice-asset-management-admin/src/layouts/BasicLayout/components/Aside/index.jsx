@@ -48,7 +48,7 @@ function Aside(props) {
         openKeys={openKeys}
         onOpen={onOpenChange}
         className={styles.customMenu}
-        type="line"
+        type="primary"
       >
         {Array.isArray(asideMenuConfig)
           && asideMenuConfig.length > 0

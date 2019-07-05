@@ -8,6 +8,7 @@ import Dispatch from '@/pages/Dispatch';
 import Goods from '@/pages/Goods';
 import AddOrder from '@/pages/AddOrder';
 import AddGoods from '@/pages/AddGoods';
+import NotFound from '@/pages/NotFound';
 
 import UserLayout from '@/layouts/UserLayout';
 import BasicLayout from '@/layouts/BasicLayout';
@@ -62,6 +63,13 @@ const routerConfig = [
       {
         path: '/add/goods',
         component: AddGoods,
+      },
+      {
+        path: '/',
+        redirect: '/dashboard',
+      },
+      {
+        component: NotFound,
       },
     ],
   },
