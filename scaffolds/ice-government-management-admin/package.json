@@ -68,6 +68,12 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  {
+    "iceworks": {
+      "type": "react",
+      "adapter": "adapter-react-v2"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-government-management-admin"

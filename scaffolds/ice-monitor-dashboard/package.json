@@ -67,6 +67,12 @@
       "https://img.alicdn.com/tfs/TB1GOs8DXYqK1RjSZLeXXbXppXa-2872-1580.png"
     ]
   },
+  {
+    "iceworks": {
+      "type": "react",
+      "adapter": "adapter-react-v2"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-monitor-dashboard"
