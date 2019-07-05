@@ -11,7 +11,9 @@
     "_gitignore",
     "_editorconfig",
     "_eslintignore",
-    "_eslintrc",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
     "tsconfig.json",
     "ice.config.js"
   ],
