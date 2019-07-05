@@ -13,6 +13,10 @@ const routerConfig = [
         component: Home,
       },
       {
+        path: '/',
+        redirect: '/home',
+      },
+      {
         component: NotFound,
       },
     ],
