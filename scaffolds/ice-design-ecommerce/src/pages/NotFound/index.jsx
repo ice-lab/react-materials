@@ -10,7 +10,7 @@ export default function NotFound() {
         <div className={`${styles.exceptionContents} ${styles.exceptionContent}`}>
           <img
             src="https://img.alicdn.com/tfs/TB1txw7bNrI8KJjy0FpXXb5hVXa-260-260.png"
-            className={`${styles.imgimgException} ${styles.image}`}
+            className={styles.imgException}
             alt="页面不存在"
           />
           <div className={styles.prompt}>
