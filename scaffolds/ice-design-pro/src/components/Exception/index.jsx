@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 
 export default function Exception(props) {
   const { statusCode, description, image, backText, redirect } = props;
-  
+
   return (
     <IceContainer>
       <div className={styles.exceptionContent}>

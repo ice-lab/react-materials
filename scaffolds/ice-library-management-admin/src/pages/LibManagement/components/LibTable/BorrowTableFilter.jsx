@@ -9,9 +9,7 @@ import styles from './index.module.scss';
 const { Row, Col } = Grid;
 
 export default function BorrowTableHead(props) {
-  /* eslint-disable */
-  const [value, setValue] = useState({});
-  /* eslint-enable */
+  const [value] = useState({});
 
   const formChange = (newValue) => {
     props.onChange(newValue);
@@ -21,7 +19,6 @@ export default function BorrowTableHead(props) {
     <IceFormBinderWrapper
       value={value}
       onChange={formChange}
-      ref="form"
     >
       <Row wrap gutter="20" className={styles.formRow}>
         <Col l="8">

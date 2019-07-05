@@ -1,6 +1,7 @@
 import React from 'react';
-import Exception from '@/components/Exception';
 import cookie from 'cookie';
+
+import Exception from '@/components/Exception';
 
 /**
  * 权限组件，可控制页面或者组件

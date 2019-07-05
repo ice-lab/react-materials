@@ -43,3 +43,7 @@ export default function ColumnChart(props) {
 ColumnChart.propTypes = {
   type: PropTypes.string,
 };
+
+ColumnChart.defaultProps = {
+  type: 'interval',
+};
