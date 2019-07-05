@@ -8,6 +8,7 @@ import Selfhelp from '@/pages/Selfhelp';
 import List from '@/pages/List';
 import Batch from '@/pages/Batch';
 import NewCase from '@/pages/NewCase';
+import NotFound from '@/pages/NotFound';
 
 import UserLayout from '@/layouts/UserLayout';
 import BasicLayout from '@/layouts/BasicLayout';
@@ -24,6 +25,13 @@ const routerConfig = [
       {
         path: '/register',
         component: UserRegister,
+      },
+      {
+        path: '/',
+        redirect: '/user/login',
+      },
+      {
+        component: NotFound,
       },
     ],
   },
@@ -58,6 +66,13 @@ const routerConfig = [
       {
         path: '/new',
         component: NewCase,
+      },
+      {
+        path: '/',
+        redirect: '/dashboard',
+      },
+      {
+        component: NotFound,
       },
     ],
   },

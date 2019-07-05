@@ -11,6 +11,9 @@ const routerConfig = [
       path: '/dashboard',
       component: Dashboard,
     }, {
+      path: '/',
+      redirect: '/dashboard',
+    }, {
       component: NotFound,
     }],
   },

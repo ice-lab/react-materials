@@ -120,7 +120,7 @@ export default function LibTable() {
       title: '操作',
       dataIndex: 'oper',
       cell: renderOper,
-      width: 150,
+      width: 180,
     },
   ];
   const config = [
