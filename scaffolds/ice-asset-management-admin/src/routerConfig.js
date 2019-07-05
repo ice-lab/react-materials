@@ -54,6 +54,10 @@ const routerConfig = [
         path: '/account/setting',
         component: Setting,
       },
+      {
+        path: '/',
+        redirect: '/manage/company',
+      },
     ],
   },
 ];
