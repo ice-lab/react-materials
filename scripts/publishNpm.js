@@ -23,11 +23,11 @@ files.forEach((item) => {
     stdio: 'inherit',
     cwd: dirpath,
   });
-  execSync('tnpm update', {
-    stdio: 'inherit',
-    cwd: dirpath,
-  });
-  execSync('npm version patch', {
+  // execSync('tnpm update', {
+  //   stdio: 'inherit',
+  //   cwd: dirpath,
+  // });
+  execSync('npm version major', {
     stdio: 'inherit',
     cwd: dirpath,
   });
