@@ -67,6 +67,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-creator-admin"

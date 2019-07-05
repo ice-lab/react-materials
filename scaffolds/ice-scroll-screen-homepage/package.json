@@ -70,6 +70,10 @@
       "https://img.alicdn.com/tfs/TB1DxX7JCzqK1RjSZFLXXcn2XXa-2860-1580.png"
     ]
   },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v2"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-scroll-screen-homepage"
