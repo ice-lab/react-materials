@@ -1,5 +1,4 @@
-/* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import styles from './index.module.scss';
@@ -77,41 +76,31 @@ const config = {
   ],
 };
 
-const cardTitle = {
+const defaultCardTitle = {
   day: '24 小时',
   month: '30 天',
   year: '12 个月',
 };
 
-export default class BuilderTimes extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cardTitle: cardTitle.day,
-    };
+export default function BuilderTimes() {
+  const [cardTitle, setCardTitle] = useState(defaultCardTitle.day);
+
+  function handleChange(value) {
+    setCardTitle(defaultCardTitle[value]);
   }
 
-  handleChange = (value) => {
-    this.setState({
-      cardTitle: cardTitle[value],
-    });
-  };
-
-  render() {
-    return (
-      <IceContainer>
-        <div className={styles.cardHead}>
-          <h4 className={styles.cardTitle}>{this.state.cardTitle}构建数</h4>
-          <Select size="large" defaultValue="day" onChange={this.handleChange}>
-            <Option value="day">24 小时</Option>
-            <Option value="month">30 天</Option>
-            <Option value="year">12 个月</Option>
-          </Select>
-        </div>
-        <ReactHighcharts config={config} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <div className={styles.cardHead}>
+        <h4 className={styles.cardTitle}>{cardTitle}构建数</h4>
+        <Select size="large" defaultValue="day" onChange={handleChange}>
+          <Option value="day">24 小时</Option>
+          <Option value="month">30 天</Option>
+          <Option value="year">12 个月</Option>
+        </Select>
+      </div>
+      <ReactHighcharts config={config} />
+    </IceContainer>
+  );
 }
-
-
+BuilderTimes.displayName = 'BuilderTimes';

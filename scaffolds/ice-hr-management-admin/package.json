@@ -9,9 +9,9 @@
     "public/",
     "tests/",
     "_gitignore",
-    ".editorconfig",
-    ".eslintignore",
-    ".eslintrc",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc",
     "ice.config.js"
   ],
   "dependencies": {
@@ -51,7 +51,7 @@
     "start": "ice-scripts dev",
     "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
-    "lint": "eslint . --ext '.js,.jsx' --fix"
+    "lint": "eslint . --ext '.js,.jsx'"
   },
   "publishConfig": {
     "access": "public"

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Button, Dialog, Message } from '@alifd/next';
-import ContractTable from '../../components/ContractTable';
+import ContractTable from '@/components/ContractTable';
 import CustomNotice from './components/CustomNotice';
 import CreateContractForm from './components/CreateContractForm';
 import styles from './index.module.scss';

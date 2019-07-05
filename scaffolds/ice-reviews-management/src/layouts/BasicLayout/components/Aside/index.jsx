@@ -1,4 +1,3 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';

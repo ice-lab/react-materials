@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
-import CustomTable from '../../../../components/CustomTable';
+import CustomTable from '@/components/CustomTable';
 import TableFilter from '../TableFilter';
 import styles from './index.module.scss';
 
@@ -19,61 +19,50 @@ const getData = (length = 10) => {
   });
 };
 
-export default class TaskTable extends Component {
-  state = {
-    isLoading: false,
-    data: [],
-  };
+export default function TaskTable() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
 
-  componentDidMount() {
-    this.fetchData(10);
-  }
-
-  mockApi = (len) => {
+  function mockApi(len) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData(len));
       }, 600);
     });
-  };
+  }
 
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
+  async function fetchData(len) {
+    await setIsLoading(true);
+    const d = await mockApi(len);
+    setData(d);
+    setIsLoading(false);
+  }
 
-  handleSubmit = () => {
-    this.fetchData(5);
-  };
+  function handleSubmit() {
+    fetchData(5);
+  }
 
-  renderState = (value) => {
+  function renderState(value) {
     return (
       <div className={styles.state}>
-        <span className={styles.stateText}>{value}</span>
+        <span className={styles.stateText}>
+          {value}
+        </span>
       </div>
     );
-  };
+  }
 
-  renderOper = () => {
+  function renderOper() {
     return (
       <div className={styles.oper}>
-        <a href="/">查看</a>
+        <a href="/">
+          查看
+        </a>
       </div>
     );
-  };
+  }
 
-  columnsConfig = () => {
+  function columnsConfig() {
     return [
       {
         title: '时间',
@@ -109,35 +98,33 @@ export default class TaskTable extends Component {
         title: '状态',
         dataIndex: 'state',
         key: 'state',
-        cell: this.renderState,
+        cell: renderState,
       },
       {
         title: '详情',
         dataIndex: 'detail',
         key: 'detail',
-        cell: this.renderOper,
+        cell: renderOper,
       },
     ];
-  };
-
-  render() {
-    const { data, isLoading } = this.state;
-
-    return (
-      <IceContainer>
-        <div className={styles.tableHead}>
-          <div className={styles.tableTitle}>构建任务</div>
-        </div>
-        <TableFilter handleSubmit={this.handleSubmit} />
-        <CustomTable
-          columns={this.columnsConfig()}
-          dataSource={data}
-          isLoading={isLoading}
-          onChange={this.fetchData}
-        />
-      </IceContainer>
-    );
   }
+
+  useEffect(() => {
+    fetchData(10);
+  }, []);
+
+  return (
+    <IceContainer>
+      <div className={styles.tableHead}>
+        <div className={styles.tableTitle}>构建任务</div>
+      </div>
+      <TableFilter handleSubmit={handleSubmit} />
+      <CustomTable
+        columns={columnsConfig()}
+        dataSource={data}
+        isLoading={isLoading}
+        onChange={fetchData}
+      />
+    </IceContainer>
+  );
 }
-
-

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableFilter from './Filter';
-
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const random = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -24,91 +23,61 @@ const getData = (length = 10) => {
   });
 };
 
-export default class DepartmentTable extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
+export default function DepartmentTable() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  mockApi = (len) => {
+  function mockApi(len) {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(getData(len));
       }, 600);
     });
-  };
-
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData();
-      }
-    );
-  };
-
-  handleFilterChange = () => {
-    this.fetchData(5);
-  };
-
-  renderOper = () => {
-    return (
-      <div>
-        <a className={styles.link}>详情</a>
-        <span className={styles.separator} />
-        <a className={styles.link}>申请权限</a>
-      </div>
-    );
-  };
-
-  render() {
-    const { isLoading, data, current } = this.state;
-
-    return (
-      <IceContainer className={styles.container}>
-        <h4 className={styles.title}>部门列表</h4>
-        <TableFilter onChange={this.handleFilterChange} />
-        <Table
-          loading={isLoading}
-          dataSource={data}
-          hasBorder={false}
-          className={styles.table}
-        >
-          <Table.Column title="编号" dataIndex="index" />
-          <Table.Column title="部门名称" dataIndex="name" />
-          <Table.Column title="部门主管" dataIndex="lead" />
-          <Table.Column title="部门人数" dataIndex="total" />
-          <Table.Column title="成立时间" dataIndex="createTime" />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
-        />
-      </IceContainer>
-    );
   }
+
+  function fetchData(len) {
+    setLoading(true);
+    mockApi(len).then((data) => {
+      setLoading(false);
+      setDataSource(data);
+    });
+  }
+
+  function handlePaginationChange(current) {
+    setCurrentPage(current);
+    fetchData();
+  }
+
+  function handleFilterChange() {
+    fetchData(5);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <IceContainer className={styles.container}>
+      <h4 className={styles.title}>部门列表</h4>
+      <TableFilter onChange={handleFilterChange} />
+      <Table
+        loading={isLoading}
+        dataSource={dataSource}
+        hasBorder={false}
+        className={styles.table}
+      >
+        <Table.Column title="编号" dataIndex="index" />
+        <Table.Column title="部门名称" dataIndex="name" />
+        <Table.Column title="部门主管" dataIndex="lead" />
+        <Table.Column title="部门人数" dataIndex="total" />
+        <Table.Column title="成立时间" dataIndex="createTime" />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={currentPage}
+        onChange={handlePaginationChange}
+      />
+    </IceContainer>
+  );
 }

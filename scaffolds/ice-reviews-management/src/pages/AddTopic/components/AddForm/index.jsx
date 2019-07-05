@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState, useRef } from 'react';
 import IceContainer from '@icedesign/container';
 import {
@@ -122,7 +121,6 @@ function AddForm(props) {
               >
                 <div style={{ marginTop: '20px' }}>
                   <img
-                    ref="targetViewer"
                     alt=""
                     src="https://img.alicdn.com/tps/TB19O79MVXXXXcZXVXXXXXXXXXX-1024-1024.jpg"
                     width="120px"

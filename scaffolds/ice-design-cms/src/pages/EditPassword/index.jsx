@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
+import CustomBreadcrumb from '@/components/CustomBreadcrumb';
 import ChangePasswordForm from './components/ChangePasswordForm';
 
 export default function EditPassword() {

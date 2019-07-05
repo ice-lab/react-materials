@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -108,6 +107,7 @@ function CustomForm(props) {
       } if (item.component === 'RangePicker') {
         return renderDatePicker(item);
       }
+      return null;
     });
   };
 

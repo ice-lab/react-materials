@@ -1,4 +1,3 @@
-/* eslint react/jsx-no-bind: 0 */
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Button } from '@alifd/next';

@@ -8,7 +8,7 @@ import UserActivities from '@/pages/UserActivities';
 import UserLogin from '@/pages/UserLogin';
 import UserRegister from '@/pages/UserRegister';
 import Setting from '@/pages/Setting';
-import NotFound from '@/components/NotFound';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [{
   path: '/account',

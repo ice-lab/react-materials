@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Input, Table, Pagination, Message } from '@alifd/next';
 
 const getData = (length = 10) => {
@@ -15,104 +15,76 @@ const getData = (length = 10) => {
   });
 };
 
-export default class TableFilter extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
+export default function TableFilter() {
+  const [current, setCurrent] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
+  function fetchData(len, callback) {
+    setLoading(true);
+
+    setTimeout(() => {
+      setDataSource(getData(len));
+      setLoading(false);
+      callback && callback();
+    }, 1 * 1000);
   }
-
-  mockApi = (len) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(getData(len));
-      }, 600);
+  function handlePageChange(pageIndex) {
+    fetchData(10, () => {
+      setCurrent(pageIndex);
     });
-  };
-
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData(10);
-      }
-    );
-  };
-
-  handleApply = () => {
+  }
+  function handleFilterChange() {
+    setCurrent(1);
+    fetchData(5);
+  }
+  function handleApply() {
     Message.success('申请权限已发送，请十分钟之后再试');
-  };
-
-  onChange = () => {
-    this.fetchData(5);
-  };
-
-  renderOper = () => {
+  }
+  function renderOper() {
     return (
       <div>
         <a style={styles.link}>详情</a>
         <span style={styles.separator} />
-        <a style={styles.link} onClick={this.handleApply}>
+        <a style={styles.link} onClick={handleApply}>
           申请权限
         </a>
       </div>
     );
-  };
+  }
 
-  render() {
-    const { isLoading, data, current } = this.state;
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    return (
-      <div style={styles.container}>
-        <div style={styles.tableHead}>
-          <div style={styles.label}>页面名称:</div>
-          <Input
-            placeholder="请输入页面名称"
-            hasClear
-            onChange={this.onChange}
-            style={{ width: '220px' }}
-          />
-        </div>
-        <Table dataSource={data} loading={isLoading} hasBorder={false}>
-          <Table.Column title="页面名称" dataIndex="pageName" width={100} />
-          <Table.Column title="事件名称" dataIndex="eventName" width={150} />
-          <Table.Column title="事件ID" dataIndex="eventId" width={100} />
-          <Table.Column title="方案名称" dataIndex="schemeName" width={100} />
-          <Table.Column title="成功数" dataIndex="successNum" width={100} />
-          <Table.Column title="失败数" dataIndex="failedNum" width={100} />
-          <Table.Column title="负责人" dataIndex="leader" width={100} />
-          <Table.Column title="操作" cell={this.renderOper} width={200} />
-        </Table>
-        <Pagination
-          style={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
+  return (
+    <div style={styles.container}>
+      <div style={styles.tableHead}>
+        <div style={styles.label}>页面名称:</div>
+        <Input
+          placeholder="请输入页面名称"
+          hasClear
+          onChange={handleFilterChange}
+          style={{ width: '220px' }}
         />
       </div>
-    );
-  }
+      <Table dataSource={dataSource} loading={loading} hasBorder={false}>
+        <Table.Column title="页面名称" dataIndex="pageName" width={100} />
+        <Table.Column title="事件名称" dataIndex="eventName" width={150} />
+        <Table.Column title="事件ID" dataIndex="eventId" width={100} />
+        <Table.Column title="方案名称" dataIndex="schemeName" width={100} />
+        <Table.Column title="成功数" dataIndex="successNum" width={100} />
+        <Table.Column title="失败数" dataIndex="failedNum" width={100} />
+        <Table.Column title="负责人" dataIndex="leader" width={100} />
+        <Table.Column title="操作" cell={renderOper} width={200} />
+      </Table>
+      <Pagination
+        style={styles.pagination}
+        current={current}
+        onChange={handlePageChange}
+      />
+    </div>
+  );
 }
 
 const styles = {

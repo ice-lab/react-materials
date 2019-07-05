@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
+
 import CustomTable from './CustomTable';
 import styles from './index.module.scss';
 
@@ -11,28 +12,18 @@ const tabs = [
   { tab: '我的 AppKey', key: 'my', content: <CustomTable /> },
 ];
 
-function handleChange(key) {
-  console.log('change', key);
-}
-
-function handleClick(key) {
-  console.log('click', key);
-}
-
-export default class AppKey extends Component {
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <Tab onChange={handleChange}>
-          {tabs.map((item) => {
-            return (
-              <TabPane key={item.key} title={item.tab} onClick={handleClick}>
-                {item.content}
-              </TabPane>
-            );
-          })}
-        </Tab>
-      </IceContainer>
-    );
-  }
+export default function AppKey() {
+  return (
+    <IceContainer className={styles.container}>
+      <Tab>
+        {tabs.map((item) => {
+          return (
+            <TabPane key={item.key} title={item.tab}>
+              {item.content}
+            </TabPane>
+          );
+        })}
+      </Tab>
+    </IceContainer>
+  );
 }

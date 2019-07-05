@@ -1,18 +1,21 @@
-.container{
+.container {
   padding: 40px 0;
 }
-.content{
+
+.content {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
-.item{
+
+.item {
   width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
-.image{
+
+.image {
   height: 50px;
   width: 50px;
   text-align: center;
@@ -20,16 +23,19 @@
   border-radius: 8px;
   position: relative;
 }
-.itemTitle{
+
+.itemTitle {
   font-size: 12px;
   text-align: center;
   margin: 10px 0 0;
 }
-.iconImage{
+
+.iconImage {
   width: 30px;
   height: 30px;
 }
-.count{
+
+.count {
   color: white;
   background-color: #ff382f;
   border-radius: 50%;

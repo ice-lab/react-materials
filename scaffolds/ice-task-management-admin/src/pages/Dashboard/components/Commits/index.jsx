@@ -1,6 +1,6 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
 import LineChart from '../LineChart';
 
 const data = [

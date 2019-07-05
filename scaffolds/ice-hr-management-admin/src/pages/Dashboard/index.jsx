@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Overview from './components/Overview';
 import QuickNav from './components/QuickNav';
 import SalaryChart from './components/SalaryChart';
 import Employee from './components/Employee';
 
-import styles from './index.module.scss'
-
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        <QuickNav />
-        <Overview />
-        <Employee />
-        <SalaryChart />
-      </div>
-    );
-  }
+export default function Dashboard() {
+  return (
+    <div>
+      <QuickNav />
+      <Overview />
+      <Employee />
+      <SalaryChart />
+    </div>
+  );
 }

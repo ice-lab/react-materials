@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Checkbox, Table, Pagination } from '@alifd/next';
 
 const { Group: CheckboxGroup } = Checkbox;
@@ -33,61 +33,33 @@ const checkboxOptions = [
   },
 ];
 
-export default class TableFilter extends Component {
-  state = {
-    current: 1,
-    isLoading: false,
-    data: [],
-  };
+export default function TableFilter() {
+  const [current, setCurrent] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
+  function fetchData(len, callback) {
+    setLoading(true);
+
+    setTimeout(() => {
+      setDataSource(getData(len));
+      setLoading(false);
+      callback && callback();
+    }, 1 * 1000);
   }
-
-  mockApi = (len) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(getData(len));
-      }, 600);
+  function handlePageChange(pageIndex) {
+    fetchData(10, () => {
+      setCurrent(pageIndex);
     });
-  };
-
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  handlePaginationChange = (current) => {
-    this.setState(
-      {
-        current,
-      },
-      () => {
-        this.fetchData(10);
-      }
-    );
-  };
-
-  onChange = () => {
-    this.fetchData(5);
-  };
-
-  renderOper = () => {
+  }
+  function handleFilterChange() {
+    setCurrent(1);
+    fetchData(5);
+  }
+  function renderOper() {
     return <a style={styles.link}>详情</a>;
-  };
-
-  renderStat = (value) => {
+  }
+  function renderStat(value) {
     return (
       <div>
         <span style={{ ...styles.stat, ...styles.successColor }}>
@@ -101,41 +73,41 @@ export default class TableFilter extends Component {
         </span>
       </div>
     );
-  };
+  }
 
-  render() {
-    const { isLoading, data, current } = this.state;
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    return (
-      <div style={styles.container}>
-        <div style={styles.tableHead}>
-          <div style={styles.label}>状态:</div>
-          <CheckboxGroup
-            style={{ marginLeft: '10px' }}
-            defaultValue={['success', 'error']}
-            dataSource={checkboxOptions}
-            onChange={this.onChange}
-          />
-        </div>
-        <Table loading={isLoading} dataSource={data} hasBorder={false}>
-          <Table.Column title="方案名称" dataIndex="schemeName" />
-          <Table.Column title="创建时间" dataIndex="time" />
-          <Table.Column title="负责人" dataIndex="leader" />
-          <Table.Column
-            title="监控统计"
-            dataIndex="stat"
-            cell={this.renderStat}
-          />
-          <Table.Column title="操作" cell={this.renderOper} />
-        </Table>
-        <Pagination
-          style={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
+  return (
+    <div style={styles.container}>
+      <div style={styles.tableHead}>
+        <div style={styles.label}>状态:</div>
+        <CheckboxGroup
+          style={{ marginLeft: '10px' }}
+          defaultValue={['success', 'error']}
+          dataSource={checkboxOptions}
+          onChange={handleFilterChange}
         />
       </div>
-    );
-  }
+      <Table loading={loading} dataSource={dataSource} hasBorder={false}>
+        <Table.Column title="方案名称" dataIndex="schemeName" />
+        <Table.Column title="创建时间" dataIndex="time" />
+        <Table.Column title="负责人" dataIndex="leader" />
+        <Table.Column
+          title="监控统计"
+          dataIndex="stat"
+          cell={renderStat}
+        />
+        <Table.Column title="操作" cell={renderOper} />
+      </Table>
+      <Pagination
+        style={styles.pagination}
+        current={current}
+        onChange={handlePageChange}
+      />
+    </div>
+  );
 }
 
 const styles = {

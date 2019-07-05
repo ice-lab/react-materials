@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import timeIcon from './images/time.svg';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const mock = [
   {
@@ -32,36 +32,34 @@ const mock = [
   },
 ];
 
-export default class Warning extends Component {
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <div className={styles.content}>
-          {mock.map((item, index) => {
-            return (
-              <div className={styles.item} key={index}>
-                <div
+export default function Warning() {
+  return (
+    <IceContainer className={styles.container}>
+      <div className={styles.content}>
+        {mock.map((item, index) => {
+          return (
+            <div className={styles.item} key={index}>
+              <div
+                style={{
+                  background: `${item.backgroundColor}`,
+                }}
+                className={styles.image}
+              >
+                <img
+                  alt=""
+                  src={timeIcon}
                   style={{
-                    background: `${item.backgroundColor}`,
+                    transform: `rotate(${index * 72}deg)`,
                   }}
-                  className={styles.image}
-                >
-                  <img
-                    alt=""
-                    src={timeIcon}
-                    style={{
-                      transform: `rotate(${index * 72}deg)`,
-                    }}
-                    className={styles.iconImage}
-                  />
-                  <div className={styles.count}>{item.count}</div>
-                </div>
-                <p className={styles.itemTitle}>{item.title}</p>
+                  className={styles.iconImage}
+                />
+                <div className={styles.count}>{item.count}</div>
               </div>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+              <p className={styles.itemTitle}>{item.title}</p>
+            </div>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }

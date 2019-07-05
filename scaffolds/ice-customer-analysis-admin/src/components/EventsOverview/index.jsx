@@ -1,4 +1,3 @@
-/* eslint react/jsx-no-target-blank: 0 */
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Balloon, Grid } from '@alifd/next';

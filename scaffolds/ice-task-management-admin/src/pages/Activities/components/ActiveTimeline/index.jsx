@@ -1,7 +1,7 @@
 import React from 'react';
 import { Timeline } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
 
 const { Item: TimelineItem } = Timeline;
 

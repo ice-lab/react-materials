@@ -1,5 +1,4 @@
-/* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import styles from './index.module.scss';
@@ -9,7 +8,7 @@ const Highcharts = require('highcharts');
 
 const { Option } = Select;
 const random = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * ((max - min) + 1)) + min;
 };
 
 const chartConfig = {
@@ -85,42 +84,43 @@ const chartConfig = {
   ],
 };
 
-export default class BasicPieChart extends Component {
-  state = {
-    selectedValue: 'day',
-    config: chartConfig,
-  };
+export default function BasicPieChart() {
+  const [selectedValue, setSelectedValue] = useState('day');
+  const [config, setConfig] = useState(chartConfig);
 
-  handleChange = (value) => {
-    const { config } = this.state;
+  function handleChange(val) {
     config.series[0].data[0].y = random(20, 40);
-    this.setState({
-      selectedValue: value,
-      config,
-    });
-  };
-
-  render() {
-    const { selectedValue, config } = this.state;
-    return (
-      <IceContainer>
-        <div className={styles.cardHead}>
-          <h4 className={styles.cardTitle}>Client 构建分布</h4>
-          <Select
-            size="large"
-            defaultValue="day"
-            value={selectedValue}
-            onChange={this.handleChange}
-          >
-            <Option value="day">今日</Option>
-            <Option value="yesterday">昨日</Option>
-            <Option value="week">7 天</Option>
-            <Option value="year">12 个月</Option>
-          </Select>
-        </div>
-        <ReactHighcharts config={config} />
-      </IceContainer>
-    );
+    setSelectedValue(val);
+    setConfig(config);
   }
-}
 
+  return (
+    <IceContainer>
+      <div className={styles.cardHead}>
+        <h4 className={styles.cardTitle}>
+          Client 构建分布
+        </h4>
+        <Select
+          size="large"
+          defaultValue="day"
+          value={selectedValue}
+          onChange={handleChange}
+        >
+          <Option value="day">
+            今日
+          </Option>
+          <Option value="yesterday">
+            昨日
+          </Option>
+          <Option value="week">
+            7 天
+          </Option>
+          <Option value="year">
+            12 个月
+          </Option>
+        </Select>
+      </div>
+      <ReactHighcharts config={config} />
+    </IceContainer>
+  );
+}

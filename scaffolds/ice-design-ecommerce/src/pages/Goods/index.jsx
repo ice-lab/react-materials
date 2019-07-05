@@ -1,6 +1,6 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import CustomTable from '../../components/CustomTable';
+import CustomTable from '@/components/CustomTable';
 
 const defaultSearchQuery = {
   id: '',

@@ -5,7 +5,7 @@ import Query from '@/pages/Query';
 import UserLogin from '@/pages/UserLogin';
 import App from '@/pages/App';
 import Home from '@/pages/Home';
-import NotFound from '@/components/NotFound';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [{
   path: '/user',
@@ -16,6 +16,8 @@ const routerConfig = [{
   }, {
     path: '/',
     redirect: '/user/login',
+  }, {
+    component: NotFound,
   }],
 }, {
   path: '/',

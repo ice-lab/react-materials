@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import {
@@ -15,7 +14,7 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
-import PageHead from '../../../../components/PageHead';
+import PageHead from '@/components/PageHead';
 import styles from './index.module.scss';
 
 const { Option } = Select;

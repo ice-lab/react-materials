@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dialog, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import CustomTable from '../../components/CustomTable';
+import CustomTable from '@/components/CustomTable';
 import styles from './index.module.scss';
 
 const defaultSearchQuery = {

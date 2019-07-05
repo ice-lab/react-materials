@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import CustomBreadcrumb from '../../components/CustomBreadcrumb';
+import React, { useState, useEffect } from 'react';
+
+import CustomBreadcrumb from '@/components/CustomBreadcrumb';
 import Filter from './Components/Filter';
 import CardList from './Components/CardList';
 
@@ -15,62 +16,43 @@ const getData = (length = 10) => {
   });
 };
 
-export default class Scheme extends Component {
-  state = {
-    isLoading: false,
-    data: [],
-  };
+export default function Scheme() {
+  const [loading, setLoading] = useState(false);
+  const [dataSource, setDataSource] = useState([]);
 
-  componentDidMount() {
-    this.fetchData();
+  function fetchData(len, callback) {
+    setLoading(true);
+
+    setTimeout(() => {
+      setDataSource(getData(len));
+      setLoading(false);
+      callback && callback();
+    }, 1 * 1000);
   }
 
-  mockApi = (len) => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(getData(len));
-      }, 600);
-    });
-  };
-
-  fetchData = (len) => {
-    this.setState(
-      {
-        isLoading: true,
-      },
-      () => {
-        this.mockApi(len).then((data) => {
-          this.setState({
-            data,
-            isLoading: false,
-          });
-        });
-      }
-    );
-  };
-
-  handleFilterChange = () => {
-    this.fetchData(2);
-  };
-
-  render() {
-    const { isLoading, data } = this.state;
-    const breadcrumb = [
-      {
-        link: '/#/maintain/scheme',
-        text: '埋点维护',
-      },
-      {
-        link: '',
-        text: '方案管理',
-      },
-    ];
-    return (
-      <div>
-        <CustomBreadcrumb items={breadcrumb} title="方案管理" />
-        <Filter onChange={this.handleFilterChange} />
-        <CardList isLoading={isLoading} data={data} />
-      </div>
-    );
+  function handleFilterChange() {
+    fetchData(5);
   }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const breadcrumb = [
+    {
+      link: '/#/maintain/scheme',
+      text: '埋点维护',
+    },
+    {
+      link: '',
+      text: '方案管理',
+    },
+  ];
+  return (
+    <div>
+      <CustomBreadcrumb items={breadcrumb} title="方案管理" />
+      <Filter onChange={handleFilterChange} />
+      <CardList loading={loading} dataSource={dataSource} />
+    </div>
+  );
 }

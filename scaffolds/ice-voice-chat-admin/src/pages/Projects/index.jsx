@@ -1,4 +1,3 @@
-/* eslint no-mixed-operators:0 */
 import React, { useState } from 'react';
 import { Input } from '@alifd/next';
 import TopBar from '@/components/TopBar';

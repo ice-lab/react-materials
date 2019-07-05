@@ -1,17 +1,17 @@
-import UserLayout from './layouts/UserLayout';
-import BasicLayout from './layouts/BasicLayout';
+import UserLayout from '@/layouts/UserLayout';
+import BasicLayout from '@/layouts/BasicLayout';
 
-import UserLogin from './pages/UserLogin';
-import UserRegister from './pages/UserRegister';
-import Dashboard from './pages/Dashboard';
-import Reserve from './pages/Reserve';
-import Asset from './pages/Asset';
-import OrderList from './pages/OrderList';
-import Goods from './pages/Goods';
-import Membership from './pages/Membership';
-import AddReserve from './pages/AddReserve';
-import AddGoods from './pages/AddGoods';
-import NotFound from './components/NotFound';
+import UserLogin from '@/pages/UserLogin';
+import UserRegister from '@/pages/UserRegister';
+import Dashboard from '@/pages/Dashboard';
+import Reserve from '@/pages/Reserve';
+import Asset from '@/pages/Asset';
+import OrderList from '@/pages/OrderList';
+import Goods from '@/pages/Goods';
+import Membership from '@/pages/Membership';
+import AddReserve from '@/pages/AddReserve';
+import AddGoods from '@/pages/AddGoods';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [
   {

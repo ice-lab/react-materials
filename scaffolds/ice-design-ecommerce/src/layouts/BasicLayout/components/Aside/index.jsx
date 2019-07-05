@@ -1,8 +1,7 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React from 'react';
 import { Nav } from '@alifd/next';
 import { withRouter, Link } from 'react-router-dom';
-import { asideMenuConfig } from '../../../../menuConfig';
+import { asideMenuConfig } from '@/menuConfig';
 import styles from './index.module.scss';
 
 const NavItem = Nav.Item;
