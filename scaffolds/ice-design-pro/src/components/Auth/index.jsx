@@ -33,13 +33,12 @@ const Auth = ({ children, authorities = [] }) => {
   const { authority } = cookie.parse(document.cookie);
 
   if (authorities.indexOf(authority) === -1) {
-    const displayUser = authority ? authority : 'Guest';
     // 也可以跳转到统一的无权限页面，具体看业务需求
     return (
       <Exception
         statusCode="403"
         description={<span>
-          <p>抱歉，当前用户为 {displayUser}, 没有权限访问该页面</p>
+          <p>抱歉，当前用户为 {authority || 'Guest'}, 没有权限访问该页面</p>
           <p>您可以<Link to="/user/login">登录 Admin 用户</Link>再查看该页面</p>
         </span>}
       />
