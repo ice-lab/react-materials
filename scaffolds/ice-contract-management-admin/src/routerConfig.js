@@ -27,19 +27,19 @@ const routerConfig = [
     ],
   },
   {
-    path: '/contract',
+    path: '/',
     component: BasicLayout,
     children: [
       {
-        path: '/my',
+        path: '/contract/my',
         component: MyContract,
       },
       {
-        path: '/search',
+        path: '/contract/search',
         component: ContractSearch,
       },
       {
-        path: '/index',
+        path: '/contract/index',
         component: ContractCenter,
       },
       {
