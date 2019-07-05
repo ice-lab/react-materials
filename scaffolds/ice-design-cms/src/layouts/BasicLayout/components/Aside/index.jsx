@@ -5,7 +5,7 @@ import cx from 'classnames';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Nav } from '@alifd/next';
 import Logo from '../Logo';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu';
 import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;

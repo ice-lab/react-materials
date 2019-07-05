@@ -5,7 +5,7 @@ import Layout from '@icedesign/layout';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link, withRouter } from 'react-router-dom';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { headerMenuConfig } from '@/menuConfig';
+import { headerMenuConfig } from '@/config/menu';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';

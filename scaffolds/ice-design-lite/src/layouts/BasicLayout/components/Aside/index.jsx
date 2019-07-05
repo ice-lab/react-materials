@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { Icon, Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 

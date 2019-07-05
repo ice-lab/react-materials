@@ -5,7 +5,7 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import IceImg from '@icedesign/img';
 import Logo from '../Logo';
 import Notify from '@/components/Notify';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu';
 
 import styles from './index.module.scss';
 

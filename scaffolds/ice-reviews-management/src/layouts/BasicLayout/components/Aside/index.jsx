@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 
