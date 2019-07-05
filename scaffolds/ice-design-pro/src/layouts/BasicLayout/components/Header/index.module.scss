@@ -3,14 +3,14 @@ $ice-header-icon-down-color: #fff !default;
 
 /* HEADER */
 .iceDesignLayoutHeader {
-  width: 100%;
-  padding: 10px 0px;
-  margin: 0px auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: none;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
   background: transparent;
+  box-shadow: none;
   .userAvatar {
     margin-right: 12px;
     border-radius: 4px;
@@ -20,8 +20,8 @@ $ice-header-icon-down-color: #fff !default;
 
     :global {
       .ice-menu {
-        background: transparent;
         color: $ice-header-text-color;
+        background: transparent;
         .ice-menu-item:hover,
         .ice-menu-item > a:hover {
           color: #2077ff;
@@ -32,20 +32,20 @@ $ice-header-icon-down-color: #fff !default;
   .iceDesignHeaderUserpannel {
     display: flex;
     align-items: center;
-    font-size: 12px;
     margin-left: 20px;
+    font-size: 12px;
     cursor: pointer;
     .userProfile {
       display: inline-block;
-      text-align: center;
       margin-bottom: 2px;
       color: $ice-header-text-color;
+      text-align: center;
       .userName {
         font-size: 13px;
       }
       .userDepartment {
-        font-size: 12px;
         color: #999;
+        font-size: 12px;
       }
     }
     .iconDown {
@@ -70,14 +70,14 @@ $ice-header-icon-down-color: #fff !default;
 
 .userProfileMenu {
   width: 130px;
-  border-radius: 6px;
   padding: 0 16px;
+  border-radius: 6px;
   .userProfileMenuItem {
-    cursor: pointer;
     height: 40px;
-    line-height: 40px;
-    font-size: 12px;
     color: #666;
+    font-size: 12px;
+    line-height: 40px;
+    cursor: pointer;
     i {
       margin-right: 5px;
     }
