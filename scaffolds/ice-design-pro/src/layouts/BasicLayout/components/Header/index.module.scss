@@ -11,6 +11,19 @@ $ice-header-icon-down-color: #fff !default;
   padding: 10px 0;
   background: transparent;
   box-shadow: none;
+
+  :global {
+    .next-nav {
+      background: transparent;
+      .next-nav-item.next-menu-item {
+        background: transparent;
+        &:hover {
+          background: transparent;
+          // color: $color-b1-6;
+        }
+      }
+    }
+  }
   .userAvatar {
     margin-right: 12px;
     border-radius: 4px;
@@ -51,19 +64,6 @@ $ice-header-icon-down-color: #fff !default;
     .iconDown {
       margin-left: 2px;
       color: $ice-header-icon-down-color;
-    }
-  }
-
-  :global {
-    .next-nav {
-      background: transparent;
-      .next-nav-item.next-menu-item {
-        background: transparent;
-        &:hover {
-          background: transparent;
-          // color: $color-b1-6;
-        }
-      }
     }
   }
 }

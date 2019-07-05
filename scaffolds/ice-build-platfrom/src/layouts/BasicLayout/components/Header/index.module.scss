@@ -28,6 +28,14 @@
       background: transparent;
       border: none;
 
+      a:hover {
+        color: #2077ff;
+      }
+
+      i {
+        margin-right: 5px;
+      }
+
       a:link, a:visited, i {
         color: $color-text1-3;
       }
@@ -85,13 +93,5 @@
     font-size: 12px;
     line-height: 40px;
     cursor: pointer;
-
-    a:hover {
-      color: #2077ff;
-    }
-
-    i {
-      margin-right: 5px;
-    }
   }
 }

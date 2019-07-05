@@ -90,22 +90,22 @@ function EditableTable(props) {
         <Table.Column
           width={280}
           title={formatMessage({ id: 'app.dashboard.todo.index' })}
-          cell={() => {
-            renderEditor('todo');
+          cell={(value, index, record) => {
+            renderEditor('todo', value, index, record);
           }}
         />
         <Table.Column
           width={240}
           title={formatMessage({ id: 'app.dashboard.todo.remark' })}
-          cell={() => {
-            renderEditor('remark');
+          cell={(value, index, record) => {
+            renderEditor('remark', value, index, record);
           }}
         />
         <Table.Column
           width={180}
           title={formatMessage({ id: 'app.dashboard.todo.time' })}
-          cell={() => {
-            renderEditor('validity');
+          cell={(value, index, record) => {
+            renderEditor('validity', value, index, record);
           }}
         />
         <Table.Column

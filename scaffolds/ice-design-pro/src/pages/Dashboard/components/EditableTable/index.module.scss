@@ -2,12 +2,12 @@
 
 .editableTable {
   .celleditor {
+    .celleditor-trigger {
+      display: none;
+    }
     &:hover .celleditor-trigger {
       display: inline-block;
     }
-  }
-  .celleditor-trigger {
-    display: none;
   }
 }
 
