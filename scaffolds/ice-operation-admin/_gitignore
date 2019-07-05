@@ -1,18 +1,20 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-
-# production
-/build
-/dist
-
-# misc
-.idea/
-.happypack
+node_modules
 .DS_Store
+lerna-debug.log
+npm-debug.log
+mochawesome-report
+.happypack
 package-lock.json
+yarn.lock
+yarn-error.log
+tempDir
+coverage/
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+blocks/**/lib/
+components/**/lib/
+
+.eslintcache
+build
+.vscode/
+.tmp/
+screenshot.png

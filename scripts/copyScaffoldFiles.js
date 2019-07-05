@@ -4,7 +4,20 @@
 
 const fs = require('fs');
 
-const removeFiles = ['_eslintrc', '_eslintignore', '_editorconfig', '.eslintrc', '.eslintignore', '.editorconfig'];
+const removeFiles = [
+  '_eslintrc',
+  '_eslintignore',
+  '_editorconfig',
+  '_gitignore',
+  '_stylelintrc',
+  '_stylelintignore',
+  '.eslintrc',
+  '.eslintignore',
+  '.editorconfig',
+  '.gitignore',
+  '.stylelintrc',
+  '.stylelintignore',
+];
 const scaffoldDir = './scaffolds';
 const templateDir = './scripts/templates';
 const scaffolds = fs.readdirSync(scaffoldDir);
