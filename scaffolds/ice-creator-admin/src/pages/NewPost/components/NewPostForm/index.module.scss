@@ -1,8 +1,8 @@
 .title {
   margin-bottom: 30px;
-  font-size: 18px;
-  font-weight: 500;
   color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .formContent {
@@ -10,9 +10,9 @@
 }
 
 .formItem {
-  margin-bottom: 25px;
   display: flex;
   align-items: center;
+  margin-bottom: 25px;
 }
 
 .formLabel {
@@ -26,9 +26,9 @@
 }
 
 .tips {
+  margin: 20px 0;
   color: #f37327;
   font-size: 12px;
-  margin: 20px 0;
 }
 
 .submitButton {

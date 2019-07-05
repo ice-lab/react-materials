@@ -1,8 +1,8 @@
 
 .formContainer {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   max-width: 368px;
   margin: 0 auto;
 
@@ -12,8 +12,8 @@
 
   .formItem {
     position: relative;
-    margin-bottom: 25px;
     flex-direction: column;
+    margin-bottom: 25px;
   }
 
   .formItemCol {
@@ -22,25 +22,25 @@
   }
 
   .formTitle {
-    padding: 40px 0;
     margin: 0;
+    padding: 40px 0;
     color: transparentize($color-black, 0.2);
-    font-size: 33px;
     font-weight: 500;
+    font-size: 33px;
     text-align: center;
   }
 
   .inputIcon {
     position: absolute;
-    left: 12px;
     top: 50%;
-    transform: translateY(-50%);
+    left: 12px;
     color: $color-text1-2;
+    transform: translateY(-50%);
   }
 
   .submitBtn {
-    font-size: 16px;
     height: 40px;
+    font-size: 16px;
     line-height: 40px;
     background: $color-brand1-6;
     border-radius: 4px;
@@ -61,13 +61,13 @@
 
   .tipsText {
     color: $color-text1-2;
-    text-decoration: none;
     font-size: 13px;
+    text-decoration: none;
   }
 
   .line {
-    color: $color-line1-2;
     margin: 0 8px;
+    color: $color-line1-2;
   }
 
   .nextInputSingle {

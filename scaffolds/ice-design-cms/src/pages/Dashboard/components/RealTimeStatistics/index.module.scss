@@ -4,10 +4,10 @@
 }
 
 .itemBody {
-  color: #fff;
   height: 144px;
-  padding: 10px 20px;
   margin-bottom: 20px;
+  padding: 10px 20px;
+  color: #fff;
   border-radius: 4px;
 }
 
@@ -47,10 +47,10 @@
 }
 
 .tag {
+  position: absolute;
   top: 0;
   right: 0;
   padding: 2px 4px;
-  position: absolute;
   font-size: 12px;
   background: transparentize(#fff, 0.7);
   border-radius: 4px;

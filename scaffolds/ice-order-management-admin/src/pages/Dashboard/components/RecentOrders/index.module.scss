@@ -5,11 +5,11 @@
 }
 
 .dot {
+  position: absolute;
+  top: 2px;
+  left: 0;
   width: 10px;
   height: 10px;
-  position: absolute;
-  left: 0;
-  top: 2px;
   border-radius: 50%;
 }
 

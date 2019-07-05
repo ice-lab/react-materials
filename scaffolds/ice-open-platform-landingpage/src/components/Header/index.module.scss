@@ -1,16 +1,16 @@
 .headerContainer {
   position: absolute;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 999;
 
   .headerContent {
-    max-width: 1200px;
-    width: 100%;
-    margin: 20px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
   }
 
   .headerSearchInput {
@@ -19,14 +19,14 @@
 
     :global {
       .next-input {
+        width: auto;
         background-color: transparent;
         border-color: #dcdee3;
-        width: auto;
 
         input {
           width: 100px;
-          transition: all ease-out 0.3s;
           color: #fff;
+          transition: all ease-out 0.3s;
 
           &::placeholder {
             color: rgba(255, 255, 255, 0.7);
@@ -35,9 +35,9 @@
 
           &:focus,
           &:hover {
-            background-color: #fff;
             width: 200px;
             color: #333;
+            background-color: #fff;
 
             &::placeholder {
               color: #999;

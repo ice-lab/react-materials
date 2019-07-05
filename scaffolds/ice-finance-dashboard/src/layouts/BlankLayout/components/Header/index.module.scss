@@ -4,11 +4,11 @@
   min-width: 1200px;
 
   .headerContent {
-    width: 100%;
-    height: 88px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 88px;
     border-bottom: 4px solid #283448;
   }
 
@@ -18,14 +18,14 @@
 
     :global {
       .next-menu {
+        color: #fff !important;
         background: transparent !important;
         border: none;
         box-shadow: none;
-        color: #fff !important;
 
         .next-menu-item {
-          background: transparent !important;
           color: #fff !important;
+          background: transparent !important;
 
           i {
             margin-right: 1em;

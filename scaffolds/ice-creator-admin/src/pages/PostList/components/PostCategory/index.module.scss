@@ -2,14 +2,14 @@
   height: 60px;
   padding: 0 20px;
   line-height: 60px;
-  border-radius: 6px;
   background-color: #fff;
+  border-radius: 6px;
 }
 
 .navItemWraper {
-  height: 60px;
   display: flex;
   align-items: center;
+  height: 60px;
   line-height: 60px;
 }
 
@@ -20,13 +20,13 @@
 }
 
 .postCategoryItem {
-  flex: 0 0 49%;
-  width: 49%;
-  padding: 10px;
   display: flex;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+  flex: 0 0 49%;
   flex-direction: row;
+  box-sizing: border-box;
+  width: 49%;
+  margin-bottom: 20px;
+  padding: 10px;
   background-color: #f6f6f6;
 }
 
@@ -35,8 +35,8 @@
 }
 
 .blockDetail {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .blockTitle {
@@ -61,10 +61,10 @@
 }
 
 .blockBtn {
-  right: 10px;
-  color: #fff;
-  bottom: 10px;
   position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #fff;
   background: #5e83fb;
   border-radius: 3px;
 }

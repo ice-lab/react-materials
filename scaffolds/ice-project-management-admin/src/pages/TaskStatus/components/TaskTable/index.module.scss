@@ -9,49 +9,49 @@
 .title {
   margin: 0;
   padding: 15px 20px;
-  font-size: 16px;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
+  font-size: 16px;
   border-bottom: 1px solid #f0f0f0;
 }
 
 .btnl {
   display: inline-block;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  background: #447eff;
   margin-right: 8px;
+  padding: 6px 12px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  background: #447eff;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .btnr {
   display: inline-block;
   padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
   color: #fff;
+  font-size: 12px;
   text-decoration: none;
-  cursor: pointer;
   background: #ee706d;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .state {
+  position: relative;
   color: #ee706d;
   font-weight: bold;
-  position: relative;
 }
 
 .dot {
+  position: absolute;
+  top: 4px;
+  left: -12px;
   width: 8px;
   height: 8px;
   background: #ee706d;
   border-radius: 50%;
-  position: absolute;
-  top: 4px;
-  left: -12px;
 }
 
 .pagination {

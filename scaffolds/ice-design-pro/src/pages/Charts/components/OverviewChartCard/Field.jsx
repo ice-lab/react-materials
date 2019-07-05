@@ -13,6 +13,6 @@ export default function Field(props) {
 }
 
 Field.propTypes = {
-  value: PropTypes.string,
-  label: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };

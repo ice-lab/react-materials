@@ -3,13 +3,13 @@
 
   &::before {
     position: absolute;
-    content: '';
-    width: 100%;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100%;
     height: 0.6px;
     background: #fff;
     opacity: 0.5;
+    content: '';
   }
 }
 
@@ -24,40 +24,40 @@
   }
 
   h3 {
-    font-size: 26px;
-    font-weight: 400;
-    line-height: 40px;
-    color: #999;
     margin-bottom: 12px;
+    color: #999;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 40px;
   }
 }
 
 .scenarioSlider {
-  display: inline-block;
   position: relative;
+  display: inline-block;
 
   .scenarioItem {
+    float: left;
     width: 112px;
     height: 158px;
     margin: 0 9px;
     font-size: 0;
-    -webkit-transition: background 0.3s linear;
-    transition: background 0.3s linear;
     border-radius: 4px;
     cursor: pointer;
-    float: left;
+    -webkit-transition: background 0.3s linear;
+    transition: background 0.3s linear;
 
     > img {
-      margin: 15px 0;
+      display: inline-block;
       width: 60px;
       height: 60px;
-      display: inline-block;
+      margin: 15px 0;
     }
 
     > h4 {
       color: #373737;
-      font-size: 16px;
       font-weight: 400;
+      font-size: 16px;
       line-height: 21px;
     }
 
@@ -100,8 +100,8 @@
   position: relative;
   width: 1240px;
   margin: 0 auto;
-  text-align: left;
   margin-top: 17px;
+  text-align: left;
 
   &::before {
     background: #979797;
@@ -109,9 +109,9 @@
 
   .scenarioDetailItem {
     position: relative;
-    display: none;
     top: 0;
     left: 0;
+    display: none;
     padding-top: 78px;
 
     &.selected {
@@ -119,24 +119,24 @@
     }
 
     .scenarioDetailLeft {
-      padding-left: 13px;
-      padding-bottom: 12px;
       width: 570px;
+      padding-bottom: 12px;
+      padding-left: 13px;
 
       > h4 {
         margin-bottom: 16px;
-        font-size: 32px;
         color: #333;
-        line-height: 40px;
         font-weight: 400;
+        font-size: 32px;
+        line-height: 40px;
         vertical-align: bottom;
       }
 
       > p {
-        font-size: 12px;
-        color: #333;
-        line-height: 22px;
         max-width: 434px;
+        color: #333;
+        font-size: 12px;
+        line-height: 22px;
       }
 
       .scenarioAbilityList {
@@ -147,10 +147,10 @@
         .abilityTitle {
           margin-top: 22px;
           margin-bottom: 12px;
-          font-size: 16px;
-          line-height: 20px;
           color: #999;
           font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
         }
 
         .abilityRealRow {
@@ -158,47 +158,47 @@
         }
 
         .abilityDesc {
-          font-size: 12px;
-          color: #333;
-          line-height: 25px;
           max-width: 434px;
+          color: #333;
+          font-size: 12px;
+          line-height: 25px;
         }
 
         .circleItem {
           position: relative;
           display: table-cell;
-          vertical-align: middle;
-          text-align: center;
+          box-sizing: border-box;
           width: 68px;
           height: 69px;
           padding: 0 10px;
-          box-sizing: border-box;
           color: #666;
           font-size: 14px;
           line-height: 18px;
+          text-align: center;
+          vertical-align: middle;
 
           &::before {
-            background: #999;
-            left: 0;
+            position: absolute;
             top: 0;
+            left: 0;
             width: 65px;
             height: 65px;
-            content: '';
-            position: absolute;
+            background: #999;
             border-radius: 50%;
             opacity: 0.1;
+            content: '';
           }
 
           &::after {
+            position: absolute;
             right: 0;
             bottom: 0;
-            border: 0.6px solid #999;
             width: 65px;
             height: 65px;
-            content: '';
-            position: absolute;
+            border: 0.6px solid #999;
             border-radius: 50%;
             opacity: 0.1;
+            content: '';
           }
 
           &.blueCircle {
@@ -216,33 +216,33 @@
 
         .circleItemSpacing {
           display: table-cell;
-          font-size: 0;
           width: 14px;
+          font-size: 0;
         }
       }
     }
 
     .scenarioDetailRight {
-      width: 720px;
       position: absolute;
       top: 0;
       bottom: 0;
       left: 570px;
+      width: 720px;
       overflow: hidden;
 
       > img {
-        width: 100%;
         position: absolute;
         bottom: 0;
+        width: 100%;
       }
     }
   }
 }
 
 .scenarioActions {
-  background: #ecf3fd;
-  text-align: center;
   display: none;
+  text-align: center;
+  background: #ecf3fd;
 
   &.selected {
     display: block;
@@ -252,21 +252,21 @@
     display: inline-block;
     margin: 30px 7px;
     padding: 12px 56px;
+    font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    font-weight: 400;
-    border-radius: 5px;
-    border: 1px solid #108ee9;
     text-decoration: none;
+    border: 1px solid #108ee9;
+    border-radius: 5px;
 
     &.primary {
-      background: #108ee9;
       color: #fff;
+      background: #108ee9;
     }
 
     &.secondary {
-      color: #108ee9;
       padding: 12px 45px;
+      color: #108ee9;
     }
   }
 }

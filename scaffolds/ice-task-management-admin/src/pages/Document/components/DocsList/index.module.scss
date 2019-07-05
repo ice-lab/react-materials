@@ -1,18 +1,18 @@
 .container {
-  padding: 0;
   min-height: 800px;
+  padding: 0;
 }
 
 .item {
-  padding: 20px;
-  border-bottom: 1px solid #f0f0f0;
   position: relative;
   display: block;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .title {
-  margin-left: 16px;
   margin-right: 24px;
+  margin-left: 16px;
   color: #314659;
   font-size: 14px;
 }

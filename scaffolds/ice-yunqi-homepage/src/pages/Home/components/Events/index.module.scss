@@ -10,20 +10,20 @@
 }
 
 .mainTitle {
-  font-size: 60px;
-  color: #fff;
-  letter-spacing: 0.77px;
-  line-height: 72px;
   margin: 0;
+  color: #fff;
   font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: 0.77px;
 }
 
 .mainDesc {
+  margin-top: 8px;
+  color: #fff;
+  font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  color: #fff;
-  margin-top: 8px;
-  font-weight: 700;
 }
 
 .items {
@@ -32,44 +32,44 @@
 }
 
 .item {
+  position: relative;
   float: left;
   height: 360px;
   background-repeat: no-repeat;
   background-position: 50%;
-  position: relative;
 }
 
 .itemFull {
-  width: 100%;
-  background-image: url(https://img.alicdn.com/tfs/TB1Ylpwn5OYBuNjSsD4XXbSkFXa-2884-720.png);
-  background-size: cover;
+  position: relative;
   float: left;
+  width: 100%;
   height: 360px;
+  background-image: url(https://img.alicdn.com/tfs/TB1Ylpwn5OYBuNjSsD4XXbSkFXa-2884-720.png);
   background-repeat: no-repeat;
   background-position: 50%;
-  position: relative;
+  background-size: cover;
 }
 
 .itemLeft {
-  width: 46%;
-  background-image: url(https://img.alicdn.com/tfs/TB1SQ5cwXOWBuNjy0FiXXXFxVXa-1340-720.png);
-  background-size: cover;
+  position: relative;
   float: left;
+  width: 46%;
   height: 360px;
+  background-image: url(https://img.alicdn.com/tfs/TB1SQ5cwXOWBuNjy0FiXXXFxVXa-1340-720.png);
   background-repeat: no-repeat;
   background-position: 50%;
-  position: relative;
+  background-size: cover;
 }
 
 .itemRight {
-  width: 54%;
-  background-size: cover;
-  background-image: url(https://img.alicdn.com/tfs/TB15sxxwgmTBuNjy1XbXXaMrVXa-1556-720.png);
+  position: relative;
   float: left;
+  width: 54%;
   height: 360px;
+  background-image: url(https://img.alicdn.com/tfs/TB15sxxwgmTBuNjy1XbXXaMrVXa-1556-720.png);
   background-repeat: no-repeat;
   background-position: 50%;
-  position: relative;
+  background-size: cover;
 }
 
 .itemBox {
@@ -83,11 +83,11 @@
 }
 
 .itemFullBox {
-  left: 46%;
-  max-width: 54%;
   position: absolute;
   bottom: 0;
+  left: 46%;
   width: 100%;
+  max-width: 54%;
   height: 158px;
   padding: 28px 90px;
   background: rgba(0, 0, 0, 0.7);
@@ -95,8 +95,8 @@
 }
 
 .itemLeftBox {
-  right: 0;
   position: absolute;
+  right: 0;
   bottom: 0;
   width: 100%;
   height: 158px;
@@ -106,9 +106,9 @@
 }
 
 .itemRightBox {
-  left: 0;
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 158px;
   padding: 28px 90px;
@@ -117,20 +117,20 @@
 }
 
 .subtit {
-  font-size: 20px;
-  line-height: 30px;
   color: #fff;
   font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .desc {
-  font-size: 14px;
-  line-height: 22px;
-  color: #fff;
+  display: -webkit-box;
   height: 66px;
   margin-top: 6px;
   overflow: hidden;
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
   text-overflow: ellipsis;
-  display: -webkit-box;
   -webkit-line-clamp: 4;
 }

@@ -90,17 +90,23 @@ function EditableTable(props) {
         <Table.Column
           width={280}
           title={formatMessage({ id: 'app.dashboard.todo.index' })}
-          cell={renderEditor.bind(null, 'todo')}
+          cell={(value, index, record) => {
+            renderEditor('todo', value, index, record);
+          }}
         />
         <Table.Column
           width={240}
           title={formatMessage({ id: 'app.dashboard.todo.remark' })}
-          cell={renderEditor.bind(null, 'remark')}
+          cell={(value, index, record) => {
+            renderEditor('remark', value, index, record);
+          }}
         />
         <Table.Column
           width={180}
           title={formatMessage({ id: 'app.dashboard.todo.time' })}
-          cell={renderEditor.bind(null, 'validity')}
+          cell={(value, index, record) => {
+            renderEditor('validity', value, index, record);
+          }}
         />
         <Table.Column
           title={formatMessage({ id: 'app.dashboard.todo.oper' })}

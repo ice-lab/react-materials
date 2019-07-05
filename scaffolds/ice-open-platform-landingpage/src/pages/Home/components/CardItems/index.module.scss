@@ -1,34 +1,34 @@
 .hyThirdPartyWrapper {
-  background: #fff;
   min-width: 1280px;
+  background: #fff;
 }
 
 .hyThirdParty {
+  width: 1200px;
+  margin: 0 auto;
   padding-top: 47px;
   padding-bottom: 40px;
   text-align: center;
-  width: 1200px;
-  margin: 0 auto;
 }
 
 .hyThirdPartyTitle {
   position: relative;
-  font-size: 26px;
-  line-height: 40px;
+  margin-bottom: 40px;
   color: #999;
   font-weight: 400;
+  font-size: 26px;
+  line-height: 40px;
   vertical-align: middle;
-  margin-bottom: 40px;
 }
 
 .thirdPartyMore {
   position: absolute;
-  right: 0;
   top: 12px;
+  right: 0;
   color: #108ee9;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
-  font-weight: 400;
   text-decoration: none;
 }
 
@@ -40,26 +40,26 @@
 }
 
 .thirdPartyDetail {
-  z-index: 0;
-  font-size: 0;
   position: absolute;
-  left: 0;
   top: 0;
-  width: 100%;
+  left: 0;
+  z-index: 0;
   display: block;
+  width: 100%;
+  font-size: 0;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear;
 }
 
 .thirdPartyDetailItem {
   display: inline-block;
-  vertical-align: top;
+  box-sizing: border-box;
   width: 270px;
   height: 400px;
-  border-radius: 2px 2px 0 0;
   margin: 0 20px;
+  vertical-align: top;
   border: 1px solid #eaeaea;
-  box-sizing: border-box;
+  border-radius: 2px 2px 0 0;
   -webkit-transition: -webkit-transform 0.2s linear;
   transition: transform 0.2s linear, \n-webkit-transform 0.2s linear;
 }
@@ -73,25 +73,25 @@
 }
 
 .thirdPartyDetailImg {
-  width: 270px;
-  height: 180px;
-  border-radius: 2px 2px 0 0;
   position: relative;
   left: -1px;
+  width: 270px;
+  height: 180px;
   border: 0;
+  border-radius: 2px 2px 0 0;
 }
 
 .thirdPartyName {
   margin-top: 20px;
-  font-size: 20px;
-  line-height: 28px;
   color: #333;
   font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .thirdPartySold {
-  font-size: 14px;
   color: #333;
+  font-size: 14px;
   line-height: 20px;
 }
 
@@ -101,20 +101,20 @@
 }
 
 .thirdPartyDesc {
+  height: 60px;
   margin: 14px 15px 0;
   color: #333;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
-  height: 60px;
 }
 
 .thirdPartyLink {
-  margin-top: 15px;
   display: inline-block;
+  margin-top: 15px;
   padding: 5px 37px;
-  font-size: 14px;
   color: #108ee9;
+  font-size: 14px;
   border: 1px solid #108ee9;
   border-radius: 4px;
   -webkit-transition: all 0.2s linear;

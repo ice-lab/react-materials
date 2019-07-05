@@ -2,8 +2,8 @@
 .item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin: 20px 0;
 }
 
@@ -12,12 +12,12 @@
 }
 
 .title {
-  font-size: 12px;
   margin-bottom: 10px;
+  font-size: 12px;
 }
 
 .value {
-  font-size: 22px;
   color: #333;
   font-weight: bold;
+  font-size: 22px;
 }

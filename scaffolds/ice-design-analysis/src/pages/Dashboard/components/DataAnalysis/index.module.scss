@@ -1,21 +1,21 @@
 .container {
-  background-color: #000;
-  color: #fff;
   position: relative;
   height: 100vh;
+  color: #fff;
+  background-color: #000;
 }
 
 .main {
-  padding: 20px;
   display: flex;
   flex-direction: row;
   height: 100vh;
+  padding: 20px;
 }
 
 .bg {
   position: absolute;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   left: 0;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .pageTitle {
-  font-size: 36px;
   margin: 0;
+  font-size: 36px;
 }
 
 .time {
@@ -46,36 +46,36 @@
 
 .sum {
   height: 44px;
-  line-height: 44px;
   margin: 25px 0 0;
   color: #f7d947;
-  font-size: 62px;
   font-weight: 400;
+  font-size: 62px;
+  line-height: 44px;
 }
 
 .title {
   max-width: 340px;
   margin: 0 auto;
   padding: 4px 2px;
-  border-radius: 2px;
-  font-size: 16px;
-  background-color: rgba(26, 72, 78, 0.6);
   color: #f7d947;
+  font-size: 16px;
   text-align: center;
+  background-color: rgba(26, 72, 78, 0.6);
+  border-radius: 2px;
 }
 
 .list {
+  margin-top: 20px;
   color: #fff;
   line-height: 36px;
-  margin-top: 20px;
 }
 
 .item {
-  border-bottom: 1px solid #00f0ff;
   width: 300px;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #00f0ff;
 }
 
 .name {

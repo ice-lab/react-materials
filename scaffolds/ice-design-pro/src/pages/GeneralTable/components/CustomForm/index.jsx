@@ -90,6 +90,7 @@ export default function CustomForm(props) {
       } else if (item.component === 'RangePicker') {
         return renderDatePicker(item);
       }
+      return null;
     });
   }
 

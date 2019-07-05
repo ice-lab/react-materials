@@ -1,6 +1,6 @@
 .profile {
-  margin: 68px 0;
   display: flex;
+  margin: 68px 0;
 }
 
 .head {
@@ -9,10 +9,10 @@
 }
 
 .circle {
+  display: inline-block;
   width: 10px;
   height: 10px;
   margin-right: 10px;
-  display: inline-block;
   border-radius: 5px;
 }
 
@@ -30,10 +30,10 @@
 }
 
 .cellTitle {
-  color: #666;
-  line-height: 14px;
-  font-size: 14px;
   margin-right: 5px;
+  color: #666;
+  font-size: 14px;
+  line-height: 14px;
 }
 
 .body {
@@ -43,24 +43,24 @@
 }
 
 .costValue {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 30px;
   height: 30px;
   color: #333;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 30px;
 }
 
 .costUnit {
   margin-left: 2px;
-  font-size: 12px;
   color: #333;
+  font-size: 12px;
 }
 
 .footer {
   display: flex;
   margin-top: 10px;
-  font-size: 12px;
   color: #999;
+  font-size: 12px;
 }
 
 .footerText {

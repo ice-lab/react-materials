@@ -1,7 +1,7 @@
 .notfoundContent {
   display: flex;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
   min-height: 500px;
 }
 
@@ -10,9 +10,9 @@
 }
 
 .title {
+  margin: 20px 0;
   color: #333;
   font-size: 24px;
-  margin: 20px 0;
 }
 
 .description {

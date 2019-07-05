@@ -7,12 +7,12 @@
 .logoText {
   display: block;
   max-width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   margin-left: 10px;
-  font-size: 20px;
+  overflow: hidden;
   color: #333;
   font-weight: bold;
+  font-size: 20px;
+  white-space: nowrap;
   text-decoration: none;
+  text-overflow: ellipsis;
 }

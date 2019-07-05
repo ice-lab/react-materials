@@ -1,15 +1,15 @@
 .headerContainer {
-  width: 100%;
-  padding: 10px 20px;
-  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
 }
 
 .logo {
-  color: white;
   margin: 0;
+  color: white;
 }
 
 .rightContainer {
@@ -23,8 +23,8 @@
 .userPanel {
   display: flex;
   align-items: center;
-  color: #fff;
   margin-left: 20px;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -35,8 +35,8 @@
 
 .userProfile {
   display: inline-block;
-  text-align: center;
   margin-bottom: 2px;
+  text-align: center;
 }
 
 .userName {
@@ -49,15 +49,15 @@
 
 .userProfileMenu {
   width: 130px;
-  border-radius: 0;
   padding: 0 16px;
+  border-radius: 0;
 }
 
 .userProfileMenuItem {
   height: 40px;
-  line-height: 40px;
-  font-size: 12px;
   color: #666;
+  font-size: 12px;
+  line-height: 40px;
   cursor: pointer;
 }
 

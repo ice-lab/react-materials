@@ -1,10 +1,10 @@
 .wrapper {
   display: flex;
-  overflow: hidden;
-  margin-top: -88px;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  margin-top: -88px;
   padding-bottom: 60px;
+  overflow: hidden;
 }
 
 .titleWrapper {
@@ -30,37 +30,37 @@
 }
 
 .desc {
-  color: #6d7a82;
   width: 525px;
-  font-size: 16px;
   margin-top: 24px;
-  text-align: center;
+  color: #6d7a82;
+  font-size: 16px;
   line-height: 1.5;
+  text-align: center;
 }
 
 .brandListWrapper {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
   max-width: 1150px;
   margin-top: 75px;
-  justify-content: space-around;
 }
 
 .brandItem {
   display: flex;
-  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
   max-width: 150px;
   max-height: 40px;
-  align-items: center;
   margin-bottom: 60px;
-  justify-content: center;
+  padding: 0 20px;
 }
 
 .brandImage {
   width: auto;
-  height: auto;
   max-width: 150px;
+  height: auto;
   max-height: 40px;
 }
 

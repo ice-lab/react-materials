@@ -29,14 +29,14 @@
 }
 
 .title {
-  margin: 0 0 5px;
   width: 90%;
+  margin: 0 0 5px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-size: 16px;
-  font-weight: 500;
   color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .desc {

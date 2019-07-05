@@ -1,8 +1,8 @@
 .box {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
 }
 
@@ -15,9 +15,9 @@
   display: flex;
   align-items: center;
   margin: 10px;
-  font-size: 30px;
-  font-weight: 400;
   color: rgba(0, 0, 0, 0.85);
+  font-weight: 400;
+  font-size: 30px;
 }
 
 .arrowIcon {

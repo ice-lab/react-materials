@@ -1,16 +1,16 @@
 .container {
+  z-index: 9;
   width: 400px;
   padding: 40px;
   background: #fff;
   border-radius: 6px;
-  z-index: 9;
 }
 
 .title {
   margin: 0 0 40px;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 28px;
   font-weight: 500;
+  font-size: 28px;
   text-align: center;
 }
 
@@ -21,8 +21,8 @@
 
 .inputIcon {
   position: absolute;
-  left: 10px;
   top: 6px;
+  left: 10px;
   color: #666;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .tips {
-  margin-top: 20px;
   display: block;
+  margin-top: 20px;
   text-align: center;
 }

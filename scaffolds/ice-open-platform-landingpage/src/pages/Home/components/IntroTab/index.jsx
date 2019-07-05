@@ -152,7 +152,6 @@ export default function IntroTab() {
           <div className={styles.scenarioDetailLeft}>
             <h4>
               小区生活号
-              <a href="" />
             </h4>
             <p>
               以生活号为阵地，接入各项业务，搭建智慧社区运营阵地。可以通过此平台对用户进行信息推送、服务输出、交易场景打通和会员关系管理；
@@ -221,7 +220,6 @@ export default function IntroTab() {
           <div className={styles.scenarioDetailLeft}>
             <h4>
               社区理财
-              <a href="" />
             </h4>
             <p>
               物业公司在收到物业费停车费等相关费用后，直接发起余利宝的申购，能享受理财收益，待需要费用支出时，再从余利宝中赎回，将资金付给相关人员

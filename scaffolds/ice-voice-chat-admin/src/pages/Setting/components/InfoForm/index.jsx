@@ -9,7 +9,7 @@ import styles from './index.module.scss';
 
 const { Group: RadioGroup } = Radio;
 
-export default function infoForm() {
+export default function InfoForm() {
   const [formData, setFormData] = useState({
     project: 'weather',
     status: 'yes',

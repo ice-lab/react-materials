@@ -6,11 +6,11 @@
 }
 
 .title {
-  color: rgba(0, 0, 0, 0.8);
   margin: 0 0 40px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 500;
   font-size: 28px;
   text-align: center;
-  font-weight: 500;
 }
 
 .formItem {
@@ -19,10 +19,10 @@
 }
 
 .inputIcon {
+  position: absolute;
   top: 8px;
   left: 8px;
   color: #666;
-  position: absolute;
 }
 
 .inputCol {
