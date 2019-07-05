@@ -14,7 +14,7 @@ export default function Exception(props) {
         <img src={image} className={styles.exceptionImage} alt="页面不存在" />
         <div className="exception-prompt">
           <h1 className={styles.statuscode}>{statusCode}</h1>
-          <p className={styles.description}>{description}</p>
+          <div className={styles.description}>{description}</div>
           <Button type="primary">
             <Link to={redirect} className={styles.backText}>
               {backText}
@@ -36,7 +36,7 @@ Exception.defaultProps = {
 
 Exception.propTypes = {
   statusCode: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.element,
   image: PropTypes.string,
   backText: PropTypes.string,
   redirect: PropTypes.string,
