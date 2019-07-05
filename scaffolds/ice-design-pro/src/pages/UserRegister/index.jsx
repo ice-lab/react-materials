@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
@@ -22,7 +21,7 @@ function checkPasswd2(rule, values, callback, stateValues) {
 }
 
 const UserRegister = withRouter((props) => {
-  const [value, useValue] = useState({
+  const [value, setValue] = useState({
     name: '',
     email: '',
     passwd: '',
@@ -30,7 +29,17 @@ const UserRegister = withRouter((props) => {
   });
 
   function formChange(val) {
-    useValue(val);
+    setValue(val);
+  }
+
+  async function handleRegister() {
+    try {
+      await request(userRegister);
+      Message.success('注册成功');
+      props.history.push('/user/login');
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   function handleSubmit(values, errors) {
@@ -39,16 +48,6 @@ const UserRegister = withRouter((props) => {
       return;
     }
     handleRegister();
-  }
-
-  async function handleRegister() {
-    try {
-      await request(userRegister);
-      Message.success('注册成功');
-      props.history.push('/user/login');
-    /* eslint no-empty: ["error", { "allowEmptyCatch": true }] */
-    } catch (err) {
-    }
   }
 
   return (

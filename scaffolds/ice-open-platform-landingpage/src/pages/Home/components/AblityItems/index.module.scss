@@ -1,27 +1,30 @@
 .hyAbilityStyles {
-  font-family: Microsoft YaHei;
   height: 223px;
   text-align: center;
   background: #fff;
-};
+}
+
 .hyAbilityItemStyle {
   display: inline-block;
   width: 280px;
   margin: 38px 35px 0;
   vertical-align: top;
-};
+}
+
 .hyAbilityItemImgStyle {
   height: 62px;
-};
+}
+
 .hyAbilityItemTitleStyle {
-  font-size: 20px;
-  line-height: 26px;
+  margin: 18px 0 10px;
   color: #333;
   font-weight: 400;
-  margin: 18px 0 10px;
-};
+  font-size: 20px;
+  line-height: 26px;
+}
+
 .hyAbilityItemSubtitleStyle {
-  font-size: 16px;
   color: #999;
+  font-size: 16px;
   line-height: 21px;
-};
+}

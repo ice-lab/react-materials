@@ -1,4 +1,3 @@
-/* eslint react/jsx-no-target-blank: 0 */
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import IceContainer from '@icedesign/container';

@@ -1,43 +1,51 @@
 .item {
   display: flex;
-  padding: 10px 0;
   justify-content: center;
+  padding: 10px 0;
 }
+
 .itemIcon {
-  color:  $color-brand1-6;
   display: flex;
   align-items: center;
-  margin-right: 20px;
   justify-content: center;
+  margin-right: 20px;
+  color: $color-brand1-6;
 }
+
 .title {
+  margin-bottom: 5px;
   color: $color-text1-2;
   font-size: 12px;
-  margin-bottom: 5px;
 }
+
 .count {
-  color: $color-brand1-6;
   margin: 10px 0;
-  font-size: 24px;
+  color: $color-brand1-6;
   font-weight: bold;
+  font-size: 24px;
 }
+
 .data {
   color: $color-text1-2;
   font-size: 12px;
 }
+
 .period {
   margin-left: 10px;
 }
+
 .down {
   width: 6px;
   height: 9px;
 }
+
 .up {
   width: 6px;
   height: 9px;
 }
+
 .extraIcon {
-  top: 1px;
   position: relative;
+  top: 1px;
   margin-left: 5px;
 }

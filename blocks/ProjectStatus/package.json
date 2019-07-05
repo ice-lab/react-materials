@@ -42,9 +42,9 @@
   },
   "homepage": "https://unpkg.com/@icedesign/project-status-block/build/index.html",
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
-    "screenshot": "ice-devtools screenshot",
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "devDependencies": {

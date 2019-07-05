@@ -17,3 +17,4 @@ components/**/lib/
 build
 .vscode/
 .tmp/
+screenshot.png

@@ -1,107 +1,95 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
 
 const FormItem = Form.Item;
+const field = new Field({});
+const init = field.init;
 
-export default class EditDialog extends Component {
-  static displayName = 'EditDialog';
+export default function EditDialog(props) {
+  const [visible, setVisible] = useState(false);
+  const [dataIndex, setDataIndex] = useState(null);
+  const [formData, setFormData] = useState({});
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      dataIndex: null,
-    };
-    this.field = new Field(this);
-  }
-
-  handleSubmit = () => {
-    this.field.validate((errors, values) => {
+  const handleSubmit = () => {
+    field.validate((errors, values) => {
       if (errors) {
         console.log('Errors in form!!!');
         return;
       }
 
-      const { dataIndex } = this.state;
-      this.props.getFormValues(dataIndex, values);
-      this.setState({
-        visible: false,
-      });
+      props.getFormValues(dataIndex, values);
+      setVisible(false);
     });
   };
 
-  onOpen = (index, record) => {
-    this.field.setValues({ ...record });
-    this.setState({
-      visible: true,
-      dataIndex: index,
-    });
+  const onOpen = (index, record) => {
+    console.log(record);
+    field.setValues({ ...record });
+    setVisible(true);
+    setDataIndex(index);
   };
 
-  onClose = () => {
-    this.setState({
-      visible: false,
-    });
+  const onClose = () => {
+    setVisible(false);
   };
 
-  render() {
-    const init = this.field.init;
-    const { index, record } = this.props;
-    const formItemLayout = {
-      labelCol: {
-        fixedSpan: 6,
-      },
-      wrapperCol: {
-        span: 14,
-      },
-    };
+  const onChange = (value) => {
+    setFormData(value);
+  };
 
-    return (
-      <div style={styles.editDialog}>
-        <Button type="primary" onClick={() => this.onOpen(index, record)}>
-          编辑
-        </Button>
-        <Dialog
-          style={{ width: 640 }}
-          visible={this.state.visible}
-          onOk={this.handleSubmit}
-          closable="esc,mask,close"
-          onCancel={this.onClose}
-          onClose={this.onClose}
-          title="编辑"
-        >
-          <Form direction="ver" field={this.field}>
-            <FormItem label="话题" {...formItemLayout}>
-              <Input
-                {...init('title', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
+  const { index, record } = props;
+  const formItemLayout = {
+    labelCol: {
+      fixedSpan: 6,
+    },
+    wrapperCol: {
+      span: 14,
+    },
+  };
 
-            <FormItem label="创建人：" {...formItemLayout}>
-              <Input
-                {...init('name', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
+  return (
+    <div style={styles.editDialog}>
+      <Button type="primary" onClick={() => onOpen(index, record)}>
+        编辑
+      </Button>
+      <Dialog
+        style={{ width: 640 }}
+        visible={visible}
+        onOk={handleSubmit}
+        closeable="esc,mask,close"
+        onCancel={onClose}
+        onClose={onClose}
+        title="编辑"
+      >
+        <Form field={field} onChange={onChange} value={formData}>
+          <FormItem label="话题" {...formItemLayout}>
+            <Input
+              {...init('title', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
 
-            <FormItem label="评测人数：" {...formItemLayout}>
-              <Input
-                disabled
-                {...init('articleNum', {
-                  rules: [{ required: true, message: '必填选项' }],
-                })}
-              />
-            </FormItem>
-          </Form>
-        </Dialog>
-      </div>
-    );
-  }
+          <FormItem label="创建人：" {...formItemLayout}>
+            <Input
+              {...init('name', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+
+          <FormItem label="评测人数：" {...formItemLayout}>
+            <Input
+              disabled
+              {...init('num', {
+                rules: [{ required: true, message: '必填选项' }],
+              })}
+            />
+          </FormItem>
+        </Form>
+      </Dialog>
+    </div>
+  );
 }
 
 const styles = {

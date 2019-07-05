@@ -1,4 +1,3 @@
-/* eslint jsx-a11y/no-noninteractive-element-interactions:0 */
 import React, { useEffect } from 'react';
 import { Balloon, Icon, Nav } from '@alifd/next';
 import IceImg from '@icedesign/img';

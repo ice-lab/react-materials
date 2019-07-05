@@ -1,23 +1,26 @@
+.container {
+  margin: 20px;
+  letter-spacing: 2px;
+}
 
-    .container {
-      margin: 20px;
-      letter-spacing: 2px;
-    }
-    .input {
-      margin: 0 4px;
-    }
-    .select {
-      vertical-align: middle;
-      width: 200px;
-    }
-    .shortInput {
-      width: 100px;
-    }
-    .caseNumber{
-      margin-right: 20px;
-    }
-    .button {
-      margin: 0 8px;
-      letter-spacing: 2px;
-    }
-  
+.input {
+  margin: 0 4px;
+}
+
+.select {
+  width: 200px;
+  vertical-align: middle;
+}
+
+.shortInput {
+  width: 100px;
+}
+
+.caseNumber {
+  margin-right: 20px;
+}
+
+.button {
+  margin: 0 8px;
+  letter-spacing: 2px;
+}

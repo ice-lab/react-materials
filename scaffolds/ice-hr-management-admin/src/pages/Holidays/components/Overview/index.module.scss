@@ -1,29 +1,33 @@
-.textCardItem{
-  border-right: 1px solid #f0f0f0;
-  height: 90px;
-  width: 33%;
+.textCardItem {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 90px;
+  border-right: 1px solid #f0f0f0;
 }
-.textCardSubtitle{
-  font-size: 12px;
+
+.textCardSubtitle {
   margin-bottom: 10px;
+  font-size: 12px;
 }
-.textCardTitle{
+
+.textCardTitle {
   font-size: 16px;
 }
-.textCardNumber{
+
+.textCardNumber {
+  font-weight: bold;
   font-size: 24px;
-  font-weight: bold
 }
-.textCardItemr{
-  border-right: 0;
-  height: 90px;
-  width: 33%;
+
+.textCardItemr {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 33%;
+  height: 90px;
+  border-right: 0;
 }

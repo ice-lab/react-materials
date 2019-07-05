@@ -1,23 +1,6 @@
-import React, { Component } from 'react';
-import RecommentFrom from './components/RecommendForm/index';
+import React from 'react';
+import RecommentForm from './components/RecommendForm/index';
 
-export default class RecommendFrom extends Component {
-  static displayName = 'RecommendFrom';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <RecommentFrom />
-      </div>
-    );
-  }
+export default function Index() {
+  return <RecommentForm />;
 }

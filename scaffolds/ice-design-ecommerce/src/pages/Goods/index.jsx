@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { Dialog, Button } from '@alifd/next';
+import React from 'react';
 import IceContainer from '@icedesign/container';
-import CustomTable from '../../components/CustomTable';
-import styles from './index.module.scss';
+import CustomTable from '@/components/CustomTable';
 
 const defaultSearchQuery = {
   id: '',
@@ -82,7 +80,7 @@ const formConfig = [
 ];
 
 const random = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
+  return Math.floor((Math.random() * ((max - min) + 1)) + min);
 };
 
 const mockData = Array.from({ length: 10 }).map(() => {
@@ -97,36 +95,8 @@ const mockData = Array.from({ length: 10 }).map(() => {
   };
 });
 
-export default class Goods extends Component {
-  handleDelete = () => {
-    Dialog.confirm({
-      title: '提示',
-      content: '确认删除吗',
-    });
-  };
-
-  handleDetail = () => {
-    Dialog.confirm({
-      title: '提示',
-      content: '只有管理员才能查看客户的具体信息',
-    });
-  };
-
-  renderOper = () => {
-    return (
-      <div>
-        <Button text onClick={this.handleDetail}>
-          查看
-        </Button>
-        <span className={styles.separator} />
-        <Button text onClick={this.handleDelete}>
-          删除
-        </Button>
-      </div>
-    );
-  };
-
-  getTableColumns = () => {
+export default function Goods() {
+  function getTableColumns() {
     return [
       {
         title: '商品编号',
@@ -165,19 +135,16 @@ export default class Goods extends Component {
         key: 'price',
       },
     ];
-  };
-
-  render() {
-    return (
-      <IceContainer title="商品管理">
-        <CustomTable
-          columns={this.getTableColumns()}
-          dataSource={mockData}
-          searchQueryHistory={defaultSearchQuery}
-          formConfig={formConfig}
-        />
-      </IceContainer>
-    );
   }
-}
 
+  return (
+    <IceContainer title="商品管理">
+      <CustomTable
+        columns={getTableColumns()}
+        dataSource={mockData}
+        searchQueryHistory={defaultSearchQuery}
+        formConfig={formConfig}
+      />
+    </IceContainer>
+  );
+}

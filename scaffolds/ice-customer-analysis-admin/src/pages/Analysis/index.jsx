@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import UserPortrait from '../../components/UserPortrait';
-import PassengerFlow from '../../components/PassengerFlow';
-import TimeDistribution from '../../components/TimeDistribution';
-import EventsOverview from '../../components/EventsOverview';
+import React from 'react';
+import UserPortrait from '@/components/UserPortrait';
+import PassengerFlow from '@/components/PassengerFlow';
+import TimeDistribution from '@/components/TimeDistribution';
+import EventsOverview from '@/components/EventsOverview';
 
 const mockData = [
   {
@@ -43,15 +43,13 @@ const mockData = [
   },
 ];
 
-export default class Analysis extends Component {
-  render() {
-    return (
-      <div>
-        <EventsOverview />
-        <UserPortrait />
-        <PassengerFlow title="客流分析" data={mockData} />
-        <TimeDistribution title="客流到访时间" />
-      </div>
-    );
-  }
+export default function Analysis() {
+  return (
+    <div>
+      <EventsOverview />
+      <UserPortrait />
+      <PassengerFlow title="客流分析" data={mockData} />
+      <TimeDistribution title="客流到访时间" />
+    </div>
+  );
 }

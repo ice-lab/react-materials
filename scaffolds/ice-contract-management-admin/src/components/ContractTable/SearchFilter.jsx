@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Button } from '@alifd/next';
 import CustomForm from '../CustomForm';
@@ -154,82 +153,60 @@ const formConfig = [
   },
 ];
 
-export default class SearchFilter extends Component {
-  static displayName = 'SearchFilter';
-
-  static propTypes = {
-    value: PropTypes.object.isRequired,
-    onChange: PropTypes.func,
-    onSubmit: PropTypes.func,
-    onReset: PropTypes.func,
-  };
-
-  static defaultProps = {
-    onChange: () => {},
-    onSubmit: () => {},
-    onReset: () => {},
-  }
-
-  state = {
-    showAdvancedFields: false,
-  };
+export default function SearchFilter(props) {
+  const [showAdvancedFields, setShowAdvancedFields] = useState(true);
+  const { value, onChange, onReset, onSubmit } = props;
 
   /**
    * 提交回调函数
    */
-  handleSubmit = (errors, value) => {
+  function handleSubmit(errors, formValue) {
     if (errors) {
       console.log({ errors });
       return;
     }
 
-    this.props.onSubmit(value);
-  };
+    onSubmit(formValue);
+  }
 
   /**
    * 高级搜索
    */
-  handleAdvancedSearch = () => {
-    const { showAdvancedFields } = this.state;
-    this.setState({
-      showAdvancedFields: !showAdvancedFields,
-    });
-  };
+  function handleAdvancedSearch() {
+    setShowAdvancedFields(!showAdvancedFields);
+  }
 
   /**
    * 渲染按钮
    */
-  renderExtraContent = () => {
+  function renderExtraContent() {
     return (
-      <Button text style={styles.extraContent} onClick={this.handleAdvancedSearch}>
-        高级搜索{' '}
+      <Button text style={styles.extraContent} onClick={handleAdvancedSearch}>
+        高级搜索
+        {' '}
         <Icon
           size="xs"
-          type={this.state.showAdvancedFields ? 'arrow-up' : 'arrow-down'}
+          type={showAdvancedFields ? 'arrow-up' : 'arrow-down'}
         />
       </Button>
     );
-  };
-
-  render() {
-    const { value, onChange, onReset } = this.props;
-    const { showAdvancedFields } = this.state;
-
-    const config = showAdvancedFields ? formConfig : (
-      formConfig.filter(item => !item.advanced)
-    );
-
-    return (
-      <CustomForm
-        config={config}
-        value={value}
-        formChange={onChange}
-        handleSubmit={this.handleSubmit}
-        handleReset={onReset}
-        extraContent={this.renderExtraContent()}
-      />
-    );
   }
+
+
+  const config = showAdvancedFields ? formConfig : (
+    formConfig.filter(item => !item.advanced)
+  );
+
+  return (
+    <CustomForm
+      config={config}
+      value={value}
+      formChange={onChange}
+      handleSubmit={handleSubmit}
+      handleReset={onReset}
+      extraContent={renderExtraContent()}
+    />
+  );
 }
 
 const styles = {
@@ -238,4 +215,17 @@ const styles = {
     right: '0',
     bottom: '0',
   },
+};
+
+SearchFilter.propTypes = {
+  value: PropTypes.object.isRequired,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  onReset: PropTypes.func,
+};
+
+SearchFilter.defaultProps = {
+  onChange: () => {},
+  onSubmit: () => {},
+  onReset: () => {},
 };

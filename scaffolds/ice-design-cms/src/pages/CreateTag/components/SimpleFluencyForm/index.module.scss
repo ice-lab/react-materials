@@ -7,20 +7,22 @@
   }
 }
 
-.formTitle{
+.formTitle {
   margin: 0 0 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
-};
-.formLabel{
-  text-align: right;
-  line-height: 1.7rem;
+}
+
+.formLabel {
   padding-right: 10px;
-};
-.formRow{
+  line-height: 1.7rem;
+  text-align: right;
+}
+
+.formRow {
   margin-bottom: 20px;
-};
-.formErrorWrapper{
+}
+
+.formErrorWrapper {
   margin-top: 5px;
-};
-.simpleFluencyForm{};
+}

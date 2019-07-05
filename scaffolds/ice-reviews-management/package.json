@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/reviews-management-scaffold",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "该模板适用于用户反馈和评价管理，布局方式采用左侧固定，右侧自适应方式，适合大量数据展示和界面操作",
   "author": "ice-admin@alibaba-inc.com",
   "homepage": "https://unpkg.com/@icedesign/reviews-management-scaffold@latest/build/index.html",
@@ -10,9 +10,11 @@
     "public/",
     "tests/",
     "_gitignore",
-    ".editorconfig",
-    ".eslintignore",
-    ".eslintrc",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
     "ice.config.js"
   ],
   "dependencies": {
@@ -37,13 +39,9 @@
     "access": "public"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.3",
-    "eslint": "^4.13.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
+    "@ice/spec": "^0.1.1",
+    "eslint": "^6.0.1",
+    "stylelint": "^10.1.0",
     "ice-scripts": "^2.0.0",
     "ice-plugin-fusion": "^0.1.4",
     "ice-plugin-moment-locales": "^0.1.0"
@@ -52,7 +50,9 @@
     "start": "ice-scripts dev",
     "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
-    "lint": "eslint . --ext '.js,.jsx' --fix"
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
@@ -69,6 +69,10 @@
   },
   "engines": {
     "node": ">=8.0.0"
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v2"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,118 @@
+@charset "UTF-8";
+
+.userLayout {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  padding-top: 100px;
+  background-image: url(https://img.alicdn.com/tfs/TB1vyxuwHrpK1RjSZTEXXcWAVXa-1350-900.jpg);
+  background-size: cover;
+
+  .userContent {
+    position: absolute;
+    width: 450px;
+    background: #fff;
+    border-radius: 5px;
+  }
+
+  .layerMask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  :global {
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 368px;
+      margin: 0 auto;
+    }
+
+    .formItems {
+      padding-bottom: 40px;
+    }
+
+    .formItem {
+      position: relative;
+      flex-direction: column;
+      margin-bottom: 25px;
+    }
+
+    .formItemCol {
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .formTitle {
+      margin: 0;
+      padding: 40px 0;
+      color: rgba(0, 0, 0, 0.8);
+      font-weight: 500;
+      font-size: 33px;
+      text-align: center;
+    }
+
+    .inputIcon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      color: #999;
+      transform: translateY(-50%);
+    }
+
+    .submitBtn {
+      height: 40px;
+      font-size: 16px;
+      line-height: 40px;
+      background: $color-brand1-6;
+    }
+
+    .checkbox {
+      margin-left: 5px;
+    }
+
+    .account {
+      margin: 4px 0;
+      text-align: center;
+    }
+
+    .tips {
+      justify-content: center;
+    }
+
+    .tips-text {
+      color: #999;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .line {
+      margin: 0 8px;
+      color: #dcd6d6;
+    }
+
+    .next-input.next-input-single {
+      width: 368px;
+      height: 38px;
+      line-height: 38px;
+
+      input {
+        padding-left: 32px;
+        font-size: 13px;
+      }
+    }
+
+    .next-checkbox-label {
+      color: #999;
+      font-size: 13px;
+    }
+  }
+}

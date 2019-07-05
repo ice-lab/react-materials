@@ -1,37 +1,37 @@
 .container {
-    padding: 0;
+  padding: 0;
 }
 
 .title {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 .profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .avatar {
-    width: 24px;
-    height: 24px;
-    border: 1px solid #eee;
-    background: #eee;
-    border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  background: #eee;
+  border: 1px solid #eee;
+  border-radius: 50px;
 }
 
 .name {
-    margin-left: 15px;
-    color: #314659;
-    font-size: 14px;
+  margin-left: 15px;
+  color: #314659;
+  font-size: 14px;
 }
 
 .link {
-    cursor: pointer;
-    color: #1890ff;
+  color: #1890ff;
+  cursor: pointer;
 }
 
 .edit {
-    margin-right: 5px;
-    cursor: pointer;
-    color: #1890ff;
+  margin-right: 5px;
+  color: #1890ff;
+  cursor: pointer;
 }

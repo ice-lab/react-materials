@@ -1,34 +1,45 @@
-// 以下文件格式为描述路由的协议格式
-// 你可以调整 routerConfig 里的内容
-// 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
+import BasicLayout from '@/layouts/BasicLayout';
+import UserLayout from '@/layouts/UserLayout';
+import Account from '@/pages/Account';
+import Query from '@/pages/Query';
+import UserLogin from '@/pages/UserLogin';
+import App from '@/pages/App';
+import Home from '@/pages/Home';
+import NotFound from '@/pages/NotFound';
 
-import Account from './pages/Account';
-import Query from './pages/Query';
-import UserLogin from './pages/UserLogin';
-import App from './pages/App';
-import Home from './pages/Home';
-
-const routerConfig = [
-  {
+const routerConfig = [{
+  path: '/user',
+  component: UserLayout,
+  children: [{
+    path: '/login',
+    component: UserLogin,
+  }, {
+    path: '/',
+    redirect: '/user/login',
+  }, {
+    component: NotFound,
+  }],
+}, {
+  path: '/',
+  component: BasicLayout,
+  children: [{
     path: '/dashboard',
     component: Home,
-  },
-  {
+  }, {
     path: '/account',
     component: Account,
-  },
-  {
+  }, {
     path: '/query',
     component: Query,
-  },
-  {
-    path: '/user/login',
-    component: UserLogin,
-  },
-  {
+  }, {
     path: '/app',
     component: App,
-  },
-];
+  }, {
+    path: '/',
+    redirect: '/dashboard',
+  }, {
+    component: NotFound,
+  }],
+}];
 
 export default routerConfig;

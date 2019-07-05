@@ -1,79 +1,79 @@
 .container {
-    height: 255px;
+  height: 255px;
 }
 
 .overviewData {
-    margin-top: 25px;
-    font-size: 30px;
+  margin-top: 25px;
+  font-size: 30px;
 }
 
 .overviewDataUnit {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .overviewDataDetail {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .overviewDataDetailCount {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .overviewDataDetailDesc {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #666;
+  margin-top: 5px;
+  color: #666;
+  font-size: 12px;
 }
 
 .overviewDataExtraLinks {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
 }
 
 .overviewDataExtraLinksTitle {
-    font-size: 12px;
-    color: #666;
+  color: #666;
+  font-size: 12px;
 }
 
 .overviewDataExtraLinksWrapper {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .overviewDataExtraLink {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .overviewRatingWrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .overviewRatingCount {
-    font-size: 30px;
-    margin-right: 10px;
+  margin-right: 10px;
+  font-size: 30px;
 }
 
 .overviewDetail {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .overviewDetailItem {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .overviewDetailItemPercentWrapper {
-    flex: 1;
+  flex: 1;
 }
 
 .overviewDetailItemPercent {
-    display: inline-block;
+  display: inline-block;
 }
 
 .overviewDetailItemText {
-    margin-right: 10px;
+  margin-right: 10px;
 }

@@ -1,44 +1,51 @@
-.container{
+.container {
   height: 370px;
   overflow: scroll;
 }
-.memberItem{
+
+.memberItem {
   display: flex;
   width: 100%;
   padding: 10px 10px 10px 0;
 }
-.memberAvatar{
+
+.memberAvatar {
   width: 40px;
   height: 40px;
   margin-right: 10px;
-  border-radius: 50%
+  border-radius: 50%;
 }
-.memberName{
+
+.memberName {
   margin: 0;
   color: #333;
   font-weight: bold;
 }
-.memberTitle{
+
+.memberTitle {
   margin: 0;
   color: #999;
-  font-size: 12px
+  font-size: 12px;
 }
-.item{
+
+.item {
+  position: relative;
   padding: 20px;
   border-bottom: 1px solid #f7f7f7;
-  position: relative;
   cursor: pointer;
 }
-.title{
+
+.title {
   margin-left: 10px;
+  color: #447eff;
   font-size: 16px;
-  color: #447eff
 }
-.badge{
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 400;
+
+.badge {
   position: absolute;
   right: 20px;
+  padding: 2px 8px;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 4px;
 }

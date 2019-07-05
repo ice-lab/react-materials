@@ -5,8 +5,10 @@ import styles from './index.module.scss';
 
 const PageHead = ({ title, style, ...props }) => {
   return (
-    <div className={styles.container }
-    style = {{style}}>
+    <div
+      className={styles.container}
+      style={style}
+    >
       <h3 className={styles.title}>{title}</h3>
       {props.buttonText ? (
         <Button type="primary" onClick={props.onClick}>
@@ -16,8 +18,6 @@ const PageHead = ({ title, style, ...props }) => {
     </div>
   );
 };
-
-
 
 PageHead.propTypes = {
   title: PropTypes.string.isRequired,

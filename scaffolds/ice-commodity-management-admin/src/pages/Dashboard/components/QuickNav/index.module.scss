@@ -1,24 +1,27 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .link {
-      display: block;
-      text-decoration: none;
-    }
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .icon {
-      margin-right: 5px;
-      color: #fff;
-    }
-    .title {
-      color: #fff;
-      font-size: 14px;
-      font-weight: 450;
-    }
+.link {
+  display: block;
+  text-decoration: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.title {
+  color: #fff;
+  font-weight: 450;
+  font-size: 14px;
+}

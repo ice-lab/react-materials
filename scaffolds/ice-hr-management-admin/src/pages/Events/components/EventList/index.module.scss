@@ -1,29 +1,35 @@
-.item{
+.item {
   display: flex;
   align-items: center;
-  padding-bottom: 10px;
   margin-bottom: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
-.time{
-  font-weight: bold
+
+.time {
+  font-weight: bold;
 }
-.body{
+
+.body {
   margin-left: 20px;
 }
-.title{
+
+.title {
   margin: 0;
-  font-weight: bold;
   color: #333;
+  font-weight: bold;
 }
-.description{
+
+.description {
   margin: 2px 0;
 }
-.address{
+
+.address {
   margin: 0;
   color: #666;
-  font-size: 12px
+  font-size: 12px;
 }
-.icon{
-  margin-right: 5px
+
+.icon {
+  margin-right: 5px;
 }

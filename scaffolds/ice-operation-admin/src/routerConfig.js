@@ -1,38 +1,57 @@
-// 以下文件格式为描述路由的协议格式
-// 你可以调整 routerConfig 里的内容
-// 变量名 routerConfig 为 iceworks 检测关键字，请不要修改名称
+import UserLayout from '@/layouts/UserLayout';
+import BaseLayout from '@/layouts/BaseLayout';
 
-import UserLogin from './pages/UserLogin';
-import UserRegister from './pages/UserRegister';
-import Dashboard from './pages/Dashboard';
-import Home from './pages/Home';
-import Edit from './pages/Edit';
-import View from './pages/View';
+import UserLogin from '@/pages/UserLogin';
+import UserRegister from '@/pages/UserRegister';
+import Dashboard from '@/pages/Dashboard';
+import Home from '@/pages/Home';
+import Edit from '@/pages/Edit';
+import View from '@/pages/View';
+import NotFound from '@/pages/NotFound';
 
 const routerConfig = [
   {
-    path: '/user/login',
-    component: UserLogin,
+    path: '/user',
+    component: UserLayout,
+    children: [
+      {
+        path: '/login',
+        component: UserLogin,
+      },
+      {
+        path: '/register',
+        component: UserRegister,
+      },
+    ],
   },
   {
-    path: '/user/register',
-    component: UserRegister,
-  },
-  {
-    path: '/dashboard',
-    component: Dashboard,
-  },
-  {
-    path: '/home',
-    component: Home,
-  },
-  {
-    path: '/edit',
-    component: Edit,
-  },
-  {
-    path: '/view',
-    component: View,
+    path: '/',
+    component: BaseLayout,
+    children: [
+      {
+        path: '/dashboard',
+        component: Dashboard,
+      },
+      {
+        path: '/home',
+        component: Home,
+      },
+      {
+        path: '/edit',
+        component: Edit,
+      },
+      {
+        path: '/view',
+        component: View,
+      },
+      {
+        path: '/',
+        redirect: '/dashboard',
+      },
+      {
+        component: NotFound,
+      },
+    ],
   },
 ];
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './index.module.scss';
 
 const mock = [
@@ -29,29 +29,29 @@ const mock = [
   },
 ];
 
-export default class InfoWindow extends Component {
-  static displayName = 'InfoWindow';
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h4 className={styles.title}>信息窗</h4>
-          <ul>
-            {mock.map((item, index) => {
-              return (
-                <li className={styles.list} key={index}>
-                  <span className={styles.listLeft}>
-                    <span className={styles.circle} />
-                    {item.title}
-                  </span>
-                  <span className={styles.date}>[{item.date}]</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+export default function InfoWindow() {
+  return (
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h4 className={styles.title}>信息窗</h4>
+        <ul>
+          {mock.map((item, index) => {
+            return (
+              <li className={styles.list} key={index}>
+                <span className={styles.listLeft}>
+                  <span className={styles.circle} />
+                  {item.title}
+                </span>
+                <span className={styles.date}>
+[
+                  {item.date}
+]
+                </span>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-    );
-  }
+    </div>
+  );
 }

@@ -1,28 +1,28 @@
 .inviteInfo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .sentInfo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .avatarWrapper {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .avatar {
-    border-radius: 40px;
-    display: block;
+  display: block;
+  border-radius: 40px;
 }
 
 .statusBtn {
-    display: inline-block;
-    width: 76px;
-    padding: 6;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
+  display: inline-block;
+  width: 76px;
+  padding: 6;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 4px;
 }

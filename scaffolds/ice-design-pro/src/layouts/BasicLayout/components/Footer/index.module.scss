@@ -3,15 +3,15 @@
   padding: 20px 0;
 }
 .body {
-  margin: 20px auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin: 20px auto;
 }
 .copyright {
   color: #666;
-  line-height: 1.5;
   font-size: 12px;
+  line-height: 1.5;
   text-align: left;
 }
 .copyrightLink {
@@ -21,6 +21,6 @@
   }
 }
 .logo {
-  filter: grayscale(100%);
   opacity: 0.3;
+  filter: grayscale(100%);
 }

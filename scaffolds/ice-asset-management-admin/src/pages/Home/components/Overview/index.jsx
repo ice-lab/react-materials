@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -33,54 +33,34 @@ const mockData = [
   ],
 ];
 
-export default class Overview extends Component {
-  static displayName = 'Overview';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  onChange = (value) => {
-    console.log({ value });
-  };
-
-  render() {
-    return (
-      <div className={styles.overview}>
-        <IceContainer className={styles.alignRight}>
-          <DatePicker onChange={(val, str) => console.log(val, str)} />
-        </IceContainer>
-        <IceContainer className={styles.container}>
-          <h4 className={styles.containerTitle}>概览</h4>
-          <Row gutter={20} className={styles.row}>
-            {mockData.map((items, index) => {
-              const borderNone =
-                index === mockData.length - 1 ? styles.borderNone : {};
-              return (
-                <Col l="6" key={index}>
-                  <div className={`${styles.box} ${borderNone }`}>
-                    {items.map((item, key) => {
-                      return (
-                        <div className={styles.boxCell} key={key}>
-                          <div className={styles.cellName}>{item.name}</div>
-                          <div className={styles.cellValue}>{item.value}</div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </IceContainer>
-      </div>
-    );
-  }
+export default function Overview() {
+  return (
+    <div className={styles.overview}>
+      <IceContainer className={styles.alignRight}>
+        <DatePicker onChange={(val, str) => console.log(val, str)} />
+      </IceContainer>
+      <IceContainer className={styles.container}>
+        <h4 className={styles.containerTitle}>概览</h4>
+        <Row gutter={20} className={styles.row}>
+          {mockData.map((items, index) => {
+            const borderNone = index === mockData.length - 1 ? styles.borderNone : {};
+            return (
+              <Col l="6" key={index}>
+                <div className={`${styles.box} ${borderNone}`}>
+                  {items.map((item, key) => {
+                    return (
+                      <div className={styles.boxCell} key={key}>
+                        <div className={styles.cellName}>{item.name}</div>
+                        <div className={styles.cellValue}>{item.value}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </IceContainer>
+    </div>
+  );
 }
-
-

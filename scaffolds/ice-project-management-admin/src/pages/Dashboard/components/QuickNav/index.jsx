@@ -1,24 +1,19 @@
-/* eslint global-require: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Notice from './Notice';
 import Team from './Team';
 
-import styles from './index.module.scss'
-
 const { Row, Col } = Grid;
 
-export default class Overview extends Component {
-  render() {
-    return (
-      <Row wrap gutter={20}>
-        <Col l="12">
-          <Notice />
-        </Col>
-        <Col l="12">
-          <Team />
-        </Col>
-      </Row>
-    );
-  }
+export default function Overview() {
+  return (
+    <Row wrap gutter={20}>
+      <Col l="12">
+        <Notice />
+      </Col>
+      <Col l="12">
+        <Team />
+      </Col>
+    </Row>
+  );
 }

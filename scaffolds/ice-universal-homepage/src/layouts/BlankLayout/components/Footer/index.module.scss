@@ -1,29 +1,34 @@
-.container{
+.container {
   padding: 50px 0;
-  background: #475268;
   color: #fff;
+  background: #475268;
 }
-.content{
+
+.content {
   width: 1200px;
   margin: 0 auto;
 }
-.title{
-  font-size: 20px;
-  font-weight: 400;
-  margin-bottom: 20px
-}
-.link{
-  display: flex;
+
+.title {
   margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.link {
+  display: flex;
   height: 22px;
-  line-height: 22px;
+  margin-bottom: 20px;
   color: #fff;
+  line-height: 22px;
   cursor: pointer;
 }
-.qrcode{
+
+.qrcode {
   width: 160px;
   border-radius: 4px;
 }
-.copyRight{
+
+.copyRight {
   text-align: center;
 }

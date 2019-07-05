@@ -1,6 +1,6 @@
 import React from 'react';
 import { Message } from '@alifd/next';
-import './index.scss';
+import style from './index.module.scss';
 
 const CustomNotice = () => {
   const renderNum = (num, color) => {
@@ -10,13 +10,15 @@ const CustomNotice = () => {
   return (
     <Message
       closeable
-      className="custom-notice"
+      className={style.customNotice}
       style={styles.notice}
-      title={
+      title={(
         <div style={styles.title}>
           当前共有
           {renderNum(1, styles.orange)}
-          份合同，其中已倒签 {renderNum(0, styles.orange)}
+          份合同，其中已倒签
+          {' '}
+          {renderNum(0, styles.orange)}
           份、一周后会倒签的合同
           {renderNum(0, styles.orange)}
           份、需要我去跟进盖章事宜的合同
@@ -25,7 +27,7 @@ const CustomNotice = () => {
           {renderNum(0, styles.lightBlue)}
           份！
         </div>
-      }
+)}
     />
   );
 };

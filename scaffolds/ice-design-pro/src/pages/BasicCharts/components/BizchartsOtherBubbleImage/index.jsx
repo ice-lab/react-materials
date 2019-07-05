@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle:0 */
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Label, Shape } from 'bizcharts';
 import IceContainer from '@icedesign/container';
@@ -9,6 +8,7 @@ export default injectIntl((props) => {
   Shape.registerShape('point', 'image', {
     drawShape(cfg, container) {
       cfg.points = this.parsePoints(cfg.points);
+      // eslint-disable-next-line no-underscore-dangle
       const coord = this._coord;
       container.addShape('line', {
         attrs: {

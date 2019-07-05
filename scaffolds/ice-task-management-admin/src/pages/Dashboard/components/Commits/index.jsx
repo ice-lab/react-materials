@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
-import ContainerTitle from '../../../../components/ContainerTitle';
+import ContainerTitle from '@/components/ContainerTitle';
 import LineChart from '../LineChart';
 
 const data = [
@@ -68,28 +68,13 @@ const cols = {
   },
 };
 
-export default class Commits extends Component {
-  static displayName = 'Commits';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <ContainerTitle title="最近30天 Commits" />
-        <IceContainer style={styles.container}>
-          <LineChart cols={cols} data={data} axisName="name" />
-        </IceContainer>
-      </div>
-    );
-  }
+export default function Commits() {
+  return (
+    <div>
+      <ContainerTitle title="最近30天 Commits" />
+      <IceContainer>
+        <LineChart cols={cols} data={data} axisName="name" />
+      </IceContainer>
+    </div>
+  );
 }
-
-const styles = {};

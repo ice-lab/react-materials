@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Button, Message } from '@alifd/next';
 import {
@@ -10,27 +9,16 @@ import {
 import IceIcon from '@icedesign/icon';
 import styles from './index.module.scss';
 
-@withRouter
-class UserRegister extends Component {
-  static displayName = 'UserRegister';
+let form;
+function UserRegister(props) {
+  const [value, setValue] = useState({
+    name: '',
+    email: '',
+    passwd: '',
+    rePasswd: '',
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {
-        name: '',
-        email: '',
-        passwd: '',
-        rePasswd: '',
-      },
-    };
-  }
-
-  checkPasswd = (rule, values, callback) => {
+  function checkPasswd(rule, values, callback) {
     if (!values) {
       callback('请输入正确的密码');
     } else if (values.length < 8) {
@@ -40,9 +28,9 @@ class UserRegister extends Component {
     } else {
       callback();
     }
-  };
+  }
 
-  checkPasswd2 = (rule, values, callback, stateValues) => {
+  function checkPasswd2(rule, values, callback, stateValues) {
     if (!values) {
       callback('请输入正确的密码');
     } else if (values && values !== stateValues.passwd) {
@@ -50,122 +38,115 @@ class UserRegister extends Component {
     } else {
       callback();
     }
-  };
+  }
 
-  formChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
+  function formChange(formValue) {
+    setValue(formValue);
+  }
 
-  handleSubmit = () => {
-    this.refs.form.validateAll((errors, values) => {
+  function handleSubmit() {
+    form.validateAll((errors, values) => {
       if (errors) {
         console.log('errors', errors);
         return;
       }
       console.log(values);
       Message.success('注册成功');
-      this.props.history.push('/user/login');
+      props.history.push('/user/login');
     });
-  };
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <h4 className={styles.title}>注 册</h4>
-        <IceFormBinderWrapper
-          value={this.state.value}
-          onChange={this.formChange}
-          ref="form"
-        >
-          <div className={styles.formItems}>
-            <div className={styles.formItem}>
-              <IceIcon type="person" size="small" className={styles.inputIcon} />
-              <IceFormBinder name="name" required message="请输入正确的用户名">
-                <Input
-                  size="large"
-                  placeholder="用户名"
-                  className={styles.inputCol}
-                />
-              </IceFormBinder>
-              <IceFormError name="name" />
-            </div>
-
-            <div className={styles.formItem}>
-              <IceIcon type="mail" size="small" className={styles.inputIcon} />
-              <IceFormBinder
-                type="email"
-                name="email"
-                required
-                message="请输入正确的邮箱"
-              >
-                <Input
-                  size="large"
-                  maxLength={20}
-                  placeholder="邮箱"
-                  className={styles.inputCol}
-                />
-              </IceFormBinder>
-              <IceFormError name="email" />
-            </div>
-
-            <div className={styles.formItem}>
-              <IceIcon type="lock" size="small" className={styles.inputIcon} />
-              <IceFormBinder
-                name="passwd"
-                required
-                validator={this.checkPasswd}
-              >
-                <Input
-                  htmlType="password"
-                  size="large"
-                  placeholder="至少8位密码"
-                  className={styles.inputCol}
-                />
-              </IceFormBinder>
-              <IceFormError name="passwd" />
-            </div>
-
-            <div className={styles.formItem}>
-              <IceIcon type="lock" size="small" className={styles.inputIcon} />
-              <IceFormBinder
-                name="rePasswd"
-                required
-                validator={(rule, values, callback) =>
-                  this.checkPasswd2(rule, values, callback, this.state.value)
-                }
-              >
-                <Input
-                  htmlType="password"
-                  size="large"
-                  placeholder="确认密码"
-                  className={styles.inputCol}
-                />
-              </IceFormBinder>
-              <IceFormError name="rePasswd" />
-            </div>
-
-            <div className="footer">
-              <Button
-                type="primary"
-                onClick={this.handleSubmit}
-                className={styles.submitBtn}
-                size="large"
-              >
-                注 册
-              </Button>
-              <Link to="/user/login" className={styles.tips}>
-                使用已有账户登录
-              </Link>
-            </div>
-          </div>
-        </IceFormBinderWrapper>
-      </div>
-    );
   }
+
+  return (
+    <div className={styles.container}>
+      <h4 className={styles.title}>注 册</h4>
+      <IceFormBinderWrapper
+        value={value}
+        onChange={formChange}
+        ref={formRef => form = formRef}
+      >
+        <div className={styles.formItems}>
+          <div className={styles.formItem}>
+            <IceIcon type="person" size="small" className={styles.inputIcon} />
+            <IceFormBinder name="name" required message="请输入正确的用户名">
+              <Input
+                size="large"
+                placeholder="用户名"
+                className={styles.inputCol}
+              />
+            </IceFormBinder>
+            <IceFormError name="name" />
+          </div>
+
+          <div className={styles.formItem}>
+            <IceIcon type="mail" size="small" className={styles.inputIcon} />
+            <IceFormBinder
+              type="email"
+              name="email"
+              required
+              message="请输入正确的邮箱"
+            >
+              <Input
+                size="large"
+                maxLength={20}
+                placeholder="邮箱"
+                className={styles.inputCol}
+              />
+            </IceFormBinder>
+            <IceFormError name="email" />
+          </div>
+
+          <div className={styles.formItem}>
+            <IceIcon type="lock" size="small" className={styles.inputIcon} />
+            <IceFormBinder
+              name="passwd"
+              required
+              validator={checkPasswd}
+            >
+              <Input
+                htmlType="password"
+                size="large"
+                placeholder="至少8位密码"
+                className={styles.inputCol}
+              />
+            </IceFormBinder>
+            <IceFormError name="passwd" />
+          </div>
+
+          <div className={styles.formItem}>
+            <IceIcon type="lock" size="small" className={styles.inputIcon} />
+            <IceFormBinder
+              name="rePasswd"
+              required
+              validator={(rule, values, callback) => checkPasswd2(rule, values, callback, value)
+              }
+            >
+              <Input
+                htmlType="password"
+                size="large"
+                placeholder="确认密码"
+                className={styles.inputCol}
+              />
+            </IceFormBinder>
+            <IceFormError name="rePasswd" />
+          </div>
+
+          <div className="footer">
+            <Button
+              type="primary"
+              onClick={handleSubmit}
+              className={styles.submitBtn}
+              size="large"
+            >
+              注 册
+            </Button>
+            <Link to="/user/login" className={styles.tips}>
+              使用已有账户登录
+            </Link>
+          </div>
+        </div>
+      </IceFormBinderWrapper>
+    </div>
+  );
 }
 
-
-
-export default UserRegister;
+export default withRouter(UserRegister);

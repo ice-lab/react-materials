@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ContainerCard from '../../../../components/ContainerCard';
+import React from 'react';
+import ContainerCard from '@/components/ContainerCard';
 import styles from './index.module.scss';
 
 const mockData = [
@@ -46,32 +46,28 @@ const mockData = [
   },
 ];
 
-export default class TopProducts extends Component {
-  render() {
-    return (
-      <ContainerCard title="产品排名" contentStyle={{ padding: 0 }}>
-        {mockData.map((data, index) => {
-          return (
-            <div className={styles.content} key={index}>
-              <ul className={styles.items}>
-                {data.items.map((item, idx) => {
-                  return (
-                    <li className={styles.item} key={idx}>
-                      <span className={styles.label}>{item.label}</span>
-                      <span className={styles.value}>{item.value}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-              <a href="#" className={styles.button}>
-                {data.text}
-              </a>
-            </div>
-          );
-        })}
-      </ContainerCard>
-    );
-  }
+export default function TopProducts() {
+  return (
+    <ContainerCard title="产品排名" contentStyle={{ padding: 0 }}>
+      {mockData.map((data, index) => {
+        return (
+          <div className={styles.content} key={index}>
+            <ul className={styles.items}>
+              {data.items.map((item, idx) => {
+                return (
+                  <li className={styles.item} key={idx}>
+                    <span className={styles.label}>{item.label}</span>
+                    <span className={styles.value}>{item.value}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <a href="#" className={styles.button}>
+              {data.text}
+            </a>
+          </div>
+        );
+      })}
+    </ContainerCard>
+  );
 }
-
-

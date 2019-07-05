@@ -1,18 +1,21 @@
-.notfoundContent{
+.notfoundContent {
   display: flex;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
   min-height: 500px;
 }
-.imgNotfound{
+
+.imgNotfound {
   margin-right: 50px;
 }
-.title{
+
+.title {
+  margin: 20px 0;
   color: #333;
   font-size: 24px;
-  margin: 20px 0;
 }
-.description{
+
+.description {
   color: #666;
-  font-size: 16px
+  font-size: 16px;
 }

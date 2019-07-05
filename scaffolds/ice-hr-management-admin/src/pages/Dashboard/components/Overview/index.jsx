@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import Card from './Card';
 import Analysis from './Analysis';
@@ -33,21 +33,19 @@ const cardData = {
   ],
 };
 
-export default class Overview extends Component {
-  render() {
-    return (
-      <Row wrap gutter="20">
-        <Col l="7">
-          <Card data={cardData.employee} />
-          <Card data={cardData.interview} />
-        </Col>
-        <Col l="7">
-          <Analysis />
-        </Col>
-        <Col l="10">
-          <Statistics />
-        </Col>
-      </Row>
-    );
-  }
+export default function Overview() {
+  return (
+    <Row wrap gutter="20">
+      <Col l="7">
+        <Card data={cardData.employee} />
+        <Card data={cardData.interview} />
+      </Col>
+      <Col l="7">
+        <Analysis />
+      </Col>
+      <Col l="10">
+        <Statistics />
+      </Col>
+    </Row>
+  );
 }

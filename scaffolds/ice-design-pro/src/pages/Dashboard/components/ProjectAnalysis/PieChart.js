@@ -1,4 +1,3 @@
-/* eslint global-require: 0 */
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Coord, Label } from 'bizcharts';

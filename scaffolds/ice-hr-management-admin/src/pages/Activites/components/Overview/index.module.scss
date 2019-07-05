@@ -1,19 +1,21 @@
-.item{
-  width: 90%;
-  height: 90px;
+.item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 90px;
   margin: 0 auto;
   border: 1px solid #eee;
-  border-radius: 4px
+  border-radius: 4px;
 }
-.title{
-  font-size: 12px;
+
+.title {
   margin-bottom: 10px;
+  font-size: 12px;
 }
-.value{
+
+.value {
+  font-weight: bold;
   font-size: 24px;
-  font-weight: bold
 }

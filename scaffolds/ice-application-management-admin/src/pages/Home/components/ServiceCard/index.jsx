@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 
@@ -30,50 +30,37 @@ const getData = () => {
   ];
 };
 
-export default class ServiceCard extends Component {
-  static displayName = 'ServiceCard';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const mockData = getData();
-    return (
-      <Row wrap gutter="20">
-        {mockData.map((item, index) => {
-          return (
-            <Col l="12" key={index}>
-              <IceContainer style={styles.container}>
-                <a href="#/app" >
-                  <div style={styles.body}>
-                    <h5 style={styles.name}>{item.name}</h5>
-                    <p style={styles.desc}>{item.desc}</p>
-                    {item.tag ? <div style={styles.tag}>{item.tag}</div> : null}
+export default function ServiceCard() {
+  const mockData = getData();
+  return (
+    <Row wrap gutter="20">
+      {mockData.map((item, index) => {
+        return (
+          <Col l="12" key={index}>
+            <IceContainer style={styles.container}>
+              <a href="#/app">
+                <div style={styles.body}>
+                  <h5 style={styles.name}>{item.name}</h5>
+                  <p style={styles.desc}>{item.desc}</p>
+                  {item.tag ? <div style={styles.tag}>{item.tag}</div> : null}
+                </div>
+                <div style={styles.footer}>
+                  <div href="#" style={{ ...styles.link, ...styles.line }}>
+                    <span>QPS</span>
+                    <span style={{ paddingLeft: 20 }}>{item.qps}</span>
                   </div>
-                  <div style={styles.footer}>
-                    <div href="#" style={{ ...styles.link, ...styles.line }}>
-                      <span>QPS</span>
-                      <span style={{ paddingLeft: 20 }}>{item.qps}</span>
-                    </div>
-                    <div href="#" style={{ ...styles.link, ...styles.line }}>
-                      <span>机器数</span>
-                      <span style={{ paddingLeft: 20 }}>{item.machine}</span>
-                    </div>
+                  <div href="#" style={{ ...styles.link, ...styles.line }}>
+                    <span>机器数</span>
+                    <span style={{ paddingLeft: 20 }}>{item.machine}</span>
                   </div>
-                </a>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+                </div>
+              </a>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
 
 const styles = {

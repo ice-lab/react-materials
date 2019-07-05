@@ -1,4 +1,3 @@
-/* eslint react/require-default-props: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, Balloon } from '@alifd/next';
@@ -28,7 +27,7 @@ export default function Head(props) {
 }
 
 Head.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.string,
-  total: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  total: PropTypes.string.isRequired,
 };

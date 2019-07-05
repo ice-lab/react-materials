@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ContainerCard from '../../../../components/ContainerCard';
+import React from 'react';
+import ContainerCard from '@/components/ContainerCard';
 import BurshChart from './BurshChart';
 import styles from './index.module.scss';
 
@@ -22,23 +22,20 @@ const MOCK_DATA = [
   },
 ];
 
-export default class InternetSalesChart extends Component {
-  render() {
-    return (
-      <ContainerCard title="网络销售">
-        <div className={styles.summary}>
-          {MOCK_DATA.map((item, index) => {
-            return (
-              <div className={styles.item} key={index}>
-                <div className={styles.label}>{item.label}</div>
-                <div className={styles.value}>{item.value}</div>
-              </div>
-            );
-          })}
-        </div>
-        <BurshChart />
-      </ContainerCard>
-    );
-  }
+export default function InternetSalesChart() {
+  return (
+    <ContainerCard title="网络销售">
+      <div className={styles.summary}>
+        {MOCK_DATA.map((item, index) => {
+          return (
+            <div className={styles.item} key={index}>
+              <div className={styles.label}>{item.label}</div>
+              <div className={styles.value}>{item.value}</div>
+            </div>
+          );
+        })}
+      </div>
+      <BurshChart />
+    </ContainerCard>
+  );
 }
-

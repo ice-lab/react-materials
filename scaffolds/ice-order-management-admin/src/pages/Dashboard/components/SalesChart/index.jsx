@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -31,38 +31,37 @@ const mockData = [
   },
 ];
 
-export default class SalesChart extends Component {
-  render() {
-    return (
-      <Row wrap gutter={20} style={{ marginBottom: '20px' }}>
-        {mockData.map((item, index) => {
-          return (
-            <Col xxs="24" l="6" key={index}>
-              <IceContainer className={styles.container}>
-                <div className={styles.content}>
-                  <p className={styles.title}>{item.title}</p>
-                  <div className={styles.data}>
-                    <h2 className={styles.amount}>{item.amount}</h2>
-                    <div
-                      className={styles.percent}
-                      style={{
-                        color: item.increase ? 'red' : 'green',
-                      }}
-                    >
-                      {item.percent}{' '}
-                      <Icon
-                        type={`arrow-${item.increase ? 'up' : 'down'}-filling`}
-                        size="xs"
-                        className={styles.arrowIcon}
-                      />
-                    </div>
+export default function SalesChart() {
+  return (
+    <Row wrap gutter={20} style={{ marginBottom: '20px' }}>
+      {mockData.map((item, index) => {
+        return (
+          <Col xxs="24" l="6" key={index}>
+            <IceContainer className={styles.container}>
+              <div className={styles.content}>
+                <p className={styles.title}>{item.title}</p>
+                <div className={styles.data}>
+                  <h2 className={styles.amount}>{item.amount}</h2>
+                  <div
+                    className={styles.percent}
+                    style={{
+                      color: item.increase ? 'red' : 'green',
+                    }}
+                  >
+                    {item.percent}
+                    {' '}
+                    <Icon
+                      type={`arrow-${item.increase ? 'up' : 'down'}-filling`}
+                      size="xs"
+                      className={styles.arrowIcon}
+                    />
                   </div>
                 </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }

@@ -1,0 +1,101 @@
+.subNavs {
+  position: absolute;
+  left: 0;
+  width: 140px;
+  background: #272b2f;
+}
+
+.navMenu {
+  position: relative;
+
+  .arrowUpIcon,
+  .arrowDownIcon {
+    position: absolute !important;
+    top: 0 !important;
+    right: 15px !important;
+    z-index: 1 !important;
+    transition: 0.3s ease !important;
+  }
+
+  .subNavs,
+  .arrowUpIcon {
+    display: none !important;
+  }
+
+  &:hover {
+    background: #272b2f;
+
+    .subNavs,
+    .arrowUpIcon {
+      display: block !important;
+    }
+
+    .arrowDownIcon {
+      display: none !important;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logoLink {
+  display: flex !important;
+  align-items: center !important;
+  padding-left: 20px !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  font-size: 24px !important;
+}
+
+.navs {
+  display: flex;
+}
+
+.navLink {
+  display: block;
+  height: 60px;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+.NavIconLink {
+  padding: 0 30px;
+}
+
+.subNavMenu {
+  height: 38px;
+  line-height: 38px;
+}
+
+.subNavLink {
+  display: block;
+  padding-left: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.internationalImg {
+  position: absolute;
+  top: 22px;
+  left: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.hb {
+  display: block;
+  height: 60px;
+  padding: 0 30px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 60px;
+  text-decoration: none;
+}

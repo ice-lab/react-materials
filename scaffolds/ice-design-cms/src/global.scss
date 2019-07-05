@@ -1,0 +1,327 @@
+// 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
+@import '@alifd/next/reset.scss';
+
+.ice-layout-main {
+  padding: 0 0 0 20px;
+}
+
+.ice-layout-section {
+  margin: 20px 0 0;
+}
+
+.ice-layout {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 20px;
+  background: transparent;
+
+  .ice-layout-aside {
+    background-color: transparent !important;
+
+    .next-nav {
+      background-color: transparent !important;
+
+      .next-nav-item {
+        background-color: transparent !important;
+        border-radius: $corner-1;
+
+        &.next-open {
+          background-color: transparent !important;
+        }
+
+        &.next-selected {
+          background-color: $color-brand1-6 !important;
+
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+
+    i ~ .ice-menu-collapse {
+      margin-left: 5px;
+    }
+  }
+}
+
+// pages/CreatePost/components/ContentEditor
+.rich-editor {
+  input,
+  textarea {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background: #eee;
+  }
+
+  ul {
+    margin-left: 1em;
+    list-style: disc;
+  }
+
+  ol {
+    margin-left: 1em;
+    list-style: decimal;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  pre {
+    padding: 10px;
+    white-space: pre-wrap;
+    background-color: #eee;
+  }
+
+  :not(pre) > code {
+    padding: 3px;
+    font-family: monospace;
+    background-color: #eee;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 20em;
+  }
+
+  img.active {
+    box-shadow: 0 0 0 2px blue;
+  }
+
+  blockquote {
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 10px;
+    color: #aaa;
+    font-style: italic;
+    border-left: 2px solid #ddd;
+  }
+
+  blockquote[dir='rtl'] {
+    padding-right: 10px;
+    padding-left: 0;
+    border-right: 2px solid #ddd;
+    border-left: none;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    padding: 10px;
+    border: 2px solid #ddd;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 0.85em;
+    background: #fafafa;
+    border: 2px solid #ddd;
+  }
+
+  input:focus {
+    border-color: blue;
+    outline: 0;
+  }
+
+  /**
+   * Icons.
+   */
+
+  .material-icons {
+    font-size: 18px;
+    vertical-align: text-bottom;
+  }
+
+  /**
+   * App.
+   */
+
+  .nav {
+    padding: 10px 15px;
+    color: #aaa;
+    background: #000;
+  }
+
+  .nav-title {
+    margin-right: 0.5em;
+  }
+
+  .nav-links {
+    float: right;
+  }
+
+  .nav-link {
+    margin-left: 1em;
+    color: #aaa;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .tabs {
+    margin-bottom: 30px;
+    padding: 15px 15px;
+    text-align: center;
+    background-color: #222;
+  }
+
+  .tab {
+    display: inline-block;
+    margin-bottom: 0.2em;
+    padding: 0.2em 0.5em;
+    color: #777;
+    text-decoration: none;
+    border-radius: 0.2em;
+  }
+
+  .tab:hover {
+    background: #333;
+  }
+
+  .tab + .tab {
+    margin-left: 0.5em;
+  }
+
+  .tab.active {
+    color: white;
+    background: #333;
+  }
+
+  /**
+   * Example.
+   */
+
+  .example,
+  .error {
+    max-width: 42em;
+    margin: 0 auto 20px;
+    padding: 20px;
+  }
+
+  .example {
+    background: #fff;
+  }
+
+  .error {
+    background: #fffae0;
+  }
+
+  .error .info {
+    margin-bottom: 0;
+    overflow-x: scroll;
+    white-space: pre;
+    background: #fbf1bd;
+  }
+
+  .rich-editor-body > * > * + * {
+    margin-top: 1em;
+  }
+
+  .rich-editor-menu > * {
+    display: inline-block;
+  }
+
+  .rich-editor-menu > * + * {
+    margin-left: 15px;
+  }
+
+  .button {
+    color: #ccc;
+    cursor: pointer;
+  }
+
+  .button[data-active='true'] {
+    color: black;
+  }
+
+  .rich-editor-toolbar-menu {
+    position: relative;
+    margin: 0 -20px;
+    margin-bottom: 20px;
+    padding: 1px 18px 17px;
+    border-bottom: 2px solid #eee;
+  }
+
+  .rich-editor-toolbar-menu .search {
+    position: relative;
+  }
+
+  .rich-editor-toolbar-menu .search-icon {
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    color: #ccc;
+  }
+
+  .rich-editor-toolbar-menu .search-box {
+    width: 100%;
+    padding-left: 2em;
+  }
+
+  .hover-menu {
+    position: absolute;
+    top: -10000px;
+    left: -10000px;
+    z-index: 1;
+    margin-top: -6px;
+    padding: 8px 7px 6px;
+    background-color: #222;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.75s;
+  }
+
+  .hover-menu .button {
+    color: #aaa;
+  }
+
+  .hover-menu .button[data-active='true'] {
+    color: #fff;
+  }
+
+  .emoji.selected {
+    outline: 2px solid blue;
+  }
+
+  .check-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .check-list-item + .check-list-item {
+    margin-top: 0;
+  }
+
+  .check-list-item.checked {
+    text-decoration: line-through;
+    opacity: 0.666;
+  }
+
+  .check-list-item > span:first-child {
+    margin-right: 0.75em;
+  }
+
+  .check-list-item > span:last-child {
+    flex: 1;
+  }
+
+  .check-list-item > span:last-child:focus {
+    outline: none;
+  }
+
+  .word-counter {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #ebebeb;
+  }
+}

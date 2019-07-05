@@ -1,113 +1,113 @@
 .container {
-    height: 100%;
-    background: #000;
+  height: 100%;
+  background: #000;
 }
 
 .contentLeft {
-    background: #000;
-    height: 100%;
-    position: relative;
-    float: left;
-    width: 50%;
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: #000;
 }
 
 .contentRight {
-    background-image: linear-gradient(-180deg, #3b2da6, #000);
-    height: 100%;
-    position: relative;
-    float: right;
-    width: 50%;
+  position: relative;
+  float: right;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(-180deg, #3b2da6, #000);
 }
 
 .content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 180px;
-    z-index: 10;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 180px;
 }
 
 .imageWrap {
-    float: left;
+  float: left;
 }
 
 .image {
-    height: 450px;
-    margin: 0 auto;
-    border-left: 8px solid #df4;
+  height: 450px;
+  margin: 0 auto;
+  border-left: 8px solid #df4;
 }
 
 .introWrap {
-    position: absolute;
-    left: 58%;
-    top: 45%;
-    width: 520px;
-    padding: 30px 20px 20px;
-    background: #5a44ff;
-    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 45%;
+  left: 58%;
+  width: 520px;
+  padding: 30px 20px 20px;
+  background: #5a44ff;
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.5);
 }
 
 .introNum {
-    font-size: 18px;
-    color: #fff;
-    letter-spacing: .83px;
-    padding-bottom: 10px;
-    font-weight: 700;
+  padding-bottom: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.83px;
 }
 
 .introTitle {
-    font-size: 31px;
-    color: #fff;
-    letter-spacing: 1.5px;
-    line-height: 42px;
-    padding-bottom: 6px;
-    font-weight: 700;
+  padding-bottom: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 42px;
+  letter-spacing: 1.5px;
 }
 
 .introDesc {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #777f84;
-    padding-top: 0;
-    float: left;
+  float: left;
+  margin-top: 20px;
+  padding-top: 0;
+  color: #777f84;
+  font-size: 14px;
 }
 
 .introLine {
-    width: 30px;
-    height: 2px;
-    background: #fff;
-    display: inline-block;
-    float: left;
-    margin-right: 10px;
+  display: inline-block;
+  float: left;
+  width: 30px;
+  height: 2px;
+  margin-right: 10px;
+  background: #fff;
 }
 
 .introText {
-    text-align: justify;
-    float: left;
-    width: 90%;
-    margin-top: -10px;
-    color: #fff;
-    letter-spacing: .35px;
+  float: left;
+  width: 90%;
+  margin-top: -10px;
+  color: #fff;
+  letter-spacing: 0.35px;
+  text-align: justify;
 }
 
 .linkButton {
-    width: 140px;
-    height: 40px;
-    line-height: 40px;
-    background: #000;
-    text-align: center;
-    float: left;
-    margin-top: 25px;
+  float: left;
+  width: 140px;
+  height: 40px;
+  margin-top: 25px;
+  line-height: 40px;
+  text-align: center;
+  background: #000;
 }
 
 .link {
-    width: 140px;
-    height: 40px;
-    line-height: 40px;
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 14px;
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 40px;
+  text-decoration: none;
 }

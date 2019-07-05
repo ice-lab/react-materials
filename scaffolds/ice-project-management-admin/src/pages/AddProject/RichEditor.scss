@@ -2,24 +2,25 @@
 
 /* fallback */
 @font-face {
+  font-weight: 400;
   font-family: 'Material Icons';
   font-style: normal;
-  font-weight: 400;
   src: url('./material-icons.woff2') format('woff2');
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
   display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
+  font-weight: normal;
+  font-size: 24px;
+  /* stylelint-disable-next-line */
+  font-family: 'Material Icons';
+  font-style: normal;
+  line-height: 1;
   direction: ltr;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-transform: none;
+  word-wrap: normal;
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
@@ -33,12 +34,13 @@
   }
 
   ul {
+    margin-left: 1em;
     list-style: disc;
-    margin-left: 1em;
   }
+
   ol {
-    list-style: decimal;
     margin-left: 1em;
+    list-style: decimal;
   }
 
   p {
@@ -47,14 +49,14 @@
 
   pre {
     padding: 10px;
-    background-color: #eee;
     white-space: pre-wrap;
+    background-color: #eee;
   }
 
   :not(pre) > code {
+    padding: 3px;
     font-family: monospace;
     background-color: #eee;
-    padding: 3px;
   }
 
   img {
@@ -67,19 +69,19 @@
   }
 
   blockquote {
-    border-left: 2px solid #ddd;
-    margin-left: 0;
     margin-right: 0;
+    margin-left: 0;
     padding-left: 10px;
     color: #aaa;
     font-style: italic;
+    border-left: 2px solid #ddd;
   }
 
   blockquote[dir='rtl'] {
-    border-left: none;
-    padding-left: 0;
     padding-right: 10px;
+    padding-left: 0;
     border-right: 2px solid #ddd;
+    border-left: none;
   }
 
   table {
@@ -93,16 +95,16 @@
 
   input {
     box-sizing: border-box;
-    font-size: 0.85em;
     width: 100%;
     padding: 0.5em;
-    border: 2px solid #ddd;
+    font-size: 0.85em;
     background: #fafafa;
+    border: 2px solid #ddd;
   }
 
   input:focus {
-    outline: 0;
     border-color: blue;
+    outline: 0;
   }
 
   /**
@@ -144,19 +146,19 @@
   }
 
   .tabs {
-    padding: 15px 15px;
-    background-color: #222;
-    text-align: center;
     margin-bottom: 30px;
+    padding: 15px 15px;
+    text-align: center;
+    background-color: #222;
   }
 
   .tab {
-    color: #777;
     display: inline-block;
-    text-decoration: none;
-    padding: 0.2em 0.5em;
-    border-radius: 0.2em;
     margin-bottom: 0.2em;
+    padding: 0.2em 0.5em;
+    color: #777;
+    text-decoration: none;
+    border-radius: 0.2em;
   }
 
   .tab:hover {
@@ -192,10 +194,10 @@
   }
 
   .error .info {
-    background: #fbf1bd;
-    white-space: pre;
-    overflow-x: scroll;
     margin-bottom: 0;
+    overflow-x: scroll;
+    white-space: pre;
+    background: #fbf1bd;
   }
 
   .rich-editor-body > * > * + * {
@@ -221,10 +223,10 @@
 
   .rich-editor-toolbar-menu {
     position: relative;
-    padding: 1px 18px 17px;
     margin: 0 -20px;
-    border-bottom: 2px solid #eee;
     margin-bottom: 20px;
+    padding: 1px 18px 17px;
+    border-bottom: 2px solid #eee;
   }
 
   .rich-editor-toolbar-menu .search {
@@ -239,20 +241,20 @@
   }
 
   .rich-editor-toolbar-menu .search-box {
-    padding-left: 2em;
     width: 100%;
+    padding-left: 2em;
   }
 
   .hover-menu {
-    padding: 8px 7px 6px;
     position: absolute;
-    z-index: 1;
     top: -10000px;
     left: -10000px;
+    z-index: 1;
     margin-top: -6px;
-    opacity: 0;
+    padding: 8px 7px 6px;
     background-color: #222;
     border-radius: 4px;
+    opacity: 0;
     transition: opacity 0.75s;
   }
 
@@ -268,19 +270,19 @@
     outline: 2px solid blue;
   }
 
-  .check-list-item + .check-list-item {
-    margin-top: 0;
-  }
-
   .check-list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
 
+  .check-list-item + .check-list-item {
+    margin-top: 0;
+  }
+
   .check-list-item.checked {
-    opacity: 0.666;
     text-decoration: line-through;
+    opacity: 0.666;
   }
 
   .check-list-item > span:first-child {
@@ -296,12 +298,9 @@
   }
 
   .word-counter {
+    display: inline-block;
     margin-top: 10px;
     padding: 12px;
     background-color: #ebebeb;
-    display: inline-block;
   }
-}
-.styleseditor{
-  min-height: 200px
 }

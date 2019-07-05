@@ -1,19 +1,21 @@
-.box{
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 20px auto;
   line-height: 36px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
-.logo{
+
+.logo {
+  opacity: 0.3;
   filter: grayscale(100%);
-  opacity:0.3
 }
-.btitle{
+
+.btitle {
   color: #999;
-  line-height: 1.5;
   font-size: 12px;
+  line-height: 1.5;
   text-align: right;
 }

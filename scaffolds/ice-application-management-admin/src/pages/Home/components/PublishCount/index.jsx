@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
 
@@ -39,32 +39,19 @@ const cols = {
   },
 };
 
-export default class PublishCount extends Component {
-  static displayName = 'PublishCount';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer title="周发布次数">
-        <Chart height={195} padding={[40]} data={data} scale={cols} forceFit>
-          <Axis name="name" />
-          <Axis name="value" />
-          <Tooltip
-            crosshairs={{
-              type: 'y',
-            }}
-          />
-          <Geom type="interval" position="name*value" color="#447eff" />
-        </Chart>
-      </IceContainer>
-    );
-  }
+export default function PublishCount() {
+  return (
+    <IceContainer title="周发布次数">
+      <Chart height={195} padding={[40]} data={data} scale={cols} forceFit>
+        <Axis name="name" />
+        <Axis name="value" />
+        <Tooltip
+          crosshairs={{
+            type: 'y',
+          }}
+        />
+        <Geom type="interval" position="name*value" color="#447eff" />
+      </Chart>
+    </IceContainer>
+  );
 }

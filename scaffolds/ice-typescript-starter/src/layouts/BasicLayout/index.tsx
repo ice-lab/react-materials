@@ -1,10 +1,9 @@
 import React from 'react';
-import MainRoutes from './MainRoutes';
 
-export default function BasicLayout() {
+export default function BasicLayout({ children }) {
   return (
     <div style={{ paddingTop: '100px' }}>
-      <MainRoutes />
+      {children}
     </div>
   );
 }

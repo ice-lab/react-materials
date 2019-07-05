@@ -1,33 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Layout from '@icedesign/layout';
-import { Switch, Route, Redirect } from 'react-router-dom';
 import Footer from './Footer';
-import routerConfig from '../../routerConfig';
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class UserLayout extends Component {
-  render() {
-    return (
-      <Layout className="user-layout">
-        <div className="layer-mask" />
-        <div className="user-content">
-          <Switch>
-            {routerConfig.map((item, index) => {
-              return item.component ? (
-                <Route
-                  key={index}
-                  path={item.path}
-                  component={item.component}
-                  exact={item.exact}
-                />
-              ) : null;
-            })}
-
-            <Redirect from="/user" to="/user/login" />
-          </Switch>
-        </div>
-        <Footer />
-      </Layout>
-    );
-  }
+export default function UserLayout({ children }) {
+  return (
+    <Layout className={styles.userLayout}>
+      <div className={styles.layerMask} />
+      <div className={styles.userContent}>
+        {children}
+      </div>
+      <Footer />
+    </Layout>
+  );
 }

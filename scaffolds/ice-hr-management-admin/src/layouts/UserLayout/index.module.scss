@@ -1,0 +1,33 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url(https://img.alicdn.com/tfs/TB1M_keCNnaK1RjSZFBXXcW7VXa-1950-1302.jpg);
+  background-size: cover;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.4;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

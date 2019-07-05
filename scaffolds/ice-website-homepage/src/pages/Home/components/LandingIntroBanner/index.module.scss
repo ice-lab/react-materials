@@ -1,43 +1,89 @@
 .title {
+  margin-bottom: 30px;
   color: #fff;
   font-size: 46px;
-  text-align: center;
   line-height: 60px;
-  margin-bottom: 30px;
   letter-spacing: 4px;
-}
-.subTitle {
-  color: #fff;
-  margin: 0px;
-  font-size: 20px;
   text-align: center;
-  text-shadow: #C8C8C8 1px 1px 2px;
-  line-height: 1.7em;
 }
+
+.subTitle {
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.7em;
+  text-align: center;
+  text-shadow: #c8c8c8 1px 1px 2px;
+}
+
 .leftButton {
   margin-right: 20px;
+
   :global {
     button:first-child {
       color: $color-brand1-6;
+
       &:hover {
         color: $color-brand1-6;
       }
     }
   }
 }
+
 .gitStar {
   width: 145px;
-  border: 0px;
   height: 32px;
   margin: 0 auto;
+  border: 0;
 }
+
 .gitContainer {
   margin-top: 30px;
   text-align: center;
 }
+
 .updateLogLinkWrap {
   text-align: center;
 }
+
 .updateLogLink {
   color: #fff;
+}
+
+.landingIntroBanner {
+  position: relative;
+}
+
+.landingIntroBannerBackground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+}
+
+.landingIntroBannerContentWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .landingIntroBannerContent {
+    padding-right: 15px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+  }
+
+  .landingIntroBannerButtons {
+    a:hover,
+    a:visited,
+    a:link {
+      color: #fff;
+    }
+  }
 }

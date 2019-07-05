@@ -1,4 +1,3 @@
-/* eslint react/require-default-props: 0 */
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import PropTypes from 'prop-types';
@@ -43,4 +42,8 @@ export default function ColumnChart(props) {
 
 ColumnChart.propTypes = {
   type: PropTypes.string,
+};
+
+ColumnChart.defaultProps = {
+  type: 'interval',
 };

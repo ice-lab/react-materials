@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GoodsForm from './components/GoodsForm';
 
-export default class AddGoods extends Component {
-  render() {
-    return (
-      <div>
-        <GoodsForm />
-      </div>
-    );
-  }
+export default function AddGoods() {
+  return (
+    <div>
+      <GoodsForm />
+    </div>
+  );
 }

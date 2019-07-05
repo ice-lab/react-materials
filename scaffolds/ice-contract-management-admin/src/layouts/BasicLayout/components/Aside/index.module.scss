@@ -2,16 +2,19 @@
 .iceMenuText {
   padding-left: 1em;
 }
+
 .iceMenuCollapseHide {
   display: none;
 }
+
 .asideContainer {
-  height: 100%;
   position: relative;
+  height: 100%;
   padding-top: 20px;
-  border-right: 1px solid #eee;
   background-color: #fff;
+  border-right: 1px solid #eee;
 }
+
 .collapseBtn {
   position: absolute;
   bottom: 0;

@@ -1,0 +1,95 @@
+.headerContainer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  min-width: 1200px;
+  background-color: $nav-primary-bg-color;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 62px;
+  padding: 0 20px;
+}
+
+.userProfileMenuItem {
+  height: 40px;
+  font-size: 12px;
+  line-height: 40px;
+
+  a {
+    color: #666;
+
+    &:hover {
+      color: #1890ff;
+    }
+  }
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.headerNavbar {
+  display: flex;
+  flex-direction: row;
+
+  .iceMenuItemText {
+    padding-left: 1em;
+  }
+
+  :global {
+    .next-menu {
+      color: #fff;
+      background: transparent;
+      box-shadow: none;
+
+      .next-menu-item {
+        font-size: 14px;
+
+        &:hover,
+        a:hover {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+    }
+  }
+}
+
+.userAvatar {
+  margin-right: 12px;
+  border-radius: 4px;
+}
+
+.userDepartment {
+  color: #fff;
+  font-size: 12px;
+}
+
+.userProfile {
+  display: inline-block;
+  margin-bottom: 2px;
+  color: #fff;
+  text-align: center;
+}
+
+.iceHeaderUserpannel {
+  margin-left: 20px;
+  cursor: pointer;
+
+  .iconDown {
+    margin-left: 2px;
+    color: #fff;
+  }
+}
+
+.userProfileMenu {
+  width: 130px;
+  padding: 0 16px;
+  border-radius: 6px;
+}

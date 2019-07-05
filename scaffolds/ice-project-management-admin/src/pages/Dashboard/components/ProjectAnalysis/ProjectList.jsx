@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Progress } from '@alifd/next';
 
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const DATA = [
   {
@@ -38,7 +38,7 @@ const DATA = [
     name: '项目 E',
     member: '1,24,693',
     percent: 60,
-    state: '',
+    state: 'success',
   },
   {
     id: 6,
@@ -59,34 +59,32 @@ const DATA = [
     name: '项目 H',
     member: '1,688',
     percent: 50,
-    state: '',
+    state: 'success',
   },
 ];
 
-export default class TopActiveChart extends Component {
-  renderProduct = (value, index, record) => {
-    return (
-      <div className={styles.product}>
-        <p className={styles.prodyctTitle}>{record.title}</p>
-      </div>
-    );
-  };
+export default function TopActiveChart() {
+  // const renderProduct = (value, index, record) => {
+  //   return (
+  //     <div className={styles.product}>
+  //       <p className={styles.prodyctTitle}>{record.title}</p>
+  //     </div>
+  //   );
+  // };
 
-  render() {
-    return (
-      <IceContainer title="项目列表">
-        <Table dataSource={DATA} hasBorder={false}  className={styles.table}>
-          <Table.Column title="项目名称" dataIndex="name" />
-          <Table.Column title="项目成员" dataIndex="member" />
-          <Table.Column
-            title="项目进度"
-            dataIndex="percent"
-            cell={(value, index, record) => (
-              <Progress percent={record.percent} state={record.state} />
-            )}
-          />
-        </Table>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer title="项目列表">
+      <Table dataSource={DATA} hasBorder={false} className={styles.table}>
+        <Table.Column title="项目名称" dataIndex="name" />
+        <Table.Column title="项目成员" dataIndex="member" />
+        <Table.Column
+          title="项目进度"
+          dataIndex="percent"
+          cell={(value, index, record) => (
+            <Progress percent={record.percent} state={record.state} />
+          )}
+        />
+      </Table>
+    </IceContainer>
+  );
 }

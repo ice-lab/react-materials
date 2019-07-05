@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon, Grid, Balloon, Dialog } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { withRouter } from 'react-router-dom';
@@ -19,112 +19,111 @@ const getData = () => {
   });
 };
 
-@withRouter
-export default class CardList extends Component {
-  handleAdd = () => {
+const CardList = withRouter((props) => {
+  const data = getData();
+
+  function handleAdd() {
     Dialog.confirm({
       content: '只有管理员才能新增测试方案',
     });
-  };
-
-  handleEdit = () => {
-    this.props.history.push('/application/edit');
-  };
-
-  render() {
-    const data = getData();
-    return (
-      <div style={styles.container}>
-        <Row wrap gutter="20">
-          <Col l="6" onClick={this.handleAdd}>
-            <div style={{ ...styles.card, ...styles.createScheme }}>
-              <Icon type="add" style={styles.addIcon} />
-              <span>新增埋点</span>
-            </div>
-          </Col>
-          {data.map((item, index) => {
-            return (
-              <Col l="6" key={index}>
-                <div style={styles.card}>
-                  <div style={styles.head}>
-                    <h4 style={styles.title}>{item.title}</h4>
-                    <Balloon
-                      trigger={
-                        <FoundationSymbol
-                          size="small"
-                          type="eye"
-                          style={{ ...styles.eyeIcon, ...styles.icon }}
-                        />
-                      }
-                      align="t"
-                      closable={false}
-                      triggerType="hover"
-                      style={{ width: 80 }}
-                    >
-                      监控
-                    </Balloon>
-
-                    <Balloon
-                      trigger={
-                        <FoundationSymbol
-                          size="small"
-                          type="edit2"
-                          onClick={this.handleEdit}
-                          style={{ ...styles.editIcon, ...styles.icon }}
-                        />
-                      }
-                      align="t"
-                      closable={false}
-                      triggerType="hover"
-                      style={{ width: 80 }}
-                    >
-                      编辑
-                    </Balloon>
-                  </div>
-                  <div style={styles.body}>
-                    <Row wrap>
-                      <Col l="12">
-                        <p style={{ ...styles.scheme, ...styles.info }}>
-                          集成方案 <strong>{item.scheme}</strong> 个
-                        </p>
-                      </Col>
-                      <Col l="12">
-                        <p style={{ ...styles.track, ...styles.info }}>
-                          共 <strong>{item.track}</strong> 个埋点
-                        </p>
-                      </Col>
-                      <Col l="12">
-                        <p style={{ ...styles.creator, ...styles.info }}>
-                          创建人：
-                          {item.creator}
-                        </p>
-                      </Col>
-                      <Col l="12">
-                        <p style={{ ...styles.modifier, ...styles.info }}>
-                          修改人：
-                          {item.modifier}
-                        </p>
-                      </Col>
-                    </Row>
-
-                    <p style={{ ...styles.time, ...styles.info }}>
-                      创建日期：
-                      {item.createTime}
-                    </p>
-                    <p style={{ ...styles.time, ...styles.info }}>
-                      修改日期：
-                      {item.updateTime}
-                    </p>
-                  </div>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
   }
-}
+  function handleEdit() {
+    props.history.push('/application/edit');
+  }
+
+  return (
+    <div style={styles.container}>
+      <Row wrap gutter="20">
+        <Col l="6" onClick={handleAdd}>
+          <div style={{ ...styles.card, ...styles.createScheme }}>
+            <Icon type="add" style={styles.addIcon} />
+            <span>新增埋点</span>
+          </div>
+        </Col>
+        {data.map((item, index) => {
+          return (
+            <Col l="6" key={index}>
+              <div style={styles.card}>
+                <div style={styles.head}>
+                  <h4 style={styles.title}>{item.title}</h4>
+                  <Balloon
+                    trigger={(
+                      <FoundationSymbol
+                        size="small"
+                        type="eye"
+                        style={{ ...styles.eyeIcon, ...styles.icon }}
+                      />
+                    )}
+                    align="t"
+                    closable={false}
+                    triggerType="hover"
+                    style={{ width: 80 }}
+                  >
+                    监控
+                  </Balloon>
+
+                  <Balloon
+                    trigger={(
+                      <FoundationSymbol
+                        size="small"
+                        type="edit2"
+                        onClick={handleEdit}
+                        style={{ ...styles.editIcon, ...styles.icon }}
+                      />
+                    )}
+                    align="t"
+                    closable={false}
+                    triggerType="hover"
+                    style={{ width: 80 }}
+                  >
+                    编辑
+                  </Balloon>
+                </div>
+                <div style={styles.body}>
+                  <Row wrap>
+                    <Col l="12">
+                      <p style={{ ...styles.scheme, ...styles.info }}>
+                        集成方案 <strong>{item.scheme}</strong> 个
+                      </p>
+                    </Col>
+                    <Col l="12">
+                      <p style={{ ...styles.track, ...styles.info }}>
+                        共 <strong>{item.track}</strong> 个埋点
+                      </p>
+                    </Col>
+                    <Col l="12">
+                      <p style={{ ...styles.creator, ...styles.info }}>
+                        创建人：
+                        {item.creator}
+                      </p>
+                    </Col>
+                    <Col l="12">
+                      <p style={{ ...styles.modifier, ...styles.info }}>
+                        修改人：
+                        {item.modifier}
+                      </p>
+                    </Col>
+                  </Row>
+
+                  <p style={{ ...styles.time, ...styles.info }}>
+                    创建日期：
+                    {item.createTime}
+                  </p>
+                  <p style={{ ...styles.time, ...styles.info }}>
+                    修改日期：
+                    {item.updateTime}
+                  </p>
+                </div>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
+});
+
+export default CardList;
 
 const styles = {
   container: {

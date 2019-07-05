@@ -1,14 +1,19 @@
 
-    .product {
-      display: flex;
-      align-items: center;
-    }
-    .productPic {
-      width: 60;
-      height: 60;
-    }
-    .productTitle {
-      margin: 0;
-    }
- 
-  
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.productPic {
+  width: 60px;
+  height: 60px;
+}
+
+.productTitle {
+  margin: 0;
+}
+
+.table {
+  width: 100%;
+  height: 341px;
+}

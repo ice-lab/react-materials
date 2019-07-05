@@ -1,14 +1,16 @@
-.logo{
+.logo {
   display: flex !important;
   align-items: center !important;
-};
-.brand{
+}
+
+.brand {
   color: #fff;
-  font-size: 30px;
   font-weight: bold;
-};
-.workbench{
+  font-size: 30px;
+}
+
+.workbench {
+  margin-left: 15px;
   color: #fff;
   font-size: 12px;
-  margin-left: 15px;
-};
+}

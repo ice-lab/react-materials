@@ -1,91 +1,104 @@
 .footerBox {
-  background-color: #232940;
-  -webkit-font-smoothing: antialiased;
-  font-family: Tahoma,arial,Hiragino Sans GB,Microsoft Yahei;
-  line-height: 1.6;
   box-sizing: border-box;
   min-width: 1280px;
-};
+  line-height: 1.6;
+  background-color: #232940;
+  -webkit-font-smoothing: antialiased;
+}
+
 .footerBoxContent {
+  box-sizing: border-box;
   width: 1240px;
   margin: 0 auto;
   padding: 50px 0 30px;
-  box-sizing: border-box;
-};
+}
+
 .footerClearfix {
   display: block;
-  height: 0;
-  box-sizing: border-box;
   clear: both;
-};
+  box-sizing: border-box;
+  height: 0;
+}
+
 .footerBoxLeft {
   float: left;
-  width: 1020px;
   box-sizing: border-box;
-};
+  width: 1020px;
+}
+
 .footerBoxRight {
   float: right;
+  box-sizing: border-box;
   width: 220px;
   padding-left: 80px;
-  border-left: 1px solid rgba(151,151,151,0.4);
-  box-sizing: border-box;
-};
+  border-left: 1px solid rgba(151, 151, 151, 0.4);
+}
+
 .footerBoxContentUl {
-  list-style: none;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-};
-.footerBoxContentLi {
   list-style: none;
-  margin-left: 0;
-  box-sizing: border-box;
+}
+
+.footerBoxContentLi {
   float: left;
+  box-sizing: border-box;
   width: 25%;
+  margin-left: 0;
   padding-right: 10px;
-};
+  list-style: none;
+}
+
 .footerBoxContentItem {
+  box-sizing: border-box;
   width: 208px;
-  box-sizing: border-box;
-};
+}
+
 .footerBoxContentName {
-  font-size: 22px;
-  color: #FFFFFF !important;
-  padding-bottom: 20px;
   box-sizing: border-box;
-};
+  padding-bottom: 20px;
+  color: #fff !important;
+  font-size: 22px;
+}
+
 .footerBoxContentSubli {
+  box-sizing: border-box;
   padding-top: 14px;
+  overflow: hidden;
   white-space: normal;
   word-break: break-all;
-  overflow: hidden;
-  box-sizing: border-box;
   list-style: none;
-};
+}
+
 .footerBoxContentItemLink {
+  color: #fff !important;
   font-size: 16px;
-  color: #FFFFFF !important;
-  opacity: 0.6;
   text-decoration: none;
-};
+  opacity: 0.6;
+}
+
 .footerBoxRightTitle {
+  box-sizing: border-box;
   padding-bottom: 16px;
+  color: #fff;
   font-size: 22px;
-  color: #FFFFFF;
-  box-sizing: border-box;
-};
+}
+
 .footerBoxRightItem {
-  padding-top: 12px;
-  font-size: 14px;
-  color: #FFFFFF;
   box-sizing: border-box;
-};
+  padding-top: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
 .footerBoxRightItemOpacity {
   opacity: 0.6;
-};
+}
+
 .footerBoxRightItemImg {
+  box-sizing: border-box;
   width: 97px;
   height: 97px;
   border: 0;
-  box-sizing: border-box;
-};
+}

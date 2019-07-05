@@ -1,45 +1,53 @@
-.cardTitle{
+.cardTitle {
   height: 16px;
-  line-height: 16px;
-  font-size: 16px;
-  color: rgb(51, 51, 51);
-  font-weight: bold;
   margin: 0;
   padding: 0;
-};
-.item{
+  color: rgb(51, 51, 51);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.item {
   position: relative;
-  border-bottom: 1px solid #eee;
   padding: 20px 0;
-};
-.title{
+  border-bottom: 1px solid #eee;
+}
+
+.title {
   margin: 0 0 10px;
-};
-.metaWrap{
+}
+
+.metaWrap {
   display: flex;
   padding-left: 15px;
-};
-.meta{
-  font-size: 13px;
-  color: #999;
+}
+
+.meta {
   margin-right: 15px;
-};
-.operWrap{
+  color: #999;
+  font-size: 13px;
+}
+
+.operWrap {
   position: absolute;
-  right: 0;
   top: 36px;
+  right: 0;
   display: flex;
   cursor: pointer;
-};
-.oper{
+}
+
+.oper {
   margin-left: 15px;
-  font-size: 13px;
   color: #999;
-};
-.operIcon{
+  font-size: 13px;
+}
+
+.operIcon {
   margin-right: 8px !important;
-};
-.pagination{
+}
+
+.pagination {
   margin-top: 20px !important;
   text-align: right !important;
-};
+}

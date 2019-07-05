@@ -1,14 +1,15 @@
 .logoStyle {
-  color: $color-brand1-6;
   display: block;
-  overflow: hidden;
   max-width: 180px;
+  overflow: hidden;
+  color: $color-brand1-6;
+  font-weight: bold;
   font-size: 20px;
   white-space: nowrap;
-  font-weight: bold;
-  text-overflow: ellipsis;
   text-decoration: none;
-  &:visited, &:link {
-    color: $color-brand1-6;
+  text-overflow: ellipsis;
+
+  &:hover {
+    opacity: 0.8;
   }
 }

@@ -1,44 +1,50 @@
-.container{
+.container {
   padding: 40px 0;
 }
-.content{
+
+.content {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
-.item{
-  width: 20%;
+
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  width: 20%;
 }
-.image{
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  padding: 10px 0;
-  border-radius: 8px;
+
+.image {
   position: relative;
+  width: 50px;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 8px;
 }
-.itemTitle{
+
+.itemTitle {
+  margin: 10px 0 0;
   font-size: 12px;
   text-align: center;
-  margin: 10px 0 0;
 }
-.iconImage{
+
+.iconImage {
   width: 30px;
   height: 30px;
 }
-.count{
-  color: white;
-  background-color: #ff382f;
-  border-radius: 50%;
-  font-size: 12px;
-  height: 18px;
+
+.count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
   width: 18px;
+  height: 18px;
+  color: white;
+  font-size: 12px;
   line-height: 18px;
   text-align: center;
-  position: absolute;
-  right: -6px;
-  top: -6px;
+  background-color: #ff382f;
+  border-radius: 50%;
 }

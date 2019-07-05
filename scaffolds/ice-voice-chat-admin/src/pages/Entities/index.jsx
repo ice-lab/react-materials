@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import TopBar from '../../components/TopBar';
-import GeneralDialog from '../../components/GeneralDialog';
+import React, { useState } from 'react';
+import TopBar from '@/components/TopBar';
+import GeneralDialog from '@/components/GeneralDialog';
 import EntitlesTable from './components/EntitlesTable';
 import mockdata from './data';
 
-export default class Entities extends Component {
-  state = {
-    data: mockdata, // MOCK 数据，实际业务按需进行替换
-  };
+export default function Entities() {
+  const [tableData, setTableData] = useState(mockdata);
 
-  getFormValue = (value) => {
-    const { data } = this.state;
+  const getFormValue = (value) => {
+    const data = [...tableData];
     data.push({
       id: data.length + 1,
       name: value.title,
@@ -18,27 +16,15 @@ export default class Entities extends Component {
       preview: '--',
       skill: '无',
     });
-    this.setState({
-      data,
-    });
+    setTableData(data);
   };
-
-  renderExtraAfter = () => {
-    return (
-      <GeneralDialog buttonText="新建实体" getFormValue={this.getFormValue} />
-    );
-  };
-
-  render() {
-    const { data } = this.state;
-    return (
-      <div>
-        <TopBar
-          title="实体管理（Entities）"
-          extraAfter={this.renderExtraAfter()}
-        />
-        <EntitlesTable data={data} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <TopBar
+        title="实体管理（Entities）"
+        extraAfter={<GeneralDialog buttonText="新建实体" getFormValue={getFormValue} />}
+      />
+      <EntitlesTable data={tableData} />
+    </div>
+  );
 }

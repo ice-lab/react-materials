@@ -1,46 +1,55 @@
-.name{
+.name {
   margin: 0;
   font-size: 16px;
 }
-.header{
+
+.header {
   display: flex;
   align-items: center;
 }
+
 .wrap {
-  padding-top: 20px;
   align-items: center;
+  padding-top: 20px;
   border-bottom: 1px solid #f4f4f4;
-};
+}
+
 .col {
   margin: 0 0 20px 0;
-};
+}
+
 .img {
+  display: block;
   width: 80px;
   height: 80px;
-  display: block;
-};
+}
+
 .status {
-  text-align: center;
   color: #333;
   font-size: 14px;
-};
+  text-align: center;
+}
+
 .title {
   margin: 0;
   font-size: 16px;
-};
+}
+
 .desc {
-  font-size: 12px;
   color: #999;
-  line-height: 20px;
-};
-.link {
   font-size: 12px;
-  cursor: pointer;
+  line-height: 20px;
+}
+
+.link {
   margin-right: 20px;
   color: #5e83fb;
-};
-.spanPadding{
   font-size: 12px;
-  color: #999;
+  cursor: pointer;
+}
+
+.spanPadding {
   padding-left: 20px;
+  color: #999;
+  font-size: 12px;
 }

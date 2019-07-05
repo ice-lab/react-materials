@@ -1,15 +1,15 @@
 
-    .cardHead {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0 0 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
-    }
-    .cardTitle {
-      margin: 0;
-      font-size: 18px;
-      font-weight: bold;
-    }
-  
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.cardTitle {
+  margin: 0;
+  font-weight: bold;
+  font-size: 18px;
+}

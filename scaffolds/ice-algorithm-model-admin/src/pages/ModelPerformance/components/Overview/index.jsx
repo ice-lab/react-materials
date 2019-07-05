@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
@@ -31,63 +32,29 @@ const mockData = [
   },
 ];
 
-export default class Overview extends Component {
-  render() {
-    return (
-      <Row gutter={20}>
-        {mockData.map((item, index) => {
-          return (
-            <Col l="6" key={index}>
-              <div style={styles.box}>
-                <div
-                  style={{
-                    ...styles.symbol,
-                    background: `${item.symbolBgColor}`,
-                  }}
-                >
-                  <FoundationSymbol size="xl" type={item.symbol} />
-                </div>
-                <div style={styles.value}>
-                  <div style={styles.count}>{item.count}</div>
-                  <div style={styles.desc}>{item.desc}</div>
-                </div>
+export default function Overview() {
+  return (
+    <Row gutter={20}>
+      {mockData.map((item, index) => {
+        return (
+          <Col l="6" key={index}>
+            <div className={styles.box}>
+              <div
+                className={styles.symbol}
+                style={{
+                  background: `${item.symbolBgColor}`,
+                }}
+              >
+                <FoundationSymbol size="xl" type={item.symbol} />
               </div>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+              <div className={styles.value}>
+                <div className={styles.count}>{item.count}</div>
+                <div className={styles.desc}>{item.desc}</div>
+              </div>
+            </div>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
-
-const styles = {
-  box: {
-    display: 'flex',
-    height: '100px',
-    background: '#fff',
-    borderRadius: '4px',
-    marginBottom: '20px',
-  },
-  symbol: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '40%',
-    color: '#fff',
-  },
-  value: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '60%',
-    color: '#c6cad6',
-  },
-  count: {
-    fontSize: '36px',
-    marginBottom: '2px',
-  },
-  desc: {
-    fontSize: '13px',
-  },
-};

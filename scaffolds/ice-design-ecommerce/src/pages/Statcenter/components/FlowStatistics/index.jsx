@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
 import LineChart from './LineChart';
 import Head from './Head';
-import './FlowStatistics.scss';
+import styles from './index.module.scss';
 
 const MOCK_DATA = {
   threeMonths: {
@@ -25,39 +25,27 @@ const MOCK_DATA = {
     click: '26,386',
   },
 };
-export default class FlowStatistics extends Component {
-  static displayName = 'FlowStatistics';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer className="flow-statistics">
-        <h4 className="title">流量统计</h4>
-        <Tab shape="text" size="small">
-          <Tab.Item title="近三个月" key="1">
-            <Head data={MOCK_DATA.threeMonths} />
-            <LineChart />
-          </Tab.Item>
-          <Tab.Item title="近半年" key="2">
-            <Head data={MOCK_DATA.halfYear} />
-            <LineChart />
-          </Tab.Item>
-          <Tab.Item title="近一年" key="3">
-            <Head data={MOCK_DATA.nearlyYear} />
-            <LineChart />
-          </Tab.Item>
-        </Tab>
-      </IceContainer>
-    );
-  }
+export default function FlowStatistics() {
+  return (
+    <IceContainer className={styles.flowStatistics}>
+      <h4 className={styles.title}>
+        流量统计
+      </h4>
+      <Tab shape="text" size="small">
+        <Tab.Item title="近三个月" key="1">
+          <Head data={MOCK_DATA.threeMonths} />
+          <LineChart />
+        </Tab.Item>
+        <Tab.Item title="近半年" key="2">
+          <Head data={MOCK_DATA.halfYear} />
+          <LineChart />
+        </Tab.Item>
+        <Tab.Item title="近一年" key="3">
+          <Head data={MOCK_DATA.nearlyYear} />
+          <LineChart />
+        </Tab.Item>
+      </Tab>
+    </IceContainer>
+  );
 }
-
-
+FlowStatistics.displayName = 'FlowStatistics';

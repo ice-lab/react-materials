@@ -13,6 +13,4 @@ const LoginIntro = () => {
   );
 };
 
-
-
 export default LoginIntro;

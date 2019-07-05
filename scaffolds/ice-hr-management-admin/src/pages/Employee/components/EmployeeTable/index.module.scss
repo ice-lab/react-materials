@@ -1,32 +1,39 @@
-.container{
+.container {
   padding: 0;
 }
-.profile{
+
+.profile {
   display: flex;
   align-items: center;
 }
-.avatar{
+
+.avatar {
   width: 24px;
   height: 24px;
-  border: 1px solid #eee;
   background: #eee;
+  border: 1px solid #eee;
   border-radius: 50px;
 }
-.name{
+
+.name {
   margin-left: 15px;
   color: #314659;
   font-size: 14px;
 }
-.link{
-  cursor: pointer;
+
+.link {
   color: #1890ff;
+  cursor: pointer;
 }
-.edit{
-  margin-right: 5px
+
+.edit {
+  margin-right: 5px;
 }
-.btn{
+
+.btn {
   margin-right: 10px;
 }
-.table{
+
+.table {
   padding: 20px;
 }

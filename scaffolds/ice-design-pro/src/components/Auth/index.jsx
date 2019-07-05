@@ -1,14 +1,16 @@
 import React from 'react';
-import Exception from '@/components/Exception';
 import cookie from 'cookie';
+import { Link } from 'react-router-dom';
+
+import Exception from '@/components/Exception';
 
 /**
  * 权限组件，可控制页面或者组件
  * @param {authorities} 权限列表
  *
  * 控制页面例子：
- *     import React from 'react';
- *     import { withAuth } from '@/components/Auth';
+ *    import React from 'react';
+ *    import { withAuth } from '@/components/Auth';
  *     function BasicList() {
  *       return (
  *         <div className="list-page">
@@ -35,7 +37,10 @@ const Auth = ({ children, authorities = [] }) => {
     return (
       <Exception
         statusCode="403"
-        description="抱歉，你没有权限访问该页面"
+        description={<div>
+          <p>抱歉，当前用户为 {authority || 'Guest'}, 没有权限访问该页面</p>
+          <p>您可以<Link to="/user/login">登录 Admin 用户</Link>再查看该页面</p>
+        </div>}
       />
     );
   }

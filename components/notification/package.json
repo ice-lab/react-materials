@@ -20,8 +20,8 @@
     "ice-component"
   ],
   "scripts": {
-    "start": "ice dev",
-    "build": "ice build",
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.component.config.js",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {

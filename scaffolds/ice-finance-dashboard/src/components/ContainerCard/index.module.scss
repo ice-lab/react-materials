@@ -1,0 +1,32 @@
+.containerCard {
+  margin: 30px 0;
+  color: #fff;
+  background: #2c3448;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  .containerCardHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 20px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .containerCardTitle {
+    height: 40px;
+    margin: 0;
+    font-weight: bold;
+    line-height: 40px;
+  }
+
+  .containerCardContent {
+    padding: 20px;
+  }
+}

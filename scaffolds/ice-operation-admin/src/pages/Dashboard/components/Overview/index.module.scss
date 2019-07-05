@@ -1,30 +1,33 @@
-.textCardItem{
-  border-right: 1px solid #F0F0F0 !important;
-  height: 90px !important;
-  width: 33% !important;
+.textCardItem {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
   align-items: center !important;
-};
-.textCardSubtitle{
-  font-size: 12px;
+  justify-content: center !important;
+  width: 33% !important;
+  height: 90px !important;
+  border-right: 1px solid #f0f0f0 !important;
+}
+
+.textCardSubtitle {
   margin-bottom: 10px;
-};
-.textCardTitle{
+  font-size: 12px;
+}
+
+.textCardTitle {
   font-size: 16px;
-};
-.textCardNumber{
-  font-size: 24px;
+}
+
+.textCardNumber {
   font-weight: bold;
-};
-.hb{
-  border-right: 1px solid #F0F0F0 !important;
-  height: 90px !important;
-  width: 33% !important;
+  font-size: 24px;
+}
+
+.hb {
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
   align-items: center !important;
-  border-right: 0px !important;
+  justify-content: center !important;
+  width: 33% !important;
+  height: 90px !important;
+  border-right: 0 !important;
 }

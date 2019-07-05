@@ -1,0 +1,20 @@
+.iceLayoutFooterBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 20px;
+  background-color: transparent;
+
+  .copyright {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .copyrightLink {
+    color: #666;
+  }
+}

@@ -1,32 +1,33 @@
 
-
 .basic-indicator-tab {
+  margin-top: 20px;
+  background: #f7f7f7;
+
   .next-tabs-tab.active {
     background: #fff !important;
   }
 }
 
-  .tabTitle{
-    padding: 0;
-    font-size: 14px;
-    font-weight: 500;
-    color: #666;
-  }
-  .tabValue {
-    margin: 12px 0;
-    font-size: 24px;
-    font-weight: 500;
-    color: #5e83fb;
-  }
-  .tabDesc {
-    padding: 0 0 10px;
-    font-size: 12px;
-    color: #999;
-  }
-.complexTab{
-  padding: 0 40px;
+.tabTitle {
+  padding: 0;
+  color: #666;
+  font-weight: 500;
+  font-size: 14px;
 }
-.basic-indicator-tab{
-  background: #f7f7f7;
-  margin-top: 20px;
+
+.tabValue {
+  margin: 12px 0;
+  color: #5e83fb;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.tabDesc {
+  padding: 0 0 10px;
+  color: #999;
+  font-size: 12px;
+}
+
+.complexTab {
+  padding: 0 40px;
 }

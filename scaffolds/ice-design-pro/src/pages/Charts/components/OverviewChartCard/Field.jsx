@@ -1,4 +1,3 @@
-/* eslint react/require-default-props: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
@@ -14,6 +13,6 @@ export default function Field(props) {
 }
 
 Field.propTypes = {
-  value: PropTypes.string,
-  label: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };

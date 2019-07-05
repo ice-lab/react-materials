@@ -1,26 +1,28 @@
 
-    .footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 20px;
-    }
-    .links {
-      margin-bottom: 8px;
-    }
-    .link {
-      font-size: 13px;
-      margin-right: 40px;
-      color: #fff;
-      margin-right: 0;
-    }
-    .copyright {
-      font-size: 13px;
-      color: #fff;
-      line-height: 1.5;
-      text-align: right;
-    }
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  margin-bottom: 8px;
+}
+
+.link {
+  margin-right: 0;
+  color: #fff;
+  font-size: 13px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+}

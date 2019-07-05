@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Logo from '../Logo';
-import './index.scss';
+import styles from './index.module.scss';
 
 const MENUS = [
   {
@@ -21,23 +21,19 @@ const MENUS = [
   },
 ];
 
-export default class Header extends Component {
-  render() {
-    return (
-      <div className="header-container">
-        <div className="header-content">
-          <Logo isDark />
-          <div className="header-navbar">
-            {
-              MENUS.map((item, idx) => {
-                return (
-                  <a key={idx} className="header-menu-item" href={item.path}>{item.name}</a>
-                );
-              })
-            }
-          </div>
-        </div>
+export default () => (
+  <div className={styles.headerContainer}>
+    <div className={styles.headerContent}>
+      <Logo isDark />
+      <div className={styles.headerNavbar}>
+        {
+          MENUS.map((item, idx) => {
+            return (
+              <a key={idx} className={styles.headerMenuItem} href={item.path}>{item.name}</a>
+            );
+          })
+        }
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);

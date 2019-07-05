@@ -1,79 +1,79 @@
 .container {
-    background-image: url(./images/bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    padding: 60px 0;
-    min-height: 562px;
+  min-height: 562px;
+  padding: 60px 0;
+  background-image: url(./images/bg.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
 }
 
 .content {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .titleWrap {
-    margin-top: 44px;
+  margin-top: 44px;
 }
 
 .bigTitle {
-    font-size: 68px;
-    line-height: 82px;
-    font-weight: 700;
-    color: #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 82px;
 }
 
 .subTitle {
-    font-size: 24px;
-    line-height: 30px;
-    color: #fff;
-    margin-top: 8px;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .item {
-    position: relative;
-    margin-top: 48px;
+  position: relative;
+  margin-top: 48px;
 }
 
 .itemNum {
-    position: absolute;
-    top: -8px;
-    left: 0;
-    width: 65px;
-    font-size: 100px;
-    line-height: 100px;
-    text-align: center;
-    color: rgba(35, 108, 255, .2);
-    z-index: 0;
-    font-weight: 700;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  z-index: 0;
+  width: 65px;
+  color: rgba(35, 108, 255, 0.2);
+  font-weight: 700;
+  font-size: 100px;
+  line-height: 100px;
+  text-align: center;
 }
 
 .itemBox {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .itemTitle {
-    font-size: 32px;
-    line-height: 38px;
-    color: #fff;
-    font-weight: 700;
+  color: #fff;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
 }
 
 .itemSubtit {
-    font-size: 20px;
-    line-height: 30px;
-    color: #fff;
-    margin-top: 2px;
+  margin-top: 2px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .itemDesc {
-    font-size: 14px;
-    line-height: 22px;
-    color: hsla(0, 0%, 100%, .85);
-    height: 88px;
-    margin-top: 15px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
+  display: -webkit-box;
+  height: 88px;
+  margin-top: 15px;
+  overflow: hidden;
+  color: hsla(0, 0%, 100%, 0.85);
+  font-size: 14px;
+  line-height: 22px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
 }

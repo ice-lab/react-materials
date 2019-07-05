@@ -1,0 +1,20 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-width: 1200px;
+  height: 62px;
+  padding: 0 20px;
+  background: $color-brand1-6;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+
+  .headerNavbar {
+    display: flex;
+    flex-direction: row;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}

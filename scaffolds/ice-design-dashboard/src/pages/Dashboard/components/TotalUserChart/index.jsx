@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
-import ContainerCard from '../../../../components/ContainerCard';
+import ContainerCard from '@/components/ContainerCard';
 
 const data = [
   { month: '1月', users: 38 },
@@ -20,28 +20,26 @@ const cols = {
   users: { tickInterval: 20, alias: '用户数' },
 };
 
-export default class TotalUserChart extends Component {
-  render() {
-    return (
-      <ContainerCard
-        title="总用户趋势"
-        cardStyle={{ margin: '30px 0 20px' }}
-        contentStyle={{ padding: '0' }}
-      >
-        <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
-          <Tooltip
-            crosshairs={{
-              type: 'y',
-            }}
-          />
-          <Geom
-            type="interval"
-            position="month*users"
-            color="#447eff"
-            shape="smooth"
-          />
-        </Chart>
-      </ContainerCard>
-    );
-  }
+export default function TotalUserChart() {
+  return (
+    <ContainerCard
+      title="总用户趋势"
+      cardStyle={{ margin: '30px 0 20px' }}
+      contentStyle={{ padding: '0' }}
+    >
+      <Chart height={150} forceFit padding={[20]} data={data} scale={cols}>
+        <Tooltip
+          crosshairs={{
+            type: 'y',
+          }}
+        />
+        <Geom
+          type="interval"
+          position="month*users"
+          color="#447eff"
+          shape="smooth"
+        />
+      </Chart>
+    </ContainerCard>
+  );
 }

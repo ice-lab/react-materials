@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Message } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -41,31 +41,29 @@ const mock = [
   },
 ];
 
-export default class Function extends Component {
-  handleClick = () => {
+export default function Function() {
+  const handleClick = () => {
     Message.success('可以使用 Iceworks 按需添加页面');
   };
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.card}>
-          <h4 className={styles.title}>功能区</h4>
-          <div className={styles.content}>
-            {mock.map((item, index) => {
-              return (
-                <div
-                  className={styles.item}
-                  key={index}
-                  onClick={this.handleClick}
-                >
-                  <p className={styles.itemTitle}>{item.title}</p>
-                </div>
-              );
-            })}
-          </div>
+  return (
+    <div className={styles.container}>
+      <div className={styles.card}>
+        <h4 className={styles.title}>功能区</h4>
+        <div className={styles.content}>
+          {mock.map((item, index) => {
+            return (
+              <div
+                className={styles.item}
+                key={index}
+                onClick={handleClick}
+              >
+                <p className={styles.itemTitle}>{item.title}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

@@ -1,8 +1,6 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React, { useState, useEffect } from 'react';
 import Layout from '@icedesign/layout';
 import { enquire } from 'enquire-js';
-import PageLoading from '@/components/PageLoading';
 
 import Header from './components/Header';
 import Aside from './components/Aside';
