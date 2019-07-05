@@ -4,7 +4,7 @@ import IceImg from '@icedesign/img';
 import Layout from '@icedesign/layout';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { headerMenuConfig } from '@/menuConfig';
+import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';

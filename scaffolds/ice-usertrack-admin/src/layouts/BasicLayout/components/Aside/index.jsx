@@ -5,7 +5,7 @@ import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 import './index.scss';
 
 const { SubNav, Item } = Nav;

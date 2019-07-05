@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav } from '@alifd/next';
 import { Link, withRouter } from 'react-router-dom';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 
 const { SubNav, Item } = Nav;
 

@@ -3,7 +3,7 @@ import { Balloon, Icon, Nav } from '@alifd/next';
 import IceImg from '@icedesign/img';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link } from 'react-router-dom';
-import { headerMenuConfig } from '@/menuConfig';
+import { headerMenuConfig } from '@/config/menu.js';
 import styles from './index.module.scss';
 
 export default function Header() {
