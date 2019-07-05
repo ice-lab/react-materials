@@ -72,7 +72,7 @@
   },
   "iceworks": {
     "type": "react",
-    "adapter": "adapter-react-v2"
+    "adapter": "adapter-react-v3"
   },
   "repository": {
     "type": "git",
