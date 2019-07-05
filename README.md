@@ -16,20 +16,7 @@
 ### 环境准备
 
 ```bash
-# 物料管理工具
-$ npm i -g ice-devtools
-$ idev -V
-
-# React 物料开发工具
-$ npm i -g ice-scripts
-$ ice -V
-```
-
-### 新增物料
-
-```bash
-$ cd react-materials
-$ idev add
+$ npm install
 ```
 
 ### 开发调试
@@ -44,7 +31,6 @@ $ npm run build
 ### 相关链接
 
 - [issue 反馈](https://github.com/alibaba/ice/issues/new)
-- [ice-devtools](https://ice.work/docs/advanced/custom-materials)
 - [Fusion 组件](https://fusion.design/)
 - [ice-scripts](https://github.com/ice-lab/ice-scripts)
 
