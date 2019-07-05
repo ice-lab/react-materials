@@ -12,15 +12,15 @@
 .btn{
   display: inline-block;
   padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
   color: #fff;
+  font-size: 12px;
   text-decoration: none;
+  border-radius: 4px;
   cursor: pointer;
 };
 .editBtn{
-  background: #447eff;
   margin-right: 8px;
+  background: #447eff;
 };
 .deleteBtn{
   background: #ee706d;
@@ -31,24 +31,24 @@
 };
 .hb{
   display: inline-block;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-  background: #447eff;
   margin-right: 8px;
+  padding: 6px 12px;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+  background: #447eff;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .hb2{
   display: inline-block;
   padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
   color: #fff;
+  font-size: 12px;
   text-decoration: none;
-  cursor: pointer;
   background: #ee706d;
+  border-radius: 4px;
+  cursor: pointer;
 }
 .lead{
   width:  24px;
@@ -58,7 +58,7 @@
 .team{
   width: 24px;
   height: 24px;
-  border-radius: 50px;
   border: 2px solid #fff;
-  box-shadow: 0px 2px 10px 0px rgba(0,0,0,.2);
+  border-radius: 50px;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
 }

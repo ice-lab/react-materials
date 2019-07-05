@@ -10,45 +10,45 @@
 }
 
 .mainTitle {
-  font-size: 60px;
-  color: #fff;
-  letter-spacing: 0.77px;
-  line-height: 72px;
   margin: 0;
+  color: #fff;
   font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: 0.77px;
 }
 
 .mainDesc {
+  margin-top: 8px;
+  color: #fff;
+  font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  color: #fff;
-  margin-top: 8px;
-  font-weight: 700;
 }
 
 .tipsList {
-  background: #191a1e;
   width: 100%;
-  padding: 2px 24px 14px;
   margin: 70px 0 20px;
+  padding: 2px 24px 14px;
   overflow: hidden;
+  background: #191a1e;
 }
 
 .tipsText {
   float: left;
   margin: 0;
-  font-size: 14px;
-  color: hsla(0, 0%, 100%, 0.7);
-  line-height: 28px;
   margin-right: 30px;
   padding-top: 12px;
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 14px;
+  line-height: 28px;
 }
 
 .tipsNum {
+  padding: 0 6px;
+  color: #236cff;
   font-size: 24px;
   line-height: 24px;
-  color: #236cff;
-  padding: 0 6px;
 }
 
 .tipsLink {
@@ -61,36 +61,36 @@
 }
 
 .itemTitle {
-  font-size: 18px;
+  overflow: hidden;
   color: #fff;
+  font-size: 18px;
   line-height: 30px;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .itemTime {
-  font-size: 26px;
-  color: #fff;
-  line-height: 32px;
-  white-space: nowrap;
-  overflow: hidden;
   margin-top: 6px;
   margin-bottom: 17px;
-  letter-spacing: 0.72px;
+  overflow: hidden;
+  color: #fff;
   font-weight: 600;
+  font-size: 26px;
+  line-height: 32px;
+  letter-spacing: 0.72px;
+  white-space: nowrap;
 }
 
 .itemTextList {
-  padding-top: 16px;
-  border-top: 2px solid #fff;
   height: 118px;
+  padding-top: 16px;
   overflow: hidden;
+  border-top: 2px solid #fff;
 }
 
 .textList {
+  color: #fff;
   font-size: 12px;
   line-height: 20px;
-  color: #fff;
 }
 
 .itemPriceList {
@@ -105,35 +105,35 @@
 .priceText {
   float: left;
   width: 60%;
-  font-size: 12px;
+  overflow: hidden;
   color: #fff;
+  font-size: 12px;
   line-height: 26px;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .price {
+  padding-left: 2px;
   font-size: 26px;
   letter-spacing: 0.14px;
-  padding-left: 2px;
 }
 
 .btnWrap {
-  margin-top: 8px;
   display: block;
   width: 100%;
+  margin-top: 8px;
 }
 
 .buyLink {
   display: block;
   height: 32px;
+  color: #fff !important;
+  font-size: 14px;
   line-height: 32px;
   text-align: center;
-  font-size: 14px;
-  color: #fff !important;
-  transition: all 0.3s;
   text-decoration: none;
   background: #236cff;
+  transition: all 0.3s;
 }
 
 .unSale {

@@ -16,6 +16,7 @@ export default {
       this.userinfo = { name, department, avatar };
       this.userid = userid;
     } catch (err) {
+      console.error(err);
     }
   },
 

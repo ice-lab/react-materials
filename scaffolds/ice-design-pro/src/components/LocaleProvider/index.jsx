@@ -12,7 +12,9 @@ import enUS from '@alifd/next/lib/locale/en-us';
 import zhCN from '@alifd/next/lib/locale/zh-cn';
 
 // 引入 locale 配置文件
+// eslint-disable-next-line camelcase
 import en_US from '@/locales/en-US';
+// eslint-disable-next-line camelcase
 import zh_CN from '@/locales/zh-CN';
 
 // 设置语言包

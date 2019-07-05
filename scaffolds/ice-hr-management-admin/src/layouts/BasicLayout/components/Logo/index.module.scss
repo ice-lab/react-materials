@@ -1,12 +1,12 @@
 .logoStyle {
-  font-size: $font-size-headline;
   display: block;
   max-width: 180px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   color: #fff;
+  font-size: $font-size-headline;
+  white-space: nowrap;
   text-decoration: none;
+  text-overflow: ellipsis;
 
   &:link,
   &:visited {

@@ -33,14 +33,14 @@
 };
 .toggleBtn{
   margin-top: 20px;
-  text-align: center;
   color: #999;
+  text-align: center;
   text-decoration: none;
   cursor: pointer;
 };
 .hb{
   display: flex;
+  display: none;
   flex-wrap: wrap;
   padding-top: 20px;
-  display: none;
 }

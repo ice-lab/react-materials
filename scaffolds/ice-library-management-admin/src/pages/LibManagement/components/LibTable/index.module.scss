@@ -1,8 +1,8 @@
 .title {
   margin-bottom: 15px;
-  font-size: 18px;
-  font-weight: 500;
   color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .table {
@@ -12,16 +12,16 @@
 .button {
   display: inline-block;
   padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 4px;
   color: #fff;
+  font-size: 12px;
   text-decoration: none;
+  border-radius: 4px;
   cursor: pointer;
 }
 
 .detailButton {
-  background: #41cac0;
   margin-right: 8px;
+  background: #41cac0;
 }
 
 .container {
@@ -44,8 +44,8 @@
 }
 
 .tableCustom {
-  margin-top: 10px !important;
   min-height: 500px !important;
+  margin-top: 10px !important;
 }
 
 .pagination {

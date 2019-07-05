@@ -1,19 +1,19 @@
 .title {
+  margin-bottom: 30px;
   color: #fff;
   font-size: 46px;
-  text-align: center;
   line-height: 60px;
-  margin-bottom: 30px;
   letter-spacing: 4px;
+  text-align: center;
 }
 
 .subTitle {
-  color: #fff;
   margin: 0;
+  color: #fff;
   font-size: 20px;
+  line-height: 1.7em;
   text-align: center;
   text-shadow: #c8c8c8 1px 1px 2px;
-  line-height: 1.7em;
 }
 
 .leftButton {
@@ -32,9 +32,9 @@
 
 .gitStar {
   width: 145px;
-  border: 0;
   height: 32px;
   margin: 0 auto;
+  border: 0;
 }
 
 .gitContainer {
@@ -57,26 +57,26 @@
 .landingIntroBannerBackground {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-size: cover;
 }
 
 .landingIntroBannerContentWrapper {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   .landingIntroBannerContent {
-    padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 50px;
+    padding-left: 15px;
   }
 
   .landingIntroBannerButtons {

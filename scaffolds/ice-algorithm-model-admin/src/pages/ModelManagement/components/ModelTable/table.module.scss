@@ -7,36 +7,36 @@
 }
 
 .title {
-  color: transparentize($color-black, 0.05);
   margin: 0;
   padding: 15px 20px;
-  font-size: 16px;
+  color: transparentize($color-black, 0.05);
   font-weight: 500;
+  font-size: 16px;
   border-bottom: 1px solid $color-warning-1;
 }
 
 .btn {
-  color: #fff;
-  cursor: pointer;
   display: inline-block;
   padding: 6px 12px;
+  color: #fff;
   font-size: 12px;
-  border-radius: 4px;
   text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .state {
-  color: $color-warning-3;
   position: relative;
+  color: $color-warning-3;
   font-weight: bold;
 }
 
 .dot {
+  position: absolute;
   top: 4px;
   left: -12px;
   width: 8px;
   height: 8px;
-  position: absolute;
   background: $color-warning-3;
   border-radius: 50%;
 }

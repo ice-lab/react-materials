@@ -3,18 +3,18 @@
 }
 
 .iceDesignLayoutFooterBody {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin: 20px auto 0;
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .copyright {
   color: #666;
-  line-height: 1.5;
   font-size: 12px;
+  line-height: 1.5;
   text-align: left;
 }
 

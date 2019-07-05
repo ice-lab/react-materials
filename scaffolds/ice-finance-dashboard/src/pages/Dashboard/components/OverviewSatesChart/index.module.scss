@@ -1,8 +1,8 @@
 .content {
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.25s ease;
   border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
 .title {
@@ -11,21 +11,21 @@
 }
 
 .data {
-  margin: 10px 0;
   display: flex;
+  margin: 10px 0;
 }
 
 .amount {
-  color: $color-data1-1;
   margin: 0 15px 0 0;
+  color: $color-data1-1;
   font-size: 28px;
 }
 
 .percent {
   display: flex;
-  font-size: 12px;
   align-items: flex-end;
   margin-bottom: 4px;
+  font-size: 12px;
 }
 
 .arrowIcon {
@@ -34,8 +34,8 @@
 
 .footer {
   display: flex;
-  margin-top: 30px;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .itemLabel {
@@ -43,7 +43,7 @@
 }
 
 .itemValue {
-  font-size: 16px;
   margin-top: 10px;
   font-weight: bold;
+  font-size: 16px;
 }

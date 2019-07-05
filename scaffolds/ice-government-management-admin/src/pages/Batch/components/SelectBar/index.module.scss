@@ -1,22 +1,22 @@
 .container {
-  margin: 0 40px;
   display: flex;
   align-items: center;
-  letter-spacing: 1px;
   justify-content: space-between;
+  margin: 0 40px;
+  letter-spacing: 1px;
 }
 
 .card {
   height: 120px;
-  cursor: pointer;
   padding: 10px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .unselectedCard {
   color: $color-text1-3;
-  border: 1px solid $color-fill1-1;
   background-color: $color-white;
+  border: 1px solid $color-fill1-1;
 }
 
 .selectedCard {
@@ -25,13 +25,13 @@
 }
 
 .icon {
-  color: $color-brand1-6;
   margin: 8px;
+  color: $color-brand1-6;
 }
 
 .selectedIcon {
-  color: white;
   margin: 8px;
+  color: white;
 }
 
 .title {

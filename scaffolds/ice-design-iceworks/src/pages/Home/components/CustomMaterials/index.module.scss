@@ -6,35 +6,35 @@
 
 .wrapper {
   position: relative;
-  height: 500px;
-  overflow: hidden;
   max-width: 1190px;
+  height: 500px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .feature {
+  position: absolute;
+  top: 0;
+  right: 70%;
+  z-index: 2;
   padding-top: 160px;
   padding-bottom: 160px;
   padding-left: 30px;
   background-image: url('./images/TB1A5MNpuuSBuNjy1XcXXcYjFXa-66-66.png');
   background-repeat: no-repeat;
   background-position: 10px 120px;
-  z-index: 2;
-  top: 0;
-  right: 70%;
-  position: absolute;
 }
 
 .line {
-  height: 2px;
   width: 140px;
-  background-color: rgba(255, 255, 255, 0.4);
+  height: 2px;
   margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .lineHeader {
-  height: 2px;
   width: 33px;
+  height: 2px;
   background-color: #fff;
 }
 
@@ -45,20 +45,20 @@
 }
 
 .desc {
-  font-size: 16px;
   color: #fff;
+  font-size: 16px;
   line-height: 26px;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
 }
 
 .cover {
   position: absolute;
-  left: 40%;
   bottom: 0;
+  left: 40%;
   z-index: 1;
 }
 
 .coverImage {
-  max-height: 430px;
   display: block;
+  max-height: 430px;
 }

@@ -1,16 +1,16 @@
 .textCardItem {
-  border-right: 1px solid #f0f0f0 !important;
-  height: 90px !important;
-  width: 33% !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
   align-items: center !important;
+  justify-content: center !important;
+  width: 33% !important;
+  height: 90px !important;
+  border-right: 1px solid #f0f0f0 !important;
 }
 
 .textCardSubtitle {
-  font-size: 12px;
   margin-bottom: 10px;
+  font-size: 12px;
 }
 
 .textCardTitle {
@@ -18,16 +18,16 @@
 }
 
 .textCardNumber {
-  font-size: 24px;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .hb {
-  height: 90px !important;
-  width: 33% !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
   align-items: center !important;
+  justify-content: center !important;
+  width: 33% !important;
+  height: 90px !important;
   border-right: 0 !important;
 }

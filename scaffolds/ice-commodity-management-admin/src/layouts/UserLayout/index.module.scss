@@ -1,19 +1,19 @@
 .container {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: vh;
   min-width: 1200px;
   height: 100vh;
   background-image: url(https://img.alicdn.com/tfs/TB1OpAhC7zoK1RjSZFlXXai4VXa-1350-900.jpg);
   background-size: cover;
-  display: flex;
-  flex-direction: column;
 }
 
 .row {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 .form {

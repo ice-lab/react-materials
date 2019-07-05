@@ -3,12 +3,12 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 
   .header-content {
-    height: 62px;
-    padding: 0 20px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 62px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
 
   .nav-name-text {
@@ -18,8 +18,8 @@
   .header-navbar {
     display: flex;
     flex: auto;
-    justify-content: flex-end;
     flex-direction: row;
+    justify-content: flex-end;
 
     .header-navbar-menu {
       box-shadow: none;
@@ -32,8 +32,8 @@
   }
 
   .user-department {
-    font-size: 12px;
     color: $color-white;
+    font-size: 12px;
   }
 
   .ice-design-header-userpannel {
@@ -42,9 +42,9 @@
 
     .user-profile {
       display: inline-block;
-      text-align: center;
       margin-bottom: 2px;
       color: $color-white;
+      text-align: center;
     }
 
     .icon-down {
@@ -56,14 +56,14 @@
 
 .user-profile-menu {
   width: 130px;
-  border-radius: 6px;
   padding: 0 16px;
+  border-radius: 6px;
 
   .user-profile-menu-item {
     height: 40px;
-    line-height: 40px;
-    font-size: 12px;
     color: #666;
+    font-size: 12px;
+    line-height: 40px;
     cursor: pointer;
 
     a:hover {

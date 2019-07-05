@@ -3,8 +3,8 @@
 }
 
 .operationItem {
-  color: $color-brand1-6;
   margin-right: 12px;
+  color: $color-brand1-6;
   text-decoration: none;
 
   &:link,
@@ -20,11 +20,11 @@
 
 .title {
   margin-left: 10px;
-  line-height: 20px;
   color: $color-brand1-6;
+  line-height: 20px;
 }
 
 .paginationWrapper {
-  text-align: right;
   padding-top: 26px;
+  text-align: right;
 }

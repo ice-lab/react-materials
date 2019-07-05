@@ -1,16 +1,16 @@
 .header-container {
   position: fixed;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 999;
-  background: #fff;
   min-width: 1200px;
+  background: #fff;
   box-shadow: 0 1px 4px transparentize($color-brand1-6, 0.9);
 
   :global {
     .next-nav {
-      box-shadow: none;
       border: 0;
+      box-shadow: none;
     }
 
     .next-menu-item-text {
@@ -19,11 +19,11 @@
   }
 
   .header-content {
-    width: 100%;
-    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
   }
 
   .header-navbar {
@@ -41,8 +41,8 @@
   }
 
   .user-department {
-    font-size: 12px;
     color: $color-text1-3;
+    font-size: 12px;
   }
 
   .ice-design-header-userpannel {
@@ -51,9 +51,9 @@
 
     .user-profile {
       display: inline-block;
-      text-align: center;
       margin-bottom: 2px;
       color: $color-text1-3;
+      text-align: center;
     }
 
     .icon-down {
@@ -64,14 +64,14 @@
 
 .user-profile-menu {
   width: 130px;
-  border-radius: 6px;
   padding: 0 16px;
+  border-radius: 6px;
 
   .user-profile-menu-item {
     height: 40px;
-    line-height: 40px;
-    font-size: 12px;
     color: $color-text1-3;
+    font-size: 12px;
+    line-height: 40px;
     cursor: pointer;
 
     a:hover {

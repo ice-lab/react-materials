@@ -1,17 +1,17 @@
 .menuBtn {
   position: fixed;
-  left: 0;
   top: 82px;
+  left: 0;
+  z-index: 9;
   width: 40px;
   height: 40px;
-  line-height: 40px;
-  border-radius: 0 6px 6px 0;
   color: #fff;
-  background: #2077ff;
+  line-height: 40px;
   text-align: center;
-  cursor: pointer;
-  z-index: 9;
   text-decoration: none;
+  background: #2077ff;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
 
   &:hover {
     color: #e7e7e7;
@@ -21,12 +21,12 @@
 @media screen and (max-width: 1199px) {
   .iceDesignLayoutAside {
     position: fixed;
-    left: -256px;
     top: 0;
     bottom: 0;
+    left: -256px;
+    z-index: 9999;
     padding: 0 20px;
     background: #2e323e !important;
-    z-index: 9999;
   }
 
   .openDrawer {

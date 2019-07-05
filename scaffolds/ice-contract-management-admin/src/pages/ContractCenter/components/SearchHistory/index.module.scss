@@ -1,6 +1,6 @@
 .container {
-  padding: 0;
   min-height: 100vh;
+  padding: 0;
 }
 
 .historyItem {
@@ -21,14 +21,14 @@
 
 .keyword {
   display: inline-block;
-  padding: 6px 10px;
-  background-color: rgba(31, 56, 88, 0.06);
-  border-radius: 3px;
-  margin-bottom: 8px;
-  margin-right: 8px;
   max-width: 100%;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  overflow: hidden;
   font-size: 12px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
+  background-color: rgba(31, 56, 88, 0.06);
+  border-radius: 3px;
 }

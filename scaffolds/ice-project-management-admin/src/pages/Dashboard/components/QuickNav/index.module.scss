@@ -29,23 +29,23 @@
 }
 
 .item {
+  position: relative;
   padding: 20px;
   border-bottom: 1px solid #f7f7f7;
-  position: relative;
   cursor: pointer;
 }
 
 .title {
   margin-left: 10px;
-  font-size: 16px;
   color: #447eff;
+  font-size: 16px;
 }
 
 .badge {
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 400;
   position: absolute;
   right: 20px;
+  padding: 2px 8px;
+  font-weight: 400;
+  font-size: 12px;
+  border-radius: 4px;
 }

@@ -1,18 +1,18 @@
 .next-nav.header-navbar-menu {
   display: flex;
-  background: #fff;
-  box-shadow: none;
-  margin: 62px 20px 0;
   height: 60px;
+  margin: 62px 20px 0;
   line-height: 62px;
+  background: #fff;
   border: 0;
+  box-shadow: none;
 
   > .ice-menu-item {
     height: 58px;
-    line-height: 58px;
+    color: #666;
     font-weight: bold;
     font-size: 14px;
-    color: #666;
+    line-height: 58px;
   }
 
   .ice-menu-item-selected {

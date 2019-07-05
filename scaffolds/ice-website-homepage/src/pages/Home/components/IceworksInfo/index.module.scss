@@ -1,17 +1,17 @@
 .wrapper {
-  height: 690px;
   position: relative;
-  overflow: hidden;
+  height: 690px;
   margin-top: -130px;
   padding-top: 10px;
+  overflow: hidden;
 }
 
 .productContent {
+  position: relative;
   z-index: 1;
   display: flex;
-  position: relative;
-  margin-top: 120px;
   justify-content: center;
+  margin-top: 120px;
 }
 
 .titleLine {
@@ -39,25 +39,25 @@
 }
 
 .desc {
+  margin-top: 24px;
   color: #6d7a82;
   font-size: 16px;
-  margin-top: 24px;
   line-height: 1.5;
 }
 
 .extraButton {
-  color: $color-brand1-6;
   margin-top: 35px;
+  color: $color-brand1-6;
   background: transparent;
   border-color: $color-brand1-6;
 }
 
 .clipBackground {
+  position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  position: absolute;
-  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+  left: 0;
   background: #fafafa;
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
 }

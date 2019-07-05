@@ -27,7 +27,7 @@ export default function Head(props) {
 }
 
 Head.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.string,
-  total: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  total: PropTypes.string.isRequired,
 };

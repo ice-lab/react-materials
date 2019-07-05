@@ -1,9 +1,9 @@
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 
   .content {
     width: 400px;
@@ -19,9 +19,9 @@
 
   .description {
     margin: 0;
-    font-size: 16px;
     color: #fff;
-    letter-spacing: 0.45px;
+    font-size: 16px;
     line-height: 40px;
+    letter-spacing: 0.45px;
   }
 }

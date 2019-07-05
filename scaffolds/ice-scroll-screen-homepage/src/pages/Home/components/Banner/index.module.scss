@@ -2,25 +2,25 @@
   height: 100%;
   margin-top: 78px;
   background: url(./images/bg.png);
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .content {
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 240px;
   width: 100%;
-  z-index: 10;
+  padding-top: 240px;
 }
 
 .title {
+  color: #fff;
+  font-weight: 700;
   font-size: 110px;
   line-height: 154px;
   letter-spacing: 24px;
-  font-weight: 700;
-  color: #fff;
 }
 
 .logo {

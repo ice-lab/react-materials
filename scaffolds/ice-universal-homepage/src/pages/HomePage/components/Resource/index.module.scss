@@ -1,13 +1,13 @@
 .container {
   width: 1200px;
-  padding: 80px 0;
   margin: 0 auto;
+  padding: 80px 0;
 }
 
 .content {
+  display: flex;
   padding: 40px;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
-  display: flex;
 }
 
 .leftContent {
@@ -20,10 +20,10 @@
 }
 
 .title {
-  line-height: 38px;
+  margin: 0 0 24px;
   font-weight: bold;
   font-size: 40px;
-  margin: 0 0 24px;
+  line-height: 38px;
   text-align: center;
 }
 
@@ -36,17 +36,17 @@
 }
 
 .desc {
-  font-size: 14px;
-  text-align: justify;
-  color: rgba(0, 0, 0, 0.6);
-  line-height: 24px;
   margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
 }
 
 .link {
-  font-size: 14px;
-  font-weight: 500;
   margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .itemBody {
@@ -54,8 +54,8 @@
 }
 
 .topItemBody {
-  padding-bottom: 80px;
   margin-bottom: 80px;
+  padding-bottom: 80px;
   border-bottom: 1px solid #f0f0f0;
 }
 
@@ -78,8 +78,8 @@
 
 .topItemBodyitemBody {
   display: flex;
-  padding-bottom: 80px;
   margin-bottom: 80px;
+  padding-bottom: 80px;
   border-bottom: 1px solid #f0f0f0;
 }
 

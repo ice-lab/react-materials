@@ -10,18 +10,18 @@
 
 .bigTitle {
   padding-top: 30px;
-  font-size: 60px;
   color: #333;
+  font-size: 60px;
   letter-spacing: 0.77px;
 }
 
 .subTitle {
-  font-size: 24px;
-  color: #333;
-  text-align: left;
-  line-height: 30px;
   margin-top: 58px;
   padding-bottom: 30px;
+  color: #333;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: left;
   border-bottom: 1px solid #333;
 }
 
@@ -34,16 +34,16 @@
 }
 
 .partnerTitle {
+  margin-bottom: 40px;
+  color: #333;
   font-weight: 700;
   font-size: 20px;
-  color: #333;
-  letter-spacing: 0.25px;
   line-height: 24px;
-  margin-bottom: 40px;
+  letter-spacing: 0.25px;
 }
 
 .logo {
+  display: block;
   max-width: 100%;
   margin-bottom: 20px;
-  display: block;
 }

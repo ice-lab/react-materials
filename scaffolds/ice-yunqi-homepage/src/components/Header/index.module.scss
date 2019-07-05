@@ -1,32 +1,32 @@
 .headerContainer {
   position: fixed;
-  left: 0;
   right: 0;
+  left: 0;
   z-index: 999;
-  background: #000;
   min-width: 1200px;
+  background: #000;
 
   .headerContent {
     position: relative;
-    width: 1200px;
-    height: 78px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 1200px;
+    height: 78px;
+    margin: 0 auto;
   }
 
   :global {
     .next-nav {
-      background: transparent !important;
       margin-right: 100px;
-      box-shadow: none;
+      background: transparent !important;
       border: none;
+      box-shadow: none;
 
       .next-menu-item {
-        background-color: transparent !important;
-        font-weight: 600;
         color: #fff !important;
+        font-weight: 600;
+        background-color: transparent !important;
 
         .next-menu-item-inner {
           font-size: 14px !important;
@@ -51,18 +51,18 @@
     position: absolute;
     right: 0;
     display: block;
-    line-height: 28px;
     width: 82px;
     padding: 0 16px;
     color: #fff;
-    border: 1px solid #fff;
     font-weight: 600;
     font-size: 12px;
+    line-height: 28px;
+    border: 1px solid #fff;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background: #fff;
       color: #236cff;
+      background: #fff;
     }
   }
 }
