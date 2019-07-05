@@ -74,11 +74,9 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  {
-    "iceworks": {
-      "type": "react",
-      "adapter": "adapter-react-v2"
-    }
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v2"
   },
   "repository": {
     "type": "git",
