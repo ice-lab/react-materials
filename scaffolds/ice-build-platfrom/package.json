@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/builder-platfrom-scaffold",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "description": "该模板适用于云构建类的数据展示和管理后台",
   "homepage": "https://unpkg.com/@icedesign/builder-platfrom-scaffold@latest/build/index.html",
   "files": [

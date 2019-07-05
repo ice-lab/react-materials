@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/website-homepage-scaffold",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "description": "该模板适用于产品类的首页介绍，默认内置一个页面和五个不同风格的展示区块",
   "homepage": "https://unpkg.com/@icedesign/website-homepage-scaffold@latest/build/index.html",
   "files": [
