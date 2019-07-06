@@ -1,14 +1,14 @@
 
     .field{
-      line-height: 22px;
-      padding-top: 10px;
       margin-top: 10px;
-      white-space: nowrap;
+      padding-top: 10px;
       overflow: hidden;
-      text-overflow: ellipsis;
-      font-size: 14px;
-      border-top: 1px solid #e8e8e8;
       color: rgba(0,0,0,0.65);
+      font-size: 14px;
+      line-height: 22px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      border-top: 1px solid #e8e8e8;
     }
     .value {
       margin-left: 8px;
@@ -21,34 +21,34 @@
     }
     .meta {
       position: relative;
+      height: 22px;
       color: rgba(0,0,0,0.45);
       font-size: 14px;
       line-height: 22px;
-      height: 22px;
     }
     // .title {}
     .promptIcon {
-      cursor: pointer;
       position: absolute;
       top: 0;
       right: 0;
+      cursor: pointer;
     }
     .total {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      word-break: break-all;
-      white-space: nowrap;
-      color: rgba(0,0,0,0.85);
+      height: 38px;
       margin-top: 8px;
       margin-bottom: 0;
+      overflow: hidden;
+      color: rgba(0,0,0,0.85);
       font-size: 30px;
       line-height: 38px;
-      height: 38px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      word-break: break-all;
     }
     .footer{
       height: 30px;
-      padding-top: 10px;
       margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid #e8e8e8;
     }
 
@@ -57,11 +57,11 @@
       height: 64px;
     }
     .trendItems {
-      display: flex;
       position: absolute;
+      right: 0;
       bottom: 0;
       left: 0;
-      right: 0;
+      display: flex;
       color: rgba(0,0,0,0.65);
     }
     .trendItem {
@@ -80,9 +80,9 @@
         width: 120px;
     }
     .numUsing{
-         height: 64px;
           display: flex; 
-          align-items: center;  
+          align-items: center;
+         height: 64px;  
     }
   
   

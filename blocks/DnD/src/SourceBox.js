@@ -1,16 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd';
 import styles from './index.module.scss';
-const style = {
-  border: '1px dashed #ddd',
-  backgroundColor: '#fff',
-  padding: '0.5rem 1rem',
-  marginRight: '1rem',
-  marginBottom: '1rem',
-  cursor: 'move',
-  width: '100%',
-};
 
 const boxSource = {
   beginDrag() {
@@ -35,41 +26,33 @@ function collect(connect, monitor) {
   };
 }
 
-class SourceBox extends Component {
-  static propTypes = {
-    isDragging: PropTypes.bool.isRequired,
-    showCopyIcon: PropTypes.bool,
-  };
+function SourceBox(props) {
+  const [show] = useState(true);
 
-  static defaultProps = {
-    showCopyIcon: true,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: true,
-    };
-  }
-
-  render() {
-    const {
-      isDragging,
-      connectDragSource,
-      showCopyIcon,
-      children,
-    } = this.props;
-    const opacity = isDragging ? 0.4 : 1;
-    const dropEffect = showCopyIcon ? 'copy' : 'move';
-    const { show } = this.state;
-    return show
-      ? connectDragSource &&
-          connectDragSource(
-            <div style={{ opacity }} className={styles.SourceBox}>{children}</div>,
-            { dropEffect }
-          )
-      : '';
-  }
+  const {
+    isDragging,
+    connectDragSource,
+    showCopyIcon,
+    children,
+  } = props;
+  const opacity = isDragging ? 0.4 : 1;
+  const dropEffect = showCopyIcon ? 'copy' : 'move';
+  return show
+    ? connectDragSource &&
+        connectDragSource(
+          <div style={{ opacity }} className={styles.SourceBox}>{children}</div>,
+          { dropEffect }
+        )
+    : '';
 }
+
+SourceBox.propTypes = {
+  isDragging: PropTypes.bool.isRequired,
+  showCopyIcon: PropTypes.bool,
+};
+
+SourceBox.defaultProps = {
+  showCopyIcon: true,
+};
 
 export default DragSource('box', boxSource, collect)(SourceBox);

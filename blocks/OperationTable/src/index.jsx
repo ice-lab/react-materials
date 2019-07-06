@@ -1,5 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
-import React, { Component } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination, Icon, Message } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import IceImg from '@icedesign/img';
@@ -36,48 +35,35 @@ function mockList() {
   });
 }
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const [tableData, setTableData] = useState({
+    total: 100,
+    pageSize: 10,
+    currentPage: 1,
+    list: [],
+    loading: true,
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableData: {
-        total: 100,
-        pageSize: 10,
-        currentPage: 1,
-        list: [],
-        __loading: true,
-      },
-    };
-  }
-
-  componentDidMount() {
-    this.fetchData({
+  useEffect(() => {
+    fetchData({
       page: 1,
     });
-  }
+  }, [fetchData]);
 
-  fetchData = ({ page }) => {
-    const tableData = this.state.tableData;
+  const fetchData = useCallback(async ({ page }) => {
     tableData.currentPage = page;
-    tableData.__loading = true;
+    tableData.loading = true;
 
+    await setTableData(tableData);
     // 模拟请求 500 毫秒的效果，实际使用中只需要在请求完成后设置值即可
-    this.setState({ tableData: tableData }, () => {
-      setTimeout(() => {
-        tableData.__loading = false;
-        tableData.list = mockList();
-        this.setState({ tableData: tableData });
-      }, 500);
-    });
-  };
+    setTimeout(() => {
+      tableData.loading = false;
+      tableData.list = mockList();
+      setTableData(tableData);
+    }, 500);
+  });
 
-  renderTitle = (value, index, record) => {
+  const renderTitle = (value, index, record) => {
     return (
       <div className={styles.titleCol}>
         <div>
@@ -88,7 +74,7 @@ export default class Index extends Component {
     );
   };
 
-  editItem = (record, e) => {
+  const editItem = (record, e) => {
     e.preventDefault();
     EditorInfoDialog.show({
       value: record,
@@ -107,11 +93,11 @@ export default class Index extends Component {
     });
   };
 
-  renderOperations = (value, index, record) => {
+  const renderOperations = (value, index, record) => {
     return (
       <div className={`${styles.operationTable} operation-table-operation`}>
         <span
-          onClick={this.editItem.bind(this, record)}
+          onClick={(e) => editItem(record, e)}
           title="编辑"
           className={styles.operBtn}
         >
@@ -127,7 +113,7 @@ export default class Index extends Component {
     );
   };
 
-  renderStatus = (value) => {
+  const renderStatus = (value) => {
     return (
       <IceLabel inverse={false} status="default">
         {value}
@@ -135,57 +121,54 @@ export default class Index extends Component {
     );
   };
 
-  changePage = (currentPage) => {
-    this.fetchData({ page: currentPage });
+  const changePage = (currentPage) => {
+    fetchData({ page: currentPage });
   };
 
-  render() {
-    const tableData = this.state.tableData;
 
-    return (
-      <div className="operation-table">
-        <IceContainer className={styles.cardContainer}>
-          <Table
-            dataSource={tableData.list}
-            loading={tableData.__loading}
-            // className="basic-table"
-            className={`${styles.basicTable} basic-table`}
-            hasBorder={false}
-          >
-            <Table.Column
-              title="问题描述"
-              cell={this.renderTitle}
-              width={320}
-            />
-            <Table.Column title="问题分类" dataIndex="type" width={85} />
-            <Table.Column
-              title="发布时间"
-              dataIndex="publishTime"
-              width={150}
-            />
-            <Table.Column
-              title="状态"
-              dataIndex="publishStatus"
-              width={85}
-              cell={this.renderStatus}
-            />
-            <Table.Column
-              title="操作"
-              dataIndex="operation"
-              width={150}
-              cell={this.renderOperations}
-            />
-          </Table>
-          <div className={styles.paginationContainer}>
-            <Pagination
-              current={tableData.currentPage}
-              pageSize={tableData.pageSize}
-              total={tableData.total}
-              onChange={this.changePage}
-            />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="operation-table">
+      <IceContainer className={styles.cardContainer}>
+        <Table
+          dataSource={tableData.list}
+          loading={tableData.loading}
+          // className="basic-table"
+          className={`${styles.basicTable} basic-table`}
+          hasBorder={false}
+        >
+          <Table.Column
+            title="问题描述"
+            cell={renderTitle}
+            width={320}
+          />
+          <Table.Column title="问题分类" dataIndex="type" width={85} />
+          <Table.Column
+            title="发布时间"
+            dataIndex="publishTime"
+            width={150}
+          />
+          <Table.Column
+            title="状态"
+            dataIndex="publishStatus"
+            width={85}
+            cell={renderStatus}
+          />
+          <Table.Column
+            title="操作"
+            dataIndex="operation"
+            width={150}
+            cell={renderOperations}
+          />
+        </Table>
+        <div className={styles.paginationContainer}>
+          <Pagination
+            current={tableData.currentPage}
+            pageSize={tableData.pageSize}
+            total={tableData.total}
+            onChange={changePage}
+          />
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

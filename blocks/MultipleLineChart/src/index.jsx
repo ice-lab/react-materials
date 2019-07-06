@@ -1,20 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 
-export default class MultipleLineChart extends Component {
-  static displayName = 'MultipleLineChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getOption = () => {
+export default function MultipleLineChart() {
+  const getOption = () => {
     const colors = ['#57cc78', '#44a3fc', '#f0657d'];
     return {
       color: colors,
@@ -162,11 +151,9 @@ export default class MultipleLineChart extends Component {
     };
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <ReactEcharts option={this.getOption()} style={{ height: '540px' }} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <ReactEcharts option={getOption()} style={{ height: '540px' }} />
+    </IceContainer>
+  );
 }

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from  './index.module.scss'
+
 const { Row, Col } = Grid;
 
 const data = [
@@ -24,45 +25,33 @@ const data = [
   },
 ];
 
-export default class PriceCard extends Component {
-  static displayName = 'PriceCard';
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <Row gutter="20" wrap>
-            {data.map((item, index) => {
-              return (
-                <Col xxs="24" s="8" l="8" key={index}>
-                  <div className={styles.item}>
-                    <div className={styles.head}>
-                      <h3 className={styles.title}>{item.title}</h3>
-                      <p className={styles.description}>{item.description}</p>
-                    </div>
-                    <div className={styles.info}>
-                      <p className={styles.price}>￥{item.price}</p>
-                    </div>
-                    <div className={styles.buyBtn}>
-                      <a href="/" className={styles.link}>
-                        立即购买
-                      </a>
-                    </div>
+export default function PriceCard() {
+  return (
+    <div className={styles.container}>
+      <div className={styles.content}>
+        <Row gutter="20" wrap>
+          {data.map((item, index) => {
+            return (
+              <Col xxs="24" s="8" l="8" key={index}>
+                <div className={styles.item}>
+                  <div className={styles.head}>
+                    <h3 className={styles.title}>{item.title}</h3>
+                    <p className={styles.description}>{item.description}</p>
                   </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
+                  <div className={styles.info}>
+                    <p className={styles.price}>￥{item.price}</p>
+                  </div>
+                  <div className={styles.buyBtn}>
+                    <a href="/" className={styles.link}>
+                      立即购买
+                    </a>
+                  </div>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
-    );
-  }
+    </div>
+  );
 }
-

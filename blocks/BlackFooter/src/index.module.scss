@@ -1,23 +1,23 @@
 .container {
-  background: #0e0e0e;
   padding: 54px 0 70px;
+  background: #0e0e0e;
 };
 .content {
   max-width: 1200px;
   margin: 0 auto;
 };
 .title {
+  color: #fff;
   font-size: 18px;
   line-height: 26px;
-  color: #fff;
 };
 .desc {
+  max-width: 830px;
+  margin-top: 14px;
+  color: #fff;
   font-size: 12px;
   line-height: 20px;
-  color: #fff;
   text-align: justify;
-  margin-top: 14px;
-  max-width: 830px;
 };
 .link {
   color: #00b7d3;
@@ -29,21 +29,21 @@
   padding-left: 100px;
 };
 .qrcode {
-  width: 82px;
-  height: 82px;
   position: absolute;
   top: 0;
   left: 0;
+  width: 82px;
+  height: 82px;
 };
 .subtit {
+  color: #fff;
   font-weight: 400;
   font-size: 16px;
-  color: #fff;
   line-height: 22px;
 };
 .text {
-  font-size: 12px;
-  color: #666;
-  line-height: 18px;
   margin-top: 6px;
+  color: #666;
+  font-size: 12px;
+  line-height: 18px;
 }

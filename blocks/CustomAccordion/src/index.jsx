@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Collapse } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -26,37 +26,22 @@ const mockData = [
   },
 ];
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const [dataSource, setData] = useState(mockData);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: mockData,
-    };
+  const onChange = (status) => {
+    setData(dataSource.map((e, k) => {
+      return Object.assign({}, e, { expanded: status[k] });
+    }));
   }
 
-  onChange(status) {
-    const { dataSource } = this.state;
-    this.setState({
-      dataSource: dataSource.map((e, k) => {
-        return Object.assign({}, e, { expanded: status[k] });
-      }),
-    });
-  }
-
-  render() {
-    const { dataSource } = this.state;
-    return (
-      <IceContainer>
-        <Collapse
-          className={styles.accordion}
-          accordion
-          onExpand={this.onChange.bind(this)}
-          dataSource={dataSource} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <Collapse
+        className={styles.accordion}
+        accordion
+        onExpand={(status) => onChange(status)}
+        dataSource={dataSource} />
+    </IceContainer>
+  );
 }
-
-

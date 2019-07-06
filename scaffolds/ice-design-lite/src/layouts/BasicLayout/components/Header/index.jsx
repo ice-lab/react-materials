@@ -23,7 +23,7 @@ export default function Header(props) {
 
   useEffect(() => {
     userProfile.fetchData();
-  }, []);
+  }, [userProfile]);
 
   return (
     <Layout.Header

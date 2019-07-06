@@ -1,7 +1,7 @@
 .container {
     padding: 50px 0;
-    background: #475268;
     color: #fff;
+    background: #475268;
 }
 
 .content {
@@ -10,17 +10,17 @@
 }
 
 .title {
-    font-size: 20px;
-    font-weight: 400;
     margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 .link {
     display: block;
-    margin-bottom: 20px;
     height: 22px;
-    line-height: 22px;
+    margin-bottom: 20px;
     color: #fff;
+    line-height: 22px;
     cursor: pointer;
 }
 

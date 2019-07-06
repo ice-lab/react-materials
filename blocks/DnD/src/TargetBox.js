@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { DropTarget } from 'react-dnd';
 import styles from './index.module.scss';
 
@@ -16,14 +16,11 @@ function collect(connect, monitor) {
   };
 }
 
-class TargetBox extends Component {
-  render() {
-    const { connectDropTarget, children } = this.props;
-    return (
-      connectDropTarget &&
-      connectDropTarget(<div className={styles.TargetBox}>{children}</div>)
-    );
-  }
+function TargetBox({ connectDropTarget, children }) {
+  return (
+    connectDropTarget &&
+    connectDropTarget(<div className={styles.TargetBox}>{children}</div>)
+  );
 }
 
 export default DropTarget('box', boxTarget, collect)(TargetBox);

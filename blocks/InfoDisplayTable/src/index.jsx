@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Table } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import './InfoDisplayTable.scss';
@@ -31,30 +31,15 @@ const dataSource = () => {
   ];
 };
 
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="info-display-table">
-        <IceContainer>
-          <Table dataSource={dataSource()}>
-            <Table.Column title="个人信息" dataIndex="label" />
-            <Table.Column title="" dataIndex="value" />
-          </Table>
-        </IceContainer>
-      </div>
-    );
-  }
+export default function Index() {
+  return (
+    <div className="info-display-table">
+      <IceContainer>
+        <Table dataSource={dataSource()}>
+          <Table.Column title="个人信息" dataIndex="label" />
+          <Table.Column title="" dataIndex="value" />
+        </Table>
+      </IceContainer>
+    </div>
+  );
 }
-
-

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination, Button, Dialog } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import FilterTag from '../FilterTag';
@@ -38,17 +38,17 @@ export default function GoodsTable() {
     });
   };
 
-  const fetchData = (len) => {
+  const fetchData = useCallback((len) => {
     setLoading(true);
     mockApi(len).then((data) => {
       setLoading(false);
       setDataSource(data);
     });
-  };
+  });
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const handlePaginationChange = (current) => {
     setCurrentPage(current);

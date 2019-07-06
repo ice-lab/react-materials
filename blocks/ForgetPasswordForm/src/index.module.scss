@@ -1,13 +1,13 @@
 .title {
-    font-size: 16px;
     margin: 0 0 10px;
-    font-weight: bold;
     color: #333;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .subtitle {
-    font-size: 12px;
     margin-bottom: 20px;
+    font-size: 12px;
 }
 
 .groupTitle {
@@ -15,9 +15,9 @@
 }
 
 .input {
-    max-width: 332px;
     width: 70%;
     min-width: 150px;
+    max-width: 332px;
 }
 
 .inputWrap {

@@ -55,7 +55,7 @@ export default function DepartmentTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <IceContainer className={styles.container}>

@@ -1,24 +1,14 @@
 /* eslint no-mixed-operators:0 */
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 import styles from './index.module.scss';
+
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xByzFvaw1M
  */
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getOption = () => {
+export default function Index() {
+  const getOption = () => {
     const scale = 1;
     const echartData = [
       {
@@ -157,13 +147,11 @@ export default class Index extends Component {
     };
   };
 
-  render() {
-    return (
-      <div className="circular-chart">
-        <IceContainer>
-          <ReactEcharts option={this.getOption()} className={styles.reactHeight} />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="circular-chart">
+      <IceContainer>
+        <ReactEcharts option={getOption()} className={styles.reactHeight} />
+      </IceContainer>
+    </div>
+  );
 }

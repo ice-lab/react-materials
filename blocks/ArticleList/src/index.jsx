@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Icon } from '@alifd/next';
 import styles from './index.module.scss';
+
 const generatorData = () => {
   return Array.from({ length: 5 }).map(() => {
     return {
@@ -16,76 +17,68 @@ const generatorData = () => {
   });
 };
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const dataSource = generatorData();
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const dataSource = generatorData();
-    return (
-      <div className="article-list">
-        <IceContainer className={styles.articleFilterCard}>
-          <ul className={`${"article-sort"} ${styles.articleSort}`}>
-            <li className={styles.sortItem}>
-              最新 <Icon type="arrow-down" size="xs" />
-            </li>
-            <li className={styles.sortItem}>
-              最热 <Icon type="arrow-down" size="xs" />
-            </li>
-            <li className={styles.sortItem}>
-              距离截稿日期最近 <Icon type="arrow-down" size="xs" />
-            </li>
-            <li className={styles.sortItem}>
-              距离开始开启最近 <Icon type="arrow-down" size="xs" />
-            </li>
-          </ul>
-        </IceContainer>
-        <IceContainer>
-          {dataSource.map((item, index) => {
-            return (
-              <div key={index} className={styles.articleItem}>
-                <div>
-                  <a className={styles.title} href="/">
-                    {item.title}
-                  </a>
+  return (
+    <div className="article-list">
+      <IceContainer className={styles.articleFilterCard}>
+        <ul className={`${"article-sort"} ${styles.articleSort}`}>
+          <li className={styles.sortItem}>
+            最新 <Icon type="arrow-down" size="xs" />
+          </li>
+          <li className={styles.sortItem}>
+            最热 <Icon type="arrow-down" size="xs" />
+          </li>
+          <li className={styles.sortItem}>
+            距离截稿日期最近 <Icon type="arrow-down" size="xs" />
+          </li>
+          <li className={styles.sortItem}>
+            距离开始开启最近 <Icon type="arrow-down" size="xs" />
+          </li>
+        </ul>
+      </IceContainer>
+      <IceContainer>
+        {dataSource.map((item, index) => {
+          return (
+            <div key={index} className={styles.articleItem}>
+              <div>
+                <a className={styles.title} href="/">
+                  {item.title}
+                </a>
+              </div>
+              <div>
+                <p className={styles.desc}>{item.description}</p>
+              </div>
+              <div className={styles.articleItemFooter}>
+                <div className={styles.articleItemTags}>
+                  {item.tags.map((tag, idx) => {
+                    return (
+                      <span
+                        key={idx}
+                        className={ `${"article-item-tag"} ${styles.tag}`}
+                      >
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
-                <div>
-                  <p className={styles.desc}>{item.description}</p>
-                </div>
-                <div className={styles.articleItemFooter}>
-                  <div className={styles.articleItemTags}>
-                    {item.tags.map((tag, idx) => {
-                      return (
-                        <span
-                          key={idx}
-                          className={ `${"article-item-tag"} ${styles.tag}`}
-                        >
-                          {tag}
-                        </span>
-                      );
-                    })}
-                  </div>
-                  <div className={styles.articleItemMeta}>
-                    <span className={styles.itemMetaIcon}>
-                      <Icon type="good" size="small" /> {item.like}
-                    </span>
-                    <span className={styles.itemMetaIcon}>
-                      <Icon type="favorite" size="small" /> {item.favor}
-                    </span>
-                    <span className={styles.itemMetaIcon}>
-                      <Icon type="comments" size="small" /> {item.comment}
-                    </span>
-                  </div>
+                <div className={styles.articleItemMeta}>
+                  <span className={styles.itemMetaIcon}>
+                    <Icon type="good" size="small" /> {item.like}
+                  </span>
+                  <span className={styles.itemMetaIcon}>
+                    <Icon type="favorite" size="small" /> {item.favor}
+                  </span>
+                  <span className={styles.itemMetaIcon}>
+                    <Icon type="comments" size="small" /> {item.comment}
+                  </span>
                 </div>
               </div>
-            );
-          })}
-        </IceContainer>
-      </div>
-    );
-  }
+            </div>
+          );
+        })}
+      </IceContainer>
+    </div>
+  );
 }

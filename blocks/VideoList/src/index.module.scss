@@ -4,28 +4,28 @@
   }
  .videoCate{
     margin: 0 10px;
-    background:#fff;
     padding:0 14px;
+    background:#fff;
     border-radius:4px;
   }
   .videoCateItem {
     display:inline-block;
     margin:12px 4px;
     padding:6px 18px;
-    font-size:  16px;
     color:  #666;
+    font-size:  16px;
     cursor:  pointer;
   }
  .videoList {
-    margin:  20px 0 0 !important;
     display:  flex;
     flex-wrap:  wrap;
     justify-content:space-around;
+    margin:  20px 0 0 !important;
   }
   .videoCarditem {
     margin-bottom:  20px;
-    border-radius:  4px;
     background:  #fff  ;
+    border-radius:  4px;
   } 
   .active {
     color:  #FF5D38  ;
@@ -35,8 +35,8 @@
   .video {
     display:  block;
     width:  100%;
-    cursor:  pointer;
     border-radius:  4px;
+    cursor:  pointer;
   }
   .dialogVideo {
     width:  600px  ;
@@ -47,17 +47,17 @@
   } ;
   .videoTitle {
     margin:  0 0 10px  ;
-    line-height:  32px  ;
     font-size:  24px  ;
+    line-height:  32px  ;
   }
   .videoDesc {
-    padding: 0 0 20px  ;
-    margin:  0 0 20px  ;
-    font-size:  14px  ;
-    color:  #999  ;
-    line-height:  20px  ;
     height:  120px  ;
+    margin:  0 0 20px  ;
+    padding: 0 0 20px  ;
     overflow:  hidden  ;
+    color:  #999  ;
+    font-size:  14px  ;
+    line-height:  20px  ;
   }
   .videoFee {
     position:  absolute  ;
@@ -73,33 +73,33 @@
     right:  0  ;
     width:  124px  ;
     height:  32px  ;
+    color:  #fff  ;
     line-height:  32px  ;
     text-align:  center  ;
-    color:  #fff  ;
     background:  #FF5D38  ;
   }
   .start{
+    top: auto;
+    bottom: -60px;
     width: 166px;
     height: 40px;
     line-height: 40px;
-    bottom: -60px;
-    top: auto;
   }
   .arrowIcon {
     width:  20px  ;
     height:  20px  ;
-    vertical-align:  middle  ;
-    margin-left:  4px  ;
     margin-top:  -2px  ;
+    margin-left:  4px  ;
+    vertical-align:  middle  ;
   }
   .playerIcon{
     position:  absolute  ;
-    left:  50%  ;
     top:  50%  ;
+    left:  50%  ;
     width:  40px  ;
     height:  40px  ;
-    margin-left:  -20px  ;
     margin-top:  -20px  ;
+    margin-left:  -20px  ;
   }
   .videoPosition{
     position: relative

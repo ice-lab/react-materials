@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { UnControlled as CodeMirror } from 'react-codemirror2';
 import { Grid } from '@alifd/next';
@@ -13,28 +13,15 @@ const codeString = `
     console.log('I ♥ ICE')
   }`;
 
-export default class CustomCodemirror extends Component {
-  static displayName = 'CustomCodemirror';
+export default function CustomCodemirror() {
+  const [value, setValue] = useState(codeString);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: codeString,
-    };
-  }
-
-  onChange = (editor, data, value) => {
+  const onChange = (editor, data, value) => {
     console.log({ data, value });
-    this.setState({
-      value,
-    });
+    setValue(value);
   };
 
-  renderCodeMirror = () => {
+  const renderCodeMirror = () => {
     const options = {
       mode: 'javascript',
       lineNumbers: true,
@@ -43,25 +30,23 @@ export default class CustomCodemirror extends Component {
 
     return (
       <CodeMirror
-        value={this.state.value}
+        value={value}
         options={options}
-        onChange={this.onChange}
+        onChange={onChange}
       />
     );
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <Row wrap>
-          <Col l="12" xxs="24">
-            {this.renderCodeMirror()}
-          </Col>
-          <Col l="12" xxs="24">
-            {this.renderCodeMirror()}
-          </Col>
-        </Row>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <Row wrap>
+        <Col l="12" xxs="24">
+          {renderCodeMirror()}
+        </Col>
+        <Col l="12" xxs="24">
+          {renderCodeMirror()}
+        </Col>
+      </Row>
+    </IceContainer>
+  );
 }

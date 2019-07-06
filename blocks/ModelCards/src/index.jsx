@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid, Icon } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -42,51 +42,37 @@ const getData = () => {
   });
 };
 
-export default class ModelCards extends Component {
-  static displayName = 'ModelCards';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const mockData = getData();
-    return (
-      <Row wrap gutter="40" className={styles.row}>
-        {mockData.map((data, index) => {
-          return (
-            <Col l="6" key={index}>
-              <div className={styles.modelCards}>
-                <div className={styles.head}>
-                  <Icon type="electronics" className={styles.icon} /> {data.title}
-                </div>
-                <div className={styles.body}>
-                  {data.body.map((item, key) => {
-                    return (
-                      <div className={styles.item} key={key}>
-                        <span className={styles.label}>{item.label}：</span>
-                        <span className={styles.value}>{item.value}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className={styles.footer}>
-                  <a className={styles.lightBlue }>
-                    调用示例
-                  </a>
-                  <a className={styles.green }>在线预测</a>
-                </div>
+export default function ModelCards() {
+  const mockData = getData();
+  return (
+    <Row wrap gutter="40" className={styles.row}>
+      {mockData.map((data, index) => {
+        return (
+          <Col l="6" key={index}>
+            <div className={styles.modelCards}>
+              <div className={styles.head}>
+                <Icon type="electronics" className={styles.icon} /> {data.title}
               </div>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+              <div className={styles.body}>
+                {data.body.map((item, key) => {
+                  return (
+                    <div className={styles.item} key={key}>
+                      <span className={styles.label}>{item.label}：</span>
+                      <span className={styles.value}>{item.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={styles.footer}>
+                <a className={styles.lightBlue }>
+                  调用示例
+                </a>
+                <a className={styles.green }>在线预测</a>
+              </div>
+            </div>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }
-

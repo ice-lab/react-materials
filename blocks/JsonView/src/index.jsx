@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import IceContainer from '@icedesign/container';
 import ReactJson from 'react-json-view';
@@ -12,42 +12,32 @@ const JsonConfig = {
   ],
 };
 
-export default class JsonView extends Component {
-  static displayName = 'JsonView';
-
-  static propTypes = {
-    JsonConfig: PropTypes.object,
+export default function JsonView({ JsonConfig }) {
+  const [src, setSrc] = useState('');
+  const onEdit = (e) => {
+    setSrc(e.updated_src);
   };
 
-  static defaultProps = {
-    JsonConfig,
+  const onDelete = (e) => {
+    setSrc(e.updated_src);
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  onEdit = (e) => {
-    this.setState({ src: e.updated_src });
-  };
-
-  onDelete = (e) => {
-    this.setState({ src: e.updated_src });
-  };
-
-  render() {
-    const { JsonConfig } = this.props;
-    return (
-      <IceContainer>
-        <ReactJson
-          src={JsonConfig}
-          onEdit={this.onEdit}
-          onDelete={this.onDelete}
-        />
-      </IceContainer>
-    );
-  }
+  console.log(src);
+  return (
+    <IceContainer>
+      <ReactJson
+        src={JsonConfig}
+        onEdit={onEdit}
+        onDelete={onDelete}
+      />
+    </IceContainer>
+  );
 }
 
-const styles = {};
+JsonView.propTypes = {
+  JsonConfig: PropTypes.object,
+};
+
+JsonView.defaultProps = {
+  JsonConfig,
+};

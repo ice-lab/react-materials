@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Coord, Label, Legend } from 'bizcharts';
@@ -7,19 +7,8 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default class UserTrafficStastistics extends Component {
-  static displayName = 'UserTrafficStastistics';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderTrafficTypes = () => {
+export default function UserTrafficStastistics() {
+  const renderTrafficTypes = () => {
     const data = [
       { status: '激活', count: 356 },
       { status: '保持', count: 235 },
@@ -105,7 +94,7 @@ export default class UserTrafficStastistics extends Component {
     );
   };
 
-  renderUserStatistics = () => {
+  const renderUserStatistics = () => {
     const data = [
       { type: '日用户量', count: 151, date: '02-21' },
       { type: '周用户量', count: 532, date: '02-21' },
@@ -212,7 +201,7 @@ export default class UserTrafficStastistics extends Component {
     );
   };
 
-  renderBrowserStatus = () => {
+  const renderBrowserStatus = () => {
     const browsers = [
       { type: 'Google Chrome', rate: 0.5 },
       { type: 'Mozila Firefox', rate: 0.1 },
@@ -257,22 +246,20 @@ export default class UserTrafficStastistics extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="user-traffic-stastistics">
-        <Row wrap gutter="20" className={styles.bottomRow}>
-          <Col xxs="24" l="7">
-            {this.renderTrafficTypes()}
-          </Col>
-          <Col xxs="24" l="10">
-            {this.renderUserStatistics()}
-          </Col>
-          <Col xxs="24" l="7">
-            {this.renderBrowserStatus()}
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+  return (
+    <div className="user-traffic-stastistics">
+      <Row wrap gutter="20" className={styles.bottomRow}>
+        <Col xxs="24" l="7">
+          {renderTrafficTypes()}
+        </Col>
+        <Col xxs="24" l="10">
+          {renderUserStatistics()}
+        </Col>
+        <Col xxs="24" l="7">
+          {renderBrowserStatus()}
+        </Col>
+      </Row>
+    </div>
+  );
 }
 

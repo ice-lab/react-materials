@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@alifd/next';
 import styles from './index.module.scss';
+
 const ContainerTitle = ({ title, style, ...props }) => {
   return (
     <div style={{...style }} className={styles.container1}>
@@ -14,8 +15,6 @@ const ContainerTitle = ({ title, style, ...props }) => {
     </div>
   );
 };
-
-
 
 ContainerTitle.propTypes = {
   title: PropTypes.string.isRequired,

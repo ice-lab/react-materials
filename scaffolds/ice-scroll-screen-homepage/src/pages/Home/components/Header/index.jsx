@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import ScrollAnim from 'rc-scroll-anim';
 import Logo from '@/components/Logo';
 import styles from './index.module.scss';
@@ -34,7 +34,7 @@ export default function Header() {
   useEffect(() => {
     // 添加改变窗口事件,可加setTimeout
     EventListener.addEventListener('resize.userResize', barAnimate);
-  }, []);
+  }, [barAnimate]);
 
   let dom;
   let barRef;
@@ -44,13 +44,13 @@ export default function Header() {
     barAnimate();
   };
 
-  const barAnimate = () => {
+  const barAnimate = useCallback(() => {
     if (!dom) {
       return;
     }
     const bar = barRef;
     bar.style.left = `${dom.getBoundingClientRect().left}px`;
-  };
+  });
 
   return (
     <div className={styles.headerContainer}>

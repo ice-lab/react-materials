@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import SourceBox from './SourceBox';
@@ -13,65 +13,54 @@ function generateSource(component, dropback, index) {
   );
 }
 
-class Container extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listSource: [
-        'Sucking at something is the first step towards being sorta good at',
-        'People make mistakes. It’s a part of growing up Homies help homies. Always',
-        'Sometimes life is scary and dark',
-        'Dont you always call sweatpants give up on life pants, Jake?',
-      ],
-      listTarget: [
-        "That's it! The answer was so simple, I was too smart to see it!",
-      ],
-    };
-  }
+function Container() {
+  const [listSource, setListSource] = useState([
+    'Sucking at something is the first step towards being sorta good at',
+    'People make mistakes. It’s a part of growing up Homies help homies. Always',
+    'Sometimes life is scary and dark',
+    'Dont you always call sweatpants give up on life pants, Jake?',
+  ]);
+  const [listTarget, setListTarget] = useState([
+    "That's it! The answer was so simple, I was too smart to see it!",
+  ]);
 
-  renderSource = () => {
-    return this.state.listSource.map((item, index) =>
-      generateSource(item, this.sourceToTarget, index)
+  const renderSource = () => {
+    return listSource.map((item, index) =>
+      generateSource(item, sourceToTarget, index)
     );
   };
 
-  renderTarget = () => {
-    return this.state.listTarget.map((item, index, self) => {
+  const renderTarget = () => {
+    return listTarget.map((item, index, self) => {
       if (self.length) {
         return generateSource(item, null, index);
       }
-      return generateSource(item, this.sourceToTarget, index);
+      return generateSource(item, sourceToTarget, index);
     });
   };
 
-  sourceToTarget = (index) => {
-    this.setState((prevState) => {
-      return {
-        listTarget: [...prevState.listTarget, prevState.listSource[index]],
-        listSource: [].concat(
-          prevState.listSource.splice(0, index),
-          prevState.listSource.splice(index)
-        ),
-      };
-    });
+  const sourceToTarget = (index) => {
+    setListSource([...listTarget, listSource[index]]);
+    setListTarget([].concat(
+      listSource.splice(0, index),
+      listSource.splice(index)
+    ));
   };
 
-  render() {
-    return (
-      <div className={styles.listContainer}>
-        <div className={styles.list}>
-          <div className={styles.listTitle}>List Source</div>
-          <div className={styles.listNoe}>
-            {this.renderSource()}
-          </div>
-        </div>
-        <div className={styles.list}>
-          <div className={styles.listTitle}>List Target</div>
-          <TargetBox>{this.renderTarget()}</TargetBox>
+  return (
+    <div className={styles.listContainer}>
+      <div className={styles.list}>
+        <div className={styles.listTitle}>List Source</div>
+        <div className={styles.listNoe}>
+          {renderSource()}
         </div>
       </div>
-    );
-  }
+      <div className={styles.list}>
+        <div className={styles.listTitle}>List Target</div>
+        <TargetBox>{renderTarget()}</TargetBox>
+      </div>
+    </div>
+  );
 }
 
 export default DragDropContext(HTML5Backend)(Container);

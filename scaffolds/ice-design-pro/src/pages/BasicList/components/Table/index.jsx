@@ -33,7 +33,7 @@ export default function GoodsTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   function mockApi(len) {
     return new Promise((resolve) => {

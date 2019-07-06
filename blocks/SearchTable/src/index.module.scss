@@ -1,71 +1,55 @@
 .container {
-    margin: 20px;
-    padding: 0;
-  }
-  .title {
-    margin: 0;
-    padding: 20px;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    color: rgba(0,0,0,0.85);
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-  }
- .formRow{
-    padding: 10px 20px;
-  }
-  .formItem {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-  }
-  .formLabel {
-    min-width: 70px;
-  }
-  .container {
-    margin: 20px;
-    padding: 0 0 20px;
-  }
-  .title {
-    margin: 0;
-    padding: 15px 20px;
-    font-size: 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    color: rgba(0,0,0,0.85);
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-  }
-  .link {
-    margin: 0 5px;
-    color: rgba(49,128,253,0.65);
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .separator {
-    margin: 0 8px;
-    display: inline-block;
-    height: 12px;
-    width: 1px;
-    vertical-align: middle;
-    background: #e8e8e8;
-  }
-  .pagination {
-    text-align: right;
-    margin-right: 20px;
-  }
+  margin: 20px;
+  padding: 0 0 20px;
+}
+.title {
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  color: rgba(0,0,0,0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #eee;
+}
+.formRow{
+  padding: 10px 20px;
+}
+.formItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.formLabel {
+  min-width: 70px;
+}
+.link {
+  margin: 0 5px;
+  color: rgba(49,128,253,0.65);
+  text-decoration: none;
+  cursor: pointer;
+}
+.separator {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 8px;
+  vertical-align: middle;
+  background: #e8e8e8;
+}
+.pagination {
+  margin-right: 20px;
+  text-align: right;
+}
 
-  .newAdd{
-     padding: 0 20px 20px;
-  }
+.newAdd{
+    padding: 0 20px 20px;
+}
 
-
-  .newType{
-    width: 200px;  
-  }
-  .newDate{
-    width: 200px;
-  }
+.newType{
+  width: 200px;  
+}
+.newDate{
+  width: 200px;
+}

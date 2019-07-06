@@ -1,4 +1,4 @@
-/*index.jsxiner{
+/* index.jsxiner{
   padding: 15px 20px;
   display: flex;
   align-items: center;
@@ -13,20 +13,20 @@
   font-weight: 500;
 };
 
-/*DocumentList.jsx*/
+/*DocumentList.jsx */
 .container2{
-  padding: 0;
   min-height: 800px;
+  padding: 0;
 };
 .item{
-  padding: 20px;
-  border-bottom: 1px solid #f0f0f0;
   position: relative;
   display: block;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
 };
 .title2{
-  margin-left: 16px;
   margin-right: 24px;
+  margin-left: 16px;
   color: #314659;
   font-size: 14px;
 };

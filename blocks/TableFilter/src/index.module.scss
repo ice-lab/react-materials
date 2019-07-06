@@ -1,8 +1,8 @@
 .tableFilter{
   display: flex;
-  background: #fff;
-  padding: 20px 0;
   margin-bottom: 20px;
+  padding: 20px 0;
+  background: #fff;
 }
 .filterItem{
   display: flex;
@@ -13,8 +13,8 @@
   margin-left: 15px;
 }
 .tableContainer{
-  background: #fff;
   padding-bottom: 10px;
+  background: #fff;
 }
 .pagination{
   margin: 20px 0;
@@ -27,12 +27,12 @@
   margin: 5px;
 }
 .circle{
-  display: inline-table;;
-  background: #28a745;
+  display: inline-table;
   width: 8px;
   height: 8px;
+  margin-right: 4px;;
+  background: #28a745;
   border-radius: 50px;
-  margin-right: 4px;
 }
 .stateText{
   color: #28a745;

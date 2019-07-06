@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Tab, Tag, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
@@ -30,61 +30,48 @@ const tagList = [
   },
 ];
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const [isMobile, setMobile] = useState(false);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false,
-    };
-  }
-
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setMobile(mobile);
     }, mediaCondition);
   };
 
-  onTabChange = (key) => {
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
+
+  const onTabChange = (key) => {
     console.log(`select tab is: ${key}`);
   };
 
-  onTagChange = (key, selected) => {
+  const onTagChange = (key, selected) => {
     console.log(`Tag: ${key} is ${selected ? 'selected' : 'unselected'}`);
   };
 
-  onDateChange = (value) => {
+  const onDateChange = (value) => {
     console.log(value);
   };
 
-  onSearch = (value) => {
+  const onSearch = (value) => {
     console.log(value);
   };
 
-  renderTabBarExtraContent = () => {
+  const renderTabBarExtraContent = () => {
     return (
       <div className={styles.extraFilter}>
         <DatePicker
           locale={{ datePlaceholder: '发布日期' }}
-          onChange={this.onDateChange}
+          onChange={onDateChange}
         />
         <Search
           placeholder="搜索"
           searchText=""
-          onSearch={this.onSearch}
+          onSearch={onSearch}
           className={styles.search}
           shape="simple"
         />
@@ -92,43 +79,39 @@ export default class Index extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="composite-filter">
-        <IceContainer className={styles.filterCard}>
-          <Tab
-            shape="text"
-            onChange={this.onTabChange}
-            contentStyle={{ display: 'none' }}
-            extra={
-              !this.state.isMobile ? this.renderTabBarExtraContent() : null
-            }
-          >
-            <TabItem title="全部" key="all" />
-            <TabItem title="图文" key="pic" />
-            <TabItem title="单品" key="item" />
-            <TabItem title="店铺上新" key="new" />
-            <TabItem title="短视频" key="video" />
-          </Tab>
+  return (
+    <div className="composite-filter">
+      <IceContainer className={styles.filterCard}>
+        <Tab
+          shape="text"
+          onChange={onTabChange}
+          contentStyle={{ display: 'none' }}
+          extra={
+            !isMobile ? renderTabBarExtraContent() : null
+          }
+        >
+          <TabItem title="全部" key="all" />
+          <TabItem title="图文" key="pic" />
+          <TabItem title="单品" key="item" />
+          <TabItem title="店铺上新" key="new" />
+          <TabItem title="短视频" key="video" />
+        </Tab>
 
-          <div className={styles.tagList}>
-            {tagList.map((tag, index) => {
-              return (
-                <Tag.Selectable
-                  type="normal"
-                  key={index}
-                  className={styles.tag}
-                  onChange={this.onTagChange.bind(this, tag.key)}
-                >
-                  {tag.name}
-                </Tag.Selectable>
-              );
-            })}
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+        <div className={styles.tagList}>
+          {tagList.map((tag, index) => {
+            return (
+              <Tag.Selectable
+                type="normal"
+                key={index}
+                className={styles.tag}
+                onChange={(value) => onTagChange(tag.key, value)}
+              >
+                {tag.name}
+              </Tag.Selectable>
+            );
+          })}
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-
-

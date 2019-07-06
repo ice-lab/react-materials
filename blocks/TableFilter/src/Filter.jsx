@@ -1,95 +1,76 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Button, DatePicker, Select } from '@alifd/next';
 import styles from './index.module.scss'
 
-export default class TableFilter extends Component {
-  static displayName = 'TableFilter';
+export default function TableFilter() {
+  const [startValue, setStartValue] = useState(null);
+  const [endValue, setEndValue] = useState(null);
+  const [endOpen, setEndOpen] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      startValue: null,
-      endValue: null,
-      endOpen: false,
-    };
-  }
-
-  disabledStartDate = (startValue) => {
-    const { endValue } = this.state;
+  const disabledStartDate = (startValue) => {
     if (!startValue || !endValue) {
       return false;
     }
     return startValue.valueOf() > endValue.valueOf();
   };
 
-  disabledEndDate = (endValue) => {
-    const { startValue } = this.state;
+  const disabledEndDate = (endValue) => {
     if (!endValue || !startValue) {
       return false;
     }
     return endValue.valueOf() <= startValue.valueOf();
   };
 
-  onChange = (field, value) => {
-    this.setState({
-      [field]: value,
-    });
+  const onStartChange = (value) => {
+    setStartValue(value);
   };
 
-  onStartChange = (value) => {
-    this.onChange('startValue', value);
+  const onEndChange = (value) => {
+    setEndValue(value);
   };
 
-  onEndChange = (value) => {
-    this.onChange('endValue', value);
-  };
-
-  handleStartOpenChange = (open) => {
+  const handleStartOpenChange = (open) => {
     if (!open) {
-      this.setState({ endOpen: true });
+      setEndOpen(true);
     }
   };
 
-  handleEndOpenChange = (open) => {
-    this.setState({ endOpen: open });
+  const handleEndOpenChange = (open) => {
+    setEndOpen(open);
   };
 
-  render() {
-    const { startValue, endValue, endOpen } = this.state;
-    return (
-      <div className={styles.tableFilter}>
-        <div className={styles.filterItem}>
-          <span>调价日期：</span>
-          <DatePicker
-            disabledDate={this.disabledStartDate}
-            value={startValue}
-            placeholder="Start"
-            onChange={this.onStartChange}
-            onOpenChange={this.handleStartOpenChange}
-          />
-          &nbsp;&nbsp;
-          <DatePicker
-            disabledDate={this.disabledEndDate}
-            value={endValue}
-            placeholder="End"
-            onChange={this.onEndChange}
-            visible={endOpen}
-            onOpenChange={this.handleEndOpenChange}
-          />
-        </div>
-        <div className={styles.filterItem}>
-          <span>状态：</span>
-          <Select>
-            <Select.Option value="all">全部</Select.Option>
-            <Select.Option value="checked">已审核</Select.Option>
-            <Select.Option value="unCheck">未审核</Select.Option>
-          </Select>
-        </div>
-        <Button type="primary" className={styles.submitButton}>
-          查询
-        </Button>
+  return (
+    <div className={styles.tableFilter}>
+      <div className={styles.filterItem}>
+        <span>调价日期：</span>
+        <DatePicker
+          disabledDate={disabledStartDate}
+          value={startValue}
+          placeholder="Start"
+          onChange={onStartChange}
+          onOpenChange={handleStartOpenChange}
+        />
+        &nbsp;&nbsp;
+        <DatePicker
+          disabledDate={disabledEndDate}
+          value={endValue}
+          placeholder="End"
+          onChange={onEndChange}
+          visible={endOpen}
+          onOpenChange={handleEndOpenChange}
+        />
       </div>
-    );
-  }
+      <div className={styles.filterItem}>
+        <span>状态：</span>
+        <Select>
+          <Select.Option value="all">全部</Select.Option>
+          <Select.Option value="checked">已审核</Select.Option>
+          <Select.Option value="unCheck">未审核</Select.Option>
+        </Select>
+      </div>
+      <Button type="primary" className={styles.submitButton}>
+        查询
+      </Button>
+    </div>
+  );
 }
-

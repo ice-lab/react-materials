@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
@@ -16,39 +16,28 @@ const isItalicHotkey = isKeyHotkey('mod+i');
 const isUnderlinedHotkey = isKeyHotkey('mod+u');
 const isCodeHotkey = isKeyHotkey('mod+`');
 
-export default class RichEditor extends Component {
-  static displayName = 'RichEditor';
+export default function RichEditor(props) {
+  const [value] = useState(Value.fromJSON(initialValue));
 
-  constructor(props) {
-    super(props);
-
-    // 加载初始数据，通常从接口中获取或者默认为空
-    this.state = {
-      value: Value.fromJSON(initialValue),
-    };
-  }
-
-  hasMark = (type) => {
-    const { value } = this.state;
+  const hasMark = (type) => {
     return value.activeMarks.some((mark) => mark.type === type);
   };
 
-  hasBlock = (type) => {
-    const { value } = this.state;
+  const hasBlock = (type) => {
     return value.blocks.some((node) => node.type === type);
   };
 
-  onChange = ({ value }) => {
+  const onChange = ({ value }) => {
     console.log('当前富文本数据的 JSON 表示：', value.toJSON());
-    this.setState({ value });
+    value(value);
     // 如果上层有传递 onChange 回调，则应该传递上去
-    if (this.props.onChange && typeof this.props.onChange === 'function') {
-      this.props.onChange(value.toJSON());
+    if (props.onChange && typeof props.onChange === 'function') {
+      props.onChange(value.toJSON());
     }
   };
 
   // 摁下快捷键之后，设置当前选中文本要切换的富文本类型
-  onKeyDown = (event, change) => {
+  const onKeyDown = (event, change) => {
     let mark;
 
     if (isBoldHotkey(event)) {
@@ -69,23 +58,21 @@ export default class RichEditor extends Component {
   };
 
   // 标记当前选中文本
-  onClickMark = (event, type) => {
+  const onClickMark = (event, type) => {
     event.preventDefault();
-    const { value } = this.state;
     const change = value.change().toggleMark(type);
-    this.onChange(change);
+    onChange(change);
   };
 
   // 切换当前 block 类型
-  onClickBlock = (event, type) => {
+  const onClickBlock = (event, type) => {
     event.preventDefault();
-    const { value } = this.state;
     const change = value.change();
     const { document } = value;
 
     if (type !== 'bulleted-list' && type !== 'numbered-list') {
-      const isActive = this.hasBlock(type);
-      const isList = this.hasBlock('list-item');
+      const isActive = hasBlock(type);
+      const isList = hasBlock('list-item');
 
       if (isList) {
         change
@@ -96,7 +83,7 @@ export default class RichEditor extends Component {
         change.setBlock(isActive ? DEFAULT_NODE : type);
       }
     } else {
-      const isList = this.hasBlock('list-item');
+      const isList = hasBlock('list-item');
       const isType = value.blocks.some((block) => {
         return !!document.getClosest(
           block.key,
@@ -120,12 +107,12 @@ export default class RichEditor extends Component {
       }
     }
 
-    this.onChange(change);
+    onChange(change);
   };
 
-  renderMarkButton = (type, icon) => {
-    const isActive = this.hasMark(type);
-    const onMouseDown = (event) => this.onClickMark(event, type);
+  const renderMarkButton = (type, icon) => {
+    const isActive = hasMark(type);
+    const onMouseDown = (event) => onClickMark(event, type);
 
     return (
       <span className="button" onMouseDown={onMouseDown} data-active={isActive}>
@@ -134,9 +121,9 @@ export default class RichEditor extends Component {
     );
   };
 
-  renderBlockButton = (type, icon) => {
-    const isActive = this.hasBlock(type);
-    const onMouseDown = (event) => this.onClickBlock(event, type);
+  const renderBlockButton = (type, icon) => {
+    const isActive = hasBlock(type);
+    const onMouseDown = (event) => onClickBlock(event, type);
 
     return (
       <span className="button" onMouseDown={onMouseDown} data-active={isActive}>
@@ -146,7 +133,7 @@ export default class RichEditor extends Component {
   };
 
   // 配置 block type 对应在富文本里面的渲染组件
-  renderNode = (props) => {
+  const renderNode = (props) => {
     const { attributes, children, node } = props;
     switch (node.type) {
       case 'block-quote':
@@ -167,7 +154,7 @@ export default class RichEditor extends Component {
   };
 
   // 配置 mark 对应在富文本里面的渲染组件
-  renderMark = (props) => {
+  const renderMark = (props) => {
     const { children, mark } = props;
     switch (mark.type) {
       case 'bold':
@@ -183,37 +170,35 @@ export default class RichEditor extends Component {
     }
   };
 
-  render() {
-    return (
-      <div className="rich-editor">
-        <IceContainer>
-          <div>
-            <div className="rich-editor-menu rich-editor-toolbar-menu">
-              {this.renderMarkButton('bold', 'format_bold')}
-              {this.renderMarkButton('italic', 'format_italic')}
-              {this.renderMarkButton('underlined', 'format_underlined')}
-              {this.renderMarkButton('code', 'code')}
-              {this.renderBlockButton('heading-one', 'looks_one')}
-              {this.renderBlockButton('heading-two', 'looks_two')}
-              {this.renderBlockButton('block-quote', 'format_quote')}
-              {this.renderBlockButton('numbered-list', 'format_list_numbered')}
-              {this.renderBlockButton('bulleted-list', 'format_list_bulleted')}
-            </div>
-            <div className="rich-editor-body">
-              <Editor
-                className={styles.editor}
-                placeholder="请编写一些内容..."
-                value={this.state.value}
-                onChange={this.onChange}
-                onKeyDown={this.onKeyDown}
-                renderNode={this.renderNode}
-                renderMark={this.renderMark}
-                spellCheck
-              />
-            </div>
+  return (
+    <div className="rich-editor">
+      <IceContainer>
+        <div>
+          <div className="rich-editor-menu rich-editor-toolbar-menu">
+            {renderMarkButton('bold', 'format_bold')}
+            {renderMarkButton('italic', 'format_italic')}
+            {renderMarkButton('underlined', 'format_underlined')}
+            {renderMarkButton('code', 'code')}
+            {renderBlockButton('heading-one', 'looks_one')}
+            {renderBlockButton('heading-two', 'looks_two')}
+            {renderBlockButton('block-quote', 'format_quote')}
+            {renderBlockButton('numbered-list', 'format_list_numbered')}
+            {renderBlockButton('bulleted-list', 'format_list_bulleted')}
           </div>
-        </IceContainer>
-      </div>
-    );
-  }
+          <div className="rich-editor-body">
+            <Editor
+              className={styles.editor}
+              placeholder="请编写一些内容..."
+              value={value}
+              onChange={onChange}
+              onKeyDown={onKeyDown}
+              renderNode={renderNode}
+              renderMark={renderMark}
+              spellCheck
+            />
+          </div>
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

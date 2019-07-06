@@ -1,23 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 import styles from './index.module.scss';
+
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xHyE7GIMdG
  */
-export default class BarLineChart extends Component {
-  static displayName = 'BarLineChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getOption = () => {
+export default function BarLineChart() {
+  const getOption = () => {
     return {
       title: {
         text: '自定义的折柱混合--BarLine',
@@ -162,13 +152,11 @@ export default class BarLineChart extends Component {
     };
   };
 
-  render() {
-    return (
-      <div className="bar-line-chart">
-        <IceContainer>
-          <ReactEcharts option={this.getOption()} className={styles.height} />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="bar-line-chart">
+      <IceContainer>
+        <ReactEcharts option={getOption()} className={styles.height} />
+      </IceContainer>
+    </div>
+  );
 }

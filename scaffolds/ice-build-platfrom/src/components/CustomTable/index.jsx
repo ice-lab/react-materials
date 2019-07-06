@@ -13,7 +13,7 @@ export default function Home(props) {
 
   useEffect(() => {
     props.onChange();
-  }, [current]);
+  }, [current, props]);
 
   const { isLoading, dataSource, columns } = props;
 

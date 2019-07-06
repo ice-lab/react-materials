@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 
 import './InfiniteScrollGrid.scss';
 import { Grid, AutoSizer } from 'react-virtualized';
@@ -25,33 +25,25 @@ const data = {
   ],
 };
 
-export default class Index extends PureComponent {
-  static displayName = 'Index';
+export default function Index() {
+  const [columnCount] = useState(1000);
+  const [height] = useState(300);
+  const [overscanColumnCount] = useState(0);
+  const [overscanRowCount] = useState(10);
+  const [rowHeight] = useState(40);
+  const [rowCount] = useState(1000);
+  const [scrollToColumn] = useState(undefined);
+  const [scrollToRow] = useState(undefined);
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      columnCount: 1000,
-      height: 300,
-      overscanColumnCount: 0,
-      overscanRowCount: 10,
-      rowHeight: 40,
-      rowCount: 1000,
-      scrollToColumn: undefined,
-      scrollToRow: undefined,
-    };
-  }
-
-  cellRenderer = ({ columnIndex, key, rowIndex, style }) => {
+  const cellRenderer = ({ columnIndex, key, rowIndex, style }) => {
     if (columnIndex === 0) {
-      return this.renderLeftSideCell({ columnIndex, key, rowIndex, style });
+      return renderLeftSideCell({ columnIndex, key, rowIndex, style });
     } else {
-      return this.renderBodyCell({ columnIndex, key, rowIndex, style });
+      return renderBodyCell({ columnIndex, key, rowIndex, style });
     }
   };
 
-  getColumnWidth = ({ index }) => {
+  const getColumnWidth = ({ index }) => {
     switch (index) {
       case 0:
         return 50;
@@ -64,23 +56,23 @@ export default class Index extends PureComponent {
     }
   };
 
-  getDatum(index) {
+  const getDatum = (index) => {
     const { list } = data;
 
     return list[index % list.length];
   }
 
-  getRowClassName = (row) => {
+  const getRowClassName = (row) => {
     return row % 2 === 0 ? 'even-row' : 'odd-row';
   };
 
-  noContentRenderer = () => {
+  const noContentRenderer = () => {
     return <div className="no-cells">No cells</div>;
   };
 
-  renderBodyCell = ({ columnIndex, key, rowIndex, style }) => {
-    const rowClass = this.getRowClassName(rowIndex);
-    const datum = this.getDatum(rowIndex);
+  const renderBodyCell = ({ columnIndex, key, rowIndex, style }) => {
+    const rowClass = getRowClassName(rowIndex);
+    const datum = getDatum(rowIndex);
 
     let content;
 
@@ -107,8 +99,8 @@ export default class Index extends PureComponent {
     );
   };
 
-  renderLeftSideCell = ({ key, rowIndex, style }) => {
-    const datum = this.getDatum(rowIndex);
+  const renderLeftSideCell = ({ key, rowIndex, style }) => {
+    const datum = getDatum(rowIndex);
 
     const classNames = cn('cell', 'letter-cell');
 
@@ -127,40 +119,27 @@ export default class Index extends PureComponent {
     );
   };
 
-  render() {
-    const {
-      columnCount,
-      height,
-      overscanColumnCount,
-      overscanRowCount,
-      rowHeight,
-      rowCount,
-      scrollToColumn,
-      scrollToRow,
-    } = this.state;
-
-    return (
-      <IceContainer className="infinite-scroll-grid">
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <Grid
-              cellRenderer={this.cellRenderer}
-              className="BodyGrid"
-              columnWidth={this.getColumnWidth}
-              columnCount={columnCount}
-              height={height}
-              noContentRenderer={this.noContentRenderer}
-              overscanColumnCount={overscanColumnCount}
-              overscanRowCount={overscanRowCount}
-              rowHeight={rowHeight}
-              rowCount={rowCount}
-              scrollToColumn={scrollToColumn}
-              scrollToRow={scrollToRow}
-              width={width}
-            />
-          )}
-        </AutoSizer>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className="infinite-scroll-grid">
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <Grid
+            cellRenderer={cellRenderer}
+            className="BodyGrid"
+            columnWidth={getColumnWidth}
+            columnCount={columnCount}
+            height={height}
+            noContentRenderer={noContentRenderer}
+            overscanColumnCount={overscanColumnCount}
+            overscanRowCount={overscanRowCount}
+            rowHeight={rowHeight}
+            rowCount={rowCount}
+            scrollToColumn={scrollToColumn}
+            scrollToRow={scrollToRow}
+            width={width}
+          />
+        )}
+      </AutoSizer>
+    </IceContainer>
+  );
 }

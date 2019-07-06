@@ -11,9 +11,9 @@
   position: absolute;
   bottom: 40px;
   left: 50%;
+  width: 1120px;
   margin-left: -590px;
   padding: 18px 30px;
-  width: 1120px;
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
@@ -26,15 +26,15 @@
   flex-direction: row;
 };
 .hotTag {
+  display: inline-block;
   width: 36px;
   height: 18px;
-  line-height: 18px;
   margin-left: 10px;
+  color: #fff;
+  line-height: 18px;
+  text-align: center;
   background: #ff5c5c;
   border-radius: 9px;
-  color: #fff;
-  display: inline-block;
-  text-align: center;
 };
 .hotNews {
   display: block;

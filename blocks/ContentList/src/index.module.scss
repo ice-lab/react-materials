@@ -1,16 +1,16 @@
 .cardTitle {
   height: 16px;
-  line-height: 16px;
-  font-size: 16px;
-  color: rgb(51, 51, 51);
-  font-weight: bold;
   margin: 0;
   padding: 0;
+  color: rgb(51, 51, 51);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
 }
 .item {
   position: relative;
-  border-bottom: 1px solid #eee;
   padding: 20px 0;
+  border-bottom: 1px solid #eee;
 }
 .title {
   margin: 0 0 10px;
@@ -20,21 +20,21 @@
   padding-left: 15px;
 }
 .meta {
-  font-size: 13px;
-  color: #999;
   margin-right: 15px;
+  color: #999;
+  font-size: 13px;
 }
 .operWrap {
   position: absolute;
-  right: 0;
   top: 36px;
+  right: 0;
   display: flex;
   cursor: pointer;
 }
 .oper {
   margin-left: 15px;
-  font-size: 13px;
   color: #999;
+  font-size: 13px;
 }
 .operIcon {
   margin-right: 8px;
@@ -51,18 +51,18 @@
 }
 .filterLabel {
   width: 60px;
-  font-size: 15px;
   font-weight: 400;
+  font-size: 15px;
 }
 .filterText {
-  font-size: 15px;
   margin-right: 15px;
+  font-size: 15px;
   cursor: pointer;
 }
 .active {
-  minWeight: 60px;
-  border-radius: 20px;
+  min-height: 60px;
   padding: 5px 15px;
-  background: #2784fc;
   color: #fff;
+  background: #2784fc;
+  border-radius: 20px;
 }

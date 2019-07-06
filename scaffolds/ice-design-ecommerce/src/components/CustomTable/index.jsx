@@ -26,7 +26,7 @@ export default function CustomTable({ searchQueryHistory, ...props }) {
   // works with function onPaginationChange
   useEffect(() => {
     fetchDataSource();
-  }, [pageIndex]);
+  }, [fetchDataSource, pageIndex]);
 
   function fetchDataSource() {
     setLoading(true);

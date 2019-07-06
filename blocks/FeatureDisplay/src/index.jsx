@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const data = [
@@ -42,37 +43,24 @@ const data = [
   },
 ];
 
-export default class FeatureDisplay extends Component {
-  static displayName = 'FeatureDisplay';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.items}>
-          <Row gutter="20" wrap>
-            {data.map((item, index) => {
-              return (
-                <Col key={index} xxs="24" s="12" l="8">
-                  <div className={styles.item}>
-                    <img src={item.imgUrl} className={styles.image} alt="" />
-                    <h3 className={styles.title}>{item.title}</h3>
-                    <p className={styles.description}>{item.description}</p>
-                  </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
+export default function FeatureDisplay() {
+  return (
+    <div className={styles.container}>
+      <div className={styles.items}>
+        <Row gutter="20" wrap>
+          {data.map((item, index) => {
+            return (
+              <Col key={index} xxs="24" s="12" l="8">
+                <div className={styles.item}>
+                  <img src={item.imgUrl} className={styles.image} alt="" />
+                  <h3 className={styles.title}>{item.title}</h3>
+                  <p className={styles.description}>{item.description}</p>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
-    );
-  }
+    </div>
+  );
 }

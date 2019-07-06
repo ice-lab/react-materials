@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Timeline } from '@alifd/next';
 import LineChart from './LineChart';
@@ -7,19 +7,8 @@ import styles from './index.module.scss'
 const { Row, Col } = Grid;
 const { Item: TimelineItem } = Timeline;
 
-export default class ProjectStatus extends Component {
-  static displayName = 'ProjectStatus';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderTimeline = () => {
+export default function ProjectStatus() {
+  const renderTimeline = () => {
     return (
       <Timeline>
         <TimelineItem
@@ -52,27 +41,25 @@ export default class ProjectStatus extends Component {
     );
   };
 
-  render() {
-    return (
-      <div>
-        <Row wrap gutter={20}>
-          <Col xxs="24" l="12">
-            <IceContainer title="完成进度">
-              <LineChart />
-              <div className={styles.projectStatus}>
-                <p className={styles.meta}>项目状态</p>
-                <h2 className={styles.count}>76,533</h2>
-              </div>
-            </IceContainer>
-          </Col>
-          <Col xxs="24" l="12">
-            <IceContainer title="完成状态" className={styles.container}>
-              {this.renderTimeline()}
-            </IceContainer>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Row wrap gutter={20}>
+        <Col xxs="24" l="12">
+          <IceContainer title="完成进度">
+            <LineChart />
+            <div className={styles.projectStatus}>
+              <p className={styles.meta}>项目状态</p>
+              <h2 className={styles.count}>76,533</h2>
+            </div>
+          </IceContainer>
+        </Col>
+        <Col xxs="24" l="12">
+          <IceContainer title="完成状态" className={styles.container}>
+            {renderTimeline()}
+          </IceContainer>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 

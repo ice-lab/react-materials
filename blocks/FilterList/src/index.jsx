@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Search, Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import SingleItem from './SingleItem';
@@ -176,10 +176,8 @@ const dataSource = [
   },
 ];
 
-export default class FilterList extends Component {
-  static displayName = 'FilterList';
-
-  renderItems = () => {
+export default function FilterList() {
+  const renderItems = () => {
     return (
       <Row gutter="20" wrap className={styles.itemRow}>
         {dataSource.map((item, index) => {
@@ -193,63 +191,56 @@ export default class FilterList extends Component {
     );
   };
 
-  render() {
-    const cardStyle = {
-      display: 'flex',
-      margin: '20px',
-    };
-
-    return (
-      <div className={styles.filterList}>
-        <IceContainer
-          className={styles.hb1}
-        >
-          <div className={styles.filterCategories}>
-            <div className={styles.selectItem}>
-              我的商品
-            </div>
-            <div className={styles.selectItem}>
-              我的图片
-            </div>
-            <div className={styles.selectItem}>
-              我的视频
-            </div>
+  return (
+    <div className={styles.filterList}>
+      <IceContainer
+        className={styles.hb1}
+      >
+        <div className={styles.filterCategories}>
+          <div className={styles.selectItem}>
+            我的商品
           </div>
-
-          <div className={styles.searchWrapper}>
-            <Search
-              placeholder="标题"
-              inputWidth={120}
-              searchText=""
-              className={styles.searchInput}
-            />
-            <Button type="primary">搜索</Button>
+          <div className={styles.selectItem}>
+            我的图片
           </div>
-
-          <div className={styles.filterCategory}>
-            <Button className={styles.selectBtn}>
-              全部商品
-            </Button>
-            <Button className={styles.selectBtn}>
-              未分类
-            </Button>
-            <Button className={styles.selectBtn}>
-              已失效
-            </Button>
-            <Button className={styles.selectBtn}>
-              有好货专用
-            </Button>
-            <Button className={styles.selectBtn}>
-              必买清单
-            </Button>
-            <span />
+          <div className={styles.selectItem}>
+            我的视频
           </div>
-        </IceContainer>
+        </div>
 
-        <IceContainer className={styles.hb2}>
-          {this.renderItems()}
-        </IceContainer>
-      </div>
-    );
-  }
+        <div className={styles.searchWrapper}>
+          <Search
+            placeholder="标题"
+            inputWidth={120}
+            searchText=""
+            className={styles.searchInput}
+          />
+          <Button type="primary">搜索</Button>
+        </div>
+
+        <div className={styles.filterCategory}>
+          <Button className={styles.selectBtn}>
+            全部商品
+          </Button>
+          <Button className={styles.selectBtn}>
+            未分类
+          </Button>
+          <Button className={styles.selectBtn}>
+            已失效
+          </Button>
+          <Button className={styles.selectBtn}>
+            有好货专用
+          </Button>
+          <Button className={styles.selectBtn}>
+            必买清单
+          </Button>
+          <span />
+        </div>
+      </IceContainer>
+
+      <IceContainer className={styles.hb2}>
+        {renderItems()}
+      </IceContainer>
+    </div>
+  );
 }

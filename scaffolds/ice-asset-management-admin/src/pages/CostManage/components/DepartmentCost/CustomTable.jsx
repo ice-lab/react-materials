@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination, Search } from '@alifd/next';
 import styles from './index.module.scss';
 // MOCK 数据，实际业务按需进行替换，
@@ -28,7 +28,7 @@ export default function CustomTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -38,13 +38,13 @@ export default function CustomTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then((mockData) => {
       setLoading(false);
       setData(mockData);
     });
-  };
+  });
 
   const handlePaginationChange = (currentPage) => {
     setCurrent(currentPage);
