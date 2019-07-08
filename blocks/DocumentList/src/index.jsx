@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from './ContainerTitle';
@@ -17,35 +17,22 @@ const mockData = [
   },
 ];
 
-export default class DocumentList extends Component {
-  static displayName = 'DocumentList';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer className={styles.container2}>
-        <ContainerTitle title="项目文档" buttonText="新建文档" />
-        <div className={styles.content}>
-          {mockData.map((item, index) => {
-            return (
-              <a href="#" className={styles.item} key={index}>
-                <Icon type="office" className={styles.icon} />
-                <span className={styles.title2}>{item.title}</span>
-                <span className={styles.description}>{item.description}</span>
-                <span className={styles.time}>{item.time}</span>
-              </a>
-            );
-          })}
-        </div>
-      </IceContainer>
-    );
-  }
+export default function DocumentList() {
+  return (
+    <IceContainer className={styles.container2}>
+      <ContainerTitle title="项目文档" buttonText="新建文档" />
+      <div className={styles.content}>
+        {mockData.map((item, index) => {
+          return (
+            <a href="#" className={styles.item} key={index}>
+              <Icon type="office" className={styles.icon} />
+              <span className={styles.title2}>{item.title}</span>
+              <span className={styles.description}>{item.description}</span>
+              <span className={styles.time}>{item.time}</span>
+            </a>
+          );
+        })}
+      </div>
+    </IceContainer>
+  );
 }

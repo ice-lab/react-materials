@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 export default () => {

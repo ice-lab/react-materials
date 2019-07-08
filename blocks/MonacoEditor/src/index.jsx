@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import Monaco from 'react-monaco-editor';
 import 'regenerator-runtime/runtime';
@@ -20,84 +20,69 @@ function getScript(uri) {
   });
 }
 
-export default class MonacoEditor extends Component {
-  static displayName = 'MonacoEditor';
+export default function MonacoEditor() {
+  const [monacoReady, setMonacoReady] = useState(false);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      monacoReady: false,
-    };
-  }
-
-  // ICE: React Component 的生命周期
-  async componentWillMount() {
-    const vsBasePath = 'https://cdn.bootcss.com/monaco-editor/0.10.1/min/vs';
-
-    if (!window.require) {
-      await getScript(`${vsBasePath}/loader.js`);
-    }
-    const monacoRequire = window.require;
-    monacoRequire.config({ paths: { vs: vsBasePath } });
-    // monaco editor 的跨域解决方案：https://github.com/Microsoft/monaco-editor#integrate-cross-domain
-    window.MonacoEnvironment = {
-      getWorkerUrl() {
-        return '/monaco-editor-worker-loader-proxy.js';
-      },
-    };
-    monacoRequire(['vs/editor/editor.main'], () => {
-      this.setState({
-        monacoReady: true,
+  useEffect(() => {
+    (async () => {
+      const vsBasePath = 'https://cdn.bootcss.com/monaco-editor/0.10.1/min/vs';
+    
+      if (!window.require) {
+        await getScript(`${vsBasePath}/loader.js`);
+      }
+      const monacoRequire = window.require;
+      monacoRequire.config({ paths: { vs: vsBasePath } });
+      // monaco editor 的跨域解决方案：https://github.com/Microsoft/monaco-editor#integrate-cross-domain
+      window.MonacoEnvironment = {
+        getWorkerUrl() {
+          return '/monaco-editor-worker-loader-proxy.js';
+        },
+      };
+      monacoRequire(['vs/editor/editor.main'], () => {
+        setMonacoReady(true);
       });
-    });
-  }
+    })();
+  }, []);
 
-  onChange = (newValue, e) => {
+  const onChange = (newValue, e) => {
     console.log('onChange', newValue, e);
   };
-  editorDidMount = (editor) => {
+
+  const editorDidMount = (editor) => {
     console.log('editorDidMount', editor);
     editor.focus();
   };
 
-  render() {
-    const code = `console.log('hello world');
+  const code = `console.log('hello world');
 
 function foo() {
-  // hello world
+// hello world
 }
 `;
-    const options = {
-      selectOnLineNumbers: true,
-      automaticLayout: true,
-    };
-    const { monacoReady } = this.state;
+  const options = {
+    selectOnLineNumbers: true,
+    automaticLayout: true,
+  };
 
-    return (
-      <div
-        className={styles.monacoEditorContainer}
-      >
-        <IceContainer className={styles.container}>
-          {monacoReady ? (
-            <Monaco
-              height="600"
-              language="javascript"
-              theme="vs-dark"
-              value={code}
-              options={options}
-              onChange={this.onChange}
-              editorDidMount={this.editorDidMount}
-            />
-          ) : (
-            'loading...'
-          )}
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div
+      className={styles.monacoEditorContainer}
+    >
+      <IceContainer className={styles.container}>
+        {monacoReady ? (
+          <Monaco
+            height="600"
+            language="javascript"
+            theme="vs-dark"
+            value={code}
+            options={options}
+            onChange={onChange}
+            editorDidMount={editorDidMount}
+          />
+        ) : (
+          'loading...'
+        )}
+      </IceContainer>
+    </div>
+  );
 }
-

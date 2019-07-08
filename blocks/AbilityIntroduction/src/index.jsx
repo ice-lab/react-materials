@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const frameworkIcon = require('./images/framework_icon.png');
@@ -28,8 +29,8 @@ const abilities = [
   },
 ];
 
-export default class Index extends Component {
-  renderAblities = () => {
+export default function Index() {
+  const renderAblities = () => {
     return abilities.map(({ icon, title, content, link }, idx) => {
       return (
         <Col xxs="24" l="8" className={styles.item} key={idx}>
@@ -56,17 +57,16 @@ export default class Index extends Component {
       );
     });
   };
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className={styles.title}>我们的能力</div>
-        <div className={styles.subtitle}>&lt; Distinguishing Feature &gt;</div>
-        <Row wrap className={styles.group}>
-          {this.renderAblities()}
-        </Row>
-      </div>
-    );
-  }
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.title}>我们的能力</div>
+      <div className={styles.subtitle}>&lt; Distinguishing Feature &gt;</div>
+      <Row wrap className={styles.group}>
+        {renderAblities()}
+      </Row>
+    </div>
+  );
 }
 
 

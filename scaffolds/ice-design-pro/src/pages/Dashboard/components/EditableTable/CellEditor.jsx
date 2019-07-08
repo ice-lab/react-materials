@@ -10,7 +10,7 @@ export default function CellEditor(props) {
     if ('value' in props) {
       setValue(props[value]);
     }
-  });
+  }, [props, value]);
 
   function editThisCell() {
     // 缓存数据以便回滚

@@ -25,7 +25,7 @@ export default function ModelTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   function mockApi(len) {
     return new Promise((resolve) => {

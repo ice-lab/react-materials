@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination, Button, Dialog } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Filter from '../Filter';
@@ -55,7 +55,7 @@ export default function ReserveTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -65,14 +65,14 @@ export default function ReserveTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then((mockData) => {
       setData(mockData);
       setLoading(false);
       setOverviewData(getOverviewData());
     });
-  };
+  });
 
   const handlePaginationChange = async (currentPage) => {
     await setCurrent(currentPage);

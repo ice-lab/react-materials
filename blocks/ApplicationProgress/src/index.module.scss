@@ -1,7 +1,7 @@
 .row {
-  background-color: #f9f9f9;
   margin-top:  32px;
   padding: 20px 40px;
+  background-color: #f9f9f9;
 }
 .imageWrap {
   text-align: center;
@@ -9,8 +9,8 @@
 .image {
   width: 64px;
   height: 64px;
-  border-radius: 50px;
   margin-bottom: 12px;
+  border-radius: 50px;
 }
 .itemBody {
   padding: 10px 50px 0;
@@ -20,9 +20,9 @@
   text-align: center;
 }
 .itemFooter {
-  text-align: center;
-  color: #666;
   margin-top: 40px;
+  color: #666;
+  text-align: center;
 }
 .nextBtn {
   margin-top: 40px;
@@ -38,15 +38,15 @@
   margin-left: 10px;
 }
 .mobileContentCenter {
-  text-align: center;
   padding: 20px 0 0 0;
+  text-align: center;
 }
 .removeContentWidth {
   max-width: none;
 }
 .itemDescription {
-  color: #666;
-  margin-top: 20px;
   max-width: 309px;
+  margin-top: 20px;
+  color: #666;
 }
 

@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
 
-export default class ArticleList extends Component {
-  static displayName = 'ArticleList';
+export default function ArticleList(props) {
+  const { dataSource = [] } = props;
 
-  handleTagClick = (idx, text) => {
+  const handleTagClick = (idx, text) => {
     // handler
     console.log('handleTagClick:', text);
   };
 
-  renderTag = (text, onClick) => {
+  const renderTag = (text, onClick) => {
     return (
       <Button key={text} size="small" onClick={onClick} style={styles.button}>
         {text}
@@ -18,7 +18,7 @@ export default class ArticleList extends Component {
     );
   };
 
-  renderItem = (data, idx, all) => {
+  const renderItem = (data, idx, all) => {
     const isLast = all.length - 1 === idx;
     const wrapperStyle = { ...styles.item };
     const informationStyle = { ...styles.information };
@@ -39,9 +39,9 @@ export default class ArticleList extends Component {
         <div style={informationStyle}>
           <div style={styles.tagList}>
             {data.tags.map((item) => {
-              return this.renderTag(
+              return renderTag(
                 item,
-                this.handleTagClick.bind(this, idx, item),
+                handleTagClick(idx, item),
                 idx
               );
             })}
@@ -56,14 +56,11 @@ export default class ArticleList extends Component {
     );
   };
 
-  render() {
-    const { dataSource = [] } = this.props;
-    return (
-      <IceContainer className="article-list">
-        {dataSource.map(this.renderItem)}
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className="article-list">
+      {dataSource.map(renderItem)}
+    </IceContainer>
+  );
 }
 
 const styles = {

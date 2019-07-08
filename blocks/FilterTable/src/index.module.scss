@@ -3,8 +3,8 @@
 };
 .operationItem{
   margin-right: 12px;
-  text-decoration: none;
   color: #5485F7;
+  text-decoration: none;
 };
 .titleWrapper{
   display: flex;
@@ -15,11 +15,11 @@
   line-height: 20px;
 };
 .paginationWrapper{
-  text-align: right;
   padding-top: 26px;
+  text-align: right;
 };
 
-/*Filter.jsx*/
+/* Filter.jsx */
 .filterCol{
   display: flex;
   align-items: center;
@@ -28,9 +28,9 @@
 
 .filterTitle{
   width: 68px;
-  text-align: right;
   margin-right: 12px;
   font-size: 14px;
+  text-align: right;
 };
 
 .filterTool{

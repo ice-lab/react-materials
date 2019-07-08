@@ -1,23 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xHJDyokLHb
  */
-export default class PieLineChart extends Component {
-  static displayName = 'PieLineChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getOption = () => {
+export default function PieLineChart() {
+  const getOption = () => {
     const dataAll = [389, 259, 262, 324, 232, 176, 196, 214, 133, 370];
     const yAxisData = [
       '原因1',
@@ -151,13 +140,11 @@ export default class PieLineChart extends Component {
     };
   };
 
-  render() {
-    return (
-      <div className="pie-line-chart">
-        <IceContainer>
-          <ReactEcharts option={this.getOption()} style={{ height: '680px' }} />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="pie-line-chart">
+      <IceContainer>
+        <ReactEcharts option={getOption()} style={{ height: '680px' }} />
+      </IceContainer>
+    </div>
+  );
 }

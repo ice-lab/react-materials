@@ -1,13 +1,13 @@
 .detailItem{
-  padding: 15px 0px;
   display: flex;
+  padding: 15px 0;
   border-top: 1px solid #EEEFF3;
 };
 .detailTitle{
-  margin-right: 30px;
-  text-align: right;
   width: 120px;
-  color: #999999;
+  margin-right: 30px;
+  color: #999;
+  text-align: right;
 };
 .detailBody{
   flex: 1;

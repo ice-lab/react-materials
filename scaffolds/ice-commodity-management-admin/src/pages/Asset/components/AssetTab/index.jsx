@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableFilter from './TableFilter';
@@ -37,17 +37,17 @@ export default function MembersshipTable() {
     });
   };
 
-  const fetchData = (len) => {
+  const fetchData = useCallback((len) => {
     setLoading(true);
     mockApi(len).then((data) => {
       setLoading(false);
       setDataSource(data);
     });
-  };
+  });
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const handlePaginationChange = (current) => {
     setCurrentPage(current);

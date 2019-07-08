@@ -2,13 +2,42 @@
   background: url('https://gw.alicdn.com/tfs/TB1yjIrh3vD8KJjy0FlXXagBFXa-2112-340.png');
   background-repeat: no-repeat;
   background-position: center center;
+  .title {
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+  .desc {
+    font-size: 12px;
+  }
   .count {
+    margin-bottom: 3px;
     color: #fff;
+    font-weight: bold;
+    font-size: 24px;
   }
   .title,
   .desc {
     color: #bebebe;
   }
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0;
+}
+.down {
+  width: 6px;
+  height: 9px;
+}
+.up {
+  width: 6px;
+  height: 9px;
+}
+.extraIcon {
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
 }
 @media screen and (max-width: 720px) {
   .displayCardContainer {
@@ -22,34 +51,3 @@
     }
   }
 }
-.item{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px 0;
-};
-.title{
-  font-size: 12px;
-  margin-bottom: 5px;
-};
-.count{
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 3px;
-};
-.desc{
-  font-size: 12px;
-};
-.down{
-  width: 6px;
-  height: 9px;
-};
-.up{
-  width: 6px;
-  height: 9px;
-};
-.extraIcon{
-  margin-left: 5px;
-  position: relative;
-  top: 1px;
-};

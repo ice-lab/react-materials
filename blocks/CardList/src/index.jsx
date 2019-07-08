@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Icon, Grid } from '@alifd/next';
 import Filter from './Filter';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const getData = () => {
@@ -16,59 +17,46 @@ const getData = () => {
   });
 };
 
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const data = getData();
-    return (
-      <div className={styles.container}>
-        <Filter />
-        <Row wrap gutter="20">
-          <Col l="6" xs="12" xxs="24">
-            <div className={`${styles.card} ${styles.createScheme }`}>
-              <Icon type="add" size="large" className={styles.addIcon} />
-              <span>新增测试方案</span>
-            </div>
-          </Col>
-          {data.map((item, index) => {
-            return (
-              <Col l="6" xs="12" xxs="24" key={index}>
-                <div className={styles.card}>
-                  <div className={styles.head}>
-                    <h4 className={styles.title}>{item.title}</h4>
-                    <p className={styles.desc}>{item.desc}</p>
-                  </div>
-                  <div className={styles.body}>
-                    <p className={`${styles.creator} ${styles.info }`}>
-                      创建人：
-                      {item.creator}
-                    </p>
-                    <p className={`${styles.leader} ${styles.info }`}>
-                      技术负责人：
-                      {item.leader}
-                    </p>
-                    <p className={`${styles.time} ${styles.info }`}>
-                      创建时间：
-                      {item.time}
-                      <Icon type="edit" className={styles.editIcon} />
-                    </p>
-                  </div>
+export default function Index() {
+  const data = getData();
+  return (
+    <div className={styles.container}>
+      <Filter />
+      <Row wrap gutter="20">
+        <Col l="6" xs="12" xxs="24">
+          <div className={`${styles.card} ${styles.createScheme }`}>
+            <Icon type="add" size="large" className={styles.addIcon} />
+            <span>新增测试方案</span>
+          </div>
+        </Col>
+        {data.map((item, index) => {
+          return (
+            <Col l="6" xs="12" xxs="24" key={index}>
+              <div className={styles.card}>
+                <div className={styles.head}>
+                  <h4 className={styles.title}>{item.title}</h4>
+                  <p className={styles.desc}>{item.desc}</p>
                 </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+                <div className={styles.body}>
+                  <p className={`${styles.creator} ${styles.info }`}>
+                    创建人：
+                    {item.creator}
+                  </p>
+                  <p className={`${styles.leader} ${styles.info }`}>
+                    技术负责人：
+                    {item.leader}
+                  </p>
+                  <p className={`${styles.time} ${styles.info }`}>
+                    创建时间：
+                    {item.time}
+                    <Icon type="edit" className={styles.editIcon} />
+                  </p>
+                </div>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }

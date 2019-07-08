@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 
-export default class Filter extends Component {
-  render() {
-    return (
-      <IceContainer style={styles.container}>
-        <div style={styles.category}>
-          <span style={styles.label}>所属类目：</span>
-          <span style={styles.item}>全部</span>
-          <span style={styles.item}>类目一</span>
-          <span style={styles.item}>类目二</span>
-          <span style={styles.item}>类目三</span>
-          <span style={styles.item}>类目四</span>
-        </div>
-        <div style={styles.others}>
-          <span style={styles.label}>其它筛选：</span>
-          <span style={styles.item}>全部</span>
-          <span style={styles.item}>类目一</span>
-          <span style={styles.item}>类目二</span>
-          <span style={styles.item}>类目三</span>
-          <span style={styles.item}>类目四</span>
-        </div>
-      </IceContainer>
-    );
-  }
+export default function Filter() {
+  return (
+    <IceContainer style={styles.container}>
+      <div style={styles.category}>
+        <span style={styles.label}>所属类目：</span>
+        <span style={styles.item}>全部</span>
+        <span style={styles.item}>类目一</span>
+        <span style={styles.item}>类目二</span>
+        <span style={styles.item}>类目三</span>
+        <span style={styles.item}>类目四</span>
+      </div>
+      <div style={styles.others}>
+        <span style={styles.label}>其它筛选：</span>
+        <span style={styles.item}>全部</span>
+        <span style={styles.item}>类目一</span>
+        <span style={styles.item}>类目二</span>
+        <span style={styles.item}>类目三</span>
+        <span style={styles.item}>类目四</span>
+      </div>
+    </IceContainer>
+  );
 }
 
 const styles = {

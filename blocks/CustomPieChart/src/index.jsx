@@ -1,23 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 import styles from './index.module.scss';
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xBJSFJgFFf
  */
-export default class CustomPieChart extends Component {
-  static displayName = 'CustomPieChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  getOption = () => {
+export default function CustomPieChart() {
+  const getOption = () => {
     const man = 58;
     const woman = 42;
     const city = 65;
@@ -468,13 +457,11 @@ export default class CustomPieChart extends Component {
     };
   };
 
-  render() {
-    return (
-      <div className="custom-pie-chart">
-        <IceContainer>
-          <ReactEcharts option={this.getOption()} className={styles.echartsHeight} />
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="custom-pie-chart">
+      <IceContainer>
+        <ReactEcharts option={getOption()} className={styles.echartsHeight} />
+      </IceContainer>
+    </div>
+  );
 }

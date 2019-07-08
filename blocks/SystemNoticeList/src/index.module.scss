@@ -14,22 +14,22 @@
     border-bottom: 1px solid #F4F4F4;
   }
   .noticeTitle {
-    font-size: 14px;
     color: #666;
+    font-size: 14px;
     text-decoration: none;
   }
   .noticeTag {
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 8px;
     margin-left: 5px;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 8px;
   }
   .noticeTime {
     position: absolute;
-    right: 0px;
     top: 15px;
-    font-size: 12px;
+    right: 0;
     color: #999;
+    font-size: 12px;
   }
   .paginationWrap {
     margin-top: 20px;

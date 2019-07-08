@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Table, Pagination, Dialog } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
 import TableHead from './TableHead';
@@ -26,7 +26,7 @@ function Calculate(props) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -36,13 +36,13 @@ function Calculate(props) {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then(async (mockData) => {
       await setData(mockData);
       await setLoading(false);
     });
-  };
+  });
 
   const handlePaginationChange = async (currentPage) => {
     await setCurrent(currentPage);

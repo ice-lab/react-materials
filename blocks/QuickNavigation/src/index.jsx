@@ -1,5 +1,4 @@
-/* eslint global-require: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss'
@@ -33,34 +32,21 @@ const navigation = [
   },
 ];
 
-export default class QuickNavigation extends Component {
-  static displayName = 'QuickNavigation';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <Row wrap gutter={20}>
-        {navigation.map((item, index) => {
-          return (
-            <Col xxs="12" l="4" key={index}>
-              <IceContainer>
-                <div className={styles.navItem}>
-                  <img src={item.img} alt="" className={styles.img} />
-                  <h4 className={styles.title}>{item.title}</h4>
-                </div>
-              </IceContainer>
-            </Col>
-          );
-        })}
-      </Row>
-    );
-  }
+export default function QuickNavigation() {
+  return (
+    <Row wrap gutter={20}>
+      {navigation.map((item, index) => {
+        return (
+          <Col xxs="12" l="4" key={index}>
+            <IceContainer>
+              <div className={styles.navItem}>
+                <img src={item.img} alt="" className={styles.img} />
+                <h4 className={styles.title}>{item.title}</h4>
+              </div>
+            </IceContainer>
+          </Col>
+        );
+      })}
+    </Row>
+  );
 }

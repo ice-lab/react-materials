@@ -1,16 +1,16 @@
 .cardTitle{
   margin: 0 0 20px;
-  font-size: 18px;
   padding-bottom: 15px;
   font-weight: bold;
+  font-size: 18px;
   border-bottom: 1px solid #eee;
 }
 .totalCard{
   max-width: 160px;
   padding: 10px;
-  border-radius: 4px;
-  background: rgba(240,130,76,.8);
   color: #fff;
+  background: rgba(240,130,76,.8);
+  border-radius: 4px;
 }
 .todayCard{
   display: flex;
@@ -18,14 +18,14 @@
 }
 .label{
   height: 14px;
-  line-height: 14px;
   margin-bottom: 8px;
+  line-height: 14px;
 }
 .value{
   height: 28px;
-  line-height: 28px;
-  font-size: 28px;
   font-weight: 500;
+  font-size: 28px;
+  line-height: 28px;
 }
 .todayCardIcon{
   width: 36px;

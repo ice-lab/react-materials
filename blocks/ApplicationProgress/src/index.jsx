@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Step, Grid, Icon } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
 import styles from './index.module.scss';
+
 const dataSource = () => {
   return [
     {
@@ -50,105 +51,89 @@ const dataSource = () => {
 
 const { Row, Col } = Grid;
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const [isMobile, setMobile] = useState(false);
 
-  static propTypes = {};
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false,
-    };
-  }
-
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setMobile(mobile);
     }, mediaCondition);
   };
 
-  render() {
-    const data = dataSource();
-    const { isMobile } = this.state;
-    return (
-      <div className="application-progress">
-        <IceContainer>
-          <Step current={0} shape={isMobile ? 'dot' : 'circle'}>
-            <Step.Item title="检测账号" />
-            <Step.Item title="选择入住类型" />
-            <Step.Item title="填写详细资料" />
-            <Step.Item title="完成" />
-          </Step>
-          <div>
-            {data.map((item, index) => {
-              return (
-                <div className={styles.row} key={index}>
-                  <Row wrap>
-                    <Col xxs="24" s="4">
-                      <div className={styles.imageWrap}>
-                        <img
-                          className={styles.image}
-                          src={item.url}
-                          alt="condition"
-                        />
-                        <br />
-                        <span>{item.condition}</span>
-                      </div>
-                    </Col>
-                    <Col
-                      xxs="24"
-                      s="16"
-                      className={`${styles.itemBody} ${isMobile && styles.mobileContentCenter}`}
+  const data = dataSource();
+  return (
+    <div className="application-progress">
+      <IceContainer>
+        <Step current={0} shape={isMobile ? 'dot' : 'circle'}>
+          <Step.Item title="检测账号" />
+          <Step.Item title="选择入住类型" />
+          <Step.Item title="填写详细资料" />
+          <Step.Item title="完成" />
+        </Step>
+        <div>
+          {data.map((item, index) => {
+            return (
+              <div className={styles.row} key={index}>
+                <Row wrap>
+                  <Col xxs="24" s="4">
+                    <div className={styles.imageWrap}>
+                      <img
+                        className={styles.image}
+                        src={item.url}
+                        alt="condition"
+                      />
+                      <br />
+                      <span>{item.condition}</span>
+                    </div>
+                  </Col>
+                  <Col
+                    xxs="24"
+                    s="16"
+                    className={`${styles.itemBody} ${isMobile && styles.mobileContentCenter}`}
+                  >
+                    <span
+                      className={
+                        item.validate
+                          ? styles.itemStatusSuccess
+                          : styles.itemStatusFail
+                      }
                     >
-                      <span
-                        className={
-                          item.validate
-                            ? styles.itemStatusSuccess
-                            : styles.itemStatusFail
-                        }
-                      >
-                        <Icon type={item.validate ? 'success' : 'error'} />
-                        <span className={styles.itemStatusText}>
-                          {item.validate ? '符合文案' : '不符合文案'}
-                        </span>
+                      <Icon type={item.validate ? 'success' : 'error'} />
+                      <span className={styles.itemStatusText}>
+                        {item.validate ? '符合文案' : '不符合文案'}
                       </span>
-                      <div
-                        className={`${styles.itemDescription} ${(isMobile && styles.removeContentWidth)}`}
-                      >
-                        {item.description}
-                      </div>
-                    </Col>
-                    <Col xxs="24" s="4">
-                      <div className={styles.operationWrap}>
-                        <a href={item.url} target="_blank">
-                          {item.operation}
-                        </a>
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-              );
-            })}
-          </div>
-          <div className={styles.itemFooter}>
-            <p>亲，您需要通过全部校验条件，才可以开通账号！</p>
-            <Button className={styles.nextBtn} size="large" disabled>
-              下一步
-            </Button>
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+                    </span>
+                    <div
+                      className={`${styles.itemDescription} ${(isMobile && styles.removeContentWidth)}`}
+                    >
+                      {item.description}
+                    </div>
+                  </Col>
+                  <Col xxs="24" s="4">
+                    <div className={styles.operationWrap}>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        {item.operation}
+                      </a>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.itemFooter}>
+          <p>亲，您需要通过全部校验条件，才可以开通账号！</p>
+          <Button className={styles.nextBtn} size="large" disabled>
+            下一步
+          </Button>
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Dialog, Grid, Input, Radio, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import {
@@ -17,157 +17,138 @@ const defaultValue = {
   content: '',
 };
 
-export default class SimpleFormDialog extends Component {
-  static displayName = 'SimpleFormDialog';
+export default function SimpleFormDialog(props) {
+  const formRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [value, setValue] = useState(defaultValue);
+  const [isMobile, setMobile] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      value: defaultValue,
-      isMobile: false,
-    };
-  }
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
 
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setMobile(mobile);
     }, mediaCondition);
   };
 
-  showDialog = () => {
-    this.setState({
-      visible: true,
-    });
+  const showDialog = () => {
+    setVisible(true);
   };
 
-  hideDialog = () => {
-    this.setState({
-      visible: false,
-    });
+  const hideDialog = () => {
+    setVisible(false);
   };
 
-  onOk = () => {
-    this.refForm.validateAll((error) => {
+  const onOk = () => {
+    formRef.current.validateAll((error) => {
       if (error) {
         // show validate error
         return;
       }
       // deal with value
 
-      this.hideDialog();
+      hideDialog();
     });
   };
 
-  onFormChange = (value) => {
-    this.setState({
-      value,
-    });
+  const onFormChange = (value) => {
+    setValue(value);
   };
 
-  render() {
-    const { isMobile } = this.state;
-    const simpleFormDialog = {
-      ...styles.simpleFormDialog,
-    };
-    // 响应式处理
-    if (isMobile) {
-      simpleFormDialog.width = '300px';
-    }
-
-    return (
-      <IceContainer>
-        <Dialog
-          className="simple-form-dialog"
-          style={simpleFormDialog}
-          autoFocus={false}
-          footerAlign="center"
-          title="简单表单"
-          {...this.props}
-          onOk={this.onOk}
-          onCancel={this.hideDialog}
-          onClose={this.hideDialog}
-          isFullScreen
-          visible={this.state.visible}
-        >
-          <IceFormBinderWrapper
-            ref={(ref) => {
-              this.refForm = ref;
-            }}
-            value={this.state.value}
-            onChange={this.onFormChange}
-          >
-            <div style={styles.dialogContent}>
-              <Row style={styles.formRow}>
-                <Col span={`${isMobile ? '6' : '3'}`}>
-                  <label style={styles.formLabel}>关键词</label>
-                </Col>
-                <Col span={`${isMobile ? '18' : '16'}`}>
-                  <IceFormBinder
-                    name="keywords"
-                    required
-                    min={2}
-                    max={10}
-                    message="当前字段必填，且最少 2 个字最多 10 个字"
-                  >
-                    <Input
-                      style={styles.input}
-                      placeholder="多关键词用英文 , 号分割"
-                    />
-                  </IceFormBinder>
-                  <IceFormError name="keywords" />
-                </Col>
-              </Row>
-              <Row style={styles.formRow}>
-                <Col>
-                  <IceFormBinder name="type">
-                    <RadioGroup
-                      dataSource={[
-                        {
-                          value: 'post',
-                          label: '文章',
-                        },
-                        {
-                          value: 'video',
-                          label: '视频',
-                        },
-                        {
-                          value: 'image',
-                          label: '图片',
-                        },
-                      ]}
-                    />
-                  </IceFormBinder>
-                </Col>
-              </Row>
-              <Row style={styles.formRow}>
-                <Col>
-                  <IceFormBinder name="content">
-                    <Input.TextArea
-                      style={styles.input}
-                      placeholder="请输入详细内容"
-                      rows={4}
-                    />
-                  </IceFormBinder>
-                </Col>
-              </Row>
-            </div>
-          </IceFormBinderWrapper>
-        </Dialog>
-        <Button type="primary" onClick={this.showDialog}>
-          显示 Dialog
-        </Button>
-      </IceContainer>
-    );
+  const simpleFormDialog = {
+    ...styles.simpleFormDialog,
+  };
+  // 响应式处理
+  if (isMobile) {
+    simpleFormDialog.width = '300px';
   }
+
+  return (
+    <IceContainer>
+      <Dialog
+        className="simple-form-dialog"
+        style={simpleFormDialog}
+        autoFocus={false}
+        footerAlign="center"
+        title="简单表单"
+        {...props}
+        onOk={onOk}
+        onCancel={hideDialog}
+        onClose={hideDialog}
+        isFullScreen
+        visible={visible}
+      >
+        <IceFormBinderWrapper
+          ref={formRef}
+          value={value}
+          onChange={onFormChange}
+        >
+          <div style={styles.dialogContent}>
+            <Row style={styles.formRow}>
+              <Col span={`${isMobile ? '6' : '3'}`}>
+                <label style={styles.formLabel}>关键词</label>
+              </Col>
+              <Col span={`${isMobile ? '18' : '16'}`}>
+                <IceFormBinder
+                  name="keywords"
+                  required
+                  min={2}
+                  max={10}
+                  message="当前字段必填，且最少 2 个字最多 10 个字"
+                >
+                  <Input
+                    style={styles.input}
+                    placeholder="多关键词用英文 , 号分割"
+                  />
+                </IceFormBinder>
+                <IceFormError name="keywords" />
+              </Col>
+            </Row>
+            <Row style={styles.formRow}>
+              <Col>
+                <IceFormBinder name="type">
+                  <RadioGroup
+                    dataSource={[
+                      {
+                        value: 'post',
+                        label: '文章',
+                      },
+                      {
+                        value: 'video',
+                        label: '视频',
+                      },
+                      {
+                        value: 'image',
+                        label: '图片',
+                      },
+                    ]}
+                  />
+                </IceFormBinder>
+              </Col>
+            </Row>
+            <Row style={styles.formRow}>
+              <Col>
+                <IceFormBinder name="content">
+                  <Input.TextArea
+                    style={styles.input}
+                    placeholder="请输入详细内容"
+                    rows={4}
+                  />
+                </IceFormBinder>
+              </Col>
+            </Row>
+          </div>
+        </IceFormBinderWrapper>
+      </Dialog>
+      <Button type="primary" onClick={showDialog}>
+        显示 Dialog
+      </Button>
+    </IceContainer>
+  );
 }
 
 const styles = {

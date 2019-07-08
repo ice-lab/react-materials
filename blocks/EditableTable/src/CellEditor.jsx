@@ -1,98 +1,70 @@
 /* eslint no-unused-expressions: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Icon, Input } from '@alifd/next';
 import styles from './index.module.scss';
-export default class CellEditor extends Component {
-  static displayName = 'CellEditor';
 
-  constructor(props) {
-    super(props);
+let tempValue = '';
+export default function CellEditor(props) {
+  const [editMode, setEditMode] = useState(false);
+  const [value, setValue] = useState(props.value || '');
+  const { index, valueKey } = props;
 
-    this.tempValue = '';
-    this.state = {
-      editMode: false,
-      value: props.value || '',
-    };
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if ('value' in nextProps) {
-      this.setState({
-        value: nextProps.value,
-      });
-    }
-  }
-
-  editThisCell = () => {
+  const editThisCell = () => {
     // 缓存数据以便回滚
-    this.tempValue = this.state.value;
-    this.setState({
-      editMode: true,
-    });
+    tempValue = value;
+    setEditMode(true);
   };
 
-  onValueChange = (value) => {
-    this.setState({
-      value,
-    });
+  const onValueChange = (value) => {
+    setValue(value);
   };
 
-  updateValue = () => {
-    this.setState({
-      editMode: false,
-    });
-    const { index, valueKey } = this.props;
-    const { value } = this.state;
-    this.props.onChange && this.props.onChange(index, valueKey, value);
+  const updateValue = () => {
+    setEditMode(false);
+    props.onChange && props.onChange(index, valueKey, value);
   };
 
-  rollBackThisCell = () => {
-    this.setState({
-      value: this.tempValue,
-      editMode: false,
-    });
-    this.tempValue = '';
+  const rollBackThisCell = () => {
+    setValue(tempValue);
+    setEditMode(false);
+    tempValue = '';
   };
 
-  render() {
-    const { value, editMode } = this.state;
-
-    if (editMode) {
-      return (
-        <div className={styles.celleditor}>
-          <Input
-            className={styles.cellInput}
-            value={value}
-            onChange={this.onValueChange}
-          />
-          <span
-            className={styles.operationIcon}
-            title="确定"
-            onClick={this.updateValue}
-          >
-            <Icon size="xs" type="select" />
-          </span>
-          <span
-            className={styles.operationIcon}
-            title="撤销"
-            onClick={this.rollBackThisCell}
-          >
-            <Icon size="xs" type="refresh" />
-          </span>
-        </div>
-      );
-    }
+  if (editMode) {
     return (
       <div className={styles.celleditor}>
-        <span>{value}</span>
+        <Input
+          className={styles.cellInput}
+          value={value}
+          onChange={onValueChange}
+        />
         <span
-          className={styles.hb}
-          title="编辑"
-          onClick={this.editThisCell}
+          className={styles.operationIcon}
+          title="确定"
+          onClick={updateValue}
         >
-          <Icon size="xs" type="edit" />
+          <Icon size="xs" type="select" />
+        </span>
+        <span
+          className={styles.operationIcon}
+          title="撤销"
+          onClick={rollBackThisCell}
+        >
+          <Icon size="xs" type="refresh" />
         </span>
       </div>
     );
   }
+  return (
+    <div className={styles.celleditor}>
+      <span>{value}</span>
+      <span
+        className={styles.hb}
+        title="编辑"
+        onClick={editThisCell}
+      >
+        <Icon size="xs" type="edit" />
+      </span>
+    </div>
+  );
 }

@@ -1,9 +1,9 @@
 .swatch{
+  display: inline-block;
   padding: 5px;
   background: #fff;
   border-radius: 1px;
   box-shadow: 0 0 0 1px rgba(0,0,0,.1);
-  display: inline-block;
   cursor: pointer;
 }
 .popover{
@@ -23,8 +23,8 @@
   border-radius: 2px;
 }
 .formRow{
-  margin-bottom: 20px;
   align-items: center;
+  margin-bottom: 20px;
 }
 .label{
   font-weight: 450

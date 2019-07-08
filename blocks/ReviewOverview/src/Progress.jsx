@@ -1,42 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class Progress extends Component {
-  static displayName = 'Progress';
-
-  static propTypes = {
-    percent: PropTypes.number,
-    maxLength: PropTypes.number,
-    extra: PropTypes.string,
-    color: PropTypes.string,
+export default function Progress(props) {
+  const { percent, extra, color, style } = props;
+  const customStyles = {
+    width: `${percent}%`,
+    backgroundColor: color,
   };
 
-  static defaultProps = {
-    percent: 100,
-    maxLength: 100,
-    extra: '',
-    color: '#5485f7',
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { percent, extra, color, style } = this.props;
-    const customStyles = {
-      width: `${percent}%`,
-      backgroundColor: color,
-    };
-
-    return (
-      <div style={styles.progressWrapper}>
-        <span style={{ ...styles.progress, ...customStyles, ...style }} />
-        {extra ? <span style={styles.extra}>{extra}</span> : null}
-      </div>
-    );
-  }
+  return (
+    <div style={styles.progressWrapper}>
+      <span style={{ ...styles.progress, ...customStyles, ...style }} />
+      {extra ? <span style={styles.extra}>{extra}</span> : null}
+    </div>
+  );
 }
 
 const styles = {
@@ -49,4 +26,16 @@ const styles = {
     height: 5,
     marginRight: 5,
   },
+};
+
+Progress.propTypes = {
+  percent: PropTypes.number,
+  extra: PropTypes.string,
+  color: PropTypes.string,
+};
+
+Progress.defaultProps = {
+  percent: 100,
+  extra: '',
+  color: '#5485f7',
 };

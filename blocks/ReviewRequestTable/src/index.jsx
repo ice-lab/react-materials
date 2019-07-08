@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
 import styles from  './index.module.scss'
@@ -103,10 +103,8 @@ const statusColors = {
   已完成: '#2ecc71',
 };
 
-export default class ReviewRequestTable extends Component {
-  static displayName = 'ReviewRequestTable';
-
-  renderInviteInfo = (value, index, record) => {
+export default function ReviewRequestTable() {
+  const renderInviteInfo = (value, index, record) => {
     return (
       <div className={styles.inviteInfo}>
         <span className={styles.avatarWrapper}>
@@ -123,7 +121,7 @@ export default class ReviewRequestTable extends Component {
     );
   };
 
-  renderSentInfo = (value, index, record) => {
+  const renderSentInfo = (value, index, record) => {
     return (
       <div className={styles.sentInfo}>
         <span className={styles.avatarWrapper}>
@@ -140,26 +138,24 @@ export default class ReviewRequestTable extends Component {
     );
   };
 
-  renderStatus = (value) => {
+  const renderStatus = (value) => {
     return <span style={{ color: statusColors[value] }}>{value}</span>;
   };
 
-  render() {
-    return (
-      <IceContainer title="最近邀评数据">
-        <Table dataSource={mockDataSource} hasBorder={false}>
-          <Table.Column title="被邀请人" cell={this.renderInviteInfo} />
-          <Table.Column title="被邀请人邮件" dataIndex="email" />
-          <Table.Column title="邀请人" cell={this.renderSentInfo} />
-          <Table.Column title="邀请时间" dataIndex="date" />
-          <Table.Column
-            title="状态"
-            dataIndex="status"
-            cell={this.renderStatus}
-          />
-        </Table>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer title="最近邀评数据">
+      <Table dataSource={mockDataSource} hasBorder={false}>
+        <Table.Column title="被邀请人" cell={renderInviteInfo} />
+        <Table.Column title="被邀请人邮件" dataIndex="email" />
+        <Table.Column title="邀请人" cell={renderSentInfo} />
+        <Table.Column title="邀请时间" dataIndex="date" />
+        <Table.Column
+          title="状态"
+          dataIndex="status"
+          cell={renderStatus}
+        />
+      </Table>
+    </IceContainer>
+  );
 }
 

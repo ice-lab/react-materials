@@ -10,30 +10,30 @@
 .title{
   margin: 0 0 10px;
   color: #475168;
-  font-size: 30px;
   font-weight: 300;
+  font-size: 30px;
   text-align: center;
 };
 .desc{
   margin: 0 0 20px;
   color: #8a8b8b;
-  font-size: 18px;
   font-weight: 300;
+  font-size: 18px;
   text-align: center;
 };
 .feature{
-  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  min-height: 220px;
   font-weight: 400;
-  border-radius: 4px;
+  font-size: 22px;
   background: #f4f4f4;
+  border-radius: 4px;
 };
 .featrueTitle{
   margin-top: 20px;
-  font-size: 14px;
-  font-weight: 300;
   color: #666;
+  font-weight: 300;
+  font-size: 14px;
 };

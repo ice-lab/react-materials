@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination, Button } from '@alifd/next';
 
-export default class ArticleList extends Component {
-  static displayName = 'ArticleList';
+export default function ArticleList(props) {
+  const { isMobile, dataSource = [] } = props;
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  handleTagClick = () => {
+  const handleTagClick = () => {
     // handler
   };
 
-  renderTag = (text, onClick) => {
+  const renderTag = (text, onClick) => {
     return (
       <Button size="small" onClick={onClick} key={text} style={styles.button}>
         {text}
@@ -22,8 +17,7 @@ export default class ArticleList extends Component {
     );
   };
 
-  renderItem = (data, idx) => {
-    const { isMobile } = this.props;
+  const renderItem = (data, idx) => {
     const wrapperStyle = { ...styles.item };
     const informationStyle = { ...styles.information };
     return (
@@ -36,9 +30,9 @@ export default class ArticleList extends Component {
         <div style={informationStyle}>
           <div style={styles.tagList}>
             {data.tags.map((item) => {
-              return this.renderTag(
+              return renderTag(
                 item,
-                this.handleTagClick.bind(this, idx, item),
+                handleTagClick(idx, item),
                 idx
               );
             })}
@@ -55,17 +49,14 @@ export default class ArticleList extends Component {
     );
   };
 
-  render() {
-    const { dataSource = [] } = this.props;
-    return (
-      <IceContainer className="article-list">
-        {dataSource.map(this.renderItem)}
-        <div style={styles.paginationWrap}>
-          <Pagination />
-        </div>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className="article-list">
+      {dataSource.map(renderItem)}
+      <div style={styles.paginationWrap}>
+        <Pagination />
+      </div>
+    </IceContainer>
+  );
 }
 
 const styles = {

@@ -3,33 +3,33 @@
       padding: 0;
     }
     .body {
-      padding: 20px;
-      height: 120px;
       position: relative;
+      height: 120px;
+      padding: 20px;
       border-bottom: 1px solid #f0f0f0;
     }
     .name {
+      height: 28px;
       margin: 0;
       padding: 0;
-      height: 28px;
-      line-height: 28px;
-      font-size: 16px;
       color: #0d1a26;
+      font-size: 16px;
+      line-height: 28px;
     }
     .desc {
-      font-size: 14px;
-      color: #697b8c;
       margin: 12px 0;
+      color: #697b8c;
+      font-size: 14px;
     }
     .tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 4px 12px;
+      color: #eb2f96;
+      text-align: center;
       background: #fff0f6;
       border: 1px solid #ffadd2;
-      color: #eb2f96;
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      padding: 4px 12px;
-      text-align: center;
       border-radius: 50px;
     }
     .footer {
@@ -38,13 +38,13 @@
       justify-content: space-around;
     }
     .link {
-      height: 56px;
-      line-height: 56px;
-      color: #314659;
-      cursor: pointer;
-      text-decoration: none;
       width: 50%;
+      height: 56px;
+      color: #314659;
+      line-height: 56px;
       text-align: center;
+      text-decoration: none;
+      cursor: pointer;
     }
     .line {
       border-right: 1px solid #f0f0f0;

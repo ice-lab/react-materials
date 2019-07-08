@@ -1,29 +1,37 @@
 @charset "UTF-8";
 
 .landing-intro-banner-wrapper {
+  a:hover,
+  a:visited,
+  a:link {
+    color: #fff;
+  }
+  h2 {
+    font-size: 32px;
+  }
   .landing-intro-banner-wrapper-header {
     position: absolute;
-    z-index: 11;
-    left: 0;
     right: 0;
+    left: 0;
+    z-index: 11;
   }
   .ice-admin-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     .ice-menu {
       background: transparent;
     }
   }
 
   .ice-admin-layout-footer-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 45px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .ice-admin-layout-header-username {
@@ -36,19 +44,6 @@
   }
 }
 
-.landing-intro-banner-content-wrapper {
-  a:hover,
-  a:visited,
-  a:link {
-    color: #fff;
-  }
-}
-
-.landing-intro-banner-content-wrapper {
-  h2 {
-    font-size: 32px;
-  }
-}
 @media (max-width: 720px) {
   .landing-intro-banner-content-wrapper {
     h2 {

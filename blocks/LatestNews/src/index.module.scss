@@ -4,15 +4,15 @@
 .cardTitle {
   position: relative;
   margin: 0 0 10px;
-  font-size: 16px;
-  font-weight: bold;
   color: #333;
+  font-weight: bold;
+  font-size: 16px;
 };
 .more {
   position: absolute;
   right: 0;
-  font-size: 12px;
   color: #666;
+  font-size: 12px;
 };
 .item {
   position: relative;
@@ -20,14 +20,14 @@
 };
 .itemTime {
   position: absolute;
-  right: 0;
   top: 6px;
+  right: 0;
   font-size: 12px;
 };
 .itemTitle {
   height: 34px;
-  line-height: 34px;
   font-size: 13px;
+  line-height: 34px;
 };
 .itemComment {
   position: relative;
@@ -37,22 +37,22 @@
 };
 .commentTitle {
   height: 28px;
-  line-height: 28px;
   font-size: 13px;
+  line-height: 28px;
 };
 .commentTime {
   font-size: 12px;
 };
 .commentNum {
   position: absolute;
-  right: 0;
   top: 6px;
+  right: 0;
   width: 24px;
   height: 24px;
-  line-height: 24px;
-  font-size: 12px;
-  text-align: center;
-  border-radius: 50px;
-  background: #FF2851;
   color: #fff;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  background: #FF2851;
+  border-radius: 50px;
 };

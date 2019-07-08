@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
+
 const dataSource = [
   {
     nickName: '某某',
@@ -35,26 +36,8 @@ const dataSource = [
   },
 ];
 
-export default class FeedList extends Component {
-  static displayName = 'FeedList';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  // ICE: React Component 的生命周期
-
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-  renderItem = (item, idx) => {
+export default function FeedList() {
+  const renderItem = (item, idx) => {
     return (
       <div className={styles.item} key={idx}>
         <div className={styles.itemRow}>
@@ -71,20 +54,18 @@ export default class FeedList extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="feed-list">
-        <IceContainer>
-          <div className={styles.titleRow}>
-            <h2 className={styles.cardTitle}>状态列表</h2>
-            <span className={styles.status}>共10条状态</span>
-          </div>
-          {dataSource.map(this.renderItem)}
-          <div className={styles.allMessage}>
-            <a href="##">查看全部消息</a>
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="feed-list">
+      <IceContainer>
+        <div className={styles.titleRow}>
+          <h2 className={styles.cardTitle}>状态列表</h2>
+          <span className={styles.status}>共10条状态</span>
+        </div>
+        {dataSource.map(renderItem)}
+        <div className={styles.allMessage}>
+          <a href="##">查看全部消息</a>
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

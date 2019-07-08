@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss'
 
@@ -14,37 +14,28 @@ const generatorData = (count) => {
   });
 };
 
-export default class TeamDisplay extends Component {
-  static displayName = 'TeamDisplay';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const data = generatorData(6);
-    return (
-      <div className={styles.container}>
-        <h2 className={styles.title}>我们的团队</h2>
-        <Row wrap>
-          {data.map((item, index) => {
-            return (
-              <Col xxs="12" s="8" l="8" key={index}>
-                <div>
-                  <img
-                    src={item.imgUrl}
-                    className={styles.avatar}
-                    alt={item.name}
-                  />
-                  <h5 className={styles.name}>{item.name}</h5>
-                  <p className={styles.description}>{item.description}</p>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+export default function TeamDisplay() {
+  const data = generatorData(6);
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.title}>我们的团队</h2>
+      <Row wrap>
+        {data.map((item, index) => {
+          return (
+            <Col xxs="12" s="8" l="8" key={index}>
+              <div>
+                <img
+                  src={item.imgUrl}
+                  className={styles.avatar}
+                  alt={item.name}
+                />
+                <h5 className={styles.name}>{item.name}</h5>
+                <p className={styles.description}>{item.description}</p>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }
