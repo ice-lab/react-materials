@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle:0 */
 import React, { useState } from 'react';
 import { Table, Pagination, Tab, Search } from '@alifd/next';
 import IceContainer from '@icedesign/container';

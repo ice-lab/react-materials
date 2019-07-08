@@ -1,5 +1,4 @@
-/* eslint react/no-string-refs:0 */
-import React, { Component } from 'react';
+import React, { useState} from 'react';
 import { Grid, Input, Select, DatePicker } from '@alifd/next';
 import {
   FormBinderWrapper as IceFormBinderWrapper,
@@ -10,97 +9,81 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default class Filter extends Component {
-  static displayName = 'Filter';
+export default function Filter() {
+  const [value, setValue] = useState({});
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {},
-    };
-  }
-
-  formChange = (value) => {
+  function handleFormChange(value) {
     console.log('value', value);
-    this.setState({
-      value,
-    });
+    setValue(value);
   };
 
-  render() {
-    return (
-      <IceFormBinderWrapper
-        value={this.state.value}
-        onChange={this.formChange}
-        ref="form"
-      >
-        <Row wrap gutter="20"
-        //  className={styles.formRow}
-         >
-          <Col l="8">
-            <div className={styles.formItem}>
-              <span className={styles.formLabel}>页面名称：</span>
-              <IceFormBinder triggerType="onBlur" name="pageName">
-                <Input placeholder="请输入" size="large" />
-              </IceFormBinder>
-              <div className={styles.formError}>
-                <IceFormError name="pageName" />
-              </div>
+  return (
+    <IceFormBinderWrapper
+      value={value}
+      onChange={handleFormChange}
+    >
+      <Row wrap gutter="20"
+      //  className={styles.formRow}
+        >
+        <Col l="8">
+          <div className={styles.formItem}>
+            <span className={styles.formLabel}>页面名称：</span>
+            <IceFormBinder triggerType="onBlur" name="pageName">
+              <Input placeholder="请输入" size="large" />
+            </IceFormBinder>
+            <div className={styles.formError}>
+              <IceFormError name="pageName" />
             </div>
-          </Col>
-          <Col l="8">
-            <div className={styles.formItem}>
-              <span className={styles.formLabel}>事件 ID：</span>
-              <IceFormBinder triggerType="onBlur" name="eventId">
-                <Input placeholder="请输入" size="large" />
-              </IceFormBinder>
-              <div className={styles.formError}>
-                <IceFormError name="eventId" />
-              </div>
+          </div>
+        </Col>
+        <Col l="8">
+          <div className={styles.formItem}>
+            <span className={styles.formLabel}>事件 ID：</span>
+            <IceFormBinder triggerType="onBlur" name="eventId">
+              <Input placeholder="请输入" size="large" />
+            </IceFormBinder>
+            <div className={styles.formError}>
+              <IceFormError name="eventId" />
             </div>
-          </Col>
-          <Col l="8">
-            <div className={styles.formItem}>
-              <span className={styles.formLabel}>事件名称：</span>
-              <IceFormBinder triggerType="onBlur" name="eventName">
-                <Input placeholder="请输入" size="large" />
-              </IceFormBinder>
-              <div className={styles.formError}>
-                <IceFormError name="eventName" />
-              </div>
+          </div>
+        </Col>
+        <Col l="8">
+          <div className={styles.formItem}>
+            <span className={styles.formLabel}>事件名称：</span>
+            <IceFormBinder triggerType="onBlur" name="eventName">
+              <Input placeholder="请输入" size="large" />
+            </IceFormBinder>
+            <div className={styles.formError}>
+              <IceFormError name="eventName" />
             </div>
-          </Col>
-          <Col l="8">
-            <div className={styles.formItem}>
-              <span className={styles.formLabel}>类型：</span>
-              <IceFormBinder triggerType="onBlur" name="type">
-                <Select size="large" className={styles.newType}>
-                  <Select.Option value="miss">遗漏埋点</Select.Option>
-                  <Select.Option value="new">新增埋点</Select.Option>
-                </Select>
-              </IceFormBinder>
-              <div className={styles.formError}>
-                <IceFormError name="type" />
-              </div>
+          </div>
+        </Col>
+        <Col l="8">
+          <div className={styles.formItem}>
+            <span className={styles.formLabel}>类型：</span>
+            <IceFormBinder triggerType="onBlur" name="type">
+              <Select size="large" className={styles.newType}>
+                <Select.Option value="miss">遗漏埋点</Select.Option>
+                <Select.Option value="new">新增埋点</Select.Option>
+              </Select>
+            </IceFormBinder>
+            <div className={styles.formError}>
+              <IceFormError name="type" />
             </div>
-          </Col>
-          <Col l="8">
-            <div className={styles.formItem}>
-              <span className={styles.formLabel}>日期：</span>
-              <IceFormBinder triggerType="onBlur" name="date">
-                <DatePicker size="large" className={styles.newDate} />
-              </IceFormBinder>
-              <div className={styles.formError}>
-                <IceFormError name="date" />
-              </div>
+          </div>
+        </Col>
+        <Col l="8">
+          <div className={styles.formItem}>
+            <span className={styles.formLabel}>日期：</span>
+            <IceFormBinder triggerType="onBlur" name="date">
+              <DatePicker size="large" className={styles.newDate} />
+            </IceFormBinder>
+            <div className={styles.formError}>
+              <IceFormError name="date" />
             </div>
-          </Col>
-        </Row>
-      </IceFormBinderWrapper>
-    );
-  }
+          </div>
+        </Col>
+      </Row>
+    </IceFormBinderWrapper>
+  );
 }

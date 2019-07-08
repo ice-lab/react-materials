@@ -1,4 +1,3 @@
-/* eslint no-mixed-operators:0 */
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';

@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Grid, Form } from '@alifd/next';
@@ -59,7 +58,6 @@ export default function Index() {
         <Form
           value={value}
           onChange={formChange}
-          ref="form"
           size="large"
         >
           <div  className={styles.formContent}>

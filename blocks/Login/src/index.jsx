@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0 */
 import React, { useState } from 'react';
 import { Input, Checkbox, Grid, Message, Icon, Form } from '@alifd/next';
 import './Login.scss';
@@ -47,7 +46,6 @@ export default function Index() {
           value={value}
           onChange={formChange}
           size="large"
-          ref="form"
         >
           <Item required requiredMessage="必填">
             <Input

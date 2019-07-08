@@ -1,4 +1,3 @@
-/* eslint react/no-string-refs:0, array-callback-return:0, react/forbid-prop-types:0 */
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Checkbox, Grid } from '@alifd/next';
@@ -83,6 +82,7 @@ export default function AuthForm(props) {
       } else if (item.component === 'Button') {
         return renderButton(item);
       }
+      return null;
     });
   };
 

@@ -1,4 +1,3 @@
-/* eslint no-unused-expressions: 0 */
 import React, { useState } from 'react';
 import { Icon, Input } from '@alifd/next';
 import styles from './index.module.scss';
