@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/simple-video-player-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "简单的视频播放器",
   "files": [
     "src/",

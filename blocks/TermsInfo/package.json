@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/terms-info-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "协议信息展示",
   "main": "lib/index.js",
   "files": [

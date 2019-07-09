@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/table-context-menu-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "表格单元格支持右键菜单配置操作，可自定义风格",
   "author": "",
   "files": [

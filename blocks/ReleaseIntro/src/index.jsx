@@ -14,7 +14,7 @@ const descriptor = {
 };
 
 export default function ReleaseIntro() {
-  const [osType, setOsType] = useState(osType);
+  const [osType, setOsType] = useState('darwin-x64-prod');
   const [loading] = useState(false);
   const [data] = useState({
     'darwin-x64-prod': {

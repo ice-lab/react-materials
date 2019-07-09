@@ -76,21 +76,27 @@ const config = {
   ],
 };
 
-export default function ParetoChart() {
-  const [cardTitle, setCardTitle] = useState(cardTitle.day);
+const types = {
+  day: '24 小时',
+  month: '30 天',
+  year: '12 个月',
+};
 
-  const handleChange = (value) => {
-    setCardTitle(cardTitle[value]);
+export default function ParetoChart() {
+  const [value, setValue] = useState('day');
+
+  const handleChange = (val) => {
+    setValue(val);
   };
 
   return (
     <IceContainer>
       <div className={styles.cardHead}>
         <h4 className={styles.cardTitle}>
-          {cardTitle}
+          {types[value]}
           构建次数
         </h4>
-        <Select size="large" defaultValue="day" onChange={handleChange}>
+        <Select size="large" value={value} onChange={handleChange}>
           <Option value="day">24 小时</Option>
           <Option value="month">30 天</Option>
           <Option value="year">12 个月</Option>

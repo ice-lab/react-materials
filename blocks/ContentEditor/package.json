@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/content-editor-block",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "内容编辑器",
   "files": [
     "src/",

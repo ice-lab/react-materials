@@ -6,7 +6,46 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default function CustomMasonry({ dataSource }) {
+const dataSource = [
+  {
+    img: require('./images/ice-design-analysis.png'),
+    title: 'ice design analysis',
+  },
+  {
+    img: require('./images/ice-design-cms.png'),
+    title: 'ice design cms',
+  },
+  {
+    img: require('./images/ice-design-dashboard.png'),
+    title: 'ice design dashboard',
+  },
+  {
+    img: require('./images/ice-design-ecommerce.png'),
+    title: 'ice design ecommerce',
+  },
+  {
+    img: require('./images/ice-open-platform.png'),
+    title: 'ice open platform',
+  },
+  {
+    img: require('./images/ice-website-homepage.png'),
+    title: 'ice website homepage',
+  },
+  {
+    img: require('./images/iceworks-homepage.png'),
+    title: 'iceworks homepage',
+  },
+  {
+    img: require('./images/ice-design-school.png'),
+    title: 'ice design school',
+  },
+  {
+    img: require('./images/ice-creator-landingpage.png'),
+    title: 'ice creator landingpage',
+  },
+];
+
+export default function CustomMasonry() {
   const childElements = dataSource.map(function(item, index) {
     return (
       <Col l="4" key={index}>
