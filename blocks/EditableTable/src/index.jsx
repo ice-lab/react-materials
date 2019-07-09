@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Button } from '@alifd/next';
 import CellEditor from './CellEditor';
@@ -14,96 +14,77 @@ const generatorData = () => {
   });
 };
 
-export default class EditableTable extends Component {
-  static displayName = 'EditableTable';
+export default function EditableTable() {
+  const [dataSource, setData] = useState(generatorData());
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: generatorData(),
-    };
-  }
-
-  renderOrder = (value, index) => {
+  const renderOrder = (value, index) => {
     return <span>{index}</span>;
   };
 
-  deleteItem = (index) => {
-    this.state.dataSource.splice(index, 1);
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+  const deleteItem = (index) => {
+    dataSource.splice(index, 1);
+    setData(dataSource);
   };
 
-  renderOperation = (value, index) => {
+  const renderOperation = (value, index) => {
     return (
-      <Button onClick={this.deleteItem.bind(this, index)} text>
+      <Button onClick={() => deleteItem(index)} text>
         删除
       </Button>
     );
   };
 
-  changeDataSource = (index, valueKey, value) => {
-    this.state.dataSource[index][valueKey] = value;
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+  const changeDataSource = (index, valueKey, value) => {
+    dataSource[index][valueKey] = value;
+    setData(dataSource);
   };
 
-  renderEditor = (valueKey, value, index, record) => {
+  const renderEditor = (valueKey, value, index, record) => {
     return (
       <CellEditor
         valueKey={valueKey}
         index={index}
         value={record[valueKey]}
-        onChange={this.changeDataSource}
+        onChange={changeDataSource}
       />
     );
   };
 
-  addNewItem = () => {
-    this.state.dataSource.push({
+  const addNewItem = () => {
+    dataSource.push({
       todo: '暂无',
       memo: '暂无',
       validity: '暂无',
     });
-    this.setState({
-      dataSource: this.state.dataSource,
-    });
+    setData(dataSource);
   };
 
-  render() {
-    return (
-      <div className={styles.editableTable}>
-        <IceContainer>
-          <Table dataSource={this.state.dataSource} hasBorder={false}>
-            <Table.Column width={80} title="顺序" cell={this.renderOrder} />
-            <Table.Column
-              width={280}
-              title="待办事项"
-              cell={this.renderEditor.bind(this, 'todo')}
-            />
-            <Table.Column
-              width={240}
-              title="备注"
-              cell={this.renderEditor.bind(this, 'memo')}
-            />
-            <Table.Column
-              width={180}
-              title="有效时间"
-              cell={this.renderEditor.bind(this, 'validity')}
-            />
-            <Table.Column title="操作" width={80} cell={this.renderOperation} />
-          </Table>
-          <div onClick={this.addNewItem} className={styles.addNewItem}>
-            + 新增一行
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.editableTable}>
+      <IceContainer>
+        <Table dataSource={dataSource} hasBorder={false}>
+          <Table.Column width={80} title="顺序" cell={renderOrder} />
+          <Table.Column
+            width={280}
+            title="待办事项"
+            cell={(value, index, record) => renderEditor('todo', value, index, record)}
+          />
+          <Table.Column
+            width={240}
+            title="备注"
+            cell={(value, index, record) => renderEditor('memo', value, index, record)}
+          />
+          <Table.Column
+            width={180}
+            title="有效时间"
+            cell={(value, index, record) => renderEditor('validity', value, index, record)}
+          />
+          <Table.Column title="操作" width={80} cell={renderOperation} />
+        </Table>
+        <div onClick={addNewItem} className={styles.addNewItem}>
+          + 新增一行
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

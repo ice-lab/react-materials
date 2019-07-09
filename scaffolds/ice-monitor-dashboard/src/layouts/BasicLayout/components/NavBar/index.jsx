@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 
-import headerMenuConfig from '@/menuConfig';
+import headerMenuConfig from '@/config/menu.js';
 import './index.scss';
 
 const NavItem = Nav.Item;

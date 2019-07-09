@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/register-form-block",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "注册表单",
   "main": "lib/index.js",
   "files": [

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import './index.scss';
 
@@ -45,23 +45,10 @@ const initialSource = `
 
 ![](https://gw.alipayobjects.com/zos/skylark/public/files/5272d5041de283125ac03428a6e0ed4f.png)`;
 
-export default class MarkdownDocs extends Component {
-  static displayName = 'MarkdownDocs';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <ReactMarkdown className="markdown-docs-body" source={initialSource} />
-      </div>
-    );
-  }
+export default function MarkdownDocs() {
+  return (
+    <div>
+      <ReactMarkdown className="markdown-docs-body" source={initialSource} />
+    </div>
+  );
 }

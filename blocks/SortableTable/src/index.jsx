@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Icon, Button } from '@alifd/next';
 
@@ -13,61 +13,44 @@ const generatorData = () => {
   });
 };
 
-export default class SortableTable extends Component {
-  static displayName = 'SortableTable';
+export default function SortableTable() {
+  const [dataSource, setData] = useState(generatorData());
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: generatorData(),
-    };
-  }
-
-  moveUp = (index) => {
+  const moveUp = (index) => {
     if (index > 0) {
-      const dataSource = this.state.dataSource;
       const prevItem = dataSource[index - 1];
       const currentItem = dataSource[index];
       dataSource.splice(index - 1, 2, currentItem, prevItem);
-      this.setState({
-        dataSource,
-      });
+      setData(dataSource);
     }
   };
 
-  moveDown = (index) => {
-    if (index < this.state.dataSource.length - 1) {
-      const dataSource = this.state.dataSource;
+  const moveDown = (index) => {
+    if (index < dataSource.length - 1) {
       const currentItem = dataSource[index];
       const nextItem = dataSource[index + 1];
       dataSource.splice(index, 2, nextItem, currentItem);
-      this.setState({
-        dataSource,
-      });
+      setData(dataSource);
     }
   };
 
-  renderOrder = (value, index) => {
+  const renderOrder = (value, index) => {
     return <span>{index}</span>;
   };
 
-  renderSortButton = (value, index) => {
+  const renderSortButton = (value, index) => {
     return (
       <div>
         <Button
-          onClick={this.moveDown.bind(this, index)}
+          onClick={() => moveDown(index)}
           size="large"
           text
-          disabled={index === this.state.dataSource.length - 1}
+          disabled={index === dataSource.length - 1}
         >
           <Icon title="下移" type="descending" />
         </Button>
         <Button
-          onClick={this.moveUp.bind(this, index)}
+          onClick={() => moveUp(index)}
           size="large"
           text
           disabled={index === 0}
@@ -78,24 +61,21 @@ export default class SortableTable extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="sortable-table">
-        <IceContainer>
-          <Table dataSource={this.state.dataSource} hasBorder={false}>
-            <Table.Column width={80} title="顺序" cell={this.renderOrder} />
-            <Table.Column width={280} title="待办事项" dataIndex="todo" />
-            <Table.Column width={240} title="备注" dataIndex="memo" />
-            <Table.Column width={180} title="有效时间" dataIndex="validity" />
-            <Table.Column
-              width={80}
-              title="排序"
-              cell={this.renderSortButton}
-            />
-          </Table>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="sortable-table">
+      <IceContainer>
+        <Table dataSource={dataSource} hasBorder={false}>
+          <Table.Column width={80} title="顺序" cell={renderOrder} />
+          <Table.Column width={280} title="待办事项" dataIndex="todo" />
+          <Table.Column width={240} title="备注" dataIndex="memo" />
+          <Table.Column width={180} title="有效时间" dataIndex="validity" />
+          <Table.Column
+            width={80}
+            title="排序"
+            cell={renderSortButton}
+          />
+        </Table>
+      </IceContainer>
+    </div>
+  );
 }
-

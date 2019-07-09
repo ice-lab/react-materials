@@ -3,14 +3,14 @@
 }
 .wrapper{
   position: relative;
-  background-color: #f6f6f6;
-  height: 500px;
   max-width: 1190px;
+  height: 500px;
   margin: 0 auto;
+  background-color: #f6f6f6;
 }
 .feature{
-  margin-left: 50%;
   margin-right: 10%;
+  margin-left: 50%;
   padding-top: 160px;
   padding-bottom: 160px;
   padding-left: 30px;
@@ -19,14 +19,14 @@
   background-position: 10px 120px;
 }
 .line{
-  height: 2px;
   width: 140px;
-  background-color: #fff;
+  height: 2px;
   margin: 20px 0;
+  background-color: #fff;
 }
 .lineHeader{
-  height: 2px;
   width: 33px;
+  height: 2px;
   background-color: #3080FE;
 }
 .title{
@@ -34,9 +34,9 @@
   font-size: 36px;
 }
 .desc{
-  font-size: 16px;
-  color: #6d7a82;
   max-width: 400px;
+  color: #6d7a82;
+  font-size: 16px;
   line-height: 26px;
 }
 .cover{
@@ -45,6 +45,6 @@
   bottom: 0;
 }
 .coverImage{
-  max-height: 430px;
   display: block;
+  max-height: 430px;
 }

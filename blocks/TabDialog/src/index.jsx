@@ -1,5 +1,4 @@
-/* eslint no-unused-expressions: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Tab, Table, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss'
@@ -25,100 +24,82 @@ const mockData = [
   },
 ];
 
-export default class TabDialog extends Component {
-  static displayName = 'TabDialog';
+export default function TabDialog(props) {
+  const [visible, setVisible]= useState(false);
+  const [selectedItems, setSelectedItems]= useState([]);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      visible: false,
-      selectedItems: [],
-    };
-  }
-
-  onItemSelect = (selectedItems) => {
-    this.setState({
-      selectedItems,
-    });
+  const onItemSelect = (selectedItems) => {
+    setSelectedItems(selectedItems);
   };
 
-  onTabChange = () => {
+  const onTabChange = () => {
     // 清理掉缓存数据
-    this.setState({
-      selectedItems: [],
-    });
+    setSelectedItems([]);
   };
 
-  onDialogOk = () => {
-    console.log(this.state.selectedItems);
-    this.hideDialog();
+  const onDialogOk = () => {
+    hideDialog();
   };
 
-  showDialog = () => {
-    this.setState({
-      visible: true,
-    });
+  const showDialog = () => {
+    setVisible(true);
   };
 
-  hideDialog = () => {
-    this.setState({
-      selectedItems: [],
-      visible: false,
-    });
+  const hideDialog = () => {
+    setVisible(false);
+    setSelectedItems([]);
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <Dialog
-          className={styles.dialog}
-          autoFocus={false}
-          isFullScreen
-          title="选择信息"
-          {...this.props}
-          onOk={this.onDialogOk}
-          onClose={this.hideDialog}
-          onCancel={this.hideDialog}
-          visible={this.state.visible}
-        >
-          <div>
-            <Tab
-              size="small"
-              onChange={this.onTabChange}
-            >
-              <TabPane title="选择文章" key="post">
-                <div className={styles.tabContent}>
-                  <Table
-                    dataSource={mockData}
-                    rowSelection={{
-                      selectedRowKeys: this.state.selectedItems,
-                      onChange: this.onItemSelect,
-                    }}
-                  >
-                    <Table.Column title="文章标题" dataIndex="title" />
-                  </Table>
-                </div>
-              </TabPane>
-              <TabPane title="选择视频" key="video">
-                <div className={styles.tabContent}>
-                  <Table
-                    dataSource={mockData}
-                    rowSelection={{
-                      selectedRowKeys: this.state.selectedItems,
-                      onChange: this.onItemSelect,
-                    }}
-                  >
-                    <Table.Column title="视频标题" dataIndex="title" />
-                  </Table>
-                </div>
-              </TabPane>
-            </Tab>
-          </div>
-        </Dialog>
-        <Button type="primary" onClick={this.showDialog}>
-          显示 Dialog
-        </Button>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <Dialog
+        className={styles.dialog}
+        autoFocus={false}
+        isFullScreen
+        title="选择信息"
+        {...props}
+        onOk={onDialogOk}
+        onClose={hideDialog}
+        onCancel={hideDialog}
+        visible={visible}
+      >
+        <div>
+          <Tab
+            size="small"
+            onChange={onTabChange}
+          >
+            <TabPane title="选择文章" key="post">
+              <div className={styles.tabContent}>
+                <Table
+                  dataSource={mockData}
+                  rowSelection={{
+                    selectedRowKeys: selectedItems,
+                    onChange: onItemSelect,
+                  }}
+                >
+                  <Table.Column title="文章标题" dataIndex="title" />
+                </Table>
+              </div>
+            </TabPane>
+            <TabPane title="选择视频" key="video">
+              <div className={styles.tabContent}>
+                <Table
+                  dataSource={mockData}
+                  rowSelection={{
+                    selectedRowKeys: selectedItems,
+                    onChange: onItemSelect,
+                  }}
+                >
+                  <Table.Column title="视频标题" dataIndex="title" />
+                </Table>
+              </div>
+            </TabPane>
+          </Tab>
+        </div>
+      </Dialog>
+      <Button type="primary" onClick={showDialog}>
+        显示 Dialog
+      </Button>
+    </IceContainer>
+  );
 }

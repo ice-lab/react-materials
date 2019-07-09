@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/feature-list-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "展示一些特性列表介绍",
   "files": [
     "src/",

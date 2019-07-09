@@ -1,5 +1,4 @@
-/* eslint no-unused-expressions: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Input, Select, Grid } from '@alifd/next';
 import {
   FormBinderWrapper as IceFormBinderWrapper,
@@ -16,73 +15,63 @@ const typeData = [
   { label: '单品', value: '单品' },
 ];
 
-class FormDialog extends Component {
-  constructor(props) {
-    super(props);
+function FormDialog(props) {
+  const [visible] = useState(props.visible);
+  const [value, setValue] = useState(props.value);
 
-    this.state = {
-      visible: props.visible,
-      value: props.value,
-    };
-  }
-
-  onFormChange = (value) => {
-    this.setState({
-      value,
-    });
+  const onFormChange = (value) => {
+    setValue(value);
   };
 
-  onOkHandler = () => {
-    this.props.onOk && this.props.onOk(this.state.value);
+  const onOkHandler = () => {
+    props.onOk && props.onOk(value);
   };
 
-  render() {
-    return (
-      <Dialog
-        title="编辑数据"
-        onClose={this.props.onClose}
-        onCancel={this.props.onCancel}
-        afterClose={this.props.afterClose}
-        onOk={this.onOkHandler}
-        visible={this.state.visible}
-        className={styles.dialogWidth}
+  return (
+    <Dialog
+      title="编辑数据"
+      onClose={props.onClose}
+      onCancel={props.onCancel}
+      afterClose={props.afterClose}
+      onOk={onOkHandler}
+      visible={visible}
+      className={styles.dialogWidth}
+    >
+      <IceFormBinderWrapper
+        value={value}
+        onChange={onFormChange}
       >
-        <IceFormBinderWrapper
-          value={this.state.value}
-          onChange={this.onFormChange}
-        >
-          <div>
-            <Row>
-              <Col span={4}>
-                <span className={styles.label}>标题</span>
-              </Col>
-              <Col span={18}>
-                <IceFormBinder
-                  required
-                  max={20}
-                  name="title"
-                  message="当前标题必填"
-                >
-                  <Input className={styles.formField} />
-                </IceFormBinder>
-                <IceFormError name="title" />
-              </Col>
-            </Row>
-            <Row className={styles.row}>
-              <Col span={4}>
-                <span className={styles.label}>类型</span>
-              </Col>
-              <Col span={18}>
-                <IceFormBinder name="type">
-                  <Select dataSource={typeData} className={styles.formField} />
-                </IceFormBinder>
-              </Col>
-            </Row>
-          </div>
-        </IceFormBinderWrapper>
-      </Dialog>
-    );
-  }
+        <div>
+          <Row>
+            <Col span={4}>
+              <span className={styles.label}>标题</span>
+            </Col>
+            <Col span={18}>
+              <IceFormBinder
+                required
+                max={20}
+                name="title"
+                message="当前标题必填"
+              >
+                <Input className={styles.formField} />
+              </IceFormBinder>
+              <IceFormError name="title" />
+            </Col>
+          </Row>
+          <Row className={styles.row}>
+            <Col span={4}>
+              <span className={styles.label}>类型</span>
+            </Col>
+            <Col span={18}>
+              <IceFormBinder name="type">
+                <Select dataSource={typeData} className={styles.formField} />
+              </IceFormBinder>
+            </Col>
+          </Row>
+        </div>
+      </IceFormBinderWrapper>
+    </Dialog>
+  );
 }
 
 export default DialogDecorator(FormDialog);

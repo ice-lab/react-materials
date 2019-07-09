@@ -3,11 +3,13 @@ const glob = require('glob');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const dir = path.resolve(__dirname, '../scaffolds');
+const dir = path.resolve(__dirname, '../blocks');
 const pattern = '*/package.json';
 const files = glob.sync(pattern, {
   cwd: dir,
 });
+
+let goOn = false;
 
 files.forEach((item) => {
   const dirname = item.split('/')[0];
@@ -16,6 +18,14 @@ files.forEach((item) => {
   // eslint-disable-next-line import/no-dynamic-require
   const pkgData = require(pkgPath);
   const { name: npmName } = pkgData;
+
+  if (npmName === '@icedesign/user-traffic-stastistics') {
+    goOn = true;
+  }
+
+  if (!goOn) {
+    return;
+  }
 
   console.log('start publish', npmName);
 
@@ -27,7 +37,7 @@ files.forEach((item) => {
     stdio: 'inherit',
     cwd: dirpath,
   });
-  execSync('npm version patch', {
+  execSync('npm version major', {
     stdio: 'inherit',
     cwd: dirpath,
   });
@@ -35,10 +45,10 @@ files.forEach((item) => {
     stdio: 'inherit',
     cwd: dirpath,
   });
-  execSync('tnpm sync', {
-    stdio: 'inherit',
-    cwd: dirpath,
-  });
+  // execSync('tnpm sync', {
+  //   stdio: 'inherit',
+  //   cwd: dirpath,
+  // });
 
   console.log('publish success', npmName);
 });

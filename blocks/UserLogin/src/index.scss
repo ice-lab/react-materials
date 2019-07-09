@@ -3,10 +3,10 @@
 .user-login {
   .next-input.next-input-single {
     width: 240px;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
     border-color: #dcdcdc;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
     border-radius: 0;
     input {
       padding-left: 25px;
@@ -20,20 +20,20 @@
   .content-wrapper {
     position: absolute;
     top: -100px;
-    left: 0;
     right: 0;
     bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     max-width: 1080px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     .slogan {
-      text-align: center;
       color: #fff;
       font-size: 36px;
-      letter-spacing: 2px;
       line-height: 48px;
+      letter-spacing: 2px;
+      text-align: center;
     }
   }
 }
@@ -41,10 +41,10 @@
 @media screen and (max-width: 720px) {
   .user-login {
     .content-wrapper {
-      margin: 20px auto;
       top: 40px;
-      max-width: 300px;
       display: block;
+      max-width: 300px;
+      margin: 20px auto;
       .slogan {
         color: #666;
         font-size: 22px;

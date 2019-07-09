@@ -1,27 +1,27 @@
 .container {
-  background: #fafafa;
   padding: 70px 70px 140px;
   text-align: center;
+  background: #fafafa;
 }
 .title {
+  margin-bottom: 10px;
   color: #333;
   font-size: 48px;
   white-space: nowrap;
-  margin-bottom: 10px;
 }
 .group {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-top: 40px;
 }
 .item {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
 }
 div{
@@ -32,36 +32,36 @@ div{
   height: 160px;
 }
 .icon_title{
-  font-size: 24px;
-  color: #333;
   margin-bottom: 6px;
+  color: #333;
+  font-size: 24px;
 }
 .content{
   width: 182px;
-  font-size: 16px;
-  color: #6D7A82;
   margin-bottom: 30px;
+  color: #6D7A82;
+  font-size: 16px;
   line-height: 1.7rem;
 }
 .link{
-  font-size: 16px;
   color: #00B0CF;
+  font-size: 16px;
 }
 .linkOne{
-  background: #00B0CF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 26px;
   height: 26px;
-  border-radius: 13px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   margin-left: 10px;
+  background: #00B0CF;
+  border-radius: 13px;
 }
 .linkTwo{
   display: inline-block;
-  margin-left: -4px;
   width: 10px;
   height: 10px;
+  margin-left: -4px;
   border-right:1px solid #fff ;
   border-bottom: 1px solid #fff;
   transform:rotate(-45deg);

@@ -5,8 +5,8 @@
     }
     .icon {
       position: absolute;
-      color: #999;
       left: 0;
+      color: #999;
     }
     .content {
       text-align: center;
@@ -16,32 +16,32 @@
       flex-direction: column;
     }
     .leftItem {
-      text-align: right;
       padding-right: 10px;
+      text-align: right;
     }
     .rightItem {
-      text-align: left;
       padding-left: 10px;
+      text-align: left;
     }
     .count{
-      font-size: 24px;
-      font-weight: 500;
       margin-bottom: 5px;
+      font-weight: 500;
+      font-size: 24px;
     }
     .label {
-      font-size: 14px;
       color: #666;
       font-weight: bold;
+      font-size: 14px;
     }
     .line {
       border-right: 1px solid #eee;
     }
 
     .iconOther{
-        left: 0px;
+        left: 0;
     }
     .iconRight{
-        right:0px;
+        right:0;
     }
     .countColor{
         color:#35C6D9 

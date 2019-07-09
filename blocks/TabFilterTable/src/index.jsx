@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Tab, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Track from './Track';
@@ -20,39 +20,25 @@ function handleClick(key) {
   console.log('click', key);
 }
 
-export default class TabFilterTable extends Component {
-  static displayName = 'TabFilterTable';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderTabExtraContent = () => {
+export default function TabFilterTable() {
+  const renderTabExtraContent = () => {
     return <DatePicker size="large" className={styles.datapic} />;
   };
 
-  render() {
-    return (
-      <IceContainer className={styles.container1}>
-        <Tab
-          onChange={handleChange}
-          extra={this.renderTabExtraContent()}
-        >
-          {tabs.map((item) => {
-            return (
-              <TabPane key={item.key} title={item.tab} onClick={handleClick}>
-                {item.content}
-              </TabPane>
-            );
-          })}
-        </Tab>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className={styles.container1}>
+      <Tab
+        onChange={handleChange}
+        extra={renderTabExtraContent()}
+      >
+        {tabs.map((item) => {
+          return (
+            <TabPane key={item.key} title={item.tab} onClick={handleClick}>
+              {item.content}
+            </TabPane>
+          );
+        })}
+      </Tab>
+    </IceContainer>
+  );
 }
-

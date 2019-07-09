@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination } from '@alifd/next';
 import styles from './index.module.scss';
@@ -42,57 +42,47 @@ const dict = {
   new: '热',
 };
 
-export default class SystemNoticeList extends Component {
-  static displayName = 'SystemNoticeList';
+export default function SystemNoticeList() {
+  const [current, setCurrent] = useState(2);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 2,
-    };
-  }
-
-  handleChange = (current) => {
+  const handleChange = (current) => {
     console.log('current:', current);
-    this.setState({ current });
+    setCurrent(current);
   };
 
-  render() {
-    return (
-      <div className="system-notice-list">
-        <IceContainer>
-          <div className="notice-list-content">
-            <h2 className={styles.title}>系统公告</h2>
-            <ul className={styles.noticeList}>
-              {dataSource.map((item, index) => {
-                return (
-                  <li key={index} className={styles.noticeIte}>
-                    <a href={item.href} className={styles.noticeTitle}>
-                      {item.title}
-                    </a>
-                    {item.tag && (
-                      <span
-                      className={`${styles.noticeTag} ${styles[item.tag]}`}
-                      >
-                        {dict[item.tag]}
-                      </span>
-                    )}
-                    <span className={styles.noticeTime}>{item.time}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className={styles.paginationWrap}>
-            <Pagination
-              shape="arrow-only"
-              current={this.state.current}
-              onChange={this.handleChange}
-            />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="system-notice-list">
+      <IceContainer>
+        <div className="notice-list-content">
+          <h2 className={styles.title}>系统公告</h2>
+          <ul className={styles.noticeList}>
+            {dataSource.map((item, index) => {
+              return (
+                <li key={index} className={styles.noticeIte}>
+                  <a href={item.href} className={styles.noticeTitle}>
+                    {item.title}
+                  </a>
+                  {item.tag && (
+                    <span
+                    className={`${styles.noticeTag} ${styles[item.tag]}`}
+                    >
+                      {dict[item.tag]}
+                    </span>
+                  )}
+                  <span className={styles.noticeTime}>{item.time}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <div className={styles.paginationWrap}>
+          <Pagination
+            shape="arrow-only"
+            current={current}
+            onChange={handleChange}
+          />
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import CustomTable from './CustomTable';
 import TableFilter from './TableFilter';
 import styles from './index.module.scss';
@@ -25,7 +25,7 @@ export default function BorrowTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = () => {
     return new Promise((resolve) => {
@@ -35,13 +35,13 @@ export default function BorrowTable() {
     });
   };
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await setIsloading(true);
     mockApi().then((data) => {
       setDataSource(data);
       setIsloading(false);
     });
-  };
+  });
 
   const handlePaginationChange = (current) => {
     fetchData(current);

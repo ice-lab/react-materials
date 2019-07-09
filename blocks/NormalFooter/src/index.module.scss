@@ -1,40 +1,39 @@
 @charset "UTF-8";
-.normal-footer {}
 
 .content {
-    align-items: center;
-    padding: 16px 0;
+  align-items: center;
+  padding: 16px 0;
 }
 
 .logo {
-    width: 86px;
+  width: 86px;
 }
 
 .pullCenter {
-    text-align: center;
+  text-align: center;
 }
 
 .pullRight {
-    text-align: right;
+  text-align: right;
 }
 
 .navLink {
-    margin-right: 20px;
-    color: rgba(0, 0, 0, 0.7);
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .socialImg {
-    width: 22px;
-    height: 16px;
+  width: 22px;
+  height: 16px;
 }
 
 .line {
-    margin: 16px 0;
-    border-bottom: 1px solid rgba(120, 130, 140, .13);
+  margin: 16px 0;
+  border-bottom: 1px solid rgba(120, 130, 140, .13);
 }
 
 .copyright {
-    color: #999;
-    font-size: 12px;
-    text-align: center;
+  color: #999;
+  font-size: 12px;
+  text-align: center;
 }

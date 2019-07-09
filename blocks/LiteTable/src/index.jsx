@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table } from '@alifd/next';
 import styles from './index.module.scss';
@@ -33,41 +33,27 @@ const statusComponents = {
   pass: <span className={styles.pass}>未通过</span>,
 };
 
-export default class Index extends Component {
-  static displayName = 'Index';
+export default function Index() {
+  const [tableData] = useState(generatorData());
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableData: generatorData(),
-    };
-  }
-
-  renderStatus = (value) => {
+  const renderStatus = (value) => {
     return statusComponents[value];
   };
 
-  render() {
-    const { tableData } = this.state;
-    return (
-      <div className="lite-table">
-        <IceContainer className={styles.tableCard}>
-          <Table dataSource={tableData} hasBorder={false}>
-            <Table.Column title="项目名称" dataIndex="project" width={200} />
-            <Table.Column title="创建者" dataIndex="owner" width={100} />
-            <Table.Column
-              title="状态"
-              dataIndex="status"
-              cell={this.renderStatus}
-              width={100}
-            />
-          </Table>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className="lite-table">
+      <IceContainer className={styles.tableCard}>
+        <Table dataSource={tableData} hasBorder={false}>
+          <Table.Column title="项目名称" dataIndex="project" width={200} />
+          <Table.Column title="创建者" dataIndex="owner" width={100} />
+          <Table.Column
+            title="状态"
+            dataIndex="status"
+            cell={renderStatus}
+            width={100}
+          />
+        </Table>
+      </IceContainer>
+    </div>
+  );
 }

@@ -9,7 +9,7 @@
     top: -48px;
     right: 0;
   }
-  .next-tabs-text > .next-tabs-bar .next-tabs-tab:after {
+  .next-tabs-text > .next-tabs-bar .next-tabs-tab::after {
     width: 0;
   }
 }

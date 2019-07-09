@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from '@alifd/next';
 
 const { Row, Col } = Grid;
@@ -15,49 +15,40 @@ const generatorData = (count) => {
   });
 };
 
-export default class TestimonialCard extends Component {
-  static displayName = 'TestimonialCard';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const data = generatorData(3);
-    return (
-      <div style={styles.container}>
-        <div style={styles.content}>
-          <Row wrap gutter={20}>
-            {data.map((item, index) => {
-              return (
-                <Col xxs="24" s="8" l="8" key={index}>
-                  <div style={styles.item}>
-                    <div style={styles.infoBox}>
-                      <img
-                        style={styles.avatar}
-                        src={item.imgUrl}
-                        alt={item.name}
-                      />
-                      <div style={styles.baseInfo}>
-                        <h5 style={styles.name}>{item.name}</h5>
-                        <p style={styles.company}>{item.company}</p>
-                      </div>
+export default function TestimonialCard() {
+  const data = generatorData(3);
+  return (
+    <div style={styles.container}>
+      <div style={styles.content}>
+        <Row wrap gutter={20}>
+          {data.map((item, index) => {
+            return (
+              <Col xxs="24" s="8" l="8" key={index}>
+                <div style={styles.item}>
+                  <div style={styles.infoBox}>
+                    <img
+                      style={styles.avatar}
+                      src={item.imgUrl}
+                      alt={item.name}
+                    />
+                    <div style={styles.baseInfo}>
+                      <h5 style={styles.name}>{item.name}</h5>
+                      <p style={styles.company}>{item.company}</p>
                     </div>
-                    <p style={styles.description}>
-                      “
-                      {item.description}
-                      ”
-                    </p>
                   </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
+                  <p style={styles.description}>
+                    “
+                    {item.description}
+                    ”
+                  </p>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const styles = {

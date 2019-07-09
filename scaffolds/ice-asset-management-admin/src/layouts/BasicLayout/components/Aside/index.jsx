@@ -4,7 +4,7 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
 import React, { useState } from 'react';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 

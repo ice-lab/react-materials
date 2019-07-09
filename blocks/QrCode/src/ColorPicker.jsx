@@ -1,64 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 import PropTypes from 'prop-types';
 import styles from  './index.module.scss'
 
-export default class ColorPicker extends React.Component {
-  static propTypes = {
-    onChange: PropTypes.func,
+export default function ColorPicker(props) {
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const [color, setColor] = useState(props.defaultColor);
+
+  const handleClick = () => {
+    setDisplayColorPicker(!displayColorPicker);
   };
 
-  static defaultProps = {
-    onChange: () => {},
+  const handleClose = () => {
+    setDisplayColorPicker(false);
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayColorPicker: false,
-      color: props.defaultColor,
-    };
-  }
-
-  handleClick = () => {
-    this.setState({
-      displayColorPicker: !this.state.displayColorPicker,
-    });
+  const handleChange = async (color) => {
+    await setColor(color.hex);
+    props.onChange(color);
   };
 
-  handleClose = () => {
-    this.setState({
-      displayColorPicker: false,
-    });
-  };
-
-  handleChange = (color) => {
-    this.setState(
-      {
-        color: color.hex,
-      },
-      () => {
-        this.props.onChange(color);
-      }
-    );
-  };
-
-  render() {
-    return (
-      <div>
-        <div className={styles.swatch} onClick={this.handleClick}>
-          <div style={{ background: `${this.state.color}` }}  className={styles.color}/>
-        </div>
-        {this.state.displayColorPicker ? (
-          <div className={styles.popover}>
-            <div className={styles.cover} onClick={this.handleClose} />
-            <SketchPicker
-              color={this.state.color}
-              onChange={this.handleChange}
-            />
-          </div>
-        ) : null}
+  return (
+    <div>
+      <div className={styles.swatch} onClick={handleClick}>
+        <div style={{ background: `${color}` }}  className={styles.color}/>
       </div>
-    );
-  }
+      {displayColorPicker ? (
+        <div className={styles.popover}>
+          <div className={styles.cover} onClick={handleClose} />
+          <SketchPicker
+            color={color}
+            onChange={handleChange}
+          />
+        </div>
+      ) : null}
+    </div>
+  );
 }
+
+ColorPicker.propTypes = {
+  onChange: PropTypes.func,
+};
+
+ColorPicker.defaultProps = {
+  onChange: () => {},
+};

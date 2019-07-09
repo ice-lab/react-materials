@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/flow-statistics-block",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "",
   "files": [
     "src/",

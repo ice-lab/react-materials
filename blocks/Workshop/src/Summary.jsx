@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.scss';
+
 const Summary = (props) => {
   return (
     <div key="summary" className={styles.summary}>

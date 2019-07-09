@@ -5,7 +5,7 @@ import Layout from '@icedesign/layout';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link, withRouter } from 'react-router-dom';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { headerMenuConfig } from '@/menuConfig';
+import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';
@@ -46,7 +46,7 @@ function Header(props) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <Layout.Header

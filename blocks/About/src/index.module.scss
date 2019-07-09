@@ -3,33 +3,33 @@
   background: #000;
 }
 .content {
+  position: relative;
   width: 1200px;
   margin: 0 auto;
-  position: relative;
 }
 .mainTitle {
-  font-size: 60px;
-  color: #fff;
-  letter-spacing: 0.77px;
-  line-height: 72px;
   margin: 0;
-  font-weight: 700
+  color: #fff;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: 0.77px
 }
 .mainDesc {
+  margin-top: 8px;
+  color: #fff;
+  font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  color: #fff;
-  margin-top: 8px;
-  font-weight: 700;
 }
 .img {
-  margin-top: 70px;
   max-width: 100%;
+  margin-top: 70px;
 }
 .tab {
   position: absolute;
-  right: 10px;
   top: 66px;
+  right: 10px;
   overflow: hidden;
 }
 .first {
@@ -37,13 +37,13 @@
 }
 .tabName {
   float: left;
-  cursor: pointer;
-  font-size: 26px;
-  line-height: 30px;
-  color: hsla(0,0%,100%,.5);
   margin-left: 30px;
   padding: 14px 0;
+  color: hsla(0,0%,100%,.5);
+  font-size: 26px;
+  line-height: 30px;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
   transition: all .3s;
 }
 .active {
@@ -51,75 +51,75 @@
   border-bottom: 1px solid #fff;
 }
 .items {
-  overflow: hidden;
   padding-top: 50px;
+  overflow: hidden;
 }
 .tabList {
-  height: 80px;
-  background: #191a1e;
   position: relative;
-  padding-right: 40px;
+  height: 80px;
   margin-top: 20px;
+  padding-right: 40px;
+  background: #191a1e;
   transition: all .3s;
 }
 .middle {
-  padding-left: 335px;
-  padding-right: 180px;
   height: 80px;
+  padding-right: 180px;
+  padding-left: 335px;
   overflow: hidden;
 }
 .left {
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   height: 80px;
   overflow: hidden;
 }
 .num {
   float: left;
-  font-size: 42px;
   width: 80px;
   height: 80px;
-  line-height: 80px;
-  font-weight: 700;
   color: #fff;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 80px;
   text-align: center;
   background: #236cff;
 }
 .title {
   float: left;
   max-width: 255px;
+  padding-left: 40px;
+  overflow: hidden;
+  color: #fff;
   font-size: 20px;
   line-height: 80px;
-  color: #fff;
-  padding-left: 40px;
   white-space: nowrap;
-  overflow: hidden;
 }
 .desc {
+  margin-top: 28px;
+  overflow: hidden;
+  color: hsla(0,0%,100%,.8);
   font-size: 14px;
   line-height: 24px;
-  color: hsla(0,0%,100%,.8);
-  margin-top: 28px;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 .btnBox {
   position: absolute;
-  right: 40px;
   top: 20px;
+  right: 40px;
 }
 .btnLink {
   display: inline-block;
   width: 160px;
   height: 40px;
-  border: 1px solid #fff;
-  line-height: 38px;
-  font-size: 16px;
   color: #fff;
-  text-decoration: none;
+  font-size: 16px;
+  line-height: 38px;
   text-align: center;
+  text-decoration: none;
+  border: 1px solid #fff;
   transition: all .3s;
 }
 

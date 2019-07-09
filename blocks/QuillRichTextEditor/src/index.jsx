@@ -1,45 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import IceContainer from '@icedesign/container';
 import 'react-quill/dist/quill.snow.css';
 import styles from  './index.module.scss'
 
-export default class QuillRichTextEditor extends Component {
-  static displayName = 'QuillRichTextEditor';
+export default function QuillRichTextEditor() {
+  const [value, setValue] = useState('React Quill Rich Text Editor...');
+  const [theme] = useState('snow');
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      vaule: 'React Quill Rich Text Editor...',
-      theme: 'snow',
-    };
-  }
-
-  handleChange = (value) => {
-    this.setState({
-      vaule: value,
-    });
+  const handleChange = (formValue) => {
+    setValue(formValue);
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <ReactQuill
-          value={this.state.vaule}
-          theme={this.state.theme}
-          modules={QuillRichTextEditor.modules}
-          formats={QuillRichTextEditor.formats}
-          onChange={this.handleChange}
-        >
-          <div className={styles.editorArea} />
-        </ReactQuill>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <ReactQuill
+        value={value}
+        theme={theme}
+        modules={QuillRichTextEditor.modules}
+        formats={QuillRichTextEditor.formats}
+        onChange={handleChange}
+      >
+        <div className={styles.editorArea} />
+      </ReactQuill>
+    </IceContainer>
+  );
 }
 
 /*

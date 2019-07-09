@@ -1,5 +1,4 @@
-/* eslint no-underscore-dangle: 0 */
-import React, { Component } from 'react';
+import React from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import IceLabel from '@icedesign/label';
@@ -7,8 +6,8 @@ import FilterForm from './Filter';
 import data from './data';
 import styles from './index.module.scss';
 
-export default class EnhanceTable extends Component {
-  renderTitle = (value, index, record) => {
+export default function EnhanceTable() {
+  const renderTitle = (value, index, record) => {
     return (
       <div className={styles.titleWrapper}>
         <span className={styles.title}>{record.title}</span>
@@ -16,22 +15,21 @@ export default class EnhanceTable extends Component {
     );
   };
 
-  editItem = (record, e) => {
+  const editItem = (record, e) => {
     e.preventDefault();
     // TODO: record 为该行所对应的数据，可自定义操作行为
   };
 
-  renderOperations = (value, index, record) => {
+  const renderOperations = (value, index, record) => {
     return (
       <div
-        className="filter-table-operation"
         className={styles.filterTableOperation}
       >
         <a
           href="#"
           className={styles.operationItem}
           target="_blank"
-          onClick={this.editItem.bind(this, record)}
+          onClick={(e) => editItem(record, e)}
         >
           解决
         </a>
@@ -45,7 +43,7 @@ export default class EnhanceTable extends Component {
     );
   };
 
-  renderStatus = (value) => {
+  const renderStatus = (value) => {
     return (
       <IceLabel inverse={false} status="default">
         {value}
@@ -53,52 +51,46 @@ export default class EnhanceTable extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="filter-table">
-        <IceContainer title="内容筛选">
-          <FilterForm
-            onChange={this.filterFormChange}
-            onSubmit={this.filterTable}
-            onReset={this.resetFilter}
+  return (
+    <div className="filter-table">
+      <IceContainer title="内容筛选">
+        <FilterForm />
+      </IceContainer>
+      <IceContainer>
+        <Table
+          dataSource={data}
+          className="basic-table"
+          style={styles.basicTable}
+          hasBorder={false}
+        >
+          <Table.Column
+            title="问题描述"
+            cell={renderTitle}
+            width={320}
           />
-        </IceContainer>
-        <IceContainer>
-          <Table
-            dataSource={data}
-            className="basic-table"
-            style={styles.basicTable}
-            hasBorder={false}
-          >
-            <Table.Column
-              title="问题描述"
-              cell={this.renderTitle}
-              width={320}
-            />
-            <Table.Column title="问题分类" dataIndex="type" width={85} />
-            <Table.Column
-              title="发布时间"
-              dataIndex="publishTime"
-              width={150}
-            />
-            <Table.Column
-              title="状态"
-              dataIndex="publishStatus"
-              width={85}
-              cell={this.renderStatus}
-            />
-            <Table.Column
-              title="操作"
-              dataIndex="operation"
-              width={150}
-              cell={this.renderOperations}
-            />
-          </Table>
-          <div className={styles.paginationWrapper}>
-            <Pagination />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+          <Table.Column title="问题分类" dataIndex="type" width={85} />
+          <Table.Column
+            title="发布时间"
+            dataIndex="publishTime"
+            width={150}
+          />
+          <Table.Column
+            title="状态"
+            dataIndex="publishStatus"
+            width={85}
+            cell={renderStatus}
+          />
+          <Table.Column
+            title="操作"
+            dataIndex="operation"
+            width={150}
+            cell={renderOperations}
+          />
+        </Table>
+        <div className={styles.paginationWrapper}>
+          <Pagination />
+        </div>
+      </IceContainer>
+    </div>
+  );
 }

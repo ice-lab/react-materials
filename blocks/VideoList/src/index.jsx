@@ -1,5 +1,4 @@
-/* eslint jsx-a11y/media-has-caption: 0, jsx-a11y/no-noninteractive-element-interactions: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Dialog, Grid } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -211,136 +210,125 @@ const data = [
   },
 ];
 
-export default class VideoList extends Component {
-  static displayName = 'VideoList';
+export default function VideoList() {
+  const [index, setIndex] = useState(0);
+  const [dialogVisible, setDialogVisible] = useState(false);
+  const [dialogVideo, setDialogVideo] = useState({});
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      index: 0,
-      dialogVisible: false,
-      dialogVideo: {},
-    };
-  }
-
-  handleCateChange = (index) => {
-    this.setState({
-      index,
-    });
+  const handleCateChange = (index) => {
+    setIndex(index);
   };
 
-  handleOpen = (item) => {
-    this.setState({
-      dialogVisible: true,
-      dialogVideo: item,
-    });
+  const handleOpen = (item) => {
+    setDialogVisible(true);
+    setDialogVideo(item);
   };
 
-  handleColse = () => {
-    this.setState({
-      dialogVisible: false,
-    });
+  const handleColse = () => {
+    setDialogVisible(false);
   };
 
-  render() {
-    return (
-      <div className={styles.videoListContainer}>
-        <ul className={styles.videoCate}>
-          {data.map((item, index) => {
-            const activeStyle =
-              this.state.index === index ? styles.active : null;
-            return (
-              <li
-                key={index}
-                className={`${styles.videoCateItem} ${activeStyle}`}
-                onClick={() => this.handleCateChange(index)}
-              >
-                {item.title}
-              </li>
-            );
-          })}
-        </ul>
+  return (
+    <div className={styles.videoListContainer}>
+      <ul className={styles.videoCate}>
+        {data.map((item, dataIndex) => {
+          const activeStyle =
+            index === dataIndex ? styles.active : null;
+          return (
+            <li
+              key={dataIndex}
+              className={`${styles.videoCateItem} ${activeStyle}`}
+              onClick={() => handleCateChange(dataIndex)}
+            >
+              {item.title}
+            </li>
+          );
+        })}
+      </ul>
 
-        <Row className={styles.videoList} gutter="20" wrap>
-          {data[this.state.index].value.map((item, index) => {
-            return (
-              <Col xxs="24" s="12" l="8" key={index}>
-                <div className={styles.videoCarditem}>
-                  <div className={styles.videoPosition}>
+      <Row className={styles.videoList} gutter="20" wrap>
+        {data[index].value.map((item, index) => {
+          return (
+            <Col xxs="24" s="12" l="8" key={index}>
+              <div className={styles.videoCarditem}>
+                <div className={styles.videoPosition}>
+                  <img
+                    alt=""
+                    src={require('./images/TB1E0sbmpmWBuNjSspdXXbugXXa-84-84.png')}
+                    className={styles.playerIcon}
+                  />
+                  <video
+                    src={item.videoUrl}
+                    controls={false}
+                    className={styles.video}
+                    onClick={() => handleOpen(item)}
+                  >
+                    <track
+                      default
+                      kind="captions"
+                      src={item.videoUrl}
+                    />
+                    您的浏览器不支持播放该视频！
+                  </video>
+                </div>
+
+                <div className={styles.videoInfo}>
+                  <h5 className={styles.videoTitle}>{item.videoType}</h5>
+                  <div className={styles.videoDesc}>
+                    <div>服务包含内容：</div>
+                    <div dangerouslySetInnerHTML={{ __html: item.desc }} />
+                  </div>
+                  <div className={styles.videoFee}>
+                    单支 ￥ <strong className={styles.fee}>{item.fee}</strong> 起
+                  </div>
+                  <a href="#" className={styles.videoLink}>
+                    开始定制{' '}
                     <img
                       alt=""
-                      src={require('./images/TB1E0sbmpmWBuNjSspdXXbugXXa-84-84.png')}
-                      className={styles.playerIcon}
+                      src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
+                      className={styles.arrowIcon}
                     />
-                    <video
-                      src={item.videoUrl}
-                      controls={false}
-                      className={styles.video}
-                      onClick={() => this.handleOpen(item)}
-                    >
-                      您的浏览器不支持播放该视频！
-                    </video>
-                  </div>
-
-                  <div className={styles.videoInfo}>
-                    <h5 className={styles.videoTitle}>{item.videoType}</h5>
-                    <div className={styles.videoDesc}>
-                      <div>服务包含内容：</div>
-                      <div dangerouslySetInnerHTML={{ __html: item.desc }} />
-                    </div>
-                    <div className={styles.videoFee}>
-                      单支 ￥ <strong className={styles.fee}>{item.fee}</strong> 起
-                    </div>
-                    <a href="#" className={styles.videoLink}>
-                      开始定制{' '}
-                      <img
-                        alt=""
-                        src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
-                        className={styles.arrowIcon}
-                      />
-                    </a>
-                  </div>
-
-                  <Dialog
-                    visible={this.state.dialogVisible}
-                    footer={false}
-                    onClose={this.handleColse}
-                    autoFocus={false}
-                    closeable
-                    className="video-dialog"
-                  >
-                    <video
-                      src={this.state.dialogVideo.videoUrl}
-                      controls
-                      className={styles.dialogVideo}
-                      webkit-playsinline="false"
-                    >
-                      您的浏览器不支持播放该视频！
-                    </video>
-                    <a
-                      href="#"
-                      className={`${styles.videoLink} ${styles.start}`}
-                    >
-                      开始定制{' '}
-                      <img
-                        src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
-                        className={styles.arrowIcon}
-                        alt=""
-                      />
-                    </a>
-                  </Dialog>
+                  </a>
                 </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+
+                <Dialog
+                  visible={dialogVisible}
+                  footer={false}
+                  onClose={handleColse}
+                  autoFocus={false}
+                  closeable
+                  className="video-dialog"
+                >
+                  <video
+                    src={dialogVideo.videoUrl}
+                    controls
+                    className={styles.dialogVideo}
+                    webkit-playsinline="false"
+                  >
+                    <track
+                      default
+                      kind="captions"
+                      src={dialogVideo.videoUrl}
+                    />
+                    您的浏览器不支持播放该视频！
+                  </video>
+                  <a
+                    href="#"
+                    className={`${styles.videoLink} ${styles.start}`}
+                  >
+                    开始定制{' '}
+                    <img
+                      src={require('./images/TB13yHPmrSYBuNjSspiXXXNzpXa-40-40.png')}
+                      className={styles.arrowIcon}
+                      alt=""
+                    />
+                  </a>
+                </Dialog>
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }
-
-

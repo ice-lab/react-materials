@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination, Dialog } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableHead from './TableHead';
@@ -27,7 +27,7 @@ export default function TaskTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -37,13 +37,13 @@ export default function TaskTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setIsLoading(true);
     mockApi(len).then((newData) => {
       setData(newData);
       setIsLoading(false);
     });
-  };
+  });
 
   const handlePaginationChange = async (crt) => {
     await setCurrent(crt);

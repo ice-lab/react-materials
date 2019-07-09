@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Checkbox, Table, Pagination } from '@alifd/next';
 import styles from  './index.module.scss';
 
@@ -34,35 +34,22 @@ const checkboxOptions = [
   },
 ];
 
-export default class TableFilter extends Component {
-  static displayName = 'TableFilter';
+export default function TableFilter() {
+  const [current, setCurrent] = useState(1);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
-  }
-
-  handlePaginationChange = (current) => {
-    this.setState({
-      current,
-    });
+  const handlePaginationChange = (current) => {
+    setCurrent(current);
   };
 
-  onChange = (selectedItems) => {
+  const onChange = (selectedItems) => {
     console.log('onChange callback', selectedItems);
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return <a className={styles.link}>详情</a>;
   };
 
-  renderStat = (value) => {
+  const renderStat = (value) => {
     console.log(value);
     return (
       <div>
@@ -79,39 +66,35 @@ export default class TableFilter extends Component {
     );
   };
 
-  render() {
-    const dataSource = getData();
-    const { current } = this.state;
+  const dataSource = getData();
 
-    return (
-      <div className={styles.container}>
-        <div className={styles.tableHead}>
-          <div className={styles.label}>状态:</div>
-          <CheckboxGroup
-            className={styles.check}
-            defaultValue={['success', 'error']}
-            dataSource={checkboxOptions}
-            onChange={this.onChange}
-          />
-        </div>
-        <Table dataSource={dataSource} hasBorder={false}>
-          <Table.Column title="方案名称" dataIndex="schemeName" />
-          <Table.Column title="创建时间" dataIndex="time" />
-          <Table.Column title="负责人" dataIndex="leader" />
-          <Table.Column
-            title="监控统计"
-            dataIndex="stat"
-            cell={this.renderStat}
-          />
-          <Table.Column title="操作" cell={this.renderOper} />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={current}
-          onChange={this.handlePaginationChange}
+  return (
+    <div className={styles.container}>
+      <div className={styles.tableHead}>
+        <div className={styles.label}>状态:</div>
+        <CheckboxGroup
+          className={styles.check}
+          defaultValue={['success', 'error']}
+          dataSource={checkboxOptions}
+          onChange={onChange}
         />
       </div>
-    );
-  }
+      <Table dataSource={dataSource} hasBorder={false}>
+        <Table.Column title="方案名称" dataIndex="schemeName" />
+        <Table.Column title="创建时间" dataIndex="time" />
+        <Table.Column title="负责人" dataIndex="leader" />
+        <Table.Column
+          title="监控统计"
+          dataIndex="stat"
+          cell={renderStat}
+        />
+        <Table.Column title="操作" cell={renderOper} />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handlePaginationChange}
+      />
+    </div>
+  );
 }
-

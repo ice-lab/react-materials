@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from  './index.module.scss'
@@ -102,47 +101,32 @@ const mockData = [
   },
 ];
 
-export default class TreeTable extends Component {
-  static displayName = 'TreeTable';
+export default function TreeTable() {
+  const [current, setCurrent] = useState(1);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
-  }
-
-  handleChange = (current) => {
-    this.setState({
-      current,
-    });
+  const handleChange = (current) => {
+    setCurrent(current);
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <Table
-          dataSource={mockData}
-          primaryKey="tradeCode"
-          isTree
-          rowSelection={{ onChange: () => {} }}
-        >
-          <Table.Column title="部门" dataIndex="department" />
-          <Table.Column title="规则编号" dataIndex="tradeCode" />
-          <Table.Column title="名称" dataIndex="name" />
-          <Table.Column title="年龄" dataIndex="age" />
-          <Table.Column title="地址" dataIndex="address" />
-        </Table>
-        <Pagination
-          className={styles.page}
-          current={this.state.current}
-          onChange={this.handleChange}
-        />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <Table
+        dataSource={mockData}
+        primaryKey="tradeCode"
+        isTree
+        rowSelection={{ onChange: () => {} }}
+      >
+        <Table.Column title="部门" dataIndex="department" />
+        <Table.Column title="规则编号" dataIndex="tradeCode" />
+        <Table.Column title="名称" dataIndex="name" />
+        <Table.Column title="年龄" dataIndex="age" />
+        <Table.Column title="地址" dataIndex="address" />
+      </Table>
+      <Pagination
+        className={styles.page}
+        current={current}
+        onChange={handleChange}
+      />
+    </IceContainer>
+  );
 }

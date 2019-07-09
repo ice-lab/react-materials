@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Slider } from '@alifd/next';
 
@@ -21,29 +21,16 @@ const slides = [
   },
 ];
 
-export default class SimpleSlider extends Component {
-  static displayName = 'SimpleSlider';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer>
-        <Slider>
-          {slides.map((item, index) => (
-            <div key={index}>
-              <img src={item.url} alt={item.text} style={{width: '100%'}} />
-            </div>
-          ))}
-        </Slider>
-      </IceContainer>
-    );
-  }
+export default function SimpleSlider() {
+  return (
+    <IceContainer>
+      <Slider>
+        {slides.map((item, index) => (
+          <div key={index}>
+            <img src={item.url} alt={item.text} style={{width: '100%'}} />
+          </div>
+        ))}
+      </Slider>
+    </IceContainer>
+  );
 }

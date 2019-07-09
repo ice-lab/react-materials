@@ -1,5 +1,4 @@
-/* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 
 const ReactHighcharts = require('react-highcharts');
 const Highcharts = require('highcharts');
@@ -13,9 +12,10 @@ const config = {
     marginRight: 10,
     height: 240,
     events: {
-      load: function() {
+      load() {
+        const self = this;
         // set up the updating of the chart each second
-        const series = this.series[0];
+        const series = self.series[0];
         intervalId = setInterval(() => {
           const x = new Date().getTime(); // current time
           const y = Math.random();
@@ -48,14 +48,15 @@ const config = {
     ],
   },
   tooltip: {
-    formatter: function() {
+    formatter() {
+      const self = this;
       return (
-        '<b>' +
-        this.series.name +
-        '</b><br/>' +
-        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) +
-        '<br/>' +
-        Highcharts.numberFormat(this.y, 2)
+        `<b>${ 
+        self.series.name 
+        }</b><br/>${ 
+        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', self.x) 
+        }<br/>${ 
+        Highcharts.numberFormat(self.y, 2)}`
       );
     },
   },
@@ -91,23 +92,12 @@ const config = {
   ],
 };
 
-export default class SplineChart extends Component {
-  static displayName = 'SplineChart';
+export default function SplineChart() {
+  useEffect(() => {
+    return () => {
+      clearInterval(intervalId);
+    }
+  }, []);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  componentWillUnmount() {
-    clearInterval(intervalId);
-  }
-
-  render() {
-    return <ReactHighcharts config={config} />;
-  }
+  return <ReactHighcharts config={config} />;
 }

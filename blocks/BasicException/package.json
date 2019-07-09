@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/basic-exception-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "基础异常报错",
   "main": "lib/index.js",
   "files": [

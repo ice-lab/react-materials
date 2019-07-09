@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { AutoSizer } from 'react-virtualized';
 import cn from 'classnames';
@@ -25,14 +25,8 @@ const data = {
   ],
 };
 
-export default class CellMeasurerExample extends Component {
-  static displayName = 'InfiniteScrollCellMeasurer';
-
-  constructor(props) {
-    super(props);
-  }
-
-  getClassName = ({ columnIndex, rowIndex }) => {
+export default function CellMeasurerExample() {
+  const getClassName = ({ columnIndex, rowIndex }) => {
     const rowClass = rowIndex % 2 === 0 ? 'even-row' : 'odd-row';
 
     return cn(rowClass, 'cell', {
@@ -40,7 +34,7 @@ export default class CellMeasurerExample extends Component {
     });
   };
 
-  getContent = ({ index, datum, long = true }) => {
+  const getContent = ({ index, datum, long = true }) => {
     switch (index % 3) {
       case 0:
         return datum.color;
@@ -48,28 +42,28 @@ export default class CellMeasurerExample extends Component {
         return datum.name;
       case 2:
         return long ? datum.randomLong : datum.random;
+      default:
+        return datum.color;
     }
   };
-  render() {
-    const { list } = data;
+  const { list } = data;
 
-    const DemoComponent = DynamicWidthGrid;
+  const DemoComponent = DynamicWidthGrid;
 
-    return (
-      <IceContainer className="infinite-scroll-cellmeasurer">
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <div style={{ width }}>
-              <DemoComponent
-                getClassName={this.getClassName}
-                getContent={this.getContent}
-                list={list}
-                width={width}
-              />
-            </div>
-          )}
-        </AutoSizer>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className="infinite-scroll-cellmeasurer">
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <div style={{ width }}>
+            <DemoComponent
+              getClassName={getClassName}
+              getContent={getContent}
+              list={list}
+              width={width}
+            />
+          </div>
+        )}
+      </AutoSizer>
+    </IceContainer>
+  );
 }

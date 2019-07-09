@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 
@@ -17,60 +17,45 @@ const generatorData = () => {
   });
 };
 
-export default class ExpandedTable extends Component {
-  static displayName = 'ExpandedTable';
+export default function ExpandedTable() {
+  const [current, setCurrent] = useState(1);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
-  }
-
-  handlePaginationChange = (current) => {
-    this.setState({
-      current,
-    });
+  const handlePaginationChange = (current) => {
+    setCurrent(current);
   };
 
-  handleRowSelection = (selectedRowKeys, records) => {
+  const handleRowSelection = (selectedRowKeys, records) => {
     console.log('selectedRowKeys:', selectedRowKeys);
     console.log('records:', records);
   };
 
-  render() {
-    const data = generatorData();
-    const rowSelection = {
-      onChange: this.handleRowSelection,
-      mode: 'single',
-    };
+  const data = generatorData();
+  const rowSelection = {
+    onChange: handleRowSelection,
+    mode: 'single',
+  };
 
-    return (
-      <IceContainer>
-        <Table
-          hasBorder={false}
-          dataSource={data}
-          primaryKey="key"
-          expandedRowRender={(record) => record.desc}
-          rowSelection={rowSelection}
-        >
-          <Table.Column title="Key" dataIndex="key" />
-          <Table.Column title="名称" dataIndex="name" />
-          <Table.Column title="价格" dataIndex="price" />
-          <Table.Column title="内存容量" dataIndex="memory" />
-          <Table.Column title="库存数量" dataIndex="quantity" />
-          <Table.Column title="累计评价" dataIndex="comment" />
-        </Table>
-        <Pagination
-          style={{ marginTop: '20px', textAlign: 'right' }}
-          current={this.state.current}
-          onChange={this.handlePaginationChange}
-        />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <Table
+        hasBorder={false}
+        dataSource={data}
+        primaryKey="key"
+        expandedRowRender={(record) => record.desc}
+        rowSelection={rowSelection}
+      >
+        <Table.Column title="Key" dataIndex="key" />
+        <Table.Column title="名称" dataIndex="name" />
+        <Table.Column title="价格" dataIndex="price" />
+        <Table.Column title="内存容量" dataIndex="memory" />
+        <Table.Column title="库存数量" dataIndex="quantity" />
+        <Table.Column title="累计评价" dataIndex="comment" />
+      </Table>
+      <Pagination
+        style={{ marginTop: '20px', textAlign: 'right' }}
+        current={current}
+        onChange={handlePaginationChange}
+      />
+    </IceContainer>
+  );
 }

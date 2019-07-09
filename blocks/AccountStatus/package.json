@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/account-status-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "展示账户标识以及操作等",
   "author": "noyobo <nongyoubao@alibaba-inc.com>",
   "files": [

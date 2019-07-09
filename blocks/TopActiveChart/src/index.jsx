@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Table, Progress } from '@alifd/next';
 import LintChart from './LineChart';
@@ -48,19 +48,8 @@ const ViewedProducts = [
   },
 ];
 
-export default class TopActiveChart extends Component {
-  static displayName = 'TopActiveChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderProduct = (value, index, record) => {
+export default function TopActiveChart() {
+  const renderProduct = (value, index, record) => {
     return (
       <div className={styles.product}>
         <img src={record.pic} className={styles.productPic} alt="" />
@@ -69,59 +58,57 @@ export default class TopActiveChart extends Component {
     );
   };
 
-  render() {
-    return (
-      <Row wrap gutter="20">
-        <Col xxs="24" s="12" l="12">
-          <IceContainer title="活跃页面">
-            <Table
-              dataSource={activePages}
-              hasBorder={false}
-              hasHeader={false}
-              className={styles.table}
-            >
-              <Table.Column title="ID" dataIndex="id" width="5%" />
-              <Table.Column title="页面" dataIndex="page" />
-              <Table.Column title="销售数量" dataIndex="amount" />
-              <Table.Column
-                title="销售占比"
-                dataIndex="page"
-                cell={(value, index, record) => (
-                  <Progress percent={record.percent} />
-                )}
+  return (
+    <Row wrap gutter="20">
+      <Col xxs="24" s="12" l="12">
+        <IceContainer title="活跃页面">
+          <Table
+            dataSource={activePages}
+            hasBorder={false}
+            hasHeader={false}
+            className={styles.table}
+          >
+            <Table.Column title="ID" dataIndex="id" width="5%" />
+            <Table.Column title="页面" dataIndex="page" />
+            <Table.Column title="销售数量" dataIndex="amount" />
+            <Table.Column
+              title="销售占比"
+              dataIndex="page"
+              cell={(value, index, record) => (
+                <Progress percent={record.percent} />
+              )}
+            />
+          </Table>
+        </IceContainer>
+      </Col>
+      <Col xxs="24" s="12" l="12">
+        <IceContainer title="浏览最多">
+          <Table
+            dataSource={ViewedProducts}
+            hasBorder={false}
+            hasHeader={false}
+            className={styles.table}
+          >
+            <Table.Column
+              title="产品"
+              dataIndex="title"
+              cell={(value, index, record) =>
+                renderProduct(value, index, record)
+              }
+              className={styles.tablecolum1}
+            />
+            <Table.Column title="分类" dataIndex="cate"
+              className={styles.tablecolum2}
               />
-            </Table>
-          </IceContainer>
-        </Col>
-        <Col xxs="24" s="12" l="12">
-          <IceContainer title="浏览最多">
-            <Table
-              dataSource={ViewedProducts}
-              hasBorder={false}
-              hasHeader={false}
-              className={styles.table}
-            >
-              <Table.Column
-                title="产品"
-                dataIndex="title"
-                cell={(value, index, record) =>
-                  this.renderProduct(value, index, record)
-                }
-                className={styles.tablecolum1}
-              />
-              <Table.Column title="分类" dataIndex="cate"
-                className={styles.tablecolum2}
-               />
-              <Table.Column
-                title="销售趋势"
-                className={styles.tablecolum2}
-                cell={() => <LintChart />}
-              />
-              <Table.Column title="销售数量" dataIndex="amount" width="20%" />
-            </Table>
-          </IceContainer>
-        </Col>
-      </Row>
-    );
-  }
+            <Table.Column
+              title="销售趋势"
+              className={styles.tablecolum2}
+              cell={() => <LintChart />}
+            />
+            <Table.Column title="销售数量" dataIndex="amount" width="20%" />
+          </Table>
+        </IceContainer>
+      </Col>
+    </Row>
+  );
 }

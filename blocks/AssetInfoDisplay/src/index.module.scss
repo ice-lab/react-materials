@@ -13,27 +13,27 @@
   padding: 0;
 }
 .title {
+  padding: 20px;
   color: #6ca1ee;
   font-size: 16px;
-  padding: 20px;
   border-bottom: 1px solid #fbfbfb;
 }
 .subTitle {
+  margin-bottom: 12px;
+  padding-left: 5px;
   color: #666;
   font-weight: 400;
-  border-left: 4px solid #6ca1ee;
   font-size: 16px;
   line-height: 1.4em;
-  padding-left: 5px;
-  margin-bottom: 12px;
+  border-left: 4px solid #6ca1ee;
 }
 .assets {
-  height: 116px;
-  border-bottom: 1px solid #fbfbfb;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 116px;
+  border-bottom: 1px solid #fbfbfb;
 }
 .cardItem {
   padding: 5px 20px;
@@ -44,14 +44,14 @@
 }
 .assetItem {
   flex: 1;
-  border-right: 1px solid #fbfbfb;
-  text-align: center;
   color: #666;
+  text-align: center;
+  border-right: 1px solid #fbfbfb;
 }
 .price {
-  font-size: 20px;
   margin-bottom: 10px;
   color: #fbb848;
+  font-size: 20px;
 }
 .item {
   margin-bottom: 10px;
@@ -59,14 +59,14 @@
   font-size: 16px;
 }
 .subItem {
-  color: #999;
   margin-bottom: 12px;
+  color: #999;
 }
 .assetItemRight{
-  border-right: 0;
   flex: 1;
-  text-align: center;
   color: #666;
+  text-align: center;
+  border-right: 0;
 }
 .cardItemBottom{
   padding: 5px 20px;

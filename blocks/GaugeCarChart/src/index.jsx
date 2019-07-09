@@ -1,15 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 
-export default class GaugeCarChart extends Component {
-  static displayName = 'GaugeCarChart';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  getOption = () => {
+export default function GaugeCarChart() {
+  const getOption = () => {
     return {
       backgroundColor: '#1b1b1b',
       tooltip: {
@@ -324,16 +318,9 @@ export default class GaugeCarChart extends Component {
     };
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <IceContainer>
-        <ReactEcharts option={this.getOption()} style={{ height: '540px' }} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <ReactEcharts option={getOption()} style={{ height: '540px' }} />
+    </IceContainer>
+  );
 }

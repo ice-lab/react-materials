@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/styles/hljs';
@@ -26,32 +26,19 @@ function createChildren(style, useInlineStyles) {
   }
 }`;
 
-export default class CodeSyntaxHighlight extends Component {
-  static displayName = 'CodeSyntaxHighlight';
+export default function CodeSyntaxHighlight() {
+  const [code] = useState(codeString);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      codeString,
-    };
-  }
-
-  render() {
-    return (
-      <IceContainer>
-        <SyntaxHighlighter
-          language="javascript"
-          style={docco}
-          customStyle={{ height: '500px' }}
-          showLineNumbers
-        >
-          {this.state.codeString}
-        </SyntaxHighlighter>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <SyntaxHighlighter
+        language="javascript"
+        style={docco}
+        customStyle={{ height: '500px' }}
+        showLineNumbers
+      >
+        {code}
+      </SyntaxHighlighter>
+    </IceContainer>
+  );
 }

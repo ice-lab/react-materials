@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
@@ -35,26 +35,21 @@ const list = [
   },
 ];
 
-export default class EntryCard extends Component {
-  static displayName = 'EntryCard';
-
-  render() {
-    return (
-      <IceContainer
-        className="entry-card"
-        className={styles.nl}
-      >
-        {list.map((item, index) => {
-          return (
-            <div key={index} className={styles.item}>
-              <a href={item.url} className={styles.link} target="_blank">
-                <img src={item.img} className={styles.cover} alt={item.title} />
-                <div className={styles.title}>{item.title}</div>
-              </a>
-            </div>
-          );
-        })}
-      </IceContainer>
-    );
-  }
+export default function EntryCard() {
+  return (
+    <IceContainer
+      className={styles.nl}
+    >
+      {list.map((item, index) => {
+        return (
+          <div key={index} className={styles.item}>
+            <a href={item.url} className={styles.link} target="_blank" rel="noopener noreferrer">
+              <img src={item.img} className={styles.cover} alt={item.title} />
+              <div className={styles.title}>{item.title}</div>
+            </a>
+          </div>
+        );
+      })}
+    </IceContainer>
+  );
 }

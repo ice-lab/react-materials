@@ -1,27 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab, Button, Icon, Grid } from '@alifd/next';
-import data from './data';
+import tabData from './data';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
-const { Item } = Tab;
 
-export default class DownloadCard extends Component {
-  static displayName = 'DownloadCard';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      tabData: data,
-    };
-  }
-
-  renderContent = (items) => {
+export default function DownloadCard() {
+  const renderContent = (items) => {
     return items.map((item, index) => {
       return (
         <Col key={index}>
@@ -73,29 +59,26 @@ export default class DownloadCard extends Component {
     });
   };
 
-  render() {
-    const { tabData } = this.state;
-    return (
-      <div className={styles.downloadCard}>
-        <IceContainer>
-          <Tab contentStyle={{ padding: '20px 5px' }}>
-            <Tab.Item title="客户端SDK" key="1">
-              <Row gutter="20" wrap>
-                {tabData.clientSDK
-                  ? this.renderContent(tabData.clientSDK)
-                  : '暂无数据'}
-              </Row>
-            </Tab.Item>
-            <Tab.Item title="服务端SDK" key="2">
-              <Row gutter="20" wrap>
-                {tabData.serverSDK
-                  ? this.renderContent(tabData.serverSDK)
-                  : '暂无数据'}
-              </Row>
-            </Tab.Item>
-          </Tab>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.downloadCard}>
+      <IceContainer>
+        <Tab contentStyle={{ padding: '20px 5px' }}>
+          <Tab.Item title="客户端SDK" key="1">
+            <Row gutter="20" wrap>
+              {tabData.clientSDK
+                ? renderContent(tabData.clientSDK)
+                : '暂无数据'}
+            </Row>
+          </Tab.Item>
+          <Tab.Item title="服务端SDK" key="2">
+            <Row gutter="20" wrap>
+              {tabData.serverSDK
+                ? renderContent(tabData.serverSDK)
+                : '暂无数据'}
+            </Row>
+          </Tab.Item>
+        </Tab>
+      </IceContainer>
+    </div>
+  );
 }

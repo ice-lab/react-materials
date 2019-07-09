@@ -1,5 +1,4 @@
-/* eslint object-shorthand: 0,space-before-function-paren:0, prefer-template:0, wrap-iife:0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
 import styles from  './index.module.scss'
@@ -77,48 +76,33 @@ const config = {
   ],
 };
 
-const cardTitle = {
+const types = {
   day: '24 小时',
   month: '30 天',
   year: '12 个月',
 };
 
-export default class ParetoChart extends Component {
-  static displayName = 'ParetoChart';
+export default function ParetoChart() {
+  const [value, setValue] = useState('day');
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      cardTitle: cardTitle.day,
-    };
-  }
-
-  handleChange = (value) => {
-    this.setState({
-      cardTitle: cardTitle[value],
-    });
+  const handleChange = (val) => {
+    setValue(val);
   };
 
-  render() {
-    return (
-      <IceContainer>
-        <div className={styles.cardHead}>
-          <h4 className={styles.cardTitle}>
-            {this.state.cardTitle}
-            构建次数
-          </h4>
-          <Select size="large" defaultValue="day" onChange={this.handleChange}>
-            <Option value="day">24 小时</Option>
-            <Option value="month">30 天</Option>
-            <Option value="year">12 个月</Option>
-          </Select>
-        </div>
-        <ReactHighcharts config={config} />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer>
+      <div className={styles.cardHead}>
+        <h4 className={styles.cardTitle}>
+          {types[value]}
+          构建次数
+        </h4>
+        <Select size="large" value={value} onChange={handleChange}>
+          <Option value="day">24 小时</Option>
+          <Option value="month">30 天</Option>
+          <Option value="year">12 个月</Option>
+        </Select>
+      </div>
+      <ReactHighcharts config={config} />
+    </IceContainer>
+  );
 }

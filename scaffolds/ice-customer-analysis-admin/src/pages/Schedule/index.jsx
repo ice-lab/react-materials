@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Icon, Pagination, Balloon } from '@alifd/next';
 import Ellipsis from '@icedesign/ellipsis';
 import styles from './index.module.scss';
@@ -32,7 +32,7 @@ export default function Schedule() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = () => {
     return new Promise((resolve) => {
@@ -42,13 +42,13 @@ export default function Schedule() {
     });
   };
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await setIsloading(true);
     mockApi().then((data) => {
       setDataSource(data);
       setIsloading(false);
     });
-  };
+  });
 
   /**
    * 页码发生改变时的回调函数

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Img from '@icedesign/img';
 import { Grid } from '@alifd/next';
 import { enquireScreen } from 'enquire-js';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const dataSource = [
@@ -39,71 +40,59 @@ const dataSource = [
   },
 ];
 
-export default class BrandDisplay extends Component {
-  static displayName = 'BrandDisplay';
+export default function BrandDisplay() {
+  const [isMobile, setMobile] = useState(false);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false,
-    };
-  }
-
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setMobile(mobile);
     }, mediaCondition);
   };
 
-  render() {
-    const { isMobile } = this.state;
-    const logoWidth = isMobile ? 150 : 195;
-    const logoHeight = isMobile ? 150 : 175;
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
 
-    return (
-      <div className="brand-display" className={styles.container}>
-        <div className={styles.brandHeader}>
-          <h5 className={styles.brandTitle}>品牌展示</h5>
-        </div>
-        <Row gutter="20" wrap>
-          {dataSource.map((item, index) => {
-            return (
-              <Col xxs="24" s="12" l="12" key={index} className={styles.brandItem}>
-                <a href={item.url} className={styles.brandItemContent}>
-                  <div>
-                    <Img
-                      width={logoWidth}
-                      height={logoHeight}
-                      src={item.pic}
-                      type="cover"
+  const logoWidth = isMobile ? 150 : 195;
+  const logoHeight = isMobile ? 150 : 175;
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.brandHeader}>
+        <h5 className={styles.brandTitle}>品牌展示</h5>
+      </div>
+      <Row gutter="20" wrap>
+        {dataSource.map((item, index) => {
+          return (
+            <Col xxs="24" s="12" l="12" key={index} className={styles.brandItem}>
+              <a href={item.url} className={styles.brandItemContent}>
+                <div>
+                  <Img
+                    width={logoWidth}
+                    height={logoHeight}
+                    src={item.pic}
+                    type="cover"
+                    alt="图片"
+                  />
+                </div>
+                <div className={styles.caseContent}>
+                  <div className={styles.caseSubject}>
+                    <img
+                      src={item.headPic}
+                      className={styles.subjectImage}
                       alt="图片"
                     />
+                    <span className={styles.subjectDesc}>{item.title}</span>
                   </div>
-                  <div className={styles.caseContent}>
-                    <div className={styles.caseSubject}>
-                      <img
-                        src={item.headPic}
-                        className={styles.subjectImage}
-                        alt="图片"
-                      />
-                      <span className={styles.subjectDesc}>{item.title}</span>
-                    </div>
-                    <p className={styles.caseDetail}>{item.subject}</p>
-                  </div>
-                </a>
-              </Col>
-            );
-          })}
-        </Row>
-      </div>
-    );
-  }
+                  <p className={styles.caseDetail}>{item.subject}</p>
+                </div>
+              </a>
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
 }

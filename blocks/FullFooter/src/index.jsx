@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-const FullFooter = () => {
+export default function FullFooter() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -37,6 +37,3 @@ const FullFooter = () => {
     </div>
   );
 };
-
-
-export default FullFooter;

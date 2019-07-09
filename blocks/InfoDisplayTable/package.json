@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/info-display-table-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "两栏信息展示型表格",
   "main": "lib/index.js",
   "files": [

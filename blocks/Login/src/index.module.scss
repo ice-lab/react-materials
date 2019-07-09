@@ -9,8 +9,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   margin-bottom: 40px;
 };
 .meta {
@@ -19,32 +19,32 @@
   text-decoration: none;
 };
 .title {
-  text-align: center;
-  font-size: 33px;
   color: rgba(0, 0, 0, 0.85);
-  font-family: Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
   font-weight: 600;
+  font-size: 33px;
+  font-family: Myriad Pro, Helvetica Neue, Arial, Helvetica, sans-serif;
+  text-align: center;
 };
 .desc {
   margin: 10px 0;
-  font-size: 14px;
   color: rgba(0, 0, 0, 0.45);
+  font-size: 14px;
 };
 .logo {
-  margin-right: 10px;
   width: 48px;
+  margin-right: 10px;
 };
 .formContainer {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   max-width: 368px;
   margin: 0 auto;
 };
 .formItem {
   position: relative;
-  margin-bottom: 25px;
   flex-direction: column;
+  margin-bottom: 25px;
   padding: 0;
 };
 .formItemCol {
@@ -52,21 +52,21 @@
   padding: 0;
 };
 .formTitle {
-  text-align: center;
   margin: 0 0 20px;
   color: rgba(0, 0, 0, 0.85);
   font-weight: bold;
+  text-align: center;
 };
 .inputIcon {
   position: absolute;
-  left: 12px;
   top: 50%;
-  transform: translateY(-50%);
+  left: 12px;
   color: #999;
+  transform: translateY(-50%);
 };
 .submitBtn {
-  font-size: 16px !important;
   height: 40px !important;
+  font-size: 16px !important;
   line-height: 40px !important;
   background: #3080fe !important;
   border-radius: 4px !important;
@@ -79,10 +79,10 @@
 };
 .link {
   color: #999;
-  text-decoration: none;
   font-size: 13px;
+  text-decoration: none;
 };
 .line {
-  color: #dcd6d6;
   margin: 0 8px;
+  color: #dcd6d6;
 };

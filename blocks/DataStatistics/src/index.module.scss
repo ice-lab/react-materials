@@ -1,49 +1,47 @@
 @charset "UTF-8";
 
 .dataStatistics {
+  .itemBox {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-top: 50px;
+  }
   .itemBox:nth-child(2n) {
     justify-content: flex-end;
   }
   .itemIcon {
-    &:before {
-      font-size: 31px;
+    margin-right: 10px;
+    &::before {
       width: 31px;
+      font-size: 31px;
     }
   }
 }
 
-.container{
+.container {
   width: 100%;
-};
-.title{
+}
+.title {
   margin: 0;
-  font-size: 18px;
   padding-bottom: 15px;
   font-weight: bold;
+  font-size: 18px;
   border-bottom: 1px solid #eee;
-};
-.items{
+}
+.items {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 30px;
-};
-.itemBox{
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  margin-top: 50px;
-};
-.itemIcon{
-  margin-right: 10px;
-};
-.icon{
+}
+.icon {
   color: #3FA1FF;
-};
-.value{
+}
+.value {
   color: #1F82FF;
   font-size: 20px;
-};
-.name{
+}
+.name {
   font-size: 12px;
-};
+}

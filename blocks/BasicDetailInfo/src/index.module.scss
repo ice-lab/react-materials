@@ -11,13 +11,13 @@
   border-left: 3px solid #3080fe;
 };
 .infoItems {
-  padding: 0;
   margin-left: 25px;
+  padding: 0;
 };
 .infoItem {
   margin-bottom: 18px;
-  list-style: none;
   font-size: 14px;
+  list-style: none;
 };
 .infoItemLabel {
   min-width: 70px;
@@ -27,13 +27,13 @@
   color: #333;
 };
 .attachLabel {
+  float: left;
   min-width: 70px;
   color: #999;
-  float: left;
 };
 .attachPics {
   width: 80px;
   height: 80px;
-  border: 1px solid #eee;
   margin-right: 10px;
+  border: 1px solid #eee;
 };
