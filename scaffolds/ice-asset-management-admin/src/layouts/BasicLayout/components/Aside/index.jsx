@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import Layout from '@icedesign/layout';
 import { Nav } from '@alifd/next';
