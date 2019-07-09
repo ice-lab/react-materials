@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Button } from '@alifd/next';
 import { Responsive, WidthProvider } from 'react-grid-layout';
@@ -13,7 +12,7 @@ function generateLayout() {
   const data = [...Array(25).keys()];
 
   return data.map((item, i) => {
-    var y = Math.ceil(Math.random() * 4) + 1;
+    const y = Math.ceil(Math.random() * 4) + 1;
     return {
       x: (random(0, 5) * 2) % 12,
       y: Math.floor(i / 6) * y,
@@ -27,30 +26,14 @@ function generateLayout() {
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
-export default class BasicGridLayout extends Component {
-  static displayName = 'BasicGridLayout';
+export default function BasicGridLayout(props) {
+  const [mounted] = useState(true);
+  const [currentBreakpoint, setCurrentBreakpoint] = useState('lg');
+  const [compactType, setCompactType] = useState('vertical');
+  const [layouts, setLayouts] = useState({ lg: props.initialLayout });
 
-  static defaultProps = {
-    className: 'layout',
-    rowHeight: 30,
-    onLayoutChange: function() {},
-    cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
-    initialLayout: generateLayout(),
-  };
-
-  state = {
-    currentBreakpoint: 'lg',
-    compactType: 'vertical',
-    mounted: false,
-    layouts: { lg: this.props.initialLayout },
-  };
-
-  componentDidMount() {
-    this.setState({ mounted: true });
-  }
-
-  generateDOM() {
-    return this.state.layouts.lg.map((l, i) => {
+  const generateDOM = () => {
+    return layouts.lg.map((l, i) => {
       return (
         <div key={i} className={l.static ? 'static' : ''}>
           {l.static ? (
@@ -68,74 +51,68 @@ export default class BasicGridLayout extends Component {
     });
   }
 
-  onBreakpointChange = (breakpoint) => {
-    this.setState({
-      currentBreakpoint: breakpoint,
-    });
+  const onBreakpointChange = (breakpoint) => {
+    setCurrentBreakpoint(breakpoint);
   };
 
-  onCompactTypeChange = () => {
-    const { compactType: oldCompactType } = this.state;
-    const compactType =
-      oldCompactType === 'horizontal'
+  const onCompactTypeChange = () => {
+    const newCompactType =
+      compactType === 'horizontal'
         ? 'vertical'
-        : oldCompactType === 'vertical'
-          ? null
-          : 'horizontal';
-    this.setState({ compactType });
+        : 'horizontal';
+    setCompactType(newCompactType);
   };
 
-  onLayoutChange = (layout, layouts) => {
-    this.props.onLayoutChange(layout, layouts);
+  const onLayoutChange = (layout, layouts) => {
+    props.onLayoutChange(layout, layouts);
   };
 
-  onNewLayout = () => {
-    this.setState({
-      layouts: { lg: generateLayout() },
-    });
+  const onNewLayout = () => {
+    setLayouts({ lg: generateLayout() });
   };
 
-  render() {
-    var layout = [
-      { i: 'a', x: 0, y: 0, w: 1, h: 2, static: true },
-      { i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4 },
-      { i: 'c', x: 4, y: 0, w: 1, h: 2 },
-    ];
-
-    return (
-      <IceContainer>
-        <div style={styles.groupButton}>
-          <Button type="normal" onClick={this.onCompactTypeChange}>
-            Change Compaction Type
-          </Button>
-          <Button
-            type="primary"
-            style={{ marginLeft: '10px' }}
-            onClick={this.onNewLayout}
-          >
-            Generate New Layout
-          </Button>
-        </div>
-        <ResponsiveReactGridLayout
-          {...this.props}
-          layouts={this.state.layouts}
-          onBreakpointChange={this.onBreakpointChange}
-          onLayoutChange={this.onLayoutChange}
-          isResizable={false}
-          // WidthProvider option
-          measureBeforeMount={false}
-          // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
-          // and set `measureBeforeMount={true}`.
-          useCSSTransforms={this.state.mounted}
-          compactType={this.state.compactType}
-          preventCollision={!this.state.compactType}
+  console.log(currentBreakpoint);
+  return (
+    <IceContainer>
+      <div style={styles.groupButton}>
+        <Button type="normal" onClick={onCompactTypeChange}>
+          Change Compaction Type
+        </Button>
+        <Button
+          type="primary"
+          style={{ marginLeft: '10px' }}
+          onClick={onNewLayout}
         >
-          {this.generateDOM()}
-        </ResponsiveReactGridLayout>
-      </IceContainer>
-    );
-  }
+          Generate New Layout
+        </Button>
+      </div>
+      <ResponsiveReactGridLayout
+        {...props}
+        layouts={layouts}
+        onBreakpointChange={onBreakpointChange}
+        onLayoutChange={onLayoutChange}
+        isResizable={false}
+        // WidthProvider option
+        measureBeforeMount={false}
+        // I like to have it animate on mount. If you don't, delete `useCSSTransforms` (it's default `true`)
+        // and set `measureBeforeMount={true}`.
+        useCSSTransforms={mounted}
+        compactType={compactType}
+        preventCollision={!compactType}
+      >
+        {generateDOM()}
+      </ResponsiveReactGridLayout>
+    </IceContainer>
+  );
 }
+
+BasicGridLayout.defaultProps = {
+  className: 'layout',
+  rowHeight: 30,
+  onLayoutChange() {},
+  cols: { lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 },
+  initialLayout: generateLayout(),
+};
 
 const styles = {
   groupButton: {

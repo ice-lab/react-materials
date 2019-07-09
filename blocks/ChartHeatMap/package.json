@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/chart-heat-map-block",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "",
   "files": [
     "src/",
@@ -29,8 +29,8 @@
   },
   "devDependencies": {
     "@icedesign/theme": "^0.x",
-    "react": "*",
-    "react-dom": "*"
+    "react": "16.x",
+    "react-dom": "16.x"
   },
   "blockConfig": {
     "name": "chart-heat-map",

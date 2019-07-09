@@ -1,25 +1,25 @@
 .title{
+  position: relative;
+  margin-bottom: 15px;
   color: #333;
   font-size: 16px;
-  margin-bottom: 15px;
-  position: relative;
 }
 .datetime{
   position: absolute;;
   right: 10px;
-  font-size: 12px;
   color: #9b9b9b;
+  font-size: 12px;
 }
 .desc{
+  padding-bottom: 15px;
   color: #999;
   font-size: 13px;
   line-height: 24px;
-  padding-bottom: 15px;
 }
 .operator{
   padding-top: 8px;
-  font-size: 12px;
   color: #9b9b9b;
+  font-size: 12px;
 }
 .operatorItem{
   margin-right: 5px;
@@ -34,8 +34,8 @@
   margin-right: 10px;
 }
 .wrapperStyle{
-  border-bottom: 1px solid #f4f4f4;
   margin-bottom: 15px;
+  border-bottom: 1px solid #f4f4f4;
 }
 .informationStyle{
   display: flex;
@@ -52,11 +52,11 @@
   height: 12px;
 }
 .tabactive{
-  cursor: pointer;
   margin-right: 20px;
-  color: #3080FE
+  color: #3080FE;
+  cursor: pointer
 }
 .tab{
-  cursor: pointer;
   margin-right: 20px;
+  cursor: pointer;
 }

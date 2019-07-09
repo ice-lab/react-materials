@@ -1,37 +1,27 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { List, AutoSizer } from 'react-virtualized';
 import './InfiniteScrollList.scss';
 import data from './data';
 
-export default class Index extends PureComponent {
-  static displayName = 'Index';
+export default function Index() {
+  const [listHeight] = useState(300);
+  const [listRowHeight] = useState(50);
+  const [overscanRowCount] = useState(10);
+  const [rowCount] = useState(data.list.length);
+  const [scrollToIndex] = useState(undefined);
+  const [showScrollingPlaceholder] = useState(false);
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      listHeight: 300,
-      listRowHeight: 50,
-      overscanRowCount: 10,
-      rowCount: data.list.length,
-      scrollToIndex: undefined,
-      showScrollingPlaceholder: false,
-    };
-  }
-
-  getDatum(index) {
+  const getDatum = (index) => {
     const { list } = data;
     return list[index % list.length];
   }
 
-  noRowsRenderer = () => {
+  const noRowsRenderer = () => {
     return <div className="no-rows">No rows</div>;
   };
 
-  rowRenderer = ({ index, isScrolling, key, style }) => {
-    const { showScrollingPlaceholder } = this.state;
-
+  const rowRenderer = ({ index, isScrolling, key, style }) => {
     if (showScrollingPlaceholder && isScrolling) {
       return (
         <div className="row is-scrolling-placeholder" key={key} style={style}>
@@ -40,7 +30,7 @@ export default class Index extends PureComponent {
       );
     }
 
-    const datum = this.getDatum(index);
+    const datum = getDatum(index);
 
     return (
       <div className="row" key={key} style={style}>
@@ -60,34 +50,23 @@ export default class Index extends PureComponent {
     );
   };
 
-  render() {
-    const {
-      listHeight,
-      listRowHeight,
-      overscanRowCount,
-      rowCount,
-      scrollToIndex,
-    } = this.state;
-
-    return (
-      <IceContainer className="infinite-scroll-list">
-        <AutoSizer disableHeight>
-          {({ width }) => (
-            <List
-              ref="List"
-              className="list"
-              height={listHeight}
-              overscanRowCount={overscanRowCount}
-              noRowsRenderer={this.noRowsRenderer}
-              rowCount={rowCount}
-              rowHeight={listRowHeight}
-              rowRenderer={this.rowRenderer}
-              scrollToIndex={scrollToIndex}
-              width={width}
-            />
-          )}
-        </AutoSizer>
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className="infinite-scroll-list">
+      <AutoSizer disableHeight>
+        {({ width }) => (
+          <List
+            className="list"
+            height={listHeight}
+            overscanRowCount={overscanRowCount}
+            noRowsRenderer={noRowsRenderer}
+            rowCount={rowCount}
+            rowHeight={listRowHeight}
+            rowRenderer={rowRenderer}
+            scrollToIndex={scrollToIndex}
+            width={width}
+          />
+        )}
+      </AutoSizer>
+    </IceContainer>
+  );
 }

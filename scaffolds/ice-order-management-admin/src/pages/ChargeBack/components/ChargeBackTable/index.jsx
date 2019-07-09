@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Overview from '@/components/Overview';
@@ -49,7 +49,7 @@ export default function ChargeBackTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -59,14 +59,14 @@ export default function ChargeBackTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then((mockData) => {
       setData(mockData);
       setLoading(false);
       setOverviewData(getOverviewData());
     });
-  };
+  });
 
   const handlePaginationChange = async (currentPage) => {
     await setCurrent(currentPage);

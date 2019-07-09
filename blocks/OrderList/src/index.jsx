@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
@@ -25,8 +25,8 @@ const mockData = [
             avatar: require('./images/placeholder.jpg'),
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     price: 'US $2.5',
@@ -50,8 +50,8 @@ const mockData = [
             avatar: require('./images/placeholder.jpg'),
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     price: 'US $2.5',
@@ -76,8 +76,8 @@ const mockData = [
             avatar: require('./images/placeholder.jpg'),
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     price: 'US $2.5',
@@ -101,29 +101,18 @@ const mockData = [
             avatar: require('./images/placeholder.jpg'),
           },
         ],
-      }
-    ]
+      },
+    ],
   },
 ];
 
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      tableData: mockData,
-    };
-  }
+export default function Index() {
+  const [tableData] = useState(mockData);
 
   /**
    * 渲染订单信息
    */
-  renderOrderInfo = (product) => {
+  const renderOrderInfo = (product) => {
     return (
       <div className={`${styles.orderInfo} order-info`}>
         <img src={product[0].avatar} className={styles.orderImg} alt="头像" />
@@ -137,21 +126,21 @@ export default class Index extends Component {
   /**
    * 渲染订单价格
    */
-  renderOrderPrice = (price) => {
+  const renderOrderPrice = (price) => {
     return <b>{price}</b>;
   };
 
   /**
    * 渲染订单单号
    */
-  renderOrderNumber = (record) => {
+  const renderOrderNumber = (record) => {
     return <div>{record.product[0].title}</div>;
   };
 
   /**
    * 设置每一行的样式名称
    */
-  getRowClassName = (record) => {
+  const getRowClassName = (record) => {
     if (record.status === 0) {
       return 'highlight-row';
     }
@@ -160,7 +149,7 @@ export default class Index extends Component {
   /**
    * 渲染操作行
    */
-  renderOperation = () => {
+  const renderOperation = () => {
     return (
       <a href="/" className={styles.orderDetailLink}>
         查看
@@ -171,51 +160,40 @@ export default class Index extends Component {
   /**
    * 选中当前行的回调
    */
-  handleRowSelection = (selectedRowKeys, records) => {
+  const handleRowSelection = (selectedRowKeys, records) => {
     console.log('selectedRowKeys:', selectedRowKeys);
     console.log('records:', records);
   };
 
-  render() {
-    const rowSelection = {
-      onChange: this.handleRowSelection,
-      mode: 'single',
-    };
-
-    const { tableData } = this.state;
-
-    return (
-      <div className={`${styles.orderList} order-list`}>
-        <IceContainer title="订单列表">
-          <Table
-            dataSource={tableData}
-            getRowClassName={this.getRowClassName}
-            hasBorder={false}
-            rowSelection={this.handleRowSelection}
-          >
-            <Table.GroupHeader cell={this.renderOrderNumber} />
-            <Table.Column
-              cell={this.renderOrderInfo}
-              title="商品"
-              dataIndex="product"
-              width={400}
-            />
-            <Table.Column
-              cell={this.renderOrderPrice}
-              title="价格"
-              dataIndex="price"
-              width={120}
-            />
-            <Table.Column
-              cell={this.renderOperation}
-              title="操作"
-              width={100}
-            />
-          </Table>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={`${styles.orderList} order-list`}>
+      <IceContainer title="订单列表">
+        <Table
+          dataSource={tableData}
+          getRowClassName={getRowClassName}
+          hasBorder={false}
+          rowSelection={handleRowSelection}
+        >
+          <Table.GroupHeader cell={renderOrderNumber} />
+          <Table.Column
+            cell={renderOrderInfo}
+            title="商品"
+            dataIndex="product"
+            width={400}
+          />
+          <Table.Column
+            cell={renderOrderPrice}
+            title="价格"
+            dataIndex="price"
+            width={120}
+          />
+          <Table.Column
+            cell={renderOperation}
+            title="操作"
+            width={100}
+          />
+        </Table>
+      </IceContainer>
+    </div>
+  );
 }
-
-

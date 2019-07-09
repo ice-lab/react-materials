@@ -1,73 +1,73 @@
 .wrapperContainer{
   position: relative;
-  margin-bottom: -400px;
   height: 1150px;
+  margin-bottom: -400px;
   overflow: hidden;
 }
 .bgImage2{
+  position: absolute;
+  bottom: 550px;
+  left: 35%;
+  z-index: 1;
   width: 1400px;
   height: 782px;
-  border-radius: 391px;
   background: linear-gradient(135deg, rgba(94,136,255,1) 0%,rgba(111,48,254,1) 100%);
-  transform: rotate(-45deg);
+  border-radius: 391px;
   box-shadow: 2px 2px 60px rgba(0,0,0,0.06);
-  position: absolute;
-  left: 35%;
-  bottom: 550px;
-  z-index: 1;
+  transform: rotate(-45deg);
 }
 .wrapper{
-  height: 750px;
-  background-color: #f6f6f6;
   position: relative;
-  width: 100%
+  width: 100%;
+  height: 750px;
+  background-color: #f6f6f6
 }
 .wrapperBody{
+  position: relative;
+  z-index: 2;
   max-width: 1190px;
   height: 750px;
-  position: relative;
   margin: 0 auto;
-  z-index: 2;
 }
 .softwareIntro{
   position: absolute;
   left: 5%;
-  padding-top: 230px;
   z-index: 3;
+  padding-top: 230px;
 }
 .title{
-  font-size: 46px;
+  margin-bottom: 16px;
   color: #fff;
   font-weight: 500;
+  font-size: 46px;
   line-height: 66px;
   text-shadow: 0 0 3px rgba(0,0,0,0.3);
-  margin-bottom: 16px;
 }
 .slogan{
-  font-size: 24px;
   color: #fff;
+  font-size: 24px;
   line-height: 34px;
   text-shadow: 0 0 3px rgba(0,0,0,0.3);
 }
 .softwareDetail{
-  padding-top: 24px;
   display: flex;
   flex-direction: row;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 300;
-  width: 200px;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  padding-top: 24px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 16px;
 }
 .software{
-  background-image: url(//img.alicdn.com/tfs/TB1uPagpQyWBuNjy0FpXXassXXa-1446-1148.png);
-  width: 723px;
-  height: 574px;
-  background-size: 723px 574px;
   position: absolute;
   top:100px;
   left: 38%;
+  width: 723px;
+  height: 574px;
+  background-image: url(//img.alicdn.com/tfs/TB1uPagpQyWBuNjy0FpXXassXXa-1446-1148.png);
+  background-size: 723px 574px;
 }
 .separator{
   width: 1px;
@@ -88,12 +88,12 @@
   position: absolute;
   width: 100%;
   height: 750px;
-  background-size: cover;
   background-image: url(//img.alicdn.com/tfs/TB1eoehpKOSBuNjy0FdXXbDnVXa-3798-1500.jpg);
+  background-size: cover;
 }
 .subtitle{
-  font-size: 16px;
-  font-weight: normal
+  font-weight: normal;
+  font-size: 16px
 }
 .bgImageMask{
   width: 100%;
@@ -121,13 +121,13 @@
   font-size: 12px
 }
 .box2{
-  padding-top: 20px;
   width: 200px;
+  padding-top: 20px;
   text-align: center
 }
 .box3{
-  font-size: 12px;
   color: #fff;
+  font-size: 12px;
 }
 .box2a{
   color: #fff;

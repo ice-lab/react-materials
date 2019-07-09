@@ -6,8 +6,8 @@ overflow-y: scroll;
   position: relative;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
   padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 .avatar{
   width: 52px;
@@ -22,8 +22,8 @@ overflow-y: scroll;
 }
 .userPosition{
   margin: 0;
-  font-size: 12px;
   color: #666;
+  font-size: 12px;
 }
 .createTime{
   position: absolute;;
@@ -32,30 +32,30 @@ overflow-y: scroll;
 }
 .taskList{
   display: flex;
-  border-bottom: 1px solid #eee;
   padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 .taskBody{
   width: 100%;
-  padding: 0 10px;
   margin-top: -2px;
+  padding: 0 10px;
 }
 .taskTitle{
   margin: 0;
 }
 .taskTime{
   margin: 2px 0;
-  font-size: 13px;
   color: #666;
+  font-size: 13px;
 }
 .taskTags{
+  margin-right: 4px;
   color: #4AD172;
   font-size: 12px;
-  margin-right: 4px;
 }
 .taskOper{
   display: flex;
   align-items: center;
-  cursor: pointer;
   color: #4AD172;
+  cursor: pointer;
 }

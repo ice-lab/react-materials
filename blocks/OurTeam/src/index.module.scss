@@ -10,12 +10,12 @@
       margin: 0 auto;
     }
     .title {
-      text-align: center;
       font-size: 28px;
+      text-align: center;
     }
     .intro{
-      text-align: center;
       color: #999;
+      text-align: center;
     }
     .items {
       display: flex;
@@ -24,8 +24,8 @@
     .item {
       display: flex;
       width: 50%;
-      padding: 0 40px;
       margin: 40px 0;
+      padding: 0 40px;
     }
     .baseInfo {
       display: flex;
@@ -34,8 +34,8 @@
       padding-left: 25px;
     }
     .name {
-      font-weight: bold;
       margin: 0 0 10px;
+      font-weight: bold;
       font-size: 15px;
     }
     .description {

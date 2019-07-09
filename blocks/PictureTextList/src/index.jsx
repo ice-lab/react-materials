@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination, Grid } from '@alifd/next';
 import SingleItem from './SingleItem';
@@ -135,19 +135,8 @@ const dataSource = [
   },
 ];
 
-export default class PictureTextList extends Component {
-  static displayName = 'PictureTextList';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderItem = (item, index) => {
+export default function PictureTextList() {
+  const renderItem = (item, index) => {
     return (
       <Col xxs={12} s={8} m={6} l={4} key={index}>
         <SingleItem {...item} />
@@ -155,23 +144,16 @@ export default class PictureTextList extends Component {
     );
   };
 
-  renderItemRow = () => {
-    return <div className={styles.row}>{dataSource.map(this.renderItem)}</div>;
-  };
-
-  render() {
-    return (
-      <div>
-        <IceContainer className={styles.card}>
-          <Row wrap gutter={20}>
-            {dataSource.map(this.renderItem)}
-          </Row>
-          <div className={styles.paginationContainer}>
-            <Pagination />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <IceContainer className={styles.card}>
+        <Row wrap gutter={20}>
+          {dataSource.map(renderItem)}
+        </Row>
+        <div className={styles.paginationContainer}>
+          <Pagination />
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 import { Grid } from '@alifd/next';
@@ -6,78 +6,65 @@ import IceContainer from '@icedesign/container';
 
 const { Row, Col } = Grid;
 
-export default class SalesStatChart extends Component {
-  static displayName = 'SalesStatChart';
+export default function SalesStatChart() {
+  return (
+    <div className="sales-stat-chart">
+      <Row wrap gutter="20">
+        <Col xxs="24" s="15" l="15">
+          <IceContainer title="销售额">
+            <Chart height={428} data={data} forceFit>
+              <Axis name="month" />
+              <Axis name="value" />
+              <Legend />
+              <Tooltip crosshairs={{ type: 'line' }} />
+              <Geom type="area" position="month*value" color="saler" />
+              <Geom
+                type="polygon"
+                position="month*value"
+                size={2}
+                color="saler"
+              />
+            </Chart>
+          </IceContainer>
+        </Col>
+        <Col xxs="24" s="9" l="9">
+          <IceContainer title="新用户">
+            <Chart
+              height={76}
+              data={userData}
+              forceFit
+              padding={[0, 0, 0, 0]}
+            >
+              <Axis name="count" />
+              <Tooltip crosshairs={{ type: 'y' }} />
+              <Geom type="interval" position="month*count" />
+            </Chart>
+          </IceContainer>
 
-  static propTypes = {};
+          <IceContainer title="下单量">
+            <Chart
+              height={76}
+              data={downloadData}
+              forceFit
+              padding={[0, 0, 0, 0]}
+            >
+              <Axis name="pv" />
+              <Tooltip crosshairs={{ type: 'y' }} />
+              <Geom type="interval" position="month*count" />
+            </Chart>
+          </IceContainer>
 
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="sales-stat-chart">
-        <Row wrap gutter="20">
-          <Col xxs="24" s="15" l="15">
-            <IceContainer title="销售额">
-              <Chart height={428} data={data} forceFit>
-                <Axis name="month" />
-                <Axis name="value" />
-                <Legend />
-                <Tooltip crosshairs={{ type: 'line' }} />
-                <Geom type="area" position="month*value" color="saler" />
-                <Geom
-                  type="polygon"
-                  position="month*value"
-                  size={2}
-                  color="saler"
-                />
-              </Chart>
-            </IceContainer>
-          </Col>
-          <Col xxs="24" s="9" l="9">
-            <IceContainer title="新用户">
-              <Chart
-                height={76}
-                data={userData}
-                forceFit
-                padding={[0, 0, 0, 0]}
-              >
-                <Axis name="count" />
-                <Tooltip crosshairs={{ type: 'y' }} />
-                <Geom type="interval" position="month*count" />
-              </Chart>
-            </IceContainer>
-
-            <IceContainer title="下单量">
-              <Chart
-                height={76}
-                data={downloadData}
-                forceFit
-                padding={[0, 0, 0, 0]}
-              >
-                <Axis name="pv" />
-                <Tooltip crosshairs={{ type: 'y' }} />
-                <Geom type="interval" position="month*count" />
-              </Chart>
-            </IceContainer>
-
-            <IceContainer title="访问量">
-              <Chart height={76} data={pvData} forceFit padding={[0, 0, 0, 0]}>
-                <Axis name="pv" />
-                <Tooltip crosshairs={{ type: 'y' }} />
-                <Geom type="interval" position="month*pv" />
-              </Chart>
-            </IceContainer>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+          <IceContainer title="访问量">
+            <Chart height={76} data={pvData} forceFit padding={[0, 0, 0, 0]}>
+              <Axis name="pv" />
+              <Tooltip crosshairs={{ type: 'y' }} />
+              <Geom type="interval" position="month*pv" />
+            </Chart>
+          </IceContainer>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 const data = [

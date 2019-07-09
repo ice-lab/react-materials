@@ -10,30 +10,30 @@
   margin: 10px 0
 }
 .cover{
-  background-color: #e9f1ff;
-  margin-right: 10px;
-  height: 70px;
-  width: 70px;
-  border-radius: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  background-color: #e9f1ff;
+  border-radius: 70px;
 }
 .icon{
   width: 44px;
   height: 40px;
 }
 .meta{
+  color: #333;
   font-size: 12px;
-  color: #333333;
 }
 .total{
-  font-size: 24px;
-  color: #333333
+  color: #333;
+  font-size: 24px
 }
 .compareText{
-  font-size: 12px;
-  color: #999999
+  color: #999;
+  font-size: 12px
 }
 .up{
   color: #fc5848

@@ -1,5 +1,4 @@
-/* eslint-disable react/no-unused-state */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table, Input, Select, Grid } from '@alifd/next';
 import { FormBinderWrapper, FormBinder } from '@icedesign/form-binder';
 import IceContainer from '@icedesign/container';
@@ -37,22 +36,10 @@ const dataSource = [
   },
 ];
 
-export default class TagTable extends Component {
-  static displayName = 'TagTable';
+export default function TagTable() {
+  const [formValue, setFormValue] = useState({});
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      formValue: {},
-    };
-  }
-
-  getDataSource = () => {
-    const { formValue } = this.state;
+  const getDataSource = () => {
     return dataSource.filter((data) => {
       // 预先筛除
       if (formValue.name && !data.name.match(formValue.name)) {
@@ -80,88 +67,82 @@ export default class TagTable extends Component {
     });
   };
 
-  formChange = (value) => {
+  const formChange = (value) => {
     console.log('changed value', value);
-    this.setState({
-      formValue: value,
-    });
+    setFormValue(value);
   };
 
-  render() {
-    const { formValue } = this.state;
+  return (
+    <div>
+      <IceContainer>
+        <FormBinderWrapper value={formValue} onChange={formChange}>
+          <div className={styles.rowdiv}>
+            <Row className={styles.formRow}>
+              <Col xxs="6" s="4" l="2" className={styles.label}>
+                漏洞搜索:{' '}
+              </Col>
+              <Col span="10">
+                <FormBinder name="name">
+                  <Input placeholder="请输入漏洞名称" />
+                </FormBinder>
+              </Col>
+            </Row>
+            <Row className={styles.formRow}>
+              <Col xxs="6" s="4" l="2" className={styles.label}>
+                处理状态:{' '}
+              </Col>
+              <Col span="10">
+                <FormBinder name="isHandle">
+                  <Select placeholder="请选择">
+                    <Select.Option value="">任意</Select.Option>
+                    <Select.Option value="YES">已经处理</Select.Option>
+                    <Select.Option value="NO">未处理</Select.Option>
+                  </Select>
+                </FormBinder>
+              </Col>
+            </Row>
+            <Row className={styles.formRow}>
+              <Col xxs="6" s="4" l="2" className={styles.label}>
+                漏洞等级:{' '}
+              </Col>
+              <Col span="10">
+                <FormBinder name="levels">
+                  <Select
+                    filterLocal={false}
+                    fillProps="label"
+                    placeholder="请选择"
+                    mode="multiple"
+                    showSearch
+                    dataSource={['严重', '高危', '中危', '低危']}
+                  />
+                </FormBinder>
+              </Col>
+            </Row>
+          </div>
+        </FormBinderWrapper>
 
-    return (
-      <div>
-        <IceContainer>
-          <FormBinderWrapper value={formValue} onChange={this.formChange}>
-            <div className={styles.rowdiv}>
-              <Row className={styles.formRow}>
-                <Col xxs="6" s="4" l="2" className={styles.label}>
-                  漏洞搜索:{' '}
-                </Col>
-                <Col span="10">
-                  <FormBinder name="name">
-                    <Input placeholder="请输入漏洞名称" />
-                  </FormBinder>
-                </Col>
-              </Row>
-              <Row className={styles.formRow}>
-                <Col xxs="6" s="4" l="2" className={styles.label}>
-                  处理状态:{' '}
-                </Col>
-                <Col span="10">
-                  <FormBinder name="isHandle">
-                    <Select placeholder="请选择">
-                      <Select.Option value="">任意</Select.Option>
-                      <Select.Option value="YES">已经处理</Select.Option>
-                      <Select.Option value="NO">未处理</Select.Option>
-                    </Select>
-                  </FormBinder>
-                </Col>
-              </Row>
-              <Row className={styles.formRow}>
-                <Col xxs="6" s="4" l="2" className={styles.label}>
-                  漏洞等级:{' '}
-                </Col>
-                <Col span="10">
-                  <FormBinder name="levels">
-                    <Select
-                      filterLocal={false}
-                      fillProps="label"
-                      placeholder="请选择"
-                      mode="multiple"
-                      showSearch
-                      dataSource={['严重', '高危', '中危', '低危']}
-                    />
-                  </FormBinder>
-                </Col>
-              </Row>
-            </div>
-          </FormBinderWrapper>
-
-          <Table
-            locale={{ empty: '没有查询到符合条件的记录' }}
-            dataSource={this.getDataSource()}
-          >
-            <Table.Column title="漏洞名称" dataIndex="name" width={200} />
-            <Table.Column title="漏洞等级" dataIndex="level" width={200} />
-            <Table.Column
-              title="需尽快修复资产"
-              dataIndex="assets.needFix"
-              width={200}
-            />
-            <Table.Column
-              title="当前未处理资产"
-              dataIndex="assets.unHandle"
-              width={200}
-              cell={(val) => {
-                return val || '无';
-              }}
-            />
-            <Table.Column title="最后发现时间" dataIndex="time" width={200} />
-          </Table>
-        </IceContainer>
-      </div>
-    );
-  }
+        <Table
+          locale={{ empty: '没有查询到符合条件的记录' }}
+          dataSource={getDataSource()}
+        >
+          <Table.Column title="漏洞名称" dataIndex="name" width={200} />
+          <Table.Column title="漏洞等级" dataIndex="level" width={200} />
+          <Table.Column
+            title="需尽快修复资产"
+            dataIndex="assets.needFix"
+            width={200}
+          />
+          <Table.Column
+            title="当前未处理资产"
+            dataIndex="assets.unHandle"
+            width={200}
+            cell={(val) => {
+              return val || '无';
+            }}
+          />
+          <Table.Column title="最后发现时间" dataIndex="time" width={200} />
+        </Table>
+      </IceContainer>
+    </div>
+  );
 }

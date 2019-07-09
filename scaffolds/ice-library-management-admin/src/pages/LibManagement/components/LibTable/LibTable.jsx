@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Message, Button } from '@alifd/next';
 import TableFilter from './TableFilter';
 import CustomTable from './CustomTable';
@@ -27,7 +27,7 @@ export default function LibTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = () => {
     return new Promise((resolve) => {
@@ -37,13 +37,13 @@ export default function LibTable() {
     });
   };
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await setIsloading(true);
     mockApi().then((data) => {
       setDataSource(data);
       setIsloading(false);
     });
-  };
+  });
 
   const handlePaginationChange = (current) => {
     fetchData(current);

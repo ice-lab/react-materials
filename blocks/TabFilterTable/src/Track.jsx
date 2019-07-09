@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Input, Table, Pagination } from '@alifd/next';
 import styles from  './index.module.scss'
 
@@ -16,31 +16,18 @@ const getData = () => {
   });
 };
 
-export default class TableFilter extends Component {
-  static displayName = 'TableFilter';
+export default function TableFilter() {
+  const [current, setCurrent] = useState(1);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-    };
-  }
-
-  handlePaginationChange = (current) => {
-    this.setState({
-      current,
-    });
+  const handlePaginationChange = (current) => {
+    setCurrent(current);
   };
 
-  onChange = (value) => {
+  const onChange = (value) => {
     console.log({ value });
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
         <a className={styles.link}>详情</a>
@@ -50,37 +37,34 @@ export default class TableFilter extends Component {
     );
   };
 
-  render() {
-    const dataSource = getData();
-    const { current } = this.state;
+  const dataSource = getData();
 
-    return (
-      <div className={styles.container}>
-        <div className={styles.tableHead}>
-          <div className={styles.label}>页面名称:</div>
-          <Input
-            placeholder="请输入页面名称"
-            hasClear
-            onChange={this.onChange}
-            size="large"
-          />
-        </div>
-        <Table dataSource={dataSource} hasBorder={false}>
-          <Table.Column title="页面名称" dataIndex="pageName" width={100} />
-          <Table.Column title="事件名称" dataIndex="eventName" width={150} />
-          <Table.Column title="事件ID" dataIndex="eventId" width={100} />
-          <Table.Column title="方案名称" dataIndex="schemeName" width={100} />
-          <Table.Column title="成功数" dataIndex="successNum" width={100} />
-          <Table.Column title="失败数" dataIndex="failedNum" width={100} />
-          <Table.Column title="负责人" dataIndex="leader" width={100} />
-          <Table.Column title="操作" cell={this.renderOper} width={200} />
-        </Table>
-        <Pagination
-          className={styles.pagination1}
-          current={current}
-          onChange={this.handlePaginationChange}
+  return (
+    <div className={styles.container}>
+      <div className={styles.tableHead}>
+        <div className={styles.label}>页面名称:</div>
+        <Input
+          placeholder="请输入页面名称"
+          hasClear
+          onChange={onChange}
+          size="large"
         />
       </div>
-    );
-  }
+      <Table dataSource={dataSource} hasBorder={false}>
+        <Table.Column title="页面名称" dataIndex="pageName" width={100} />
+        <Table.Column title="事件名称" dataIndex="eventName" width={150} />
+        <Table.Column title="事件ID" dataIndex="eventId" width={100} />
+        <Table.Column title="方案名称" dataIndex="schemeName" width={100} />
+        <Table.Column title="成功数" dataIndex="successNum" width={100} />
+        <Table.Column title="失败数" dataIndex="failedNum" width={100} />
+        <Table.Column title="负责人" dataIndex="leader" width={100} />
+        <Table.Column title="操作" cell={renderOper} width={200} />
+      </Table>
+      <Pagination
+        className={styles.pagination1}
+        current={current}
+        onChange={handlePaginationChange}
+      />
+    </div>
+  );
 }

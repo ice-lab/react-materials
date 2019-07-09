@@ -1,5 +1,4 @@
-/* eslint  react/no-string-refs: 0 */
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Input, Radio, Switch, Upload, Grid, Form } from '@alifd/next';
 import './index.scss';
@@ -29,46 +28,25 @@ function onError(file) {
   console.log('onError callback : ', file);
 }
 
-export default class SettingsForm extends Component {
-  static displayName = 'SettingsForm';
+export default function SettingsForm() {
+  const [value, setValue] = useState({
+    name: '',
+    gender: 'male',
+    notice: false,
+    email: '',
+    avatar: [],
+    siteUrl: '',
+    githubUrl: '',
+    twitterUrl: '',
+    description: '',
+  });
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: {
-        name: '',
-        gender: 'male',
-        notice: false,
-        email: '',
-        avatar: [],
-        siteUrl: '',
-        githubUrl: '',
-        twitterUrl: '',
-        description: '',
-      },
-    };
-  }
-
-  onDragOver = () => {
-    console.log('dragover callback');
-  };
-
-  onDrop = (fileList) => {
-    console.log('drop callback : ', fileList);
-  };
-
-  formChange = (value) => {
+  const formChange = (value) => {
     console.log('value', value);
-    this.setState({
-      value,
-    });
+    setValue(value);
   };
 
-  validateAllFormField = (values, errors) => {
+  const validateAllFormField = (values, errors) => {
     console.log('error', errors, 'value', values);
     if (!errors) {
       // 提交当前填写的数据
@@ -77,128 +55,126 @@ export default class SettingsForm extends Component {
     }
   };
 
-  render() {
-    return (
-      <div className="settings-form">
-        <IceContainer>
-          <Form value={this.state.value} onChange={this.formChange} ref="form">
-            <div style={styles.formContent}>
-              <h2 style={styles.formTitle}>基本设置</h2>
+  return (
+    <div className="settings-form">
+      <IceContainer>
+        <Form value={value} onChange={formChange}>
+          <div style={styles.formContent}>
+            <h2 style={styles.formTitle}>基本设置</h2>
 
-              <FormItem
-                size="large"
-                label="姓名："
-                {...formItemLayout}
-                required
-                maxLength={10}
-                requiredMessage="必填"
-              >
-                <Input name="name" placeholder="于江水" />
-              </FormItem>
-              <FormItem
-                label="头像："
-                {...formItemLayout}
-                required
-                requiredMessage="必填"
-              >
-                <Upload.Card
-                  name="avatar"
-                  listType="card"
-                  action=""
-                  accept="image/png, image/jpg, image/jpeg, image/gif, image/bmp"
-                  beforeUpload={beforeUpload}
-                  onChange={onChange}
-                  onSuccess={onSuccess}
-                  onError={onError}
-                />
-              </FormItem>
-              <FormItem
-                label="性别："
-                {...formItemLayout}
-                required
-                requiredMessage="必填"
-              >
-                <RadioGroup name="gender">
-                  <Radio value="male">男</Radio>
-                  <Radio value="female">女</Radio>
-                </RadioGroup>
-              </FormItem>
+            <FormItem
+              size="large"
+              label="姓名："
+              {...formItemLayout}
+              required
+              maxLength={10}
+              requiredMessage="必填"
+            >
+              <Input name="name" placeholder="于江水" />
+            </FormItem>
+            <FormItem
+              label="头像："
+              {...formItemLayout}
+              required
+              requiredMessage="必填"
+            >
+              <Upload.Card
+                name="avatar"
+                listType="card"
+                action=""
+                accept="image/png, image/jpg, image/jpeg, image/gif, image/bmp"
+                beforeUpload={beforeUpload}
+                onChange={onChange}
+                onSuccess={onSuccess}
+                onError={onError}
+              />
+            </FormItem>
+            <FormItem
+              label="性别："
+              {...formItemLayout}
+              required
+              requiredMessage="必填"
+            >
+              <RadioGroup name="gender">
+                <Radio value="male">男</Radio>
+                <Radio value="female">女</Radio>
+              </RadioGroup>
+            </FormItem>
 
-              <FormItem label="通知：" {...formItemLayout}>
-                <Switch name="notice" />
-              </FormItem>
-              <FormItem
-                size="large"
-                label="邮件："
-                {...formItemLayout}
-                required
-                requiredMessage="请输入正确的邮件"
-              >
-                <Input htmlType="email" name="email" />
-              </FormItem>
-              <FormItem
-                size="large"
-                label="网站地址："
-                {...formItemLayout}
-                required
-                formatMessage="请输入正确的网站地址"
-                format="url"
-              >
-                <Input
-                  name="siteUrl"
-                  type="url"
-                  placeholder="https://alibaba.github.io/ice"
-                />
-              </FormItem>
+            <FormItem label="通知：" {...formItemLayout}>
+              <Switch name="notice" />
+            </FormItem>
+            <FormItem
+              size="large"
+              label="邮件："
+              {...formItemLayout}
+              required
+              requiredMessage="请输入正确的邮件"
+            >
+              <Input htmlType="email" name="email" />
+            </FormItem>
+            <FormItem
+              size="large"
+              label="网站地址："
+              {...formItemLayout}
+              required
+              formatMessage="请输入正确的网站地址"
+              format="url"
+            >
+              <Input
+                name="siteUrl"
+                type="url"
+                placeholder="https://alibaba.github.io/ice"
+              />
+            </FormItem>
 
-              <FormItem
-                size="large"
-                label="Github："
-                {...formItemLayout}
-                required
-                formatMessage="请输入正确的 Github 地址"
-                format="url"
-              >
-                <Input
-                  type="url"
-                  name="githubUrl"
-                  placeholder="https://github.com/alibaba/ice"
-                />
-              </FormItem>
+            <FormItem
+              size="large"
+              label="Github："
+              {...formItemLayout}
+              required
+              formatMessage="请输入正确的 Github 地址"
+              format="url"
+            >
+              <Input
+                type="url"
+                name="githubUrl"
+                placeholder="https://github.com/alibaba/ice"
+              />
+            </FormItem>
 
-              <FormItem
-                size="large"
-                label="Twitter："
-                {...formItemLayout}
-                required
-                formatMessage="请输入正确的 Twitter 地址"
-                format="url"
-              >
-                <Input name="twitterUrl" placeholder="https://twitter.com" />
-              </FormItem>
+            <FormItem
+              size="large"
+              label="Twitter："
+              {...formItemLayout}
+              required
+              formatMessage="请输入正确的 Twitter 地址"
+              format="url"
+            >
+              <Input name="twitterUrl" placeholder="https://twitter.com" />
+            </FormItem>
 
-              <FormItem size="large" label="自我描述：" {...formItemLayout}>
-                <Input.TextArea placeholder="请输入描述..." />
-              </FormItem>
-              <Row style={{ marginTop: 20 }}>
-                <Col offset="3">
-                  <Form.Submit
-                    size="large"
-                    type="primary"
-                    style={{ width: 100 }}
-                    validate
-                    onClick={this.validateAllFormField}
-                  >
-                    提 交
-                  </Form.Submit>
-                </Col>
-              </Row>
-            </div>
-          </Form>
-        </IceContainer>
-      </div>
-    );
-  }
+            <FormItem size="large" label="自我描述：" {...formItemLayout}>
+              <Input.TextArea placeholder="请输入描述..." />
+            </FormItem>
+            <Row style={{ marginTop: 20 }}>
+              <Col offset="3">
+                <Form.Submit
+                  size="large"
+                  type="primary"
+                  style={{ width: 100 }}
+                  validate
+                  onClick={validateAllFormField}
+                >
+                  提 交
+                </Form.Submit>
+              </Col>
+            </Row>
+          </div>
+        </Form>
+      </IceContainer>
+    </div>
+  );
 }
 
 const styles = {

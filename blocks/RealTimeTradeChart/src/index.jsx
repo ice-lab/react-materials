@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 import { Icon } from '@alifd/next';
@@ -191,7 +191,7 @@ function formtGCData(geoData, gcData, srcNam, dest) {
 
 function formtVData(geoData, vData, srcNam) {
   const tGeoDt = [];
-  for (let i = 0, len = vData.length; i < len; i++) {
+  for (let i = 0, len = vData.length; i < len; i += 1) {
     const tNam = vData[i].name;
     if (srcNam !== tNam) {
       tGeoDt.push({
@@ -318,46 +318,31 @@ const option = {
 /**
  * 图例参考：http://gallery.echartsjs.com/editor.html?c=xS197j1RtM
  */
-export default class RealTimeTradeChart extends Component {
-  static displayName = 'RealTimeTradeChart';
+export default function RealTimeTradeChart() {
+  const [date, setDate] = useState('');
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: '',
-    };
-  }
-
-  updateDate = () => {
-    const date = new Date();
-    this.setState({
-      date: `${date.getFullYear()}-${date.getMonth() +
-        1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
-    });
+  const updateDate = () => {
+    const newDate = new Date();
+    setDate(`${newDate.getFullYear()}-${newDate.getMonth() +
+      1}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`);
   };
 
-  componentDidMount() {
-    setInterval(this.updateDate, 1000);
-  }
+  useEffect(() => {
+    setInterval(updateDate, 1000);
+  }, []);
 
-  render() {
-    return (
-      <IceContainer className={styles.box}>
-        <div className={styles.info}>
-          <h1 className={styles.title}>某某某品牌 电商实时状况</h1>
-          <p className={styles.time}>
-            <Icon type="time" size="small" className={styles.timeIcon} />
-            {this.state.date}
-          </p>
-          <p className={styles.subTitle}>今日交易额</p>
-          <p className={styles.sum}>16828234,00亿元</p>
-        </div>
-        <ReactEcharts option={option} className="boxhe" />
-      </IceContainer>
-    );
-  }
+  return (
+    <IceContainer className={styles.box}>
+      <div className={styles.info}>
+        <h1 className={styles.title}>某某某品牌 电商实时状况</h1>
+        <p className={styles.time}>
+          <Icon type="time" size="small" className={styles.timeIcon} />
+          {date}
+        </p>
+        <p className={styles.subTitle}>今日交易额</p>
+        <p className={styles.sum}>16828234,00亿元</p>
+      </div>
+      <ReactEcharts option={option} className="boxhe" />
+    </IceContainer>
+  );
 }

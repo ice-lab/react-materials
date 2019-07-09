@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from './index.module.scss';
@@ -48,15 +48,8 @@ const dataSource = [
   },
 ];
 
-export default class StatisticalCard extends Component {
-  static displayName = 'StatisticalCard';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderItem = () => {
+export default function StatisticalCard() {
+  const renderItem = () => {
     return dataSource.map((data, idx) => {
       const imgStyle = {
         width: `${data.circle.width}px`,
@@ -76,7 +69,7 @@ export default class StatisticalCard extends Component {
           <div className={styles.statisticalCardDesc}>
             <div className={styles.statisticalCardText}>
               {data.text}
-              <a href={data.helpURL} target="_blank">
+              <a href={data.helpURL} target="_blank" rel="noopener noreferrer">
                 <img
                   src={require('./images/TB1uR_Fh9_I8KJjy0FoXXaFnVXa-12-12.png')}
                   className={styles.itemHelp}
@@ -91,16 +84,13 @@ export default class StatisticalCard extends Component {
     });
   };
 
-  render() {
-    return (
-      <div className={`${styles.statisticalCard} statistical-card`}>
-        <IceContainer className={styles.statisticalCardItems}>
-          <Row wrap className={styles.newWrap}>
-            {this.renderItem()}
-          </Row>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={`${styles.statisticalCard} statistical-card`}>
+      <IceContainer className={styles.statisticalCardItems}>
+        <Row wrap className={styles.newWrap}>
+          {renderItem()}
+        </Row>
+      </IceContainer>
+    </div>
+  );
 }
-

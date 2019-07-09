@@ -84,7 +84,7 @@ export default function HolidaysTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <IceContainer className={styles.container}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import path from 'path';
-import routes from '@/routerConfig';
+import routes from '@/config/routes';
 
 const RouteItem = (props) => {
   const { redirect, path: routePath, component, key } = props;

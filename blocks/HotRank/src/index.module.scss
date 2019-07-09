@@ -5,8 +5,8 @@
         color: #333;
     }
     &:hover {
-        background-color: #fafafa;
         color: #6af;
+        background-color: #fafafa;
     }
 }
 
@@ -24,29 +24,29 @@
 .index {
     min-width: 22px;
     height: 22px;
+    margin-right: 10px;
     padding: 0 4px;
-    border: 2px solid #eee;
     color: #fff;
+    font-size: 12px;
     line-height: 18px;
     text-align: center;
-    border-radius: 11px;
     background-color: #c6c6c6;
-    margin-right: 10px;
-    font-size: 12px;
+    border: 2px solid #eee;
+    border-radius: 11px;
 }
 
 .keyword {
-    font-size: 14px;
     flex: auto;
+    font-size: 14px;
 }
 
 .total {
-    font-size: 12px;
-    padding-left: 10px;
     width: 40px;
+    padding-left: 10px;
+    font-size: 12px;
 }
 
 .link {
-    font-size: 12px;
     padding-left: 10px;
+    font-size: 12px;
 }

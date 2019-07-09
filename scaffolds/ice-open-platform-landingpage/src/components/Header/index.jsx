@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav } from '@alifd/next';
-import { headerMenuConfig } from '@/menuConfig';
+import { headerMenuConfig } from '@/config/menu.js';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 

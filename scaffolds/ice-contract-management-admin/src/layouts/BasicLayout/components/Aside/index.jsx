@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { Icon, Nav } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import cx from 'classnames';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 import styles from './index.module.scss';
 
 function Aside(props) {

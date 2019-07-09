@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   Table,
   Switch,
@@ -45,17 +45,17 @@ function UserTable(props) {
     });
   };
 
-  const fetchData = (len) => {
+  const fetchData = useCallback((len) => {
     setLoading(true);
     mockApi(len).then((data) => {
       setLoading(false);
       setTableData(data);
     });
-  };
+  });
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const handleFilterChange = () => {
     fetchData(5);

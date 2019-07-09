@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import { ContextMenuTrigger } from 'react-contextmenu';
@@ -14,25 +14,10 @@ function collect(props) {
   return { value: props.data };
 }
 
-export default class TableContextMenu extends Component {
-  static displayName = 'TableContextMenu';
+export default function TableContextMenu() {
+  const [dataSource] = useState(mockData);
 
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      dataSource: mockData,
-    };
-  }
-
-  handleClick = (e, data) => {
-    console.log(data);
-  };
-
-  renderTime = (value, index, record) => {
+  const renderTime = (value, index, record) => {
     return (
       <ContextMenuTrigger
         id="contextMenuContainer"
@@ -44,17 +29,14 @@ export default class TableContextMenu extends Component {
     );
   };
 
-  render() {
-    const { dataSource } = this.state;
-    return (
-      <IceContainer title="自定义右键操作">
-        <Table dataSource={dataSource}>
-          <Table.Column title="Id" dataIndex="id" />
-          <Table.Column title="Time" dataIndex="time" cell={this.renderTime} />
-        </Table>
+  return (
+    <IceContainer title="自定义右键操作">
+      <Table dataSource={dataSource}>
+        <Table.Column title="Id" dataIndex="id" />
+        <Table.Column title="Time" dataIndex="time" cell={renderTime} />
+      </Table>
 
-        <CustomContextMenu />
-      </IceContainer>
-    );
-  }
+      <CustomContextMenu />
+    </IceContainer>
+  );
 }

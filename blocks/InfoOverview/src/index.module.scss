@@ -4,12 +4,12 @@
 .containerTitle {
   margin: 0;
   padding: 15px 20px;
-  font-size: 16px;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   color: rgba(0, 0, 0, 0.85);
   font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   border-bottom: 1px solid #f0f0f0;
 };
 .row {
@@ -29,13 +29,13 @@
 };
 .cellName {
   color: #666;
-  line-height: 14px;
   font-size: 12px;
+  line-height: 14px;
 };
 .cellValue {
   margin-top: 8px;
   color: #333;
-  line-height: 30px;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
 };

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Search, Grid } from '@alifd/next';
 import ArticleList from './ArticleList';
@@ -59,27 +59,23 @@ const dataSource = [
   },
 ];
 
-export default class TextSearchList extends Component {
-  static displayName = 'TextSearchList';
-
-  render() {
-    return (
-      <div className="text-search-list">
-        <IceContainer>
-          <Row>
-            <Col l="16">
-              <Search
-                size="large"
-                style={{ width: '100%' }}
-                searchText="搜索"
-                placeholder="请输入要搜索的关键词或商品链接"
-              />
-            </Col>
-          </Row>
-        </IceContainer>
-        <Filter />
-        <ArticleList dataSource={dataSource} />
-      </div>
-    );
-  }
+export default function TextSearchList() {
+  return (
+    <div className="text-search-list">
+      <IceContainer>
+        <Row>
+          <Col l="16">
+            <Search
+              size="large"
+              style={{ width: '100%' }}
+              searchText="搜索"
+              placeholder="请输入要搜索的关键词或商品链接"
+            />
+          </Col>
+        </Row>
+      </IceContainer>
+      <Filter />
+      <ArticleList dataSource={dataSource} />
+    </div>
+  );
 }

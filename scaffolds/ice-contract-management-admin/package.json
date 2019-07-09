@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/contract-management-scaffold",
-  "version": "2.0.7",
+  "version": "3.0.0",
   "description": "该模板内置了高级表单搜索和表格区块，适用于合同管理类和多表格展示的系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/contract-management-scaffold@latest/build/index.html",
   "files": [
@@ -69,7 +69,7 @@
   },
   "iceworks": {
     "type": "react",
-    "adapter": "adapter-react-v2"
+    "adapter": "adapter-react-v3"
   },
   "repository": {
     "type": "git",

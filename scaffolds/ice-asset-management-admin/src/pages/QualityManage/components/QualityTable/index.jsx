@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import TableFilter from './TableFilter';
@@ -29,7 +29,7 @@ export default function QualityTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -39,13 +39,13 @@ export default function QualityTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then(async (mockData) => {
       await setData(mockData);
       await setLoading(false);
     });
-  };
+  });
 
   const handlePaginationChange = async (currentPage) => {
     await setCurrent(currentPage);

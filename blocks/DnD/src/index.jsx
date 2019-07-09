@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import Container from './Container';
+import React from 'react';
 import IceContainer from '@icedesign/container';
+import Container from './Container';
 
-export default class CustomizeDropEffects extends Component {
-  render() {
-    return (
-      <IceContainer>
-        <Container />
-      </IceContainer>
-    );
-  }
+export default function CustomizeDropEffects() {
+  return (
+    <IceContainer>
+      <Container />
+    </IceContainer>
+  );
 }

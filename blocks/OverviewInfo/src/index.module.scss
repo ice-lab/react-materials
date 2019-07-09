@@ -6,12 +6,12 @@
     .title {
       margin: 0;
       padding: 15px 20px;
-      font-size: 16px;
-      text-overflow: ellipsis;
       overflow: hidden;
-      white-space: nowrap;
       color: rgba(0,0,0,0.85);
       font-weight: 500;
+      font-size: 16px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       border-bottom: 1px solid #eee;
     }
     .summary {
@@ -23,8 +23,8 @@
     }
     .label {
       display: inline-block;
-      font-weight: 500;
       min-width:74px;
+      font-weight: 500;
     }
 
   

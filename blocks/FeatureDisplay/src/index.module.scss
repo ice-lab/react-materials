@@ -9,9 +9,9 @@
   flex-wrap: wrap;
 };
 .item{
-  text-align: center;
-  padding: 0 30px;
   margin: 40px 0;
+  padding: 0 30px;
+  text-align: center;
 };
 .title{
   font-weight: bold;
@@ -23,7 +23,7 @@
   border-radius: 50%;
 };
 .description{
+  color: #999;
   font-size: 13px;
   line-height: 22px;
-  color: #999;
 };

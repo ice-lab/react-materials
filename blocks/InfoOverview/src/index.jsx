@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Grid, DatePicker } from '@alifd/next';
+import React from 'react';
+import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
@@ -33,49 +33,30 @@ const mockData = [
   ],
 ];
 
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  onChange = (value) => {
-    console.log({ value });
-  };
-
-  render() {
-    return (
-      <IceContainer className={styles.container}>
-        <h4 className={styles.containerTitle}>概览</h4>
-        <Row wrap gutter={20} className={styles.row}>
-          {mockData.map((items, index) => {
-            const borderNone =
-              index === mockData.length - 1 ? styles.borderNone : {};
-            return (
-              <Col l="6" xs="12" xxs="24" key={index}>
-                <div className={`${styles.box} ${borderNone}`}>
-                  {items.map((item, key) => {
-                    return (
-                      <div className={styles.boxCell} key={key}>
-                        <div className={styles.cellName}>{item.name}</div>
-                        <div className={styles.cellValue}>{item.value}</div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      </IceContainer>
-    );
-  }
+export default function Index() {
+  return (
+    <IceContainer className={styles.container}>
+      <h4 className={styles.containerTitle}>概览</h4>
+      <Row wrap gutter={20} className={styles.row}>
+        {mockData.map((items, index) => {
+          const borderNone =
+            index === mockData.length - 1 ? styles.borderNone : {};
+          return (
+            <Col l="6" xs="12" xxs="24" key={index}>
+              <div className={`${styles.box} ${borderNone}`}>
+                {items.map((item, key) => {
+                  return (
+                    <div className={styles.boxCell} key={key}>
+                      <div className={styles.cellName}>{item.name}</div>
+                      <div className={styles.cellValue}>{item.value}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Col>
+          );
+        })}
+      </Row>
+    </IceContainer>
+  );
 }
-
-

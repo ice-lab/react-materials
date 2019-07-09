@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 import Logo from '../Logo';
 import styles from './index.module.scss';
 

@@ -14,11 +14,11 @@
   text-decoration: none;
 };
 .card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   min-height: 0;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 };
 .tabCount{
   color: #3080FE;
@@ -31,6 +31,6 @@
   margin-left: 10px;
 };
 .pagination{
-  text-align: right;
   padding-top: 26px;
+  text-align: right;
 };

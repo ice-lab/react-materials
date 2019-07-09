@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
 import ArticleList from './ArticleList';
@@ -62,51 +62,40 @@ const ICON = {
   inactive: require('./images/TB1PwspilfH8KJjy1XbXXbLdXXa-20-24.png'),
 };
 
-export default class TabArticle extends Component {
-  static displayName = 'TabArticle';
+export default function TabArticle() {
+  const [isMobile, setMobile] = useState(false);
+  
+  useEffect(() => {
+    enquireScreenRegister();
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMobile: false,
-    };
-  }
-
-  componentDidMount() {
-    this.enquireScreenRegister();
-  }
-
-  enquireScreenRegister = () => {
+  const enquireScreenRegister = () => {
     const mediaCondition = 'only screen and (max-width: 720px)';
 
     enquireScreen((mobile) => {
-      this.setState({
-        isMobile: mobile,
-      });
+      setMobile(mobile);
     }, mediaCondition);
   };
 
-  render() {
-    return (
-      <div className="tab-article">
-        <IceContainer className={styles.tabList}>
-          <div className={styles.tab}>
-            最新 <img src={ICON.active} className={styles.icon} alt="最新" />
-          </div>
-          <div className={styles.tab}>
-            最热 <img src={ICON.inactive} className={styles.icon} alt="最热" />
-          </div>
-          <div className={styles.tab}>
-            距离截稿日期最近{' '}
-            <img
-              src={ICON.inactive}
-              className={styles.icon}
-              alt="距离截稿日期最近"
-            />
-          </div>
-        </IceContainer>
-        <ArticleList isMobile={this.state.isMobile} dataSource={dataSource} />
-      </div>
-    );
-  }
+  return (
+    <div className="tab-article">
+      <IceContainer className={styles.tabList}>
+        <div className={styles.tab}>
+          最新 <img src={ICON.active} className={styles.icon} alt="最新" />
+        </div>
+        <div className={styles.tab}>
+          最热 <img src={ICON.inactive} className={styles.icon} alt="最热" />
+        </div>
+        <div className={styles.tab}>
+          距离截稿日期最近{' '}
+          <img
+            src={ICON.inactive}
+            className={styles.icon}
+            alt="距离截稿日期最近"
+          />
+        </div>
+      </IceContainer>
+      <ArticleList isMobile={isMobile} dataSource={dataSource} />
+    </div>
+  );
 }

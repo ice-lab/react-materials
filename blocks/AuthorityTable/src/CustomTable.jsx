@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Table, Pagination, Balloon, Icon } from '@alifd/next';
 import styles from './index.module.scss';
+
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {
     return {
@@ -19,25 +20,16 @@ const getData = () => {
   });
 };
 
-export default class Home extends Component {
-  static displayName = 'Home';
+export default function Home() {
+  const [current, setCurrent] = useState(1);
+  const [dataSource, setData] = useState(getData());
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 1,
-      dataSource: getData(),
-    };
-  }
-
-  handlePagination = (current) => {
-    this.setState({
-      current,
-    });
+  const handlePagination = (current) => {
+    setCurrent(current);
   };
 
-  handleSort = (dataIndex, order) => {
-    const dataSource = this.state.dataSource.sort((a, b) => {
+  const handleSort = (dataIndex, order) => {
+    const dataSource = dataSource.sort((a, b) => {
       const result = a[dataIndex] - b[dataIndex];
       if (order === 'asc') {
         return result > 0 ? 1 : -1;
@@ -45,12 +37,10 @@ export default class Home extends Component {
       return result > 0 ? -1 : 1;
     });
 
-    this.setState({
-      dataSource,
-    });
+    setData(dataSource);
   };
 
-  renderCatrgory = (value) => {
+  const renderCatrgory = (value) => {
     return (
       <Balloon
         align="lt"
@@ -64,7 +54,7 @@ export default class Home extends Component {
     );
   };
 
-  renderState = (value) => {
+  const renderState = (value) => {
     return (
       <div>
         <span className={styles.circle} />
@@ -73,7 +63,7 @@ export default class Home extends Component {
     );
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return (
       <div>
         <Icon type="edit" size="small" className={styles.editIcon} />
@@ -81,63 +71,60 @@ export default class Home extends Component {
     );
   };
 
-  render() {
-    const { dataSource } = this.state;
-    return (
-      <div className={styles.tableContainer}>
-        <Table
-          dataSource={dataSource}
-          onSort={this.handleSort}
-          hasBorder={false}
-          className="custom-table"
-        >
-          <Table.Column
-            width={100}
-            lock="left"
-            title="序列号"
-            dataIndex="id"
-            sortable
-            align="center"
-          />
-          <Table.Column width={100} title="单号" dataIndex="orderID" sortable />
-          <Table.Column width={100} title="名称" dataIndex="name" />
-          <Table.Column width={100} title="职称" dataIndex="title" />
-          <Table.Column width={200} title="入职日期" dataIndex="date" />
-          <Table.Column width={200} title="实习结束日期" dataIndex="endDate" />
-          <Table.Column
-            width={200}
-            title="转正生效日期"
-            dataIndex="validData"
-          />
-          <Table.Column
-            width={200}
-            title="科室"
-            dataIndex="category"
-            cell={this.renderCatrgory}
-          />
-          <Table.Column
-            width={200}
-            title="状态"
-            dataIndex="state"
-            cell={this.renderState}
-          />
-          <Table.Column width={200} title="审核人" dataIndex="approver" />
-          <Table.Column width={200} title="审核日期" dataIndex="approvalData" />
-          <Table.Column
-            width={100}
-            title="操作"
-            cell={this.renderOper}
-            lock="right"
-            align="center"
-          />
-        </Table>
-        <Pagination
-          className={styles.pagination}
-          current={this.state.current}
-          onChange={this.handlePagination}
+  return (
+    <div className={styles.tableContainer}>
+      <Table
+        dataSource={dataSource}
+        onSort={handleSort}
+        hasBorder={false}
+        className="custom-table"
+      >
+        <Table.Column
+          width={100}
+          lock="left"
+          title="序列号"
+          dataIndex="id"
+          sortable
+          align="center"
         />
-      </div>
-    );
-  }
+        <Table.Column width={100} title="单号" dataIndex="orderID" sortable />
+        <Table.Column width={100} title="名称" dataIndex="name" />
+        <Table.Column width={100} title="职称" dataIndex="title" />
+        <Table.Column width={200} title="入职日期" dataIndex="date" />
+        <Table.Column width={200} title="实习结束日期" dataIndex="endDate" />
+        <Table.Column
+          width={200}
+          title="转正生效日期"
+          dataIndex="validData"
+        />
+        <Table.Column
+          width={200}
+          title="科室"
+          dataIndex="category"
+          cell={renderCatrgory}
+        />
+        <Table.Column
+          width={200}
+          title="状态"
+          dataIndex="state"
+          cell={renderState}
+        />
+        <Table.Column width={200} title="审核人" dataIndex="approver" />
+        <Table.Column width={200} title="审核日期" dataIndex="approvalData" />
+        <Table.Column
+          width={100}
+          title="操作"
+          cell={renderOper}
+          lock="right"
+          align="center"
+        />
+      </Table>
+      <Pagination
+        className={styles.pagination}
+        current={current}
+        onChange={handlePagination}
+      />
+    </div>
+  );
 }
 

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "kitVersion": "2.x",
+  "kitVersion": "3.x",
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",

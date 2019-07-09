@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import styles from  './index.module.scss'
@@ -17,52 +17,38 @@ const generatorData = (count) => {
   });
 };
 
-export default class Testimonial extends Component {
-  static displayName = 'Testimonial';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const data = generatorData(3);
-    return (
-      <IceContainer>
-        <div className={styles.items}>
-          <Row gutter="20" wrap>
-            {data.map((item, index) => {
-              return (
-                <Col xxs="24" s="8" l="8" key={index}>
-                  <div className={styles.item}>
-                    <p className={styles.description}>
-                      “
-                      {item.description}
-                      ”
-                    </p>
-                    <div className={styles.infoBox}>
-                      <img
-                        className={styles.avatar}
-                        src={item.imgUrl}
-                        alt={item.name}
-                      />
-                      <div>
-                        <h5 className={styles.name}>{item.name}</h5>
-                        <p className={styles.company}>{item.company}</p>
-                      </div>
+export default function Testimonial() {
+  const data = generatorData(3);
+  return (
+    <IceContainer>
+      <div className={styles.items}>
+        <Row gutter="20" wrap>
+          {data.map((item, index) => {
+            return (
+              <Col xxs="24" s="8" l="8" key={index}>
+                <div className={styles.item}>
+                  <p className={styles.description}>
+                    “
+                    {item.description}
+                    ”
+                  </p>
+                  <div className={styles.infoBox}>
+                    <img
+                      className={styles.avatar}
+                      src={item.imgUrl}
+                      alt={item.name}
+                    />
+                    <div>
+                      <h5 className={styles.name}>{item.name}</h5>
+                      <p className={styles.company}>{item.company}</p>
                     </div>
                   </div>
-                </Col>
-              );
-            })}
-          </Row>
-        </div>
-      </IceContainer>
-    );
-  }
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
+    </IceContainer>
+  );
 }
-

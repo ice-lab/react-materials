@@ -1,7 +1,7 @@
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import path from 'path';
-import routes from '@/routerConfig';
+import routes from '@/config/routes';
 import PageLoading from '@/components/PageLoading';
 
 const RouteItem = (props) => {

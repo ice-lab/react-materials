@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import cloneDeep from 'lodash.clonedeep';
 import PropTypes from 'prop-types';
 import { Table, Pagination } from '@alifd/next';
@@ -14,9 +14,9 @@ export default function CustomTable(props) {
 
   useEffect(() => {
     fetchDataSource();
-  }, []);
+  }, [fetchDataSource]);
 
-  const fetchDataSource = async () => {
+  const fetchDataSource = useCallback(async () => {
     await setLoading(true);
 
     // 根据当前的 searchQuery/pageIndex 获取列表数据，使用 setTimeout 模拟异步请求
@@ -24,7 +24,7 @@ export default function CustomTable(props) {
       setLoading(false);
       setData(props.dataSource);
     }, 1 * 1000);
-  };
+  });
 
   const onSearchSubmit = async (query) => {
     await setSearchQuery(query);

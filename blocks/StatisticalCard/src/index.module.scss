@@ -2,8 +2,8 @@
   .statisticalCardItems {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
   .statisticalCardItem {
     display: flex;
@@ -11,15 +11,15 @@
     margin: 10px 0;
   }
   .circleWrap {
-    background-color: #FFECB3;
-    width: 70px;
-    height: 70px;
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
     margin-right: 10px;
+    background-color: #FFECB3;
+    border-radius: 50%;
   }
   .statisticalCardDesc {
     display: flex;
@@ -28,21 +28,21 @@
   }
   .statisticalCardText {
     position: relative;
-    color: #333333;
-    font-size: 12px;
-    font-weight: bold;
     margin-bottom: 4px;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
   }
   .statisticalCardNumber {
-    color: #333333;
+    color: #333;
     font-size: 24px;
   }
   .itemHelp {
-    width: 12px;
-    height: 12px;
     position: absolute;
     top: 1px;
     right: -15px;
+    width: 12px;
+    height: 12px;
   }
   .newWrap{
     width: 100%;

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import cx from 'classnames';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Nav } from '@alifd/next';
 import Logo from '../Logo';
-import { asideMenuConfig } from '@/menuConfig';
+import { asideMenuConfig } from '@/config/menu.js';
 import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;

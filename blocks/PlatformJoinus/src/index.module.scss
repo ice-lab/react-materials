@@ -1,41 +1,41 @@
 .wrapper{
   height: 740px;
-  background-position: center;
+  background-image: url(./images/TB1Iw2ZRVXXXXb4aFXXXXXXXXXX-2760-1544.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(./images/TB1Iw2ZRVXXXXb4aFXXXXXXXXXX-2760-1544.png)
+  background-position: center;
+  background-size: cover
 }
 .titleWrapper{
-  text-align: center;
   padding-top: 200px;
+  text-align: center;
 }
 .title{
-  font-size: 32px;
   color: #333;
-  letter-spacing: 1.94px;
+  font-size: 32px;
   line-height: 48px;
+  letter-spacing: 1.94px;
   text-align: center
 }
 .buttons{
-  text-align: center;
   margin-top: 60px;
+  text-align: center;
 }
 .wrapper
 .primaryButton{
   height: 50px;
-  font-size: 16px;
   padding: 0 58px;
-  line-height: 50px;
   color: #fff;
+  font-size: 16px;
+  line-height: 50px;
 }
 .wrapper
 .secondaryButton{
   height: 50px;
-  font-size: 16px;
-  padding: 0 58px;
-  line-height: 50px;
   margin-right: 20px;
+  padding: 0 58px;
+  color: #5485f7 !important;
+  font-size: 16px;
+  line-height: 50px;
   background-color: transparent;
   border-color: #5485f7 ;
-  color: #5485f7 !important;
 }

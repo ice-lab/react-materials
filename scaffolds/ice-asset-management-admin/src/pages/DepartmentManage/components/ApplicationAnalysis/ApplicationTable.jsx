@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -29,7 +29,7 @@ export default function ApplicationTable() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {
@@ -39,13 +39,13 @@ export default function ApplicationTable() {
     });
   };
 
-  const fetchData = async (len) => {
+  const fetchData = useCallback(async (len) => {
     await setLoading(true);
     mockApi(len).then((mockData) => {
       setData(mockData);
       setLoading(false);
     });
-  };
+  });
 
   const handlePaginationChange = async (currentPage) => {
     await setCurrent(currentPage);

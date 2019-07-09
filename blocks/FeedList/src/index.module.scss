@@ -5,13 +5,13 @@
   margin-bottom: 15px;
 };
 .cardTitle{
+  display: inline-flex;
   margin: 0;
   font-size: 18px;
-  display: inline-flex;
 };
 .title{
-  font-size: 14px;
   display: inline-flex;
+  font-size: 14px;
   line-height: 22px;
 };
 .status{
@@ -28,8 +28,8 @@
 .avatar{
   width: 24px;
   height: 24px;
-  border-radius: 50%;
   margin-right: 10px;
+  border-radius: 50%;
 };
 .item{
   display: flex;
@@ -38,14 +38,14 @@
   border-bottom: 1px solid #fafafa;
 };
 .message{
+  margin-bottom: 15px;
+  padding-left: 34px;
   color: #999;
   font-size: 12px;
-  padding-left: 34px;
-  margin-bottom: 15px;
   line-height: 22px;
 };
 .allMessage{
-  text-align: center;
   height: 50px;
   line-height: 50px;
+  text-align: center;
 };

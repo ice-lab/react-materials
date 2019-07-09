@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Input, Table, Icon } from '@alifd/next';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const mockData = {
@@ -101,27 +102,16 @@ const stateColors = {
   cancelled: '#2ecc71',
 };
 
-export default class Index extends Component {
-  static displayName = 'Index';
-
-  static propTypes = {};
-
-  static defaultProps = {};
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  handleSearch = (value) => {
+export default function Index() {
+  const handleSearch = (value) => {
     console.log(value);
   };
 
-  renderAvatar = (value) => {
+  const renderAvatar = (value) => {
     return <img src={value} alt="" className={styles.userAvatar} />;
   };
 
-  renderUserInfo = (value, index, record) => {
+  const renderUserInfo = (value, index, record) => {
     return (
       <div className={styles.userInfo}>
         <h6 className={styles.userName}>{record.name}</h6>
@@ -130,7 +120,7 @@ export default class Index extends Component {
     );
   };
 
-  renderAccess = (value) => {
+  const renderAccess = (value) => {
     return (
       <span className={styles.userAccess} style={{background: accessColors[value] }}>
         {value}
@@ -138,82 +128,79 @@ export default class Index extends Component {
     );
   };
 
-  renderOper = () => {
+  const renderOper = () => {
     return <Icon type="edit" className={styles.editIcon} />;
   };
 
-  renderState = (value) => {
+  const renderState = (value) => {
     return (
       <span className={styles.purchasesState} style={{color: stateColors[value] }}>
         {value}
       </span>
     );
   };
-  render() {
-    return (
-      <div >
-        <Row wrap gutter="20">
-          <Col xxx="24" s="12">
-            <IceContainer className={styles.containerPadding}>
-              <h2 className={styles.title}>Users</h2>
-              <div className={styles.searchInputCol}>
-                <Input
-                  className={styles.searchInput}
-                  placeholder="Search Users ..."
-                  hasClear
-                  onChange={this.handleSearch}
-                  size="large"
-                />
-              </div>
-              <Table dataSource={mockData.users} hasBorder={false}>
-                <Table.Column
-                  title="AVATAR"
-                  dataIndex="avatar"
-                  cell={this.renderAvatar}
-                />
-                <Table.Column
-                  title="NAME"
-                  dataIndex="name"
-                  cell={this.renderUserInfo}
-                />
-                <Table.Column
-                  title="ACCESS"
-                  dataIndex="access"
-                  cell={this.renderAccess}
-                />
-                <Table.Column title="" cell={this.renderOper} />
-              </Table>
-            </IceContainer>
-          </Col>
-          <Col xxx="24" s="12">
-            <IceContainer className={styles.containerPadding}>
-              <h2 className={styles.title}>Purchases</h2>
-              <div className={styles.searchInputCol}>
-                <Input
-                  className={styles.searchInput}
-                  placeholder="Search Purchases ..."
-                  hasClear
-                  onChange={this.handleSearch}
-                  size="large"
-                />
-              </div>
-              <Table dataSource={mockData.purchases} hasBorder={false}>
-                <Table.Column title="PRODUCT" dataIndex="product" />
-                <Table.Column title="DATE" dataIndex="date" />
-                <Table.Column
-                  title="STATE"
-                  dataIndex="state"
-                  cell={this.renderState}
-                />
-                <Table.Column title="PRICE" dataIndex="price" />
-                <Table.Column title="" cell={this.renderOper} />
-              </Table>
-            </IceContainer>
-          </Col>
-        </Row>
-      </div>
-    );
-  }
+
+  return (
+    <div >
+      <Row wrap gutter="20">
+        <Col xxx="24" s="12">
+          <IceContainer className={styles.containerPadding}>
+            <h2 className={styles.title}>Users</h2>
+            <div className={styles.searchInputCol}>
+              <Input
+                className={styles.searchInput}
+                placeholder="Search Users ..."
+                hasClear
+                onChange={handleSearch}
+                size="large"
+              />
+            </div>
+            <Table dataSource={mockData.users} hasBorder={false}>
+              <Table.Column
+                title="AVATAR"
+                dataIndex="avatar"
+                cell={renderAvatar}
+              />
+              <Table.Column
+                title="NAME"
+                dataIndex="name"
+                cell={renderUserInfo}
+              />
+              <Table.Column
+                title="ACCESS"
+                dataIndex="access"
+                cell={renderAccess}
+              />
+              <Table.Column title="" cell={renderOper} />
+            </Table>
+          </IceContainer>
+        </Col>
+        <Col xxx="24" s="12">
+          <IceContainer className={styles.containerPadding}>
+            <h2 className={styles.title}>Purchases</h2>
+            <div className={styles.searchInputCol}>
+              <Input
+                className={styles.searchInput}
+                placeholder="Search Purchases ..."
+                hasClear
+                onChange={handleSearch}
+                size="large"
+              />
+            </div>
+            <Table dataSource={mockData.purchases} hasBorder={false}>
+              <Table.Column title="PRODUCT" dataIndex="product" />
+              <Table.Column title="DATE" dataIndex="date" />
+              <Table.Column
+                title="STATE"
+                dataIndex="state"
+                cell={renderState}
+              />
+              <Table.Column title="PRICE" dataIndex="price" />
+              <Table.Column title="" cell={renderOper} />
+            </Table>
+          </IceContainer>
+        </Col>
+      </Row>
+    </div>
+  );
 }
-
-

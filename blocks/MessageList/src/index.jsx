@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Pagination } from '@alifd/next';
 import styles from './index.module.scss';
@@ -31,15 +31,8 @@ const dataSource = [
   },
 ];
 
-export default class MessageList extends Component {
-  static displayName = 'MessageList';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  renderItem = (item, idx) => {
+export default function MessageList() {
+  const renderItem = (item, idx) => {
     return (
       <div className={styles.item} key={idx}>
         <div className={styles.title}>
@@ -51,17 +44,14 @@ export default class MessageList extends Component {
     );
   };
 
-  render() {
-    return (
-      <div className="message-list" className={styles.messageList}>
-        <IceContainer>
-          {dataSource.map(this.renderItem)}
-          <div className={styles.paginationWarp}>
-            <Pagination />
-          </div>
-        </IceContainer>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.messageList}>
+      <IceContainer>
+        {dataSource.map(renderItem)}
+        <div className={styles.paginationWarp}>
+          <Pagination />
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-

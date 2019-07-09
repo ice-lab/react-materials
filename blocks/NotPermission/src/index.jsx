@@ -1,51 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IceContainer from '@icedesign/container';
-import './index.scss';
+import styles from './index.module.scss';
 
-export default class NotPermission extends Component {
-  static displayName = 'NotPermission';
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div className="not-permission" style={styles.notPermission}>
-        <IceContainer>
-          <div style={styles.content} className="exception-content">
-            <img
-              src={require('./images/TB1Gy4Yjv6H8KJjy0FjXXaXepXa-780-780.png')}
-              style={styles.imgException}
-              className="imgException"
-              alt="prmission"
-            />
-            <div style={styles.prompt}>
-              <h3 style={styles.title} className="title">
-                抱歉，您无权限～
-              </h3>
-              <p style={styles.description} className="description">
-                抱歉，您暂无权限，请看看其他页面
-              </p>
-            </div>
+export default function NotPermission() {
+  return (
+    <div className="not-permission" style={styles.notPermission}>
+      <IceContainer>
+        <div className={styles.exceptionContent}>
+          <img
+            src={require('./images/TB1Gy4Yjv6H8KJjy0FjXXaXepXa-780-780.png')}
+            className={styles.imgException}
+            alt="prmission"
+          />
+          <div style={styles.prompt}>
+            <h3 className={styles.title}>
+              抱歉，您无权限～
+            </h3>
+            <p className={styles.description}>
+              抱歉，您暂无权限，请看看其他页面
+            </p>
           </div>
-        </IceContainer>
-      </div>
-    );
-  }
+        </div>
+      </IceContainer>
+    </div>
+  );
 }
-
-const styles = {
-  content: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    color: '#333',
-  },
-  description: {
-    color: '#666',
-  },
-};

@@ -1,17 +1,17 @@
 .items{
   display: flex;
   flex-wrap: wrap;
-  padding: 80px 0;
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+  padding: 80px 0;
 }
 .item{
   padding:0 20px;
 }
 .description{
-  line-height: 28px;
   color: #999;
+  line-height: 28px;
 }
 .infoBox{
   display: flex;
@@ -25,8 +25,8 @@
 }
 .name{
   margin: 10px 0 0;
-  font-size: 15px;
   font-weight: bold;
+  font-size: 15px;
 }
 .company{
   margin: 0;

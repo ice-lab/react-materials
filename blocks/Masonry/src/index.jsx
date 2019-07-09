@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import Masonry from 'react-masonry-component';
 import styles from './index.module.scss';
+
 const { Row, Col } = Grid;
 
 const dataSource = [
@@ -45,47 +45,29 @@ const dataSource = [
   },
 ];
 
-export default class CustomMasonry extends Component {
-  static displayName = 'CustomMasonry';
-
-  static propTypes = {
-    dataSource: PropTypes.Array,
-  };
-
-  static defaultProps = {
-    dataSource,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    const { dataSource } = this.props;
-    const childElements = dataSource.map(function(item, index) {
-      return (
-        <Col l="4" key={index}>
-          <div className={styles.itemBody}>
-            <img src={item.img} className={styles.itemImg} alt="" />
-            <h3 className={styles.itemTitle}>{item.title}</h3>
-          </div>
-        </Col>
-      );
-    });
-
-    const masonryOptions = {
-      transitionDuration: 0,
-    };
-
+export default function CustomMasonry() {
+  const childElements = dataSource.map(function(item, index) {
     return (
-      <IceContainer className={styles.container}>
-        <Row wrap>
-          <Masonry options={masonryOptions} style={{ width: '100%' }}>
-            {childElements}
-          </Masonry>
-        </Row>
-      </IceContainer>
+      <Col l="4" key={index}>
+        <div className={styles.itemBody}>
+          <img src={item.img} className={styles.itemImg} alt="" />
+          <h3 className={styles.itemTitle}>{item.title}</h3>
+        </div>
+      </Col>
     );
-  }
+  });
+
+  const masonryOptions = {
+    transitionDuration: 0,
+  };
+
+  return (
+    <IceContainer className={styles.container}>
+      <Row wrap>
+        <Masonry options={masonryOptions} style={{ width: '100%' }}>
+          {childElements}
+        </Masonry>
+      </Row>
+    </IceContainer>
+  );
 }

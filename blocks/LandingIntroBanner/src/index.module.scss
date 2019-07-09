@@ -1,42 +1,45 @@
 .landingIntro {
   position: relative;
   height: 100vh;
-};
+}
 .landingIntroBackground {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   background-size: cover;
-};
+}
 .contentWrapper {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-};
+  justify-content: center;
+}
 .title {
-  text-align: center;
   color: #fff;
-  letter-spacing: 1.94px;
   line-height: 48px;
-};
-.buttons { text-align: center; margin-top: 70px };
+  letter-spacing: 1.94px;
+  text-align: center;
+}
+.buttons {
+  margin-top: 70px;
+  text-align: center;
+}
 .buttonPadding{
-  margin: 0 10px 20px;
   height: 50px !important;
+  margin: 0 10px 20px;
   padding: 0 58px !important;
   font-size: 16px !important;
 }
 .buttonColor{
-  margin: 0 10px 20px;
   height: 50px !important;
+  margin: 0 10px 20px;
   padding: 0 58px !important;
-  font-size: 16px !important;
   color: #fff;
+  font-size: 16px !important;
 }

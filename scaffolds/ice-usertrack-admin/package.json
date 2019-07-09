@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/usertrack-admin-scaffold",
-  "version": "2.0.9",
+  "version": "3.0.1",
   "description": "该模板内置了丰富的区块，适用于埋点治理的管理系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/usertrack-admin-scaffold@latest/build/index.html",
   "files": [
@@ -72,7 +72,7 @@
   },
   "iceworks": {
     "type": "react",
-    "adapter": "adapter-react-v2"
+    "adapter": "adapter-react-v3"
   },
   "repository": {
     "type": "git",

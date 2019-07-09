@@ -1,22 +1,22 @@
 .container{
   display: flex;
   flex-wrap: wrap;
-  padding: 80px 0;
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+  padding: 80px 0;
 }
 .item{
+  margin-bottom: 20px;
+  padding-bottom: 50px;
   background: #FAFAFA;
   border-radius: 6px;
-  padding-bottom: 50px;
-  margin-bottom: 20px;
 }
 .head{
   padding: 30px 0;
-  background: #3080FE;
-  text-align: center;
   color: #fff;
+  text-align: center;
+  background: #3080FE;
   border-radius: 6px 6px 0 0;
 }
 .title{
@@ -41,14 +41,14 @@
 }
 .type{
   margin: 0;
-  font-size: 15px;
-  font-weight: bold;
   margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
 }
 .description{
+  width: 60%;
   margin: 20px 0;
   line-height: 22px;
-  width: 60%;
   text-align: center
 }
 .buyBtn{
@@ -58,7 +58,7 @@
 }
 .link{
   padding: 6px 15px;
+  color: #fff;
   background: #3080FE;
   border-radius: 16px;
-  color: #fff;
 }
