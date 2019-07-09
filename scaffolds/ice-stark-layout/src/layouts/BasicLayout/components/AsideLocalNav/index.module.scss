@@ -1,0 +1,33 @@
+.localNav {
+  :global {
+    .next-menu-sub-menu-wrapper.next-nav-sub-nav-item .next-menu-sub-menu {
+      .next-menu-item.next-nav-item {
+        background-color: transparent;
+        font-weight: 400;
+        a {
+          &:link,
+          &:visited,
+          &:hover,
+          &:active {
+            color: inherit;
+          }
+        }
+
+        &:hover {
+          background-color: #f9f9f9;
+          a {
+            color: #3a9bf0;
+          }
+        }
+
+        &.next-selected {
+          background-color: #f9f9f9;
+          font-weight: 700;
+          a {
+            color: #3a9bf0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.asideNav {
+  background-color: transparent;
+
+  :global {
+    .next-menu-item.next-nav-item {
+      background-color: transparent;
+      font-weight: 400;
+      color: #fff;
+
+      .next-nav-icon.next-icon:before {
+        width: 12px;
+        font-size: 12px;
+        line-height: inherit;
+      }
+
+      a {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: #fff;
+        }
+      }
+
+      &.next-selected .next-menu-item-inner .next-menu-item-text {
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+  }
+}

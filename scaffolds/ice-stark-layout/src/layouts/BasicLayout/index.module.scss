@@ -1,0 +1,76 @@
+.shell {
+  min-height: 100vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.appName {
+  margin-left: 10px;
+  color: #fff;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.userName {
+  margin-left: 10px;
+  color: #fff;
+}
+
+:global {
+  .next-menu-item.next-disabled .next-menu-item-text > a {
+    background: initial;
+  }
+  .fusion-shell-header .fusion-shell-navigation {
+    margin: 0;
+    .next-menu.next-nav {
+      background-color: transparent;
+      .next-menu-item.next-nav-item {
+        background-color: transparent;
+        .next-menu-item-inner {
+          color: #fff;
+          a {
+            color: #fff;
+          }
+
+          &:hover {
+            color: #3080fe;
+            a {
+              color: #3080fe;
+            }
+          }
+        }
+      }
+    }
+  }
+  .fusion-shell-header {
+    border-bottom: 0;
+  }
+  .fusion-shell-main {
+    .fusion-shell-content .fusion-shell-content-inner {
+      min-height: 516px;
+    }
+
+    .fusion-shell-footer {
+      background: transparent;
+      text-align: left;
+      line-height: 25px;
+      font-family: AlibabaSans-Bold;
+      font-size: 16px;
+      color: #cccccc;
+      min-height: 48px;
+      padding-bottom: 20px;
+    }
+  }
+  .fusion-shell-aside
+    .fusion-shell-localnavigation.fusion-shell-collapse
+    .next-nav.next-ver
+    .next-menu-item {
+    padding: 0;
+  }
+}
