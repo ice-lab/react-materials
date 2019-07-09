@@ -66,7 +66,7 @@ export default function DoubleAxesChart() {
               const value = item.value;
               const checked = ev.checked;
               const geoms = chartIns.getAllGeoms();
-              for (let i = 0; i < geoms.length; i + 1) {
+              for (let i = 0; i < geoms.length; i += 1) {
                 const geom = geoms[i];
                 if (geom.getYScale().field === value) {
                   if (checked) {
