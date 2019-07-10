@@ -1,8 +1,7 @@
 import ReactDOM from 'react-dom';
 
 // 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
-import '@alife/theme-451/dist/next.css';
-import './global.scss';
+import '@alifd/next/reset.scss';
 
 import router from './router';
 
