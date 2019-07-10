@@ -30,7 +30,7 @@ function SearchFilter(props) {
   } = props;
 
   const [showAdvancedFields, setShowAdvancedFields] = useState(false);
-  const [value, setValue] = useState(cloneDeep(initFields));
+  const [value, setValue] = useState(cloneDeep({...initFields.base, ...initFields.advanced}));
 
   /**
    * handler submit
