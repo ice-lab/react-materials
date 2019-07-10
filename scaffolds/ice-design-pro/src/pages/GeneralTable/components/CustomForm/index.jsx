@@ -29,9 +29,7 @@ export default function CustomForm(props) {
         <div className={styles.formItem}>
           <span className={styles.formLabel}>{item.label}：</span>
           <IceFormBinder {...item.formBinderProps}>
-            <span style={{ width: '100%' }}>
-              <Input {...item.componentProps} style={{ width: '100%' }} />
-            </span>
+            <Input {...item.componentProps} style={{ width: '100%' }} />
           </IceFormBinder>
           <div className={styles.formError}>
             <IceFormError name={item.formBinderProps.name} />

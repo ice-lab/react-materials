@@ -32,7 +32,7 @@ function GeneralTable(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   function mockApi() {
     return new Promise((resolve) => {
