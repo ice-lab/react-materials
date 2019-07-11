@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import IceContainer from '@icedesign/container';
+import PageTitle from '@/components/PageTitle';
 
 export default () => {
   return (
-    <div>
-      <h2>Home</h2>
-      <Link to="/project/list">项目列表</Link>
+    <IceContainer>
+      <PageTitle title="欢迎进入商家平台" />
+      <Link to="/list">商家列表</Link>
       <br />
-      <Link to="/project/detail?id=233">项目详情</Link>
-    </div>
+      <Link to="/detail">商家详情</Link>
+    </IceContainer>
   );
 };

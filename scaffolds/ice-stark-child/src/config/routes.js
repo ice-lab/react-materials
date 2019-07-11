@@ -1,8 +1,8 @@
 import BasicLayout from '@/layouts/BasicLayout';
 
 import Home from '@/pages/Home';
-import ProjectDetail from '@/pages/ProjectDetail';
-import ProjectList from '@/pages/ProjectList';
+import Detail from '@/pages/Detail';
+import List from '@/pages/List';
 
 const routerConfig = [
   {
@@ -14,12 +14,12 @@ const routerConfig = [
         component: Home
       },
       {
-        path: '/project/detail',
-        component: ProjectDetail
+        path: '/detail',
+        component: Detail
       },
       {
-        path: '/project/list',
-        component: ProjectList
+        path: '/list',
+        component: List
       },
       {
         path: '/',

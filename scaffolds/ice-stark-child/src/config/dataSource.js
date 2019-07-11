@@ -1,9 +1,9 @@
-export const getProjectList = {
-  url: '/api/project/list',
-  method: 'GET',
+export const getList = {
+  url: '/api/list',
+  method: 'GET'
 };
 
-export const getProjectDetail = {
-  url: '/api/project/detail',
-  method: 'GET',
+export const getDetail = {
+  url: '/api/detail',
+  method: 'GET'
 };

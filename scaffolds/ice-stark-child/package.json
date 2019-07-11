@@ -8,7 +8,6 @@
     "build/",
     "public/",
     "tests/",
-    "mock/",
     "_gitignore",
     "_editorconfig",
     "_eslintignore",
@@ -20,6 +19,7 @@
   "dependencies": {
     "@alifd/next": "^1.x",
     "@ice/stark": "^0.1.1",
+    "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",
     "moment": "^2.24.0",
