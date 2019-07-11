@@ -5,10 +5,6 @@
 
 @mixin bt-label-variant($color) {
   background-color: $color;
-  &:hover,
-  &:focus {
-    opacity: .8;
-  }
 }
 
 .#{$ice-label-prefix} {
