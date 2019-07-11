@@ -46,7 +46,7 @@ export default function GoodsTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const handlePaginationChange = (current) => {
     setCurrentPage(current);

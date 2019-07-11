@@ -18,12 +18,12 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@icedesign/theme": "^1.x",
     "@antv/data-set": "^0.10.1",
     "@icedesign/container": "^1.x",
     "@icedesign/foundation-symbol": "^1.0.1",
     "@icedesign/img": "^1.0.0",
     "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
     "bizcharts": "^3.4.3",
     "classnames": "^2.2.5",
     "jquery": "^3.3.1",
@@ -31,7 +31,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

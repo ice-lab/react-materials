@@ -45,7 +45,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-highcharts": "^16.0.2",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

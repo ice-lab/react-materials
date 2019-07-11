@@ -111,7 +111,7 @@ export default function TaskTable() {
 
   useEffect(() => {
     fetchData(10);
-  }, [fetchData]);
+  }, []);
 
   return (
     <IceContainer>

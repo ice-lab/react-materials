@@ -30,7 +30,7 @@ export default function GoodsTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {

@@ -55,7 +55,7 @@ function UserTable(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const handleFilterChange = () => {
     fetchData(5);

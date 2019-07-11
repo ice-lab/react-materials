@@ -47,7 +47,7 @@ export default function ReserveTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const handlePaginationChange = (current) => {
     setCurrentPage(current);

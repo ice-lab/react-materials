@@ -34,7 +34,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.1",
     "react-trello": "^2.0.8",
     "slate": "^0.44.9",
     "slate-plain-serializer": "^0.6.33",

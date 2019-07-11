@@ -26,7 +26,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.1",
     "react-text-loop": "^1.1.0"
   },
   "devDependencies": {

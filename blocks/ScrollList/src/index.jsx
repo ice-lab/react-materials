@@ -61,7 +61,7 @@ export default function ScrollList(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <Loading
