@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Icon } from '@alifd/next';
-import cloneDeep from 'lodash/cloneDeep';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import CustomForm from '../CustomForm';
 import styles from './index.module.scss';
@@ -30,7 +29,7 @@ function SearchFilter(props) {
   } = props;
 
   const [showAdvancedFields, setShowAdvancedFields] = useState(false);
-  const [value, setValue] = useState(cloneDeep({...initFields.base, ...initFields.advanced}));
+  const [value, setValue] = useState({...initFields.base, ...initFields.advanced});
 
   /**
    * handler submit
