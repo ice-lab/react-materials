@@ -1,5 +1,5 @@
 import request from '@/utils/request';
-import { userProfile, userLogout, userLogin } from '../dataSourceConfig';
+import { userProfile, userLogout, userLogin } from '@/config/dataSource';
 
 export default {
   userinfo: {

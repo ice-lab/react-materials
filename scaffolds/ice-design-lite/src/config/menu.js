@@ -4,14 +4,14 @@
 
 const headerMenuConfig = [
   {
-    name: 'feedback',
+    name: '反馈',
     path: 'https://github.com/alibaba/ice',
     external: true,
     newWindow: true,
     icon: 'email',
   },
   {
-    name: 'help',
+    name: '帮助',
     path: 'https://alibaba.github.io/ice',
     external: true,
     newWindow: true,

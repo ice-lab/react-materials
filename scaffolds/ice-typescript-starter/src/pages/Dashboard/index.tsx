@@ -1,6 +1,6 @@
 import React from 'react';
-import Guide from '../../components/Guide';
-import Greeting from '../../components/Greeting';
+import Guide from '@/components/Guide';
+import Greeting from '@/components/Greeting';
 
 export default function Dashboard() {
   return (
