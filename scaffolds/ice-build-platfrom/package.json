@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/builder-platfrom-scaffold",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "该模板适用于云构建类的数据展示和管理后台",
   "homepage": "https://unpkg.com/@icedesign/builder-platfrom-scaffold@latest/build/index.html",
   "files": [
@@ -45,7 +45,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-highcharts": "^16.0.2",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

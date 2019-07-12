@@ -25,7 +25,7 @@ export default function BorrowTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = () => {
     return new Promise((resolve) => {

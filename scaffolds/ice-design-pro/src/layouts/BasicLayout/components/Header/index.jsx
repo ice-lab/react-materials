@@ -46,7 +46,7 @@ function Header(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   return (
     <Layout.Header

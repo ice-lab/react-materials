@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/monitor-dashboard",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "该模板适用于数据监控展示类的管理后台，内置通用的丰富的图表，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/monitor-dashboard@latest/build/index.html",
   "files": [
@@ -45,7 +45,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

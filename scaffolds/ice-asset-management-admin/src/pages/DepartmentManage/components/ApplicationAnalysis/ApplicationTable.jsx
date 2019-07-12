@@ -29,7 +29,7 @@ export default function ApplicationTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {

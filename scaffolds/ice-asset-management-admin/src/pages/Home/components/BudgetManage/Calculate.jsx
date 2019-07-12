@@ -26,7 +26,7 @@ function Calculate(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {

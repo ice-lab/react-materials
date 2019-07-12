@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/lite-scaffold",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
   "homepage": "https://unpkg.com/@icedesign/lite-scaffold@latest/build/index.html",
   "files": [
@@ -29,8 +29,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-intl": "^2.9.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

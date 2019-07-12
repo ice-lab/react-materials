@@ -27,7 +27,7 @@ export default function LibTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = () => {
     return new Promise((resolve) => {

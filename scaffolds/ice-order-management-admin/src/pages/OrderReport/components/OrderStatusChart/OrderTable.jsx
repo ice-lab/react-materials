@@ -31,7 +31,7 @@ export default function OrderTable() {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {

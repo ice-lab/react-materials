@@ -36,7 +36,7 @@ export default function CustomTable(props) {
     setPageIndex(1);
     setSearchQuery(cloneDeep(props.searchQueryHistory));
     fetchDataSource();
-  }, [fetchDataSource, props]);
+  }, []);
 
   const { enableFilter, columns, formConfig, hasAdvance, searchQueryHistory } = props;
 

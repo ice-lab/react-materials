@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import request from '@/utils/request';
-import { userRegister } from '@/dataSourceConfig';
+import { userRegister } from '@/config/dataSource';
 import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;

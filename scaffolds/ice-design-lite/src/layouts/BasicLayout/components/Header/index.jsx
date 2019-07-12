@@ -1,29 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Balloon, Icon, Nav } from '@alifd/next';
 import IceImg from '@icedesign/img';
 import Layout from '@icedesign/layout';
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 import { headerMenuConfig } from '@/config/menu.js';
-import stores from '@/stores/index';
-import SelectLang from '@/components/SelectLang';
 import Logo from '../Logo';
 
 import styles from './index.module.scss';
 
-function getLocaleKey(item) {
-  return `app.header.${item.name}`;
-}
-
 export default function Header(props) {
   const { isMobile, className, style } = props;
-  const userProfile = stores.useStore('userProfile');
-  const { userinfo } = userProfile;
-  const { name, department, avatar } = userinfo;
-
-  useEffect(() => {
-    userProfile.fetchData();
-  }, [userProfile]);
 
   return (
     <Layout.Header
@@ -51,11 +37,11 @@ export default function Header(props) {
                 <Nav.Item key={idx} icon={nav.icon ? nav.icon : null}>
                   {linkProps.to ? (
                     <Link {...linkProps}>
-                      {!isMobile ? <FormattedMessage id={getLocaleKey(nav)} /> : null}
+                      {!isMobile ? nav.name : null}
                     </Link>
                   ) : (
                     <a {...linkProps}>
-                      {!isMobile ? <FormattedMessage id={getLocaleKey(nav)} /> : null}
+                      {!isMobile ? nav.name : null}
                     </a>
                   )}
                 </Nav.Item>
@@ -65,9 +51,6 @@ export default function Header(props) {
         ) : null}
         {/* Header 菜单项 end */}
 
-        {/* 多语言选择 */}
-        <SelectLang />
-
         {/* Header 右侧内容块 */}
         <Balloon
           trigger={
@@ -75,13 +58,13 @@ export default function Header(props) {
               <IceImg
                 height={40}
                 width={40}
-                src={avatar}
+                src="https://img.alicdn.com/tfs/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png"
                 className={styles.userAvatar}
               />
               <div className={styles.userProfile}>
-                <span className={styles.userName}>{name}</span>
+                <span className={styles.userName}>淘小宝</span>
                 <br />
-                <span className={styles.userDepartment}>{department}</span>
+                <span className={styles.userDepartment}>技术部</span>
               </div>
               <Icon
                 type="arrow-down"
@@ -95,12 +78,16 @@ export default function Header(props) {
         >
           <ul>
             <li className={styles.userProfileMenuItem}>
-              <Icon type="repair" size="small" />
-              <FormattedMessage id="app.header.user.setting" />
+              <Link to="/setting">
+                <Icon type="repair" size="small" />
+                设置
+              </Link>
             </li>
             <li className={styles.userProfileMenuItem}>
-              <Icon type="compass" size="small" />
-              <FormattedMessage id="app.header.user.logout" />
+              <Link to="/login">
+                <Icon type="compass" size="small" />
+                退出
+              </Link>
             </li>
           </ul>
         </Balloon>

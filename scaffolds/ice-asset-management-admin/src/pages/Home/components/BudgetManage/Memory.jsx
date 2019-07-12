@@ -26,7 +26,7 @@ function Memory(props) {
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const mockApi = (len) => {
     return new Promise((resolve) => {

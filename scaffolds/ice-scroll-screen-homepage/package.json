@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/scroll-screen-homepage-scaffold",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "全屏展示的首页模板，支持锚点跳转定位和内置多种动画效果",
   "homepage": "https://unpkg.com/@icedesign/scroll-screen-homepage-scaffold@latest/build/index.html",
   "keywords": [
@@ -32,10 +32,10 @@
   },
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@icedesign/theme": "^1.x",
     "@icedesign/container": "^1.x",
     "@icedesign/foundation-symbol": "^1.x",
     "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
     "classnames": "^2.2.5",
     "moment": "^2.23.0",
     "prop-types": "^15.5.8",
@@ -46,7 +46,7 @@
     "rc-tween-one": "^2.2.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.1",
     "react-slick": "^0.23.1",
     "slick-carousel": "^1.8.1"
   },

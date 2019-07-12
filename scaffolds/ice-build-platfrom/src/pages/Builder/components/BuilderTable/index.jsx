@@ -29,7 +29,7 @@ export default function BuilderTable() {
 
   useEffect(() => {
     fetchData(10);
-  }, [fetchData]);
+  }, []);
 
   function mockApi(len) {
     return new Promise((resolve) => {

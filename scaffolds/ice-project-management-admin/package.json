@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/project-management-admin",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "该模板内置了丰富的区块以及图表，适用于项目管理类的后台系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/project-management-admin@latest/build/index.html",
   "files": [
@@ -34,7 +34,7 @@
     "prop-types": "^15.5.8",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "^5.0.1",
     "react-trello": "^2.0.8",
     "slate": "^0.44.9",
     "slate-plain-serializer": "^0.6.33",

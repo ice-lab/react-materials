@@ -36,7 +36,7 @@ const BasicLayout = (props) => {
 
   useEffect(() => {
     enquireScreenRegister();
-  }, [enquireScreenRegister]);
+  }, []);
 
   const isMobile = isScreen !== 'isDesktop';
 

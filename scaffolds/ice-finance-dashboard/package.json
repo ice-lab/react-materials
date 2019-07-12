@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/finance-dashboard",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "该模板适用于金融销售类的数据展示大盘，搭配简洁的暗色主题风格和图表类展示",
   "homepage": "https://unpkg.com/@icedesign/finance-dashboard@latest/build/index.html",
   "files": [
@@ -33,7 +33,7 @@
     "react": "^16.4.1",
     "react-countup": "^4.0.0",
     "react-dom": "^16.7.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

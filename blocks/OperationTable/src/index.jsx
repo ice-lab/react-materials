@@ -48,7 +48,7 @@ export default function Index() {
     fetchData({
       page: 1,
     });
-  }, [fetchData]);
+  }, []);
 
   const fetchData = useCallback(async ({ page }) => {
     tableData.currentPage = page;
