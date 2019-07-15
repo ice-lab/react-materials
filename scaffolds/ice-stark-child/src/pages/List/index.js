@@ -17,9 +17,9 @@ const mockData = () => {
         ourCompany: 'xxx商铺',
         amount: '999,999',
         currency: 'CNY',
-        state: '签约中'
+        state: '签约中',
       };
-    })
+    }),
   };
 };
 
@@ -33,6 +33,12 @@ export default function List() {
   }
 
   useEffect(() => {
+    async function fetchData() {
+      await setLoading(true);
+      const { data: resData } = await mockApi();
+      await setData(Array.isArray(resData) ? resData : []);
+      await setLoading(false);
+    }
     fetchData();
   }, [current]);
 
@@ -42,13 +48,6 @@ export default function List() {
         resolve(mockData());
       }, 600);
     });
-  }
-
-  async function fetchData() {
-    await setLoading(true);
-    const { data: resData } = await mockApi();
-    await setData(Array.isArray(resData) ? resData : []);
-    await setLoading(false);
   }
 
   return (

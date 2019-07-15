@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Grid, Loading } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import PageTitle from '@/components/PageTitle';
@@ -17,57 +16,57 @@ const mockData = () => {
         {
           key: 'task',
           label: '任务标题',
-          value: '集盒家居旗舰店双十一活动'
+          value: '集盒家居旗舰店双十一活动',
         },
         {
           key: 'shop',
           label: '店铺名称',
-          value: '集盒家居旗舰店'
+          value: '集盒家居旗舰店',
         },
         {
           key: 'amount',
           label: '任务金额',
-          value: '1000.00'
+          value: '1000.00',
         },
         {
           key: 'reward',
           label: '任务赏金',
-          value: '200.00'
+          value: '200.00',
         },
         {
           key: 'ordertime',
           label: '接单时间',
-          value: '2017-10-18 12:20:07'
+          value: '2017-10-18 12:20:07',
         },
         {
           key: 'deliverytime',
           label: '交付时间',
-          value: '2017-10-18 12:20:07'
-        }
+          value: '2017-10-18 12:20:07',
+        },
       ],
       more: [
         {
           key: 'phone',
           label: '联系方式',
-          value: '138xxxx9876'
+          value: '138xxxx9876',
         },
         {
           key: 'address',
           label: '收货地址',
-          value: '杭州市文一西路'
+          value: '杭州市文一西路',
         },
         {
           key: 'status',
           label: '任务状态',
-          value: '进行中'
+          value: '进行中',
         },
         {
           key: 'remark',
           label: '备注',
-          value: '暂无'
-        }
-      ]
-    }
+          value: '暂无',
+        },
+      ],
+    },
   };
 };
 
@@ -75,7 +74,7 @@ const pics = [
   require('./images/img4.jpg'),
   require('./images/img3.jpg'),
   require('./images/img2.jpg'),
-  require('./images/img1.jpg')
+  require('./images/img1.jpg'),
 ];
 
 export default function Detail() {
@@ -83,6 +82,12 @@ export default function Detail() {
   const [data, setData] = useState({});
 
   useEffect(() => {
+    async function fetchData() {
+      await setLoading(true);
+      const { data: resData } = await mockApi();
+      await setData(resData);
+      await setLoading(false);
+    }
     fetchData();
   }, []);
 
@@ -92,13 +97,6 @@ export default function Detail() {
         resolve(mockData());
       }, 600);
     });
-  }
-
-  async function fetchData() {
-    await setLoading(true);
-    const { data: resData } = await mockApi();
-    await setData(resData);
-    await setLoading(false);
   }
 
   const basic = (data && data.basic) || [];

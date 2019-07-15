@@ -11,22 +11,22 @@ const routerConfig = [
     children: [
       {
         path: '/home',
-        component: Home
+        component: Home,
       },
       {
         path: '/detail',
-        component: Detail
+        component: Detail,
       },
       {
         path: '/list',
-        component: List
+        component: List,
       },
       {
         path: '/',
-        redirect: '/home'
-      }
-    ]
-  }
+        redirect: '/home',
+      },
+    ],
+  },
 ];
 
 export default routerConfig;

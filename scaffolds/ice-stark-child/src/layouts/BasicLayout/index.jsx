@@ -1,6 +1,6 @@
 import React from 'react';
-import LayoutTitle from '@/components/LayoutTitle';
 import { Link } from 'react-router-dom';
+import LayoutTitle from '@/components/LayoutTitle';
 
 import style from './index.module.scss';
 
