@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
-import PathnameContext from '@/context/PathnameContext';
 import { Icon, Nav } from '@alifd/next';
 import { Link } from 'react-router-dom';
+import PathnameContext from '@/context/PathnameContext';
 import { headerMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
