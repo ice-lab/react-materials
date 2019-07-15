@@ -7,20 +7,20 @@ module.exports = {
     [
       'ice-plugin-fusion',
       {
-        themePackage: '@icedesign/theme'
-      }
+        themePackage: '@icedesign/theme',
+      },
     ],
     [
       'ice-plugin-moment-locales',
       {
-        locales: ['zh-cn']
-      }
-    ]
+        locales: ['zh-cn'],
+      },
+    ],
   ],
   alias: {
-    '@': path.resolve(__dirname, './src/')
+    '@': path.resolve(__dirname, './src/'),
   },
   devServer: {
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };
