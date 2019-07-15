@@ -1,7 +1,7 @@
 .shell {
   min-height: 100vh;
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-size: 100%;
   background-attachment: fixed;
 }
 
@@ -13,8 +13,8 @@
 .avatar {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
   vertical-align: middle;
+  border-radius: 50%;
 }
 
 .userName {
@@ -57,14 +57,14 @@
     }
 
     .fusion-shell-footer {
-      background: transparent;
-      text-align: left;
-      line-height: 25px;
-      font-family: AlibabaSans-Bold;
-      font-size: 16px;
-      color: #cccccc;
       min-height: 48px;
       padding-bottom: 20px;
+      color: #ccc;
+      font-size: 16px;
+      font-family: AlibabaSans-Bold;
+      line-height: 25px;
+      text-align: left;
+      background: transparent;
     }
   }
   .fusion-shell-aside

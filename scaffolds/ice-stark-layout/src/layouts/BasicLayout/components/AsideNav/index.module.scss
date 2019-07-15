@@ -3,11 +3,11 @@
 
   :global {
     .next-menu-item.next-nav-item {
-      background-color: transparent;
-      font-weight: 400;
       color: #fff;
+      font-weight: 400;
+      background-color: transparent;
 
-      .next-nav-icon.next-icon:before {
+      .next-nav-icon.next-icon::before {
         width: 12px;
         font-size: 12px;
         line-height: inherit;

@@ -42,7 +42,8 @@
     "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
     "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint --cache --ext .js,.jsx ./"
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
   },
   "publishConfig": {
     "access": "public"

@@ -2,8 +2,8 @@
   :global {
     .next-menu-sub-menu-wrapper.next-nav-sub-nav-item .next-menu-sub-menu {
       .next-menu-item.next-nav-item {
-        background-color: transparent;
         font-weight: 400;
+        background-color: transparent;
         a {
           &:link,
           &:visited,
@@ -21,8 +21,8 @@
         }
 
         &.next-selected {
-          background-color: #f9f9f9;
           font-weight: 700;
+          background-color: #f9f9f9;
           a {
             color: #3a9bf0;
           }
