@@ -4,12 +4,10 @@ import NotFound from '@/components/NotFound';
 import PageLoading from '@/components/PageLoading';
 import PathnameContext from '@/context/PathnameContext';
 
-import styles from './index.module.scss';
-
 export default function BasicPage() {
   const { setPathname } = useContext(PathnameContext);
   return (
-    <div className={styles.basic}>
+    <div>
       <AppRouter
         NotFoundComponent={NotFound}
         LoadingComponent={PageLoading}
