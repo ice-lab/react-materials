@@ -8,6 +8,8 @@ export default async function request(options) {
   try {
     const response = await axios(options);
     const data = response.data;
+
+    // 此处接口状态的字段可自定义
     if (data.status === 'SUCCESS') {
       return { response, data };
     } else if (data.status === 'NOT_LOGIN') {

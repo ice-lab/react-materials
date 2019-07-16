@@ -8,11 +8,14 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
+import useRequest from '@/utils/useRequest';
+import { userLogout } from '@/config/dataSource';
 import Logo from '../Logo';
 
 import styles from './index.module.scss';
 
 function Header(props) {
+  const { refetch } = useRequest(userLogout);
   const userProfile = stores.useStore('userProfile');
 
   function getLocaleKey(item) {
@@ -25,12 +28,10 @@ function Header(props) {
 
   async function handleLogout() {
     try {
-      userProfile.logout(() => {
-        Message.success('已登出');
-        props.history.push('/user/login');
-      });
+      await refetch();
+      Message.success('已登出');
+      props.history.push('/user/login');
     } catch (err) {
-      console.log(err);
     }
   }
 

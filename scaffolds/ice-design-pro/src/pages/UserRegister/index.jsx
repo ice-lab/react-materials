@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import request from '@/utils/request';
+import useRequest from '@/utils/useRequest';
 import { userRegister } from '@/config/dataSource';
 import styles from './index.module.scss';
 
@@ -21,6 +22,7 @@ function checkPasswd2(rule, values, callback, stateValues) {
 }
 
 const UserRegister = withRouter((props) => {
+  const { loading, refetch } = useRequest(userRegister);
   const [value, setValue] = useState({
     name: '',
     email: '',
@@ -32,13 +34,14 @@ const UserRegister = withRouter((props) => {
     setValue(val);
   }
 
-  async function handleRegister() {
+  async function handleRegister(params) {
     try {
-      await request(userRegister);
+      await refetch({
+        data: params
+      });
       Message.success('注册成功');
       props.history.push('/user/login');
     } catch (err) {
-      console.error(err);
     }
   }
 
@@ -47,7 +50,7 @@ const UserRegister = withRouter((props) => {
       console.log('errors', errors);
       return;
     }
-    handleRegister();
+    handleRegister(values);
   }
 
   return (
@@ -127,10 +130,11 @@ const UserRegister = withRouter((props) => {
             <Form.Submit
               type="primary"
               validate
+              disabled={loading}
               onClick={handleSubmit}
               className={styles.submitBtn}
             >
-              注 册
+              {loading ? '注册中...' : '注 册'}
             </Form.Submit>
           </Row>
 
