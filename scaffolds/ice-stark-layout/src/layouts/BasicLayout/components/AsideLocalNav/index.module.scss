@@ -31,3 +31,12 @@
     }
   }
 }
+
+:global {
+  .fusion-shell-aside
+    .fusion-shell-localnavigation.fusion-shell-collapse
+    .next-nav.next-ver
+    .next-menu-item {
+    padding: 0 !important;
+  }
+}

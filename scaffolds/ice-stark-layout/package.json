@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@alifd/shell": "^1.0.3",
+    "@alifd/shell": "^1.0.7",
     "@alifd/theme-shell": "^0.2.0",
     "@ice/stark": "^0.1.1",
     "@icedesign/container": "^1.x",

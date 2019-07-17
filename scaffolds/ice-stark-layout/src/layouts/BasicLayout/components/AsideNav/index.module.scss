@@ -7,12 +7,6 @@
       font-weight: 400;
       background-color: transparent;
 
-      .next-nav-icon.next-icon::before {
-        width: 12px;
-        font-size: 12px;
-        line-height: inherit;
-      }
-
       a {
         &:link,
         &:visited,
@@ -27,5 +21,11 @@
         font-weight: 700;
       }
     }
+  }
+}
+
+:global {
+  .fusion-shell-aside.fusion-shell-navigation.fusion-shell-collapse.fusion-shell-mini {
+    width: 60px;
   }
 }

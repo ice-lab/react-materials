@@ -51,6 +51,7 @@
   .fusion-shell-header {
     border-bottom: 0;
   }
+
   .fusion-shell-main {
     .fusion-shell-content .fusion-shell-content-inner {
       min-height: 516px;
@@ -67,10 +68,10 @@
       background: transparent;
     }
   }
-  .fusion-shell-aside
-    .fusion-shell-localnavigation.fusion-shell-collapse
-    .next-nav.next-ver
-    .next-menu-item {
+
+  .next-menu.next-nav {
+    min-width: auto;
     padding: 0;
+    border-radius: 0;
   }
 }
