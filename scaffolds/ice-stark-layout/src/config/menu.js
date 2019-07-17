@@ -21,43 +21,45 @@ const headerMenuConfig = [
 
 const asideMenuConfig = [
   {
-    name: 'App1 (A仓库)',
-    key: 'A',
-    path: '/',
+    name: '商家平台',
+    key: 'merchant',
+    path: '/list',
     icon: 'Item',
   },
   {
-    name: 'App2 (B仓库)',
-    key: 'B',
-    path: '/user/home',
+    name: '小二平台',
+    key: 'waiter',
+    path: '/waiter/list',
     icon: 'Item1',
   },
 ];
 
 const asideLocalMenu = [
   {
-    name: 'Local NavA',
+    name: '商家平台',
+    key: 'merchant',
     children: [
       {
-        path: '/home',
-        name: 'home',
+        path: '/list',
+        name: '商家列表',
       },
       {
-        path: '/about',
-        name: 'about',
+        path: '/detail',
+        name: '商家详情',
       },
     ],
   },
   {
-    name: 'Local NavB',
+    name: '小二平台',
+    key: 'waiter',
     children: [
       {
-        path: '/user/home',
-        name: 'home',
+        path: '/waiter/list',
+        name: '小二列表',
       },
       {
-        path: '/user/edit',
-        name: 'edit',
+        path: '/waiter/detail',
+        name: '小二详情',
       },
     ],
   },

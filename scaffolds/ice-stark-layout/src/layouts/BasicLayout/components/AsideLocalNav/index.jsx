@@ -14,12 +14,12 @@ function getLocalNavMenuItems(localMenus) {
 
   return localMenus
     .filter(item => item.name && !item.hideInMenu)
-    .map((item) => {
+    .map(item => {
       const { name, path, icon, children } = item;
       if (children) {
         return (
           <SubNav label={name} key={name || path}>
-            {children.map((child) => {
+            {children.map(child => {
               const { name: childName, path: childPath } = child;
               return (
                 <NavItem key={childPath}>
@@ -39,10 +39,20 @@ function getLocalNavMenuItems(localMenus) {
     });
 }
 
-export default () => {
+export default ({ pathname }) => {
+  let currentLocalMenu;
+  if (pathname && String(pathname).indexOf('/waiter') > -1) {
+    currentLocalMenu = asideLocalMenu[1];
+  } else {
+    currentLocalMenu = asideLocalMenu[0];
+  }
+
+  const localMenus =
+    currentLocalMenu && currentLocalMenu.children ? currentLocalMenu.children : currentLocalMenu;
+
   return (
-    <Nav embeddable className={styles.localNav}>
-      {getLocalNavMenuItems(asideLocalMenu)}
+    <Nav embeddable selectedKeys={[pathname]} className={styles.localNav}>
+      {getLocalNavMenuItems(localMenus)}
     </Nav>
   );
 };

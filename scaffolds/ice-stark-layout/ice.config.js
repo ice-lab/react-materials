@@ -7,7 +7,7 @@ module.exports = {
     [
       'ice-plugin-fusion',
       {
-        themePackage: '@alife/theme-451',
+        themePackage: '@alifd/theme-shell',
       },
     ],
     [

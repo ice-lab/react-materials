@@ -6,14 +6,29 @@ import PathnameContext from '@/context/PathnameContext';
 
 export default function BasicPage() {
   const { setPathname } = useContext(PathnameContext);
+
   return (
-    <div>
-      <AppRouter
-        NotFoundComponent={NotFound}
-        LoadingComponent={PageLoading}
-        onRouteChange={pathname => setPathname(pathname)}
-      >
-        <AppRoute
+    <AppRouter
+      NotFoundComponent={NotFound}
+      LoadingComponent={PageLoading}
+      onRouteChange={pathname => {
+        setPathname(pathname);
+      }}
+    >
+      <AppRoute
+        path={['/', '/list', '/detail']}
+        basename="/"
+        exact
+        title="主页"
+        url={['//localhost:4444/js/index.js', '//localhost:4444/css/index.css']}
+      />
+      <AppRoute
+        path="/waiter"
+        basename="/waiter"
+        title="用户页面"
+        url={['//localhost:5555/js/index.js', '//localhost:5555/css/index.css']}
+      />
+      {/* <AppRoute
           path={['/', '/home', '/about']}
           basename="/"
           exact
@@ -31,8 +46,7 @@ export default function BasicPage() {
             '//g.alicdn.com/icestark-demo/child2/0.1.2/js/index.js',
             '//g.alicdn.com/icestark-demo/child2/0.1.2/css/index.css',
           ]}
-        />
-      </AppRouter>
-    </div>
+        /> */}
+    </AppRouter>
   );
 }

@@ -14,7 +14,7 @@ function getNavMenuItems(menusData) {
 
   return menusData
     .filter(item => item.name && !item.hideInMenu)
-    .map((item) => {
+    .map(item => {
       return (
         <NavItem icon={item.icon} key={item.key}>
           <AppLink to={item.path}>{item.name}</AppLink>
@@ -23,10 +23,10 @@ function getNavMenuItems(menusData) {
     });
 }
 
-export default (props) => {
+export default props => {
   const { pathname } = props;
-  const menuAKeys = ['/', '/home', '/about', '/xxxxx'];
-  const selectedKey = menuAKeys.indexOf(pathname) >= 0 ? 'A' : 'B';
+  const menuMerchantKeys = ['/', '/list', '/detail'];
+  const selectedKey = menuMerchantKeys.indexOf(pathname) >= 0 ? 'merchant' : 'waiter';
 
   return (
     <Nav type="primary" embeddable selectedKeys={[selectedKey]} className={styles.asideNav}>

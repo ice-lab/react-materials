@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 
 import styles from './index.module.scss';
 
-const BasicLayout = (props) => {
+const BasicLayout = props => {
   const [pathname, setPathname] = useState();
   const [isScreen, setIsScreen] = useState();
 
@@ -30,10 +30,10 @@ const BasicLayout = (props) => {
     return handler;
   }
 
-  /**
-   * 注册监听屏幕的变化，可根据不同分辨率做对应的处理
-   */
-  function enquireScreenRegister() {
+  useEffect(() => {
+    /**
+     * 注册监听屏幕的变化，可根据不同分辨率做对应的处理
+     */
     const isMobile = 'screen and (max-width: 720px)';
     const isTablet = 'screen and (min-width: 721px) and (max-width: 1199px)';
     const isDesktop = 'screen and (min-width: 1200px)';
@@ -41,10 +41,6 @@ const BasicLayout = (props) => {
     enquire.register(isMobile, enquireScreenHandle('isMobile'));
     enquire.register(isTablet, enquireScreenHandle('isTablet'));
     enquire.register(isDesktop, enquireScreenHandle('isDesktop'));
-  }
-
-  useEffect(() => {
-    enquireScreenRegister();
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
@@ -109,7 +105,7 @@ const BasicLayout = (props) => {
       </Shell.Navigation>
 
       <Shell.LocalNavigation>
-        <AsideLocalNav />
+        <AsideLocalNav pathname={pathname} />
       </Shell.LocalNavigation>
 
       <Shell.Content>
