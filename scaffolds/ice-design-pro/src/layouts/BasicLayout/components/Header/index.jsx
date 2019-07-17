@@ -8,7 +8,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
-import useRequest from '@/utils/useRequest';
+import { useRequest } from '@/utils/request';
 import { userLogout } from '@/config/dataSource';
 import Logo from '../Logo';
 

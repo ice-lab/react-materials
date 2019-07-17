@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Input, Grid, Form, Message } from '@alifd/next';
 import FoundationSymbol from '@icedesign/foundation-symbol';
-import request from '@/utils/request';
-import useRequest from '@/utils/useRequest';
+import { useRequest } from '@/utils/request';
 import { userRegister } from '@/config/dataSource';
 import styles from './index.module.scss';
 
