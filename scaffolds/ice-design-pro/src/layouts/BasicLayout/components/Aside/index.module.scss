@@ -5,6 +5,9 @@
       .next-nav-sub-nav-item {
         background: transparent;
       }
+      .next-nav.next-normal {
+        border: none;
+      }
       .next-nav .next-nav-item.next-menu-item {
         color: white;
         background: transparent;
@@ -53,28 +56,3 @@
   }
 }
 
-
-@media screen and (max-width: 1199px) {
-  .iceDesignProAside {
-    &.iceDesignLayoutAside {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: -256px;
-      z-index: 9999;
-      padding: 0 20px;
-      background: #2e323e !important;
-    }
-
-    &.openDrawer {
-      transform: translateX(256px);
-      :global {
-        .logo {
-          width: 200px;
-          margin: 20px 0;
-          text-align: center;
-        }
-      }
-    }
-  }
-}

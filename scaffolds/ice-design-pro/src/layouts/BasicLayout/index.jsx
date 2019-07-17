@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '@icedesign/layout';
 import { enquire } from 'enquire-js';
+import Shell from '@alifd/shell';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Footer from './components/Footer';
-import styles from './index.module.scss';
+import Logo from './components/Logo';
 
 export default function BasicLayout(props) {
   const [isScreen, setIsScreen] = useState('isDesktop');
+  const [collapse, setCollapse] = useState(false);
 
   /**
    * 注册监听屏幕的变化，可根据不同分辨率做对应的处理
@@ -37,24 +38,46 @@ export default function BasicLayout(props) {
   }, []);
 
   const isMobile = isScreen !== 'isDesktop';
+  let device;
+  if (isScreen === 'isDesktop') {
+    device ='desktop';
+  } else if (isScreen === 'isTablet') {
+    device = 'pad';
+  } else {
+    device = 'phone';
+  }
+
+  const triggerProps = {
+    onClick(e, crtCollapse) {
+      setCollapse(!crtCollapse)
+    },
+  };
+
+  const handleCollapse = c => {
+    setCollapse(c)
+  };
 
   return (
-    <div className={styles.iceDesignLayoutDark}>
-      <Layout>
-        <Header
-          isMobile={isMobile}
-        />
-        <Layout.Section>
-          <Layout.Aside width="auto" type={null}>
-            <Aside isMobile={isMobile} />
-          </Layout.Aside>
-          <Layout.Main>
-            {props.children}
-          </Layout.Main>
-        </Layout.Section>
+    <Shell device={device}>
+      <Shell.Branding>
+        <Logo />
+      </Shell.Branding>
 
+      <Shell.Action >
+        <Header isMobile={isMobile} />
+      </Shell.Action>
+
+      <Shell.Navigation triggerProps={triggerProps}>
+        <Aside isMobile={isMobile} collapse={collapse} handleCollapse={handleCollapse} />
+      </Shell.Navigation>
+
+      <Shell.Content>
+        { props.children }
+      </Shell.Content>
+
+      <Shell.Footer>
         <Footer />
-      </Layout>
-    </div>
-  );
+      </Shell.Footer>
+    </Shell>
+  )
 }

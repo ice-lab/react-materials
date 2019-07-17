@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { Balloon, Nav, Message } from '@alifd/next';
 import IceImg from '@icedesign/img';
-import Layout from '@icedesign/layout';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link, withRouter } from 'react-router-dom';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
-import Logo from '../Logo';
 
 import styles from './index.module.scss';
 
@@ -36,8 +34,6 @@ function Header(props) {
 
   const {
     isMobile,
-    className,
-    style,
     intl: { formatMessage },
   } = props;
 
@@ -49,13 +45,7 @@ function Header(props) {
   }, []);
 
   return (
-    <Layout.Header
-      theme="dark"
-      className={`${styles.iceDesignLayoutHeader} ${className}`}
-      style={{ ...style }}
-    >
-      <Logo />
-
+    <div className={styles.iceDesignLayoutHeader}>
       <div className={styles.iceDesignLayoutHeaderMenu}>
         {/* Header 菜单项 begin */}
         {headerMenuConfig && headerMenuConfig.length > 0 ? (
@@ -108,15 +98,19 @@ function Header(props) {
                 src={avatar}
                 className={styles.userAvatar}
               />
-              <div className={styles.userProfile}>
-                <span className={styles.userName}>
-                  {name}
-                </span>
-                <br />
-                <span className={styles.userDepartment}>
-                  {department}
-                </span>
-              </div>
+              {
+                !isMobile && (
+                  <div className={styles.userProfile}>
+                    <span className={styles.userName}>
+                      {name}
+                    </span>
+                    <br />
+                    <span className={styles.userDepartment}>
+                      {department}
+                    </span>
+                  </div>
+                )
+              }
               <FoundationSymbol
                 type="angle-down"
                 size="small"
@@ -145,7 +139,7 @@ function Header(props) {
           </ul>
         </Balloon>
       </div>
-    </Layout.Header>
+    </div>
   );
 }
 

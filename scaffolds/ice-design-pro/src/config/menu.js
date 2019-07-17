@@ -34,7 +34,7 @@ const asideMenuConfig = [
   {
     name: 'chart',
     path: '/chart',
-    icon: 'chart1',
+    icon: 'chart',
     children: [
       {
         name: 'basic',
@@ -49,7 +49,7 @@ const asideMenuConfig = [
   {
     name: '表格页',
     path: '/table',
-    icon: 'table',
+    icon: 'align-flex',
     children: [
       {
         name: 'basic',
@@ -66,7 +66,7 @@ const asideMenuConfig = [
   {
     name: '列表页',
     path: '/list',
-    icon: 'copy',
+    icon: 'menu',
     children: [
       {
         name: 'basic',
@@ -81,7 +81,7 @@ const asideMenuConfig = [
   {
     name: 'profile',
     path: '/profile',
-    icon: 'cascades',
+    icon: 'content',
     children: [
       {
         name: 'basic',
@@ -96,7 +96,7 @@ const asideMenuConfig = [
   {
     name: 'result',
     path: '/result',
-    icon: 'edit2',
+    icon: 'question',
     children: [
       {
         name: 'success',
@@ -111,7 +111,7 @@ const asideMenuConfig = [
   {
     name: 'account',
     path: '/account',
-    icon: 'person',
+    icon: 'yonghu',
     children: [
       {
         name: 'setting',
@@ -122,7 +122,7 @@ const asideMenuConfig = [
   {
     name: 'exception',
     path: '/exception',
-    icon: 'gaojingxinxi',
+    icon: 'notice',
     children: [
       {
         name: '204',
