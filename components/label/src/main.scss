@@ -5,12 +5,6 @@
 
 @mixin bt-label-variant($color) {
   background-color: $color;
-  &[href] {
-    &:hover,
-    &:focus {
-      background-color: darken($color, 10%);
-    }
-  }
 }
 
 .#{$ice-label-prefix} {
