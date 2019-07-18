@@ -126,12 +126,14 @@ function requestReducer(state, action) {
 }
 
 /**
- * Custom response data handler logic (modify this as you need)
+ * Custom response data handler logic
  * @param {object} response - response data returned by request
  * @return {object} data or error according to status code
  */
 function onResponseHandle(response) {
   const { data } = response;
+  // Please modify the status key according to your business logic
+  // normally the key is `status` or `code`
   if (data.status === 'SUCCESS') {
     return { data };
   } else if (data.status === 'NOT_LOGIN') {
