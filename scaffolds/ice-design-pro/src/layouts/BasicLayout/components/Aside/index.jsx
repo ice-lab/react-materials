@@ -123,6 +123,7 @@ const Aside = withRouter((props) => {
         mode={mode}
         iconOnly={collapse}
         hasArrow={!collapse}
+        triggerType={collapse ? 'hover' : 'click'}
         activeDirection={null}
         openKeys={openKeys}
         selectedKeys={[pathname]}
