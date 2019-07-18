@@ -25,34 +25,9 @@
           border-radius: $corner-2;
         }
       }
-      .collapse-btn {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-        color: white;
-        text-align: center;
-        cursor: pointer;
-      }
-    }
-  
-    .menuBtn {
-      position: fixed;
-      top: 82px;
-      left: 0;
-      z-index: 9;
-      width: 40px;
-      height: 40px;
-      color: #fff;
-      line-height: 40px;
-      text-align: center;
-      text-decoration: none;
-      background: #2077ff;
-      border-radius: 0 6px 6px 0;
-      cursor: pointer;
-      &:hover {
-        color: #e7e7e7;
-      }
     }
   }
 }
-
+:global .next-overlay-wrapper .next-nav-icon-placeholder {
+  display: none;
+}
