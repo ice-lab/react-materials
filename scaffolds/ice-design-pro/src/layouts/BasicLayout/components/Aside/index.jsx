@@ -92,15 +92,12 @@ const Aside = withRouter((props) => {
   const prevCollapse = useRef(collapse);
 
   useEffect(() => {
-    // 自适应布局
-    if (collapse === prevCollapse.current) {
-      if (isMobile) {
-        if (!collapse) {
-          handleCollapse(true)
-        }
-      } else {
-        handleCollapse(false)
+    if (isMobile) {
+      if (!collapse) {
+        handleCollapse(true)
       }
+    } else {
+      handleCollapse(false)
     }
   }, [isMobile])
 
