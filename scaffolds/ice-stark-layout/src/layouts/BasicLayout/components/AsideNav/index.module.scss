@@ -1,3 +1,9 @@
+:global {
+  .fusion-shell-aside.fusion-shell-navigation.fusion-shell-collapse.fusion-shell-mini {
+    width: 60px;
+  }
+}
+
 .asideNav {
   background-color: transparent;
 
@@ -21,11 +27,5 @@
         font-weight: 700;
       }
     }
-  }
-}
-
-:global {
-  .fusion-shell-aside.fusion-shell-navigation.fusion-shell-collapse.fusion-shell-mini {
-    width: 60px;
   }
 }

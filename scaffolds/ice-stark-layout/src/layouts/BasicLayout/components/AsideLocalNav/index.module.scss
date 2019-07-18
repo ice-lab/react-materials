@@ -1,3 +1,12 @@
+:global {
+  .fusion-shell-aside
+    .fusion-shell-localnavigation.fusion-shell-collapse
+    .next-nav.next-ver
+    .next-menu-item {
+    padding: 0 !important;
+  }
+}
+
 .localNav {
   :global {
     .next-menu-sub-menu-wrapper.next-nav-sub-nav-item .next-menu-sub-menu {
@@ -29,14 +38,5 @@
         }
       }
     }
-  }
-}
-
-:global {
-  .fusion-shell-aside
-    .fusion-shell-localnavigation.fusion-shell-collapse
-    .next-nav.next-ver
-    .next-menu-item {
-    padding: 0 !important;
   }
 }

@@ -26,6 +26,13 @@
   .next-menu-item.next-disabled .next-menu-item-text > a {
     background: initial;
   }
+
+  .next-menu.next-nav {
+    min-width: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+
   .fusion-shell-header .fusion-shell-navigation {
     margin: 0;
     .next-menu.next-nav {
@@ -67,11 +74,5 @@
       text-align: left;
       background: transparent;
     }
-  }
-
-  .next-menu.next-nav {
-    min-width: auto;
-    padding: 0;
-    border-radius: 0;
   }
 }
