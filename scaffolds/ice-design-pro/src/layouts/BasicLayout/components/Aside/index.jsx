@@ -101,17 +101,20 @@ const Aside = withRouter((props) => {
       } else {
         handleCollapse(false)
       }
-    } else if (collapse) {
+    }
+  }, [isMobile])
+
+  useEffect(() => {
+    if (collapse) {
       cacheOpenKeys.current = openKeys;
-      prevCollapse.current = collapse;
       setMode('popup');
       setOpenKeys([]);
     } else {
-      prevCollapse.current = collapse;
       setMode('inline');
       setOpenKeys(cacheOpenKeys.current);
-    }   
-  }, [collapse, isMobile])
+    }
+    prevCollapse.current = collapse;
+  }, [collapse])
 
   function onOpenChange(keys) {
     setOpenKeys(keys);
