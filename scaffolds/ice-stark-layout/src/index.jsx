@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import '@alifd/next/reset.scss';
 
 import BasicLayout from '@/layouts/BasicLayout';
-import Index from '@/pages/Index';
 
 const ICE_CONTAINER = document.getElementById('ice-container');
 
@@ -14,8 +13,6 @@ if (!ICE_CONTAINER) {
 }
 
 ReactDOM.render(
-  <BasicLayout>
-    <Index />
-  </BasicLayout>,
+  <BasicLayout />,
   ICE_CONTAINER
 );

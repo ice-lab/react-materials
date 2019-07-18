@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { AppRouter, AppRoute } from '@ice/stark';
 import NotFound from '@/components/NotFound';
 import PageLoading from '@/components/PageLoading';
-import PathnameContext from '@/context/PathnameContext';
 
-export default function BasicPage() {
-  const { setPathname } = useContext(PathnameContext);
-
+export default function BasicPage({ setPathname }) {
   return (
     <AppRouter
       NotFoundComponent={NotFound}
@@ -26,8 +23,8 @@ export default function BasicPage() {
         ]}
       />
       <AppRoute
-        path="/user"
-        basename="/user"
+        path="/waiter"
+        basename="/waiter"
         title="小二平台"
         url={[
           '//g.alicdn.com/icestark-demo/child2/0.2.0/js/index.js',

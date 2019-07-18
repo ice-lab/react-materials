@@ -4,10 +4,10 @@ import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
 import { Icon, Nav } from '@alifd/next';
 import { Link } from 'react-router-dom';
-import PathnameContext from '@/context/PathnameContext';
 import { headerMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
+import Index from '@/pages/Index';
 
 import Logo from './components/Logo';
 import AsideNav from './components/AsideNav';
@@ -16,7 +16,7 @@ import Footer from './components/Footer';
 
 import styles from './index.module.scss';
 
-const BasicLayout = props => {
+const BasicLayout = () => {
   const [pathname, setPathname] = useState();
   const [isScreen, setIsScreen] = useState();
 
@@ -109,9 +109,7 @@ const BasicLayout = props => {
       </Shell.LocalNavigation>
 
       <Shell.Content>
-        <PathnameContext.Provider value={{ pathname, setPathname }}>
-          {props.children}
-        </PathnameContext.Provider>
+        <Index setPathname={setPathname} />
       </Shell.Content>
 
       <Shell.Footer>
