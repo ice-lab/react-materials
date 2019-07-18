@@ -15,7 +15,7 @@ import Logo from '../Logo';
 import styles from './index.module.scss';
 
 function Header(props) {
-  const { refetch } = useRequest(userLogout);
+  const { request } = useRequest(userLogout);
   const userProfile = stores.useStore('userProfile');
 
   function getLocaleKey(item) {
@@ -28,7 +28,7 @@ function Header(props) {
 
   async function handleLogout() {
     try {
-      await refetch();
+      await request();
       Message.success('已登出');
       props.history.push('/user/login');
     } catch (err) {

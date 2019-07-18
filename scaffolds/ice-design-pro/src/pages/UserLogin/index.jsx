@@ -12,7 +12,7 @@ const { Row } = Grid;
 const FormItem = Form.Item;
 
 function UserLogin(props) {
-  const { loading, refetch } = useRequest(userLogin);
+  const { loading, request } = useRequest(userLogin);
   const [value, setValue] = useState({
     username: '',
     password: '',
@@ -33,7 +33,7 @@ function UserLogin(props) {
 
   async function handleLogin(params) {
     try {
-      await refetch({
+      await request({
         data: params
       });
       Message.success('登录成功');

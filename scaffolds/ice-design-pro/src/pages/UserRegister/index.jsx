@@ -21,7 +21,7 @@ function checkPasswd2(rule, values, callback, stateValues) {
 }
 
 const UserRegister = withRouter((props) => {
-  const { loading, refetch } = useRequest(userRegister);
+  const { loading, request } = useRequest(userRegister);
   const [value, setValue] = useState({
     name: '',
     email: '',
@@ -35,7 +35,7 @@ const UserRegister = withRouter((props) => {
 
   async function handleRegister(params) {
     try {
-      await refetch({
+      await request({
         data: params
       });
       Message.success('注册成功');
