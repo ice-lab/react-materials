@@ -67,7 +67,7 @@ const BasicLayout = () => {
     <Shell className={styles.shell} device={isMobile ? 'phone' : 'desktop'}>
       <Shell.Branding>
         <Logo />
-        <span className={styles.appName}>ICE Stark</span>
+        <span className={styles.appName}>icestark</span>
       </Shell.Branding>
       <Shell.Navigation direction="hoz">
         {headerMenuConfig && headerMenuConfig.length > 0 ? (
@@ -115,8 +115,6 @@ const BasicLayout = () => {
       <Shell.Footer>
         <Footer />
       </Shell.Footer>
-
-      <Shell.Ancillary />
 
       <Shell.ToolDock>
         <Shell.ToolDockItem>
