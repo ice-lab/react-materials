@@ -18,4 +18,4 @@
 
 ## 效果图
 
-![screenshot](https://img.alicdn.com/tfs/TB1QOsma7T2gK0jSZFkXXcIQFXa-2480-1200.png)
+![screenshot](https://img.alicdn.com/tfs/TB1X5.paYr1gK0jSZFDXXb9yVXa-2480-1200.png)
