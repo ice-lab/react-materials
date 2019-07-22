@@ -30,11 +30,12 @@
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",
+    "css-modules-typescript-loader": "^2.0.4",
     "eslint": "^6.0.1",
-    "stylelint": "^10.1.0",
-    "ice-scripts": "^2.0.0",
     "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0"
+    "ice-plugin-moment-locales": "^0.1.0",
+    "ice-scripts": "^2.0.0",
+    "stylelint": "^10.1.0"
   },
   "scripts": {
     "start": "ice-scripts dev",
