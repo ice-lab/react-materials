@@ -71,11 +71,11 @@ export default function BasicLayout(props) {
         <Aside isMobile={isMobile} collapse={collapse} handleCollapse={handleCollapse} />
       </Shell.Navigation>
 
-      <Shell.Content>
+      <Shell.Content style={{ minHeight: '90vh' }}>
         { props.children }
       </Shell.Content>
 
-      <Shell.Footer>
+      <Shell.Footer style={{backgroundColor: 'transparent'}}>
         <Footer />
       </Shell.Footer>
     </Shell>

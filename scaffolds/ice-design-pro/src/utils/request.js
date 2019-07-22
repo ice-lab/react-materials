@@ -7,13 +7,14 @@ import { Message } from '@alifd/next';
 
 /**
  * Method to make ajax request
+ *
  * @param {object} options - axios config (https://github.com/axios/axios#request-config)
  * @return {object} response data
  */
 export async function request(options) {
   try {
     const response = await axios(options);
-    const { data, error } = onResponseHandle(response);
+    const { data, error } = handleResponse(response);
     if (error) {
       throw error;
     } else {
@@ -22,13 +23,14 @@ export async function request(options) {
   } catch (error) {
     showError(error.message);
     console.error(error);
-    throw err;
+    throw error;
   }
 }
 
 
 /**
- * Hook to make ajax request
+ * Hooks to make ajax request
+ *
  * @param {object} options - axios config (https://github.com/axios/axios#request-config)
  * @return {object}
  *   @param {object} response - response of axios (https://github.com/axios/axios#response-schema)
@@ -40,7 +42,7 @@ export function useRequest(options) {
   const initialState = {
     response: null,
     loading: false,
-    error: null
+    error: null,
   };
   const [state, dispatch] = useReducer(requestReducer, initialState);
 
@@ -102,7 +104,7 @@ function requestReducer(state, action) {
       return {
         repsonse: null,
         error: null,
-        loading: true
+        loading: true,
       };
     case 'success':
       return {
@@ -120,17 +122,18 @@ function requestReducer(state, action) {
       return {
         repsonse: null,
         error: null,
-        loading: false
+        loading: false,
       };
   }
 }
 
 /**
  * Custom response data handler logic
+ *
  * @param {object} response - response data returned by request
  * @return {object} data or error according to status code
  */
-function onResponseHandle(response) {
+function handleResponse(response) {
   const { data } = response;
   // Please modify the status key according to your business logic
   // normally the key is `status` or `code`
@@ -146,6 +149,7 @@ function onResponseHandle(response) {
 
 /**
  * Display error message
+ *
  * @param {string} errorMessage - error message
  */
 function showError(errorMessage) {

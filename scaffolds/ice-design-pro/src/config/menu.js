@@ -49,7 +49,7 @@ const asideMenuConfig = [
   {
     name: '表格页',
     path: '/table',
-    icon: 'align-flex',
+    icon: 'cascades',
     children: [
       {
         name: 'basic',

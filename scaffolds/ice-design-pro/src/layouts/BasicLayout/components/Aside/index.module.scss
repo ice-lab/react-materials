@@ -18,11 +18,11 @@
       }
       .next-nav .next-menu-sub-menu .next-menu-item {
         transition: none;
-    
+
         &.next-selected,
         &:hover {
-          background: $color-brand1-6;
-          border-radius: $corner-2;
+          background: $color-text1-4;
+          // border-radius: $corner-2;
         }
       }
     }

@@ -9,7 +9,6 @@ import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
 import { useRequest } from '@/utils/request';
 import { userLogout } from '@/config/dataSource';
-import Logo from '../Logo';
 
 import styles from './index.module.scss';
 
@@ -31,6 +30,7 @@ function Header(props) {
       Message.success('已登出');
       props.history.push('/user/login');
     } catch (err) {
+      console.error(err);
     }
   }
 
@@ -48,9 +48,10 @@ function Header(props) {
 
   return (
     <div className={styles.iceDesignLayoutHeader}>
-      <div className={styles.iceDesignLayoutHeaderMenu}>
-        {/* Header 菜单项 begin */}
-        {headerMenuConfig && headerMenuConfig.length > 0 ? (
+
+      {/* Header 菜单项 begin */}
+      {headerMenuConfig && headerMenuConfig.length > 0 ? (
+        <div className={styles.iceDesignLayoutHeaderMenu}>
           <Nav direction="hoz" type="secondary" selectedKeys={[]}>
             {headerMenuConfig.map((nav, idx) => {
               const linkProps = {};
@@ -84,9 +85,11 @@ function Header(props) {
               );
             })}
           </Nav>
-        ) : null}
-        {/* Header 菜单项 end */}
+        </div>
+      ) : null}
+      {/* Header 菜单项 end */}
 
+      <div className={styles.headerAction}>
         {/* 多语言选择 */}
         <SelectLang />
 
