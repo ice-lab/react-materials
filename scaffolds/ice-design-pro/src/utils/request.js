@@ -65,7 +65,7 @@ export function useRequest(options) {
         ...config,
       });
 
-      const { error } = onResponseHandle(response);
+      const { error } = handleResponse(response);
 
       if (error) {
         throw error;

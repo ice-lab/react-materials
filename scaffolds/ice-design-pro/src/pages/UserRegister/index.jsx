@@ -36,11 +36,12 @@ const UserRegister = withRouter((props) => {
   async function handleRegister(params) {
     try {
       await request({
-        data: params
+        data: params,
       });
       Message.success('注册成功');
       props.history.push('/user/login');
     } catch (err) {
+      console.error(err);
     }
   }
 

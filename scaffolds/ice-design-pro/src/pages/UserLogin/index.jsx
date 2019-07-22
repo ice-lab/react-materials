@@ -4,7 +4,6 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Input, Checkbox, Grid, Form, Message } from '@alifd/next';
 import { useRequest } from '@/utils/request';
 import { userLogin } from '@/config/dataSource';
-import stores from '@/stores/index';
 import styles from './index.module.scss';
 
 const Icon = FoundationSymbol;
@@ -34,11 +33,12 @@ function UserLogin(props) {
   async function handleLogin(params) {
     try {
       await request({
-        data: params
+        data: params,
       });
       Message.success('登录成功');
       props.history.push('/');
     } catch (err) {
+      console.error(err);
     }
   }
 
