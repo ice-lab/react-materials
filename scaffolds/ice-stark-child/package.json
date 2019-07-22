@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark": "^0.1.1",
+    "@ice/stark": "^0.1.2",
     "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",
@@ -31,10 +31,10 @@
   "devDependencies": {
     "@ice/spec": "^0.1.1",
     "eslint": "^6.0.1",
-    "stylelint": "^10.1.0",
-    "ice-scripts": "^2.0.0",
     "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0"
+    "ice-plugin-moment-locales": "^0.1.0",
+    "ice-scripts": "^2.0.0",
+    "stylelint": "^10.1.0"
   },
   "scripts": {
     "start": "ice-scripts dev",
