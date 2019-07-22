@@ -4,3 +4,10 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+.ice-layout-header-normal, .ice-layout-aside-normal {
+  background-color: #000 !important;
+}
+.ice-layout-footer-normal {
+  background-color: #eee !important;
+}

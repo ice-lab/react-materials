@@ -8,10 +8,19 @@ $ice-header-icon-down-color: #fff !default;
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 10px 20px;
   background: transparent;
   box-shadow: none;
-
+  border-bottom: 1px solid #1f1f1f;
+  .headerLeft, .headerRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .expandIcon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
   :global {
     .next-nav {
       background: transparent;

@@ -3,6 +3,7 @@ import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
+import stores from '@/stores/index';
 import { asideMenuConfig } from '@/config/menu.js';
 import styles from './index.module.scss';
 
@@ -83,7 +84,10 @@ function getDefaultOpenKeys(location = {}) {
 }
 
 const Aside = withRouter((props) => {
-  const { collapse, location, isMobile, handleCollapse } = props;
+  const expandAside = stores.useStore('expandAside');
+  const { collapse, toggle } = expandAside;
+
+  const { location, isMobile } = props;
   const { pathname } = location;
   const defaultOpenKeys = getDefaultOpenKeys(location);
   const [openKeys, setOpenKeys] = useState(collapse ? [] : defaultOpenKeys);
@@ -91,12 +95,13 @@ const Aside = withRouter((props) => {
   const cacheOpenKeys = useRef(openKeys);
 
   useEffect(() => {
+    
     if (isMobile) {
       if (!collapse) {
-        handleCollapse(true)
+        toggle(true)
       }
     } else {
-      handleCollapse(false)
+      toggle(false)
     }
   }, [isMobile]);
 
@@ -118,6 +123,7 @@ const Aside = withRouter((props) => {
   return (
     <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside}`}>
       <Nav
+        style={{width: collapse ? '60px' : '168px'}}
         mode={mode}
         iconOnly={collapse}
         hasArrow={!collapse}
