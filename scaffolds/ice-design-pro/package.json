@@ -19,6 +19,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
+    "@alifd/shell": "^1.0.8",
     "@antv/data-set": "^0.9.5",
     "@ice/store": "^0.2.2",
     "@icedesign/container": "^1.x",
