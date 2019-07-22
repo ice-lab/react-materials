@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Input, Checkbox, Grid, Form, Message } from '@alifd/next';
+import { useRequest } from '@/utils/request';
+import { userLogin } from '@/config/dataSource';
 import stores from '@/stores/index';
 import styles from './index.module.scss';
 
@@ -10,8 +12,7 @@ const { Row } = Grid;
 const FormItem = Form.Item;
 
 function UserLogin(props) {
-  const userProfile = stores.useStore('userProfile');
-
+  const { loading, request } = useRequest(userLogin);
   const [value, setValue] = useState({
     username: '',
     password: '',
@@ -32,12 +33,12 @@ function UserLogin(props) {
 
   async function handleLogin(params) {
     try {
-      userProfile.login(params, () => {
-        Message.success('登录成功');
-        props.history.push('/');
+      await request({
+        data: params
       });
+      Message.success('登录成功');
+      props.history.push('/');
     } catch (err) {
-      console.log(err);
     }
   }
 
@@ -74,10 +75,11 @@ function UserLogin(props) {
             <Form.Submit
               type="primary"
               validate
+              disabled={loading}
               onClick={handleSubmit}
               className={styles.submitBtn}
             >
-              登 录
+              {loading ? '登录中...' : '登 录'}
             </Form.Submit>
             <p className={styles.account}>
               <span className={styles.tipsText} style={{ marginRight: '20px' }}>
