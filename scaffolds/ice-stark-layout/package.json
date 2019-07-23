@@ -8,6 +8,7 @@
     "build/",
     "public/",
     "tests/",
+    "mock/",
     "_gitignore",
     "_editorconfig",
     "_eslintignore",
@@ -68,6 +69,6 @@
   },
   "iceworks": {
     "type": "react",
-    "adapter": "adapter-react-vBeta"
+    "adapter": "adapter-react-v3"
   }
 }
