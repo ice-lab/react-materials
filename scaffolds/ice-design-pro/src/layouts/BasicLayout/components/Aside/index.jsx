@@ -95,7 +95,7 @@ const Aside = withRouter((props) => {
   const cacheOpenKeys = useRef(openKeys);
 
   useEffect(() => {
-    
+
     if (isMobile) {
       if (!collapse) {
         toggle(true)
@@ -123,7 +123,7 @@ const Aside = withRouter((props) => {
   return (
     <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside}`}>
       <Nav
-        style={{width: collapse ? '60px' : '168px'}}
+        style={{width: collapse ? '60px' : '200px'}}
         mode={mode}
         iconOnly={collapse}
         hasArrow={!collapse}
