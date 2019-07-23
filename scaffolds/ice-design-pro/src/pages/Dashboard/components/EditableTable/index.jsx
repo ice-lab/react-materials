@@ -32,9 +32,9 @@ function EditableTable(props) {
 
   function deleteItem(index) {
     dataSource.splice(index, 1);
-    setData({
+    setData([
       ...dataSource,
-    });
+    ]);
   }
 
   function renderOperation(value, index) {
@@ -47,9 +47,9 @@ function EditableTable(props) {
 
   function changeDataSource(index, valueKey, value) {
     dataSource[index][valueKey] = value;
-    setData({
+    setData([
       ...dataSource,
-    });
+    ]);
   }
 
   function renderEditor(valueKey, value, index, record) {
@@ -70,9 +70,9 @@ function EditableTable(props) {
       remark: text,
       validity: text,
     });
-    setData({
+    setData([
       ...dataSource,
-    });
+    ]);
   }
 
   return (

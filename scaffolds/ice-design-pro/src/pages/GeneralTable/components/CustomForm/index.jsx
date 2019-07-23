@@ -96,7 +96,7 @@ export default function CustomForm(props) {
     <div className={styles.formContainer}>
       <IceFormBinderWrapper value={value} ref={formRef => (form = formRef)}>
         <div className={styles.formItems}>
-          <Row wrap gutter={40}>
+          <Row wrap>
             {renderFromItem(config)}
           </Row>
           <div className={styles.buttons}>

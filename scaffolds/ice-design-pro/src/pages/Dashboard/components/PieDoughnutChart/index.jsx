@@ -53,7 +53,7 @@ function PieDoughnutChart(props) {
 
   return (
     <div className="pie-doughnut-chart">
-      <Row wrap gutter="20">
+      <Row wrap>
         <Col xxs="24" s="24" l="12">
           <IceContainer
             title={formatMessage({ id: 'app.dashboard.gender.share' })}

@@ -21,7 +21,7 @@ export default function Filter(props) {
       value={value}
       onChange={formChange}
     >
-      <Row wrap gutter="20" className={styles.formRow}>
+      <Row wrap className={styles.formRow}>
         <Col l="24">
           <div className={styles.formItem}>
             <span className={styles.formLabel}>注册时间：</span>

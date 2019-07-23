@@ -47,7 +47,7 @@ function ProjectStatus(props) {
   } = props;
 
   return (
-    <Row wrap gutter={20}>
+    <Row wrap>
       <Col xxs="24" l="12" >
         <IceContainer
           title={formatMessage({

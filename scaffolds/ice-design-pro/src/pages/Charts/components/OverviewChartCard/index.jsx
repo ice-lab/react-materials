@@ -15,7 +15,7 @@ function OverviewChartCard(props) {
     intl: { formatMessage },
   } = props;
   return (
-    <Row wrap gutter={20}>
+    <Row wrap>
       <Col xxs="24" l="6">
         <IceContainer>
           <Head
