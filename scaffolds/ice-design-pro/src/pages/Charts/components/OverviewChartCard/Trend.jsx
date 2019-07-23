@@ -3,9 +3,12 @@ import { FormattedMessage } from 'react-intl';
 import { Icon } from '@alifd/next';
 import styles from './index.module.scss';
 
-export default function Trend() {
+export default function Trend(props) {
+  const { className } = props;
+  const wrapperClassName = styles.content + (className ? ` ${className}` : '');
+
   return (
-    <div className={styles.content}>
+    <div className={wrapperClassName}>
       <div className={styles.trendItems}>
         <div className={styles.trendItem}>
           <span>

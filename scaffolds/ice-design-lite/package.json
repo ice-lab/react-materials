@@ -18,7 +18,6 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/store": "^0.1.1",
     "@icedesign/container": "^1.x",
     "@icedesign/img": "^1.x",
     "@icedesign/layout": "^1.x",

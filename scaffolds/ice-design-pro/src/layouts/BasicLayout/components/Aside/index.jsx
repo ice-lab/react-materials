@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import FoundationSymbol from '@icedesign/foundation-symbol';
 import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
+import stores from '@/stores/index';
 import { asideMenuConfig } from '@/config/menu.js';
-import Logo from '../Logo';
 import styles from './index.module.scss';
 
 const SubNav = Nav.SubNav;
@@ -24,12 +24,11 @@ function getLocaleKey(item) {
 function getSubMenuOrItem(item, index) {
   if (item.children && item.children.some(child => child.name)) {
     const childrenItems = getNavMenuItems(item.children);
-
     if (childrenItems && childrenItems.length > 0) {
       return (
         <SubNav
           key={index}
-          icon={item.icon ? item.icon : null}
+          icon={item.icon ? <FoundationSymbol type={item.icon} size="small" /> : null}
           label={
             <span className="ice-menu-collapse-hide">
               <FormattedMessage id={getLocaleKey(item)} />
@@ -85,79 +84,55 @@ function getDefaultOpenKeys(location = {}) {
 }
 
 const Aside = withRouter((props) => {
-  const defaultOpenKeys = getDefaultOpenKeys(props.location);
-  const [collapse, setCollapse] = useState(false);
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const [openKeys, setOpenKeys] = useState(defaultOpenKeys);
+  const expandAside = stores.useStore('expandAside');
+  const { collapse, toggle } = expandAside;
 
-  /**
-   * 响应式通过抽屉形式切换菜单
-   */
-  function toggleMenu() {
-    setOpenDrawer(!openDrawer);
-  }
+  const { location, isMobile } = props;
+  const { pathname } = location;
+  const defaultOpenKeys = getDefaultOpenKeys(location);
+  const [openKeys, setOpenKeys] = useState(collapse ? [] : defaultOpenKeys);
+  const [mode, setMode] = useState('inline');
+  const cacheOpenKeys = useRef(openKeys);
 
-  /**
-   * 折叠搜索切换
-   */
-  function toggleCollapse() {
-    setCollapse(!collapse);
-    setOpenKeys([]);
-  }
+  useEffect(() => {
 
-  /**
-   * 左侧菜单收缩切换
-   */
-  function onSelect() {
-    toggleMenu();
-  }
+    if (isMobile) {
+      if (!collapse) {
+        toggle(true)
+      }
+    } else {
+      toggle(false)
+    }
+  }, [isMobile]);
 
-  /**
-   * 当前展开的菜单项
-   */
+  useEffect(() => {
+    if (collapse) {
+      cacheOpenKeys.current = openKeys;
+      setMode('popup');
+      setOpenKeys([]);
+    } else {
+      setMode('inline');
+      setOpenKeys(cacheOpenKeys.current);
+    }
+  }, [collapse]);
+
   function onOpenChange(keys) {
     setOpenKeys(keys);
-    setOpenDrawer(false);
   }
 
-  const {
-    location: { pathname },
-    isMobile,
-  } = props;
-
-  const openDrawerClassName = openDrawer ? styles.openDrawer : '';
-
   return (
-    <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside} ${openDrawerClassName}`}>
-      {isMobile && <Logo />}
-
-      {isMobile && !openDrawer && (
-        <a className={styles.menuBtn} onClick={toggleMenu}>
-          <FoundationSymbol type="menu" size="small" />
-        </a>
-      )}
-
-      {!isMobile && (
-        <a className="collapse-btn" onClick={toggleCollapse}>
-          <FoundationSymbol
-            key={collapse}
-            type={collapse ? 'transfer-right' : 'transfer-left'}
-            size="large"
-          />
-        </a>
-      )}
-
+    <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside}`}>
       <Nav
-        style={{ width: collapse ? 60 : 200 }}
-        mode={collapse ? 'popup' : 'inline'}
+        style={{width: collapse ? '60px' : '200px'}}
+        mode={mode}
         iconOnly={collapse}
         hasArrow={!collapse}
+        triggerType={collapse ? 'hover' : 'click'}
         activeDirection={null}
-        selectedKeys={[pathname]}
         openKeys={openKeys}
+        selectedKeys={[pathname]}
         defaultSelectedKeys={[pathname]}
         onOpen={onOpenChange}
-        onSelect={onSelect}
       >
         {getNavMenuItems(asideMenuConfig)}
       </Nav>

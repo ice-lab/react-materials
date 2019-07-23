@@ -8,7 +8,7 @@ const { Row, Col } = Grid;
 
 export default function Overview() {
   return (
-    <Row wrap gutter={20}>
+    <Row wrap>
       <Col l="16">
         <ProjectList />
       </Col>

@@ -35,7 +35,7 @@ export default injectIntl((props) => {
   ];
 
   return (
-    <Row gutter={20} wrap>
+    <Row wrap>
       {mockData.map((item, index) => {
         return (
           <Col xxs="24" l="6" key={index}>

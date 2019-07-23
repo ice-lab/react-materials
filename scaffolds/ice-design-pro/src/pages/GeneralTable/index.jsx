@@ -51,7 +51,7 @@ function GeneralTable(props) {
   }
 
   return (
-    <Row gutter={20} wrap>
+    <Row wrap>
       <Col l="18">
         <IceContainer style={{ padding: '0' }}>
           <ContainerTitle
