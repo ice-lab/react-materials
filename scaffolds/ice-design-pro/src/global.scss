@@ -11,3 +11,21 @@ body {
 .ice-layout-footer-normal {
   background-color: #eee !important;
 }
+.next-overlay-wrapper {
+  .next-nav.next-normal {
+    border: none;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item {
+    background-color: #000;
+    color: #fff;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item.next-selected {
+    background-color: #333;
+    color: #fff;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item.next-focused, 
+  .next-nav.next-normal .next-nav-item.next-menu-item:hover {
+    background-color: #333;
+    color: #fff;
+  }
+}
