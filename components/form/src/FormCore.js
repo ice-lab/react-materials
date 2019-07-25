@@ -202,7 +202,7 @@ export default class FormCore {
     }
 
     // 不存在的 Field 不做检验，同时删除对应 field 的 error 信息
-    if (this.props[name] && (this.props[name].display === 'hide')) {
+    if (this.props[name] && (!this.props[name].visible)) {
       this.setFieldError(name, undefined);
       return new Promise(resolve => resolve({ status: 'success' }));
     }
