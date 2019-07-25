@@ -22,24 +22,32 @@ export default () => {
             <Route
               key={id}
               {...others}
-              component={props => {
-                return children ? (
-                  <RouteComponent key={id} {...props}>
-                    <Switch>
-                      {children.map((child, idx) => {
-                        const { path: childPath, ...childOthers } = child;
-                        return (
-                          <RouteItem
-                            {...childOthers}
-                            key={`${id}-${idx}`}
-                            path={childPath && path.join(route.path, childPath)}
-                          />
-                        );
-                      })}
-                    </Switch>
-                  </RouteComponent>
-                ) : (
-                  <RouteItem key={id} {...props} />
+              component={(props) => {
+                return (
+                  children ? (
+                    <RouteComponent key={id} {...props}>
+                      <Switch>
+                        {children.map((routeChild, idx) => {
+                          const { redirect, path: childPath, component } = routeChild;
+                          return RouteItem({
+                            key: `${id}-${idx}`,
+                            redirect,
+                            path: childPath && path.join(route.path, childPath),
+                            component,
+                          });
+                        })}
+                      </Switch>
+                    </RouteComponent>
+                  ) : (
+                    <>
+                      {
+                        RouteItem({
+                          key: id,
+                          ...route,
+                        })
+                      }
+                    </>
+                  )
                 );
               }}
             />

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/dashboard-scaffold",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "该模板适用于电商类的数据展示大盘，搭配简洁的暗色主题风格和图表类展示",
   "homepage": "https://unpkg.com/@icedesign/dashboard-scaffold@latest/build/index.html",
   "files": [

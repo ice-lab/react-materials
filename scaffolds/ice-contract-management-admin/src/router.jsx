@@ -54,7 +54,7 @@ const router = () => {
                     <div>
                       {RouteItem({
                         key: id,
-                        ...props,
+                        ...route,
                       })}
                     </div>
                   )
