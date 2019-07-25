@@ -16,16 +16,16 @@ body {
     border: none;
   }
   .next-nav.next-normal .next-nav-item.next-menu-item {
-    background-color: #2D323F;
     color: #fff;
+    background-color: #2D323F;
   }
   .next-nav.next-normal .next-nav-item.next-menu-item.next-selected {
-    background-color: #444;
     color: #fff;
+    background-color: #444;
   }
   .next-nav.next-normal .next-nav-item.next-menu-item.next-focused,
   .next-nav.next-normal .next-nav-item.next-menu-item:hover {
-    background-color: #444;
     color: #fff;
+    background-color: #444;
   }
 }
