@@ -10,8 +10,8 @@ $ice-header-icon-down-color: #fff !default;
   margin: 0 auto;
   padding: 10px 20px;
   background: transparent;
-  box-shadow: none;
   border-bottom: 1px solid #1f1f1f;
+  box-shadow: none;
   .headerLeft, .headerRight {
     display: flex;
     align-items: center;
@@ -52,9 +52,9 @@ $ice-header-icon-down-color: #fff !default;
     }
   }
   .headerAction {
-    margin-left: 30px;
     display: flex;
     align-items: center;
+    margin-left: 30px;
   }
   .iceDesignHeaderUserpannel {
     display: flex;
