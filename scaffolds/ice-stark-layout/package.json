@@ -1,0 +1,74 @@
+{
+  "name": "@icedesign/stark-layout-scaffold",
+  "version": "1.0.2",
+  "description": "该模板适用于从 0 到 1 开始搭建 @ice/stark 的 Layout 项目（框架应用），内置基础的页面，路由和菜单展示",
+  "homepage": "https://unpkg.com/@icedesign/stark-layout-scaffold@latest/build/index.html",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "mock/",
+    "_gitignore",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
+    "ice.config.js"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@alifd/shell": "^1.0.7",
+    "@alifd/theme-shell": "^0.2.0",
+    "@ice/stark": "^0.1.2",
+    "@icedesign/container": "^1.x",
+    "axios": "^0.17.1",
+    "classnames": "^2.2.5",
+    "enquire-js": "^0.1.2",
+    "moment": "^2.24.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-router-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "@ice/spec": "^0.1.1",
+    "eslint": "^6.0.1",
+    "stylelint": "^10.1.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0",
+    "ice-scripts": "^2.0.0"
+  },
+  "scripts": {
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "builder": "ice-scripts",
+    "name": "ice-stark-layout",
+    "title": "ICE Stark 框架模板",
+    "categories": [
+      "ICE Stark模板"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB14igtaVT7gK0jSZFpXXaTkpXa-2878-1368.png"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-stark-layout"
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v3"
+  }
+}
