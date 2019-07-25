@@ -1,6 +1,6 @@
 {
   "name": "@ice/form",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "ICE 表单组件",
   "files": [
     "demo/",
@@ -45,5 +45,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://unpkg.com/@ice/form@0.1.5/build/index.html"
+  "homepage": "https://unpkg.com/@ice/form@0.1.6/build/index.html"
 }
