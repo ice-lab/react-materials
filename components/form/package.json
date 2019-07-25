@@ -45,9 +45,5 @@
   "publishConfig": {
     "access": "public"
   },
-<<<<<<< HEAD
   "homepage": "https://unpkg.com/@ice/form@0.1.7/build/index.html"
-=======
-  "homepage": "https://unpkg.com/@ice/form@0.1.6/build/index.html"
->>>>>>> master
 }
