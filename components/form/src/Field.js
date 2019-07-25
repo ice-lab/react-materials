@@ -12,7 +12,7 @@ class Field extends React.Component {
 
     const { name, rules, effects, value, defaultValue, setValueFormatter, getValueFormatter } = props;
 
-    const componentProps = getComponentProps(props);
+    const componentProps = getComponentProps({ visible: true, ...props });
     store.setFieldProps(name, componentProps);
     !!rules && store.addRules(name, rules);
     !!effects && store.addEffects(name, effects);
