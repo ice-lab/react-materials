@@ -54,9 +54,9 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "ice-stark-layout",
-    "title": "ICE Stark 框架模板",
+    "title": "icestark 框架应用",
     "categories": [
-      "ICE Stark模板"
+      "icestark"
     ],
     "screenshot": "https://img.alicdn.com/tfs/TB14igtaVT7gK0jSZFpXXaTkpXa-2878-1368.png"
   },
