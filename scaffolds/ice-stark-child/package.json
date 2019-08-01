@@ -15,7 +15,8 @@
     "_eslintrc.js",
     "_stylelintignore",
     "_stylelintrc.js",
-    "ice.config.js"
+    "ice.config.js",
+    "jsconfig.json"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",

@@ -14,7 +14,8 @@
     "_eslintrc.js",
     "_stylelintignore",
     "_stylelintrc.js",
-    "ice.config.js"
+    "ice.config.js",
+    "jsconfig.json"
   ],
   "scripts": {
     "start": "ice-scripts dev",
