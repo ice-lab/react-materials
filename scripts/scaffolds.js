@@ -44,6 +44,10 @@ const scaffolds = [
   'ice-website-homepage',
   'ice-creator-landingpage',
   'ice-open-platform-landingpage',
+
+  // icestark模板(2)
+  'ice-stark-layout',
+  'ice-stark-child',
 ];
 
 module.exports = scaffolds;
