@@ -51,9 +51,9 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "ice-stark-child",
-    "title": "icestark 子模板",
+    "title": "icestark 子应用",
     "categories": [
-      "icestark模板"
+      "icestark"
     ],
     "screenshot": "https://img.alicdn.com/tfs/TB1X5.paYr1gK0jSZFDXXb9yVXa-2480-1200.png"
   },
