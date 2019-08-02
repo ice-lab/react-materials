@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/customer-analysis-admin-scaffold",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "该模板内置了丰富的图表和表格区块，适用于客源分析管理类系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/customer-analysis-admin-scaffold@latest/build/index.html",
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/project-management-admin",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "该模板内置了丰富的区块以及图表，适用于项目管理类的后台系统，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/project-management-admin@latest/build/index.html",
   "files": [
