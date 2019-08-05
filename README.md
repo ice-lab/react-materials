@@ -1,39 +1,29 @@
-# react-materials
+# React Materials
 
-飞冰（ICE）官方 React 物料（模板/区块/组件），基于 Fusion 组件和 ice-scripts 工程工具。
+ICE official React materials, based on [ice-scripts](https://github.com/ice-lab/ice-scripts) build tool and [next](https://github.com/alibaba-fusion/next) components.
 
-## 使用
+## Install
 
-对应的物料数据：`https://ice.alicdn.com/assets/react-materials.json`，可以通过 Iceworks 的自定义物料功能使用。
-
-## 如何贡献
-
-- Fork 仓库，修改代码
-- 提交 PR
-
-## 开发指南
-
-### 环境准备
+Install iceworks CLI tool:
 
 ```bash
-$ npm install
+$ npm i -g iceworks
 ```
 
-### 开发调试
+## Usage
+
+Start iceworks:
 
 ```bash
-$ cd blocks/Example
-$ npm install
-$ npm run start
-$ npm run build
+$ iceworks  # will open http://127.0.0.1:8000 in browser
 ```
 
-### 相关链接
+To add this material source, go to the Materials tab > click Add:
 
-- [issue 反馈](https://github.com/alibaba/ice/issues/new)
-- [Fusion 组件](https://fusion.design/)
-- [ice-scripts](https://github.com/ice-lab/ice-scripts)
+![](https://img.alicdn.com/tfs/TB1o5j2bYr1gK0jSZR0XXbP8XXa-2872-1634.jpg)
 
-## License
+Fill up the form. React materials source url `http://ice.alicdn.com/assets/materials/react-materials.json`
 
-[MIT](LICENSE)
+![](https://img.alicdn.com/tfs/TB1btzWbWL7gK0jSZFBXXXZZpXa-1460-654.jpg)
+
+Finally you can use iceworks for developing Rreact project. Enjoy it!
