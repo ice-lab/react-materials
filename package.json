@@ -4,7 +4,7 @@
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
-    "generate:ci": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.com idev generate",
+    "generate:ci": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org idev generate",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint --cache --ext .js,.jsx ./",
     "stylelint": "stylelint ./**/*.scss",
