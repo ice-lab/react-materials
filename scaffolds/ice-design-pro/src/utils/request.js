@@ -74,7 +74,11 @@ export function useRequest(options) {
           type: 'success',
           response,
         });
-        return state;
+        return {
+          response,
+          error: null,
+          loading: false,
+        };
       }
     } catch (error) {
       showError(error.message);
