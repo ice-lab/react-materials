@@ -4,7 +4,7 @@
   "scripts": {
     "upload-oss": "node scripts/upload-oss.js",
     "generate": "idev generate",
-    "generate:ci": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.com idev generate",
+    "generate:ci": "LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org idev generate",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint --cache --ext .js,.jsx ./",
     "stylelint": "stylelint ./**/*.scss",
@@ -26,7 +26,7 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "husky": "^3.0.1",
-    "ice-devtools": "^2.4.1",
+    "ice-devtools": "^2.4.2",
     "ice-plugin-component": "^0.1.4",
     "ice-plugin-fusion": "^0.1.9",
     "ice-plugin-moment-locales": "^0.1.0",
