@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/application-management-admin-scaffold",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "该模板适用于应用管理类的管理后台，默认内置一个 Dashboard 页面，使用时需要根据需求进行删除和添加",
   "homepage": "https://unpkg.com/@icedesign/application-management-admin-scaffold@latest/build/index.html",
   "files": [
@@ -14,7 +14,8 @@
     "_eslintrc.js",
     "_stylelintignore",
     "_stylelintrc.js",
-    "ice.config.js"
+    "ice.config.js",
+    "jsconfig.json"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
