@@ -260,6 +260,9 @@
     }
 
     > #{$ice-menu-prefix}-item {
+      margin: 0 20px;
+      padding: 0;
+
       &:hover {
         color: $color-brand1-6;
         background: transparent;
@@ -369,8 +372,7 @@
       display: none;
     }
 
-    #{$ice-menu-prefix}-submenu-vertical
-      > #{$ice-menu-prefix}-submenu-title:after {
+    #{$ice-menu-prefix}-submenu-vertical > #{$ice-menu-prefix}-submenu-title:after {
       display: none;
     }
     #{$ice-menu-prefix}-item,
@@ -604,8 +606,7 @@
         background-color: transparent;
       }
       #{$ice-menu-prefix}-submenu-active:hover,
-      #{$ice-menu-prefix}-submenu-active:hover
-        > #{$ice-menu-prefix}-submenu-title,
+      #{$ice-menu-prefix}-submenu-active:hover > #{$ice-menu-prefix}-submenu-title,
       #{$ice-menu-prefix}-submenu #{$ice-menu-prefix}-submenu-title:hover,
       #{$ice-menu-prefix}-submenu-selected #{$ice-menu-prefix}-submenu-title,
       #{$ice-menu-prefix}-item:hover,
