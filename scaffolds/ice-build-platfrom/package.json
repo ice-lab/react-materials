@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/builder-platfrom-scaffold",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "该模板适用于云构建类的数据展示和管理后台",
   "homepage": "https://unpkg.com/@icedesign/builder-platfrom-scaffold@latest/build/index.html",
   "files": [
@@ -14,7 +14,8 @@
     "_eslintrc.js",
     "_stylelintignore",
     "_stylelintrc.js",
-    "ice.config.js"
+    "ice.config.js",
+    "jsconfig.json"
   ],
   "keywords": [
     "ice-scaffold"

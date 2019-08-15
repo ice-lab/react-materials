@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/creator-admin-scaffold",
-  "version": "3.0.3",
+  "version": "3.0.5",
   "description": "该模板适用于创作者发布文章，帖子类的管理后台",
   "homepage": "https://unpkg.com/@icedesign/creator-admin-scaffold@latest/build/index.html",
   "author": "noyobo <nongyoubao@alibaba-inc.com>",
@@ -15,7 +15,8 @@
     "_eslintrc.js",
     "_stylelintignore",
     "_stylelintrc.js",
-    "ice.config.js"
+    "ice.config.js",
+    "jsconfig.json"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",

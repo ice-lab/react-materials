@@ -23,7 +23,7 @@ const ossClient = oss({
   endpoint: 'oss-cn-hangzhou.aliyuncs.com',
   accessKeyId,
   accessKeySecret,
-  time: '120s',
+  timeout: '120s',
 });
 
 const materialPath = path.resolve(__dirname, '../build/materials.json');
