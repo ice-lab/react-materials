@@ -59,13 +59,13 @@ export default class BalloonConfirm extends Component {
     this.confirmRef = React.createRef();
   }
 
-  handleCanel = (e) => {
+  handleCanel = e => {
     const { onCancel } = this.props;
     onCancel(e);
     this.closeBallon();
   };
 
-  handleOk = (e) => {
+  handleOk = e => {
     const { onConfirm } = this.props;
     onConfirm(e);
     this.closeBallon();
@@ -75,16 +75,26 @@ export default class BalloonConfirm extends Component {
     this.confirmRef.current.getInstance().setState({
       visible: false,
     });
-  }
+  };
 
   render() {
-    const { children, className, title, confirmText, cancelText, Icon: IconComponent } = this.props;
+    const {
+      children,
+      className,
+      title,
+      confirmText,
+      cancelText,
+      Icon: IconComponent,
+      onConfirm,
+      onCancel,
+      ...others
+    } = this.props;
 
     return (
       <Balloon
         triggerType="click"
         closable={false}
-        {...this.props}
+        {...others}
         className={`ice-ballon-confirm${className ? ` ${className}` : ''}`}
         trigger={children}
         ref={this.confirmRef}
