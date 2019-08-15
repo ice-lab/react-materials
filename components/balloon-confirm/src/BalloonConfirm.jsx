@@ -85,22 +85,16 @@ export default class BalloonConfirm extends Component {
       confirmText,
       cancelText,
       Icon: IconComponent,
+      onConfirm,
+      onCancel,
       ...others
     } = this.props;
-
-    // remove useless props
-    const ballonProps = { ...others };
-    ['onConfirm', 'onCancel'].forEach(propName => {
-      if (Object.prototype.hasOwnProperty.call(ballonProps, propName)) {
-        delete ballonProps[propName];
-      }
-    });
 
     return (
       <Balloon
         triggerType="click"
         closable={false}
-        {...ballonProps}
+        {...others}
         className={`ice-ballon-confirm${className ? ` ${className}` : ''}`}
         trigger={children}
         ref={this.confirmRef}
