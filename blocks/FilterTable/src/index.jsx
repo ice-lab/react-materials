@@ -77,6 +77,7 @@ export default function FilterTable() {
 
   return (
     <div className={styles.tableContainer}>
+      <h4 className={styles.title}>附带搜索条件的表格</h4>
       <div>
         <Form
           onSubmit={onSearch}
