@@ -2,8 +2,8 @@ import { useReducer } from 'react';
 import axios from 'axios';
 import { Message } from '@alifd/next';
 
-// Set baseUrl when debugging production url in dev mode
-// axios.defaults.baseUrl = '//xxxx.taobao.com';
+// Set baseURL when debugging production url in dev mode
+// axios.defaults.baseURL = '//xxxx.taobao.com';
 
 /**
  * Method to make ajax request
