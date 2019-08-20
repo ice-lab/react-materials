@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Message } from '@alifd/next';
 
 // Set baseUrl when debugging production url in dev mode
-// axios.baseUrl = '//xxxx.taobao.com';
+// axios.defaults.baseUrl = '//xxxx.taobao.com';
 
 /**
  * Method to make ajax request
