@@ -26,7 +26,6 @@
     "registry": "http://registry.npmjs.org"
   },
   "dependencies": {
-    "@icedesign/container": "^1.x",
     "@alifd/next": "^1.x"
   },
   "devDependencies": {

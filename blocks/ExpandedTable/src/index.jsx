@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
-import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -40,7 +39,7 @@ export default function ExpandedTable() {
   };
 
   return (
-    <IceContainer>
+    <div>
       <h4 className={styles.title}>可展开表格</h4>
       <Table
         hasBorder={false}
@@ -63,6 +62,6 @@ export default function ExpandedTable() {
         total={total}
         onChange={handlePaginationChange}
       />
-    </IceContainer>
+    </div>
   );
 }
