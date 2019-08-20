@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
-import IceContainer from '@icedesign/container';
 import styles from  './index.module.scss';
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -132,7 +131,7 @@ export default function TreeTable() {
   };
 
   return (
-    <IceContainer>
+    <div>
       <h4 className={styles.title}>Tree 类型的表格</h4>
       <Table
         dataSource={dataSource}
@@ -153,6 +152,6 @@ export default function TreeTable() {
         total={total}
         onChange={handleChange}
       />
-    </IceContainer>
+    </div>
   );
 }
