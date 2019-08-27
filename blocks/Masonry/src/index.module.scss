@@ -1,0 +1,32 @@
+.container {
+  background: rgb(245, 245, 245) !important;
+}
+
+.title {
+  padding-bottom: 15px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.itemBody {
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.itemImg {
+  max-width: 100%;
+}
+
+.itemTitle {
+  margin: 0;
+  padding: 10px 0 0;
+  color: #444;
+  font-size: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
