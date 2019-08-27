@@ -35,9 +35,7 @@
   "blockConfig": {
     "name": "scroll-list",
     "title": "滚动加载列表",
-    "categories": [
-      "列表"
-    ],
+    "category": "列表",
     "screenshot": "https://unpkg.com/@ice/block-scroll-list/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-scroll-list/build/index.html",
