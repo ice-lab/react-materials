@@ -10,7 +10,7 @@ export default function NotPermission() {
           <img
             src={require('./images/TB1Gy4Yjv6H8KJjy0FjXXaXepXa-780-780.png')}
             className={styles.imgException}
-            alt="prmission"
+            alt="permission"
           />
           <div style={styles.prompt}>
             <h3 className={styles.title}>
