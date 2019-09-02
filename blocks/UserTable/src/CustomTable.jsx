@@ -58,10 +58,10 @@ export default function CustomTable() {
           <Button type="normal" className={styles.button}>
             删除
           </Button>
-          <Button type="normal" className={`${styles.button} ${styles.normaiBtn}`}>
+          <Button type="normal" className={`${styles.button} ${styles.normalBtn}`}>
             导入
           </Button>
-          <Button type="normal" className={`${styles.button} ${styles.normaiBtn}`}>
+          <Button type="normal" className={`${styles.button} ${styles.normalBtn}`}>
             下载
           </Button>
         </Col>
