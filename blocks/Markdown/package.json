@@ -1,0 +1,50 @@
+{
+  "name": "@ice/block-markdown",
+  "version": "0.1.0",
+  "description": "markdown 文档区块展示",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/Markdown"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.16.7",
+    "prop-types": "^15.5.8",
+    "react-markdown": "^3.3.2"
+  },
+  "blockConfig": {
+    "name": "markdown",
+    "title": "markdown 文档",
+    "category": "Markdown",
+    "screenshot": "https://unpkg.com/@ice/block-markdown/screenshot.png"
+  },
+  "homepage": "https://unpkg.com/@ice/block-markdown/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  }
+}
