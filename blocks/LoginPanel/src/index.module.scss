@@ -1,0 +1,97 @@
+.container {
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url("./images/bg.jpg");
+  background-size: cover;
+}
+
+.description {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+}
+.containerInfo {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image:url("./images/bg.jpg");
+  background-size: cover;
+}
+.contentInfo {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titleInfo {
+  margin-top: 60px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fff;
+}
+
+.form {
+  :global .ice-field {
+    margin-bottom: 20px;
+    .ice-field-control {
+      width: 300px;
+    }
+  }
+  :global .ice-field-label {
+    display: none;
+  }
+  :global .next-input.next-large {
+    border: none;
+    border-bottom: 1px solid #C4C6CF;
+    border-radius: 0;
+  }
+  :global .ice-field-error {
+    padding-left: 16px;
+  }
+}
+
+.loginTitle {
+  color: #444;
+  text-align: center;
+}
+
+.submitBtnWrapper {
+  text-align: center;
+}
+
+.submitBtn {
+  width: 180px;
+  height: 48px !important;
+  margin-top: 40px;
+  font-size: 16px !important;
+  border-radius: 50px !important;
+}
