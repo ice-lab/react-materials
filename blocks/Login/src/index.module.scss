@@ -1,0 +1,97 @@
+.container {
+  position: relative;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url("./images/bg.jpg");
+}
+
+.containerLogin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.link {
+  margin: 0 5px;
+  color: #999;
+  font-size: 12px;
+}
+
+.logoImg {
+  width: 102px;
+}
+
+.title {
+  margin-top: 60px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.description {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.button {
+  width: 180px;
+  height: 48px;
+  margin-top: 40px;
+  color: #fff;
+  line-height: 48px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 50px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fff;
+}
+
+.form {
+  :global .ice-field {
+    margin-bottom: 20px;
+    .ice-field-control {
+      width: 300px;
+    }
+  }
+  :global .ice-field-label {
+    display: none;
+  }
+  :global .next-input.next-large {
+    border: none;
+    border-bottom: 1px solid #C4C6CF;
+    border-radius: 0;
+  }
+  :global .ice-field-error {
+    padding-left: 16px;
+  }
+}
+
+.loginTitle {
+  color: #444;
+  text-align: center;
+}
+
+.submitBtnWrapper {
+  text-align: center;
+}
+
+.submitBtn {
+  width: 180px;
+  height: 48px !important;
+  margin-top: 40px;
+  font-size: 16px !important;
+  border-radius: 50px !important;
+}
