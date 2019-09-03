@@ -1,0 +1,49 @@
+{
+  "name": "@ice/block-double-axes-chart",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/DoubleAxesChart"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@antv/data-set": "^0.8.7",
+    "bizcharts": "^3.1.5",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "double-axes-chart",
+    "screenshot": "https://unpkg.com/@ice/block-double-axes-chart/screenshot.png",
+    "title": "双轴图标",
+    "category": "图表"
+  },
+  "homepage": "https://unpkg.com/@ice/block-double-axes-chart/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

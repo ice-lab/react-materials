@@ -1,0 +1,48 @@
+{
+  "name": "@ice/block-multiple-line-chart",
+  "version": "0.1.0",
+  "description": "组合图",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/MultipleLineChart"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "echarts": "^4.0.4",
+    "echarts-for-react": "^2.0.8"
+  },
+  "devDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "multiple-line-chart",
+    "screenshot": "https://unpkg.com/@ice/block-multiple-line-chart/screenshot.png",
+    "title": "组合曲线图",
+    "category": "图表"
+  },
+  "homepage": "https://unpkg.com/@ice/block-multiple-line-chart/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}
