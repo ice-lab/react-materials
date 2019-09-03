@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/panel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "面板组件",
   "main": "lib/index.js",
   "files": [
