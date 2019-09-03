@@ -1,0 +1,47 @@
+{
+  "name": "@ice/block-braft-editor",
+  "version": "0.1.0",
+  "description": "基于 draft-js 开发的美观易用的 React 富文本编辑器",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/BraftEditor"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "braft-editor": "^2.3.7",
+    "prop-types": "^15.5.8",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "blockConfig": {
+    "name": "braft-editor",
+    "title": "Braft 富文本编辑器",
+    "category": "编辑器",
+    "screenshot": "https://unpkg.com/@ice/block-braft-editor/screenshot.png"
+  },
+  "homepage": "https://unpkg.com/@ice/block-braft-editor/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}
