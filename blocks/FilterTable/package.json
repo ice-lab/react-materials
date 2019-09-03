@@ -1,0 +1,51 @@
+{
+  "name": "@ice/block-filter-table",
+  "version": "0.1.0",
+  "description": "筛选和表格组合",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/FilterTable"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@ice/form": "^0.1.7"
+  },
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.x"
+  },
+  "blockConfig": {
+    "name": "filter-table",
+    "title": "筛选表格",
+    "categories": [
+      "精品"
+    ],
+    "screenshot": "https://unpkg.com/@ice/block-filter-table/screenshot.png"
+  },
+  "homepage": "https://unpkg.com/@ice/block-filter-table/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}
