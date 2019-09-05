@@ -42,18 +42,17 @@ const Auth = ({ children, authorities = [], hidden }) => {
     if (hidden) {
       // 无权限则不显示内容
       return null;
-    } else {
-      // 无权限则显示指定 UI，也可以跳转到统一的无权限页面
-      return (
-        <Exception
-          statusCode="403"
-          description={<div>
-            <p>抱歉，当前用户为 {authority || 'Guest'}, 没有权限访问该页面</p>
-            <p>您可以<Link to="/user/login">登录 Admin 用户</Link>再查看该页面</p>
-          </div>}
-        />
-      );
     }
+    // 无权限则显示指定 UI，也可以跳转到统一的无权限页面
+    return (
+      <Exception
+        statusCode="403"
+        description={<div>
+          <p>抱歉，当前用户为 {authority || 'Guest'}, 没有权限访问该页面</p>
+          <p>您可以<Link to="/user/login">登录 Admin 用户</Link>再查看该页面</p>
+        </div>}
+      />
+    );
   }
 };
 

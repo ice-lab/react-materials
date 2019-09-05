@@ -98,7 +98,10 @@ function getNavMenuItems(menusData) {
 
 const Aside = withRouter((props) => {
   const expandAside = stores.useStore('expandAside');
-  const [ menuConfig, useMenuConfig ] = useState(asideMenuConfig);
+  const [
+    menuConfig,
+    // useMenuConfig,
+  ] = useState(asideMenuConfig);
   const { collapse, toggle } = expandAside;
 
   const { location, isMobile } = props;
