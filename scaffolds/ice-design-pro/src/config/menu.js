@@ -16,6 +16,7 @@ const headerMenuConfig = [
     external: true,
     newWindow: true,
     icon: 'bangzhu',
+    // authorities: ['admin'], // 配置该属性进行权限校验，如不匹配隐藏菜单
   },
 ];
 
@@ -35,6 +36,7 @@ const asideMenuConfig = [
     name: 'chart',
     path: '/chart',
     icon: 'chart',
+    // authorities: ['admin'],
     children: [
       {
         name: 'basic',
@@ -54,12 +56,11 @@ const asideMenuConfig = [
       {
         name: 'basic',
         path: '/table/basic',
-        // authority: 'admin',
+        // authorities: ['admin'],
       },
       {
         name: 'general',
         path: '/table/general',
-        // authority: 'user',
       },
     ],
   },

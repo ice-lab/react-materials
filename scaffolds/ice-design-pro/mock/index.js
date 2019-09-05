@@ -43,4 +43,37 @@ module.exports = {
       status: 'SUCCESS',
     });
   },
+
+  'GET /api/menu': {
+    status: 'SUCCESS',
+    list: [
+      {
+        name: 'Dashboard',
+        path: '/dashboard',
+        icon: 'home2',
+        children: [
+          {
+            name: 'monitor',
+            path: '/dashboard/monitor',
+          },
+        ],
+      },
+      {
+        name: 'chart',
+        path: '/chart',
+        icon: 'chart',
+        // authorities: ['admin'],
+        children: [
+          {
+            name: 'basic',
+            path: '/chart/basic',
+          },
+          {
+            name: 'general',
+            path: '/chart/general',
+          },
+        ],
+      },
+    ],
+  },
 };

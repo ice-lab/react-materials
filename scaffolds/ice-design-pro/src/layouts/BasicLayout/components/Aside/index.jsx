@@ -4,7 +4,10 @@ import { Link, withRouter } from 'react-router-dom';
 import { Nav } from '@alifd/next';
 import { FormattedMessage } from 'react-intl';
 import stores from '@/stores/index';
+import Auth from '@/components/Auth';
 import { asideMenuConfig } from '@/config/menu.js';
+// import { request } from '@/utils/request';
+// import { menu } from '@/config/dataSource';
 import styles from './index.module.scss';
 
 const SubNav = Nav.SubNav;
@@ -25,7 +28,7 @@ function getSubMenuOrItem(item, index) {
   if (item.children && item.children.some(child => child.name)) {
     const childrenItems = getNavMenuItems(item.children);
     if (childrenItems && childrenItems.length > 0) {
-      return (
+      const subNav = (
         <SubNav
           key={index}
           icon={item.icon ? <FoundationSymbol type={item.icon} size="small" /> : null}
@@ -38,16 +41,44 @@ function getSubMenuOrItem(item, index) {
           {childrenItems}
         </SubNav>
       );
+
+      if (item.authorities) {
+        return (
+          <Auth
+            authorities={item.authorities}
+            hidden
+            key={item}
+          >
+            {subNav}
+          </Auth>
+        );
+      } else {
+        return subNav;
+      }
     }
     return null;
   }
-  return (
+  const navItem = (
     <NavItem key={item.path}>
       <Link to={item.path}>
         <FormattedMessage id={getLocaleKey(item)} />
       </Link>
     </NavItem>
   );
+
+  if (item.authorities) {
+    return (
+      <Auth
+        authorities={item.authorities}
+        hidden
+        key={item}
+      >
+        {navItem}
+      </Auth>
+    );
+  } else {
+    return navItem;
+  }
 }
 
 /**
@@ -64,35 +95,48 @@ function getNavMenuItems(menusData) {
       return getSubMenuOrItem(item, index);
     });
 }
-/**
- * 获取默认展开菜单项
- */
-function getDefaultOpenKeys(location = {}) {
-  const { pathname } = location;
-  const menus = getNavMenuItems(asideMenuConfig);
-
-  let openKeys = [];
-  if (Array.isArray(menus)) {
-    asideMenuConfig.forEach((item, index) => {
-      if (pathname.startsWith(item.path)) {
-        openKeys = [`${index}`];
-      }
-    });
-  }
-
-  return openKeys;
-}
 
 const Aside = withRouter((props) => {
   const expandAside = stores.useStore('expandAside');
+  const [ menuConfig, useMenuConfig ] = useState(asideMenuConfig);
   const { collapse, toggle } = expandAside;
 
   const { location, isMobile } = props;
   const { pathname } = location;
+
+  /**
+   * 获取默认展开菜单项
+   */
+  function getDefaultOpenKeys(location = {}) {
+    const { pathname } = location;
+    const menus = getNavMenuItems(menuConfig);
+
+    let openKeys = [];
+    if (Array.isArray(menus)) {
+      menuConfig.forEach((item, index) => {
+        if (pathname.startsWith(item.path)) {
+          openKeys = [`${index}`];
+        }
+      });
+    }
+
+    return openKeys;
+  }
   const defaultOpenKeys = getDefaultOpenKeys(location);
   const [openKeys, setOpenKeys] = useState(collapse ? [] : defaultOpenKeys);
   const [mode, setMode] = useState('inline');
   const cacheOpenKeys = useRef(openKeys);
+
+  // // 异步加载菜单数据示例
+  // async function fetchMenuData() {
+  //   const { data } = await request(menu);
+  //   useMenuConfig(data.list);
+  // }
+  //
+  // useEffect(() => {
+  //   fetchMenuData();
+  // }, []);
+
 
   useEffect(() => {
 
@@ -134,7 +178,7 @@ const Aside = withRouter((props) => {
         defaultSelectedKeys={[pathname]}
         onOpen={onOpenChange}
       >
-        {getNavMenuItems(asideMenuConfig)}
+        {getNavMenuItems(menuConfig)}
       </Nav>
     </div>
   );

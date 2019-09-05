@@ -7,6 +7,7 @@ import { FormattedMessage, injectIntl } from 'react-intl';
 import { headerMenuConfig } from '@/config/menu.js';
 import stores from '@/stores/index';
 import SelectLang from '@/components/SelectLang';
+import Auth from '@/components/Auth';
 import { useRequest } from '@/utils/request';
 import { userLogout } from '@/config/dataSource';
 import Logo from '../Logo'
@@ -57,7 +58,7 @@ function Header(props) {
       </div>
       {/* Header 菜单项 begin */}
       <div className={styles.headerRight}>
-      
+
         {headerMenuConfig && headerMenuConfig.length > 0 ? (
           <div className={styles.iceDesignLayoutHeaderMenu}>
             <Nav direction="hoz" type="secondary" selectedKeys={[]}>
@@ -72,7 +73,7 @@ function Header(props) {
                   linkProps.to = nav.path;
                 }
                 const linkName = formatMessage({ id: getLocaleKey(nav) });
-                return (
+                const item = (
                   <Nav.Item key={idx}>
                     {linkProps.to ? (
                       <Link {...linkProps}>
@@ -91,6 +92,20 @@ function Header(props) {
                     )}
                   </Nav.Item>
                 );
+
+                if (nav.authorities) {
+                  return (
+                    <Auth
+                      authorities={nav.authorities}
+                      hidden
+                      key={idx}
+                    >
+                      {item}
+                    </Auth>
+                  );
+                } else {
+                  return item;
+                }
               })}
             </Nav>
           </div>
