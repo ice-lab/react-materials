@@ -74,11 +74,6 @@ export function useRequest(options) {
           type: 'success',
           response,
         });
-        return {
-          response,
-          error: null,
-          loading: false,
-        };
       }
     } catch (error) {
       showError(error.message);
@@ -86,7 +81,6 @@ export function useRequest(options) {
         type: 'error',
         error,
       });
-      throw error;
     }
   }
 
