@@ -1,7 +1,7 @@
 {
   "name": "@ice/block-double-axes-chart",
   "version": "0.1.0",
-  "description": "",
+  "description": "双轴图标",
   "files": [
     "src/",
     "build/",

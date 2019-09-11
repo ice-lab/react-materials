@@ -35,9 +35,7 @@
   "blockConfig": {
     "name": "tree-table",
     "title": "树状表格",
-    "categories": [
-      "精品"
-    ],
+    "category": "表格",
     "screenshot": "https://unpkg.com/@ice/block-tree-table/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-tree-table/build/index.html",

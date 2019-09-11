@@ -35,9 +35,7 @@
   "blockConfig": {
     "name": "table",
     "title": "基础表格",
-    "categories": [
-      "精品"
-    ],
+    "category": "表格",
     "screenshot": "https://unpkg.com/@ice/block-table/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-table/build/index.html",

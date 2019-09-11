@@ -1,7 +1,7 @@
 {
   "name": "@ice/block-form-column",
   "version": "0.1.0",
-  "description": "",
+  "description": "分栏表单",
   "files": [
     "src/",
     "build/",
@@ -37,9 +37,7 @@
     "name": "form-column",
     "screenshot": "https://unpkg.com/@ice/block-form-column/screenshot.png",
     "title": "分栏表单",
-    "categories": [
-      "精品"
-    ]
+    "category": "表单"
   },
   "homepage": "https://unpkg.com/@ice/block-form-column/build/index.html",
   "scripts": {

@@ -34,9 +34,7 @@
     "name": "form",
     "screenshot": "https://unpkg.com/@ice/block-form/screenshot.png",
     "title": "创建活动表单",
-    "categories": [
-      "精品"
-    ]
+    "category": "表单"
   },
   "publishConfig": {
     "access": "public",

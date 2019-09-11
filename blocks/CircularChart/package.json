@@ -1,7 +1,7 @@
 {
   "name": "@ice/block-circular-chart",
   "version": "0.1.0",
-  "description": "",
+  "description": "环形图",
   "files": [
     "src/",
     "build/",

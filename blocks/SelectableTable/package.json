@@ -35,9 +35,7 @@
     "name": "selectable-table",
     "screenshot": "https://unpkg.com/@ice/block-selectable-table/screenshot.png",
     "title": "可批量操作的表格",
-    "categories": [
-      "精品"
-    ]
+    "category": "表格"
   },
   "publishConfig": {
     "access": "public",

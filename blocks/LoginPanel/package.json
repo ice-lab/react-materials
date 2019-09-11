@@ -36,9 +36,7 @@
   "blockConfig": {
     "name": "login-panel",
     "title": "登录",
-    "categories": [
-      "精品"
-    ],
+    "category": "表单",
     "screenshot": "https://unpkg.com/@ice/block-login-panel/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-login-panel/build/index.html",

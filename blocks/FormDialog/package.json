@@ -32,9 +32,7 @@
   "blockConfig": {
     "name": "form-dialog",
     "title": "简单表单弹窗",
-    "categories": [
-      "精品"
-    ],
+    "category": "表单",
     "screenshot": "https://unpkg.com/@ice/block-form-dialog/screenshot.png"
   },
   "publishConfig": {

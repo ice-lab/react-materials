@@ -1,7 +1,7 @@
 {
   "name": "@ice/block-form-group",
   "version": "0.1.0",
-  "description": "",
+  "description": "分组表单",
   "files": [
     "src/",
     "build/",
@@ -38,9 +38,7 @@
     "name": "form-group",
     "screenshot": "https://unpkg.com/@ice/block-form-group/screenshot.png",
     "title": "分组显示的表单",
-    "categories": [
-      "精品"
-    ]
+    "category": "表单"
   },
   "homepage": "https://unpkg.com/@ice/block-form-group/build/index.html",
   "scripts": {

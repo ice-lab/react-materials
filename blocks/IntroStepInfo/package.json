@@ -1,7 +1,7 @@
 {
   "name": "@ice/block-intro-step-info",
   "version": "0.1.0",
-  "description": "",
+  "description": "简介和步骤条信息组合",
   "files": [
     "src/",
     "build/",

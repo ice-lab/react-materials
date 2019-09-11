@@ -40,9 +40,7 @@
     "name": "tab-table",
     "screenshot": "https://unpkg.com/@ice/block-tab-table/screenshot.png",
     "title": "标签页表格组合",
-    "categories": [
-      "精品"
-    ]
+    "category": "表格"
   },
   "homepage": "https://unpkg.com/@ice/block-tab-table/build/index.html",
   "scripts": {

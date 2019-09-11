@@ -33,9 +33,7 @@
     "name": "form-step",
     "screenshot": "https://unpkg.com/@ice/block-form-step/screenshot.png",
     "title": "简单流畅型表单",
-    "categories": [
-      "表单"
-    ]
+    "category": "表单"
   },
   "publishConfig": {
     "access": "public",

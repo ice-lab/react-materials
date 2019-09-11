@@ -35,9 +35,7 @@
   "blockConfig": {
     "name": "expanded-table",
     "title": "可展开表格",
-    "categories": [
-      "精品"
-    ],
+    "category": "表格",
     "screenshot": "https://unpkg.com/@ice/block-expanded-table/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-expanded-table/build/index.html",

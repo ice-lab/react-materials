@@ -36,9 +36,7 @@
   "blockConfig": {
     "name": "filter-table",
     "title": "筛选表格",
-    "categories": [
-      "精品"
-    ],
+    "category": "表格",
     "screenshot": "https://unpkg.com/@ice/block-filter-table/screenshot.png"
   },
   "homepage": "https://unpkg.com/@ice/block-filter-table/build/index.html",
