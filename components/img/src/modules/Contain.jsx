@@ -35,7 +35,8 @@ export default class Contain extends Component {
       onError,
       shape,
       enableAliCDNSuffix,
-      ...others,
+      errorImgSrc,
+      ...others
     } = this.props;
 
     const styles = {
