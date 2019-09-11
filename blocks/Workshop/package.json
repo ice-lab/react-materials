@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "适用于全屏的信息展示",
   "homepage": "https://unpkg.com/@ice/block-workshop/build/index.html",
-  "author": "",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "files": [
     "src/",
     "build/",
