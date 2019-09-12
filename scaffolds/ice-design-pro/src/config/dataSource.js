@@ -18,3 +18,8 @@ export const userRegister = {
   url: '/api/register',
   method: 'POST',
 };
+
+export const menu = {
+  url: '/api/menu',
+  method: 'GET',
+};

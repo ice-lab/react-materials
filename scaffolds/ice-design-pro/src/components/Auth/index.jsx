@@ -5,8 +5,9 @@ import { Link } from 'react-router-dom';
 import Exception from '@/components/Exception';
 
 /**
- * 权限组件，可控制页面或者组件
- * @param {authorities} 权限列表
+ * 权限组件，可根据权限控制页面或者组件的显示隐藏或者显示无权限页
+ * @params {array} authorities 允许哪些角色使用
+ * @params {boolean} hidden 无权限时是否直接隐藏
  *
  * 控制页面例子：
  *    import React from 'react';
@@ -28,12 +29,21 @@ import Exception from '@/components/Exception';
  *       <Button>auth</Button>
  *     </Auth>
  */
-const Auth = ({ children, authorities = [] }) => {
+const Auth = ({ children, authorities = [], hidden }) => {
   // 服务端将 authority 保存在 cookie 中，前端只负责取 cookie
   const { authority } = cookie.parse(document.cookie);
+  const hasAuth = authorities.indexOf(authority) !== -1;
 
-  if (authorities.indexOf(authority) === -1) {
-    // 也可以跳转到统一的无权限页面，具体看业务需求
+  if (hasAuth) {
+    // 有权限直接渲染内容
+    return children;
+  } else {
+    // 无权限
+    if (hidden) {
+      // 无权限则不显示内容
+      return null;
+    }
+    // 无权限则显示指定 UI，也可以跳转到统一的无权限页面
     return (
       <Exception
         statusCode="403"
@@ -44,8 +54,6 @@ const Auth = ({ children, authorities = [] }) => {
       />
     );
   }
-
-  return children;
 };
 
 const withAuth = (params) => (WrapperedComponent) => {
