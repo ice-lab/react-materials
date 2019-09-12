@@ -22,6 +22,25 @@ function getLocaleKey(item) {
 }
 
 /**
+ * 根据权限决定是否渲染某个表单项
+ */
+function renderAuthItem(item, authorities, key) {
+  if (authorities) {
+    return (
+      <Auth
+        authorities={authorities}
+        hidden
+        key={key}
+      >
+        {item}
+      </Auth>
+    );
+  } else {
+    return item;
+  }
+}
+
+/**
  * 二级导航
  */
 function getSubMenuOrItem(item, index) {
@@ -42,19 +61,7 @@ function getSubMenuOrItem(item, index) {
         </SubNav>
       );
 
-      if (item.authorities) {
-        return (
-          <Auth
-            authorities={item.authorities}
-            hidden
-            key={item}
-          >
-            {subNav}
-          </Auth>
-        );
-      } else {
-        return subNav;
-      }
+      return renderAuthItem(subNav, item.authorities, index);
     }
     return null;
   }
@@ -66,19 +73,7 @@ function getSubMenuOrItem(item, index) {
     </NavItem>
   );
 
-  if (item.authorities) {
-    return (
-      <Auth
-        authorities={item.authorities}
-        hidden
-        key={item}
-      >
-        {navItem}
-      </Auth>
-    );
-  } else {
-    return navItem;
-  }
+  return renderAuthItem(navItem, item.authorities, index);
 }
 
 /**
