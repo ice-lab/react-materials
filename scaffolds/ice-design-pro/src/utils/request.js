@@ -49,10 +49,6 @@ export function useRequest(options) {
   /**
    * Method to make request manually
    * @param {object} config - axios config to shallow merged with options before making request
-   * @return {object}
-   *   @param {object} response - response of axios (https://github.com/axios/axios#response-schema)
-   *   @param {object} error - HTTP or use defined error
-   *   @param {boolean} loading - loading status of the request
    */
   async function request(config) {
     try {
