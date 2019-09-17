@@ -87,6 +87,7 @@ export default class Cover extends Component {
       shape,
       enableAliCDNSuffix,
       errorImgSrc,
+      type,
       ...others
     } = this.props;
 
