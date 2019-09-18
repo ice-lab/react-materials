@@ -13,10 +13,6 @@
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.component.config.js",
     "prepublishOnly": "npm run build"
   },
-  "author": {
-    "name": "ICE Team",
-    "email": "ice-admin@alibaba-inc.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/components/img"
@@ -38,8 +34,7 @@
     "react": "^16.5.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "access": "public"
   },
   "componentConfig": {
     "name": "img",
