@@ -25,20 +25,15 @@ function getLocaleKey(item) {
  * 根据权限决定是否渲染某个表单项
  * @param {object} item - 菜单项组件
  * @param {array} authorities - 菜单项允许权限数组
- * @param {string} key - 当前菜单项的 key
  * @return {object} 渲染的菜单项
  */
-function renderAuthItem(item, authorities, key) {
+function renderAuthItem(item, authorities) {
   if (authorities) {
-    return (
-      <Auth
-        authorities={authorities}
-        hidden
-        key={key}
-      >
-        {item}
-      </Auth>
-    );
+    return Auth({
+      children: item,
+      authorities,
+      hidden: true,
+    });
   } else {
     return item;
   }
@@ -65,7 +60,7 @@ function getSubMenuOrItem(item, index) {
         </SubNav>
       );
 
-      return renderAuthItem(subNav, item.authorities, index);
+      return renderAuthItem(subNav, item.authorities);
     }
     return null;
   }
@@ -77,7 +72,7 @@ function getSubMenuOrItem(item, index) {
     </NavItem>
   );
 
-  return renderAuthItem(navItem, item.authorities, index);
+  return renderAuthItem(navItem, item.authorities);
 }
 
 /**
