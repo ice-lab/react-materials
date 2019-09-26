@@ -14,6 +14,24 @@ import Logo from '../Logo'
 
 import styles from './index.module.scss';
 
+/**
+ * 根据权限决定是否渲染某个表单项
+ * @param {object} item - 菜单项组件
+ * @param {array} authorities - 菜单项允许权限数组
+ * @return {object} 渲染的菜单项
+ */
+function renderAuthItem(item, authorities) {
+  if (authorities) {
+    return Auth({
+      children: item,
+      authorities,
+      hidden: true,
+    });
+  } else {
+    return item;
+  }
+}
+
 function Header(props) {
   const { request } = useRequest(userLogout);
   const userProfile = stores.useStore('userProfile');
@@ -93,19 +111,7 @@ function Header(props) {
                   </Nav.Item>
                 );
 
-                if (nav.authorities) {
-                  return (
-                    <Auth
-                      authorities={nav.authorities}
-                      hidden
-                      key={idx}
-                    >
-                      {item}
-                    </Auth>
-                  );
-                } else {
-                  return item;
-                }
+                return renderAuthItem(item, nav.authorities);
               })}
             </Nav>
           </div>
