@@ -86,6 +86,9 @@ export default class Cover extends Component {
       onError,
       shape,
       enableAliCDNSuffix,
+      errorImgSrc,
+      type,
+      ...others
     } = this.props;
 
     const styles = {
@@ -104,7 +107,7 @@ export default class Cover extends Component {
     const cls = classnames('ice-img', shape, className);
 
     return (
-      <div className={cls} style={styles}>
+      <div className={cls} style={styles} {...others}>
         <img
           style={imgStyles}
           onError={onError}
