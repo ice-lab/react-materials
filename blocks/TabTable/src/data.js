@@ -8,7 +8,7 @@ const data = {
     },
     {
       title: 'JavaScriptCore',
-      author: '寒泉',
+      author: '思忠',
       status: '已发布',
       date: '2018-01-23',
     },
@@ -20,19 +20,19 @@ const data = {
     },
     {
       title: 'LevelDB 实现分析',
-      author: '胡帅',
+      author: '站稳',
       status: '已发布',
       date: '2017-07-05',
     },
     {
       title: 'Git Diff 解析器',
-      author: '栖邀',
+      author: '鲲尘',
       status: '已发布',
       date: '2017-05-18',
     },
     {
       title: '函数式编程',
-      author: '化辰',
+      author: '夜宸',
       status: '已发布',
       date: '2017-03-16',
     },

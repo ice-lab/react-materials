@@ -1,13 +1,16 @@
 {
-  "name": "@icedesign/wysiwyg-editor-block",
-  "version": "3.0.0",
+  "name": "@ice/block-wysiwyg-editor",
+  "version": "0.1.0",
   "description": "Wysiwyg 富文本编辑器，基于 ReactJS和 DraftJS 库构建的所见即所得编辑器",
-  "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
   "files": [
     "src/",
     "build/",
     "screenshot.png"
   ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/WysiwygEditor"
@@ -20,25 +23,23 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
   "dependencies": {
-    "@icedesign/container": "^1.x",
-    "draft-js": "^0.10.5",
-    "react-draft-wysiwyg": "^1.12.13",
     "@alifd/next": "^1.x",
-    "prop-types": "^15.5.8"
+    "draft-js": "^0.11.0",
+    "draftjs-to-html": "^0.8.4",
+    "html-to-draftjs": "^1.4.0",
+    "prop-types": "^15.5.8",
+    "react-draft-wysiwyg": "^1.13.2"
   },
   "blockConfig": {
     "name": "wysiwyg-editor",
     "title": "Wysiwyg 富文本编辑器",
-    "categories": [
-      "富文本编辑器"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/wysiwyg-editor-block/screenshot.png",
-    "version-0.x": "1.0.3"
+    "category": "编辑器",
+    "screenshot": "https://unpkg.com/@ice/block-wysiwyg-editor/screenshot.png"
   },
-  "homepage": "https://unpkg.com/@icedesign/wysiwyg-editor-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-wysiwyg-editor/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

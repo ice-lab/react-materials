@@ -1,44 +1,43 @@
 import React, { useState } from 'react';
 import { Button, Balloon } from '@alifd/next';
 import PropTypes from 'prop-types';
+import styles from '../index.module.scss';
 
 export default function DeleteBalloon(props) {
   const [visible, setVisible] = useState(false);
 
-  const handleHide = (visible, code) => {
+  function handleHide(code) {
     if (code === 1) {
       props.handleRemove();
     }
     setVisible(false);
-  };
+  }
 
-  const handleVisible = (visible) => {
-    setVisible(visible);
-  };
+  function handleVisible(visibleStatus) {
+    setVisible(visibleStatus);
+  }
 
   const visibleTrigger = (
-    <Button size="small" type="secondary" warning>
+    <Button type="secondary" warning>
       删除
     </Button>
   );
 
   const content = (
     <div>
-      <div style={styles.contentText}>确认删除？</div>
+      <div className={styles.contentText}>确认删除？</div>
       <Button
         id="confirmBtn"
-        size="small"
         type="normal"
         warning
         style={{ marginRight: '5px' }}
-        onClick={(visible) => handleHide(visible, 1)}
+        onClick={() => handleHide(1)}
       >
         确认
       </Button>
       <Button
         id="cancelBtn"
-        size="small"
-        onClick={(visible) => handleHide(visible, 0)}
+        onClick={() => handleHide(0)}
       >
         关闭
       </Button>
@@ -56,12 +55,6 @@ export default function DeleteBalloon(props) {
     </Balloon>
   );
 }
-
-const styles = {
-  contentText: {
-    padding: '5px 0 15px',
-  },
-};
 
 DeleteBalloon.propTypes = {
   handleRemove: PropTypes.func,

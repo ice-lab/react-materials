@@ -1,7 +1,7 @@
 {
-  "name": "@icedesign/chart-type-line-block",
-  "version": "3.0.0",
-  "description": "",
+  "name": "@ice/block-chart-type-line",
+  "version": "0.1.0",
+  "description": "折线图",
   "files": [
     "src/",
     "build/",
@@ -34,19 +34,15 @@
   },
   "blockConfig": {
     "name": "chart-type-line",
-    "screenshot": "https://unpkg.com/@icedesign/chart-type-line-block/screenshot.png",
-    "themePackage": "@icedesign/theme",
+    "screenshot": "https://unpkg.com/@ice/block-chart-type-line/screenshot.png",
     "title": "折线图",
-    "categories": [
-      "图表"
-    ],
-    "version-0.x": "0.1.10"
+    "category": "图表"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://unpkg.com/@icedesign/chart-type-line-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-chart-type-line/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

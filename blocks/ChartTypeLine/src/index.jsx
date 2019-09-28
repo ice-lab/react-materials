@@ -63,7 +63,11 @@ export default function Index() {
             size={4}
             shape="circle"
             color="city"
-            style={{ stroke: '#fff', lineWidth: 1 }}
+            style={{ 
+              stroke: '#fff', 
+              /* stylelint-disable-next-line */
+              lineWidth: 1,
+            }}
           />
         </Chart>
       </IceContainer>

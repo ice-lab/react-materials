@@ -10,10 +10,10 @@ export default function Index() {
   return (
     <div className={styles.container}>
       <Row wrap className={styles.row}>
-        <Col l="16" className={styles.col}>
+        <Col l="16">
           <LoginIntro />
         </Col>
-        <Col l="8" className={styles.col}>
+        <Col l="8">
           <div className={styles.content}>
             <LoginForm />
           </div>

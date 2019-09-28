@@ -4,4 +4,4 @@
 
 适用于全屏的信息展示
 
-![截图](https://unpkg.com/@icedesign/workshop-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-workshop/screenshot.png)

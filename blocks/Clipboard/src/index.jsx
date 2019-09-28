@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import IceContainer from '@icedesign/container';
 import { Grid, Button, Input, Message } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -9,9 +8,8 @@ const { Row, Col } = Grid;
 export default function Index() {
   const [value, setValue] = useState('Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.');
 
-  const handleChange = (value) => {
-    console.log(value);
-    setValue(value);
+  const handleChange = (newValue) => {
+    setValue(newValue);
   };
 
   const handleCopy = (text) => {
@@ -22,33 +20,29 @@ export default function Index() {
   };
 
   return (
-    <IceContainer>
-      <Row wrap className={styles.row}>
-        <Col l="10">
-          <Input.TextArea
-            className={styles.inputWidth}
-            rows={8}
-            value={value}
-            onChange={handleChange}
-          />
-        </Col>
+    <Row wrap className={styles.row}>
+      <Col l="10">
+        <Input.TextArea
+          className={styles.inputWidth}
+          rows={8}
+          value={value}
+          onChange={handleChange}
+        />
+      </Col>
 
-        <Col l="4">
-          <CopyToClipboard text={value} onCopy={handleCopy}>
-            <Button type="primary">复制到剪贴板</Button>
-          </CopyToClipboard>
-        </Col>
-        <Col l="10">
-          <Input.TextArea
-            className={styles.inputWidth}
-            rows={8}
-            placeholder="通过右键粘贴功能到这里试试..."
-            onChange={handleChange}
-          />
-        </Col>
+      <Col l="4" className={styles.clipBtn}>
+        <CopyToClipboard text={value} onCopy={handleCopy}>
+          <Button type="primary">复制到剪贴板</Button>
+        </CopyToClipboard>
+      </Col>
 
-        <Col l="10" />
-      </Row>
-    </IceContainer>
+      <Col l="10">
+        <Input.TextArea
+          className={styles.inputWidth}
+          rows={8}
+          placeholder="通过右键粘贴功能到这里试试..."
+        />
+      </Col>
+    </Row>
   );
 }

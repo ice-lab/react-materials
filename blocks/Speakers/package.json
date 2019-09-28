@@ -1,9 +1,11 @@
 {
-  "name": "@icedesign/speakers-block",
-  "version": "3.0.0",
+  "name": "@ice/block-speakers",
+  "version": "0.1.0",
   "description": "适用于演讲人员列表的信息展示",
-  "homepage": "https://unpkg.com/@icedesign/speakers-block/build/index.html",
-  "author": "",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "files": [
     "src/",
     "build/",
@@ -11,7 +13,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -31,12 +33,10 @@
   "blockConfig": {
     "name": "speakers",
     "title": "演讲人员列表",
-    "categories": [
-      "信息展示"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/speakers-block/screenshot.png",
-    "version-0.x": "1.0.3"
+    "category": "信息展示",
+    "screenshot": "https://unpkg.com/@ice/block-speakers/screenshot.png"
   },
+  "homepage": "https://unpkg.com/@ice/block-speakers/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

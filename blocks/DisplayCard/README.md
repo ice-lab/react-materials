@@ -4,7 +4,7 @@
 
 展示型卡片
 
-![截图](https://unpkg.com/@icedesign/display-card-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-display-card/screenshot.png)
 
 
 

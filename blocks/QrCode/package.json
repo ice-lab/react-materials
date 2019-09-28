@@ -1,13 +1,16 @@
 {
-  "name": "@icedesign/qr-code-block",
-  "version": "3.0.0",
+  "name": "@ice/block-qrcode",
+  "version": "0.1.0",
   "description": "根据配置属性生成二维码",
-  "author": "",
   "files": [
     "src/",
     "build/",
     "screenshot.png"
   ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/QrCode"
@@ -20,7 +23,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
   "dependencies": {
     "@icedesign/container": "^1.x",
@@ -35,15 +38,12 @@
     "prop-types": "^15.5.8"
   },
   "blockConfig": {
-    "name": "qr-code",
+    "name": "qrcode",
     "title": "二维码",
-    "categories": [
-      "数据展示"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/qr-code-block/screenshot.png",
-    "version-0.x": "1.0.3"
+    "category": "其他",
+    "screenshot": "https://unpkg.com/@ice/block-qrcode/screenshot.png"
   },
-  "homepage": "https://unpkg.com/@icedesign/qr-code-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-qrcode/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

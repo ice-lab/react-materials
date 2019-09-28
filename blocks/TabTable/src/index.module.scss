@@ -1,13 +1,20 @@
-.contentText{
-  padding: 5px 0 15px;
+.title {
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
 }
-.delbtn{
-  margin-right: 5px
+
+.contentText {
+  padding: 5px 0 15px !important;
 }
-.editDialog{
+
+.editDialog {
   display: inline-block;
   margin-right: 5px;
 }
-.dialog{
-  width: 640px;
+
+.w {
+  width: 640px !important;
 }

@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Checkbox, Button } from '@alifd/next';
 import styles from './index.module.scss'
 
 export default function TermsInfo() {
+  const [checked, setChecked] = useState(false);
+  
+  const onChange = () => {
+    setChecked(!checked);
+  }
+  const confirm = () => {
+    console.log(checked);
+  }
+
   return (
     <IceContainer>
       <h1 className={styles.title}>淘宝达人合作协议</h1>
@@ -36,11 +45,11 @@ export default function TermsInfo() {
       </div>
 
       <p>
-        <Checkbox>我同意《淘宝达人合作协议》</Checkbox>
+        <Checkbox checked={checked} onChange={onChange}>我同意《淘宝达人合作协议》</Checkbox>
       </p>
 
       <div className={styles.btn}>
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" onClick={confirm}>
           确认开通
         </Button>
       </div>

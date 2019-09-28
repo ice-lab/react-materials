@@ -2,4 +2,4 @@
 
 简介：双轴图标
 
-![截图](https://unpkg.com/@icedesign/double-axes-chart-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-double-axes-chart/screenshot.png)

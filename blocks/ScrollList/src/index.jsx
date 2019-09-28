@@ -3,10 +3,9 @@ import { Loading } from '@alifd/next';
 import ReactList from 'react-list';
 import IceContainer from '@icedesign/container';
 import dataSource from './list-data';
-import avatar from './images/TB1L6tBXQyWBuNjy0FpXXassXXa-80-80.png';
 import styles from './index.module.scss';
 
-export default function ScrollList(props) {
+export default function ScrollList() {
   const listRef = useRef(null);
   const [list, setList] = useState([]);
   const [total, setTotal] = useState(20);
@@ -37,11 +36,15 @@ export default function ScrollList(props) {
   const renderItem = (index, key) => {
     return list[index] ? (
       <div key={key} className={styles.listItem}>
-        <img src={avatar} className={styles.avatar} alt="" />
+        <img src="https://img.alicdn.com/tfs/TB1SE6tdoD1gK0jSZFGXXbd3FXa-32-32.svg" className={styles.avatar} alt="" />
         <div className={styles.info}>
-          <div className={styles.infoItem}>{list[index].name}</div>
-          <div>This is the {index + 1} row</div>
+          <div className={styles.infoItem}>姓名：{list[index].name}</div>
+          <div className={styles.desc}>第 {index + 1} 行：个人介绍，描述文字</div>
         </div>
+        <a className={styles.detail} href="/">
+          <span>查看详情</span>
+          <img src="https://img.alicdn.com/tfs/TB13zDsdX67gK0jSZPfXXahhFXa-32-32.svg" alt="" />
+        </a>
       </div>
     ) : (
       ''
@@ -69,9 +72,10 @@ export default function ScrollList(props) {
       style={{ display: 'block' }}
       visible={isLoading}>
       <IceContainer
-        style={{ height: props.height, overflow: 'auto' }}
+        className={styles.container}
         onScroll={handleScroll}
       >
+        <h3 className={styles.title}>滚动加载列表</h3>
         <ReactList
           ref={listRef}
           itemRenderer={renderItem}
@@ -82,7 +86,3 @@ export default function ScrollList(props) {
     </Loading>
   );
 }
-
-ScrollList.defaultProps = {
-  height: '300px',
-};

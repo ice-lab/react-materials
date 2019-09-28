@@ -1,8 +1,11 @@
 {
-  "name": "@icedesign/masonry-block",
-  "version": "3.0.0",
+  "name": "@ice/block-masonry",
+  "version": "0.1.0",
   "description": "自适应的动态瀑布流效果",
-  "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "files": [
     "src/",
     "build/",
@@ -20,7 +23,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
   "dependencies": {
     "@icedesign/container": "^1.x",
@@ -33,13 +36,10 @@
   "blockConfig": {
     "name": "masonry",
     "title": "瀑布流",
-    "categories": [
-      "瀑布流"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/masonry-block/screenshot.png",
-    "version-0.x": "1.0.3"
+    "category": "瀑布流",
+    "screenshot": "https://unpkg.com/@ice/block-masonry/screenshot.png"
   },
-  "homepage": "https://unpkg.com/@icedesign/masonry-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-masonry/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

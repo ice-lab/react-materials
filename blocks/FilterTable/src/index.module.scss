@@ -1,38 +1,41 @@
-.filterTableOperation{
-  line-height: 28px;
-};
-.operationItem{
-  margin-right: 12px;
-  color: #5485F7;
-  text-decoration: none;
-};
-.titleWrapper{
+.title {
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+}
+.form {
+  margin: 20px 0;
+}
+.fieldWrap {
   display: flex;
-  flex-direction: row;
-};
-.title{
-  margin-left: 10px;
-  line-height: 20px;
-};
-.paginationWrapper{
-  padding-top: 26px;
-  text-align: right;
-};
-
-/* Filter.jsx */
-.filterCol{
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-};
-
-.filterTitle{
-  width: 68px;
-  margin-right: 12px;
-  font-size: 14px;
-  text-align: right;
-};
-
-.filterTool{
-  width: 200px;
-};
+}
+.field {
+  flex-basis: 30%;
+}
+.tableContainer{
+  padding-bottom: 10px;
+  background: #fff;
+}
+.pagination{
+  margin: 20px 0;
+  text-align: center;
+}
+.ballon{
+  line-height: 24px;
+}
+.ballondiv{
+  margin: 5px;
+}
+.circle{
+  display: inline-table;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;;
+  background: #28a745;
+  border-radius: 50px;
+}
+.stateText{
+  color: #28a745;
+}

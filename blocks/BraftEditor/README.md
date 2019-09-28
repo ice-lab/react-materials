@@ -4,4 +4,4 @@
 
 基于 draft-js 开发的美观易用的 React 富文本编辑器
 
-![截图](https://unpkg.com/@icedesign/braft-editor-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-braft-editor/screenshot.png)

@@ -1,14 +1,16 @@
 {
-  "name": "@icedesign/account-features-block",
-  "version": "3.0.0",
-  "description": "罗列账户功能列表",
-  "homepage": "https://unpkg.com/@icedesign/account-features-block/build/index.html",
-  "author": "noyobo <nongyoubao@alibaba-inc.com>",
+  "name": "@ice/block-account-features",
+  "version": "0.1.0",
+  "description": "罗列账户功能",
   "files": [
     "src/",
     "build/",
     "screenshot.png"
   ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/AccountFeatures"
@@ -31,12 +33,10 @@
   "blockConfig": {
     "name": "account-features",
     "title": "账户特性",
-    "categories": [
-      "列表"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/account-features-block/screenshot.png",
-    "version-0.x": "1.0.0"
+    "category": "信息展示",
+    "screenshot": "https://unpkg.com/@ice/block-account-features/screenshot.png"
   },
+  "homepage": "https://unpkg.com/@ice/block-account-features/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

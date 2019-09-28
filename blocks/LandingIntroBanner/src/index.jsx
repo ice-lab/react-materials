@@ -1,14 +1,12 @@
 import React from 'react';
 import { Button } from '@alifd/next';
-import './LandingIntroBanner.scss';
 import styles from './index.module.scss';
 // 寻找背景图片可以从 https://unsplash.com/ 寻找
 const backgroundImage = require('./images/TB1j9kWgvDH8KJjy1XcXXcpdXXa-1680-870.jpg');
 
 export default function Index() {
-  // 登录介绍页面默认撑满一屏高度
   return (
-    <div className="landing-intro-banner-wrapper">
+    <div>
       <div className={styles.landingIntro}>
         <div
           className={styles.landingIntroBackground}
@@ -18,7 +16,7 @@ export default function Index() {
         />
         <div
           // className="landing-intro-banner-content-wrapper"
-          className={`${styles.contentWrapper} landing-intro-banner-content-wrapper`}
+          className={styles.contentWrapper}
         >
           <div>
             <h2 className={styles.title}>

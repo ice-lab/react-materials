@@ -1,5 +1,4 @@
 import React from 'react';
-import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
 
 export default function DoubleAxesChart() {
@@ -30,81 +29,77 @@ export default function DoubleAxesChart() {
 
   let chartIns = null;
   return (
-    <div className="double-axes-chart">
-      <IceContainer title="双轴图标">
-        <Chart
-          height={400}
-          scale={scale}
-          forceFit
-          data={data}
-          padding={[10, 10, 40, 60]}
-          onGetG2Instance={(chart) => {
-            chartIns = chart;
-          }}
-        >
-          <Legend
-            custom
-            allowAllCanceled
-            items={[
-              {
-                value: 'waiting',
-                marker: { symbol: 'square', fill: '#3182bd', radius: 5 },
-              },
-              {
-                value: 'people',
-                marker: {
-                  symbol: 'hyphen',
-                  stroke: '#ffae6b',
-                  radius: 5,
-                  lineWidth: 3,
-                },
-              },
-            ]}
-            onClick={(ev) => {
-              const item = ev.item;
+    <Chart
+      height={400}
+      scale={scale}
+      forceFit
+      data={data}
+      padding={[10, 10, 40, 60]}
+      onGetG2Instance={(chart) => {
+        chartIns = chart;
+      }}
+    >
+      <Legend
+        custom
+        allowAllCanceled
+        items={[
+          {
+            value: 'waiting',
+            marker: { symbol: 'square', fill: '#3182bd', radius: 5 },
+          },
+          {
+            value: 'people',
+            marker: {
+              symbol: 'hyphen',
+              stroke: '#ffae6b',
+              radius: 5,
+              lineWidth: 3,
+            },
+          },
+        ]}
+        onClick={(ev) => {
+          const item = ev.item;
 
-              const value = item.value;
-              const checked = ev.checked;
-              const geoms = chartIns.getAllGeoms();
-              for (let i = 0; i < geoms.length; i += 1) {
-                const geom = geoms[i];
-                if (geom.getYScale().field === value) {
-                  if (checked) {
-                    geom.show();
-                  } else {
-                    geom.hide();
-                  }
-                }
+          const value = item.value;
+          const checked = ev.checked;
+          const geoms = chartIns.getAllGeoms();
+          for (let i = 0; i < geoms.length; i += 1) {
+            const geom = geoms[i];
+            if (geom.getYScale().field === value) {
+              if (checked) {
+                geom.show();
+              } else {
+                geom.hide();
               }
-            }}
-          />
-          <Axis
-            name="people"
-            grid={null}
-            label={{
-              textStyle: {
-                fill: '#fdae6b',
-              },
-            }}
-          />
-          <Tooltip />
-          <Geom type="interval" position="time*waiting" color="#3182bd" />
-          <Geom
-            type="line"
-            position="time*people"
-            color="#fdae6b"
-            size={3}
-            shape="smooth"
-          />
-          <Geom
-            type="point"
-            position="time*people"
-            color="#fdae6b"
-            size={3}
-            shape="circle"
-          />
-        </Chart>
-      </IceContainer>
-    </div>
+            }
+          }
+        }}
+      />
+      <Axis
+        name="people"
+        grid={null}
+        label={{
+          textStyle: {
+            fill: '#fdae6b',
+          },
+        }}
+      />
+      <Tooltip />
+      <Geom type="interval" position="time*waiting" color="#3182bd" />
+      <Geom
+        type="line"
+        position="time*people"
+        color="#fdae6b"
+        size={3}
+        shape="smooth"
+      />
+      <Geom
+        type="point"
+        position="time*people"
+        color="#fdae6b"
+        size={3}
+        shape="circle"
+      />
+    </Chart>
   );
 }

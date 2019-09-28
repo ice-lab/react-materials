@@ -1,34 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Button, Icon, Pagination } from '@alifd/next';
-import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
-const getMockData = () => {
-  const result = [];
-  for (let i = 0; i < 10; i += 1) {
-    result.push({
-      id: 100306660940 + i,
-      title: {
-        name: `Quotation for 1PCS Nano ${3 + i}.0 controller compatible`,
-      },
-      type: 'demo示例',
-      template: '参数字典列表',
-      status: '已发布',
-      publisher: '小马',
-      rate: '5',
-      time: 2000 + i,
-    });
-  }
-  return result;
-};
-
-// 注意：下载数据的功能，强烈推荐通过接口实现数据输出，并下载
-// 因为这样可以有下载鉴权和日志记录，包括当前能不能下载，以及谁下载了什么
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 export default function SelectableTable() {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  const [dataSource] = useState(getMockData());
-  const [isLoading] = useState(false);
+  const [current, setCurrent] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [pageSize] = useState(10);
+  const [total] = useState(100);
+  const [dataSource, setDataSource] = useState([]);
+
+  const clearSelectedKeys = () => {
+    setSelectedRowKeys([]);
+  };
+
+  const fetchData = async (crt) => {
+    setLoading(true);
+    await sleep(500);
+    const result = [];
+    for (let i = 0; i < 10; i += 1) {
+      result.push({
+        id: 100306660940 + i,
+        title: {
+          name: `Quotation for 1PCS Nano ${3 + i}.0 controller compatible`,
+        },
+        type: 'demo示例',
+        template: '参数字典列表',
+        status: '已发布',
+        publisher: `小马${crt}`,
+        rate: '5',
+        time: 2000 + i,
+      });
+    }
+    setLoading(false);
+    setDataSource(result);
+    clearSelectedKeys();
+  };
+
+  useEffect(() => {
+    fetchData(current);
+  }, [current]);
+
+  const handlePaginationChange = (current) => {
+    setCurrent(current);
+  };
 
   // 表格可以勾选配置项
   const rowSelection = {
@@ -49,66 +66,36 @@ export default function SelectableTable() {
     },
   };
 
-  const clearSelectedKeys = () => {
-    setSelectedRowKeys([]);
-  };
-
   const deleteSelectedKeys = () => {
+    // ajax 处理数据
     console.log('delete keys', selectedRowKeys);
-  };
-
-  const deleteItem = (record) => {
-    const { id } = record;
-    console.log('delete item', id);
-  };
-
-  const renderOperator = (value, index, record) => {
-    return (
-      <div>
-        <a>编辑</a>
-        <a
-          className={styles.removeBtn}
-          onClick={deleteItem.bind(this, record)}
-        >
-          删除
-        </a>
-      </div>
-    );
+    // refetch Data
+    setCurrent(1);
   };
 
   return (
-    <div className={`${styles.selectableTable} selectable-table`} >
-      <IceContainer className={styles.IceContainer}>
-        <div>
-          <Button size="small" className={styles.batchBtn}>
-            <Icon type="add" />增加
-          </Button>
-          <Button
-            onClick={deleteSelectedKeys}
-            size="small"
-            className={styles.batchBtn}
-            disabled={!selectedRowKeys.length}
-          >
-            <Icon type="ashbin" />删除
-          </Button>
-          <Button
-            onClick={clearSelectedKeys}
-            size="small"
-            className={styles.batchBtn}
-          >
-            <Icon type="close" />清空选中
-          </Button>
-        </div>
-        <div>
-          <a href="/" download>
-            <Icon size="small" type="download" /> 导出表格数据到 .csv 文件
-          </a>
-        </div>
-      </IceContainer>
-      <IceContainer>
+    <div>
+      <h4 className={styles.title}>可批量操作的表格</h4>
+      <div className={styles.btns}>
+        <Button
+          onClick={deleteSelectedKeys}
+          size="small"
+          className={styles.deleteBtn}
+          disabled={!selectedRowKeys.length}
+        >
+          <Icon type="ashbin" />删除
+        </Button>
+        <Button
+          onClick={clearSelectedKeys}
+          size="small"
+        >
+          <Icon type="close" />清空选中
+        </Button>
+      </div>
+      <div>
         <Table
           dataSource={dataSource}
-          loading={isLoading}
+          loading={loading}
           rowSelection={{
             ...rowSelection,
             selectedRowKeys,
@@ -122,17 +109,16 @@ export default function SelectableTable() {
           <Table.Column title="评分" dataIndex="rate" width={120} />
           <Table.Column title="操作者" dataIndex="publisher" width={120} />
           <Table.Column title="修改时间" dataIndex="time" width={120} />
-          <Table.Column
-            title="操作"
-            cell={renderOperator}
-            lock="right"
-            width={120}
-          />
         </Table>
         <div className={styles.pagination}>
-          <Pagination />
+          <Pagination 
+            current={current}
+            pageSize={pageSize}
+            total={total}
+            onChange={handlePaginationChange}
+          />
         </div>
-      </IceContainer>
+      </div>
     </div>
   );
 }

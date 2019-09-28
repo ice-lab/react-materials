@@ -4,4 +4,4 @@
 
 地图信息窗口
 
-![截图](https://unpkg.com/@icedesign/map-with-a-info-window/screenshot.png)
+![截图](https://unpkg.com/@ice/block-map-with-a-info-window/screenshot.png)

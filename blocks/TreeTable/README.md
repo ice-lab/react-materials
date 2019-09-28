@@ -4,4 +4,4 @@
 
 tree 和选择混合表格
 
-![截图](https://unpkg.com/@icedesign/tree-table-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-tree-table/screenshot.png)

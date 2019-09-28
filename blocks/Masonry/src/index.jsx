@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-const dataSource = [
+const data = [
   {
     img: require('./images/ice-design-analysis.png'),
     title: 'ice design analysis',
@@ -45,6 +45,8 @@ const dataSource = [
   },
 ];
 
+const dataSource = [...data, ...data, ...data]; // mock data
+
 export default function CustomMasonry() {
   const childElements = dataSource.map(function(item, index) {
     return (
@@ -63,6 +65,7 @@ export default function CustomMasonry() {
 
   return (
     <IceContainer className={styles.container}>
+      <h3 className={styles.title}>瀑布流示例</h3>
       <Row wrap>
         <Masonry options={masonryOptions} style={{ width: '100%' }}>
           {childElements}

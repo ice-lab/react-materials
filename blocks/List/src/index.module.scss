@@ -1,0 +1,28 @@
+.item {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.title {
+  margin: 0 0 10px;
+}
+.metaWrap {
+  display: flex;
+  padding-left: 15px;
+}
+.meta {
+  margin-right: 15px;
+  color: #999;
+  font-size: 13px;
+}
+.operWrap {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  display: flex;
+  cursor: pointer;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}

@@ -4,4 +4,4 @@
 
 地图位置标记
 
-![截图](https://unpkg.com/@icedesign/map-with-a-marker/screenshot.png)
+![截图](https://unpkg.com/@ice/block-map-with-a-marker/screenshot.png)

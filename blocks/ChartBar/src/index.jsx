@@ -40,22 +40,20 @@ export default function Index() {
   });
 
   return (
-    <div className="chart-bar">
-      <IceContainer>
-        <h4 className={styles.title}>柱状图</h4>
-        <Chart height={400} data={dv} forceFit>
-          <Axis name="月份" />
-          <Axis name="月均降雨量" />
-          <Legend />
-          <Tooltip crosshairs={{ type: 'y' }} />
-          <Geom
-            type="interval"
-            position="月份*月均降雨量"
-            color="name"
-            adjust={[{ type: 'dodge', marginRatio: 1 / 32 }]}
-          />
-        </Chart>
-      </IceContainer>
-    </div>
+    <IceContainer>
+      <h4 className={styles.title}>柱状图</h4>
+      <Chart height={400} data={dv} forceFit>
+        <Axis name="月份" />
+        <Axis name="月均降雨量" />
+        <Legend />
+        <Tooltip crosshairs={{ type: 'y' }} />
+        <Geom
+          type="interval"
+          position="月份*月均降雨量"
+          color="name"
+          adjust={[{ type: 'dodge', marginRatio: 1 / 32 }]}
+        />
+      </Chart>
+    </IceContainer>
   );
 }

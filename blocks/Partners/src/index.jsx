@@ -10,7 +10,6 @@ export default function Partners() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.bigTitle}>PARTNERS</div>
         <div className={styles.subTitle}>合作伙伴</div>
         <div className={styles.partnerBox}>
           {MOCK_DATA.map((item, index) => {

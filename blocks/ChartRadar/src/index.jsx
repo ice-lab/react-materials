@@ -43,7 +43,6 @@ export default function Index() {
           data={dv}
           padding={[20, 20, 95, 20]}
           scale={cols}
-          forceFit
         >
           <Coord type="polar" radius={0.8} />
           <Axis
@@ -81,6 +80,7 @@ export default function Index() {
             size={4}
             style={{
               stroke: '#fff',
+              /* stylelint-disable-next-line */ 
               lineWidth: 1,
               fillOpacity: 1,
             }}

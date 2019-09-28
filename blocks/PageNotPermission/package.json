@@ -1,0 +1,48 @@
+{
+  "name": "@ice/block-page-not-permission",
+  "version": "0.1.0",
+  "description": "无权限查看页面",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/PageNotPermission"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "dependencies": {
+    "@icedesign/container": "^1.x",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "page-not-permission",
+    "screenshot": "https://unpkg.com/@ice/block-page-not-permission/screenshot.png",
+    "title": "无权限提示",
+    "category": "异常"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "homepage": "https://unpkg.com/@ice/block-page-not-permission/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

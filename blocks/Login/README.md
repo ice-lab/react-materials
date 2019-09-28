@@ -1,5 +1,7 @@
 # login
 
-简介：登录页
+简介：登录
 
-![截图](https://unpkg.com/@icedesign/login-block/screenshot.png)
+左右布局带背景图的登录表单页
+
+![截图](https://unpkg.com/@ice/block-login/screenshot.png)

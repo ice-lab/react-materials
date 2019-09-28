@@ -2,7 +2,7 @@
 
 简介：分面图
 
-![截图](https://unpkg.com/@icedesign/chart-facet-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-chart-facet/screenshot.png)
 
 
 

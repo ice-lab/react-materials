@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
-import { Dialog, Button, Form, Input, Field } from '@alifd/next';
-
-const FormItem = Form.Item;
-
-const field = new Field({});
-const init = field.init;
+import { Form, Field } from '@ice/form';
+import { Dialog, Button, Input } from '@alifd/next';
+import styles from '../index.module.scss';
 
 export default function EditDialog(props) {
-  const { index, record } = props;
   const [visible, setVisible] = useState(false);
   const [dataIndex, setDataIndex] = useState(null);
+  const [initialValues, setInitialValues] = useState({});
 
-  const handleSubmit = () => {
-    field.validate((errors, values) => {
-      if (errors) {
-        console.log('Errors in form!!!');
-        return;
-      }
+  let handleSubmit = null;
 
-      props.getFormValues(dataIndex, values);
-      setVisible(false);
-    });
+  const onSubmit = (values) => {
+    console.log(values, dataIndex);
+    setVisible(false);
+    props.getFormValues(dataIndex, values);
   };
 
   const onOpen = (index, record) => {
-    field.setValues({ ...record });
+    setInitialValues(record);
     setVisible(true);
     setDataIndex(index);
   };
@@ -33,74 +26,42 @@ export default function EditDialog(props) {
     setVisible(false);
   };
 
-  const formItemLayout = {
-    labelCol: {
-      fixedSpan: 6,
-    },
-    wrapperCol: {
-      span: 14,
-    },
-  };
+  const { index, record } = props;
 
   return (
-    <div style={styles.editDialog}>
-      <Button
-        size="small"
-        type="primary"
-        onClick={() => onOpen(index, record)}
-      >
+    <div className={styles.editDialog}>
+      <Button type="primary" onClick={() => onOpen(index, record)}>
         编辑
       </Button>
       <Dialog
-        style={{ width: 640 }}
+        className={styles.w}
         visible={visible}
-        onOk={handleSubmit}
+        onOk={e => handleSubmit(e)}
         closeable="esc,mask,close"
         onCancel={onClose}
         onClose={onClose}
         title="编辑"
       >
-        <Form field={field}>
-          <FormItem label="标题：" {...formItemLayout}>
-            <Input
-              {...init('title', {
-                rules: [{ required: true, message: '必填选项' }],
-              })}
-            />
-          </FormItem>
-
-          <FormItem label="作者：" {...formItemLayout}>
-            <Input
-              {...init('author', {
-                rules: [{ required: true, message: '必填选项' }],
-              })}
-            />
-          </FormItem>
-
-          <FormItem label="状态：" {...formItemLayout}>
-            <Input
-              {...init('status', {
-                rules: [{ required: true, message: '必填选项' }],
-              })}
-            />
-          </FormItem>
-
-          <FormItem label="发布时间：" {...formItemLayout}>
-            <Input
-              {...init('date', {
-                rules: [{ required: true, message: '必填选项' }],
-              })}
-            />
-          </FormItem>
+        <Form
+          onSubmit={onSubmit}
+          initialValues={initialValues}
+          layout={{
+            wrapperCol: 10,
+          }}
+        >
+          {(formCore) => {
+            handleSubmit = formCore.submit.bind(formCore);
+            return (
+              <React.Fragment>
+                <Field label="标题：" name="title" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="作者：" name="author" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="状态：" name="status" component={Input} rules={{ required: true, message: '必填选项' }} />
+                <Field label="发布时间：" name="date" component={Input} rules={{ required: true, message: '必填选项' }} />
+              </React.Fragment>
+            );
+          }}
         </Form>
       </Dialog>
     </div>
   );
 }
-
-const styles = {
-  editDialog: {
-    display: 'inline-block',
-    marginRight: '5px',
-  },
-};

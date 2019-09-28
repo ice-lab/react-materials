@@ -47,10 +47,8 @@ export default function Index() {
 
   return (
     <Container>
-      <div className={styles.header}>
-        <h2 className={styles.function} >功能状态</h2>
-      </div>
-      <div>
+      <h2 className={styles.function} >功能状态</h2>
+      <div className={styles.wrap}>
         {dataSource.map((item, index) => {
           return <FeatureItem data={item} key={index} />;
         })}

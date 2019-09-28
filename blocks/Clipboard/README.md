@@ -4,4 +4,4 @@
 
 复制内容到剪贴板
 
-![截图](https://unpkg.com/@icedesign/clipboard-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-clipboard/screenshot.png)

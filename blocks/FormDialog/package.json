@@ -1,0 +1,49 @@
+{
+  "name": "@ice/block-form-dialog",
+  "version": "0.1.0",
+  "description": "简单的表单弹窗",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/FormDialog"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@ice/form": "^0.1.7"
+  },
+  "devDependencies": {
+    "prop-types": "^15.5.8",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "form-dialog",
+    "title": "简单表单弹窗",
+    "category": "表单",
+    "screenshot": "https://unpkg.com/@ice/block-form-dialog/screenshot.png"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "homepage": "https://unpkg.com/@ice/block-form-dialog/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

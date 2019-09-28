@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Pagination } from '@alifd/next';
-import IceContainer from '@icedesign/container';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
+
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const mockData = [
   {
@@ -102,19 +103,41 @@ const mockData = [
 ];
 
 export default function TreeTable() {
+  const [loading, setLoading] = useState(false);
   const [current, setCurrent] = useState(1);
+  const [pageSize] = useState(10);
+  const [total] = useState(100);
+  const [dataSource, setDataSource] = useState([]);
 
-  const handleChange = (current) => {
-    setCurrent(current);
+  const fetchData = async () => {
+    setLoading(true);
+    await sleep(500);
+    let data;
+    if (dataSource.length > 0) {
+      data = dataSource.reverse();
+    } else {
+      data = mockData;
+    }
+    setLoading(false);
+    setDataSource(data);
+  }
+
+  useEffect(() => {
+    fetchData(current);
+  }, [current]);
+
+  const handleChange = (crt) => {
+    setCurrent(crt);
   };
 
   return (
-    <IceContainer>
+    <div>
+      <h4 className={styles.title}>Tree 类型的表格</h4>
       <Table
-        dataSource={mockData}
+        dataSource={dataSource}
+        loading={loading}
         primaryKey="tradeCode"
         isTree
-        rowSelection={{ onChange: () => {} }}
       >
         <Table.Column title="部门" dataIndex="department" />
         <Table.Column title="规则编号" dataIndex="tradeCode" />
@@ -123,10 +146,12 @@ export default function TreeTable() {
         <Table.Column title="地址" dataIndex="address" />
       </Table>
       <Pagination
-        className={styles.page}
+        className={styles.pagination}
         current={current}
+        pageSize={pageSize}
+        total={total}
         onChange={handleChange}
       />
-    </IceContainer>
+    </div>
   );
 }

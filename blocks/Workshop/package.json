@@ -1,9 +1,12 @@
 {
-  "name": "@icedesign/workshop-block",
-  "version": "3.0.0",
+  "name": "@ice/block-workshop",
+  "version": "0.1.0",
   "description": "适用于全屏的信息展示",
-  "homepage": "https://unpkg.com/@icedesign/workshop-block/build/index.html",
-  "author": "",
+  "homepage": "https://unpkg.com/@ice/block-workshop/build/index.html",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
   "files": [
     "src/",
     "build/",
@@ -11,7 +14,7 @@
   ],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -32,11 +35,8 @@
   "blockConfig": {
     "name": "workshop",
     "title": "工作坊",
-    "categories": [
-      "信息展示"
-    ],
-    "screenshot": "https://unpkg.com/@icedesign/workshop-block/screenshot.png",
-    "version-0.x": "1.0.3"
+    "category": "信息展示",
+    "screenshot": "https://unpkg.com/@ice/block-workshop/screenshot.png"
   },
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",

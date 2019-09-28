@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { Table } from '@alifd/next';
 
 export default function CustomTable(props) {
-  const { columns } = props;
   const renderColumns = () => {
+    const { columns } = props;
     return columns.map((item) => {
       if (typeof item.render === 'function') {
         return (
           <Table.Column
-            title={item.title}
             key={item.key}
+            title={item.title}
             cell={item.render}
-            width={item.width || 150}
+            width={item.width}
           />
         );
       }
@@ -22,7 +22,7 @@ export default function CustomTable(props) {
           key={item.key}
           title={item.title}
           dataIndex={item.dataIndex}
-          width={item.width || 150}
+          width={item.width}
         />
       );
     });

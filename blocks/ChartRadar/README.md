@@ -2,7 +2,7 @@
 
 简介：雷达图
 
-![截图](https://unpkg.com/@icedesign/chart-radar-block/screenshot.png)
+![截图](https://unpkg.com/@ice/block-chart-radar/screenshot.png)
 
 
 

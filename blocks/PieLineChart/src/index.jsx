@@ -1,5 +1,4 @@
 import React from 'react';
-import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 
 /**
@@ -141,10 +140,6 @@ export default function PieLineChart() {
   };
 
   return (
-    <div className="pie-line-chart">
-      <IceContainer>
-        <ReactEcharts option={getOption()} style={{ height: '680px' }} />
-      </IceContainer>
-    </div>
+    <ReactEcharts option={getOption()} style={{ height: '680px' }} />
   );
 }

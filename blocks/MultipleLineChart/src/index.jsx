@@ -1,5 +1,4 @@
 import React from 'react';
-import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
 
 export default function MultipleLineChart() {
@@ -152,8 +151,6 @@ export default function MultipleLineChart() {
   };
 
   return (
-    <IceContainer>
-      <ReactEcharts option={getOption()} style={{ height: '540px' }} />
-    </IceContainer>
+    <ReactEcharts option={getOption()} style={{ height: '540px' }} />
   );
 }

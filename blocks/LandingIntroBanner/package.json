@@ -1,6 +1,6 @@
 {
-  "name": "@icedesign/landing-intro-banner-block",
-  "version": "3.0.0",
+  "name": "@ice/block-landing-intro-banner",
+  "version": "0.1.0",
   "description": "首页介绍 Banner",
   "main": "lib/index.js",
   "files": [
@@ -32,20 +32,15 @@
   },
   "blockConfig": {
     "name": "landing-intro-banner",
-    "screenshot": "https://unpkg.com/@icedesign/landing-intro-banner-block/screenshot.png",
-    "themePackage": "@icedesign/theme",
+    "screenshot": "https://unpkg.com/@ice/block-landing-intro-banner/screenshot.png",
     "title": "首页介绍",
-    "categories": [
-      "信息展示",
-      "欢迎页"
-    ],
-    "version-0.x": "1.0.0"
+    "category": "信息展示"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://unpkg.com/@icedesign/landing-intro-banner-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-landing-intro-banner/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

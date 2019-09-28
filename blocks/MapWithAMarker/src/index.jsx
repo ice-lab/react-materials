@@ -11,6 +11,7 @@ export default function MapWithAMarker() {
 
   return (
     <IceContainer style={{ height: 400 }}>
+      <h3>高德地图-位置标记</h3>
       <Map plugins={['ToolBar']} center={position} zoom={15}>
         <Marker position={position} />
       </Map>

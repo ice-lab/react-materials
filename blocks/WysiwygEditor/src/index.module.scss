@@ -1,3 +1,20 @@
-.editorContent{
-    max-height: 300px;
+.title {
+  text-align: center;
+}
+.link {
+  color: #5485f7;
+  text-decoration: none;
+}
+:global .wrapperClassName {
+  width: 1000px;
+  margin: 20px auto;
+}
+:global .editorClassName {
+  padding-right: 15px;
+  padding-left: 15px;
+  border: 1px solid #F1F1F1;
+  border-radius: 2px;
+}
+:global .DraftEditor-editorContainer > div {
+    min-height: 300px;
 }

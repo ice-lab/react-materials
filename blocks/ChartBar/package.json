@@ -1,7 +1,7 @@
 {
-  "name": "@icedesign/chart-bar-block",
-  "version": "3.0.0",
-  "description": "",
+  "name": "@ice/block-chart-bar",
+  "version": "0.1.0",
+  "description": "柱状图",
   "files": [
     "src/",
     "build/",
@@ -28,25 +28,20 @@
     "@alifd/next": "^1.x"
   },
   "devDependencies": {
-    "@icedesign/theme": "^0.x",
     "react": "*",
     "react-dom": "*"
   },
   "blockConfig": {
     "name": "chart-bar",
-    "screenshot": "https://unpkg.com/@icedesign/chart-bar-block/screenshot.png",
-    "themePackage": "@icedesign/theme",
+    "screenshot": "https://unpkg.com/@ice/block-chart-bar/screenshot.png",
     "title": "柱状图",
-    "categories": [
-      "图表"
-    ],
-    "version-0.x": "0.1.8"
+    "category": "图表"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "http://registry.npmjs.org"
   },
-  "homepage": "https://unpkg.com/@icedesign/chart-bar-block/build/index.html",
+  "homepage": "https://unpkg.com/@ice/block-chart-bar/build/index.html",
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
     "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",

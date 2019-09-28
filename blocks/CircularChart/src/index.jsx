@@ -1,7 +1,5 @@
 import React from 'react';
-import IceContainer from '@icedesign/container';
 import ReactEcharts from 'echarts-for-react';
-import styles from './index.module.scss';
 
 /**
  * 图表来源参考：http://gallery.echartsjs.com/editor.html?c=xByzFvaw1M
@@ -147,10 +145,6 @@ export default function Index() {
   };
 
   return (
-    <div className="circular-chart">
-      <IceContainer>
-        <ReactEcharts option={getOption()} className={styles.reactHeight} />
-      </IceContainer>
-    </div>
+    <ReactEcharts option={getOption()} style={{height: '450px'}} />
   );
 }

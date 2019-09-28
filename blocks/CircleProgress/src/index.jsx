@@ -28,7 +28,7 @@ export default function Index() {
         </Col>
         <Col xxs="12" s="6" l="6">
           <div className={styles.item}>
-            <Progress percent={50} shape="circle" size="large" />
+            <Progress percent={75} shape="circle" size="large" />
             <h6 className={styles.title}>项目C</h6>
           </div>
         </Col>

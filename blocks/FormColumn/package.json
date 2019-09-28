@@ -1,0 +1,49 @@
+{
+  "name": "@ice/block-form-column",
+  "version": "0.1.0",
+  "description": "分栏表单",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/FormColumn"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@icedesign/container": "^1.x",
+    "@alifd/next": "^1.x"
+  },
+  "devDependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "prop-types": "^15.5.8"
+  },
+  "blockConfig": {
+    "name": "form-column",
+    "screenshot": "https://unpkg.com/@ice/block-form-column/screenshot.png",
+    "title": "分栏表单",
+    "category": "表单"
+  },
+  "homepage": "https://unpkg.com/@ice/block-form-column/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

@@ -9,7 +9,6 @@ export default function Banner() {
         type="bottom"
         delay={100}
         duration={1000}
-        className="home-title"
       >
         <div key="content" className={styles.content}>
           <div className={styles.title}>

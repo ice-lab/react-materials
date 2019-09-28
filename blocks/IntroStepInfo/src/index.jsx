@@ -78,7 +78,7 @@ export default function Index() {
             />
           </div>
 
-          <a className={styles.customBtn}>立即定制短视频</a>
+          <a href="#" className={styles.customBtn}>立即定制短视频</a>
         </div>
       </IceContainer>
     </div>
