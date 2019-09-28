@@ -1,0 +1,98 @@
+.container {
+  position: relative;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url("./images/bg.jpg");
+};
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+};
+.formTitle {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 4px;
+  text-align: center;
+};
+.formItem {
+  margin-bottom: 20px;
+};
+.submitButton {
+  justify-content: center;
+};
+.checkbox {
+  color: #999;
+};
+.footer {
+  align-items: center;
+  justify-content: center;
+};
+.line {
+  margin: 0 5px;
+  color: #999;
+};
+.link {
+  margin: 0 5px;
+  color: #999;
+  font-size: 12px;
+};
+.button {
+  width: 180px !important;
+  height: 48px !important;
+  margin-top: 40px !important;
+  line-height: 48px !important;
+  text-align: center !important;
+  border: 1px solid #9816f4;
+  border-radius: 50px !important;
+  box-shadow: 0 5px 10px 2px rgba(152,22,244,0.19) !important;
+};
+.input {
+  width: 320px !important;
+  border-color: #ebedf2 !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+};
+.containerForget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+};
+.logoLink {
+  display: block;
+};
+.logoImg {
+  width: 88px;
+};
+.title {
+  margin-top: 60px;
+  color: #343a40;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: center;
+};
+.description {
+  margin-top: 30px;
+  color: #212529;
+  font-size: 13px;
+};
+.border {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  bottom: 100px;
+  width: 30px;
+  background: #fff;
+  box-shadow: -19px 0 35px -7px #F5F5F5;
+};
+.buttonBorder{
+  border: 0;
+}

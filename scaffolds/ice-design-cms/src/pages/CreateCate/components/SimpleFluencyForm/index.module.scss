@@ -1,0 +1,27 @@
+.formTitle {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.formLabel {
+  padding-right: 10px;
+  color: $color-text1-2;
+  line-height: 1.7rem;
+  text-align: right;
+}
+
+.formRow {
+  margin-bottom: 20px;
+}
+
+.formErrorWrapper {
+  margin-top: 5px;
+}
+
+.user-form {
+  .next-input,
+  .next-select {
+    width: 100%;
+  }
+}

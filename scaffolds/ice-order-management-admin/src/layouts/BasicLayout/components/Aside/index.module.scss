@@ -1,0 +1,48 @@
+.asideCustomMenu {
+  .userInfo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    padding: 20px 0;
+    background: #fff;
+
+    .userAvatar {
+      margin-right: 12px;
+      border-radius: 4px;
+    }
+
+    .userDepartment {
+      font-size: 12px;
+    }
+  }
+
+  .iceMenuCustom {
+    height: 100vh;
+    background: #fff !important;
+
+    .iceMenuItemText {
+      margin-left: 1em;
+    }
+  }
+  .menuLogo {
+    justify-content: center;
+    height: 62px;
+    margin-right: 0;
+    font-size: 30px;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .notify {
+    position: relative;
+    top: -12px;
+    left: -4px;
+  }
+
+  .userName {
+    font-size: 13px;
+  }
+}
+

@@ -1,0 +1,41 @@
+.headerContainer {
+  z-index: 999;
+  width: 100%;
+  min-width: 1200px;
+
+  .headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 88px;
+    border-bottom: 4px solid #283448;
+  }
+
+  .headerNavbar {
+    display: flex;
+    flex-direction: row;
+
+    :global {
+      .next-menu {
+        color: #fff !important;
+        background: transparent !important;
+        border: none;
+        box-shadow: none;
+
+        .next-menu-item {
+          color: #fff !important;
+          background: transparent !important;
+
+          i {
+            margin-right: 1em;
+          }
+
+          &:hover {
+            color: $color-data1-1 !important;
+          }
+        }
+      }
+    }
+  }
+}

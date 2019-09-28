@@ -1,0 +1,16 @@
+// Global RESET
+.basicLayout {
+  min-width: 1280px;
+  background: #f7f7f7;
+
+  :global {
+    .next-btn {
+      border-radius: 4px;
+    }
+  }
+
+  .mainContent {
+    margin-top: 82px;
+    padding: 0 20px;
+  }
+}

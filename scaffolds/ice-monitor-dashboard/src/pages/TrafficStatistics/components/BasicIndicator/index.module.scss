@@ -1,0 +1,41 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+}
+
+.title {
+  margin-top: 10px;
+  color: #666;
+  font-size: 12px;
+}
+
+.count {
+  margin: 10px 0;
+  color: #447eff;
+  font-size: 24px;
+}
+
+.desc {
+  color: #999;
+  font-size: 12px;
+}
+
+.extraIcon {
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+}
+
+.downIcon {
+  color: green;
+}
+
+.upIcon {
+  color: red;
+}
+
+.sevenDay {
+  margin-left: 15px;
+}

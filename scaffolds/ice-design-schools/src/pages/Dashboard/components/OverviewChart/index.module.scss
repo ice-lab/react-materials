@@ -1,0 +1,41 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.textLabel {
+  margin: 0;
+  color: #666;
+}
+
+.counterNum {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  font-size: 28px;
+}
+
+.arrowIcon {
+  margin-left: 10px;
+}
+
+.arrowUp {
+  color: #ec3f16;
+}
+
+.arrowDown {
+  color: green;
+}
+
+.hb1 {
+  margin-left: 10px;
+  color: green;
+}
+
+.hb2 {
+  margin-left: 10px;
+  color: #ec3f16;
+}

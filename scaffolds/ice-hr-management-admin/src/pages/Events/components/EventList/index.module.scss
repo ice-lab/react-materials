@@ -1,0 +1,35 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.time {
+  font-weight: bold;
+}
+
+.body {
+  margin-left: 20px;
+}
+
+.title {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.description {
+  margin: 2px 0;
+}
+
+.address {
+  margin: 0;
+  color: #666;
+  font-size: 12px;
+}
+
+.icon {
+  margin-right: 5px;
+}

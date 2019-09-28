@@ -1,0 +1,54 @@
+.container {
+  padding: 50px 0;
+  background: #000;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  margin: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: 0.77px;
+}
+
+.mainDesc {
+  margin-top: 8px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.items {
+  margin-top: 70px;
+  overflow: hidden;
+}
+
+.item {
+  margin-bottom: 22px;
+}
+
+.subtit {
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.logoItems {
+  margin-top: 40px;
+}
+
+.logoItem {
+  margin-right: 65px;
+  margin-bottom: 30px;
+}
+
+.logoImg {
+  max-width: 196px;
+}

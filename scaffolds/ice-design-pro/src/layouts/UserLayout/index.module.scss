@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.userLayout {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  background: #f0f2f5;
+  background-image: 'url(https://img.alicdn.com/tfs/TB1kOoAqv1TBuNjy0FjXXajyXXa-600-600.png)';
+  background-size: contain;
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .title {
+    color: #3080fe;
+    font-weight: 600;
+    font-size: 33px;
+    text-align: center;
+  }
+  .desc {
+    margin: 10px 0;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+  }
+}

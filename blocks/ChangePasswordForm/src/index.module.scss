@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.change-password-form {
+  .next-input {
+    width: 100%;
+  }
+
+  @media (min-width: 320px) {
+    .next-col-xxs-offset-6 {
+      margin-left: 25%;
+    }
+  }
+
+  @media (min-width: 720px) {
+    .next-col-s-offset-3 {
+      margin-left: 12.5%;
+    }
+  }
+}
+.rowMarginTop{
+  margin-top: 20px !important;
+}
+.formContent {
+  position: relative;
+  width: 100%;
+}
+.formItem {
+  margin-bottom: 25px;
+}
+.formLabel {
+  height: 32px;
+  line-height: 32px;
+  text-align: right;
+}
+.formTitle {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee !important;
+}

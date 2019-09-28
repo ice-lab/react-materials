@@ -1,0 +1,81 @@
+{
+  "name": "@icedesign/customer-analysis-admin-scaffold",
+  "version": "3.0.4",
+  "description": "该模板内置了丰富的图表和表格区块，适用于客源分析管理类系统，使用时需要根据需求进行删除和添加",
+  "homepage": "https://unpkg.com/@icedesign/customer-analysis-admin-scaffold@latest/build/index.html",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
+    "ice.config.js",
+    "jsconfig.json"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@antv/data-set": "^0.8.5",
+    "@icedesign/container": "^1.x",
+    "@icedesign/ellipsis": "^1.x",
+    "@icedesign/form-binder": "^1.x",
+    "@icedesign/foundation-symbol": "^1.x",
+    "@icedesign/img": "^1.x",
+    "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
+    "bizcharts": "^3.1.3-beta.2",
+    "classnames": "^2.2.5",
+    "moment": "^2.23.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@ice/spec": "^0.1.1",
+    "eslint": "^6.0.1",
+    "stylelint": "^10.1.0",
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
+  },
+  "scripts": {
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "builder": "ice-scripts",
+    "name": "ice-customer-analysis-admin",
+    "title": "客源分析管理系统",
+    "categories": [
+      "行业领域"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB17_m3DOrpK1RjSZFhXXXSdXXa-2860-1580.png",
+    "screenshots": [
+      "https://img.alicdn.com/tfs/TB17_m3DOrpK1RjSZFhXXXSdXXa-2860-1580.png",
+      "https://img.alicdn.com/tfs/TB1Hpu4DFzqK1RjSZSgXXcpAVXa-2860-1580.png"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-customer-analysis-admin"
+  }
+}

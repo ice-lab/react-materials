@@ -1,0 +1,58 @@
+.container {
+  box-sizing: border-box;
+  width: 50%;
+  padding: 10px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  padding: 24px;
+  overflow: hidden;
+  color: $color-black;
+  font-size: 16px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  line-height: 20px;
+  border-left: 5px solid $color-brand1-6;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+  color: #454973;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.circle {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 10px;
+  border: 1px solid $color-brand1-9;
+  border-radius: 50%;
+}
+
+.date {
+  display: inline-block;
+  flex: 1;
+  align-self: flex-end;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.listLeft {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}

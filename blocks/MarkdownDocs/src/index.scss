@@ -1,0 +1,188 @@
+.markdown-docs-body {
+  max-width: 60%;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.8;
+  ul,
+  ol {
+    margin-left: 20px;
+  }
+  img {
+    max-width: 100%;
+    max-width: calc(100% - 50px);
+    margin: 0 25px;
+    vertical-align: middle;
+    border-radius: 4px;
+  }
+  h1 {
+    margin: 0 0 30px 0;
+    padding-bottom: 10px;
+    color: #404040;
+    font-weight: 400;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+  }
+  h1 .subtitle {
+    margin-left: 12px;
+    font-weight: normal;
+    font-size: 80%;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    clear: both;
+    margin: 1.6em 0 0.6em 0;
+    color: #404040;
+    font-weight: 400;
+  }
+  h2 {
+    margin-top: 32px;
+  }
+
+  pre[class*='language-'] {
+    margin: 10px 0;
+    padding: 5px;
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  hr {
+    clear: both;
+    height: 1px;
+    margin: 16px 0;
+    background: #e9e9e9;
+    border: 0;
+  }
+  p {
+    margin: 1.6em 0;
+    color: #666;
+    font-weight: 350;
+    line-height: 1.8em;
+  }
+  ul > li {
+    list-style: circle;
+  }
+  ol > li {
+    list-style: decimal;
+  }
+  ul li {
+    margin-left: 14px;
+  }
+  ol li,
+  blockquote ol > li {
+    margin-left: 20px;
+    padding-left: 4px;
+  }
+  blockquote ul > li {
+    margin-left: 14px;
+  }
+  pre {
+    margin: 1em 0;
+    padding-left: 15px;
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    line-height: 2em;
+    border-radius: 6px;
+  }
+  ul li > p,
+  ol li > p {
+    margin: 0.2em 0;
+    padding-left: 0;
+  }
+  code {
+    margin: 0 3px;
+    padding: 2px 6px;
+    color: #dd4a68;
+    font-size: 0.8rem;
+    font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+    background: #f5f2f0;
+    border: 1px solid #e9e9e9;
+    border-radius: 3px;
+  }
+  pre code {
+    margin: 0;
+    padding: 1em;
+    overflow: auto;
+    color: #666;
+    border: none;
+  }
+  strong,
+  b {
+    font-weight: 600;
+  }
+  table {
+    width: 100%;
+    margin-bottom: 24px;
+    empty-cells: show;
+    border: 1px solid #e9e9e9;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  table th {
+    color: #5c6b77;
+    font-weight: 600;
+    white-space: nowrap;
+    background: #f7f7f7;
+  }
+  table th,
+  table td {
+    padding: 8px 14px;
+    text-align: left;
+    border: 1px solid #e9e9e9;
+  }
+  table td:first-child {
+    width: 18% !important;
+    font-weight: 500;
+    word-break: normal !important;
+    background: #fcfcfc;
+  }
+  table td:nth-child(2) {
+    width: auto !important;
+    min-width: 30%;
+    max-width: 45%;
+    word-break: normal !important;
+  }
+  table tr td:nth-last-child(-n + 3) {
+    width: 13%;
+    word-break: break-all;
+  }
+  blockquote {
+    margin: 1em 0;
+    padding-left: 0.8em;
+    color: #999;
+    font-size: 90%;
+    font-style: italic;
+    border-left: 4px solid #e9e9e9;
+  }
+  .anchor {
+    margin-left: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .waiting {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  h1:hover .anchor,
+  h2:hover .anchor,
+  h3:hover .anchor,
+  h4:hover .anchor,
+  h5:hover .anchor,
+  h6:hover .anchor {
+    display: inline-block;
+    opacity: 1;
+  }
+  > br,
+  > p > br {
+    clear: both;
+  }
+  pre > code,
+  pre[class*='language-'] > code {
+    display: block;
+    padding: 1em;
+  }
+  .highlight pre {
+    background: #f5f2f0;
+  }
+}

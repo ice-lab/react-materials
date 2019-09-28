@@ -1,0 +1,35 @@
+.container{
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+};
+.item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 0 !important;
+};
+.title{
+  margin-bottom: 5px;
+  font-size: 12px;
+};
+.count{
+  margin: 10px 0;
+  font-weight: bold;
+  font-size: 24px;
+};
+.desc{
+  font-size: 12px;
+};
+.down{
+  width: 6px;
+  height: 9px;
+};
+.up{
+  width: 6px;
+  height: 9px;
+};
+.extraIcon{
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+};

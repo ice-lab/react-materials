@@ -1,0 +1,13 @@
+sudo: required
+language: node_js
+node_js:
+  - '8'
+script:
+  - npm run lint
+
+deploy:
+  provider: script
+  skip_cleanup: true # 避免清空已安装的依赖
+  script: npm run deploy
+  on:
+    all_branches: true

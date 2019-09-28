@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.changePasswordForm {
+  .nextInput {
+    width: 100%;
+  }
+}
+
+.formContent {
+  position: relative;
+  width: 100%;
+}
+
+.formItem {
+  margin-bottom: 25px !important;
+}
+
+.formLabel {
+  height: 32px !important;
+  line-height: 32px !important;
+  text-align: right !important;
+}
+
+.formTitle {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}

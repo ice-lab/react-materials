@@ -1,0 +1,50 @@
+.container {
+  padding: 0 0 20px;
+}
+
+.title {
+  margin: 0;
+  padding: 15px 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #eee;
+}
+
+.link {
+  margin: 0 5px;
+  color: rgba(49, 128, 253, 0.65);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.separator {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  margin: 0 8px;
+  vertical-align: middle;
+  background: #8e8e8e;
+}
+
+.pagination {
+  text-align: right;
+}
+
+.table {
+  padding: 0 20px 20px;
+}
+
+.formRow {
+  padding: 10px 20px;
+}
+
+.formItem {
+  display: flex;
+  align-items: center;
+  min-width: 70px;
+  margin: 10px 0;
+}

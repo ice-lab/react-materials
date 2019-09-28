@@ -1,0 +1,34 @@
+.title {
+  margin-bottom: 30px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.formContent {
+  margin-left: 30px;
+}
+
+.formItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.formLabel {
+  width: 70px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.formError {
+  margin-left: 10px;
+}
+
+.submitButton {
+  margin-left: 85px !important;
+}
+
+.selectWidth {
+  width: 400px !important;
+}

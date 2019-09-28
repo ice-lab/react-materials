@@ -1,0 +1,71 @@
+.container {
+  padding: 0 !important;
+};
+.title {
+  margin: 0;
+  padding: 15px 20px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+};
+.profile {
+  display: flex;
+  margin: 68px 0;
+};
+.head {
+  display: flex;
+  align-items: center;
+};
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+};
+.purple {
+  background: #908ce1;
+};
+.green {
+  background: #26c9ad;
+};
+.cell {
+  width: 50%;
+  padding: 0 10px;
+};
+.cellTitle {
+  margin-right: 5px;
+  color: #666;
+  font-size: 14px;
+  line-height: 14px;
+};
+.body {
+  display: flex;
+  align-items: baseline;
+  margin-top: 20px;
+};
+.costValue {
+  height: 30px;
+  color: #333;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 30px;
+};
+.costUnit {
+  margin-left: 2px;
+  color: #333;
+  font-size: 12px;
+};
+.footer {
+  display: flex;
+  margin-top: 10px;
+  color: #999;
+  font-size: 12px;
+};
+.footerText {
+  margin-right: 60px;
+};
+.balloonWidth{
+  width: 300px;
+}

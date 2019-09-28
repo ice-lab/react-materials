@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  margin: 0;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+.infoRow {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #f6f6f6;
+}
+.infoLabel {
+  flex: 0 0 100px;
+  color: #999;
+}
+
+.fromItem {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 10px;
+}
+.headImg{
+  width: 120px;
+}
+.nameInput{
+  width: 500px;
+}
+.formError{
+  margin-left: 10px;
+}

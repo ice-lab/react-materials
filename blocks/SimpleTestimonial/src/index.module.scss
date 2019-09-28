@@ -1,0 +1,33 @@
+
+    .item {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .description {
+      color: #999;
+      line-height: 28px;
+    }
+    .infoBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .avatar {
+      width: 64px;
+      height: 64px;
+    }
+    .name {
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    .company {
+      margin: 0;
+    }
+    // .simpleTestimonial {}
+
+  

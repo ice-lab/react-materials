@@ -1,0 +1,33 @@
+.browserItem{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
+    padding:5px 0;
+    // borderBottom:  1px dotted #eee  ;
+  }
+  .percentage {
+    padding: 2px 5px ;
+    color: #fff;
+    font-size: 12px;
+    background: #307bf0 ;
+    border-radius: 14px
+  }
+  .satisfaction {
+    padding:0 0 8px ;
+    color: #307bf0;
+    font-size: 36px;
+    text-align: center;
+  }
+  .satisfactionItem{
+    font-weight: 500;
+    text-align:center;
+  }
+  .subtitle {
+    margin-bottom:5px;
+    color:  #999;
+    font-weight: 400;
+    font-size:13px;
+  }
+  .bottomRow{
+    margin: 0 !important;
+  }

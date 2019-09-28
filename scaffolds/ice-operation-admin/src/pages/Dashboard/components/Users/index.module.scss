@@ -1,0 +1,36 @@
+.container {
+  height: 384px !important;
+  overflow-y: scroll !important;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 3px;
+  font-size: 14px;
+  border-bottom: 1px solid #dcdee3;
+}
+
+.userItem {
+  display: flex;
+  width: 100%;
+  padding: 10px 10px 10px 0;
+}
+
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.userName {
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.userTitle {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+}

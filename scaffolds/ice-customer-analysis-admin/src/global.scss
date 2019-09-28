@@ -1,0 +1,56 @@
+// 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
+@import '@alifd/next/reset.scss';
+
+.basic-layout-dark {
+  min-width: 1200px;
+}
+
+.ice-layout-main {
+  padding: 20px;
+  background: #f2f2f2;
+}
+
+.ice-menu-custom {
+  height: 100vh;
+  box-shadow: 4px 1px 12px $color-brand1-6;
+
+  .ice-menu-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    color: #666;
+
+    .ice-icon-stable {
+      margin-right: 0;
+    }
+
+    .ice-menu-item-text {
+      margin-top: 5px;
+    }
+  }
+
+  &.next-nav {
+    width: 120px;
+
+    .next-menu-item {
+      height: 80px !important;
+      padding: 0;
+      line-height: normal;
+
+      .next-menu-item-inner {
+        width: 100%;
+        height: auto !important;
+      }
+
+      &.next-selected {
+        background-color: $color-brand1-6 !important;
+
+        .ice-menu-link {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

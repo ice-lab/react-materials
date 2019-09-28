@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.complexTabTable {
+  .next-tabs-medium .next-tabs-tab-inner {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+.complexTabTableOperation {
+  line-height: 28px;
+};
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+};
+.title {
+  margin-left: 10px;
+  line-height: 20px;
+};
+.operation {
+  margin-right: 12px;
+  text-decoration: none;
+};
+.tabExtra {
+  display: flex;
+  align-items: center;
+};
+.search {
+  margin-left: 10;
+};
+.tabCount {
+  margin-left: 5px;
+  color: #3080FE;
+};
+.pagination {
+  padding-top: 26px;
+  text-align: right;
+};

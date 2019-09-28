@@ -1,0 +1,56 @@
+{
+  "name": "@icedesign/performance-chart-block",
+  "version": "3.0.0",
+  "description": "",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/PerformanceChart"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@antv/data-set": "^0.10.2",
+    "@icedesign/container": "^1.x",
+    "bizcharts": "3.2.2",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "@icedesign/theme": "^0.x",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "performance-chart",
+    "screenshot": "https://unpkg.com/@icedesign/performance-chart-block/screenshot.png",
+    "title": "销售业绩图表",
+    "categories": [
+      "表格"
+    ],
+    "themePackage": "@icedesign/theme",
+    "version-0.x": "0.1.4"
+  },
+  "homepage": "https://unpkg.com/@icedesign/performance-chart-block/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

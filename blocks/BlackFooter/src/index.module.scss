@@ -1,0 +1,49 @@
+.container {
+  padding: 54px 0 70px;
+  background: #0e0e0e;
+};
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+};
+.title {
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+};
+.desc {
+  max-width: 830px;
+  margin-top: 14px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: justify;
+};
+.link {
+  color: #00b7d3;
+};
+.rightContent {
+  position: relative;
+};
+.textBox {
+  padding-left: 100px;
+};
+.qrcode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 82px;
+  height: 82px;
+};
+.subtit {
+  color: #fff;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+};
+.text {
+  margin-top: 6px;
+  color: #666;
+  font-size: 12px;
+  line-height: 18px;
+}

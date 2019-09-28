@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px 0;
+  letter-spacing: 2px;
+}
+
+.button {
+  margin: 0 8px;
+  padding: 0 16px;
+  letter-spacing: 2px;
+}
+
+.table {
+  margin: 20px 0;
+}
+
+.pagination {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 16px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.input {
+  width: 110px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.label {
+  margin: 0 6px;
+  font-size: 12px;
+}
+
+.select {
+  vertical-align: middle;
+}

@@ -1,0 +1,29 @@
+.columnCard {
+  height: 280px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 0 2px 0 rgba(0, 0, 0, 0.1),0 2px 2px 0 rgba(0, 0, 0, 0.1);
+};
+.cardDescWrapper {
+  margin-top: 20px;
+};
+.cardTitle {
+  margin-top: 22px;
+  font-size: 18px;
+  text-align: center;
+};
+.cardDesc {
+  height: 144px;
+  margin: 5px auto 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+};
+.cardBtnWrapper {
+  margin-top: 15px;
+  text-align: center;
+};

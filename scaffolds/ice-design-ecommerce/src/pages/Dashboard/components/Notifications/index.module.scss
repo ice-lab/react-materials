@@ -1,0 +1,52 @@
+
+.noticeItem {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.noticeItemTitle {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.noticeItemBody {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bodyItem {
+  display: flex;
+  flex-basis: 33%;
+  margin-bottom: 10px;
+  color: #999;
+  font-size: 13px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.textLabe {
+  margin: 0;
+  color: #666;
+}
+
+.counterNum {
+  margin: 10px;
+  font-size: 28px;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}

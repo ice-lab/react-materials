@@ -1,0 +1,76 @@
+.userRegister {
+  .logo {
+    height: 32px;
+    margin-right: 10px;
+  }
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 368px;
+    margin: 0 auto;
+  }
+  .formItem {
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  .formItemCol {
+    position: relative;
+    margin-bottom: 5px;
+  }
+  input {
+    height: 40px !important;
+    padding: 0 30px !important;
+    line-height: 40px !important;
+  }
+  .inputIcon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    color: #999;
+    transform: translateY(-50%);
+  }
+  .submitBtn {
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    background: #3080fe;
+    border-radius: 4px;
+  }
+  .checkbox {
+    margin-left: 5px;
+  }
+  .account {
+    margin: 4px 0;
+    text-align: center;
+  }
+  .tips {
+    justify-content: center;
+  }
+  .tipsText {
+    color: #999;
+    font-size: 13px;
+    text-decoration: none;
+  }
+  .line {
+    margin: 0 8px;
+    color: #dcd6d6;
+  }
+
+  :global {
+    .next-input.next-input-single {
+      width: 368px;
+      height: 38px;
+      line-height: 38px;
+      input {
+        padding-left: 32px;
+        font-size: 13px;
+      }
+    }
+    .next-checkbox-label {
+      color: #999;
+      font-size: 13px;
+    }
+  }
+}

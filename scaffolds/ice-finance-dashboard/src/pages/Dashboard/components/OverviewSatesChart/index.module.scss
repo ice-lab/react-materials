@@ -1,0 +1,49 @@
+.content {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.title {
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.data {
+  display: flex;
+  margin: 10px 0;
+}
+
+.amount {
+  margin: 0 15px 0 0;
+  color: $color-data1-1;
+  font-size: 28px;
+}
+
+.percent {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.arrowIcon {
+  margin-left: 8px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.itemLabel {
+  color: #999;
+}
+
+.itemValue {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}

@@ -1,0 +1,39 @@
+.container {
+  padding: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  background: #eee;
+  border: 1px solid #eee;
+  border-radius: 50px;
+}
+
+.name {
+  margin-left: 15px;
+  color: #314659;
+  font-size: 14px;
+}
+
+.link {
+  color: #1890ff;
+  cursor: pointer;
+}
+
+.edit {
+  margin-right: 5px;
+}
+
+.btn {
+  margin-right: 10px;
+}
+
+.table {
+  padding: 20px;
+}

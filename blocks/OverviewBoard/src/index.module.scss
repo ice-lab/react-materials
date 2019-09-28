@@ -1,0 +1,31 @@
+.navItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .imgWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    background: #fff;
+    border-radius: 50%;
+  }
+  .img {
+    width: 30px;
+  }
+  .infoWrap {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+  .count {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .title {
+    margin: 2px 0;
+  };

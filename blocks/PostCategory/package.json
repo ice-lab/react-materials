@@ -1,0 +1,49 @@
+{
+  "name": "@icedesign/post-category-block",
+  "version": "3.0.0",
+  "description": "文章创作类型列表",
+  "homepage": "https://unpkg.com/@icedesign/post-category-block/build/index.html",
+  "author": "noyobo <nongyoubao@alibaba-inc.com>",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/PostCategory"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0",
+    "@alifd/next": "^1.x"
+  },
+  "blockConfig": {
+    "name": "post-category",
+    "title": "post-category",
+    "categories": [
+      "列表"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/post-category-block/screenshot.png",
+    "version-0.x": "1.0.0"
+  },
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.2.0"
+  }
+}

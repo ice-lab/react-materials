@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 64px;
+  height: 65px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.level {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 22px;
+  height: 22px;
+}
+
+.userInfo {
+  flex: auto;
+  margin-left: 20px;
+  color: #999;
+}
+
+.userDetail {
+  display: flex;
+  align-items: center;
+  height: 24px;
+}
+
+.userName {
+  display: inline-block;
+  max-width: 200px;
+  margin-right: 5px;
+  overflow: hidden;
+  color: #666;
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.userLabel {
+  height: 16px;
+  margin-left: 10px;
+  padding: 0 5px;
+  color: $color-warning-3;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $color-warning-1;
+  border-radius: 2px;
+}
+
+.userOther {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.userLevelWrapper {
+  position: relative;
+  display: flex;
+}
+
+.userlevelItem {
+  position: relative;
+  margin-left: 14px;
+  padding: 2px 6px;
+  color: $color-text1-3;
+  background-color: #fff;
+  border: 1px solid $color-warning-3;
+  border-radius: 12px;
+}
+
+.userlevelItemCurrent {
+  composes: userlevelItem;
+  color: $color-white;
+  background-color: $color-warning-3;
+}
+
+.userLevelLight {
+  position: absolute;
+  top: 30px;
+  left: -12px;
+  width: 48px;
+  color: $color-warning-3;
+  font-size: 12px;
+}
+
+.userLevelLine {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  height: 2px;
+  background-color: $color-warning-3;
+}

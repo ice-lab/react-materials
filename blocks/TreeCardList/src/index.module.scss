@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.firstRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px
+}
+.treecardlist {
+  .treecarditem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 10px;
+    color: #666;
+    font-size: 14px;
+    line-height: 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      background-color: #f6f6f6;
+    }
+  }
+}

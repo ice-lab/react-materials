@@ -1,0 +1,15 @@
+.logoStyle {
+  display: block;
+  max-width: 180px;
+  overflow: hidden;
+  color: #fff;
+  font-size: $font-size-headline;
+  white-space: nowrap;
+  text-decoration: none;
+  text-overflow: ellipsis;
+
+  &:link,
+  &:visited {
+    color: #fff;
+  }
+}

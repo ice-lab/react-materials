@@ -1,0 +1,52 @@
+
+.item {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.itemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  color: #4a90e2;
+}
+
+.title {
+  margin-bottom: 5px;
+  color: #9b9b9b;
+  font-size: 12px;
+}
+
+.count {
+  margin: 10px 0;
+  color: #4a90e2;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.data {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+
+.period {
+  margin-left: 10px;
+}
+
+.down {
+  width: 6px;
+  height: 9px;
+}
+
+.up {
+  width: 6px;
+  height: 9px;
+}
+
+.extraIcon {
+  position: relative;
+  top: 1px;
+  margin-left: 5px;
+}

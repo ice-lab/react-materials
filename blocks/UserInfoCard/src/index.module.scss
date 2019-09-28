@@ -1,0 +1,46 @@
+.container {
+  padding: 20px 0;
+  text-align: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+.head {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #eee;
+}
+.avatar {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #eee;
+  border-radius: 50px;
+}
+.name {
+  margin: 0;
+  padding: 0 10px;
+}
+.deptName {
+  margin: 0;
+  padding: 0 10px;
+  font-size: 12px;
+}
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+.profileItem {
+  width: 100%;
+  line-height: 26px;
+}
+.itemIcon {
+  margin-right: 5px;
+  color: #8a9099;
+}
+.triggerText {
+  color: #108ee9;
+  border-bottom: 1px dashed #108ee9;
+  cursor: pointer;
+}

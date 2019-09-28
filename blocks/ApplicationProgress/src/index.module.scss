@@ -1,0 +1,52 @@
+.row {
+  margin-top:  32px;
+  padding: 20px 40px;
+  background-color: #f9f9f9;
+}
+.imageWrap {
+  text-align: center;
+}
+.image {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 50px;
+}
+.itemBody {
+  padding: 10px 50px 0;
+}
+.operationWrap {
+  margin-top: 40px;
+  text-align: center;
+}
+.itemFooter {
+  margin-top: 40px;
+  color: #666;
+  text-align: center;
+}
+.nextBtn {
+  margin-top: 40px;
+}
+.itemStatusSuccess {
+  color: #1be25c;
+}
+.itemStatusFail {
+  color: #f33;
+  font-size: 16px;
+}
+.itemStatusText {
+  margin-left: 10px;
+}
+.mobileContentCenter {
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+.removeContentWidth {
+  max-width: none;
+}
+.itemDescription {
+  max-width: 309px;
+  margin-top: 20px;
+  color: #666;
+}
+

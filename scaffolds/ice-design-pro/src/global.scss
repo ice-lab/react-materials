@@ -1,0 +1,31 @@
+// 引入默认全局样式
+@import '@alifd/next/reset.scss';
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.ice-layout-header-normal, .ice-layout-aside-normal {
+  background-color: #2D323F !important;
+}
+.ice-layout-footer-normal {
+  background-color: #eee !important;
+}
+.next-overlay-wrapper {
+  .next-nav.next-normal {
+    border: none;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item {
+    color: #fff;
+    background-color: #2D323F;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item.next-selected {
+    color: #fff;
+    background-color: #444;
+  }
+  .next-nav.next-normal .next-nav-item.next-menu-item.next-focused,
+  .next-nav.next-normal .next-nav-item.next-menu-item:hover {
+    color: #fff;
+    background-color: #444;
+  }
+}

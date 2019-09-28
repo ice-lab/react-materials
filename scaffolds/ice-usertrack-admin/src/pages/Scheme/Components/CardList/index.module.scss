@@ -1,0 +1,70 @@
+.container {
+  margin: 20px;
+}
+
+.loading {
+  width: 100%;
+  min-height: 500px;
+}
+
+.createScheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 190px;
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.head {
+  position: relative;
+  padding: 16px 16px 8px;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.title {
+  width: 90%;
+  margin: 0 0 5px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.desc {
+  margin: 0;
+  font-size: 14px;
+}
+
+.body {
+  position: relative;
+  padding: 16px;
+}
+
+.info {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.time {
+  position: relative;
+}
+
+.addIcon {
+  margin-right: 10px;
+}
+
+.editIcon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}

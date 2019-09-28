@@ -1,0 +1,36 @@
+.wrapper {
+    background: #F4F4F4;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1024px;
+    height: 220px;
+    margin: 0 auto;
+}
+
+.contentNum {
+    display: flex;
+    align-items: center;
+}
+
+.bigNum {
+    color: #333;
+    font-size: 68px;
+}
+
+.symbol {
+    margin-left: 10px;
+    color: #333;
+    font-size: 40px;
+}
+
+.contentDesc {
+    margin-top: 6px;
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}

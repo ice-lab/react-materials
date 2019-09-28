@@ -1,0 +1,40 @@
+.title {
+  margin: 0;
+  padding: 10px 20px;
+}
+.userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+}
+.userName {
+  margin: 4px 0 3px;
+}
+.userEmail {
+  margin: 0;
+}
+.userAccess {
+  padding: 3px 6px;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 5px;
+}
+.editIcon {
+  color: #2874D1;
+  cursor: pointer;
+}
+.searchInputCol {
+  padding: 10px 20px;
+  background: #E6EBF4;
+}
+.searchInput {
+  width: 100%;
+  background: #F4F6FA;
+  border: none;
+}
+.purchasesState {
+  text-transform: capitalize;
+}
+.containerPadding{
+  padding: 0 !important;
+}

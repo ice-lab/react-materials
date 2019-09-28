@@ -1,0 +1,49 @@
+{
+  "name": "@icedesign/partners-block",
+  "version": "3.0.0",
+  "description": "适用于合作伙伴的展示",
+  "homepage": "https://unpkg.com/@icedesign/partners-block/build/index.html",
+  "author": "",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/Partners"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0",
+    "@alifd/next": "^1.x"
+  },
+  "blockConfig": {
+    "name": "partners",
+    "title": "合作伙伴",
+    "categories": [
+      "信息展示"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/partners-block/screenshot.png",
+    "version-0.x": "1.0.0"
+  },
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.2.0"
+  }
+}

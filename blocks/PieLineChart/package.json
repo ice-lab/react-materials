@@ -1,0 +1,56 @@
+{
+  "name": "@icedesign/pie-line-chart-block",
+  "version": "3.0.0",
+  "description": "",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/PieLineChart"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "dependencies": {
+    "@icedesign/container": "^1.x",
+    "echarts": "^4.0.4",
+    "echarts-for-react": "^2.0.8",
+    "prop-types": "^15.5.8",
+    "@alifd/next": "^1.x"
+  },
+  "devDependencies": {
+    "@icedesign/theme": "^0.x",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "blockConfig": {
+    "name": "pie-line-chart",
+    "screenshot": "https://unpkg.com/@icedesign/pie-line-chart-block/screenshot.png",
+    "title": "饼图和环形图组合",
+    "categories": [
+      "图表"
+    ],
+    "themePackage": "@icedesign/theme",
+    "version-0.x": "0.1.4"
+  },
+  "homepage": "https://unpkg.com/@icedesign/pie-line-chart-block/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

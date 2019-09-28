@@ -1,0 +1,122 @@
+.hyThirdPartyWrapper {
+  min-width: 1280px;
+  background: #fff;
+}
+
+.hyThirdParty {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 47px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.hyThirdPartyTitle {
+  position: relative;
+  margin-bottom: 40px;
+  color: #999;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.thirdPartyMore {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  color: #108ee9;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.thirdPartyDetails {
+  position: relative;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+.thirdPartyDetail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  font-size: 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.thirdPartyDetailItem {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 270px;
+  height: 400px;
+  margin: 0 20px;
+  vertical-align: top;
+  border: 1px solid #eaeaea;
+  border-radius: 2px 2px 0 0;
+  -webkit-transition: -webkit-transform 0.2s linear;
+  transition: transform 0.2s linear, \n-webkit-transform 0.2s linear;
+}
+
+.thirdPartyDetailItemFirst {
+  margin-left: 0;
+}
+
+.thirdPartyDetailItemLast {
+  margin-right: 0;
+}
+
+.thirdPartyDetailImg {
+  position: relative;
+  left: -1px;
+  width: 270px;
+  height: 180px;
+  border: 0;
+  border-radius: 2px 2px 0 0;
+}
+
+.thirdPartyName {
+  margin-top: 20px;
+  color: #333;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.thirdPartySold {
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.thirdPartySoldNumber {
+  color: #108ee9;
+  font-weight: 500;
+}
+
+.thirdPartyDesc {
+  height: 60px;
+  margin: 14px 15px 0;
+  color: #333;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.thirdPartyLink {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 37px;
+  color: #108ee9;
+  font-size: 14px;
+  border: 1px solid #108ee9;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}

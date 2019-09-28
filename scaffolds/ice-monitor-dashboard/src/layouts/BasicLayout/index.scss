@@ -1,0 +1,15 @@
+// Global RESET
+.ice-layout {
+  &.basic-layout {
+    min-width: 1280px;
+    background: #f7f7f7;
+
+    .next-btn {
+      border-radius: 4px;
+    }
+
+    .content {
+      margin: 20px;
+    }
+  }
+}

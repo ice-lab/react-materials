@@ -1,0 +1,72 @@
+
+.container {
+  padding: 0;
+}
+
+.content {
+  padding: 20px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.head {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.summary {
+  display: flex;
+  margin-left: 20px;
+  font-size: 13px;
+}
+
+.item {
+  margin-right: 15px;
+}
+
+.itemLabel {
+  margin-right: 6px;
+  color: #999;
+}
+
+.itemValue {
+  color: #447eff;
+}
+
+.subTitle {
+  margin: 0;
+  padding: 20px 20px 10px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.table {
+  margin: 0 10px;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  padding: 0 20px;
+  background: #fff;
+}
+
+.link {
+  position: absolute;
+  right: 20px;
+  color: #447eff;
+  font-size: 13px;
+  cursor: pointer;
+}

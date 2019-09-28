@@ -1,0 +1,103 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.content {
+  display: flex;
+  padding: 40px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.leftContent {
+  border-right: 1px solid #f0f0f0;
+}
+
+.cell {
+  width: 50%;
+  padding: 40px;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 38px;
+  text-align: center;
+}
+
+.subTitle {
+  margin: 0 0 15px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.desc {
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}
+
+.link {
+  margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.itemBody {
+  display: flex;
+}
+
+.topItemBody {
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.itemBodyImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cellleftContent {
+  width: 50%;
+  padding: 40px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.cellrightContent {
+  width: 50%;
+  padding: 40px;
+}
+
+.topItemBodyitemBody {
+  display: flex;
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bottomItemBodyitemBody {
+  display: flex;
+}
+
+.imga {
+  width: 392px;
+  margin-top: 60px;
+}
+
+.imgt {
+  width: 144px;
+  margin-right: 40px;
+}
+
+.imgtr {
+  width: 144px;
+  margin-left: 40px;
+}

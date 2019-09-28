@@ -1,0 +1,35 @@
+.row {
+  margin: 20px 10px;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 15px 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #eee;
+}
+
+.summary {
+  padding: 20px;
+}
+
+.item {
+  height: 32px;
+  line-height: 32px;
+}
+
+.label {
+  display: inline-block;
+  min-width: 74px;
+  font-weight: 500;
+}

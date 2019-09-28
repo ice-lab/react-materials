@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 40px;
+  letter-spacing: 1px;
+}
+
+.card {
+  height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unselectedCard {
+  color: $color-text1-3;
+  background-color: $color-white;
+  border: 1px solid $color-fill1-1;
+}
+
+.selectedCard {
+  color: $color-white;
+  background: $color-brand1-6;
+}
+
+.icon {
+  margin: 8px;
+  color: $color-brand1-6;
+}
+
+.selectedIcon {
+  margin: 8px;
+  color: white;
+}
+
+.title {
+  margin: 8px;
+  font-size: 14px;
+}
+
+.instrument {
+  margin: 8px;
+  font-size: 12px;
+}

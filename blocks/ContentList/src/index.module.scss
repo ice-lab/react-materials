@@ -1,0 +1,68 @@
+.cardTitle {
+  height: 16px;
+  margin: 0;
+  padding: 0;
+  color: rgb(51, 51, 51);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+}
+.item {
+  position: relative;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.title {
+  margin: 0 0 10px;
+}
+.metaWrap {
+  display: flex;
+  padding-left: 15px;
+}
+.meta {
+  margin-right: 15px;
+  color: #999;
+  font-size: 13px;
+}
+.operWrap {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  display: flex;
+  cursor: pointer;
+}
+.oper {
+  margin-left: 15px;
+  color: #999;
+  font-size: 13px;
+}
+.operIcon {
+  margin-right: 8px;
+}
+.pagination {
+  margin-top: 20px;
+  text-align: right;
+}
+.filterItem {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  margin-bottom: 20px;
+}
+.filterLabel {
+  width: 60px;
+  font-weight: 400;
+  font-size: 15px;
+}
+.filterText {
+  margin-right: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.active {
+  min-height: 60px;
+  padding: 5px 15px;
+  color: #fff;
+  background: #2784fc;
+  border-radius: 20px;
+}

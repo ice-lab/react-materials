@@ -1,0 +1,76 @@
+.container {
+  padding: 0;
+}
+
+.cardTitle {
+  padding: 20px;
+  color: #000;
+  font-size: 16px;
+  line-height: 16px;
+  opacity: 0.8;
+}
+
+.body {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.cell {
+  width: 50%;
+}
+
+.cellName {
+  color: #666;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.cellValue {
+  height: 40px;
+  margin: 15px 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.ratioLabel {
+  margin-right: 20px;
+}
+
+.orange {
+  color: #f7da47;
+}
+
+.green {
+  color: #ee706d;
+}
+
+.black {
+  color: #444;
+}
+
+.grey {
+  color: #666;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #f1f7fe;
+}
+
+.item {
+  display: flex;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.itemLabel {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.itemValue {
+  color: rgba(0, 0, 0, 0.8);
+}

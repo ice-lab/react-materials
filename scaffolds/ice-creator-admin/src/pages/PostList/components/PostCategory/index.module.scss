@@ -1,0 +1,70 @@
+.titleWrapper {
+  height: 60px;
+  padding: 0 20px;
+  line-height: 60px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.navItemWraper {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  line-height: 60px;
+}
+
+.postCategoryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.postCategoryItem {
+  display: flex;
+  flex: 0 0 49%;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 49%;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f6f6f6;
+}
+
+.coverWrapper {
+  padding-right: 14px;
+}
+
+.blockDetail {
+  position: relative;
+  width: 100%;
+}
+
+.blockTitle {
+  padding: 6px 0;
+  font-size: $font-size-subhead;
+}
+
+.blockItem {
+  display: flex;
+}
+
+.blockLable {
+  flex: 0 0 60px;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.blockDesc {
+  color: #999;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+.blockBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #fff;
+  background: #5e83fb;
+  border-radius: 3px;
+}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.editableTable {
+  .celleditor {
+    .celleditor-trigger {
+      display: none;
+    }
+    &:hover .celleditor-trigger {
+      display: inline-block;
+    }
+  }
+}
+
+.addNewItem {
+  height: 32;
+  margin-top: 20;
+  line-height: 32px;
+  text-align: center;
+  background: #F5F5F5;
+  cursor: pointer;
+}

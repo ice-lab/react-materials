@@ -1,0 +1,17 @@
+.detailItem{
+  display: flex;
+  padding: 15px 0;
+  border-top: 1px solid #EEEFF3;
+};
+.detailTitle{
+  width: 120px;
+  margin-right: 30px;
+  color: #999;
+  text-align: right;
+};
+.detailBody{
+  flex: 1;
+};
+.statusProcessing{
+  color: #64D874;
+};

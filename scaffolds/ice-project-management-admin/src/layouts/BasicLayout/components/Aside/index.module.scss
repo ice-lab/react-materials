@@ -1,0 +1,24 @@
+.iceAsideCustom {
+  width: 240px;
+  height: 100%;
+  padding-top: 10px;
+  box-shadow: 4px 1px 12px rgba(0, 55, 107, 0.04);
+
+  .iceAsideLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #447eff;
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  :global .next-menu-item-text {
+    color: #666;
+
+    :global .next-nav-icon.next-icon {
+      margin-right: 10px;
+    }
+  }
+}

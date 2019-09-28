@@ -1,0 +1,46 @@
+.collapse{
+  display: none;
+};
+.summaryInfo{
+  display: flex;
+  border-bottom: 1px solid #e7e7eb;
+};
+.baseInfo{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  padding-top: 20px !important;
+};
+.infoItem{
+  width: 50% !important;
+  margin-bottom: 15px !important;
+};
+.infoItemLabel{
+  color: #999;
+};
+.itemLogo{
+  width: 100px !important;
+  height: 100px !important;
+};
+.infoIntro{
+  margin-left: 20px;
+  padding-bottom: 20px;
+};
+.infoTitle{
+  font-weight: bold;
+};
+.infoDesc{
+  color: #999;
+};
+.toggleBtn{
+  margin-top: 20px;
+  color: #999;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+};
+.hb{
+  display: flex;
+  display: none;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}

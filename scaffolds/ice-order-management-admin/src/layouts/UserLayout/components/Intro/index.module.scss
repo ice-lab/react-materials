@@ -1,0 +1,28 @@
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 400px;
+  color: #fff;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.5;
+}
+
+.description {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  letter-spacing: 0.45px;
+}

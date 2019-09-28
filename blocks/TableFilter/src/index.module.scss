@@ -1,0 +1,43 @@
+.tableFilter{
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px 0;
+  background: #fff;
+}
+.filterItem{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+.submitButton{
+  margin-left: 15px;
+}
+.tableContainer{
+  padding-bottom: 10px;
+  background: #fff;
+}
+.pagination{
+  margin: 20px 0;
+  text-align: center;
+}
+.ballon{
+  line-height: 24px;
+}
+.ballondiv{
+  margin: 5px;
+}
+.circle{
+  display: inline-table;
+  width: 8px;
+  height: 8px;
+  margin-right: 4px;;
+  background: #28a745;
+  border-radius: 50px;
+}
+.stateText{
+  color: #28a745;
+}
+.editIcon{
+  color: #999;
+  cursor: pointer;
+}

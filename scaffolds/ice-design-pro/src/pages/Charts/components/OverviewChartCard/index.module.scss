@@ -1,0 +1,79 @@
+/* Field.jsx */
+.field{
+  margin-top: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  line-height: 22px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-top: 1px solid #e8e8e8;
+};
+.value{
+  margin-left: 8px;
+  color: rgba(0,0,0,.85);
+};
+
+/* Head.jsx */
+.metaWrap{
+  position: relative;
+};
+.meta{
+  position: relative;
+  height: 22px;
+  color: rgba(0,0,0, 0.45);
+  font-size: 14px;
+  line-height: 22px;
+};
+.promptIcon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+};
+.total{
+  height: 38px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  overflow: hidden;
+  color: rgba(0,0,0,.85);
+  font-size: 30px;
+  line-height: 38px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+};
+
+/* index.jsx */
+.footer{
+  height: 30px !important;
+  margin-top: 10px !important;
+  padding-top: 10px !important;
+  border-top: 1px solid #e8e8e8 !important; 
+}
+
+/* Trend.jsx */
+.content {
+  position: relative;
+  height: 64px;
+}
+.trendItems {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  color: rgba(0,0,0,.65);
+}
+.trendItem {
+  margin-right: 20px;
+}
+.trendRate {
+  margin-left: 8px;
+  color: rgba(0,0,0,.85);
+}
+.arrowIcon {
+  margin-left: 4px;
+  color: #f5222d;
+}

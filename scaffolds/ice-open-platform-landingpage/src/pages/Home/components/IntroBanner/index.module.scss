@@ -1,0 +1,52 @@
+.introBannerWrapStyles {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+}
+
+.introBannerImgStyles {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  z-index: 10 !important;
+  display: block !important;
+  width: 1920px !important;
+  height: 100% !important;
+  transform: translateX(-50%) !important;
+}
+
+.introBannerImgMaskStyles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.45;
+}
+
+.introBannerTextStyles {
+  position: relative;
+  z-index: 99;
+  width: 1200px;
+  color: #fff;
+}
+
+.introBannerTitleStyles {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 70px;
+}
+
+.introBannerSubtitleStyles {
+  max-width: 768px;
+  margin-top: 8px;
+  margin-bottom: 48px;
+  font-size: 16px;
+  line-height: 25px;
+}

@@ -1,0 +1,25 @@
+.newDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 40px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.newFilter {
+  opacity: 0.3;
+  filter: grayscale(100%);
+}
+
+.Logo {
+  color: #666;
+}
+
+.newBottom {
+  color: #999;
+  font-size: 12;
+  line-height: 1.5;
+  text-align: right;
+}

@@ -1,0 +1,36 @@
+:global {
+  .fusion-shell-aside.fusion-shell-navigation.fusion-shell-collapse.fusion-shell-mini {
+    width: 60px;
+  }
+}
+
+.asideNav {
+  background-color: transparent;
+
+  :global {
+    .next-menu-item.next-nav-item {
+      color: #fff;
+      font-weight: 400;
+      background-color: transparent;
+
+      a {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: #fff;
+        }
+      }
+
+      &.next-selected:not(.next-disabled).next-focused:hover,
+      &.next-selected:not(.next-disabled):hover {
+        background-color: #333;
+      }
+
+      &.next-selected .next-menu-item-inner .next-menu-item-text {
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+  }
+}

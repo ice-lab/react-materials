@@ -1,0 +1,52 @@
+.wrapper{
+  height: 740px;
+  overflow: hidden;
+  background: url(./images/TB1.IQmRVXXXXbYXVXXXXXXXXXX-2760-1480.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.body{
+  text-align: center
+}
+.title{
+  margin-top: 130px;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 24px
+}
+.text{
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing:2px;
+}
+.sextraBody{
+  position: relative;
+  margin-top: 80px;
+  text-align: center
+}
+.image{
+  display: block;
+  width:706px;
+  height:218px;
+  margin: 0 auto;
+}
+.extraText{
+  display: flex;
+  width: 706px;
+  margin: 0 auto;
+  color: #fff;
+}
+.extraTextItemLeft{
+  width: 215px;
+  text-align: center
+}
+.extraTextItemCenter{
+  width: 275px;
+  text-align: center
+}
+.extraTextItemRight{
+  width: 215px;
+  text-align: center
+}

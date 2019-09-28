@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.links {
+  margin-bottom: 8px;
+}
+
+.link {
+  margin-right: 40px;
+  color: #fff !important;
+  font-size: 13px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.marginRight {
+  margin-right: 0;
+}

@@ -1,0 +1,59 @@
+.ice-form {
+  width: 100%; 
+  box-sizing: border-box;
+}
+
+.ice-field {
+  display: flex;
+  flex-wrap: wrap;
+  [class*='ice-col-'] {
+    width: 16.66%; 
+    padding: 6px; 
+    // next className
+    .next-input, .next-select {
+      width: 100%;
+    }
+  }
+  .ice-col-1 { width: 8.33%; }
+  .ice-col-2 { width: 16.66%; }
+  .ice-col-3 { width: 25%;    }
+  .ice-col-4 { width: 33.33%; }
+  .ice-col-5 { width: 41.66%; }
+  .ice-col-6 { width: 50%;   }
+  .ice-col-7 { width: 58.33%; }
+  .ice-col-8 { width: 66.66%; }
+  .ice-col-9 { width: 75%;    }
+  .ice-col-10 { width: 83.33%; }
+  .ice-col-11 { width: 91.66%; }
+  .ice-col-12 { width: 100%;   }
+
+  .ice-field-label {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .ice-field-label-top {
+    flex-basis: 100%;
+    padding-bottom: 0;
+    & + .ice-field-control {
+      padding-top: 0;
+    }
+  }
+  .ice-field-label-text-right {
+    text-align: right;
+  }
+
+  .ice-field-error {
+    color: #ff3000;
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .ice-field-tips {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #999;
+  }
+}

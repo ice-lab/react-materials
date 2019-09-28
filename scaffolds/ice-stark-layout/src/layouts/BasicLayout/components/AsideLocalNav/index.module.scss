@@ -1,0 +1,42 @@
+:global {
+  .fusion-shell-aside
+    .fusion-shell-localnavigation.fusion-shell-collapse
+    .next-nav.next-ver
+    .next-menu-item {
+    padding: 0 !important;
+  }
+}
+
+.localNav {
+  :global {
+    .next-menu-sub-menu-wrapper.next-nav-sub-nav-item .next-menu-sub-menu {
+      .next-menu-item.next-nav-item {
+        font-weight: 400;
+        background-color: transparent;
+        a {
+          &:link,
+          &:visited,
+          &:hover,
+          &:active {
+            color: inherit;
+          }
+        }
+
+        &:hover {
+          background-color: #f9f9f9;
+          a {
+            color: #3a9bf0;
+          }
+        }
+
+        &.next-selected {
+          font-weight: 700;
+          background-color: #f9f9f9;
+          a {
+            color: #3a9bf0;
+          }
+        }
+      }
+    }
+  }
+}

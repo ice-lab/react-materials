@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+.filterWithSearch {
+  .filter-item {
+    &:last-child {
+      border-right: none !important;
+    }
+    &:hover, &.selected {
+      color: #3080FE !important;
+    }
+  }
+}
+
+.row{
+  align-items: center;
+};
+.filterContainer{
+  line-height: 32px;
+};
+.filterItem{
+  height: 20px;
+  padding: 0 20px;
+  color: #333;
+  font-size: 14px;
+  border-right: 1px solid #D8D8D8;
+  cursor: pointer;
+};
+.searchWrapper{
+  margin: 10px 0;
+  text-align: right;
+};
+.sty{
+  display: inline-block;
+}

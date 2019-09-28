@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.tagmessagelist {
+  .nexttabs .nexttabscontent {
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+
+.item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #f4f4f4;
+}
+.title{
+  color: #666;
+  font-size: 14px;
+}
+.date{
+  color: #666;
+  font-size: 12px;
+}
+.allMessage{
+  margin-top: 20px;
+  text-align: center;
+}

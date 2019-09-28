@@ -1,0 +1,78 @@
+.shell {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+.appName {
+  margin-left: 10px;
+  color: #fff;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.userName {
+  margin-left: 10px;
+  color: #fff;
+}
+
+:global {
+  .next-menu-item.next-disabled .next-menu-item-text > a {
+    background: initial;
+  }
+
+  .next-menu.next-nav {
+    min-width: auto;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .fusion-shell-header .fusion-shell-navigation {
+    margin: 0;
+    .next-menu.next-nav {
+      background-color: transparent;
+      .next-menu-item.next-nav-item {
+        background-color: transparent;
+        .next-menu-item-inner {
+          color: #fff;
+          a {
+            color: #fff;
+          }
+
+          &:hover {
+            color: #3080fe;
+            a {
+              color: #3080fe;
+            }
+          }
+        }
+      }
+    }
+  }
+  .fusion-shell-header {
+    border-bottom: 0;
+  }
+
+  .fusion-shell-main {
+    .fusion-shell-content .fusion-shell-content-inner {
+      min-height: 516px;
+    }
+
+    .fusion-shell-footer {
+      min-height: 48px;
+      padding-bottom: 20px;
+      color: #ccc;
+      font-size: 16px;
+      font-family: AlibabaSans-Bold, sans-serif;
+      line-height: 25px;
+      text-align: left;
+      background: transparent;
+    }
+  }
+}

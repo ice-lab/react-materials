@@ -1,0 +1,25 @@
+.item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  margin: 10px 40px;
+};
+.link{
+  color: #333;
+  text-decoration: none;
+};
+.cover{
+  width: 70px;
+  height: 70px;
+};
+.title{
+  margin-top: 12px;
+  font-size: 14px;
+  text-align: center;
+};
+.nl{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

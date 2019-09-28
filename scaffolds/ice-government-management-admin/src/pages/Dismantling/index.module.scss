@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 72px;
+  background: $color-white;
+}
+
+.breadcrumb {
+  margin: 0 0 0 20px;
+  padding-left: 16px;
+  border-left: 5px solid $color-brand1-6;
+}
+
+.container {
+  margin: 20px;
+}

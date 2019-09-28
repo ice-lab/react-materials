@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+
+  .logoText {
+    display: block;
+    max-width: 180px;
+    margin-left: 10px;
+    overflow: hidden;
+    color: $color-brand1-6 !important;
+    font-weight: bold;
+    font-size: 30px;
+    white-space: nowrap;
+    text-decoration: none;
+    text-overflow: ellipsis;
+  }
+}

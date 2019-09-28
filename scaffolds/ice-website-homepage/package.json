@@ -1,0 +1,76 @@
+{
+  "name": "@icedesign/website-homepage-scaffold",
+  "version": "3.0.4",
+  "description": "该模板适用于产品类的首页介绍，默认内置一个页面和五个不同风格的展示区块",
+  "homepage": "https://unpkg.com/@icedesign/website-homepage-scaffold@latest/build/index.html",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
+    "ice.config.js",
+    "jsconfig.json"
+  ],
+  "scripts": {
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@icedesign/container": "^1.x",
+    "@icedesign/foundation-symbol": "^1.x",
+    "@icedesign/img": "^1.x",
+    "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
+    "classnames": "^2.2.5",
+    "enquire-js": "^0.1.2",
+    "moment": "^2.23.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@ice/spec": "^0.1.1",
+    "eslint": "^6.0.1",
+    "stylelint": "^10.1.0",
+    "ice-scripts": "^2.0.0",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "builder": "ice-scripts",
+    "name": "ice-website-homepage",
+    "title": "飞冰官网",
+    "categories": [
+      "官网模板"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB1PgGdJAvoK1RjSZFNXXcxMVXa-2860-1580.png",
+    "screenshots": [
+      "https://img.alicdn.com/tfs/TB1PgGdJAvoK1RjSZFNXXcxMVXa-2860-1580.png",
+      "https://img.alicdn.com/tfs/TB16wmkJxjaK1RjSZFAXXbdLFXa-2860-1580.png"
+    ]
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-website-homepage"
+  }
+}

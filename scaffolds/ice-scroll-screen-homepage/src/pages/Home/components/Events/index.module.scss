@@ -1,0 +1,113 @@
+.container {
+  height: 100%;
+  background: #000;
+}
+
+.contentLeft {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background: #000;
+}
+
+.contentRight {
+  position: relative;
+  float: right;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(-180deg, #3b2da6, #000);
+}
+
+.content {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 180px;
+}
+
+.imageWrap {
+  float: left;
+}
+
+.image {
+  height: 450px;
+  margin: 0 auto;
+  border-left: 8px solid #df4;
+}
+
+.introWrap {
+  position: absolute;
+  top: 45%;
+  left: 58%;
+  width: 520px;
+  padding: 30px 20px 20px;
+  background: #5a44ff;
+  box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.5);
+}
+
+.introNum {
+  padding-bottom: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.83px;
+}
+
+.introTitle {
+  padding-bottom: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 42px;
+  letter-spacing: 1.5px;
+}
+
+.introDesc {
+  float: left;
+  margin-top: 20px;
+  padding-top: 0;
+  color: #777f84;
+  font-size: 14px;
+}
+
+.introLine {
+  display: inline-block;
+  float: left;
+  width: 30px;
+  height: 2px;
+  margin-right: 10px;
+  background: #fff;
+}
+
+.introText {
+  float: left;
+  width: 90%;
+  margin-top: -10px;
+  color: #fff;
+  letter-spacing: 0.35px;
+  text-align: justify;
+}
+
+.linkButton {
+  float: left;
+  width: 140px;
+  height: 40px;
+  margin-top: 25px;
+  line-height: 40px;
+  text-align: center;
+  background: #000;
+}
+
+.link {
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 40px;
+  text-decoration: none;
+}

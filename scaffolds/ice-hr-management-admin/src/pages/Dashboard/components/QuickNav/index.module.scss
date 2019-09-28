@@ -1,0 +1,40 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.itemTitle {
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.iconImage {
+  width: 24px;
+  height: 24px;
+}
+
+.count {
+  color: #ff363b;
+}

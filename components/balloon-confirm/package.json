@@ -1,0 +1,45 @@
+{
+  "name": "@icedesign/balloon-confirm",
+  "version": "1.0.5",
+  "description": "ICE 气泡确认框",
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "demo/",
+    "build/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/components/balloon-confirm"
+  },
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.component.config.js",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "component"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16.5.0"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "balloon-confirm",
+    "title": "ICE 气泡确认框"
+  },
+  "homepage": "https://unpkg.com/@icedesign/balloon-confirm@1.0.5/build/index.html"
+}

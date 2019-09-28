@@ -1,0 +1,64 @@
+.container {
+  padding: 0;
+  overflow: scroll;
+}
+.content {
+  position: relative;
+  padding: 20px !important;
+  border-right: 1px solid #f0f0f0 !important;
+}
+.head {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.title {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+}
+.summary {
+  display: flex;
+  margin-left: 20px;
+  font-size: 13px;
+}
+.item {
+  margin-right: 15px;
+}
+.itemLabel {
+  margin-right: 6px;
+  color: #9B9B9B;
+}
+.itemValue {
+  color: #4990E2;
+}
+.link {
+  position: absolute;
+  right: 20px;
+  margin-top: 18px;
+  color: #4990E2;
+  font-size: 13px;
+  cursor: pointer !important;
+}
+
+/* RankList.jsx */
+.subTitle {
+  margin: 0;
+  padding: 20px 20px 10px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.table {
+  margin: 0 10px;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  padding: 0 20px;
+  background: #fff;
+}

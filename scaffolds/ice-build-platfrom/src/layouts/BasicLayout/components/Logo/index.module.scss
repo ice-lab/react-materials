@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .logoText {
+    display: block;
+    max-width: 120px;
+    margin-left: 10px;
+    overflow: hidden;
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

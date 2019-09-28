@@ -1,0 +1,33 @@
+.container {
+  min-height: 800px;
+  padding: 0;
+}
+
+.item {
+  position: relative;
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.title {
+  margin-right: 24px;
+  margin-left: 16px;
+  color: #314659;
+  font-size: 14px;
+}
+
+.icon {
+  color: #697b8c;
+}
+
+.description {
+  color: #697b8c;
+  font-size: 14px;
+}
+
+.time {
+  position: absolute;
+  right: 20px;
+  color: #314659;
+}

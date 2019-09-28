@@ -1,0 +1,72 @@
+{
+  "name": "@icedesign/ts-scaffold",
+  "version": "2.0.4",
+  "description": "该模板基于 TypeScript 适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
+  "homepage": "https://unpkg.com/@icedesign/ts-scaffold@latest/build/index.html",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
+    "tsconfig.json",
+    "ice.config.js",
+    "jsconfig.json"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@icedesign/theme": "^1.x",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
+    "moment": "^2.23.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@ice/spec": "^0.1.1",
+    "css-modules-typescript-loader": "^2.0.4",
+    "eslint": "^6.0.1",
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0",
+    "ice-scripts": "^2.0.0",
+    "stylelint": "^10.1.0"
+  },
+  "scripts": {
+    "start": "ice-scripts dev",
+    "build": "ice-scripts build",
+    "prepublishOnly": "npm run build",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "builder": "ice-scripts",
+    "name": "ice-typescript-starter",
+    "title": "ICE TypeScript Starter",
+    "categories": [
+      "基础模板"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB13AFlH6TpK1RjSZKPXXa3UpXa-2860-1580.png"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "iceworks": {
+    "type": "react",
+    "adapter": "adapter-react-v3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-typescript-starter"
+  }
+}

@@ -1,0 +1,17 @@
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 10px 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5dddd;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  font-size: 22px;
+}

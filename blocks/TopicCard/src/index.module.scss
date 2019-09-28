@@ -1,0 +1,43 @@
+.items{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0
+}
+.cover{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+  background-color: #e9f1ff;
+  border-radius: 70px;
+}
+.icon{
+  width: 44px;
+  height: 40px;
+}
+.meta{
+  color: #333;
+  font-size: 12px;
+}
+.total{
+  color: #333;
+  font-size: 24px
+}
+.compareText{
+  color: #999;
+  font-size: 12px
+}
+.up{
+  color: #fc5848
+}
+.down{
+  color: #64d874;
+}

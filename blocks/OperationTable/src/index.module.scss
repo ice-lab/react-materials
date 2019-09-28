@@ -1,0 +1,39 @@
+.cardContainer {
+  padding: 10px 10px 20px 10px !important;
+};
+.titleCol {
+  display: flex;
+  flex-direction: row;
+};
+.titleText {
+  margin-left: 10px;
+  line-height: 20px;
+};
+.operBtn {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  color: #929292;
+  line-height: 24px;
+  text-align: center;
+  background: #f2f2f2;
+  border-radius: 999px;
+  cursor: pointer;
+};
+.paginationContainer {
+  padding-top: 26px;
+  text-align: right;
+};
+.row {
+  margin-top: 10px;
+};
+.label {
+  line-height: 30px;
+};
+.formField {
+  width: 100%;
+};
+.dialogWidth{
+  width: 400px;
+}

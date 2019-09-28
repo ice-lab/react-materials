@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.settingsForm {
+  .nextInput {
+    width: 100%;
+  }
+
+  .nextUploadSelectPictureCard {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  text-align: right !important;
+}
+
+.formContent {
+  position: relative !important;
+  width: 100% !important;
+}
+
+.formItem {
+  align-items: center !important;
+  margin-bottom: 25px !important;
+}
+
+.formTitle {
+  margin: 0 0 20px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid #eee !important;
+}
+
+.width {
+  margin-top: 20px !important;
+}
+
+.width2 {
+  width: 100px !important;
+}

@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: 1200px;
+  height: 100vh;
+  background-image: url('https://img.alicdn.com/tfs/TB1cpTewMHqK1RjSZFEXXcGMXXa-2872-1580.png');
+  background-size: cover;
+}
+
+.row {
+  display: flex !important;
+  flex: 1 !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

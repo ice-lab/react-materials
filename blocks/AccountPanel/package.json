@@ -1,0 +1,49 @@
+{
+  "name": "@icedesign/account-panel-block",
+  "version": "3.0.0",
+  "description": "用户中心展示账户信息内容",
+  "homepage": "https://unpkg.com/@icedesign/account-panel-block/build/index.html",
+  "author": "noyobo <nongyoubao@alibaba-inc.com>",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/AccountPanel"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@icedesign/container": "^1.x",
+    "@icedesign/form-binder": "^1.x"
+  },
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.8.3"
+  },
+  "blockConfig": {
+    "name": "account-panel",
+    "title": "账户信息",
+    "categories": [
+      "信息展示"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/account-panel-block/screenshot.png",
+    "version-0.x": "1.0.0"
+  },
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  }
+}

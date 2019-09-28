@@ -1,0 +1,49 @@
+.header {
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.noticeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  line-height: 54px;
+  text-decoration: none;
+  border-bottom: 1px solid #fafafa;
+}
+
+.title {
+  color: #333;
+}
+
+.tag {
+  margin-left: 5px;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 20px;
+}
+
+.top {
+  color: #5e83fb;
+  background-color: #eff6ff;
+}
+
+.hot {
+  color: #ee706d;
+  background-color: #ffe8e8;
+}
+
+.new {
+  color: #f7da47;
+  background-color: #fff4e2;
+}
+.time { color: #999; }
+
+.divPadding {
+  padding-top: 20px;
+  text-align: right;
+}

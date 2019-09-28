@@ -1,0 +1,23 @@
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.border {
+  border-radius: 1px solid #f0f0f0;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.value {
+  color: #333;
+  font-weight: bold;
+  font-size: 22px;
+}

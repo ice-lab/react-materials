@@ -1,0 +1,49 @@
+{
+  "name": "@icedesign/account-status-block",
+  "version": "3.0.0",
+  "description": "展示账户标识以及操作等",
+  "author": "noyobo <nongyoubao@alibaba-inc.com>",
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/AccountStatus"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@icedesign/container": "^1.x",
+    "prop-types": "^15.5.8",
+    "react": "^16.2.0",
+    "@alifd/next": "^1.x"
+  },
+  "blockConfig": {
+    "name": "account-status",
+    "title": "账户状态",
+    "categories": [
+      "信息展示"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/account-status-block/screenshot.png",
+    "version-0.x": "1.0.0"
+  },
+  "homepage": "https://unpkg.com/@icedesign/account-status-block/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react-dom": "^16.2.0"
+  }
+}

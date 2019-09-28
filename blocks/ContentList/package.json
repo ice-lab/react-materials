@@ -1,0 +1,54 @@
+{
+  "name": "@icedesign/content-list-block",
+  "version": "3.0.0",
+  "description": "筛选和列表组合",
+  "author": {
+    "name": "ICE Team",
+    "email": "ice-admin@alibaba-inc.com"
+  },
+  "files": [
+    "src/",
+    "build/",
+    "screenshot.png"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/blocks/ContentList"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "block"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.com"
+  },
+  "dependencies": {
+    "@icedesign/container": "^1.x",
+    "@alifd/next": "^1.x"
+  },
+  "blockConfig": {
+    "name": "content-list",
+    "title": "内容列表",
+    "categories": [
+      "列表",
+      "数据展示"
+    ],
+    "screenshot": "https://unpkg.com/@icedesign/content-list-block/screenshot.png",
+    "version-0.x": "1.0.3"
+  },
+  "homepage": "https://unpkg.com/@icedesign/content-list-block/build/index.html",
+  "scripts": {
+    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.block.config.js",
+    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.block.config.js",
+    "screenshot": "../../node_modules/.bin/screenshot -l -s '#mountNode'",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.x",
+    "prop-types": "^15.5.8"
+  }
+}

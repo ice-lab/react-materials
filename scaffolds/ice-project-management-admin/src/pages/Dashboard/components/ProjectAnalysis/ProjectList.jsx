@@ -1,0 +1,90 @@
+import React from 'react';
+import IceContainer from '@icedesign/container';
+import { Table, Progress } from '@alifd/next';
+
+import styles from './index.module.scss';
+
+const DATA = [
+  {
+    id: 1,
+    name: '项目 A',
+    member: '2,80,489',
+    percent: 60,
+    state: 'success',
+  },
+  {
+    id: 2,
+    name: '项目 B',
+    member: '1,98,956',
+    percent: 30,
+    state: 'error',
+  },
+  {
+    id: 3,
+    name: '项目 C',
+    member: '1,90,257',
+    percent: 70,
+    state: 'success',
+  },
+  {
+    id: 4,
+    name: '项目 D',
+    member: '1,80,745',
+    percent: 40,
+    state: 'error',
+  },
+  {
+    id: 5,
+    name: '项目 E',
+    member: '1,24,693',
+    percent: 60,
+    state: 'success',
+  },
+  {
+    id: 6,
+    name: '项目 F',
+    member: '8,489',
+    percent: 20,
+    state: 'error',
+  },
+  {
+    id: 7,
+    name: '项目 G',
+    member: '5,233',
+    percent: 80,
+    state: 'success',
+  },
+  {
+    id: 8,
+    name: '项目 H',
+    member: '1,688',
+    percent: 50,
+    state: 'success',
+  },
+];
+
+export default function TopActiveChart() {
+  // const renderProduct = (value, index, record) => {
+  //   return (
+  //     <div className={styles.product}>
+  //       <p className={styles.prodyctTitle}>{record.title}</p>
+  //     </div>
+  //   );
+  // };
+
+  return (
+    <IceContainer title="项目列表">
+      <Table dataSource={DATA} hasBorder={false} className={styles.table}>
+        <Table.Column title="项目名称" dataIndex="name" />
+        <Table.Column title="项目成员" dataIndex="member" />
+        <Table.Column
+          title="项目进度"
+          dataIndex="percent"
+          cell={(value, index, record) => (
+            <Progress percent={record.percent} state={record.state} />
+          )}
+        />
+      </Table>
+    </IceContainer>
+  );
+}
