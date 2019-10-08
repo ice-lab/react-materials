@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import '@alifd/next/reset.scss';
 
 import BasicLayout from '@/layouts/BasicLayout';
+import BasicRouter from './BasicRouter';
 
 const ICE_CONTAINER = document.getElementById('ice-container');
 
@@ -13,6 +14,8 @@ if (!ICE_CONTAINER) {
 }
 
 ReactDOM.render(
-  <BasicLayout />,
+  <BasicLayout>
+    <BasicRouter />
+  </BasicLayout>,
   ICE_CONTAINER
 );

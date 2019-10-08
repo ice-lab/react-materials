@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { headerMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
-import Index from '@/pages/Index';
 
 import Logo from './components/Logo';
 import AsideNav from './components/AsideNav';
@@ -16,7 +15,7 @@ import Footer from './components/Footer';
 
 import styles from './index.module.scss';
 
-const BasicLayout = () => {
+const BasicLayout = ({ children }) => {
   const [pathname, setPathname] = useState();
   const [isScreen, setIsScreen] = useState();
 
@@ -108,9 +107,7 @@ const BasicLayout = () => {
         <AsideLocalNav pathname={pathname} />
       </Shell.LocalNavigation>
 
-      <Shell.Content>
-        <Index setPathname={setPathname} />
-      </Shell.Content>
+      <Shell.Content>{React.cloneElement(children, { setPathname })}</Shell.Content>
 
       <Shell.Footer>
         <Footer />

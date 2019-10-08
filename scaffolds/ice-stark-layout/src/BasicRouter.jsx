@@ -3,7 +3,7 @@ import { AppRouter, AppRoute } from '@ice/stark';
 import NotFound from '@/components/NotFound';
 import PageLoading from '@/components/PageLoading';
 
-export default function BasicPage({ setPathname }) {
+export default function BasicRouter({ setPathname }) {
   return (
     <AppRouter
       NotFoundComponent={NotFound}
