@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark": "^0.1.2",
+    "@ice/stark-app": "^0.1.1-0",
     "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",
