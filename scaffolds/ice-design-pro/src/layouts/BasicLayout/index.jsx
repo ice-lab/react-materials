@@ -56,5 +56,5 @@ export default function BasicLayout(props) {
         </Layout.Main>
       </Layout.Section>
     </Layout>
-  )
+  );
 }
