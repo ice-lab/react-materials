@@ -21,9 +21,15 @@ const headerMenuConfig = [
 
 const asideMenuConfig = [
   {
+    name: '通用页面',
+    key: 'common',
+    path: '/',
+    icon: 'Item',
+  },
+  {
     name: '商家平台',
     key: 'merchant',
-    path: '/list',
+    path: '/#/seller',
     icon: 'Item',
   },
   {
@@ -36,15 +42,37 @@ const asideMenuConfig = [
 
 const asideLocalMenu = [
   {
-    name: '商家平台',
-    key: 'merchant',
+    name: '通用页面',
+    key: 'common',
     children: [
       {
-        path: '/list',
+        path: '/',
+        name: '站点首页',
+      },
+      {
+        path: '/message',
+        name: '消息页面',
+      },
+      {
+        path: '/about',
+        name: '关于页面',
+      },
+    ],
+  },
+  {
+    name: '商家平台',
+    key: 'seller',
+    children: [
+      {
+        path: '/#/seller',
+        name: '站点首页',
+      },
+      {
+        path: '/#/seller/list',
         name: '商家列表',
       },
       {
-        path: '/detail',
+        path: '/#/seller/detail',
         name: '商家详情',
       },
     ],

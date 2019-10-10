@@ -1,9 +1,8 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
 import React, { useState, useEffect } from 'react';
 import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
 import { Icon, Nav } from '@alifd/next';
-import { Link } from 'react-router-dom';
+import { AppLink } from '@ice/stark';
 import { headerMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
@@ -84,7 +83,7 @@ const BasicLayout = ({ children }) => {
               return (
                 <Nav.Item key={idx} icon={nav.icon ? nav.icon : null}>
                   {linkProps.to ? (
-                    <Link {...linkProps}>{!isMobile ? nav.name : null}</Link>
+                    <AppLink {...linkProps}>{!isMobile ? nav.name : null}</AppLink>
                   ) : (
                     <a {...linkProps}>{!isMobile ? nav.name : null}</a>
                   )}

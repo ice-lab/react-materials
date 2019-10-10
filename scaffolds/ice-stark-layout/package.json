@@ -22,7 +22,7 @@
     "@alifd/next": "^1.x",
     "@alifd/shell": "^1.0.7",
     "@alifd/theme-shell": "^0.2.0",
-    "@ice/stark": "^0.1.5-0",
+    "@ice/stark": "beta",
     "@icedesign/container": "^1.x",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
@@ -30,8 +30,7 @@
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "react-router-dom": "^5.0.0"
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",
