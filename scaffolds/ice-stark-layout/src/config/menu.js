@@ -22,28 +22,11 @@ const headerMenuConfig = [
 const asideMenuConfig = [
   {
     name: '通用页面',
-    key: 'common',
     path: '/',
     icon: 'Item',
-  },
-  {
-    name: '商家平台',
-    key: 'merchant',
-    path: '/#/seller',
-    icon: 'Item',
-  },
-  {
-    name: '小二平台',
-    key: 'waiter',
-    path: '/waiter/list',
-    icon: 'Item1',
-  },
-];
-
-const asideLocalMenu = [
-  {
-    name: '通用页面',
-    key: 'common',
+    checkSelected: (pathname) => {
+      return ['', '/', '/message', '/about'].indexOf(pathname) !== -1;
+    },
     children: [
       {
         path: '/',
@@ -61,26 +44,36 @@ const asideLocalMenu = [
   },
   {
     name: '商家平台',
-    key: 'seller',
+    path: '/seller',
+    icon: 'Item',
     children: [
       {
-        path: '/#/seller',
+        path: '/seller',
         name: '站点首页',
       },
       {
-        path: '/#/seller/list',
+        path: '/seller/list',
         name: '商家列表',
       },
       {
-        path: '/#/seller/detail',
+        path: '/seller/detail',
         name: '商家详情',
+      },
+      {
+        path: '/seller/404',
+        name: '商家 404',
       },
     ],
   },
   {
     name: '小二平台',
-    key: 'waiter',
+    path: '/waiter',
+    icon: 'Item',
     children: [
+      {
+        path: '/waiter',
+        name: '小二首页',
+      },
       {
         path: '/waiter/list',
         name: '小二列表',
@@ -93,4 +86,4 @@ const asideLocalMenu = [
   },
 ];
 
-export { headerMenuConfig, asideMenuConfig, asideLocalMenu };
+export { headerMenuConfig, asideMenuConfig };

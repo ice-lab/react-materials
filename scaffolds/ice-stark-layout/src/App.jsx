@@ -43,7 +43,7 @@ export default class App extends React.Component {
             path="/seller"
             basename="/seller"
             title="商家平台"
-            hashType
+            // hashType
             url={[
               // '//g.alicdn.com/icestark-demo/child/0.2.1/js/index.js',
               // '//g.alicdn.com/icestark-demo/child/0.2.1/css/index.css',
