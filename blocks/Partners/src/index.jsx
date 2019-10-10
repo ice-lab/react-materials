@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@alifd/next';
 
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 import MOCK_DATA from './data';
 
 const { Row, Col } = Grid;

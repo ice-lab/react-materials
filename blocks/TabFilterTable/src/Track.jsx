@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Table, Pagination } from '@alifd/next';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const getData = () => {
   return Array.from({ length: 10 }).map((item, index) => {

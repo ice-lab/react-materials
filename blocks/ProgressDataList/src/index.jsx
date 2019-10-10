@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { Progress, Grid } from '@alifd/next';
 import { enquireScreen } from 'enquire-js';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 

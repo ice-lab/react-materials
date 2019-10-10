@@ -60,7 +60,7 @@ export default function Index() {
     const { list } = data;
 
     return list[index % list.length];
-  }
+  };
 
   const getRowClassName = (row) => {
     return row % 2 === 0 ? 'even-row' : 'odd-row';

@@ -15,7 +15,7 @@ export default function GroupedForm() {
   const reset = () => {};
 
   const formChange = (values, field) => {
-    console.log(values, field)
+    console.log(values, field);
   };
 
   const submit = (values, errors) => {

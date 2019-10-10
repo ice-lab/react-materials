@@ -5,7 +5,7 @@ import CustomTable from './components/CustomTable';
 import EditDialog from './components/EditDialog';
 import DeleteBalloon from './components/DeleteBalloon';
 import data from './data';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const TabPane = Tab.Item;
 

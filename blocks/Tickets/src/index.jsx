@@ -4,7 +4,7 @@ import ScrollAnim from 'rc-scroll-anim';
 import QueueAnim from 'rc-queue-anim';
 
 import MOCK_DATA from './data';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Row, Col } = Grid;
 const ScrollOverPack = ScrollAnim.OverPack;

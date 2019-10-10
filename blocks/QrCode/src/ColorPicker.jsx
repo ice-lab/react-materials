@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 import PropTypes from 'prop-types';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 export default function ColorPicker(props) {
   const [displayColorPicker, setDisplayColorPicker] = useState(false);

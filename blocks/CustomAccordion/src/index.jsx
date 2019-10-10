@@ -33,7 +33,7 @@ export default function Index() {
     setData(dataSource.map((e, k) => {
       return Object.assign({}, e, { expanded: status[k] });
     }));
-  }
+  };
 
   return (
     <IceContainer>

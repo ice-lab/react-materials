@@ -1,7 +1,7 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 

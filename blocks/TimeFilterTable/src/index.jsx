@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Pagination, Radio, Search } from '@alifd/next';
 import data from './data';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Group: RadioGroup } = Radio;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import LineChart from './LineChart';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Row, Col } = Grid;
 

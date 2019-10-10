@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Table, Pagination } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const mockData = [
   {

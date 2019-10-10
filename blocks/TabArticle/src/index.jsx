@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { enquireScreen } from 'enquire-js';
 import ArticleList from './ArticleList';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const dataSource = [
   {

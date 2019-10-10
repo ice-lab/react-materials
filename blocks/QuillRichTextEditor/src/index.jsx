@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import IceContainer from '@icedesign/container';
 import 'react-quill/dist/quill.snow.css';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 export default function QuillRichTextEditor() {
   const [value, setValue] = useState('React Quill Rich Text Editor...');
