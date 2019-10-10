@@ -8,7 +8,7 @@
   background-color: transparent;
 
   :global {
-    .next-menu-item.next-nav-item {
+    .next-icestark-menu-item.next-icestark-nav-item {
       color: #fff;
       font-weight: 400;
       background-color: transparent;
@@ -22,12 +22,12 @@
         }
       }
 
-      &.next-selected:not(.next-disabled).next-focused:hover,
-      &.next-selected:not(.next-disabled):hover {
+      &.next-icestark-selected:not(.next-icestark-disabled).next-icestark-focused:hover,
+      &.next-icestark-selected:not(.next-icestark-disabled):hover {
         background-color: #333;
       }
 
-      &.next-selected .next-menu-item-inner .next-menu-item-text {
+      &.next-icestark-selected .next-icestark-menu-item-inner .next-icestark-menu-item-text {
         color: #fff;
         font-weight: 700;
       }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ConfigProvider } from '@alifd/next';
 
 // 载入默认全局样式 normalize 、.clearfix 和一些 mixin 方法等
 import '@alifd/next/reset.scss';
@@ -12,6 +13,8 @@ if (!ICE_CONTAINER) {
 }
 
 ReactDOM.render(
-  <App />,
+  <ConfigProvider prefix="next-icestark-">
+    <App />
+  </ConfigProvider>,
   ICE_CONTAINER
 );

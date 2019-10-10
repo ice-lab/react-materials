@@ -1,40 +1,38 @@
 :global {
   .fusion-shell-aside
     .fusion-shell-localnavigation.fusion-shell-collapse
-    .next-nav.next-ver
-    .next-menu-item {
+    .next-icestark-nav.next-icestark-ver
+    .next-icestark-menu-item {
     padding: 0 !important;
   }
 }
 
 .localNav {
   :global {
-    .next-menu-sub-menu-wrapper.next-nav-sub-nav-item .next-menu-sub-menu {
-      .next-menu-item.next-nav-item {
-        font-weight: 400;
-        background-color: transparent;
+    .next-icestark-menu-item.next-icestark-nav-item {
+      font-weight: 400;
+      background-color: transparent;
+      a {
+        &:link,
+        &:visited,
+        &:hover,
+        &:active {
+          color: inherit;
+        }
+      }
+
+      &:hover {
+        background-color: #f9f9f9;
         a {
-          &:link,
-          &:visited,
-          &:hover,
-          &:active {
-            color: inherit;
-          }
+          color: #3a9bf0;
         }
+      }
 
-        &:hover {
-          background-color: #f9f9f9;
-          a {
-            color: #3a9bf0;
-          }
-        }
-
-        &.next-selected {
-          font-weight: 700;
-          background-color: #f9f9f9;
-          a {
-            color: #3a9bf0;
-          }
+      &.next-icestark-selected {
+        font-weight: 700;
+        background-color: #f9f9f9;
+        a {
+          color: #3a9bf0;
         }
       }
     }

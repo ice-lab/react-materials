@@ -10,11 +10,19 @@ export default class App extends React.Component {
     pathname: '',
   }
 
-  onRouteChange = (pathname) => {
+  handleRouteChange = (pathname) => {
     console.log('route change', pathname);
     this.setState({
       pathname,
     });
+  }
+
+  handleAppLeave = (appConfig) => {
+    console.log('handleAppLeavel', appConfig);
+  }
+
+  handleAppEnter = (appConfig) => {
+    console.log('handleAppEnter', appConfig);
   }
 
   render() {
@@ -25,7 +33,9 @@ export default class App extends React.Component {
         <AppRouter
           NotFoundComponent={NotFound}
           LoadingComponent={PageLoading}
-          onRouteChange={this.onRouteChange}
+          onRouteChange={this.handleRouteChange}
+          onAppLeave={this.handleAppLeave}
+          onAppEnter={this.handleAppEnter}
         >
           <AppRoute
             path={['/', '/message', '/about']}
@@ -43,7 +53,6 @@ export default class App extends React.Component {
             path="/seller"
             basename="/seller"
             title="商家平台"
-            // hashType
             url={[
               // '//g.alicdn.com/icestark-demo/child/0.2.1/js/index.js',
               // '//g.alicdn.com/icestark-demo/child/0.2.1/css/index.css',
@@ -52,17 +61,17 @@ export default class App extends React.Component {
             ]}
           />
 
-          {/* <AppRoute
-            basename="/seller"
-            title="商家平台"
-            hashType
+          <AppRoute
+            basename="/waiter"
+            path="/waiter"
+            title="小二平台"
             url={[
               // '//g.alicdn.com/icestark-demo/child/0.2.1/js/index.js',
               // '//g.alicdn.com/icestark-demo/child/0.2.1/css/index.css',
-              'http://localhost:4445/js/index.js',
-              'http://localhost:4445/css/index.css',
+              'http://localhost:8080/app.js',
+              'http://localhost:8080/css/app.css',
             ]}
-          /> */}
+          />
 
         </AppRouter>
       </BasicLayout>

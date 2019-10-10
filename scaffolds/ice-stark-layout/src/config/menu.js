@@ -49,7 +49,7 @@ const asideMenuConfig = [
     children: [
       {
         path: '/seller',
-        name: '站点首页',
+        name: '商家首页',
       },
       {
         path: '/seller/list',
@@ -81,6 +81,10 @@ const asideMenuConfig = [
       {
         path: '/waiter/detail',
         name: '小二详情',
+      },
+      {
+        path: '/waiter/404',
+        name: '小二 404',
       },
     ],
   },
