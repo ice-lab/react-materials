@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, DatePicker, Select } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 export default function TableFilter() {
   const [startValue, setStartValue] = useState(null);

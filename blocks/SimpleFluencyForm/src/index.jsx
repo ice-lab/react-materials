@@ -15,8 +15,8 @@ export default function SimpleFluencyForm() {
   const [step, setStep] = useState(0);
 
   const formChange = (values, field) => {
-    console.log(values, field)
-  }
+    console.log(values, field);
+  };
 
   const nextStep = (values, errors) => {
     console.log('error', errors, 'value', values);

@@ -2,7 +2,7 @@ import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Timeline } from '@alifd/next';
 import LineChart from './LineChart';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Item: TimelineItem } = Timeline;

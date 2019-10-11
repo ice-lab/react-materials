@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Grid, Message, Icon, Form } from '@alifd/next';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Row } = Grid;
 const Item = Form.Item;

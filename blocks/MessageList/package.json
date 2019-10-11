@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/message-list-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "消息列表",
   "files": [
     "src/",

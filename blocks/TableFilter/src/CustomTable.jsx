@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Table, Pagination, Balloon, Icon } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const getData = () => {
   return Array.from({ length: 20 }).map((item, index) => {

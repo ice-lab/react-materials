@@ -4,7 +4,7 @@ import ReactEcharts from 'echarts-for-react';
 import { Icon } from '@alifd/next';
 import 'echarts/lib/chart/map';
 import 'echarts/map/js/world';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const geoCoordMap = {
   '中国 · 浙江兰溪': [119.133, 29.12],

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/chart-radar-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "雷达图",
   "files": [
     "src/",

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select } from '@alifd/next';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const ReactHighcharts = require('react-highcharts');
 

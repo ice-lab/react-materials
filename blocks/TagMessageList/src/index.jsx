@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tab } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const dataSource = [
   { title: '关于淘宝网存储设备商品发布规范的公告', date: '2017/01/06' },

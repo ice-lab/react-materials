@@ -2,7 +2,7 @@ import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Axis, Tooltip, Geom } from 'bizcharts';
 import DataSet from '@antv/data-set';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const data = [
   {

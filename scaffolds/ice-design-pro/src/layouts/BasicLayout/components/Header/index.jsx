@@ -10,7 +10,7 @@ import SelectLang from '@/components/SelectLang';
 import Auth from '@/components/Auth';
 import { useRequest } from '@/utils/request';
 import { userLogout } from '@/config/dataSource';
-import Logo from '../Logo'
+import Logo from '../Logo';
 
 import styles from './index.module.scss';
 

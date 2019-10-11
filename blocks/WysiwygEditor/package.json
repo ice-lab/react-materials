@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/wysiwyg-editor-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Wysiwyg 富文本编辑器，基于 ReactJS和 DraftJS 库构建的所见即所得编辑器",
   "author": "思忠 <chenbinbin.cb@alibaba-inc.com>",
   "files": [

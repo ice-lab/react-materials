@@ -96,7 +96,7 @@ export default function SplineChart() {
   useEffect(() => {
     return () => {
       clearInterval(intervalId);
-    }
+    };
   }, []);
 
   return <ReactHighcharts config={config} />;

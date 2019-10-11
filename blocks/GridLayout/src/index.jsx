@@ -49,7 +49,7 @@ export default function BasicGridLayout(props) {
         </div>
       );
     });
-  }
+  };
 
   const onBreakpointChange = (breakpoint) => {
     setCurrentBreakpoint(breakpoint);

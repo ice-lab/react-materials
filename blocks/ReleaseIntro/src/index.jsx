@@ -1,6 +1,6 @@
 import { Menu, Message, SplitButton } from '@alifd/next';
 import React, { useState } from 'react';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const descriptor = {
   'darwin-x64-prod': {
