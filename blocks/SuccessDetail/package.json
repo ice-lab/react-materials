@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/success-detail-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "成功详情信息展示",
   "files": [
     "src/",

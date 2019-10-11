@@ -2,7 +2,7 @@ import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Table, Progress } from '@alifd/next';
 import LintChart from './LineChart';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Row, Col } = Grid;
 

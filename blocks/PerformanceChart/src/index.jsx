@@ -4,7 +4,7 @@ import { Tab } from '@alifd/next';
 import LineChart from './LineChart';
 import Head from './Head';
 import './PerformanceChart.scss';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const TabPane = Tab.Item;
 

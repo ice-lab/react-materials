@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
 import RadarChart from './RadarChart';
 import HistogramChart from './HistogramChart';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 

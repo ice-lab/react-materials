@@ -59,7 +59,7 @@ export default function Index() {
                           不知道选择什么分类？请 <a href="#">点击这里</a>{' '}
                           查看
                           </span>
-                      </div>: null
+                      </div>: null;
                     }
                   }
                 </Form.Error>

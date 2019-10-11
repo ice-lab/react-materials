@@ -1,7 +1,7 @@
 import React from "react";
 import { Select } from "@alifd/next";
 import IceContainer from "@icedesign/container";
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Option } = Select;
 

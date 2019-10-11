@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const ContainerTitle = ({ title, style, ...props }) => {
   return (

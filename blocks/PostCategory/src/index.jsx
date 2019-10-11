@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Button } from '@alifd/next';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 function mockCentent() {
   return Array.from({ length: 2 + Math.round(Math.random() * 5) }).map(() => {

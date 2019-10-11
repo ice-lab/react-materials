@@ -15,7 +15,7 @@ export default function Index() {
   const getDatum = (index) => {
     const { list } = data;
     return list[index % list.length];
-  }
+  };
 
   const noRowsRenderer = () => {
     return <div className="no-rows">No rows</div>;

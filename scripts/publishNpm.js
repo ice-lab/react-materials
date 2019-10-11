@@ -19,7 +19,7 @@ files.forEach((item) => {
   const pkgData = require(pkgPath);
   const { name: npmName } = pkgData;
 
-  if (npmName === '@icedesign/user-traffic-stastistics') {
+  if (npmName === '@icedesign/review-detail-info-block') {
     goOn = true;
   }
 
@@ -37,7 +37,7 @@ files.forEach((item) => {
     stdio: 'inherit',
     cwd: dirpath,
   });
-  execSync('npm version major', {
+  execSync('npm version patch', {
     stdio: 'inherit',
     cwd: dirpath,
   });

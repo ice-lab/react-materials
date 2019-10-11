@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
-import './index.module.scss'
+import './index.module.scss';
 
 export default function LineChart() {
   // MOCK 数据，实际业务按需进行替换

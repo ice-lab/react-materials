@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dialog, Tab, Table, Button } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const TabPane = Tab.Item;
 

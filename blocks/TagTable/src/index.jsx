@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Table, Input, Select, Grid } from '@alifd/next';
 import { FormBinderWrapper, FormBinder } from '@icedesign/form-binder';
 import IceContainer from '@icedesign/container';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const { Row, Col } = Grid;
 

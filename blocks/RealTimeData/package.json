@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/real-time-data-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "基于 highcharts 的动态数据展示区块",
   "author": "",
   "files": [

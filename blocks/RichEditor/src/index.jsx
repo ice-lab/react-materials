@@ -6,7 +6,7 @@ import { isKeyHotkey } from 'is-hotkey';
 import initialValue from './initRichValue.json';
 
 import './RichEditor.scss';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 // 当前富文本组件使用了 Slate 详细文档请参见 https://docs.slatejs.org/
 

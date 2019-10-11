@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/brand-display-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "品牌列表展示",
   "main": "lib/index.js",
   "files": [

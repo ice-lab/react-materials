@@ -7,7 +7,7 @@ import {
 } from '@icedesign/form-binder';
 import QRCode from 'qrcode.react';
 import ColorPicker from './ColorPicker';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Option } = Select;

@@ -139,10 +139,10 @@ const Aside = withRouter((props) => {
 
     if (isMobile) {
       if (!collapse) {
-        toggle(true)
+        toggle(true);
       }
     } else {
-      toggle(false)
+      toggle(false);
     }
   }, [isMobile]);
 

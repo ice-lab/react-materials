@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/pie-doughnut-chart-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "饼图",
   "main": "lib/index.js",
   "files": [

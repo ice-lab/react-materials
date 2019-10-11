@@ -3,7 +3,7 @@ import { Tab, DatePicker } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import Track from './Track';
 import Scheme from './Scheme';
-import styles from  './index.module.scss'
+import styles from  './index.module.scss';
 
 const TabPane = Tab.Item;
 

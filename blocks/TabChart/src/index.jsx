@@ -3,7 +3,7 @@ import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
 import SeriesLine from './SeriesLine';
 import BasicLine from './BasicLine';
-import styles from './index.module.scss'
+import styles from './index.module.scss';
 
 const TabPane = Tab.Item;
 
