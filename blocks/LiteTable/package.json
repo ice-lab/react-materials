@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/lite-table-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "简单的附带状态的表格",
   "files": [
     "src/",

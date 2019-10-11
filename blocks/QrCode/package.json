@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/qr-code-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "根据配置属性生成二维码",
   "author": "",
   "files": [

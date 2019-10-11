@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/statistical-card-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "统计型卡片",
   "files": [
     "src/",

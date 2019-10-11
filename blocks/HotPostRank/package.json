@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/hot-post-rank-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "展示文章阅读热度排行",
   "homepage": "https://unpkg.com/@icedesign/hot-post-rank-block/build/index.html",
   "author": "noyobo <nongyoubao@alibaba-inc.com>",

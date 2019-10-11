@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/picture-text-list-block",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "图文列表",
   "files": [
     "src/",
