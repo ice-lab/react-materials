@@ -46,7 +46,6 @@ export default class App extends React.Component {
             url={[
               '//unpkg.com/icestark-child-common/build/js/index.js',
               '//unpkg.com/icestark-child-common/build/css/index.css',
-
               // 'http://localhost:5555/js/index.js',
               // 'http://localhost:5555/css/index.css',
             ]}
@@ -60,8 +59,8 @@ export default class App extends React.Component {
             url={[
               '//unpkg.com/icestark-child-seller/build/js/index.js',
               '//unpkg.com/icestark-child-seller/build/css/index.css',
-              // 'http://localhost:6666/js/index.js',
-              // 'http://localhost:6666/css/index.css',
+              // 'http://localhost:5556/js/index.js',
+              // 'http://localhost:5556/css/index.css',
             ]}
           />
 
