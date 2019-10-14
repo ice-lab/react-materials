@@ -1,8 +1,8 @@
 {
   "name": "@icedesign/stark-layout-scaffold",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "该模板适用于从 0 到 1 开始搭建 @ice/stark 的 Layout 项目（框架应用），内置基础的页面，路由和菜单展示",
-  "homepage": "https://unpkg.com/@icedesign/stark-layout-scaffold@latest/build/index.html",
+  "homepage": "https://git.ilcl.me",
   "files": [
     "src/",
     "build/",
@@ -22,16 +22,16 @@
     "@alifd/next": "^1.x",
     "@alifd/shell": "^1.0.7",
     "@alifd/theme-shell": "^0.2.0",
-    "@ice/stark": "^0.1.2",
+    "@ice/stark": "^1.0.0",
     "@icedesign/container": "^1.x",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "enquire-js": "^0.1.2",
+    "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "react-router-dom": "^5.0.0"
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",

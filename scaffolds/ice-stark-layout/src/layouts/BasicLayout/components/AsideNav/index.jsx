@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppLink } from '@ice/stark';
 import { Nav } from '@alifd/next';
-import { asideMenuConfig } from '@/config/menu';
 
 import styles from './index.module.scss';
 
@@ -16,7 +15,7 @@ function getNavMenuItems(menusData) {
     .filter(item => item.name && !item.hideInMenu)
     .map(item => {
       return (
-        <NavItem icon={item.icon} key={item.key}>
+        <NavItem icon={item.icon} key={item.path}>
           <AppLink to={item.path}>{item.name}</AppLink>
         </NavItem>
       );
@@ -24,13 +23,14 @@ function getNavMenuItems(menusData) {
 }
 
 export default props => {
-  const { pathname } = props;
-  const menuMerchantKeys = ['/', '/list', '/detail'];
-  const selectedKey = menuMerchantKeys.indexOf(pathname) >= 0 ? 'merchant' : 'waiter';
+  const { asideMenus } = props;
+  const selectedKeys = asideMenus
+    .filter(item => item.selected)
+    .map(item => item.path);
 
   return (
-    <Nav type="primary" embeddable selectedKeys={[selectedKey]} className={styles.asideNav}>
-      {getNavMenuItems(asideMenuConfig)}
+    <Nav type="primary" embeddable selectedKeys={selectedKeys} className={styles.asideNav}>
+      {getNavMenuItems(asideMenus)}
     </Nav>
   );
 };

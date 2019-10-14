@@ -1,23 +1,44 @@
-/* eslint no-undef:0, no-unused-expressions:0, array-callback-return:0 */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
 import { Icon, Nav } from '@alifd/next';
-import { Link } from 'react-router-dom';
-import { headerMenuConfig } from '@/config/menu';
+import { AppLink } from '@ice/stark';
+import cloneDeep from 'lodash.clonedeep';
+import { headerMenuConfig, asideMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
-import Index from '@/pages/Index';
 
 import Logo from './components/Logo';
 import AsideNav from './components/AsideNav';
-import AsideLocalNav from './components/AsideLocalNav';
+import AsideSubNav from './components/AsideSubNav';
 import Footer from './components/Footer';
 
 import styles from './index.module.scss';
 
-const BasicLayout = () => {
-  const [pathname, setPathname] = useState();
+function getMenuDataByPathname(pathname) {
+  let asideSubMenus = [];
+  const asideMenus = cloneDeep(asideMenuConfig).map((item) => {
+    const checkSelected = () => {
+      // /^\/seller/: /seller/list, /seller
+      return new RegExp(`^${item.path}`).test(pathname);
+    };
+
+    if (item.checkSelected ? item.checkSelected(pathname) : checkSelected()) {
+      item.selected = true;
+      asideSubMenus = (item.children || []).map((subItem) => {
+        if (pathname === subItem.path) {
+          subItem.selected = true;
+        }
+        return subItem;
+      });
+    }
+    return item;
+  });
+
+  return { asideMenus, asideSubMenus };
+}
+
+const BasicLayout = ({ children, pathname }) => {
   const [isScreen, setIsScreen] = useState();
 
   function enquireScreenHandle(type) {
@@ -61,6 +82,10 @@ const BasicLayout = () => {
     fetchData();
   }, []);
 
+  const { asideMenus, asideSubMenus } = useMemo(() => {
+    return getMenuDataByPathname(pathname);
+  }, [pathname]);
+
   const { name, avatar } = userinfo;
 
   return (
@@ -85,7 +110,7 @@ const BasicLayout = () => {
               return (
                 <Nav.Item key={idx} icon={nav.icon ? nav.icon : null}>
                   {linkProps.to ? (
-                    <Link {...linkProps}>{!isMobile ? nav.name : null}</Link>
+                    <AppLink {...linkProps}>{!isMobile ? nav.name : null}</AppLink>
                   ) : (
                     <a {...linkProps}>{!isMobile ? nav.name : null}</a>
                   )}
@@ -101,16 +126,14 @@ const BasicLayout = () => {
       </Shell.Action>
 
       <Shell.Navigation>
-        <AsideNav pathname={pathname} />
+        <AsideNav asideMenus={asideMenus} />
       </Shell.Navigation>
 
       <Shell.LocalNavigation>
-        <AsideLocalNav pathname={pathname} />
+        <AsideSubNav asideSubMenus={asideSubMenus} />
       </Shell.LocalNavigation>
 
-      <Shell.Content>
-        <Index setPathname={setPathname} />
-      </Shell.Content>
+      <Shell.Content>{children}</Shell.Content>
 
       <Shell.Footer>
         <Footer />
