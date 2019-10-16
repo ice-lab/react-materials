@@ -96,7 +96,7 @@ function requestReducer(state, action) {
   switch (action.type) {
     case 'init':
       return {
-        repsonse: null,
+        response: null,
         error: null,
         loading: true,
       };
@@ -114,7 +114,7 @@ function requestReducer(state, action) {
       };
     default:
       return {
-        repsonse: null,
+        response: null,
         error: null,
         loading: false,
       };
