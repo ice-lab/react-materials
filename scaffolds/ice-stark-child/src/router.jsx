@@ -7,7 +7,7 @@ import routes from '@/config/routes';
 const RouteItem = props => {
   const { redirect, path: routePath, component, key, ...others } = props;
   if (redirect) {
-    return <Redirect exact key={key} from={routePath} to={redirect} {...others} />;
+    return <Redirect key={key} from={routePath} to={redirect} {...others} />;
   }
   return <Route key={key} component={component} path={routePath} {...others}/>;
 };
