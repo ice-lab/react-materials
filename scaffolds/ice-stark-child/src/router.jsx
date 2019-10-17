@@ -37,7 +37,7 @@ export default () => {
                           return RouteItem({
                             key: `${id}-${idx}`,
                             ...routeChild,
-                            path: childPath && path.join(route.path, childPath)
+                            path: childPath && path.join(route.path, childPath),
                           });
                         })}
                       </Switch>
