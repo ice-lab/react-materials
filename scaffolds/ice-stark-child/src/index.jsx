@@ -1,11 +1,13 @@
 import ReactDOM from 'react-dom';
 import { getMountNode, registerAppLeave } from '@ice/stark-app';
-
+import './global.scss';
 import router from './router';
 
-// make sure the unmount event is triggered
+const mountNode = getMountNode();
+
+// trigger unmount manually
 registerAppLeave(() => {
-  ReactDOM.unmountComponentAtNode(getMountNode());
+  ReactDOM.unmountComponentAtNode(mountNode);
 });
 
-ReactDOM.render(router(), getMountNode());
+ReactDOM.render(router(), mountNode);
