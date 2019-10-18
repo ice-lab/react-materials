@@ -1,3 +1,4 @@
+import { renderNotFound } from '@ice/stark-app';
 import BasicLayout from '@/layouts/BasicLayout';
 
 import Detail from '@/pages/Detail';
@@ -9,7 +10,8 @@ const routerConfig = [
     component: BasicLayout,
     children: [
       {
-        path: '/list',
+        path: '/',
+        exact: true,
         component: List,
       },
       {
@@ -17,8 +19,10 @@ const routerConfig = [
         component: Detail,
       },
       {
-        path: '/',
-        redirect: '/list',
+        path: '*',
+        component: () => {
+          return renderNotFound();
+        },
       },
     ],
   },
