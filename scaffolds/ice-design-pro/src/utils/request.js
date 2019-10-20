@@ -77,6 +77,7 @@ export function useRequest(options) {
         type: 'error',
         error,
       });
+      throw error;
     }
   }
 
