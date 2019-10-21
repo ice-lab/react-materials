@@ -6,9 +6,9 @@ const scaffolds = [
   '@icedesign/pro-scaffold',
   '@icedesign/lite-scaffold',
   '@icedesign/ts-scaffold',
-  '@icedesign/ice-admin',
-  '@icedesign/ice-analysis',
-  '@icedesign/ice-homepage',
+  '@icedesign/admin-scaffold',
+  '@icedesign/analysis-scaffold',
+  '@icedesign/homepage-scaffold',
 
   // icestark模板
   '@icedesign/stark-layout-scaffold',

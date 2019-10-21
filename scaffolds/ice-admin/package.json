@@ -57,7 +57,7 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "admin-scaffold",
-    "title": "管理系统",
+    "title": "ICE Admin",
     "categories": [
       "基础模板"
     ],

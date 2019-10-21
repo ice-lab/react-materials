@@ -52,7 +52,7 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "lite-scaffold",
-    "title": "轻量模板",
+    "title": "ICE Lite",
     "categories": [
       "基础模板"
     ],

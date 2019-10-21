@@ -54,7 +54,7 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "homepage-scaffold",
-    "title": "官网或产品展示",
+    "title": "ICE Homepage",
     "categories": [
       "基础模板"
     ],

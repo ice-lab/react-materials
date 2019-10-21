@@ -57,7 +57,7 @@
   "scaffoldConfig": {
     "builder": "ice-scripts",
     "name": "analysis-scaffold",
-    "title": "数据大盘",
+    "title": "ICE Analysis",
     "categories": [
       "基础模板"
     ],
