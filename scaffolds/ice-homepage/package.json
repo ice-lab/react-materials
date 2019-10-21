@@ -1,8 +1,7 @@
 {
-  "name": "@icedesign/ice-homepage",
+  "name": "@icedesign/homepage-scaffold",
   "version": "3.0.0",
   "description": "该模板适用于产品的首页介绍，默认只有一个页面，使用时需要根据需求进行删除和添加",
-  "homepage": "https://unpkg.com/@icedesign/universal-homepage-scaffold@latest/build/index.html",
   "files": [
     "src/",
     "build/",
@@ -54,8 +53,8 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-homepage",
-    "title": "通用型官网",
+    "name": "homepage-scaffold",
+    "title": "官网或产品展示",
     "categories": [
       "基础模板"
     ],
@@ -67,6 +66,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-universal-homepage"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-homepage"
   }
 }

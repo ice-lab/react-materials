@@ -71,8 +71,8 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-design-pro",
-    "title": "ICE Design Pro",
+    "name": "pro-scaffold",
+    "title": "ICE Pro",
     "categories": [
       "基础模板"
     ],

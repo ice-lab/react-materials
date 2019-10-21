@@ -1,8 +1,7 @@
 {
-  "name": "@icedesign/ice-analysis",
-  "version": "3.0.0",
+  "name": "@icedesign/analysis-scaffold",
+  "version": "3.1.0",
   "description": "该模板适用于数据展示大盘，搭配简洁的暗色主题风格和图表类展示",
-  "homepage": "https://unpkg.com/@icedesign/finance-dashboard@latest/build/index.html",
   "files": [
     "src/",
     "build/",
@@ -57,7 +56,7 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-analysis",
+    "name": "analysis-scaffold",
     "title": "数据大盘",
     "categories": [
       "基础模板"
