@@ -1,6 +1,4 @@
-# ice-finance-dashboard
-
-该模板适用于金融销售类的数据展示大盘，搭配简洁的暗色主题风格和图表类展示
+# analysis-scaffold
 
 ## 使用
 

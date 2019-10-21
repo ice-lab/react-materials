@@ -1,4 +1,4 @@
-# ice-scaffold-lite
+# lite-scaffold
 
 ## 使用
 
