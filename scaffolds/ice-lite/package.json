@@ -1,13 +1,11 @@
 {
-  "name": "@icedesign/stark-child-scaffold",
-  "version": "3.0.0",
-  "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
-  "homepage": "https://unpkg.com/@icedesign/stark-child-scaffold@latest/build/index.html",
+  "name": "@icedesign/lite-scaffold",
+  "version": "3.0.5",
+  "description": "该模板包含基础的工程、路由等，适合比较专业的前端同学",
   "files": [
     "src/",
     "build/",
     "public/",
-    "mock/",
     "tests/",
     "_gitignore",
     "_editorconfig",
@@ -20,23 +18,25 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark-app": "^1.0.0",
-    "@icedesign/container": "^1.0.4",
+    "@icedesign/container": "^1.x",
+    "@icedesign/img": "^1.x",
+    "@icedesign/layout": "^1.x",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",
-    "moment": "^2.24.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-router-dom": "^5.0.0",
-    "url-parse": "^1.4.7"
+    "classnames": "^2.2.5",
+    "enquire-js": "^0.1.2",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",
     "eslint": "^6.0.1",
-    "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0",
+    "stylelint": "^10.1.0",
     "ice-scripts": "^2.0.0",
-    "stylelint": "^10.1.0"
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
   },
   "scripts": {
     "start": "ice-scripts dev",
@@ -51,12 +51,12 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-stark-child",
-    "title": "icestark 子应用",
+    "name": "lite-scaffold",
+    "title": "ICE Lite",
     "categories": [
-      "icestark"
+      "基础模板"
     ],
-    "screenshot": "https://img.alicdn.com/tfs/TB1X5.paYr1gK0jSZFDXXb9yVXa-2480-1200.png"
+    "screenshot": "https://img.alicdn.com/tfs/TB1CjPVw4naK1RjSZFBXXcW7VXa-2872-1580.png"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -67,6 +67,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-stark-child"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-lite"
   }
 }

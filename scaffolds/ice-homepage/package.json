@@ -1,13 +1,11 @@
 {
-  "name": "@icedesign/stark-child-scaffold",
+  "name": "@icedesign/homepage-scaffold",
   "version": "3.0.0",
-  "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
-  "homepage": "https://unpkg.com/@icedesign/stark-child-scaffold@latest/build/index.html",
+  "description": "该模板适用于产品的首页介绍，默认只有一个页面，使用时需要根据需求进行删除和添加",
   "files": [
     "src/",
     "build/",
     "public/",
-    "mock/",
     "tests/",
     "_gitignore",
     "_editorconfig",
@@ -20,23 +18,27 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark-app": "^1.0.0",
-    "@icedesign/container": "^1.0.4",
-    "@icedesign/theme": "^1.0.0",
-    "axios": "^0.17.1",
-    "moment": "^2.24.0",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "react-router-dom": "^5.0.0",
-    "url-parse": "^1.4.7"
+    "@antv/data-set": "^0.9.6",
+    "@icedesign/container": "^1.x",
+    "@icedesign/img": "^1.x",
+    "@icedesign/layout": "^1.x",
+    "@icedesign/theme": "^1.x",
+    "bizcharts": "^3.2.4",
+    "classnames": "^2.2.5",
+    "foundation-symbol": "^0.1.4",
+    "moment": "^2.23.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",
     "eslint": "^6.0.1",
-    "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0",
+    "stylelint": "^10.1.0",
     "ice-scripts": "^2.0.0",
-    "stylelint": "^10.1.0"
+    "ice-plugin-fusion": "^0.1.4",
+    "ice-plugin-moment-locales": "^0.1.0"
   },
   "scripts": {
     "start": "ice-scripts dev",
@@ -51,15 +53,12 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-stark-child",
-    "title": "icestark 子应用",
+    "name": "homepage-scaffold",
+    "title": "ICE Homepage",
     "categories": [
-      "icestark"
+      "基础模板"
     ],
-    "screenshot": "https://img.alicdn.com/tfs/TB1X5.paYr1gK0jSZFDXXb9yVXa-2480-1200.png"
-  },
-  "engines": {
-    "node": ">=8.0.0"
+    "screenshot": "https://img.alicdn.com/tfs/TB1npsvdSzqK1RjSZFpXXakSXXa-2860-1580.png"
   },
   "iceworks": {
     "type": "react",
@@ -67,6 +66,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-stark-child"
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-homepage"
   }
 }

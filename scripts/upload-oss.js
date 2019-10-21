@@ -50,7 +50,7 @@ function sortScaffoldMaterials() {
     const sortMaterialsData = [];
     scaffolds.forEach((scaffold) => {
       materialsData.scaffolds.forEach((currentItem) => {
-        if (currentItem.name === scaffold) {
+        if (currentItem.source.npm === scaffold) {
           sortMaterialsData.push(currentItem);
         }
       });
