@@ -54,7 +54,7 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-universal-homepage",
+    "name": "ice-homepage",
     "title": "通用型官网",
     "categories": [
       "基础模版"

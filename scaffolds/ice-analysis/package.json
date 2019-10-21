@@ -57,7 +57,7 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-finance-dashboard",
+    "name": "ice-analysis",
     "title": "数据大盘",
     "categories": [
       "基础模版"

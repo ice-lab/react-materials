@@ -51,7 +51,7 @@
   },
   "scaffoldConfig": {
     "builder": "ice-scripts",
-    "name": "ice-typescript-starter",
+    "name": "ice-ts",
     "title": "ICE TypeScript Starter",
     "categories": [
       "基础模板"
