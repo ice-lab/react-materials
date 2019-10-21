@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/ice-analysis",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "该模板适用于数据展示大盘，搭配简洁的暗色主题风格和图表类展示",
   "homepage": "https://unpkg.com/@icedesign/finance-dashboard@latest/build/index.html",
   "files": [
