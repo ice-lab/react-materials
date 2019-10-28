@@ -3,7 +3,6 @@ import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
 import { Icon, Nav } from '@alifd/next';
 import { AppLink } from '@ice/stark';
-import cloneDeep from 'lodash.clonedeep';
 import { headerMenuConfig, asideMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
@@ -17,21 +16,30 @@ import styles from './index.module.scss';
 
 function getMenuDataByPathname(pathname) {
   let asideSubMenus = [];
-  const asideMenus = cloneDeep(asideMenuConfig).map((item) => {
+  const asideMenus = asideMenuConfig.map(item => {
     const checkSelected = () => {
       // /^\/seller/: /seller/list, /seller
       return new RegExp(`^${item.path}`).test(pathname);
     };
 
     if (item.checkSelected ? item.checkSelected(pathname) : checkSelected()) {
-      item.selected = true;
-      asideSubMenus = (item.children || []).map((subItem) => {
+      asideSubMenus = (item.children || []).map(subItem => {
         if (pathname === subItem.path) {
-          subItem.selected = true;
+          return {
+            ...subItem,
+            selected: true,
+          };
         }
+
         return subItem;
       });
+
+      return {
+        ...item,
+        selected: true,
+      };
     }
+
     return item;
   });
 
