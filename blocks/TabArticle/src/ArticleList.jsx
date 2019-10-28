@@ -29,12 +29,8 @@ export default function ArticleList(props) {
         <div style={styles.desc}>{data.description}</div>
         <div style={informationStyle}>
           <div style={styles.tagList}>
-            {data.tags.map((item) => {
-              return renderTag(
-                item,
-                handleTagClick(idx, item),
-                idx
-              );
+            {data.tags.map(item => {
+              return renderTag(item, handleTagClick(idx, item), idx);
             })}
           </div>
           {!isMobile && (

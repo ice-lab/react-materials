@@ -43,8 +43,8 @@ export default function UserForm() {
     }
   };
 
-  const formChange = (value) => {
-     setValue(value);
+  const formChange = value => {
+    setValue(value);
   };
 
   const validateAllFormField = () => {
@@ -56,11 +56,7 @@ export default function UserForm() {
   return (
     <div className="user-form">
       <IceContainer>
-        <IceFormBinderWrapper
-          value={value}
-          onChange={formChange}
-          ref={formRef}
-        >
+        <IceFormBinderWrapper value={value} onChange={formChange} ref={formRef}>
           <div className={styles.formContent}>
             <h2 className={styles.formTitle}>添加用户</h2>
 
@@ -70,11 +66,7 @@ export default function UserForm() {
               </Col>
               <Col s="12" l="10">
                 <IceFormBinder name="username" required message="必填">
-                  <Input
-                    size="large"
-                    placeholder="请输入用户名"
-                    className={ styles.userName}
-                  />
+                  <Input size="large" placeholder="请输入用户名" className={styles.userName} />
                 </IceFormBinder>
                 <IceFormError name="username" />
               </Col>
@@ -86,11 +78,7 @@ export default function UserForm() {
               </Col>
               <Col s="12" l="10">
                 <IceFormBinder name="displayName">
-                  <Input
-                    size="large"
-                    placeholder="请输入昵称"
-                    className={styles.nickName}
-                  />
+                  <Input size="large" placeholder="请输入昵称" className={styles.nickName} />
                 </IceFormBinder>
                 <IceFormError name="displayName" />
               </Col>
@@ -101,12 +89,7 @@ export default function UserForm() {
                 邮箱：
               </Col>
               <Col s="12" l="10">
-                <IceFormBinder
-                  type="email"
-                  name="email"
-                  required
-                  message="请输入正确的邮箱"
-                >
+                <IceFormBinder type="email" name="email" required message="请输入正确的邮箱">
                   <Input
                     className={styles.emailAdd}
                     size="large"
@@ -161,11 +144,7 @@ export default function UserForm() {
                 新密码：
               </Col>
               <Col s="12" l="10">
-                <IceFormBinder
-                  name="passwd"
-                  required
-                  validator={checkPasswd}
-                >
+                <IceFormBinder name="passwd" required validator={checkPasswd}>
                   <Input
                     className={styles.anotherNum}
                     htmlType="password"
@@ -186,12 +165,7 @@ export default function UserForm() {
                   name="rePasswd"
                   required
                   validator={(rule, values, callback) =>
-                    checkPasswd2(
-                      rule,
-                      values,
-                      callback,
-                      value
-                    )
+                    checkPasswd2(rule, values, callback, value)
                   }
                 >
                   <Input
@@ -209,11 +183,7 @@ export default function UserForm() {
 
         <Row>
           <Col offset="3">
-            <Button
-              size="large"
-              type="primary"
-              onClick={validateAllFormField}
-            >
+            <Button size="large" type="primary" onClick={validateAllFormField}>
               提 交
             </Button>
           </Col>

@@ -29,7 +29,7 @@ function SearchFilter(props) {
   } = props;
 
   const [showAdvancedFields, setShowAdvancedFields] = useState(false);
-  const [value, setValue] = useState({...initFields.base, ...initFields.advanced});
+  const [value, setValue] = useState({ ...initFields.base, ...initFields.advanced });
 
   /**
    * handler submit
@@ -46,11 +46,7 @@ function SearchFilter(props) {
    * 重置表单
    */
   async function handleReset() {
-    await setValue(Object.assign(
-      {},
-      initFields.base,
-      initFields.advanced
-    ));
+    await setValue(Object.assign({}, initFields.base, initFields.advanced));
     props.fetchData();
   }
 
@@ -68,10 +64,7 @@ function SearchFilter(props) {
     return (
       <div className={styles.extraContent} onClick={handleAdvancedSearch}>
         <FormattedMessage id="app.general.form.advanced.search" />{' '}
-        <Icon
-          size="xs"
-          type={showAdvancedFields ? 'arrow-up' : 'arrow-down'}
-        />
+        <Icon size="xs" type={showAdvancedFields ? 'arrow-up' : 'arrow-down'} />
       </div>
     );
   }
@@ -87,7 +80,7 @@ function SearchFilter(props) {
       };
     }
 
-    const config = initConfig.filter((item) => {
+    const config = initConfig.filter(item => {
       const keys = Object.keys(initFields.base);
       return keys.includes(item.formBinderProps.name);
     });
@@ -98,7 +91,7 @@ function SearchFilter(props) {
     };
   }
 
-  const i18n = (formatValue) => formatMessage({ id: formatValue });
+  const i18n = formatValue => formatMessage({ id: formatValue });
   const config = [
     {
       label: i18n('app.general.form.number'),
