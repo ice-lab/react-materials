@@ -36,6 +36,12 @@ export default class FormBinder extends Component {
      */
     valuePropName: PropTypes.string,
     /**
+     * 数组的方式配置当前表单校验规则，用于对一个表单执行多条校验规则
+     */
+    rules: PropTypes.array,
+
+    // 校验相关：async-validate 支持的属性
+    /**
      * 当前表单项是否必须有值
      */
     required: PropTypes.bool,
@@ -83,10 +89,6 @@ export default class FormBinder extends Component {
      * 当前表单值的数据类型，支持配置 string、number、boolean、method、regexp、integer、float、array、object、enum、date、url、hex、email
      */
     type: PropTypes.string,
-    /**
-     * 数组的方式配置当前表单校验规则，用于对一个表单执行多条校验规则
-     */
-    rules: PropTypes.array,
   };
 
   static defaultProps = {};
