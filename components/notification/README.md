@@ -1,5 +1,5 @@
 ---
-title: Notification
+title: IceNotification
 category: Components
 chinese: 通知提醒框
 ---
