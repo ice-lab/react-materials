@@ -2,8 +2,6 @@ import React from 'react';
 import { AppLink } from '@ice/stark';
 import { Nav } from '@alifd/next';
 
-import styles from './index.module.scss';
-
 const { Item: NavItem } = Nav;
 
 function getNavMenuItems(menusData) {
@@ -24,12 +22,10 @@ function getNavMenuItems(menusData) {
 
 export default props => {
   const { asideMenus } = props;
-  const selectedKeys = asideMenus
-    .filter(item => item.selected)
-    .map(item => item.path);
+  const selectedKeys = asideMenus.filter(item => item.selected).map(item => item.path);
 
   return (
-    <Nav type="primary" embeddable selectedKeys={selectedKeys} className={styles.asideNav}>
+    <Nav embeddable selectedKeys={selectedKeys}>
       {getNavMenuItems(asideMenus)}
     </Nav>
   );

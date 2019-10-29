@@ -2,8 +2,6 @@ import React from 'react';
 import { AppLink } from '@ice/stark';
 import { Nav } from '@alifd/next';
 
-import styles from './index.module.scss';
-
 const { Item: NavItem } = Nav;
 
 function getSubNavMenuItems(subMenus) {
@@ -11,24 +9,21 @@ function getSubNavMenuItems(subMenus) {
     return [];
   }
 
-  return subMenus
-    .map(item => {
-      const { name, path, icon } = item;
-      return (
-        <NavItem icon={icon} key={path}>
-          <AppLink to={path}>{name}</AppLink>
-        </NavItem>
-      );
-    });
+  return subMenus.map(item => {
+    const { name, path, icon } = item;
+    return (
+      <NavItem icon={icon} key={path}>
+        <AppLink to={path}>{name}</AppLink>
+      </NavItem>
+    );
+  });
 }
 
 export default ({ asideSubMenus }) => {
-  const selectedKeys = asideSubMenus
-    .filter(item => item.selected)
-    .map(item => item.path);
+  const selectedKeys = asideSubMenus.filter(item => item.selected).map(item => item.path);
 
   return (
-    <Nav embeddable selectedKeys={selectedKeys} className={styles.localNav}>
+    <Nav embeddable selectedKeys={selectedKeys}>
       {getSubNavMenuItems(asideSubMenus)}
     </Nav>
   );

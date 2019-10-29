@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Grid, Message, Icon, Form } from '@alifd/next';
-import styles from  './index.module.scss';
+import styles from './index.module.scss';
 
 const { Row } = Grid;
 const Item = Form.Item;
@@ -35,7 +35,7 @@ export default function Register() {
     }
   };
 
-  const formChange = (value) => {
+  const formChange = value => {
     setValue(value);
   };
 
@@ -50,7 +50,7 @@ export default function Register() {
   };
 
   return (
-    <div  className={styles.container}>
+    <div className={styles.container}>
       <div className={styles.header}>
         <a href="#" className={styles.meta}>
           <img
@@ -64,82 +64,71 @@ export default function Register() {
       </div>
       <div className={styles.formContainer}>
         <h4 className={styles.formTitle}>注 册</h4>
-        <Form
-          value={value}
-          onChange={formChange}
-          size="large"
-        >
-            <Item
-              required
-              requiredMessage="请输入正确的用户名"
-            >
-              <Input name="username" size="large" placeholder="用户名" className="inputbox"
-                innerBefore={<Icon
-                  type="account"
-                  size="small"
-                  className={styles.inputIcon}
-                />}
-              />
-            </Item>
-            <Item
-              type="email"
-              required
-              message="请输入正确的邮箱"
-            >
-              <Input name="email" size="large" maxLength={20} placeholder="邮箱" className="inputbox"
-                innerBefore={<Icon type="email" size="small" className={styles.inputIcon} />} />
-            </Item>
+        <Form value={value} onChange={formChange} size="large">
+          <Item required requiredMessage="请输入正确的用户名">
+            <Input
+              name="username"
+              size="large"
+              placeholder="用户名"
+              className="inputbox"
+              innerBefore={<Icon type="account" size="small" className={styles.inputIcon} />}
+            />
+          </Item>
+          <Item type="email" required message="请输入正确的邮箱">
+            <Input
+              name="email"
+              size="large"
+              maxLength={20}
+              placeholder="邮箱"
+              className="inputbox"
+              innerBefore={<Icon type="email" size="small" className={styles.inputIcon} />}
+            />
+          </Item>
 
-            <Item
-              required
-              validator={checkPasswd}
-            >
-              <Input
-                name="passwd"
-                className="inputbox"
-                innerBefore={<Icon type="account" test="lock" size="small" className={styles.inputIcon} />}
-                htmlType="password"
-                size="large"
-                placeholder="至少8位密码"
-              />
-            </Item>
-            <Item
-              required
-              validator={(rule, values, callback) =>
-                checkPasswd2(
-                  rule,
-                  values,
-                  callback,
-                  value
-                )
+          <Item required validator={checkPasswd}>
+            <Input
+              name="passwd"
+              className="inputbox"
+              innerBefore={
+                <Icon type="account" test="lock" size="small" className={styles.inputIcon} />
               }
+              htmlType="password"
+              size="large"
+              placeholder="至少8位密码"
+            />
+          </Item>
+          <Item
+            required
+            validator={(rule, values, callback) => checkPasswd2(rule, values, callback, value)}
+          >
+            <Input
+              name="rePasswd"
+              className="inputbox"
+              innerBefore={
+                <Icon type="email" test="lock" size="small" className={styles.inputIcon} />
+              }
+              htmlType="password"
+              size="large"
+              placeholder="确认密码"
+            />
+          </Item>
+
+          <Row>
+            <Form.Submit
+              type="primary"
+              validate
+              onClick={handleSubmit}
+              className={styles.submitBtn}
             >
-              <Input name="rePasswd"
-                className="inputbox"
-                innerBefore={<Icon type="email" test="lock" size="small" className={styles.inputIcon} />}
-                htmlType="password"
-                size="large"
-                placeholder="确认密码"
-              />
-            </Item>
+              注 册
+            </Form.Submit>
+          </Row>
 
-
-            <Row>
-              <Form.Submit
-                type="primary"
-                validate
-                onClick={handleSubmit}
-                className={styles.submitBtn}
-              >
-                注 册
-              </Form.Submit>
-            </Row>
-
-            <Row className={styles.tips}>
-              <a href="/" className={styles.link}>
-                使用已有账户登录
-              </a>
-            </Row>
+          <Row className={styles.tips}>
+            <a href="/" className={styles.link}>
+              使用已有账户登录
+            </a>
+          </Row>
         </Form>
       </div>
     </div>

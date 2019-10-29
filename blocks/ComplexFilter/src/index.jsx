@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Select, Grid } from '@alifd/next';
-import styles from  './index.module.scss';
+import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
-const {
-  Option,
-} = Select;
+const { Option } = Select;
 
 export default function Index() {
   const [currentFilterType, setCurrentFilterType] = useState('article');
@@ -32,7 +30,7 @@ export default function Index() {
           <div
             key={idx}
             className={`${styles.tabFilterItem} ${
-              currentFilterType === item.type ? styles.active  : ''
+              currentFilterType === item.type ? styles.active : ''
             }`}
             onClick={() => {
               setCurrentFilterType(item.type);
@@ -54,9 +52,7 @@ export default function Index() {
               onClick={() => {
                 const isInCategory = categories.indexOf(cat.type) > -1;
                 if (isInCategory) {
-                  setCategories(categories.filter(
-                    (item) => item !== cat.type
-                  ));
+                  setCategories(categories.filter(item => item !== cat.type));
                 } else {
                   setCategories([...categories, cat.type]);
                 }
@@ -73,9 +69,10 @@ export default function Index() {
             所有者：
             <Select
               className={styles.combobox}
-              defaultValue={["卓凌"]}
+              defaultValue={['卓凌']}
               mode="tag"
-              onBlur={() => console.log('blur')} />
+              onBlur={() => console.log('blur')}
+            />
           </Col>
 
           <Col xxs={24} s={8} className={styles.col}>

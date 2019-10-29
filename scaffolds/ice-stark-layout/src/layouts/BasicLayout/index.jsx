@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
-import { Icon, Nav } from '@alifd/next';
+import { Icon, Nav, Shell } from '@alifd/next';
 import { AppLink } from '@ice/stark';
-import cloneDeep from 'lodash.clonedeep';
 import { headerMenuConfig, asideMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
 import request from '@/utils/request';
@@ -17,21 +15,30 @@ import styles from './index.module.scss';
 
 function getMenuDataByPathname(pathname) {
   let asideSubMenus = [];
-  const asideMenus = cloneDeep(asideMenuConfig).map((item) => {
+  const asideMenus = asideMenuConfig.map(item => {
     const checkSelected = () => {
       // /^\/seller/: /seller/list, /seller
       return new RegExp(`^${item.path}`).test(pathname);
     };
 
     if (item.checkSelected ? item.checkSelected(pathname) : checkSelected()) {
-      item.selected = true;
-      asideSubMenus = (item.children || []).map((subItem) => {
+      asideSubMenus = (item.children || []).map(subItem => {
         if (pathname === subItem.path) {
-          subItem.selected = true;
+          return {
+            ...subItem,
+            selected: true,
+          };
         }
+
         return subItem;
       });
+
+      return {
+        ...item,
+        selected: true,
+      };
     }
+
     return item;
   });
 
@@ -89,7 +96,7 @@ const BasicLayout = ({ children, pathname }) => {
   const { name, avatar } = userinfo;
 
   return (
-    <Shell className={styles.shell} device={isMobile ? 'phone' : 'desktop'}>
+    <Shell device={isMobile ? 'phone' : 'desktop'} type="dark">
       <Shell.Branding>
         <Logo />
         <span className={styles.appName}>icestark</span>

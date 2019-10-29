@@ -16,5 +16,5 @@ ReactDOM.render(
   <ConfigProvider prefix="next-icestark-">
     <App />
   </ConfigProvider>,
-  ICE_CONTAINER
+  ICE_CONTAINER,
 );

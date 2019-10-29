@@ -19,12 +19,12 @@ const isCodeHotkey = isKeyHotkey('mod+`');
 export default function RichEditor() {
   const [value, setValue] = useState(Value.fromJSON(initialValue));
 
-  const hasMark = (type) => {
-    return value.activeMarks.some((mark) => mark.type === type);
+  const hasMark = type => {
+    return value.activeMarks.some(mark => mark.type === type);
   };
 
-  const hasBlock = (type) => {
-    return value.blocks.some((node) => node.type === type);
+  const hasBlock = type => {
+    return value.blocks.some(node => node.type === type);
   };
 
   const onChange = ({ value }) => {
@@ -80,11 +80,8 @@ export default function RichEditor() {
       }
     } else {
       const isList = hasBlock('list-item');
-      const isType = value.blocks.some((block) => {
-        return !!document.getClosest(
-          block.key,
-          (parent) => parent.type === type
-        );
+      const isType = value.blocks.some(block => {
+        return !!document.getClosest(block.key, parent => parent.type === type);
       });
 
       if (isList && isType) {
@@ -94,9 +91,7 @@ export default function RichEditor() {
           .unwrapBlock('numbered-list');
       } else if (isList) {
         change
-          .unwrapBlock(
-            type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list'
-          )
+          .unwrapBlock(type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list')
           .wrapBlock(type);
       } else {
         change.setBlock('list-item').wrapBlock(type);
@@ -108,7 +103,7 @@ export default function RichEditor() {
 
   const renderMarkButton = (type, icon) => {
     const isActive = hasMark(type);
-    const onMouseDown = (event) => onClickMark(event, type);
+    const onMouseDown = event => onClickMark(event, type);
 
     return (
       <span className="button" onMouseDown={onMouseDown} data-active={isActive}>
@@ -119,7 +114,7 @@ export default function RichEditor() {
 
   const renderBlockButton = (type, icon) => {
     const isActive = hasBlock(type);
-    const onMouseDown = (event) => onClickBlock(event, type);
+    const onMouseDown = event => onClickBlock(event, type);
 
     return (
       <span className="button" onMouseDown={onMouseDown} data-active={isActive}>
@@ -129,7 +124,7 @@ export default function RichEditor() {
   };
 
   // 配置 block type 对应在富文本里面的渲染组件
-  const renderNode = (props) => {
+  const renderNode = props => {
     const { attributes, children, node } = props;
     switch (node.type) {
       case 'block-quote':
@@ -150,7 +145,7 @@ export default function RichEditor() {
   };
 
   // 配置 mark 对应在富文本里面的渲染组件
-  const renderMark = (props) => {
+  const renderMark = props => {
     const { children, mark } = props;
     switch (mark.type) {
       case 'bold':

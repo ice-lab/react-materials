@@ -15,7 +15,7 @@ export default function Waterfall(props) {
       () => {
         setContainerWidth(containerRef.current.clientWidth);
       },
-      false
+      false,
     );
   }, []);
 
@@ -39,17 +39,8 @@ export default function Waterfall(props) {
               height: i.w === 'w1' ? 240 : 490,
             };
             return (
-              <a
-                key={index}
-                href="#"
-                className={`${i.w} album item`}
-                style={style}
-              >
-                <img
-                  className="a-cont"
-                  src={require('./images/subjectc10585.jpg')}
-                  alt="cont"
-                />
+              <a key={index} href="#" className={`${i.w} album item`} style={style}>
+                <img className="a-cont" src={require('./images/subjectc10585.jpg')} alt="cont" />
                 <img className="a-cover" src={i.src} alt="cover" />
                 <p className="a-layer">
                   <span className="al-brand">{i.brand}</span>

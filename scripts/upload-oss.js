@@ -36,7 +36,7 @@ sortScaffoldMaterials()
   .then(() => {
     return ossClient.put(toPath, materialPath);
   })
-  .then((result) => {
+  .then(result => {
     console.log('upload success', result);
   });
 
@@ -48,8 +48,8 @@ function sortScaffoldMaterials() {
     const materialsData = JSON.parse(fs.readFileSync(materialPath, 'utf-8'));
 
     const sortMaterialsData = [];
-    scaffolds.forEach((scaffold) => {
-      materialsData.scaffolds.forEach((currentItem) => {
+    scaffolds.forEach(scaffold => {
+      materialsData.scaffolds.forEach(currentItem => {
         if (currentItem.source.npm === scaffold) {
           sortMaterialsData.push(currentItem);
         }
@@ -58,18 +58,12 @@ function sortScaffoldMaterials() {
 
     materialsData.scaffolds = sortMaterialsData;
 
-    return fs.writeFile(
-      materialPath,
-      JSON.stringify(materialsData, null, 2),
-      'utf-8',
-      (err) => {
-        if (err) reject(err);
-        resolve();
-      }
-    );
+    return fs.writeFile(materialPath, JSON.stringify(materialsData, null, 2), 'utf-8', err => {
+      if (err) reject(err);
+      resolve();
+    });
   });
 }
-
 
 /**
  * 合并 bizchart 的区块物料
@@ -80,13 +74,12 @@ function mergeBizchartsBlocks() {
 
     request(
       {
-        url:
-          'http://g.alicdn.com/bizcharts-material/scripts/material-assets.json',
+        url: 'http://g.alicdn.com/bizcharts-material/scripts/material-assets.json',
         json: true,
       },
       (error, response, body) => {
         if (body) {
-          const bizchartBlocks = (body.blocks || []).map((item) => {
+          const bizchartBlocks = (body.blocks || []).map(item => {
             item.categories = ['图表'];
             return item;
           });
@@ -95,16 +88,16 @@ function mergeBizchartsBlocks() {
             materialPath,
             JSON.stringify(materialsData, null, 2),
             'utf-8',
-            (err) => {
+            err => {
               if (err) reject(err);
               resolve();
-            }
+            },
           );
         }
 
         console.log('获取 bizcharts 物料源失败', error);
         return resolve();
-      }
+      },
     );
   });
 }
