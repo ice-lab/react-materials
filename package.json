@@ -6,7 +6,7 @@
     "generate": "iceworks generate",
     "generate:ci": "CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate",
     "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "eslint": "eslint --cache --ext .js,.jsx ./ --quiet",
     "stylelint": "stylelint ./**/*.scss",
     "deploy": "iceworks -V && npm run generate:ci && npm run upload-oss"
   },
