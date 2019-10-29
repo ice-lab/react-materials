@@ -22,6 +22,7 @@
     "@alifd/next": "^1.x",
     "@ice/stark": "^1.0.0",
     "@icedesign/container": "^1.x",
+    "@icedesign/theme": "^1.x",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "enquire-js": "^0.1.2",
