@@ -1,10 +1,3 @@
-.shell {
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: fixed;
-}
-
 .appName {
   margin-left: 10px;
   color: #fff;
@@ -23,18 +16,7 @@
 }
 
 :global {
-  .next-icestark-menu-item.next-icestark-disabled .next-icestark-menu-item-text > a {
-    background: initial;
-  }
-
-  .next-icestark-menu.next-icestark-nav {
-    min-width: auto;
-    padding: 0;
-    border-radius: 0;
-  }
-
-  .fusion-shell-header .fusion-shell-navigation {
-    margin: 0;
+  .next-icestark-shell-header .next-icestark-shell-navigation {
     .next-icestark-menu.next-icestark-nav {
       background-color: transparent;
       .next-icestark-menu-item.next-icestark-nav-item {
@@ -55,16 +37,13 @@
       }
     }
   }
-  .fusion-shell-header {
-    border-bottom: 0;
-  }
 
-  .fusion-shell-main {
-    .fusion-shell-content .fusion-shell-content-inner {
+  .next-icestark-shell-main {
+    .next-icestark-shell-content .next-icestark-shell-content-inner {
       min-height: 516px;
     }
 
-    .fusion-shell-footer {
+    .next-icestark-shell-footer {
       min-height: 48px;
       padding-bottom: 20px;
       color: #ccc;

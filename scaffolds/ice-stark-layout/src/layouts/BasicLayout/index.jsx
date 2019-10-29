@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import Shell from '@alifd/shell';
 import { enquire } from 'enquire-js';
-import { Icon, Nav } from '@alifd/next';
+import { Icon, Nav, Shell } from '@alifd/next';
 import { AppLink } from '@ice/stark';
 import { headerMenuConfig, asideMenuConfig } from '@/config/menu';
 import { userProfile } from '@/config/dataSource';
@@ -97,7 +96,7 @@ const BasicLayout = ({ children, pathname }) => {
   const { name, avatar } = userinfo;
 
   return (
-    <Shell className={styles.shell} device={isMobile ? 'phone' : 'desktop'}>
+    <Shell device={isMobile ? 'phone' : 'desktop'} type="dark">
       <Shell.Branding>
         <Logo />
         <span className={styles.appName}>icestark</span>
