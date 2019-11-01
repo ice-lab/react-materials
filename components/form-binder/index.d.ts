@@ -73,8 +73,8 @@ export interface WrapperProps extends React.HTMLAttributes<HTMLElement> {
   value?: any;
   onChange?: (value: any) => void;
 }
-export default class FormBinderWrapper extends React.Component<WrapperProps, any> {}
 export class FormBinderWrapper extends React.Component<WrapperProps, any> {}
+export default FormBinderWrapper
 
 export interface BinderProps extends React.HTMLAttributes<HTMLElement>, RuleItem {
     name?: string,
