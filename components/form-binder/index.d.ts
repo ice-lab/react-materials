@@ -88,8 +88,6 @@ export class FormBinder extends React.Component<BinderProps, any> {}
 
 export interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   name?: string;
-  className?: string;
   render?: (errors: ValidateError[]) => React.ReactElement<any> | React.ReactNode;
-  style?: React.CSSProperties;
 }
 export class FormError extends React.Component<ErrorProps, any> {}

@@ -3,7 +3,6 @@
 import * as React from 'react';
 
 export interface Props extends React.HTMLAttributes<HTMLElement> {
-  className?: string;
   confirmText?: string;
   cancelText?: string;
   title?: string;

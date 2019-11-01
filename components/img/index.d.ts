@@ -8,7 +8,6 @@ export interface ImgProps extends React.HTMLAttributes<HTMLElement> {
   alt?: string;
   title?: string;
   errorImgSrc?: string;
-  className?: string;
   width?: number;
   height?: number;
   shape?: string;
@@ -19,12 +18,8 @@ export interface ImgProps extends React.HTMLAttributes<HTMLElement> {
 export class Img extends React.Component<ImgProps, any> {}
 export default Img
 
-interface ContainProps extends ImgProps {
-  style?: React.CSSProperties;
-}
+interface ContainProps extends ImgProps {}
 export class Contain extends React.Component<ContainProps, any> {}
 
-interface CoverProps extends ImgProps {
-  style?: React.CSSProperties;
-}
+interface CoverProps extends ImgProps {}
 export class Cover extends React.Component<CoverProps, any> {}
