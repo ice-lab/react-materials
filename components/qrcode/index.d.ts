@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-export interface IceQrcodePanelProps extends React.HTMLAttributes<HTMLElement> {
+export interface PanelProps extends React.HTMLAttributes<HTMLElement> {
   value: string;
   text?: React.ReactNode;
   align?: 'left' | 'right' | 'top' | 'bottom';
@@ -12,17 +12,16 @@ export interface IceQrcodePanelProps extends React.HTMLAttributes<HTMLElement> {
   size?: number;
 }
 
-export class IceQrcodePanel extends React.Component<IceQrcodePanelProps, any> {}
+export class Panel extends React.Component<PanelProps, any> {}
 
-export interface QrCodeIconProps extends React.HTMLAttributes<HTMLElement> {}
+declare interface QrCodeIconProps extends React.HTMLAttributes<HTMLElement> {}
 
-export class QrCodeIcon extends React.Component<QrCodeIconProps, any> {}
+declare class QrCodeIcon extends React.Component<QrCodeIconProps, any> {}
 
-export interface IceQrcodeProps extends IceQrcodePanelProps {
+export interface QrcodeProps extends PanelProps {
   triggerSize?: 'xxs' | 'xs' | 'small' | 'medium' | 'large' | 'xl' | 'xxl';
   triggerStyle?: React.CSSProperties;
   trigger?: React.ReactNode;
 }
 
-export class IceQrcode extends React.Component<IceQrcodeProps, any> {}
-export default IceQrcode
+export default class Qrcode extends React.Component<QrcodeProps, any> {}

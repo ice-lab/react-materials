@@ -4,8 +4,8 @@ import * as React from 'react';
 
 export interface Props extends React.HTMLAttributes<HTMLElement> {
   loading?: boolean;
-  error?: any;
-  empty?: any;
+  error?: React.ReactNode;
+  empty?: React.ReactNode;
   title?: string;
 }
 
