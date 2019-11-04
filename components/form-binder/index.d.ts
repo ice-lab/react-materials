@@ -73,8 +73,8 @@ export interface WrapperProps extends React.HTMLAttributes<HTMLElement> {
   value?: any;
   onChange?: (value: any) => void;
 }
-export default class FormBinderWrapper extends React.Component<WrapperProps, any> {}
 export class FormBinderWrapper extends React.Component<WrapperProps, any> {}
+export default FormBinderWrapper
 
 export interface BinderProps extends React.HTMLAttributes<HTMLElement>, RuleItem {
     name?: string,
@@ -88,8 +88,6 @@ export class FormBinder extends React.Component<BinderProps, any> {}
 
 export interface ErrorProps extends React.HTMLAttributes<HTMLElement> {
   name?: string;
-  className?: string;
   render?: (errors: ValidateError[]) => React.ReactElement<any> | React.ReactNode;
-  style?: React.CSSProperties;
 }
 export class FormError extends React.Component<ErrorProps, any> {}
