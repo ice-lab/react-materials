@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/form-binder",
-  "version": "1.0.7-0",
+  "version": "1.0.7",
   "description": "ICE 表单数据获取方案",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -47,5 +47,6 @@
   "componentConfig": {
     "name": "form-binder",
     "title": "ICE 表单数据获取方案"
-  }
+  },
+  "homepage": "https://unpkg.com/@icedesign/form-binder@1.0.7/build/index.html"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/qrcode",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "飞冰 二维码组件",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -43,5 +43,5 @@
     "name": "qrcode",
     "title": "二维码组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/qrcode@1.0.4/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/qrcode@1.0.5/build/index.html"
 }

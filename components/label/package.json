@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/label",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "创建标签组件用来突出所要显示的信息",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -40,5 +40,5 @@
     "name": "label",
     "title": "创建标签组件用来突出所要显示的信息"
   },
-  "homepage": "https://unpkg.com/@icedesign/label@1.0.4/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/label@1.0.6/build/index.html"
 }
