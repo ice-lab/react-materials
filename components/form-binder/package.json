@@ -1,12 +1,14 @@
 {
   "name": "@icedesign/form-binder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ICE 表单数据获取方案",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "files": [
     "lib/",
     "demo/",
-    "build/"
+    "build/",
+    "index.d.ts"
   ],
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
@@ -35,8 +37,9 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
-    "@icedesign/base": "^0.2.0",
     "@alifd/next": "^1.11.8",
+    "@icedesign/base": "^0.2.0",
+    "@types/react": "^16.9.9",
     "moment": "^2.23.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
@@ -45,5 +48,5 @@
     "name": "form-binder",
     "title": "ICE 表单数据获取方案"
   },
-  "homepage": "https://unpkg.com/@icedesign/form-binder@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/form-binder@1.0.7/build/index.html"
 }

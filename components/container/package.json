@@ -1,12 +1,14 @@
 {
   "name": "@icedesign/container",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "files": [
     "lib/",
     "demo/",
-    "build/"
+    "build/",
+    "index.d.ts"
   ],
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
@@ -37,5 +39,5 @@
     "name": "container",
     "title": "基础容器"
   },
-  "homepage": "https://unpkg.com/@icedesign/container@1.0.4/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/container@1.0.5/build/index.html"
 }

@@ -1,12 +1,14 @@
 {
   "name": "@icedesign/title",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "标题组件",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "files": [
     "lib/",
     "demo/",
-    "build/"
+    "build/",
+    "index.d.ts"
   ],
   "keywords": [
     "ice",

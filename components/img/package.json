@@ -1,12 +1,14 @@
 {
   "name": "@icedesign/img",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ICE 图片组件。",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "files": [
     "lib/",
     "demo/",
-    "build/"
+    "build/",
+    "index.d.ts"
   ],
   "scripts": {
     "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
@@ -40,5 +42,5 @@
     "name": "img",
     "title": "ICE 图片组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/img@latest/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/img@1.0.4/build/index.html"
 }
