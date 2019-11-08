@@ -29,7 +29,8 @@
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {
     "@ice/spec": "^0.1.1",
