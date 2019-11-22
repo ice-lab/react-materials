@@ -5,7 +5,7 @@ import { enquireScreen } from 'enquire-js';
 import styles from './index.module.scss';
 
 export default function Index(props) {
-  const [visible, setVisble] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [isMobile, setMobile] = useState(false);
 
   const enquireScreenRegister = () => {
@@ -22,11 +22,11 @@ export default function Index(props) {
 
 
   const showDialog = () => {
-    setVisble(true);
+    setVisible(true);
   };
 
   const hideDialog = () => {
-    setVisble(false);
+    setVisible(false);
   };
 
   const dialogStyle = {
