@@ -70,5 +70,7 @@
     "type": "react",
     "adapter": "adapter-react-v3"
   },
-  "ideMode": "ice-react"
+  "ideMode": {
+    "name": "ice-react"
+  }
 }

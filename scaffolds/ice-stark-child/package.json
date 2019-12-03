@@ -65,7 +65,9 @@
     "type": "react",
     "adapter": "adapter-react-v3"
   },
-  "ideMode": "ice-react",
+  "ideMode": {
+    "name": "ice-react"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-stark-child"
