@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-layout-scaffold",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "微前端方案 icestark 的框架应用，用于快速初始化框架应用",
   "homepage": "https://git.ilcl.me",
   "files": [
@@ -69,5 +69,6 @@
   "iceworks": {
     "type": "react",
     "adapter": "adapter-react-v3"
-  }
+  },
+  "ideMode": "ice-react"
 }

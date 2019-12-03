@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-child-scaffold",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
   "homepage": "https://unpkg.com/@icedesign/stark-child-scaffold@latest/build/index.html",
   "files": [
@@ -65,6 +65,7 @@
     "type": "react",
     "adapter": "adapter-react-v3"
   },
+  "ideMode": "ice-react",
   "repository": {
     "type": "git",
     "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/ice-stark-child"
