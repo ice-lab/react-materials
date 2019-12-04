@@ -16,7 +16,7 @@ const CreateFuncDialog = WrapperElement => {
 
       container = document.createElement('div'); /* eslint no-undef: "off" */
       document.body.appendChild(container);
-      instance = ReactDOM.render(<WrapperElement {...props} visible />, container);
+      instance = ReactDOM.render(<WrapperElement {...props} visible />, container); /* eslint react/no-render-return-value: "off" */
     },
     // 隐藏并销毁弹窗
     hide: () => {

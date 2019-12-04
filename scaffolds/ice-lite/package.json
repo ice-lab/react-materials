@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/lite-scaffold",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "该模板包含基础的工程、路由等，适合比较专业的前端同学",
   "files": [
     "src/",
@@ -64,6 +64,9 @@
   "iceworks": {
     "type": "react",
     "adapter": "adapter-react-v3"
+  },
+  "ideMode": {
+    "name": "ice-react"
   },
   "repository": {
     "type": "git",
