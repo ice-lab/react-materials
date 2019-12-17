@@ -6,7 +6,7 @@ module.exports = {
       name: '淘小宝',
       department: '技术部',
       avatar:
-        'https://cdog01.alibaba-inc.com/aliwork/tUd4i7IDM8%2FuALhbY3H72kbPrqsVgoZ2GiVxZLXTfxB%2B91Z5dVJX5JSCGrUYBbnp?e=eIxQ5SR3%2BXODJpmDlfdb6A%3D%3D',
+        'https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png',
       userid: 10001,
     },
   },

@@ -8,7 +8,12 @@ export default function App() {
   const [pathname, setPathname] = useState();
 
   function handleRouteChange(newPathname) {
-    console.log('route change', pathname);
+    console.log(
+      'route change oldPathname',
+      pathname,
+      'newPathname',
+      newPathname,
+    );
     setPathname(newPathname);
   }
 
