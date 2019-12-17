@@ -18,7 +18,7 @@ const CreateFuncDialog = WrapperElement => {
 
       container = document.createElement('div');
       document.body.appendChild(container);
-      instance = ReactDOM.render(
+      instance = ReactDOM.render( /* eslint react/no-render-return-value: "off" */
         <WrapperElement
           {...props}
           afterClose={() => {

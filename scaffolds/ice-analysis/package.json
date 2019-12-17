@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/analysis-scaffold",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "该模板适用于数据展示大盘，搭配简洁的暗色主题风格和图表类展示",
   "files": [
     "src/",
@@ -73,6 +73,9 @@
   "iceworks": {
     "type": "react",
     "adapter": "adapter-react-v3"
+  },
+  "ideMode": {
+    "name": "ice-react"
   },
   "repository": {
     "type": "git",

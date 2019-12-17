@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/homepage-scaffold",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "该模板适用于产品的首页介绍，默认只有一个页面，使用时需要根据需求进行删除和添加",
   "files": [
     "src/",
@@ -63,6 +63,9 @@
   "iceworks": {
     "type": "react",
     "adapter": "adapter-react-v3"
+  },
+  "ideMode": {
+    "name": "ice-react"
   },
   "repository": {
     "type": "git",
