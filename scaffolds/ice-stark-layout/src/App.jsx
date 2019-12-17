@@ -6,19 +6,15 @@ import BasicLayout from '@/layouts/BasicLayout';
 
 export default function App() {
   const [pathname, setPathname] = useState();
-  const [query, setQuery] = useState({});
 
-  function handleRouteChange(newPathname, newQuery) {
+  function handleRouteChange(newPathname) {
     console.log(
       'route change oldPathname',
       pathname,
       'newPathname',
       newPathname,
-      'newQuery',
-      newQuery,
     );
     setPathname(newPathname);
-    setQuery(newQuery || {});
   }
 
   function handleAppLeave(appConfig) {
@@ -27,20 +23,6 @@ export default function App() {
 
   function handleAppEnter(appConfig) {
     console.log('handleAppEnter', appConfig);
-  }
-
-  /**
-   * handle localUrl for debug, trigger with localPort in query
-   */
-  function getBundleUrl(url) {
-    const { localPort } = query;
-
-    if (!localPort) return url;
-
-    return [
-      `http://localhost:${localPort}/js/index.js`,
-      `http://localhost:${localPort}/css/index.css`,
-    ];
   }
 
   return (
@@ -58,12 +40,12 @@ export default function App() {
           basename="/"
           exact
           title="通用页面"
-          url={getBundleUrl([
+          url={[
             '//unpkg.com/icestark-child-common/build/js/index.js',
             '//unpkg.com/icestark-child-common/build/css/index.css',
             // 'http://localhost:5555/js/index.js',
             // 'http://localhost:5555/css/index.css',
-          ])}
+          ]}
         />
 
         {/* 基于 React@16.x */}
@@ -71,12 +53,12 @@ export default function App() {
           path="/seller"
           basename="/seller"
           title="商家平台"
-          url={getBundleUrl([
+          url={[
             '//unpkg.com/icestark-child-seller/build/js/index.js',
             '//unpkg.com/icestark-child-seller/build/css/index.css',
             // 'http://localhost:5556/js/index.js',
             // 'http://localhost:5556/css/index.css',
-          ])}
+          ]}
         />
 
         {/* 基于 Vue@2.x */}
@@ -84,12 +66,12 @@ export default function App() {
           basename="/waiter"
           path="/waiter"
           title="小二平台"
-          url={getBundleUrl([
+          url={[
             '//unpkg.com/icestark-child-waiter/dist/js/app.js',
             '//unpkg.com/icestark-child-waiter/dist/css/app.css',
             // 'http://localhost:8080/css/app.css',
             // 'http://localhost:8080/app.js',
-          ])}
+          ]}
         />
       </AppRouter>
     </BasicLayout>
