@@ -14,7 +14,7 @@
     "_stylelintignore",
     "_stylelintrc.js",
     "tsconfig.json",
-    "ice.config.js",
+    "build.json",
     "jsconfig.json"
   ],
   "dependencies": {
@@ -29,17 +29,18 @@
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
+    "@alib/build-scripts": "^0.1.5",
     "@ice/spec": "^0.1.1",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-ice-app": "^0.1.4",
+    "build-plugin-moment-locales": "^0.1.0",
     "css-modules-typescript-loader": "^2.0.4",
     "eslint": "^6.0.1",
-    "ice-plugin-fusion": "^0.1.4",
-    "ice-plugin-moment-locales": "^0.1.0",
-    "ice-scripts": "^2.0.0",
     "stylelint": "^10.1.0"
   },
   "scripts": {
-    "start": "ice-scripts dev",
-    "build": "ice-scripts build",
+    "start": "build-scripts start",
+    "build": "build-scripts build",
     "prepublishOnly": "npm run build",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint --cache --ext .js,.jsx ./",

@@ -1,0 +1,22 @@
+{
+  "entry": "src/index.jsx",
+  "publicPath": "./",
+  "alias": {
+    "@": "./src/"
+  },
+  "devServer": {
+    "historyApiFallback": true
+  },
+  "plugins": [
+    "build-plugin-ice-app",
+    ["build-plugin-fusion", {
+      "themePackage": "@icedesign/theme",
+      "themeConfig": {
+        "nextPrefix": "next-icestark-"
+      }
+    }],
+    ["build-plugin-moment-locales", {
+      "locales": ["zh-cn"]
+    }]
+  ]
+}

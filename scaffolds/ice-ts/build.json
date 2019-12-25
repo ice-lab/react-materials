@@ -1,0 +1,17 @@
+{
+  "entry": "src/index.tsx",
+  "publicPath": "./",
+  "alias": {
+    "@": "./src/"
+  },
+  "plugins": [
+    "build-plugin-ice-app",
+    ["build-plugin-fusion", {
+      "themePackage": "@icedesign/theme"
+    }],
+    ["build-plugin-moment-locales", {
+      "locales": ["zh-cn"]
+    }],
+    "./build-plugin-local.js"
+  ]
+}
