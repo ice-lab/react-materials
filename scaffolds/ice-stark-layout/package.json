@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
+    "@alifd/theme-design-pro": "^0.5.3",
     "@ice/stark": "^1.2.0",
     "@icedesign/container": "^1.x",
     "@icedesign/theme": "^1.x",

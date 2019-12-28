@@ -4,6 +4,36 @@ import NotFound from '@/components/NotFound';
 import PageLoading from '@/components/PageLoading';
 import BasicLayout from '@/layouts/BasicLayout';
 
+const apps = [{
+  path: ['/', '/message', '/about'],
+  exact: true,
+  title: '通用页面',
+  url: [
+    '//ice.alicdn.com/icestark/child-common-react/index.js',
+    '//ice.alicdn.com/icestark/child-common-react/index.css',
+    // 'http://localhost:5555/js/index.js',
+    // 'http://localhost:5555/css/index.css',
+  ]
+}, {
+  path: '/seller',
+  title: '商家平台',
+  url: [
+    '//ice.alicdn.com/icestark/child-seller-react/index.js',
+    '//ice.alicdn.com/icestark/child-seller-react/index.css',
+    // '//127.0.0.1:3444/js/index.js',
+    // '//127.0.0.1:3444/css/index.css',
+  ],
+}, {
+  path: '/waiter',
+  title: '小二平台',
+  url: [
+    '//ice.alicdn.com/icestark/child-waiter-vue/app.js',
+    '//ice.alicdn.com/icestark/child-waiter-vue/app.css',
+    // '//localhost:8080/app.js',
+    // '//localhost:8080/css/app.css',
+  ],
+}];
+
 export default function App() {
   const [pathname, setPathname] = useState();
 
@@ -34,45 +64,16 @@ export default function App() {
         onAppLeave={handleAppLeave}
         onAppEnter={handleAppEnter}
       >
-        {/* 基于 React@15.x */}
-        <AppRoute
-          path={['/', '/message', '/about']}
-          basename="/"
-          exact
-          title="通用页面"
-          url={[
-            '//unpkg.com/icestark-child-common/build/js/index.js',
-            '//unpkg.com/icestark-child-common/build/css/index.css',
-            // 'http://localhost:5555/js/index.js',
-            // 'http://localhost:5555/css/index.css',
-          ]}
-        />
-
-        {/* 基于 React@16.x */}
-        <AppRoute
-          path="/seller"
-          basename="/seller"
-          title="商家平台"
-          url={[
-            '//unpkg.com/icestark-child-seller/build/js/index.js',
-            '//unpkg.com/icestark-child-seller/build/css/index.css',
-            // 'http://localhost:5556/js/index.js',
-            // 'http://localhost:5556/css/index.css',
-          ]}
-        />
-
-        {/* 基于 Vue@2.x */}
-        <AppRoute
-          basename="/waiter"
-          path="/waiter"
-          title="小二平台"
-          url={[
-            '//unpkg.com/icestark-child-waiter/dist/js/app.js',
-            '//unpkg.com/icestark-child-waiter/dist/css/app.css',
-            // 'http://localhost:8080/css/app.css',
-            // 'http://localhost:8080/app.js',
-          ]}
-        />
+        {
+          (apps || []).map((item, idx) => {
+            return (
+              <AppRoute
+                key={idx}
+                {...item}
+              />
+            );
+          })
+        }
       </AppRouter>
     </BasicLayout>
   );

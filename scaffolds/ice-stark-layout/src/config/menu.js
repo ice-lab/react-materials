@@ -22,11 +22,7 @@ const headerMenuConfig = [
 const asideMenuConfig = [
   {
     name: '通用页面',
-    path: '/',
     icon: 'set',
-    checkSelected: (pathname) => {
-      return ['', '/', '/message', '/about'].indexOf(pathname) !== -1;
-    },
     children: [
       {
         path: '/',
@@ -44,7 +40,6 @@ const asideMenuConfig = [
   },
   {
     name: '商家平台',
-    path: '/seller',
     icon: 'atm',
     children: [
       {
@@ -67,7 +62,6 @@ const asideMenuConfig = [
   },
   {
     name: '小二平台',
-    path: '/waiter',
     icon: 'account',
     children: [
       {

@@ -15,43 +15,6 @@
   color: #fff;
 }
 
-:global {
-  .next-icestark-shell-header .next-icestark-shell-navigation {
-    .next-icestark-menu.next-icestark-nav {
-      background-color: transparent;
-      .next-icestark-menu-item.next-icestark-nav-item {
-        background-color: transparent;
-        .next-icestark-menu-item-inner {
-          color: #fff;
-          a {
-            color: #fff;
-          }
-
-          &:hover {
-            color: #3080fe;
-            a {
-              color: #3080fe;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .next-icestark-shell-main {
-    .next-icestark-shell-content .next-icestark-shell-content-inner {
-      min-height: 516px;
-    }
-
-    .next-icestark-shell-footer {
-      min-height: 48px;
-      padding-bottom: 20px;
-      color: #ccc;
-      font-size: 16px;
-      font-family: AlibabaSans-Bold, sans-serif;
-      line-height: 25px;
-      text-align: left;
-      background: transparent;
-    }
-  }
+.appMain {
+  min-height: 1200px;
 }
