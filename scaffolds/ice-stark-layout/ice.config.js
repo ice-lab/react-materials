@@ -7,7 +7,7 @@ module.exports = {
     [
       'ice-plugin-fusion',
       {
-        themePackage: '@icedesign/theme',
+        themePackage: '@alifd/theme-design-pro',
         themeConfig: {
           // 防止被子应用样式污染
           nextPrefix: 'next-icestark-',
