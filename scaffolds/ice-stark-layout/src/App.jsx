@@ -13,7 +13,7 @@ const apps = [{
     '//ice.alicdn.com/icestark/child-common-react/index.css',
     // 'http://localhost:5555/js/index.js',
     // 'http://localhost:5555/css/index.css',
-  ]
+  ],
 }, {
   path: '/seller',
   title: '商家平台',
