@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-layout-scaffold",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "微前端方案 icestark 的框架应用，用于快速初始化框架应用",
   "homepage": "https://git.ilcl.me",
   "files": [
@@ -20,9 +20,9 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark": "^1.0.0",
+    "@alifd/theme-design-pro": "^0.5.3",
+    "@ice/stark": "^1.2.0",
     "@icedesign/container": "^1.x",
-    "@icedesign/theme": "^1.x",
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "enquire-js": "^0.1.2",

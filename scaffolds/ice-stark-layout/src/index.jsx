@@ -6,15 +6,15 @@ import { ConfigProvider } from '@alifd/next';
 import '@alifd/next/reset.scss';
 import App from './App';
 
-const ICE_CONTAINER = document.getElementById('ice-container');
+const ICESTARK_CONTAINER = document.getElementById('icestark-container');
 
-if (!ICE_CONTAINER) {
-  throw new Error('当前页面不存在 <div id="ice-container"></div> 节点.');
+if (!ICESTARK_CONTAINER) {
+  throw new Error('当前页面不存在 <div id="icestark-container"></div> 节点.');
 }
 
 ReactDOM.render(
   <ConfigProvider prefix="next-icestark-">
     <App />
   </ConfigProvider>,
-  ICE_CONTAINER,
+  ICESTARK_CONTAINER,
 );

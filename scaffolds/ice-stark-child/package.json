@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-child-scaffold",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "该模板适用于从 0 到 1 开始搭建项目，内置基础的页面，路由和菜单展示",
   "homepage": "https://unpkg.com/@icedesign/stark-child-scaffold@latest/build/index.html",
   "files": [
@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark-app": "^1.0.0",
+    "@ice/stark-app": "^1.2.0",
     "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",

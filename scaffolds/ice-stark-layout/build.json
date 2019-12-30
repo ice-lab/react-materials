@@ -10,7 +10,7 @@
   "plugins": [
     "build-plugin-ice-app",
     ["build-plugin-fusion", {
-      "themePackage": "@icedesign/theme",
+      "themePackage": "@alifd/theme-design-pro",
       "themeConfig": {
         "nextPrefix": "next-icestark-"
       }
