@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { join } from 'path';
 import * as fse from 'fs-extra';
-import * as globby from 'globby';
+import globby from 'globby';
 
 import checkVersionExist from './checkVersionExist';
 
@@ -26,8 +26,7 @@ if (!branchName) {
     // eslint-disable-next-line no-await-in-loop
     await publishPackage(join(rootDir, pkg, '../'));
   }
-
-})().catch(err => {
+})().catch((err) => {
   console.error(err);
   process.exit(1);
 });
