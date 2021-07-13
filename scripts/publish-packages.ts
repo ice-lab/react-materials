@@ -36,6 +36,10 @@ async function publishPackage(packageDir: string): Promise<void> {
   const { version, name } = pkgData;
   const npmTag = branchName === 'master' ? 'latest' : 'beta';
 
+  if (version === 'latest') {
+    return;
+  }
+
   const versionExist = await checkVersionExist(name, version, 'https://registry.npmjs.org/');
   if (versionExist) {
     console.log(`${name}@${version} 已存在，无需发布。`);
@@ -44,15 +48,15 @@ async function publishPackage(packageDir: string): Promise<void> {
 
   const isProdVersion = /^\d+\.\d+\.\d+$/.test(version);
   if (branchName === 'master' && !isProdVersion) {
-    throw new Error(`禁止在 master 分支发布非正式版本 ${version}`);
+    throw new Error(`禁止在 master 分支发布非正式版本 ${version} ${name}`);
   }
 
   if (branchName !== 'master' && isProdVersion) {
-    console.log(`非 master 分支 ${branchName}，不发布正式版本 ${version}`);
+    console.log(`非 master 分支 ${branchName}，不发布正式版本 ${version} ${name}`);
     return;
   }
 
-  console.log('start install deps');
+  console.log('start install deps', name);
   execSync('npm install', {
     cwd: packageDir,
     stdio: 'inherit',
