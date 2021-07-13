@@ -1,8 +1,7 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 import BasicLayout from '../BasicLayout';
 import UserLayout from '../UserLayout';
 
-const { useEffect } = React;
 export default function FrameworkLayout(props: {
   children: React.ReactNode;
   pathname: string;

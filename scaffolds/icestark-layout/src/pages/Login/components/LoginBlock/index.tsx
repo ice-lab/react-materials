@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Input, Message, Form, Divider, Checkbox, Icon } from '@alifd/next';
 import { appHistory } from '@ice/stark';
 
@@ -28,7 +28,6 @@ interface LoginProps {
   // eslint-disable-next-line react/require-default-props
   dataSource?: IDataSource;
 }
-
 
 const LoginBlock: React.FunctionComponent<LoginProps> = (props: LoginProps): JSX.Element => {
   const {

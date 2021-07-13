@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { runApp, IAppConfig } from 'ice';
 import { ConfigProvider } from '@alifd/next';
 import PageLoading from '@/components/PageLoading';
