@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "name": "react-materials",
+  "version": "0.1.0",
+  "description": "icejs materials",
+  "author": "",
+  "scripts": {
+    "deploy": "npm run generate && npm run sync",
+    "generate": "iceworks generate",
+    "generate-and-deploy-oss": "node ./scripts/generate-and-deploy-oss.js",
+    "publish:packages": "ts-node ./scripts/publish-packages.ts",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
+    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "prepublishOnly": "npm run generate"
+  },
+  "files": [
+    "build"
+  ],
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.0",
+    "@types/fs-extra": "^9.0.12",
+    "@types/globby": "^9.1.0",
+    "ali-oss": "^6.16.0",
+    "eslint": "^7.0.0",
+    "fs-extra": "^10.0.0",
+    "globby": "^11.0.4",
+    "ice-npm-utils": "^2.1.1",
+    "iceworks": "^3.4.5-0",
+    "stylelint": "^13.1.0",
+    "ts-node": "^10.1.0"
+  },
+  "materialConfig": {
+    "template": "@icedesign/ice-react-ts-material-template",
+    "type": "react"
+  }
+}

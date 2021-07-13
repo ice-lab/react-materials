@@ -1,0 +1,65 @@
+{
+  "name": "@icedesign/ice-antd-scaffold",
+  "version": "1.1.1",
+  "description": "Ant Design and icejs scaffold, use TypeScript.",
+  "files": [
+    ".vscode/",
+    "mock/",
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    "_editorconfig",
+    "_eslintignore",
+    "_eslintrc.js",
+    "_prettierignore",
+    "_prettierrc.js",
+    "_stylelintignore",
+    "_stylelintrc.js",
+    "build.json",
+    "screenshot.png",
+    "tsconfig.json",
+    "jsconfig.json"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.0.2",
+    "@ant-design/pro-layout": "^6.5.1",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4",
+    "antd": "^4.0.0",
+    "moment": "^2.24.0",
+    "prop-types": "^15.5.8",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "@iceworks/spec": "^1.0.1",
+    "build-plugin-antd": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "eslint": "^6.0.1",
+    "ice.js": "^1.0.0",
+    "stylelint": "^13.1.0"
+  },
+  "scripts": {
+    "start": "icejs start",
+    "build": "icejs build",
+    "screenshot": "../../node_modules/.bin/screenshot -l",
+    "prepublishOnly": "npm run build && npm run screenshot",
+    "lint": "npm run eslint && npm run stylelint",
+    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "stylelint": "stylelint ./**/*.scss"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "name": "Ant Design Scaffold",
+    "title": "Ant Design Scaffold",
+    "category": "Basic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/antd-lite"
+  }
+}

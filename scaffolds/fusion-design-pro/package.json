@@ -1,0 +1,15 @@
+{
+  "name": "@alifd/fusion-design-pro",
+  "version": "latest",
+  "description": "使用 TypeScript，包含大量 UI 区块，比如图表、表单等。",
+  "scaffoldConfig": {
+    "name": "Fusion Design Pro",
+    "title": "Fusion Design Pro",
+    "category": "Basic",
+    "screenshot": "https://img.alicdn.com/tfs/TB1jzt1YEz1gK0jSZLeXXb9kVXa-1349-833.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alibaba-fusion/materials/tree/master/scaffolds/fusion-design-pro"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "publicPath": "./",
+  "plugins": [
+    ["build-plugin-antd", {
+      "themeConfig": {
+      }
+    }],
+    ["build-plugin-moment-locales", {
+      "locales": ["zh-cn"]
+    }]
+  ]
+}
