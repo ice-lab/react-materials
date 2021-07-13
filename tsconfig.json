@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "experimentalDecorators": true,
     "declaration": true,
     "esModuleInterop": true,

@@ -4,7 +4,7 @@ import Dashboard from '@/pages/Dashboard';
 import Home from '@/pages/Home';
 import NotFound from '@/components/NotFound';
 
-const routerConfig: IRouterConfig = [
+const routerConfig: IRouterConfig[] = [
   {
     path: '/',
     component: Layout,

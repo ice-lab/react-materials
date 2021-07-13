@@ -1,4 +1,4 @@
-import React from 'react';
+import { createElement } from 'react';
 import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
 import { Link } from 'ice';
 import { asideMenuConfig } from './menuConfig';
@@ -6,7 +6,7 @@ import { asideMenuConfig } from './menuConfig';
 const loopMenuItem = (menus) =>
   menus.map(({ icon, children, ...item }) => ({
     ...item,
-    icon: React.createElement(icon),
+    icon: createElement(icon),
     children: children && loopMenuItem(children),
   }));
 
