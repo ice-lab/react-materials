@@ -1,9 +1,8 @@
 {
   "name": "@alifd/scaffold-simple",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "使用 TypeScript，未使用任何 UI 库。",
   "files": [
-    ".vscode/",
     "src/",
     "build/",
     "public/",
@@ -22,15 +21,14 @@
     "jsconfig.json"
   ],
   "dependencies": {
-    "@types/react": "^16.9.20",
-    "@types/react-dom": "^16.9.5",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@ice/screenshot": "^0.1.5",
     "@iceworks/spec": "^1.0.0",
-    "eslint": "^6.8.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
+    "eslint": "^7.30.0",
     "ice.js": "^1.0.0",
     "stylelint": "^13.7.2"
   },

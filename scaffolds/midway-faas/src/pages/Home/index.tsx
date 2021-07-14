@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRequest } from 'ice';
 import { hello } from '@/apis/lambda';
 import styles from './index.module.scss';
