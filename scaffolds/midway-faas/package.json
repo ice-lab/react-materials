@@ -28,12 +28,12 @@
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@iceworks/spec": "^1.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "@midwayjs/build-plugin-hooks": "0.x",
     "build-plugin-fusion": "^0.1.0",
     "build-plugin-ice-faas": "^0.1.0",

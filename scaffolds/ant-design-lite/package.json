@@ -24,8 +24,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.2",
     "@ant-design/pro-layout": "^6.5.1",
-    "@types/react": "^17.0.14",
-    "@types/react-dom": "^17.0.9",
     "antd": "^4.0.0",
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
@@ -34,6 +32,8 @@
   },
   "devDependencies": {
     "@iceworks/spec": "^1.0.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
     "build-plugin-antd": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
     "eslint": "^7.30.0",

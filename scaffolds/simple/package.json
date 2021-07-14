@@ -21,14 +21,13 @@
     "jsconfig.json"
   ],
   "dependencies": {
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@ice/screenshot": "^0.1.5",
     "@iceworks/spec": "^1.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "eslint": "^7.30.0",
     "ice.js": "^1.0.0",
     "stylelint": "^13.7.2"
