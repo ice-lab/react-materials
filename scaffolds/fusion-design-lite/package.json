@@ -1,6 +1,6 @@
 {
   "name": "@alifd/scaffold-lite",
-  "version": "0.2.7",
+  "version": "latest",
   "description": "轻量级模板，使用 TypeScript，仅包含基础的 Layout。",
   "scaffoldConfig": {
     "name": "Fusion Design Lite",
