@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 import { join } from 'path';
 import * as fse from 'fs-extra';
 import globby from 'globby';
+import * as generateBetaVersion from './utils/generateBetaVersion';
 
 import checkVersionExist from './checkVersionExist';
 
@@ -32,8 +33,11 @@ if (!branchName) {
 });
 
 async function publishPackage(packageDir: string): Promise<void> {
-  const pkgData = await fse.readJSON(join(packageDir, 'package.json'));
+  const pkgPath = join(packageDir, 'package.json');
+  const pkgData = await fse.readJSON(pkgPath);
   const { version, name } = pkgData;
+  let publishVersion = version;
+
   const npmTag = branchName === 'master' ? 'latest' : 'beta';
 
   if (version === 'latest') {
@@ -52,8 +56,11 @@ async function publishPackage(packageDir: string): Promise<void> {
   }
 
   if (branchName !== 'master' && isProdVersion) {
-    console.log(`非 master 分支 ${branchName}，不发布正式版本 ${version} ${name}`);
-    return;
+    publishVersion = await generateBetaVersion(name, version);
+    pkgData.version = publishVersion;
+
+    console.log(`非 master 分支 ${branchName}，自动生成 beta 版本号 ${name} ${publishVersion} ${version}`);
+    fse.writeJSONSync(pkgPath, pkgData);
   }
 
   console.log('start install deps', name);
@@ -62,7 +69,7 @@ async function publishPackage(packageDir: string): Promise<void> {
     stdio: 'inherit',
   });
 
-  console.log('start publish', version, npmTag);
+  console.log('start publish', publishVersion, npmTag);
   execSync(`npm publish --tag ${npmTag}`, {
     cwd: packageDir,
     stdio: 'inherit',

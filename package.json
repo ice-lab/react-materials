@@ -22,6 +22,7 @@
     "@types/fs-extra": "^9.0.12",
     "@types/globby": "^9.1.0",
     "ali-oss": "^6.16.0",
+    "axios": "^0.21.1",
     "eslint": "^7.0.0",
     "fs-extra": "^10.0.0",
     "globby": "^11.0.4",
