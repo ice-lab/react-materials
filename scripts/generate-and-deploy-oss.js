@@ -19,7 +19,7 @@ const commitMessage = process.env.GIT_COMMIT_MESSAGE;
 console.log('generate and upload, current branch', process.env.BRANCH_NAME);
 
 (async () => {
-  if (branchName !== 'master' && !/generate/.test(commitMessage)) {
+  if (branchName !== 'master' && !/trigger generate/.test(commitMessage)) {
     console.log('非 master 分支并且 commit message 不包含 generate，跳过此流程', branchName, commitMessage);
     return;
   }
