@@ -4,8 +4,7 @@ import * as fse from 'fs-extra';
 import globby from 'globby';
 
 import checkVersionExist from './checkVersionExist';
-
-const generateBetaVersion = require('./utils/generateBetaVersion');
+import generateBetaVersion from './utils/generateBetaVersion';
 
 const branchName = process.env.BRANCH_NAME;
 const rootDir = join(__dirname, '../');
