@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Grid, Loading } from '@alifd/next';
 import IceContainer from '@icedesign/container';
 import PageTitle from '@/components/PageTitle';

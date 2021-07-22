@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useRequest } from 'ice';
 import { Table } from 'antd';
 import styles from './index.module.less';

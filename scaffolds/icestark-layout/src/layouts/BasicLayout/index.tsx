@@ -1,4 +1,3 @@
-import React from 'react';
 import { Shell } from '@alifd/next';
 import PageNav from './components/PageNav';
 import Footer from './components/Footer';

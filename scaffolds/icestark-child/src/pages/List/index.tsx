@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Pagination, Message } from '@alifd/next';
 import { Link } from 'ice';
