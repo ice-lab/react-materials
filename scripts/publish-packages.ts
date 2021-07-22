@@ -6,6 +6,7 @@ import globby from 'globby';
 import checkVersionExist from './utils/checkVersionExist';
 import generateBetaVersion from './utils/generateBetaVersion';
 
+const commitMessage = process.env.GIT_COMMIT_MESSAGE;
 const branchName = process.env.BRANCH_NAME;
 const rootDir = join(__dirname, '../');
 
@@ -55,13 +56,15 @@ async function publishPackage(packageDir: string): Promise<void> {
     throw new Error(`禁止在 master 分支发布非正式版本 ${version} ${name}`);
   }
 
+  console.log('GIT_COMMIT_MESSAGE', commitMessage);
   if (branchName !== 'master' && isProdVersion) {
-    // TODO: 每次提交代码都会发布改了正式版本号的包，可能有点慢
-    publishVersion = await generateBetaVersion(name, version);
-    pkgData.version = publishVersion;
-
-    console.log(`非 master 分支 ${branchName}，自动生成 beta 版本号 ${name} ${publishVersion} ${version}`);
-    fse.writeJSONSync(pkgPath, pkgData);
+    // commit message 包含 generate 时自动发 beta  版本（并生成 oss 数据）
+    if (/generate/.test(commitMessage)) {
+      publishVersion = await generateBetaVersion(name, version);
+      pkgData.version = publishVersion;
+      console.log(`非 master 分支 ${branchName}，自动生成 beta 版本号 ${name} ${publishVersion} ${version}`);
+      fse.writeJSONSync(pkgPath, pkgData);
+    }
   }
 
   console.log('start install deps', name);

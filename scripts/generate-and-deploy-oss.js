@@ -13,26 +13,27 @@ const assetsPath = process.env.BRANCH_NAME === 'master' ? 'assets' : 'pre-assets
 const rootDir = path.resolve(__dirname, '../');
 const materialPath = path.resolve(rootDir, './build/materials.json');
 const toPath = path.join(assetsPath, dirPath, 'react-common-materials.json');
+const branchName = process.env.BRANCH_NAME;
+const commitMessage = process.env.GIT_COMMIT_MESSAGE;
 
 console.log('generate and upload, current branch', process.env.BRANCH_NAME);
 
 (async () => {
+  if (branchName !== 'master' && !/generate/.test(commitMessage)) {
+    console.log('非 master 分支并且 commit message 不包含 generate，跳过此流程', branchName, commitMessage);
+    return;
+  }
+
   // 1. iceworks generate
   execSync('iceworks -V', {
     stdio: 'inherit',
     cwd: rootDir,
   });
 
-  try {
-    execSync('CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate', {
-      stdio: 'inherit',
-      cwd: rootDir,
-    });
-  } catch (err) {
-    console.error('iceworks generate error', err);
-    // 预发环境 generate 失败不影响 CI 状态
-    process.exit(process.env.BRANCH_NAME === 'master' ? 1 : 0);
-  }
+  execSync('CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate', {
+    stdio: 'inherit',
+    cwd: rootDir,
+  });
 
   // scaffolds 排序
   await sortScaffoldMaterials();
