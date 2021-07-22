@@ -22,3 +22,4 @@ jobs:
         env:
           ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+          GIT_COMMIT_MESSAGE: ${{github.event.commits[0].message}}

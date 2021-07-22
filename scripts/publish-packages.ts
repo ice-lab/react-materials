@@ -56,14 +56,16 @@ async function publishPackage(packageDir: string): Promise<void> {
     throw new Error(`禁止在 master 分支发布非正式版本 ${version} ${name}`);
   }
 
-  console.log('GIT_COMMIT_MESSAGE', commitMessage);
   if (branchName !== 'master' && isProdVersion) {
     // commit message 包含 generate 时自动发 beta  版本（并生成 oss 数据）
     if (/generate/.test(commitMessage)) {
       publishVersion = await generateBetaVersion(name, version);
       pkgData.version = publishVersion;
-      console.log(`非 master 分支 ${branchName}，自动生成 beta 版本号 ${name} ${publishVersion} ${version}`);
+      console.log(`非 master 分支 ${branchName}，自动生成 beta 版本号 ${name} ${publishVersion} ${version}`, commitMessage);
       fse.writeJSONSync(pkgPath, pkgData);
+    } else {
+      console.log('非 master 分支并且 commit message 不包含 generate，跳过自动发布 beta 流程', branchName, commitMessage);
+      return;
     }
   }
 
