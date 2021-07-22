@@ -1,10 +1,8 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const registry = 'https://registry.npmjs.org/';
 
-module.exports = generateBetaVersion;
-
-async function generateBetaVersion(name, version) {
+export default async function generateBetaVersion(name, version) {
   const response = await axios.get(`${registry}${name}`);
   const { data } = response;
   const betaVersion = data['dist-tags'] && data['dist-tags'].beta;
@@ -21,5 +19,5 @@ async function generateBetaVersion(name, version) {
   }
 
   // 获取版本无法匹配 beta，走时间戳形式版本号进行兜底
-  return `${version}-beta.${parseInt((new Date()).getTime() / 1000, 10)}`;
+  return `${version}-beta.${parseInt(String((new Date()).getTime() / 1000), 10)}`;
 }

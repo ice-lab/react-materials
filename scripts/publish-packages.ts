@@ -57,6 +57,7 @@ async function publishPackage(packageDir: string): Promise<void> {
   }
 
   if (branchName !== 'master' && isProdVersion) {
+    // TODO: 每次提交代码都会发布改了正式版本号的包，可能有点慢
     publishVersion = await generateBetaVersion(name, version);
     pkgData.version = publishVersion;
 
