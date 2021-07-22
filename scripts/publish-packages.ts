@@ -3,7 +3,7 @@ import { join } from 'path';
 import * as fse from 'fs-extra';
 import globby from 'globby';
 
-import checkVersionExist from './checkVersionExist';
+import checkVersionExist from './utils/checkVersionExist';
 import generateBetaVersion from './utils/generateBetaVersion';
 
 const branchName = process.env.BRANCH_NAME;
