@@ -2,9 +2,10 @@ import { execSync } from 'child_process';
 import { join } from 'path';
 import * as fse from 'fs-extra';
 import globby from 'globby';
-import * as generateBetaVersion from './utils/generateBetaVersion';
 
 import checkVersionExist from './checkVersionExist';
+
+const generateBetaVersion = import('./utils/generateBetaVersion');
 
 const branchName = process.env.BRANCH_NAME;
 const rootDir = join(__dirname, '../');
