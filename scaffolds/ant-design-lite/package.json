@@ -54,7 +54,8 @@
   "scaffoldConfig": {
     "name": "Ant Design Scaffold",
     "title": "Ant Design Scaffold",
-    "category": "Basic"
+    "category": "Basic",
+    "screenshot": "https://img.alicdn.com/imgextra/i1/O1CN01I3NPfJ1zvSR4cSVws_!!6000000006776-2-tps-3580-2074.png"
   },
   "repository": {
     "type": "git",
