@@ -27,6 +27,12 @@ const sortedScaffoldsNames = [
   '@icedesign/scaffold-midway-faas',
 ];
 
+const sleep = async (t) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, t);
+  });
+};
+
 console.log('generate and upload, current branch', process.env.BRANCH_NAME);
 
 (async () => {
@@ -40,6 +46,9 @@ console.log('generate and upload, current branch', process.env.BRANCH_NAME);
     stdio: 'inherit',
     cwd: rootDir,
   });
+
+  // 防止 npm 发包同步有延时
+  await sleep(1 * 60 * 1000);
 
   execSync('CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate', {
     stdio: 'inherit',
