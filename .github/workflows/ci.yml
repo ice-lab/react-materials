@@ -17,7 +17,9 @@ jobs:
       - run: npm run publish:packages
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          GIT_COMMIT_MESSAGE: ${{github.event.commits[0].message}}
       - run: npm run generate-and-deploy-oss
         env:
           ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
+          GIT_COMMIT_MESSAGE: ${{github.event.commits[0].message}}

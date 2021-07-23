@@ -1,9 +1,7 @@
 const oss = require('ali-oss');
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs-extra');
 const { execSync } = require('child_process');
-// const request = require('request');
-const scaffolds = require('./scaffolds');
 
 const bucket = 'iceworks';
 const accessKeyId = process.env.ACCESS_KEY_ID;
@@ -12,30 +10,61 @@ const dirPath = 'materials/';
 const assetsPath = process.env.BRANCH_NAME === 'master' ? 'assets' : 'pre-assets'; // assets 正式
 const rootDir = path.resolve(__dirname, '../');
 const materialPath = path.resolve(rootDir, './build/materials.json');
-const toPath = path.join(assetsPath, dirPath, 'react-common-materials.json');
+const toPath = path.join(assetsPath, dirPath, 'react-materials.json');
+const branchName = process.env.BRANCH_NAME;
+const commitMessage = process.env.GIT_COMMIT_MESSAGE;
+// scaffolds 排序
+const sortedScaffoldsNames = [
+  '@alifd/scaffold-simple',
+  '@icedesign/ice-antd-scaffold',
+
+  '@alifd/scaffold-lite',
+  '@alifd/fusion-design-pro',
+
+  '@icedesign/stark-layout-scaffold',
+  '@icedesign/stark-child-scaffold',
+
+  '@icedesign/scaffold-midway-faas',
+];
+
+const sleep = async (t) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, t);
+  });
+};
 
 console.log('generate and upload, current branch', process.env.BRANCH_NAME);
 
 (async () => {
+  if (branchName !== 'master' && !/trigger generate/.test(commitMessage)) {
+    console.log('非 master 分支并且 commit message 不包含 generate，跳过此流程', branchName, commitMessage);
+    return;
+  }
+
   // 1. iceworks generate
   execSync('iceworks -V', {
     stdio: 'inherit',
     cwd: rootDir,
   });
 
-  try {
-    execSync('CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate', {
-      stdio: 'inherit',
-      cwd: rootDir,
-    });
-  } catch (err) {
-    console.error('iceworks generate error', err);
-    // 预发环境 generate 失败不影响 CI 状态
-    process.exit(process.env.BRANCH_NAME === 'master' ? 1 : 0);
-  }
+  // 防止 npm 发包同步有延时
+  await sleep(1 * 60 * 1000);
 
-  // scaffolds 排序
-  await sortScaffoldMaterials();
+  execSync('CONCURRENCY=5 LOG_LEVEL=verbose REGISTRY=https://registry.npmjs.org iceworks generate', {
+    stdio: 'inherit',
+    cwd: rootDir,
+  });
+
+  const materialData = fs.readJSONSync(materialPath, 'utf-8');
+  // scaffolds 手动排序
+  materialData.scaffolds = sortedScaffoldsNames.map(name => {
+    return materialData.scaffolds.find(item => item.source.npm === name);
+  });
+
+  // TODO: 暂时先保留原先 fusion 的 blocks，后面再重新梳理这块
+  const { blocks } = fs.readJSONSync(path.join(__dirname, 'blocks-data.json'), 'utf-8');
+  materialData.blocks = blocks;
+  fs.writeJSONSync(materialPath, materialData);
 
   // 2. upload build/materials.json to oss
   const ossClient = oss({
@@ -47,7 +76,6 @@ console.log('generate and upload, current branch', process.env.BRANCH_NAME);
   });
 
   console.log('start upload oss', materialPath, toPath);
-  const materialData = fs.readFileSync(materialPath, 'utf-8');
   const result = await ossClient.put(toPath, materialPath);
   console.log('upload oss success', result);
 
@@ -55,28 +83,3 @@ console.log('generate and upload, current branch', process.env.BRANCH_NAME);
   console.error(err);
   process.exit(1);
 });
-
-/**
- * 按照下载量进行排序推荐
- */
-function sortScaffoldMaterials() {
-  return new Promise((resolve, reject) => {
-    const materialsData = JSON.parse(fs.readFileSync(materialPath, 'utf-8'));
-
-    const sortMaterialsData = [];
-    scaffolds.forEach(scaffold => {
-      materialsData.scaffolds.forEach(currentItem => {
-        if (currentItem.source.npm === scaffold) {
-          sortMaterialsData.push(currentItem);
-        }
-      });
-    });
-
-    materialsData.scaffolds = sortMaterialsData;
-
-    return fs.writeFile(materialPath, JSON.stringify(materialsData, null, 2), 'utf-8', err => {
-      if (err) reject(err);
-      resolve();
-    });
-  });
-}
