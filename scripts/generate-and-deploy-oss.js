@@ -2,9 +2,6 @@ const oss = require('ali-oss');
 const path = require('path');
 const fs = require('fs-extra');
 const { execSync } = require('child_process');
-const sortedScaffoldsNames = require('./scaffolds');
-
-// const request = require('request');
 
 const bucket = 'iceworks';
 const accessKeyId = process.env.ACCESS_KEY_ID;
@@ -17,7 +14,7 @@ const toPath = path.join(assetsPath, dirPath, 'react-materials.json');
 const branchName = process.env.BRANCH_NAME;
 const commitMessage = process.env.GIT_COMMIT_MESSAGE;
 // scaffolds 排序
-const sorscaffoldsNames = [
+const sortedScaffoldsNames = [
   '@alifd/scaffold-simple',
   '@icedesign/ice-antd-scaffold',
 
