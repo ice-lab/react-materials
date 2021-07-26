@@ -6,7 +6,8 @@
     "name": "Fusion Design Pro",
     "title": "Fusion Design Pro",
     "category": "Basic",
-    "screenshot": "https://img.alicdn.com/tfs/TB1jzt1YEz1gK0jSZLeXXb9kVXa-1349-833.png"
+    "screenshot": "https://img.alicdn.com/tfs/TB1jzt1YEz1gK0jSZLeXXb9kVXa-1349-833.png",
+    "languageType": "ts"
   },
   "repository": {
     "type": "git",
