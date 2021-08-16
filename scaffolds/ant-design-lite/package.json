@@ -37,7 +37,7 @@
     "build-plugin-antd": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
     "eslint": "^7.30.0",
-    "ice.js": "^1.0.0",
+    "ice.js": "next",
     "stylelint": "^13.1.0"
   },
   "scripts": {

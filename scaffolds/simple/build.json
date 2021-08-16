@@ -1,5 +1,5 @@
 {
   "publicPath": "./",
-  "plugins": [
-  ]
+  "swc": true,
+  "minify": "esbuild"
 }
