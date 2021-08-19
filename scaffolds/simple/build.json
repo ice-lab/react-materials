@@ -1,5 +1,4 @@
 {
   "publicPath": "./",
-  "swc": true,
-  "minify": "esbuild"
+  "vite": true
 }
