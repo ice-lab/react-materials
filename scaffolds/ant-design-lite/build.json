@@ -1,7 +1,6 @@
 {
   "publicPath": "./",
   "vite": true,
-  "minify": "esbuild",
   "plugins": [
     ["build-plugin-antd"]
   ]
