@@ -1,13 +1,8 @@
 {
   "publicPath": "./",
+  "vite": true,
   "minify": "esbuild",
   "plugins": [
-    ["build-plugin-antd", {
-      "themeConfig": {
-      }
-    }],
-    ["build-plugin-moment-locales", {
-      "locales": ["zh-cn"]
-    }]
+    ["build-plugin-antd"]
   ]
 }
