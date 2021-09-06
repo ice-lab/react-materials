@@ -34,10 +34,9 @@
     "@iceworks/spec": "^1.0.1",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
-    "build-plugin-antd": "^0.1.0",
-    "build-plugin-moment-locales": "^0.1.0",
+    "build-plugin-antd": "^0.1.2-rc.1",
     "eslint": "^7.30.0",
-    "ice.js": "^1.0.0",
+    "ice.js": "^2.0.0-rc.1",
     "stylelint": "^13.1.0"
   },
   "scripts": {
