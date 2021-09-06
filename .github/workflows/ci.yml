@@ -10,7 +10,7 @@ jobs:
       - run: echo >>$GITHUB_ENV BRANCH_NAME=${GITHUB_REF#refs/heads/}
       - uses: actions/setup-node@v1
         with:
-          node-version: 10
+          node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: npm i
       - run: npm run lint
