@@ -27,7 +27,7 @@
     "fs-extra": "^10.0.0",
     "globby": "^11.0.4",
     "ice-npm-utils": "^2.1.1",
-    "iceworks": "^3.4.6-0",
+    "iceworks": "^3.4.7-0",
     "stylelint": "^13.1.0",
     "ts-node": "^10.1.0"
   },
