@@ -63,7 +63,17 @@ console.log('generate and upload, current branch', process.env.BRANCH_NAME);
 
   // TODO: 暂时先保留原先 fusion 的 blocks，后面再重新梳理这块
   const { blocks } = fs.readJSONSync(path.join(__dirname, 'blocks-data.json'), 'utf-8');
-  materialData.blocks = blocks;
+  materialData.blocks = blocks.map(item => {
+    item.componentType = 'fusion';
+    return item;
+  });
+  // TODO: 暂时先保留原先 antd 的 blocks，后面再重新梳理这块
+  const { blocks: antdBlocks } = fs.readJSONSync(path.join(__dirname, 'antd-blocks-data.json'), 'utf-8');
+  materialData.blocks = materialData.blocks.concat(antdBlocks.map(item => {
+    item.componentType = 'antd';
+    return item;
+  }));
+
   fs.writeJSONSync(materialPath, materialData);
 
   // 2. upload build/materials.json to oss
