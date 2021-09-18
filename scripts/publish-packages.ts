@@ -57,7 +57,7 @@ async function publishPackage(packageDir: string): Promise<void> {
   }
 
   if (branchName !== 'master' && isProdVersion) {
-    // commit message 包含 generate 时自动发 beta  版本（并生成 oss 数据）
+    // commit message 包含 generate 时自动修改 version 并发布 beta 版本（并生成 oss 数据）
     if (/trigger generate/.test(commitMessage)) {
       publishVersion = await generateBetaVersion(name, version);
       pkgData.version = publishVersion;
