@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/ice-antd-scaffold",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Ant Design and icejs scaffold, use TypeScript.",
   "files": [
     "mock/",
@@ -34,9 +34,9 @@
     "@iceworks/spec": "^1.0.1",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
-    "build-plugin-antd": "^0.1.2-rc.1",
+    "build-plugin-antd": "^0.1.2",
     "eslint": "^7.30.0",
-    "ice.js": "^2.0.0-rc.1",
+    "ice.js": "^2.0.0",
     "stylelint": "^13.1.0"
   },
   "scripts": {
