@@ -23,8 +23,8 @@ const appConfig: IAppConfig = {
         loadScriptMode: 'import',
         // React app demo: https://github.com/alibaba-fusion/materials/tree/master/scaffolds/ice-stark-child
         url: [
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-react/build/js/index.js',
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-react/build/css/index.css',
+          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/js/index.js',
+          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/css/index.css',
         ],
       }, {
         path: '/waiter',
