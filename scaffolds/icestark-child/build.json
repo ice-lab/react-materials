@@ -2,7 +2,9 @@
   "publicPath": "./",
   "vite": true,
   "plugins": [
-    "build-plugin-icestark",
+    ["build-plugin-icestark", {
+      "type": "child"
+    }],
     ["build-plugin-fusion", {
       "themePackage": "@alifd/theme-design-pro"
     }],

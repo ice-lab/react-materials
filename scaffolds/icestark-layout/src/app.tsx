@@ -14,7 +14,6 @@ const appConfig: IAppConfig = {
     type: 'browser',
   },
   icestark: {
-    type: 'framework',
     Layout: FrameworkLayout,
     getApps: async () => {
       const apps = [{
