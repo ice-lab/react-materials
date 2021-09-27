@@ -1,8 +1,9 @@
 {
   "publicPath": "./",
+  "vite": true,
   "plugins": [
     ["build-plugin-icestark", {
-      "umd": true
+      "type": "child"
     }],
     ["build-plugin-fusion", {
       "themePackage": "@alifd/theme-design-pro"

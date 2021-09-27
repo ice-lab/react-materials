@@ -1,7 +1,9 @@
 {
+  "vite": true,
   "publicPath": "./",
   "plugins": [
     ["build-plugin-icestark", {
+      "type": "framework",
       "uniqueName": "frameworkJsonp"
     }],
     ["build-plugin-fusion", {
