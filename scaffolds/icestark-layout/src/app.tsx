@@ -19,9 +19,8 @@ const appConfig: IAppConfig = {
       const apps = [{
         path: '/seller',
         title: '商家平台',
-        sandbox: true,
         loadScriptMode: 'import',
-        // React app demo: https://github.com/alibaba-fusion/materials/tree/master/scaffolds/ice-stark-child
+        // React app demo: https://github.com/ice-lab/react-materials/tree/master/scaffolds/icestark-child
         url: [
           'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/js/index.js',
           'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/css/index.css',

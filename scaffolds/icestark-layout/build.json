@@ -3,13 +3,12 @@
   "publicPath": "./",
   "plugins": [
     ["build-plugin-icestark", {
-      "type": "framework",
-      "uniqueName": "frameworkJsonp"
+      "type": "framework"
     }],
     ["build-plugin-fusion", {
       "themePackage": "@alifd/theme-design-pro",
       "themeConfig": {
-        "nextPrefix": "next-icestark-"
+        "css-prefix": "next-icestark-"
       }
     }],
     ["build-plugin-moment-locales", {
