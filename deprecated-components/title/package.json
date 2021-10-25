@@ -23,8 +23,8 @@
     "access": "public"
   },
   "scripts": {
-    "start": "../../node_modules/.bin/ice-scripts dev --config ../../ice.component.config.js",
-    "build": "../../node_modules/.bin/ice-scripts build --config ../../ice.component.config.js",
+    "start": "../../node_modules/.bin/build-scripts start --config ../../build.component.json",
+    "build": "../../node_modules/.bin/build-scripts build --config ../../build.component.json",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
