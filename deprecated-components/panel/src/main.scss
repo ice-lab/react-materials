@@ -1,0 +1,147 @@
+// 组件如有皮肤功能，请从该文件引用 scss 变量
+@import '~@alifd/next/lib/core/index.scss';
+@import 'scss/variable';
+
+@mixin bt-panel-variant(
+  $bt-border,
+  $bt-heading-text-color,
+  $bt-heading-bg-color,
+  $bt-heading-border
+) {
+  border-color: $bt-border;
+
+  & > .ice-panel-heading {
+    color: $bt-heading-text-color;
+    background-color: $bt-heading-bg-color;
+    border-color: $bt-heading-border;
+  }
+}
+
+@mixin bt-border-top-radius($bt-radius) {
+  border-top-right-radius: $bt-radius;
+  border-top-left-radius: $bt-radius;
+}
+@mixin bt-border-right-radius($bt-radius) {
+  border-bottom-right-radius: $bt-radius;
+  border-top-right-radius: $bt-radius;
+}
+@mixin bt-border-bottom-radius($bt-radius) {
+  border-bottom-right-radius: $bt-radius;
+  border-bottom-left-radius: $bt-radius;
+}
+@mixin bt-border-left-radius($bt-radius) {
+  border-bottom-left-radius: $bt-radius;
+  border-top-left-radius: $bt-radius;
+}
+@mixin bt-box-shadow($bt-shadow...) {
+  -webkit-box-shadow: $bt-shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $bt-shadow;
+}
+@mixin bt-clearfix() {
+  &:before,
+  &:after {
+    content: ' '; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.ice-panel {
+  background-color:$color-white;
+  border: 1px solid transparent;
+  border-radius: $corner-2;
+  @include bt-box-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+
+  .ice-panel-body {
+    padding: $s-3;
+    @include bt-clearfix;
+  }
+
+  .ice-panel-heading {
+    padding: $s-2 $s-3;
+    border-bottom: 1px solid transparent;
+    @include bt-border-top-radius(($corner-2 - 1));
+
+    > .ice-dropdown .ice-dropdown-toggle {
+      color: inherit;
+    }
+  }
+
+  .ice-panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: ceil(($font-size-body-1 * 1.125));
+    color: inherit;
+
+    > a,
+    > small,
+    > .small,
+    > small > a,
+    > .small > a {
+      color: inherit;
+    }
+  }
+
+  .ice-panel-footer {
+    padding: $s-2 $s-3;
+    background-color: $bt-panel-footer-bg;
+    border-top: 1px solid $bt-panel-inner-border;
+    @include bt-border-bottom-radius(($corner-2 - 1));
+  }
+
+  &.ice-panel-default {
+    @include bt-panel-variant(
+      $bt-panel-default-border,
+      $bt-panel-default-text,
+      $bt-panel-default-heading-bg,
+      $bt-panel-default-border
+    );
+  }
+
+  &.ice-panel-primary {
+    @include bt-panel-variant(
+      $bt-panel-primary-border,
+      $bt-panel-primary-text,
+      $bt-panel-primary-heading-bg,
+      $bt-panel-primary-border
+    );
+  }
+
+  &.ice-panel-success {
+    @include bt-panel-variant(
+      $bt-panel-success-border,
+      $bt-panel-success-text,
+      $bt-panel-success-heading-bg,
+      $bt-panel-success-border
+    );
+  }
+
+  &.ice-panel-info {
+    @include bt-panel-variant(
+      $bt-panel-info-border,
+      $bt-panel-info-text,
+      $bt-panel-info-heading-bg,
+      $bt-panel-info-border
+    );
+  }
+
+  &.ice-panel-warning {
+    @include bt-panel-variant(
+      $bt-panel-warning-border,
+      $bt-panel-warning-text,
+      $bt-panel-warning-heading-bg,
+      $bt-panel-warning-border
+    );
+  }
+
+  &.ice-panel-danger {
+    @include bt-panel-variant(
+      $bt-panel-danger-border,
+      $bt-panel-danger-text,
+      $bt-panel-danger-heading-bg,
+      $bt-panel-danger-border
+    );
+  }
+}

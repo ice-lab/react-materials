@@ -1,0 +1,76 @@
+// @icedesign/panel variables
+// --------------------------------------------------
+
+////
+/// @module @icedesign/panel: you write here
+/// @tag IcePanel
+/// @category custom
+/// @family ice
+/// @varPrefix $ice-panel
+/// @classPrefix ice-panel
+////
+
+// -------------- variable --------------
+
+$ice-panel-prefix: '.ice-panel';
+
+$bt-line-height-computed: floor(
+  ($font-size-body-1 * $font-lineheight-2)
+) !default;
+$bt-gray-darker: lighten(#333333, 13.5%) !default;
+$bt-gray-dark: lighten(#333333, 20%) !default;
+$bt-gray: lighten(#333333, 33.5%) !default;
+$bt-gray-light: lighten(#333333, 46.7%) !default;
+$bt-gray-lighter: lighten(#333333, 93.5%) !default;
+
+$bt-brand-primary: $color-brand1-6 !default;
+$bt-brand-success: $color-success-2 !default;
+$bt-brand-info: $color-notice-2 !default;
+$bt-brand-warning: $color-warning-2 !default;
+$bt-brand-danger: $color-error-2 !default;
+
+$bt-state-success-text: $color-success-4 !default;
+$bt-state-success-bg: $color-success-1 !default;
+$bt-state-success-border: $color-success-1 !default;
+
+$bt-state-info-text: $color-notice-4 !default;
+$bt-state-info-bg: $color-notice-1 !default;
+$bt-state-info-border: $color-notice-1 !default;
+
+$bt-state-warning-text: $color-warning-4 !default;
+$bt-state-warning-bg: $color-warning-2 !default;
+$bt-state-warning-border: $color-warning-2 !default;
+
+$bt-state-danger-text: $color-error-4 !default;
+$bt-state-danger-bg: $color-error-1 !default;
+$bt-state-danger-border: $color-error-1 !default;
+
+$bt-panel-inner-border: $color-line1-2 !default;
+$bt-panel-footer-bg: $color-fill1-3 !default;
+
+$bt-panel-default-text: $bt-gray-dark !default;
+$bt-panel-default-border: $color-line1-2 !default;
+$bt-panel-default-heading-bg: $color-fill1-3 !default;
+
+$bt-panel-primary-text: $color-brand1-1 !default;
+$bt-panel-primary-border: $bt-brand-primary !default;
+$bt-panel-primary-heading-bg: $bt-brand-primary !default;
+
+$bt-panel-success-text: $bt-state-success-text !default;
+$bt-panel-success-border: $bt-state-success-border !default;
+$bt-panel-success-heading-bg: $bt-state-success-bg !default;
+
+$bt-panel-info-text: $bt-state-info-text !default;
+$bt-panel-info-border: $bt-state-info-border !default;
+$bt-panel-info-heading-bg: $bt-state-info-bg !default;
+
+$bt-panel-warning-text: $bt-state-warning-text !default;
+$bt-panel-warning-border: $bt-state-warning-border !default;
+$bt-panel-warning-heading-bg: $bt-state-warning-bg !default;
+
+$bt-panel-danger-text: $bt-state-danger-text !default;
+$bt-panel-danger-border: $bt-state-danger-border !default;
+$bt-panel-danger-heading-bg: $bt-state-danger-bg !default;
+
+// Statement: Normal
+// ----------------------------------------
