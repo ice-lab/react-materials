@@ -4,3 +4,4 @@ node_modules/
 **/*-min.js
 **/*.min.js
 coverage/
+index.d.ts
