@@ -1,0 +1,48 @@
+{
+  "name": "@icedesign/data-binder",
+  "version": "1.0.5",
+  "description": "ICE 前后端数据绑定、交互方案",
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "demo/",
+    "build/"
+  ],
+  "scripts": {
+    "start": "../../node_modules/.bin/build-scripts start --config ../../build.component.json",
+    "build": "../../node_modules/.bin/build-scripts build --config ../../build.component.json",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/components/data-binder"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-component"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.11.7",
+    "axios": "^0.18.0",
+    "deepmerge": "^2.0.1",
+    "pure-render-decorator": "^1.2.1"
+  },
+  "peerDependencies": {
+    "react": "^16.5.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "jsonp": "^0.2.1",
+    "querystring": "^0.2.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "data-binder",
+    "title": "ICE 前后端数据绑定、交互方案"
+  },
+  "homepage": "https://unpkg.com/@icedesign/data-binder@1.0.5/build/index.html"
+}

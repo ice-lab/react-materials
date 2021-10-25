@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "build-plugin-component",
+    ["build-plugin-fusion", {
+      "themePackage": "@alifd/theme-design-pro"
+    }],
+    [
+      "build-plugin-moment-locales",
+      {
+        "locales": [
+          "zh-cn"
+        ]
+      }
+    ]
+  ]
+}

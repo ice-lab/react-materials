@@ -1,0 +1,49 @@
+{
+  "name": "@ice/form",
+  "version": "0.1.7",
+  "description": "ICE 表单组件",
+  "files": [
+    "demo/",
+    "lib/",
+    "build/"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "../../node_modules/.bin/build-scripts start --config ../../build.component.json",
+    "build": "../../node_modules/.bin/build-scripts build --config ../../build.component.json",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "react",
+    "component"
+  ],
+  "dependencies": {
+    "async-validator": "^1.11.2",
+    "classnames": "^2.2.6",
+    "lodash.isequal": "^4.5.0",
+    "prop-types": "^15.5.8"
+  },
+  "devDependencies": {
+    "@alifd/next": "^1.15.3",
+    "@icedesign/form-binder": "^1.0.6",
+    "antd": "^3.18.2",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.0"
+  },
+  "componentConfig": {
+    "name": "ice-form",
+    "title": "ICE 表单组件",
+    "categories": [
+      "其他"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://unpkg.com/@ice/form@0.1.7/build/index.html"
+}

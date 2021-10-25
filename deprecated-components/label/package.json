@@ -1,0 +1,44 @@
+{
+  "name": "@icedesign/label",
+  "version": "1.0.6",
+  "description": "创建标签组件用来突出所要显示的信息",
+  "main": "lib/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "lib/",
+    "demo/",
+    "build/",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "start": "../../node_modules/.bin/build-scripts start --config ../../build.component.json",
+    "build": "../../node_modules/.bin/build-scripts build --config ../../build.component.json",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/components/label"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "ice-component"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "prop-types": "^15.6.0"
+  },
+  "devDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0"
+  },
+  "componentConfig": {
+    "name": "label",
+    "title": "创建标签组件用来突出所要显示的信息"
+  },
+  "homepage": "https://unpkg.com/@icedesign/label@1.0.6/build/index.html"
+}
