@@ -1,15 +1,14 @@
-import { ResponsiveGrid } from '@alifd/next';
-import LoginBlock from './components/LoginBlock';
-
-const { Cell } = ResponsiveGrid;
+import { Link } from 'ice';
 
 const Login = () => {
   return (
-    <ResponsiveGrid gap={20}>
-      <Cell colSpan={12}>
-        <LoginBlock />
-      </Cell>
-    </ResponsiveGrid>
+    <>
+      <h2>登录页面</h2>
+      <p>使用独立的 Layout</p>
+      <div>
+        <Link to="/">返回首页</Link>
+      </div>
+    </>
   );
 };
 

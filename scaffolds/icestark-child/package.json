@@ -25,7 +25,6 @@
   "dependencies": {
     "@alifd/next": "^1.x",
     "@alifd/theme-design-pro": "^0.x",
-    "@icedesign/container": "^1.0.4",
     "moment": "^2.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

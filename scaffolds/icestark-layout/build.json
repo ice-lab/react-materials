@@ -6,6 +6,7 @@
       "type": "framework"
     }],
     ["build-plugin-fusion", {
+      "disableModularImport": true,
       "themePackage": "@alifd/theme-design-pro",
       "themeConfig": {
         "css-prefix": "next-icestark-"
@@ -13,6 +14,9 @@
     }],
     ["build-plugin-moment-locales", {
       "locales": ["zh-cn"]
+    }],
+    ["build-plugin-ignore-style", {
+      "libraryName": "@alifd/next"
     }]
   ]
 }

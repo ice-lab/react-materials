@@ -25,7 +25,6 @@
   "dependencies": {
     "@alifd/next": "^1.x",
     "@alifd/theme-design-pro": "^0.x",
-    "@icedesign/container": "^1.x",
     "classnames": "^2.2.5",
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
@@ -36,7 +35,7 @@
     "@iceworks/spec": "^1.0.0",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
-    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-fusion": "^0.1.21-0",
     "build-plugin-icestark": "^2.0.0",
     "build-plugin-ignore-style": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
