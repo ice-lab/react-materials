@@ -27,6 +27,6 @@
       "ice": [".ice/index.ts"]
     }
   },
-  "include": ["src/*", ".ice"],
+  "include": ["src", ".ice"],
   "exclude": ["node_modules", "build", "public"]
 }
