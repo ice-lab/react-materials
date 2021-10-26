@@ -6,6 +6,7 @@ body {
   margin: 0;
 }
 
-// .icestark-child-app {
-//   @import '@alifd/next/reset.scss';
-// }
+.icestark-child-app {
+  // 保证 reset 的样式不影响到全局
+  @import '@alifd/next/reset.css';
+}

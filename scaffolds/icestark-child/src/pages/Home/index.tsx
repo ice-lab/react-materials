@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { appHistory } from '@ice/stark-app';
 import { Button } from '@alifd/next';
 
-import styles from './index.module.scss';
+import styles from './index.module.css';
 
 export default function Home() {
   useEffect(() => {
