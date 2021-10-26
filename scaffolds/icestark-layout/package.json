@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-layout-scaffold",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "description": "微前端方案 icestark 的主应用模板，用于快速初始化主应用",
   "homepage": "https://icestark-react.surge.sh",
   "files": [
@@ -25,7 +25,6 @@
   "dependencies": {
     "@alifd/next": "^1.x",
     "@alifd/theme-design-pro": "^0.x",
-    "@icedesign/container": "^1.x",
     "classnames": "^2.2.5",
     "moment": "^2.24.0",
     "prop-types": "^15.5.8",
@@ -36,8 +35,9 @@
     "@iceworks/spec": "^1.0.0",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.2",
-    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-fusion": "^0.1.21",
     "build-plugin-icestark": "^2.0.0",
+    "build-plugin-ignore-style": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
     "eslint": "^7.30.0",
     "ice.js": "^2.0.0",

@@ -31,46 +31,46 @@ const asideMenuConfig = [
     ],
   },
   {
-    name: '商家平台',
+    name: 'React 微应用',
     icon: 'atm',
     children: [
       {
         path: '/seller',
-        name: '商家首页',
+        name: '首页',
       },
       {
         path: '/seller/list',
-        name: '商家列表',
+        name: '列表',
       },
       {
         path: '/seller/detail',
-        name: '商家详情',
+        name: '详情',
       },
       {
         path: '/seller/404',
-        name: '商家 404',
+        name: '404',
       },
     ],
   },
   {
-    name: '小二平台',
+    name: 'Vue 微应用',
     icon: 'account',
     children: [
       {
         path: '/waiter',
-        name: '小二首页',
+        name: '首页',
       },
       {
         path: '/waiter/list',
-        name: '小二列表',
+        name: '列表',
       },
       {
         path: '/waiter/detail',
-        name: '小二详情',
+        name: '详情',
       },
       {
         path: '/waiter/404',
-        name: '小二 404',
+        name: '404',
       },
     ],
   },
