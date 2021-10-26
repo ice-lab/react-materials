@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { appHistory } from '@ice/stark-app';
 import { Button } from '@alifd/next';
-import PageTitle from '@/components/PageTitle';
 
 import styles from './index.module.scss';
 
