@@ -2,6 +2,11 @@
   "publicPath": "./",
   "vite": true,
   "plugins": [
-    ["build-plugin-antd"]
+    ["build-plugin-ignore-style", {
+      "libraryName": "antd"
+    }],
+    ["build-plugin-antd", {
+      "disableModularImport": true
+    }]
   ]
 }
