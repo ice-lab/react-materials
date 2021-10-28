@@ -4,9 +4,6 @@
   "plugins": [
     ["build-plugin-ignore-style", {
       "libraryName": "antd"
-    }],
-    ["build-plugin-antd", {
-      "disableModularImport": true
     }]
   ]
 }
