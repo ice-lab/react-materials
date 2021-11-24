@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/ice-antd-scaffold",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Ant Design and icejs scaffold, use TypeScript.",
   "files": [
     "mock/",
