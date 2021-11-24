@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/scaffold-midway-faas",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "icejs & midway faas",
   "files": [
     "src/",
