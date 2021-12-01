@@ -1,8 +1,9 @@
-import { IRouterConfig } from 'ice';
+import { IRouterConfig, lazy } from 'ice';
 import Layout from '@/Layouts/BasicLayout';
-import Dashboard from '@/pages/Dashboard';
-import Home from '@/pages/Home';
-import NotFound from '@/components/NotFound';
+
+const Dashboard = lazy(() => import('@/pages/Dashboard'));
+const Home = lazy(() => import('@/pages/Home'));
+const NotFound = lazy(() => import('@/components/NotFound'));
 
 const routerConfig: IRouterConfig[] = [
   {
