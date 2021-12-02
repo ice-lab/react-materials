@@ -1,5 +1,8 @@
 # ice-layout CHANGELOG
 
+## v1.0.9
+
+- add es/module/stylePath to package
 ## v1.0.4
 
 - 修复 export 子组件不合理的语法
