@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/layout",
-  "version": "1.0.9-0",
+  "version": "1.0.9",
   "description": "提供页面框架性的 layout 组件",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -43,5 +43,5 @@
     "name": "layout",
     "title": "提供页面框架性的 layout 组件"
   },
-  "homepage": "https://unpkg.com/@icedesign/layout@1.0.9-0/build/index.html"
+  "homepage": "https://unpkg.com/@icedesign/layout@1.0.9-1/build/index.html"
 }
