@@ -4,6 +4,7 @@
   "devDependencies": {
     "@ant-design/icons": "^4.0.2",
     "@ant-design/pro-layout": "^6.5.1",
+    "@types/node": "^17.0.2",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "antd": "^4.0.0",

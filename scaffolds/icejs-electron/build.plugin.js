@@ -5,13 +5,9 @@ const { join } = require('path');
 
 module.exports = ({ onHook }) => {
   onHook('after.start.devServer', async ({ devServer }) => {
-    const protocol = `http${devServer.config.server.https ? 's' : ''}:`;
-    const host = 'localhost';
-    const { port } = devServer.config.server;
-    const RENDERER_DEV_SERVER_URL = `${protocol}//${host}:${port}/`;
-
     try {
-      await setupMainPackageWatcher(RENDERER_DEV_SERVER_URL);
+      await setupPreloadPackageWatcher(devServer);
+      await setupMainPackageWatcher(devServer);
     } catch(e) {
       console.error(e);
       process.exit(1);
@@ -30,7 +26,24 @@ function getWatcher({ name, configFile, writeBundle }) {
   });
 }
 
-function setupMainPackageWatcher(rendererDevServerUrl) {
+function setupPreloadPackageWatcher(devServer) {
+  return getWatcher({
+    name: 'reload-page-on-preload-package-change',
+    configFile: join(__dirname, 'packages', 'preload', 'vite.config.js'),
+    writeBundle() {
+      devServer.ws.send({
+        type: 'full-reload',
+      });
+    },
+  });
+};
+
+function setupMainPackageWatcher(devServer) {
+  const protocol = `http${devServer.config.server.https ? 's' : ''}:`;
+  const host = 'localhost';
+  const { port } = devServer.config.server;
+  const RENDERER_DEV_SERVER_URL = `${protocol}//${host}:${port}/`;
+
   let spawnProcess = null;
 
   return getWatcher({
@@ -45,7 +58,7 @@ function setupMainPackageWatcher(rendererDevServerUrl) {
       spawnProcess = spawn(String(electronPath), ['.'], {
         env: {
           ...process.env,
-          RENDERER_DEV_SERVER_URL: rendererDevServerUrl
+          RENDERER_DEV_SERVER_URL
         }
       });
 

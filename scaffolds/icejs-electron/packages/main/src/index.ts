@@ -7,7 +7,7 @@ async function createWindow() {
   const mainWindow = new BrowserWindow({
     show: false, // Use 'ready-to-show' event to show window
     webPreferences: {
-      // preload: join(__dirname, 'preload.js'),
+      preload: join(__dirname, '../../preload/build/index.cjs'),
       nodeIntegration: true,
       contextIsolation: false,
     },
