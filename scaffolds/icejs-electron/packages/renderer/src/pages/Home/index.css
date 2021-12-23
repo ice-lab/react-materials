@@ -14,7 +14,7 @@
 }
 
 p {
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .header {
@@ -30,8 +30,8 @@ button {
   outline: none;
   border: none;
   border-radius: 8px;
-  padding: 10px 35px;
-
+  padding: 10px 35px; 
+  font-size: calc(10px + 2vmin);
   background: #845ec2;
   color: white;
 }
@@ -43,16 +43,14 @@ button {
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
-  background: var(--bg-primay);
-  color: var(--primay);
+  background: white;
+  color: var(--primary);
 }
 
 .App-link {
@@ -67,8 +65,4 @@ button {
   to {
     transform: rotate(360deg);
   }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
 }
