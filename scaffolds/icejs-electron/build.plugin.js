@@ -78,13 +78,13 @@ function setupMainPackageWatcher(devServer) {
       spawnProcess.stdout.on('data', (d) => {
         const data = d.toString().trim();
         if (!data) return;
-        console.error(data, { timestamp: true });
+        console.error(data);
       });
 
       spawnProcess.stderr.on('data', (d) => {
         const data = d.toString().trim();
         if (!data) return;
-        console.error(data, { timestamp: true });
+        console.error(data);
       });
     },
   });

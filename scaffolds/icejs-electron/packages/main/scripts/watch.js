@@ -33,11 +33,16 @@ function setupMainPackageWatcher(viteDevServer) {
 
       spawnProcess = spawn(String(electronPath), ['.']);
 
-      spawnProcess.stdout.on('data', (d) => d.toString().trim() && console.warn(d.toString(), { timestamp: true }));
+      spawnProcess.stdout.on('data', (d) => {
+        const data = d.toString().trim();
+        if (!data) return;
+        console.error(data);
+      });
+
       spawnProcess.stderr.on('data', (d) => {
         const data = d.toString().trim();
         if (!data) return;
-        console.error(data, { timestamp: true });
+        console.error(data);
       });
     },
   });
