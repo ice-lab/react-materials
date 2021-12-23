@@ -25,7 +25,7 @@ async function createWindow() {
 
   const pageUrl = isDevelopment && RENDERER_DEV_SERVER_URL 
     ? RENDERER_DEV_SERVER_URL
-    : new URL(join(__dirname, '../renderer/dist/index.html'), 'file://' + __dirname).toString()
+    : new URL(join(__dirname, '../../renderer/build/index.html'), 'file://' + __dirname).toString()
   
   await mainWindow.loadURL(pageUrl);
 }

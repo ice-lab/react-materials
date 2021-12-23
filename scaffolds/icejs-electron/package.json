@@ -1,5 +1,6 @@
 {
   "name": "@icedesign/icejs-electron",
+  "version": "0.1.0",
   "main": "packages/main/build/index.cjs",
   "devDependencies": {
     "@ant-design/icons": "^4.0.2",
@@ -18,6 +19,8 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "start": "icejs start --disable-open --rootDir ./packages/renderer --config ../../build.config.js"
+    "start": "icejs start --disable-open --rootDir ./packages/renderer --config ../../build.config.js",
+    "prebuild": "icejs build --rootDir ./packages/renderer --config ../../build.config.js",
+    "build": "NPM_CONFIG_ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --config electron-builder.config.js"
   }
 }

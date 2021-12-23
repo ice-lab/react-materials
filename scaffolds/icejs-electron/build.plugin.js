@@ -3,6 +3,9 @@ const { spawn } = require('child_process');
 const electronPath = require('electron');
 const { join } = require('path');
 
+const preloadPackageConfigFile = join(__dirname, 'packages', 'preload', 'vite.config.js');
+const mainPackageConfigFile = join(__dirname, 'packages', 'main', 'vite.config.js');
+
 module.exports = ({ onHook }) => {
   onHook('after.start.devServer', async ({ devServer }) => {
     try {
@@ -13,6 +16,16 @@ module.exports = ({ onHook }) => {
       process.exit(1);
     }
   });
+
+  onHook('after.build.compile', async () => {
+    try {
+      await buildPackage(preloadPackageConfigFile);
+      await buildPackage(mainPackageConfigFile);
+    } catch(e) {
+      console.error(e);
+      process.exit(1);
+    }
+  })
 };
 
 function getWatcher({ name, configFile, writeBundle }) {
@@ -29,7 +42,7 @@ function getWatcher({ name, configFile, writeBundle }) {
 function setupPreloadPackageWatcher(devServer) {
   return getWatcher({
     name: 'reload-page-on-preload-package-change',
-    configFile: join(__dirname, 'packages', 'preload', 'vite.config.js'),
+    configFile: preloadPackageConfigFile,
     writeBundle() {
       devServer.ws.send({
         type: 'full-reload',
@@ -48,7 +61,7 @@ function setupMainPackageWatcher(devServer) {
 
   return getWatcher({
     name: 'reload-app-on-main-process-change',
-    configFile: join(__dirname, 'packages', 'main', 'vite.config.js'),
+    configFile: mainPackageConfigFile,
     writeBundle() {
       if (spawnProcess !== null) {
         spawnProcess.kill('SIGINT');
@@ -75,4 +88,8 @@ function setupMainPackageWatcher(devServer) {
       });
     },
   });
+}
+
+function buildPackage(configFile) {
+  return build({ configFile, mode: 'production' })
 }
