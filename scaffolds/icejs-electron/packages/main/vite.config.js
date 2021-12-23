@@ -18,11 +18,11 @@ const config = {
   build: {
     sourcemap: 'inline',
     target: 'node16',
-    outDir: 'build',
+    outDir: join(__dirname, 'build'),
     assetsDir: '.',
     minify: process.env.MODE !== 'development',
     lib: {
-      entry: 'src/index.ts',
+      entry: join(__dirname, 'src', 'index.ts'),
       formats: ['cjs'],
     },
     rollupOptions: {

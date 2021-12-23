@@ -1,8 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import { join } from 'path';
 
-// TODO: use import.meta.env.MODE to judge
-const isDevelopment = true;
+const isDevelopment = import.meta.env.DEV;
 
 async function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -22,12 +21,14 @@ async function createWindow() {
     }
   });
 
-  // eslint-disable-next-line @iceworks/best-practices/no-http-url
-  const pageUrl = 'http://localhost:3333/';
+  const { RENDERER_DEV_SERVER_URL } = process.env;
 
+  const pageUrl = isDevelopment && RENDERER_DEV_SERVER_URL 
+    ? RENDERER_DEV_SERVER_URL
+    : new URL(join(__dirname, '../renderer/dist/index.html'), 'file://' + __dirname).toString()
+  
   await mainWindow.loadURL(pageUrl);
 }
-
 
 app.whenReady()
   .then(createWindow)

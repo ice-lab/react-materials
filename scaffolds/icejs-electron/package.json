@@ -1,13 +1,22 @@
 {
   "name": "@icedesign/icejs-electron",
+  "main": "packages/main/build/index.cjs",
   "devDependencies": {
+    "@ant-design/icons": "^4.0.2",
+    "@ant-design/pro-layout": "^6.5.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "antd": "^4.0.0",
+    "build-plugin-antd": "^0.1.2",
+    "build-plugin-ignore-style": "^0.1.0",
     "electron": "^16.0.4",
     "electron-builder": "^22.14.5",
-    "npm-run-all": "^4.1.5",
-    "vite": "^2.7.2"
+    "ice.js": "2.4.2-beta.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.5.4"
   },
   "scripts": {
-    "watch": "node scripts/watch.js"
-  },
-  "type": "module"
+    "start": "icejs start --disable-open --rootDir ./packages/renderer --config ../../build.config.js"
+  }
 }
