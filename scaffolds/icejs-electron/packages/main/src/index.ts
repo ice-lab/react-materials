@@ -23,10 +23,10 @@ async function createWindow() {
 
   const { RENDERER_DEV_SERVER_URL } = process.env;
 
-  const pageUrl = isDevelopment && RENDERER_DEV_SERVER_URL 
+  const pageUrl = isDevelopment && RENDERER_DEV_SERVER_URL
     ? RENDERER_DEV_SERVER_URL
-    : new URL(join(__dirname, '../../renderer/build/index.html'), 'file://' + __dirname).toString()
-  
+    : new URL(join(__dirname, '../../renderer/build/index.html'), `file://${__dirname}`).toString();
+
   await mainWindow.loadURL(pageUrl);
 }
 
@@ -40,7 +40,9 @@ app.on('window-all-closed', () => {
   }
 });
 
-// TODO: Auto-updates
 if (!isDevelopment) {
-  app.whenReady();
+  app.whenReady()
+    .then(() => import('electron-updater'))
+    .then(({ autoUpdater }) => autoUpdater.checkForUpdatesAndNotify())
+    .catch((e) => console.error('Failed check updates:', e));
 }

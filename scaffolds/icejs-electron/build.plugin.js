@@ -11,7 +11,7 @@ module.exports = ({ onHook }) => {
     try {
       await setupPreloadPackageWatcher(devServer);
       await setupMainPackageWatcher(devServer);
-    } catch(e) {
+    } catch (e) {
       console.error(e);
       process.exit(1);
     }
@@ -21,11 +21,11 @@ module.exports = ({ onHook }) => {
     try {
       await buildPackage(preloadPackageConfigFile);
       await buildPackage(mainPackageConfigFile);
-    } catch(e) {
+    } catch (e) {
       console.error(e);
       process.exit(1);
     }
-  })
+  });
 };
 
 function getWatcher({ name, configFile, writeBundle }) {
@@ -49,7 +49,7 @@ function setupPreloadPackageWatcher(devServer) {
       });
     },
   });
-};
+}
 
 function setupMainPackageWatcher(devServer) {
   const protocol = `http${devServer.config.server.https ? 's' : ''}:`;
@@ -71,8 +71,8 @@ function setupMainPackageWatcher(devServer) {
       spawnProcess = spawn(String(electronPath), ['.'], {
         env: {
           ...process.env,
-          RENDERER_DEV_SERVER_URL
-        }
+          RENDERER_DEV_SERVER_URL,
+        },
       });
 
       spawnProcess.stdout.on('data', (d) => {
@@ -91,5 +91,5 @@ function setupMainPackageWatcher(devServer) {
 }
 
 function buildPackage(configFile) {
-  return build({ configFile, mode: 'production' })
+  return build({ configFile, mode: 'production' });
 }

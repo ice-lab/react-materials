@@ -12,7 +12,7 @@ const config = {
   root: PACKAGE_ROOT,
   resolve: {
     alias: {
-      '/@/': `${join(PACKAGE_ROOT, 'src') }/`,
+      '/@/': `${join(PACKAGE_ROOT, 'src')}/`,
     },
   },
   build: {

@@ -7,9 +7,9 @@ module.exports = {
     [
       'build-plugin-ignore-style',
       {
-        libraryName: 'antd'
-      }
+        libraryName: 'antd',
+      },
     ],
     join(__dirname, 'build.plugin.js'),
-  ]
-}
+  ],
+};

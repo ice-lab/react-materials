@@ -1,6 +1,6 @@
 module.exports = {
   appId: 'icejs-electron',
-  "productName": "icejs-electron",
+  productName: 'icejs-electron',
   files: [
     'packages/**/build/**',
   ],
@@ -8,5 +8,5 @@ module.exports = {
     output: 'release',
     buildResources: 'resources',
   },
-  copyright: "Copyright © 2021-present icejs",
-}
+  copyright: 'Copyright © 2021-present icejs',
+};

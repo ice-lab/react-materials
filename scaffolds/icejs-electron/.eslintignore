@@ -1,0 +1,8 @@
+# 忽略目录
+build/
+release/
+node_modules/
+**/*-min.js
+**/*.min.js
+coverage/
+index.d.ts
