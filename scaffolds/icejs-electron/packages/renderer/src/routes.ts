@@ -8,16 +8,20 @@ const routerConfig: IRouterConfig[] = [
   {
     path: '/',
     component: Layout,
-    children: [{
-      path: '/dashboard',
-      component: Dashboard,
-    }, {
-      path: '/',
-      exact: true,
-      component: Home,
-    }, {
-      component: NotFound,
-    }],
+    children: [
+      {
+        path: '/dashboard',
+        component: Dashboard,
+      },
+      {
+        path: '/',
+        exact: true,
+        component: Home,
+      },
+      {
+        component: NotFound,
+      },
+    ],
   },
 ];
 

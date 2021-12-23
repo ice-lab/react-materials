@@ -3,17 +3,6 @@ import ProLayout, { DefaultFooter } from '@ant-design/pro-layout';
 import { Link } from 'ice';
 import { asideMenuConfig } from './menuConfig';
 
-const data = { a: 1, b: 2 };
-
-const obj = {
-  args: [
-    {
-      ...data,
-      class:
-        'xxx' },
-  ],
-};
-
 const loopMenuItem = (menus) =>
   menus.map(({ icon, children, ...item }) => ({
     ...item,
@@ -22,7 +11,6 @@ const loopMenuItem = (menus) =>
   }));
 
 export default function BasicLayout({ children, location }) {
-  console.log({ location });
   return (
     <ProLayout
       title="icejs & antd"
@@ -32,6 +20,7 @@ export default function BasicLayout({ children, location }) {
       location={{
         pathname: location.pathname,
       }}
+      headerRender={false}
       menuDataRender={() => loopMenuItem(asideMenuConfig)}
       menuItemRender={(item, defaultDom) => {
         if (!item.path) {
