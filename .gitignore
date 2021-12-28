@@ -12,6 +12,7 @@ coverage/
 .tmp/
 
 build
+release
 blocks/**/lib/
 components/**/lib/
 components/**/es/

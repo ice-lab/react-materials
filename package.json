@@ -11,7 +11,7 @@
     "publish:packages": "ts-node ./scripts/publish-packages.ts",
     "lint": "npm run eslint && npm run stylelint",
     "eslint": "eslint --cache --ext .ts,.tsx ./",
-    "stylelint": "stylelint \"**/*.{css,scss,less}\"",
+    "stylelint": "stylelint --fix \"**/*.{css,scss,less}\"",
     "prepublishOnly": "npm run generate"
   },
   "files": [
