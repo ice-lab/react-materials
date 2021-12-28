@@ -3,8 +3,8 @@ const { spawn } = require('child_process');
 const electronPath = require('electron');
 const { join } = require('path');
 
-const preloadPackageConfigFile = join(__dirname, 'packages', 'preload', 'vite.config.js');
-const mainPackageConfigFile = join(__dirname, 'packages', 'main', 'vite.config.js');
+const preloadPackageConfigFile = join(__dirname, '..', 'preload', 'vite.config.js');
+const mainPackageConfigFile = join(__dirname, '..', 'main', 'vite.config.js');
 
 module.exports = ({ onHook }) => {
   onHook('after.start.devServer', async ({ devServer }) => {
