@@ -24,6 +24,7 @@ const sortedScaffoldsNames = [
   '@icedesign/stark-layout-scaffold',
   '@icedesign/stark-child-scaffold',
 
+  '@icedesign/scaffold-electron',
   // '@icedesign/scaffold-midway-faas',
 ];
 

@@ -1,58 +1,28 @@
-# Custom Materials
+# 飞冰官方物料
 
-[Docs](https://appworks.site/materials/about.html).
+## 脚手架列表
 
-## Install Iceworks CLI
+|        NPM 包名             |           说明             |
+|------------------------|----------------------------|
+| @alifd/scaffold-simple| icejs  |
+|@icedesign/ice-antd-scaffold| icejs + Ant Design |
+|@alifd/scaffold-lite|  icejs + Fusion Design |
+|@alifd/fusion-design-pro| icejs + Fusion Design + 大量 UI 区块 |
+|@icedesign/stark-layout-scaffold| icejs + icestark 主应用 |
+|@icedesign/stark-child-scaffold|  icejs + icestark 微应用 |
+|@icedesign/scaffold-electron|  icejs + Vite + Electron |
 
-```bash
-$ npm i -g iceworks
-$ iceworks --help
-```
+## 快速使用
 
-## Install Deps
-
-```bash
-$ npm install
-```
-
-## Develop materials
-
-```bash
-# block
-$ cd blocks/ExampleBlock
-$ npm install
-$ npm run start
-
-# component
-$ cd blocks/ExampleBlock
-$ npm install
-$ npm run start
-
-# page
-$ cd pages/ExamplePage
-$ npm install
-$ npm run start
-```
-
-## Add new material
+### CLI
 
 ```bash
-$ iceworks add  # select block|component|scaffold|page
+$ npm init ice ice-app
+
+$ npm init ice ice-app --template <NPM 包名>
+$ npm init ice ice-app --template @alifd/scaffold-simple
 ```
 
-## Generate materials data
+### GUI
 
-```bash
-$ iceworks generate
-```
-
-## Publish materials data
-
-```bash
-# sync to fusion material center
-$ iceworks sync
-```
-
-## Use materials in AppWorks
-
-Add the materials data url to [AppWorks](https://appworks.site/pack/basic/materials.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%89%A9%E6%96%99%E6%BA%90).
+查看 [Appworks 文档](https://appworks.site/materialCenter/fusion.html)
