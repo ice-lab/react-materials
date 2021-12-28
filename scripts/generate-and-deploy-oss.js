@@ -24,7 +24,7 @@ const sortedScaffoldsNames = [
   '@icedesign/stark-layout-scaffold',
   '@icedesign/stark-child-scaffold',
 
-  '@icedesign/scaffold-midway-faas',
+  // '@icedesign/scaffold-midway-faas',
 ];
 
 const sleep = async (t) => {
