@@ -1,9 +1,8 @@
-import { IRouterConfig, lazy } from 'ice';
-
-const Home = lazy(() => import('@/pages/Home'));
-const About = lazy(() => import('@/pages/About'));
-const Login = lazy(() => import('@/pages/Login'));
-const NotFound = lazy(() => import('@/components/NotFound'));
+import { IRouterConfig } from 'ice';
+import Home from '@/pages/Home';
+import About from '@/pages/About';
+import Login from '@/pages/Login';
+import NotFound from '@/components/NotFound';
 
 const routes: IRouterConfig[] = [{
   path: '/about',
