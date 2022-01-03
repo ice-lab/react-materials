@@ -21,19 +21,12 @@ const appConfig: IAppConfig = {
         title: '商家平台',
         loadScriptMode: 'import',
         // React app demo: https://github.com/ice-lab/react-materials/tree/master/scaffolds/icestark-child
-        url: [
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/js/index.js',
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/build/css/index.css',
-        ],
+        entry: 'http://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/index.html'
       }, {
         path: '/waiter',
         title: '小二平台',
-        sandbox: true,
-        url: [
-          // Vue app demo: https://github.com/ice-lab/vue-materials/tree/master/scaffolds/icestark-child-app
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-waiter-vue/dist/js/app.js',
-          'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-waiter-vue/dist/css/app.css',
-        ],
+        loadScriptMode: "import",
+        entry: "http://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-vue3-vite/index.html"
       }, {
         path: '/angular',
         title: 'Angular',
