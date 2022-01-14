@@ -8,8 +8,6 @@ async function createWindow() {
     show: false, // Use 'ready-to-show' event to show window
     webPreferences: {
       preload: join(__dirname, '../../preload/build/index.cjs'),
-      nodeIntegration: true,
-      contextIsolation: false,
     },
   });
 
