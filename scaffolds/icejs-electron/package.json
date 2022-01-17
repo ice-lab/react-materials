@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/scaffold-electron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "icejs Electron 模板，基于 vite",
   "main": "packages/main/build/index.cjs",
   "scripts": {
