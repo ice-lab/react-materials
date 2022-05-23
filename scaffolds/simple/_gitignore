@@ -17,6 +17,7 @@ lib/
 *.dia~
 .ice
 .vscode
+.env.local
 
 npm-debug.log*
 yarn-debug.log*

@@ -1,6 +1,6 @@
 {
-  "name": "@alifd/scaffold-simple",
-  "version": "1.1.2",
+  "name": "ice-scaffold-simple",
+  "version": "1.0.0",
   "description": "使用 TypeScript，未使用任何 UI 库。",
   "files": [
     "src/",
@@ -8,38 +8,24 @@
     "public/",
     "tests/",
     "_gitignore",
-    "_editorconfig",
-    "_eslintignore",
-    "_eslintrc.js",
-    "_prettierignore",
-    "_prettierrc.js",
-    "_stylelintignore",
-    "_stylelintrc.js",
-    "build.json",
+    "ice.config.ts",
     "screenshot.png",
     "tsconfig.json",
     "jsconfig.json"
   ],
   "dependencies": {
+    "@ice/runtime": "^1.0.0-alpha.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@iceworks/spec": "^1.0.0",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
-    "eslint": "^7.30.0",
-    "ice.js": "^2.0.0",
-    "stylelint": "^13.7.2"
+    "@ice/app": "^3.0.0-alpha.2",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11"
   },
   "scripts": {
-    "start": "icejs start",
-    "build": "icejs build",
-    "prepublishOnly": "npm run build",
-    "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx ./",
-    "eslint:fix": "npm run eslint -- --fix",
-    "stylelint": "stylelint \"**/*.{css,scss,less}\""
+    "start": "ice start",
+    "build": "ice build"
   },
   "publishConfig": {
     "access": "public"
