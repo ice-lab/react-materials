@@ -12,9 +12,7 @@ function Document(props) {
         <Links />
       </head>
       <body>
-        <Main>
-          {props.children}
-        </Main>
+        <Main />
         <Scripts />
       </body>
     </html>

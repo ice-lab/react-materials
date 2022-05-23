@@ -20,27 +20,21 @@ $ npm start  # visit http://localhost:3333
 ```md
 ├── build/                         # 构建产物
 ├── mock/                          # 本地模拟数据
-│   ├── index.[j,t]s
+│   ├── index.ts
 ├── public/
-│   ├── index.html                 # 应用入口 HTML
 │   └── favicon.png                # Favicon
 ├── src/                           # 源码路径
 │   ├── components/                # 自定义业务组件
 │   │   └── Guide/
-│   │       ├── index.[j,t]sx
+│   │       ├── index.tsx
 │   │       └── index.module.scss
 │   ├── pages/                     # 页面
-│   │   └── index.tsx/
-│   ├── global.scss                # 全局样式
-│   └── app.[j,t]s[x]              # 应用入口脚本
+│   │   └── index.tsx
+│   ├── document.tsx               # HTML 结构
+│   └── app.tsx                    # 应用入口脚本
 ├── README.md
 ├── package.json
-├── .editorconfig
-├── .eslintignore
-├── .eslintrc.[j,t]s
 ├── .gitignore
-├── .stylelintignore
-├── .stylelintrc.[j,t]s
 ├── .gitignore
-└── [j,t]sconfig.json
+└── tsconfig.json
 ```

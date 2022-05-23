@@ -1,3 +1,5 @@
-import { defineAppConfig } from 'ice';
+import { GetAppConfig } from 'ice';
 
-export default defineAppConfig({});
+export const getAppConfig: GetAppConfig = () => {
+  return {};
+};
