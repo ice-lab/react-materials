@@ -1,0 +1,54 @@
+:root {
+  --primary: black;
+  --bg-primary: white;
+  --link: #2a0b0b;
+}
+
+p {
+  margin: 20px 0;
+  text-align: center;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 35px;
+  background: #3178f6;
+  color: white;
+  font-size: calc(10px + 2vmin);
+
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app-header {
+  background-color: #282c34;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  background: var(--bg-primary);
+  color: var(--primary);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-left: 1rem;
+}
+
+.body {
+  margin: 20px 0 10px;
+  font-size: 0.9rem;
+}
