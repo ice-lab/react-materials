@@ -1,40 +1,31 @@
+## ICE 3 Project
 
-## Simple
+> An ICE 3 project, using TypeScript CSS Modules.
 
-> A TypeScript simple template
-
-## 使用
+## Usage
 
 ```bash
-# 安装依赖
 $ npm install
-
-# 启动服务
-$ npm start  # visit http://localhost:3333
+$ npm start
 ```
 
-[More docs](https://ice.work/docs/guide/about).
+[Documentation](https://ice.work/docs/guide/about).
 
-## 目录
+## Directories
 
 ```md
-├── build/                         # 构建产物
-├── mock/                          # 本地模拟数据
-│   ├── index.ts
-├── public/
-│   └── favicon.png                # Favicon
-├── src/                           # 源码路径
-│   ├── components/                # 自定义业务组件
-│   │   └── Guide/
-│   │       ├── index.tsx
-│   │       └── index.module.scss
-│   ├── pages/                     # 页面
-│   │   └── index.tsx
-│   ├── document.tsx               # HTML 结构
-│   └── app.tsx                    # 应用入口脚本
+.
 ├── README.md
+├── ice.config.mts                  # The project config.
 ├── package.json
-├── .gitignore
-├── .gitignore
+├── src
+│   ├── app.tsx                     # The app entry.
+│   ├── assets
+│   │   └── logo.png
+│   ├── document.tsx
+│   ├── pages                       # Pages directroy.
+│   │   ├── index.css
+│   │   └── index.tsx               # Index page entry.
+│   └── typings.d.ts
 └── tsconfig.json
 ```
