@@ -16,7 +16,7 @@ $ npm start
 ```md
 .
 ├── README.md
-├── ice.config.ts                   # The project config.
+├── ice.config.mts                  # The project config.
 ├── package.json
 ├── src
 │   ├── app.tsx                     # The app entry.

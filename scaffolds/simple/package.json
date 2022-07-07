@@ -8,7 +8,7 @@
     "public/",
     "tests/",
     "_gitignore",
-    "ice.config.ts",
+    "ice.config.mts",
     "screenshot.png",
     "tsconfig.json",
     "jsconfig.json"
