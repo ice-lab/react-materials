@@ -1,5 +1,6 @@
-import { GetAppConfig } from 'ice';
+import { defineAppConfig } from 'ice';
 
-export const getAppConfig: GetAppConfig = () => {
-  return {};
-};
+// App config, see https://v3.ice.work/docs/guide/basic/app
+export default defineAppConfig({
+  // Set your configs here.
+});

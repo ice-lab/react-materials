@@ -14,14 +14,14 @@
     "jsconfig.json"
   ],
   "dependencies": {
-    "@ice/runtime": "^1.0.0-beta.2",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@ice/runtime": "alpha",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ice/app": "^3.0.0-beta.3",
-    "@types/react": "^18.0.9",
-    "@types/react-dom": "^18.0.4"
+    "@ice/app": "^alpha",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
   },
   "scripts": {
     "start": "ice start",
@@ -29,10 +29,6 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/simple"
   },
   "scaffoldConfig": {
     "name": "Simple",

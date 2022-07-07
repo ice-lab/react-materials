@@ -1,22 +1,23 @@
 import { useState } from 'react';
-import './index.css';
 import logo from '@/assets/logo.png';
+import styles from './index.module.css';
 
-const Home = () => {
-  const [count, setCount] = useState(0);
+export default function Home() {
+  const [count, setCount] = useState(1);
+  const updateCount = () => setCount((c) => c + 1);
+
   return (
-    <div className="app">
-      <header className="app-header">
-        <img src={logo} alt="logo" className="logo" />
-        <p className="title">
-          ICE 3.0
+    <div className={styles.app}>
+      <header className={styles.appHeader}>
+        <img src={logo} alt="logo" className={styles.logo} />
+        <p className={styles.title}>
+          Hello ICE 3
         </p>
       </header>
-      <div className="body">
-        <button type="button" onClick={() => setCount((e) => e + 1)}>
-          🪂 Click me : {count}
+      <div className={styles.body}>
+        <button type="button" onClick={updateCount}>
+          👍🏻 {count}
         </button>
-
         <p>
           <a
             href="https://reactjs.org"
@@ -27,16 +28,14 @@ const Home = () => {
           </a>
           {' | '}
           <a
-            href="https://ice.work/"
+            href="https://v3.ice.work/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ICE Docs
+            Learn ICE
           </a>
         </p>
       </div>
     </div>
   );
-};
-
-export default Home;
+}

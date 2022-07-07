@@ -4,6 +4,16 @@
   --link: #2a0b0b;
 }
 
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 p {
   margin: 20px 0;
   text-align: center;
@@ -15,9 +25,9 @@ button {
   border-radius: 8px;
   padding: 10px 35px;
   background: #3178f6;
+  box-shadow: 0 5px 10px 0 #ddd;
   color: white;
   font-size: calc(10px + 2vmin);
-
 }
 
 .app {
@@ -29,26 +39,25 @@ button {
 }
 
 .app-header {
-  background-color: #282c34;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  background: var(--bg-primary);
+  background: var(--bg-primary, #282c34);
   color: var(--primary);
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 100px;
 }
 
 .title {
-  font-size: 3rem;
-  margin-left: 1rem;
+  font-size: 2.6rem;
 }
 
 .body {
+  display: flex;
+  flex-direction: column;
+  
   margin: 20px 0 10px;
   font-size: 0.9rem;
 }
