@@ -14,12 +14,12 @@
     "jsconfig.json"
   ],
   "dependencies": {
-    "@ice/runtime": "alpha",
+    "@ice/runtime": "beta",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ice/app": "^alpha",
+    "@ice/app": "beta",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0"
   },
