@@ -1,6 +1,6 @@
 {
   "name": "ice-scaffold-simple",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "使用 TypeScript，未使用任何 UI 库。",
   "files": [
     "src/",
@@ -14,12 +14,12 @@
     "jsconfig.json"
   ],
   "dependencies": {
-    "@ice/runtime": "beta",
+    "@ice/runtime": "release",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ice/app": "beta",
+    "@ice/app": "release",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0"
   },
