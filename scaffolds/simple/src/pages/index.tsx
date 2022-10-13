@@ -11,7 +11,7 @@ export default function Home() {
       <header className={styles.appHeader}>
         <img src={logo} alt="logo" className={styles.logo} />
         <p className={styles.title}>
-          Hello ICE 3
+          Hello ice.js 3
         </p>
       </header>
       <div className={styles.body}>
@@ -32,7 +32,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn ICE
+            Learn ice.js
           </a>
         </p>
       </div>
