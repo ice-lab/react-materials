@@ -1,6 +1,1 @@
-declare module '*.module.css' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
-
-declare module '*.png';
+/// <reference types="@ice/app/types" />
