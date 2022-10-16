@@ -7,8 +7,13 @@ const asideMenuConfig = [
     icon: <DashboardOutlined />,
   },
   {
-    name: 'Dashboard',
-    path: '/dashboard',
+    name: 'Admin',
+    path: '/admin',
+    icon: <DashboardOutlined />,
+  },
+  {
+    name: '404',
+    path: '/404',
     icon: <HeartOutlined />,
   },
 ];

@@ -1,9 +1,14 @@
-import { Outlet, Link, useLocation } from 'ice';
+import { Outlet, Link, useLocation, useAuth } from 'ice';
 import ProLayout from '@ant-design/pro-layout';
 import { asideMenuConfig } from '@/menuConfig';
+import store from '@/store';
+import { getCookie } from '@/utils/cookie';
+import { useEffect } from 'react';
 
 export default function Layout() {
   const location = useLocation();
+  const [auth] = useAuth();
+  const [userModel] = store.useModel('user');
 
   if (['/login'].includes(location.pathname)) {
     return <Outlet />
