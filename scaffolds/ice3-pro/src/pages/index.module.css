@@ -1,0 +1,67 @@
+:root {
+  --primary: black;
+  --bg-primary: white;
+  --link: #2a0b0b;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  margin: 20px 0;
+  text-align: center;
+}
+
+a {
+  font-size: 16px;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 35px;
+  background: #3178f6;
+  box-shadow: 0 5px 10px 0 #ddd;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary, #282c34);
+  color: var(--primary);
+}
+
+.logo {
+  width: 100px;
+}
+
+.title {
+  font-size: 2.6rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  
+  margin: 20px 0 10px;
+  font-size: 0.9rem;
+}
