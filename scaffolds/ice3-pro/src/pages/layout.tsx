@@ -8,7 +8,7 @@ import AvatarDropdown from '@/components/AvatarDropdown';
 
 export default function Layout() {
   const location = useLocation();
-  const [userState, userDispatcher] = store.useModel('user');
+  const [userState] = store.useModel('user');
 
   if (['/login'].includes(location.pathname)) {
     return <Outlet />
