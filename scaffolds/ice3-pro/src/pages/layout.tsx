@@ -1,14 +1,15 @@
-import { Outlet, Link, useLocation, useAuth } from 'ice';
+import { useState, useEffect } from 'react';
+import { Outlet, Link, useLocation } from 'ice';
 import ProLayout from '@ant-design/pro-layout';
 import { asideMenuConfig } from '@/menuConfig';
 import store from '@/store';
-import { getCookie } from '@/utils/cookie';
-import { useEffect } from 'react';
+import logo from '@/assets/logo.png';
+import styles from './layout.module.css';
+import AvatarDropdown from '@/components/AvatarDropdown';
 
 export default function Layout() {
   const location = useLocation();
-  const [auth] = useAuth();
-  const [userModel] = store.useModel('user');
+  const [userState, userDispatcher] = store.useModel('user');
 
   if (['/login'].includes(location.pathname)) {
     return <Outlet />
@@ -16,10 +17,18 @@ export default function Layout() {
 
   return (
     <ProLayout
-      title="ice.js & antd"
+      className={styles.layout}
+      logo={<img src={logo} alt="logo" />}
+      title="ICE Pro"
       location={{
         pathname: location.pathname,
       }}
+      layout='mix'
+      fixSiderbar
+      rightContentRender={() => (
+        <AvatarDropdown avatar={userState.avatar} name={userState.name} />
+      )}
+      menuHeaderRender={undefined}
       menuDataRender={() => asideMenuConfig}
       menuItemRender={(item, defaultDom) => {
         if (!item.path) {

@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import bodyParser from 'body-parser';
 
 const waitTime = (time: number = 1000) => {
   return new Promise((resolve) => {
@@ -9,28 +10,30 @@ const waitTime = (time: number = 1000) => {
 };
 
 export default {
-  'POST /api/login': async (req: Request, res: Response) => {
-    const { username, password } = req.body;
-    await waitTime();
-    if (username === 'admin' && password === 'ice') {
-      res.send({
-        success: true,
-        userType: 'admin',
-      });
-      return;
-    }
-    if (username === 'user' && password === 'ice') {
-      res.send({
-        success: true,
-        userType: 'user',
-      });
-      return;
-    }
+  'POST /api/login': (req: Request, res: Response) => {
+    bodyParser.json({ limit: '5mb', strict: false })(req, res, async () => {
+      const { username, password } = req.body;
+      await waitTime();
+      if (username === 'admin' && password === 'ice') {
+        res.send({
+          success: true,
+          userType: 'admin',
+        });
+        return;
+      }
+      if (username === 'user' && password === 'ice') {
+        res.send({
+          success: true,
+          userType: 'user',
+        });
+        return;
+      }
 
-    res.send({
-      success: false,
-      userType: 'guest',
-    });
+      res.send({
+        success: false,
+        userType: 'guest',
+      });
+    })
   },
   'GET /api/user': async (req: Request, res: Response) => {
     const { query } = req;

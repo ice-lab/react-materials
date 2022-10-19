@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { history, useAuth } from 'ice';
 import { message, Alert } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
@@ -8,6 +8,7 @@ import type { LoginParams, LoginResult } from '@/interfaces/user';
 import { login, fetchUserInfo } from '@/services/user';
 import store from '@/store';
 import { setCookie } from '@/utils/cookie';
+import logo from '@/assets/logo.png';
 
 const LoginMessage: React.FC<{
   content: string;
@@ -26,13 +27,8 @@ const LoginMessage: React.FC<{
 
 const Login: React.FC = () => {
   const [loginResult, setLoginResult] = useState<LoginResult>({});
-  const [, useDispatcher] = store.useModel('user');
-  const [auth, setAuth] = useAuth();
-
-  async function getUserInfo(userType: LoginResult['userType']) {
-    const userInfo = await fetchUserInfo(userType);
-    useDispatcher.updateUserInfo(userInfo);
-  }
+  const [, userDispatcher] = store.useModel('user');
+  const [, setAuth] = useAuth();
 
   async function handleSubmit(values: LoginParams) {
     try {
@@ -45,7 +41,7 @@ const Login: React.FC = () => {
           user: result.userType === 'user',
         });
 
-        await getUserInfo(result.userType);
+        await userDispatcher.updateUserInfo(result.userType);
         const urlParams = new URL(window.location.href).searchParams;
         history?.push(urlParams.get('redirect') || '/');
         return;
@@ -61,7 +57,8 @@ const Login: React.FC = () => {
   return (
     <div className={styles.container}>
       <LoginForm
-        title="ice.js"
+        title="ICE Pro"
+        logo={<img alt="logo" src={logo} />}
         subTitle="基于 React 的应用研发框架，开箱即用，同时支持移动端和桌面端"
         onFinish={async (values) => {
           await handleSubmit(values as LoginParams);
@@ -107,7 +104,7 @@ const Login: React.FC = () => {
 
 export const getConfig = () => {
   return {
-    title: '登录 | ice.js'
+    title: '登录'
   }
 }
 

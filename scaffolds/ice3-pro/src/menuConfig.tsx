@@ -5,11 +5,14 @@ const asideMenuConfig = [
     name: 'Dashboard',
     path: '/',
     icon: <DashboardOutlined />,
+    component: './Dashboard',
   },
   {
     name: 'Admin',
     path: '/admin',
     icon: <DashboardOutlined />,
+    component: './Admin',
+
   },
   {
     name: '404',

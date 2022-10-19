@@ -6,3 +6,9 @@
   height: 100vh;
   overflow: auto;
 }
+
+.container :global {
+  .ant-pro-form-login-container {
+    padding-top: 140px;
+  }
+}
