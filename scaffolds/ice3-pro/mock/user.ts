@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 
 const waitTime = (time: number = 1000) => {
   return new Promise((resolve) => {
@@ -36,22 +37,28 @@ export default {
     })
   },
   'GET /api/user': async (req: Request, res: Response) => {
-    const { query } = req;
-    if (!query.userType) {
-      res.status(401).send({
-        data: {
-          isLogin: false,
-        },
-        errorCode: '401',
-        errorMessage: '请先登录！',
-        success: true,
+    cookieParser()(req, res, async () => {
+      const { cookies } = req;
+      if (!cookies['ice_user_type']) {
+        res.status(401).send({
+          data: {
+            isLogin: false,
+          },
+          errorCode: '401',
+          errorMessage: '请先登录！',
+          success: true,
+        })
+        return;
+      }
+      res.send({
+        name: cookies['ice_user_type'] === 'admin' ? 'Admin' : 'User',
+        avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+        userid: '00000001',
+        userType: cookies['ice_user_type'],
       })
-      return;
-    }
-    res.send({
-      name: query.userType === 'admin' ? 'Admin' : 'User',
-      avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-      userid: '00000001',
     })
+  },
+  'POST /api/logout': (req: Request, res: Response) => {
+    res.send({ data: {}, success: true });
   },
 }

@@ -30,18 +30,22 @@ const Login: React.FC = () => {
   const [, userDispatcher] = store.useModel('user');
   const [, setAuth] = useAuth();
 
+  async function updateUserInfo() {
+    const userInfo = await fetchUserInfo();
+    userDispatcher.updateCurrentUser(userInfo);
+  }
+
   async function handleSubmit(values: LoginParams) {
     try {
       const result = await login(values);
       if (result.success) {
         message.success('登录成功！');
-        setCookie('ice_userType', result.userType!, { path: '/', 'max-age': 60 * 60 * 24 * 365 });
+        setCookie('ice_user_type', result.userType!, { path: '/', 'max-age': 60 * 60 * 24 * 365 });
         setAuth({
           admin: result.userType === 'admin',
           user: result.userType === 'user',
         });
-
-        await userDispatcher.updateUserInfo(result.userType);
+        await updateUserInfo();
         const urlParams = new URL(window.location.href).searchParams;
         history?.push(urlParams.get('redirect') || '/');
         return;

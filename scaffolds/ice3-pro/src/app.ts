@@ -1,44 +1,39 @@
 import { defineAppConfig, history } from 'ice';
-import { getCookie } from '@/utils/cookie';
 import { fetchUserInfo } from './services/user';
 import { defineAuthConfig } from '@ice/plugin-auth/esm/types';
 import { defineStoreConfig } from '@ice/plugin-store/esm/types';
-import type { LoginResult } from './interfaces/user';
 
 // App config, see https://v3.ice.work/docs/guide/basic/app
-export default defineAppConfig({
-  // Set your configs here.
-});
+export default defineAppConfig({});
 
 export const auth = defineAuthConfig(async (appData) => {
-  const { userType } = appData;
+  const { userInfo = {} } = appData;
   return {
     initialAuth: {
-      admin: userType === 'admin',
-      user: userType === 'user',
+      admin: userInfo.userType === 'admin',
+      user: userInfo.userType === 'user',
     },
   };
 });
 
 export const store = defineStoreConfig(async (appData) => {
-  const { userInfo } = appData;
+  const { userInfo = {} } = appData;
   return {
     initialStates: {
       user: {
-        ...userInfo
+        currentUser: userInfo
       }
     }
   }
 });
 
 export const getAppData = async () => {
-  const userType = getCookie('ice_userType') as LoginResult['userType'];
-
   const getUserInfo = async () => {
     try {
-      const userInfo = await fetchUserInfo(userType);
+      const userInfo = await fetchUserInfo();
       return userInfo;
     } catch (error) {
+      // FIXME: history is null in getAppData
       history?.push(`/login?redirect=${window.location.pathname}`);
     }
     return undefined;
@@ -49,7 +44,6 @@ export const getAppData = async () => {
     const userInfo = await getUserInfo();
     return {
       userInfo,
-      userType,
     }
   }
 

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'ice';
 import ProLayout from '@ant-design/pro-layout';
 import { asideMenuConfig } from '@/menuConfig';
@@ -26,7 +25,7 @@ export default function Layout() {
       layout='mix'
       fixSiderbar
       rightContentRender={() => (
-        <AvatarDropdown avatar={userState.avatar} name={userState.name} />
+        <AvatarDropdown avatar={userState.currentUser.avatar} name={userState.currentUser.name} />
       )}
       menuHeaderRender={undefined}
       menuDataRender={() => asideMenuConfig}
