@@ -10,7 +10,4 @@ export default defineConfig({
     store(),
     auth(),
   ],
-  ssg: false,
-  ssr: false,
-  dataLoader: false,
 });

@@ -42,9 +42,15 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ name, avatar }) => {
       ]}
     />
   );
-
+  const menu = {
+    items: [
+      {
+        key: 'logout', label: '退出登录', icon: <LogoutOutlined />, onClick: onMenuClick, className: styles.menu,
+      }
+    ]
+  }
   return (
-    <Dropdown overlay={menuOverlay}>
+    <Dropdown menu={menu}>
       <span className={`${styles.action} ${styles.account}`}>
         <Avatar size="small" className={styles.avatar} src={avatar} alt="avatar" />
         <span>{name}</span>

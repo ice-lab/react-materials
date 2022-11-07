@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { history, useAuth } from 'ice';
 import { message, Alert } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { LoginForm, ProFormText } from '@ant-design/pro-components';
+import { LoginForm, ProFormText, ProFormCheckbox } from '@ant-design/pro-components';
 import styles from './index.module.css';
 import type { LoginParams, LoginResult } from '@/interfaces/user';
 import { login, fetchUserInfo } from '@/services/user';
@@ -101,6 +101,22 @@ const Login: React.FC = () => {
             },
           ]}
         />
+        <div
+          style={{
+            marginBottom: 24,
+          }}
+        >
+          <ProFormCheckbox noStyle name="autoLogin">
+            自动登录
+          </ProFormCheckbox>
+          <a
+            style={{
+              float: 'right',
+            }}
+          >
+            忘记密码
+          </a>
+        </div>
       </LoginForm>
     </div>
   )

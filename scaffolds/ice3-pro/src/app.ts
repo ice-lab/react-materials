@@ -2,8 +2,8 @@ import { defineAppConfig, history } from 'ice';
 import { fetchUserInfo } from './services/user';
 import { defineAuthConfig } from '@ice/plugin-auth/esm/types';
 import { defineStoreConfig } from '@ice/plugin-store/esm/types';
+import { defineRequestConfig } from '@ice/plugin-request/esm/types';
 
-// App config, see https://v3.ice.work/docs/guide/basic/app
 export default defineAppConfig({});
 
 export const auth = defineAuthConfig(async (appData) => {
@@ -27,6 +27,10 @@ export const store = defineStoreConfig(async (appData) => {
   }
 });
 
+export const request = defineRequestConfig(() => ({
+  baseURL: '/api',
+}))
+
 export const getAppData = async () => {
   const getUserInfo = async () => {
     try {
@@ -39,13 +43,15 @@ export const getAppData = async () => {
     return undefined;
   };
 
-  // 不是登录页面，获取用户信息
-  if (typeof window !== 'undefined' && window.location.pathname !== '/login') {
-    const userInfo = await getUserInfo();
-    return {
-      userInfo,
-    }
-  }
+  // 兼容 SSR 的情况
+  const userInfo = typeof window === 'undefined' ? {
+    name: 'Admin',
+    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+    userid: '00000001',
+    userType: 'admin',
+  } : await getUserInfo();
 
-  return {}
+  return {
+    userInfo,
+  }
 }
