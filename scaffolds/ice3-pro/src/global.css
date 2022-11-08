@@ -1,1 +1,9 @@
 @import 'antd/dist/antd.css';
+
+body {
+  .ant-pro-page-container-children-content {
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
+    margin: 24px;
+  }
+}

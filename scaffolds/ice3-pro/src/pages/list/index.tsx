@@ -1,193 +1,126 @@
-// import { PlusOutlined } from '@ant-design/icons';
-import { Button, message, Input, Drawer } from 'antd';
-import React, { useState, useRef } from 'react';
-import { PageContainer, FooterToolbar } from '@ant-design/pro-layout';
+import { defineGetConfig, request } from 'ice';
+import { PlusOutlined } from '@ant-design/icons';
+import { Button, Tag, Space } from 'antd';
+import React, { useRef } from 'react';
+import { PageContainer } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
-// import { ModalForm, ProFormText, ProFormTextArea } from '@ant-design/pro-form';
-import type { ProDescriptionsItemProps } from '@ant-design/pro-descriptions';
-import ProDescriptions from '@ant-design/pro-descriptions';
-// import type { FormValueType } from '@/components/UpdateForm';
-// import UpdateForm from '@/components/UpdateForm';
-import type { TableListItem, TableListPagination } from '@/components/UpdateForm/data';
 
+interface GithubIssueItem {
+  url: string;
+  id: number;
+  number: number;
+  title: string;
+  labels: {
+    name: string;
+    color: string;
+  }[];
+  state: string;
+  comments: number;
+  created_at: string;
+  updated_at: string;
+  closed_at?: string;
+};
 
+const columns: ProColumns<GithubIssueItem>[] = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    ellipsis: true,
+  },
+  {
+    title: '名称',
+    dataIndex: 'name',
+  },
+  {
+    title: '描述',
+    dataIndex: 'description',
+  },
+  {
+    title: '操作',
+    valueType: 'option',
+    key: 'option',
+    render: (text, record, _, action) => [
+      <a
+        key="editable"
+        onClick={() => {
+          action?.startEditable?.(record.id);
+        }}
+      >
+        编辑
+      </a>,
+      <a href={record.url} target="_blank" rel="noopener noreferrer" key="view">
+        查看
+      </a>,
+    ],
+  },
+];
 
 const TableList: React.FC = () => {
-  /** 新建窗口的弹窗 */
-  const [createModalVisible, handleModalVisible] = useState<boolean>(false);
-  /** 分布更新窗口的弹窗 */
-
-  const [updateModalVisible, handleUpdateModalVisible] = useState<boolean>(false);
-  const [showDetail, setShowDetail] = useState<boolean>(false);
   const actionRef = useRef<ActionType>();
-  const [currentRow, setCurrentRow] = useState<TableListItem>();
-  const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
-  /** 国际化配置 */
-
-  const columns: ProColumns<TableListItem>[] = [
-    {
-      title: '规则名称',
-      dataIndex: 'name',
-      tip: '规则名称是唯一的 key',
-      render: (dom, entity) => {
-        return (
-          <a
-            onClick={() => {
-              setCurrentRow(entity);
-              setShowDetail(true);
-            }}
-          >
-            {dom}
-          </a>
-        );
-      },
-    },
-    {
-      title: '描述',
-      dataIndex: 'desc',
-      valueType: 'textarea',
-    },
-    {
-      title: '服务调用次数',
-      dataIndex: 'callNo',
-      sorter: true,
-      hideInForm: true,
-      renderText: (val: string) => `${val}万`,
-    },
-    {
-      title: '状态',
-      dataIndex: 'status',
-      hideInForm: true,
-      valueEnum: {
-        0: {
-          text: '关闭',
-          status: 'Default',
-        },
-        1: {
-          text: '运行中',
-          status: 'Processing',
-        },
-        2: {
-          text: '已上线',
-          status: 'Success',
-        },
-        3: {
-          text: '异常',
-          status: 'Error',
-        },
-      },
-    },
-    {
-      title: '上次调度时间',
-      sorter: true,
-      dataIndex: 'updatedAt',
-      valueType: 'dateTime',
-      renderFormItem: (item, { defaultRender, ...rest }, form) => {
-        const status = form.getFieldValue('status');
-
-        if (`${status}` === '0') {
-          return false;
-        }
-
-        if (`${status}` === '3') {
-          return <Input {...rest} placeholder="请输入异常原因！" />;
-        }
-
-        return defaultRender(item);
-      },
-    },
-    {
-      title: '操作',
-      dataIndex: 'option',
-      valueType: 'option',
-      render: (_, record) => [
-        <a
-          key="config"
-          onClick={() => {
-            handleUpdateModalVisible(true);
-            setCurrentRow(record);
-          }}
-        >
-          配置
-        </a>,
-        <a key="subscribeAlert" href="https://procomponents.ant.design/">
-          订阅警报
-        </a>,
-      ],
-    },
-  ];
-
   return (
     <PageContainer>
-      <ProTable<TableListItem, TableListPagination>
-        headerTitle="查询表格"
-        actionRef={actionRef}
-        rowKey="key"
-        search={{
-          labelWidth: 120,
-        }}
-        // request={rule}
+      <ProTable<GithubIssueItem>
         columns={columns}
-        rowSelection={{
-          onChange: (_, selectedRows) => {
-            setSelectedRows(selectedRows);
+        actionRef={actionRef}
+        cardBordered
+        request={async (params = {}, sort, filter) => {
+          console.log(sort, filter);
+          return request<{
+            data: GithubIssueItem[];
+          }>('/repos', {
+            params,
+          });
+        }}
+        editable={{
+          type: 'multiple',
+        }}
+        columnsState={{
+          persistenceKey: 'pro-table-singe-demos',
+          persistenceType: 'localStorage',
+          onChange(value) {
+            console.log('value: ', value);
           },
         }}
-      />
-      {selectedRowsState?.length > 0 && (
-        <FooterToolbar
-          extra={
-            <div>
-              已选择{' '}
-              <a
-                style={{
-                  fontWeight: 600,
-                }}
-              >
-                {selectedRowsState.length}
-              </a>{' '}
-              项 &nbsp;&nbsp;
-              <span>
-                服务调用次数总计 {selectedRowsState.reduce((pre, item) => pre + item.callNo!, 0)} 万
-              </span>
-            </div>
-          }
-        >
-          <Button type="primary">批量审批</Button>
-        </FooterToolbar>
-      )}
-      <Drawer
-        width={600}
-        visible={showDetail}
-        onClose={() => {
-          setCurrentRow(undefined);
-          setShowDetail(false);
+        rowKey="id"
+        search={{
+          labelWidth: 'auto',
         }}
-        closable={false}
-      >
-        {currentRow?.name && (
-          <ProDescriptions<TableListItem>
-            column={2}
-            title={currentRow?.name}
-            request={async () => ({
-              data: currentRow || {},
-            })}
-            params={{
-              id: currentRow?.name,
-            }}
-            columns={columns as ProDescriptionsItemProps<TableListItem>[]}
-          />
-        )}
-      </Drawer>
+        options={{
+          setting: {
+            listsHeight: 400,
+          },
+        }}
+        form={{
+          // 由于配置了 transform，提交的参与与定义的不同这里需要转化一下
+          syncToUrl: (values, type) => {
+            if (type === 'get') {
+              return {
+                ...values,
+                created_at: [values.startTime, values.endTime],
+              };
+            }
+            return values;
+          },
+        }}
+        pagination={{
+          pageSize: 8,
+        }}
+        dateFormatter="string"
+        toolBarRender={() => [
+          <Button key="button" icon={<PlusOutlined />} type="primary">
+            新建
+          </Button>,
+        ]}
+      />
     </PageContainer>
   );
 };
 
 export default TableList;
 
-export const getConfig = () => {
+export const getConfig = defineGetConfig(() => {
   return {
     auth: ['admin'],
   }
-}
+})
