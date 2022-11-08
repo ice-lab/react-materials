@@ -33,15 +33,6 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ name, avatar }) => {
     }
   }, []);
 
-  const menuOverlay = (
-    <Menu
-      onClick={onMenuClick}
-      className={styles.menu}
-      items={[
-        { key: 'logout', label: '退出登录', icon: <LogoutOutlined /> },
-      ]}
-    />
-  );
   const menu = {
     items: [
       {

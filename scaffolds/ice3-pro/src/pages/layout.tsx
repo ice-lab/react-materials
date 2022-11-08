@@ -1,10 +1,10 @@
 import { Outlet, Link, useLocation } from 'ice';
 import ProLayout from '@ant-design/pro-layout';
 import { asideMenuConfig } from '@/menuConfig';
+import AvatarDropdown from '@/components/AvatarDropdown';
 import store from '@/store';
 import logo from '@/assets/logo.png';
 import styles from './layout.module.css';
-import AvatarDropdown from '@/components/AvatarDropdown';
 
 export default function Layout() {
   const location = useLocation();

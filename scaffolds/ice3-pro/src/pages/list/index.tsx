@@ -27,10 +27,17 @@ const columns: ProColumns<GithubIssueItem>[] = [
     title: 'id',
     dataIndex: 'id',
     ellipsis: true,
+    width: 80,
   },
   {
     title: '名称',
     dataIndex: 'name',
+    width: 200,
+  },
+  {
+    title: 'Stars',
+    dataIndex: 'star',
+    width: 200,
   },
   {
     title: '描述',
@@ -40,6 +47,7 @@ const columns: ProColumns<GithubIssueItem>[] = [
     title: '操作',
     valueType: 'option',
     key: 'option',
+    width: 200,
     render: (text, record, _, action) => [
       <a
         key="editable"

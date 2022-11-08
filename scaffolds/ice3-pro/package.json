@@ -17,7 +17,7 @@
     "@ant-design/pro-layout": "^7.1.6",
     "@ant-design/pro-table": "^3.0.17",
     "@ice/runtime": "release",
-    "antd": "^4.23.5",
+    "antd": "^4.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
