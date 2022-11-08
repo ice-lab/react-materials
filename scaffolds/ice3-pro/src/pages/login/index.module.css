@@ -3,7 +3,6 @@
   flex-direction: column;
   height: 100vh;
   overflow: auto;
-  background-color: #f0f2f5;
 }
 
 .container :global {

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { history, useAuth } from 'ice';
 import { message, Alert } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { LoginForm, ProFormText, ProFormCheckbox } from '@ant-design/pro-components';
+import { ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
 import styles from './index.module.css';
 import type { LoginParams, LoginResult } from '@/interfaces/user';
 import { login, fetchUserInfo } from '@/services/user';

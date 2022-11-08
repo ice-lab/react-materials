@@ -23,11 +23,9 @@ export default function Layout() {
         pathname: location.pathname,
       }}
       layout='mix'
-      fixSiderbar
       rightContentRender={() => (
         <AvatarDropdown avatar={userState.currentUser.avatar} name={userState.currentUser.name} />
       )}
-      menuHeaderRender={undefined}
       menuDataRender={() => asideMenuConfig}
       menuItemRender={(item, defaultDom) => {
         if (!item.path) {
