@@ -1,4 +1,4 @@
-import { defineAppConfig, history } from 'ice';
+import { defineAppConfig, history, GetAppData } from 'ice';
 import { fetchUserInfo } from './services/user';
 import { defineAuthConfig } from '@ice/plugin-auth/esm/types';
 import { defineStoreConfig } from '@ice/plugin-store/esm/types';
@@ -29,30 +29,22 @@ export const store = defineStoreConfig(async (appData) => {
 
 export const request = defineRequestConfig(() => ({
   baseURL: '/api',
-}))
+}));
 
-export const getAppData = async (ctx) => {
-  console.log('======>', ctx);
-  const getUserInfo = async () => {
-    try {
-      const userInfo = await fetchUserInfo();
-      return userInfo;
-    } catch (error) {
-      // FIXME: history is null in getAppData
-      history?.push(`/login?redirect=${window.location.pathname}`);
-    }
-    return undefined;
-  };
-
-  // 兼容 SSR 的情况
-  const userInfo = typeof window === 'undefined' ? {
-    name: 'Admin',
-    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
-    userid: '00000001',
-    userType: 'admin',
-  } : await getUserInfo();
+export const getAppData: GetAppData = async (ctx) => {
+  const userInfo = await getUserInfo();
 
   return {
     userInfo,
   }
 }
+
+async function getUserInfo() {
+  try {
+    const userInfo = await fetchUserInfo();
+    return userInfo;
+  } catch (error) {
+    history?.push(`/login?redirect=${window.location.pathname}`);
+  }
+  return undefined;
+};
