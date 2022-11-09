@@ -1,6 +1,7 @@
 import { TableOutlined, WarningOutlined, FormOutlined, DashboardOutlined } from '@ant-design/icons';
+import type { MenuDataItem } from '@ant-design/pro-layout';
 
-const asideMenuConfig = [
+const asideMenuConfig: MenuDataItem[] = [
   {
     name: '工作台',
     path: '/',
@@ -17,9 +18,18 @@ const asideMenuConfig = [
     icon: <TableOutlined />,
   },
   {
-    name: '404',
-    path: '/404',
+    name: '结果&异常',
     icon: <WarningOutlined />,
+    children: [
+      {
+        name: '成功',
+        path: '/success',
+      },
+      {
+        name: '404',
+        path: '/404',
+      },
+    ]
   },
 ];
 

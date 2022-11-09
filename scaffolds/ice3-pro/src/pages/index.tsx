@@ -7,7 +7,6 @@ import CardPieChart from '@/components/CardPieChart';
 import CardRankChart from '@/components/CardRankChart';
 import CardTypebarChart from '@/components/CardTypebarChart';
 import { defineGetConfig } from 'ice';
-import styles from './index.module.css';
 
 export default function Dashboard() {
   return (
