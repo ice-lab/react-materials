@@ -1,28 +1,20 @@
 import { defineGetConfig, request } from 'ice';
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, Tag, Space } from 'antd';
+import { Button } from 'antd';
 import React, { useRef } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
 
-interface GithubIssueItem {
+interface GithubRepoItem {
   url: string;
   id: number;
-  number: number;
-  title: string;
-  labels: {
-    name: string;
-    color: string;
-  }[];
-  state: string;
-  comments: number;
-  created_at: string;
-  updated_at: string;
-  closed_at?: string;
+  name: string;
+  star: string;
+  description: string;
 };
 
-const columns: ProColumns<GithubIssueItem>[] = [
+const columns: ProColumns<GithubRepoItem>[] = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -68,14 +60,14 @@ const TableList: React.FC = () => {
   const actionRef = useRef<ActionType>();
   return (
     <PageContainer>
-      <ProTable<GithubIssueItem>
+      <ProTable<GithubRepoItem>
         columns={columns}
         actionRef={actionRef}
         cardBordered
         request={async (params = {}, sort, filter) => {
           console.log(sort, filter);
           return request<{
-            data: GithubIssueItem[];
+            data: GithubRepoItem[];
           }>('/repos', {
             params,
           });
