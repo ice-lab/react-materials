@@ -11,7 +11,7 @@ export default function Layout() {
   const [userState] = store.useModel('user');
 
   if (['/login'].includes(location.pathname)) {
-    return <Outlet />
+    return <Outlet />;
   }
 
   return (
@@ -23,7 +23,7 @@ export default function Layout() {
       location={{
         pathname: location.pathname,
       }}
-      layout='mix'
+      layout="mix"
       rightContentRender={() => (
         <AvatarDropdown avatar={userState.currentUser.avatar} name={userState.currentUser.name} />
       )}
@@ -37,5 +37,5 @@ export default function Layout() {
     >
       <Outlet />
     </ProLayout>
-  )
+  );
 }

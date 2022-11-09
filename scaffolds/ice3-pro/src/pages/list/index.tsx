@@ -12,9 +12,9 @@ interface GithubRepoItem {
   name: string;
   star: string;
   description: string;
-};
+}
 
-const columns: ProColumns<GithubRepoItem>[] = [
+const columns: Array<ProColumns<GithubRepoItem>> = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -122,5 +122,5 @@ export default TableList;
 export const getConfig = defineGetConfig(() => {
   return {
     auth: ['admin'],
-  }
-})
+  };
+});

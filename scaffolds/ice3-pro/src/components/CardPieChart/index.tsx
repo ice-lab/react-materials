@@ -66,7 +66,7 @@ const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.
 
   const [type, setType] = useState('one');
   const changeType = (e: RadioChangeEvent) => {
-    setType(e.target.value)
+    setType(e.target.value);
   };
 
 

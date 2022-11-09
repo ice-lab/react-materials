@@ -79,7 +79,7 @@ export default {
       data: repos,
       page: 1,
       success: true,
-      total: 10
-    })
-  }
-}
+      total: 10,
+    });
+  },
+};

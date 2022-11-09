@@ -119,13 +119,13 @@ const Login: React.FC = () => {
         </div>
       </LoginForm>
     </div>
-  )
-}
+  );
+};
 
 export const getConfig = () => {
   return {
-    title: '登录'
-  }
-}
+    title: '登录',
+  };
+};
 
 export default Login;

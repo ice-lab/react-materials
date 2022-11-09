@@ -4,4 +4,4 @@ export default {
   'POST /api/form/submit': (req: Request, res: Response) => {
     res.send({ data: {}, success: true });
   },
-}
+};

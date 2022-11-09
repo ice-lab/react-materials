@@ -10,7 +10,7 @@ interface ChartItem {
 }
 
 interface CardConfig {
-  title?: string | React.ReactDOM;
+  title?: string | React.ReactNode;
   subTitle?: string | React.ReactNode;
   value?: string;
   chartData?: ChartItem[];

@@ -1,4 +1,4 @@
-import { Button, Card, Result } from "antd";
+import { Button, Card, Result } from 'antd';
 
 const extra = (
   <>
@@ -18,5 +18,5 @@ export default function Success() {
         extra={extra}
       />
     </Card>
-  )
+  );
 }

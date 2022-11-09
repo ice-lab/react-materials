@@ -22,14 +22,13 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ name, avatar }) => {
       pathname: '/login',
       search: pathname ? `redirect=${pathname}` : '',
     });
-  }
+  };
 
   const onMenuClick = useCallback((event: MenuInfo) => {
     const { key } = event;
     if (key === 'logout') {
       userDispatcher.updateCurrentUser({});
       loginOut();
-      return;
     }
   }, []);
 
@@ -37,9 +36,9 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ name, avatar }) => {
     items: [
       {
         key: 'logout', label: '退出登录', icon: <LogoutOutlined />, onClick: onMenuClick, className: styles.menu,
-      }
-    ]
-  }
+      },
+    ],
+  };
   return (
     <Dropdown menu={menu}>
       <span className={`${styles.action} ${styles.account}`}>
@@ -47,7 +46,7 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({ name, avatar }) => {
         <span>{name}</span>
       </span>
     </Dropdown>
-  )
-}
+  );
+};
 
 export default AvatarDropdown;

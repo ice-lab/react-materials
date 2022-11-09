@@ -16,8 +16,8 @@ export default function Form() {
   const onFinish = async (values: Record<string, any>) => {
     submitForm(values).then(() => {
       message.success('提交成功');
-    })
-  }
+    });
+  };
 
   return (
     <PageContainer content="表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。">
@@ -175,5 +175,5 @@ export default function Form() {
         </ProForm>
       </Card>
     </PageContainer>
-  )
+  );
 }

@@ -56,7 +56,8 @@ const CardGroupBarChart: React.FunctionComponent<CardGroupBarChartProps> = (prop
         width={10}
         height={chartHeight}
         data={chartData}
-        padding={['80', 'auto']}>
+        padding={['80', 'auto']}
+      >
         <Axis name="category" />
         <Axis name="value" />
         <Legend

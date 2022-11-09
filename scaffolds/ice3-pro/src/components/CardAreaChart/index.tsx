@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 import * as React from 'react';
 import { Card } from 'antd';
 import { Chart, Geom } from 'bizcharts';

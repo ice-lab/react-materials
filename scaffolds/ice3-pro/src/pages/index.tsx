@@ -40,7 +40,7 @@ export default function Dashboard() {
             </Row>
           </Suspense>
 
-        )
+        );
       }}
     </ClientOnly>
   );
@@ -49,5 +49,5 @@ export default function Dashboard() {
 export const getConfig = defineGetConfig(() => {
   return {
     auth: ['admin', 'user'],
-  }
-})
+  };
+});

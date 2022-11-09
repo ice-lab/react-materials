@@ -40,7 +40,8 @@ const CardRankChart: React.FunctionComponent<CardRankChartProps> = (props: CardR
           <div className={styles.histogram}>
             {dataSource &&
               dataSource.map((item, idx) => (
-                <div key={idx}
+                <div
+                  key={idx}
                   style={{ marginBottom: 20, display: 'flex', justifyContent: 'flex-start', flexDirection: 'column' }}
                 >
                   <div className={styles.hisTitle}>{item.name}</div>
@@ -60,9 +61,6 @@ const CardRankChart: React.FunctionComponent<CardRankChartProps> = (props: CardR
               <Divider type="horizontal" />
               <div
                 className={styles.subMain}
-                direction="row"
-                align="center"
-                justify="center"
               >
                 <div>
                   <div className={styles.subTypeName}>商品类目1</div>

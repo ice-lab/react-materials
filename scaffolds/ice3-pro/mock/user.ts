@@ -2,7 +2,7 @@ import type { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 
-const waitTime = (time: number = 1000) => {
+const waitTime = (time = 1000) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(true);
@@ -34,7 +34,7 @@ export default {
         success: false,
         userType: 'guest',
       });
-    })
+    });
   },
   'GET /api/user': async (req: Request, res: Response) => {
     cookieParser()(req, res, async () => {
@@ -47,7 +47,7 @@ export default {
           errorCode: '401',
           errorMessage: '请先登录！',
           success: true,
-        })
+        });
         return;
       }
       res.send({
@@ -55,10 +55,10 @@ export default {
         avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
         userid: '00000001',
         userType: cookies['ice_user_type'],
-      })
-    })
+      });
+    });
   },
   'POST /api/logout': (req: Request, res: Response) => {
     res.send({ data: {}, success: true });
   },
-}
+};

@@ -21,10 +21,10 @@ export const store = defineStoreConfig(async (appData) => {
   return {
     initialStates: {
       user: {
-        currentUser: userInfo
-      }
-    }
-  }
+        currentUser: userInfo,
+      },
+    },
+  };
 });
 
 export const request = defineRequestConfig(() => ({
@@ -36,8 +36,8 @@ export const getAppData: GetAppData = async (ctx) => {
 
   return {
     userInfo,
-  }
-}
+  };
+};
 
 async function getUserInfo() {
   try {
@@ -47,4 +47,4 @@ async function getUserInfo() {
     history?.push(`/login?redirect=${window.location.pathname}`);
   }
   return undefined;
-};
+}
