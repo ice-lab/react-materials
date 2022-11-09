@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Radio, Card, RadioChangeEvent } from 'antd';
+import { Radio, Card } from 'antd';
+import type { RadioChangeEvent } from 'antd';
 import { Chart, Geom, Coord, Axis, Legend, Guide } from 'bizcharts';
 import styles from './index.module.css';
 

@@ -31,7 +31,8 @@ export const request = defineRequestConfig(() => ({
   baseURL: '/api',
 }))
 
-export const getAppData = async () => {
+export const getAppData = async (ctx) => {
+  console.log('======>', ctx);
   const getUserInfo = async () => {
     try {
       const userInfo = await fetchUserInfo();

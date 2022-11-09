@@ -1,38 +1,48 @@
+import { defineGetConfig, ClientOnly } from 'ice';
 import { Row, Col } from 'antd';
-import CardAreaChart from '@/components/CardAreaChart';
-import CardBarChart from '@/components/CardBarChart';
-import CardGroupBarChart from '@/components/CardGroupBarChart';
-import CardLineChart from '@/components/CardLineChart';
-import CardPieChart from '@/components/CardPieChart';
-import CardRankChart from '@/components/CardRankChart';
-import CardTypebarChart from '@/components/CardTypebarChart';
-import { defineGetConfig } from 'ice';
+import { lazy, Suspense } from 'react';
 
 export default function Dashboard() {
   return (
-    <Row gutter={[16, 16]}>
-      <Col xs={24} sm={12} md={6}>
-        <CardBarChart />
-      </Col>
-      <Col xs={24} sm={12} md={6}>
-        <CardAreaChart />
-      </Col>
-      <Col xs={24} sm={12} md={6}>
-        <CardTypebarChart />
-      </Col>
-      <Col xs={24} sm={12} md={6}>
-        <CardLineChart />
-      </Col>
-      <Col span={24}>
-        <CardRankChart />
-      </Col>
-      <Col span={8}>
-        <CardPieChart />
-      </Col>
-      <Col span={16}>
-        <CardGroupBarChart />
-      </Col>
-    </Row>
+    <ClientOnly fallback={<>loading...</>}>
+      {() => {
+        const CardBarChart = lazy(() => import('@/components/CardBarChart'));
+        const CardAreaChart = lazy(() => import('@/components/CardAreaChart'));
+        const CardTypebarChart = lazy(() => import('@/components/CardTypebarChart'));
+        const CardLineChart = lazy(() => import('@/components/CardLineChart'));
+        const CardRankChart = lazy(() => import('@/components/CardRankChart'));
+        const CardPieChart = lazy(() => import('@/components/CardPieChart'));
+        const CardGroupBarChart = lazy(() => import('@/components/CardGroupBarChart'));
+        return (
+          <Suspense>
+            <Row gutter={[16, 16]}>
+              <Col xs={24} sm={12} md={6}>
+                <CardBarChart />
+              </Col>
+              <Col xs={24} sm={12} md={6}>
+                <CardAreaChart />
+              </Col>
+              <Col xs={24} sm={12} md={6}>
+                <CardTypebarChart />
+              </Col>
+              <Col xs={24} sm={12} md={6}>
+                <CardLineChart />
+              </Col>
+              <Col span={24}>
+                <CardRankChart />
+              </Col>
+              <Col span={8}>
+                <CardPieChart />
+              </Col>
+              <Col span={16}>
+                <CardGroupBarChart />
+              </Col>
+            </Row>
+          </Suspense>
+
+        )
+      }}
+    </ClientOnly>
   );
 }
 

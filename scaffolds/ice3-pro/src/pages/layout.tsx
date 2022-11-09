@@ -16,6 +16,7 @@ export default function Layout() {
 
   return (
     <ProLayout
+      menu={{ defaultOpenAll: true }}
       className={styles.layout}
       logo={<img src={logo} alt="logo" />}
       title="ICE Pro"
