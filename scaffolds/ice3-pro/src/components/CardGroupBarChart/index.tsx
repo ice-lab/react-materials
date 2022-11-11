@@ -1,17 +1,11 @@
 import * as React from 'react';
 import { Card } from 'antd';
-import { Chart, Geom, Axis, Legend } from 'bizcharts';
+import { Column } from '@ant-design/charts';
 import styles from './index.module.css';
-
-interface ChartItem {
-  type?: string;
-  value?: number;
-  category?: string;
-}
 
 interface CardConfig {
   title?: string;
-  chartData?: ChartItem[];
+  chartData?: Array<Record<string, any>>;
   chartHeight?: number;
 }
 
@@ -50,35 +44,28 @@ const CardGroupBarChart: React.FunctionComponent<CardGroupBarChartProps> = (prop
 
   return (
     <Card title={title} bordered={false} className={styles.cardGroupBarChart}>
-      <Chart
-        renderer="canvas"
-        forceFit
+      <Column
+        data={chartData!}
+        xField="category"
+        yField="value"
+        seriesField="type"
+        isGroup
         width={10}
         height={chartHeight}
-        data={chartData}
-        padding={['80', 'auto']}
-      >
-        <Axis name="category" />
-        <Axis name="value" />
-        <Legend
-          textStyle={{
-            fill: '#666',
-            fontSize: 14,
-          }}
-        />
-        <Geom
-          type="interval"
-          position="category*value"
-          color="type"
-          adjust={[
-            {
-              type: 'dodge',
-              marginRatio: 1 / 16,
-            },
-          ]}
-        />
-      </Chart>
-      {/* </Card.Content> */}
+        label={{
+          // 可手动配置 label 数据标签位置
+          position: 'middle',
+          // 可配置附加的布局方法
+          layout: [
+            // 柱形图数据标签位置自动调整
+            { type: 'interval-adjust-position' },
+            // 数据标签防遮挡
+            { type: 'interval-hide-overlap' },
+            // 数据标签文颜色自动调整
+            { type: 'adjust-color' },
+          ],
+        }}
+      />
     </Card >
   );
 };

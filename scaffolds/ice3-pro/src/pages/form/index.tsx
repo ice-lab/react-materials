@@ -9,7 +9,6 @@ import ProForm, {
   ProFormText,
   ProFormTextArea,
 } from '@ant-design/pro-form';
-import styles from './index.module.css';
 import { submitForm } from '@/services/form';
 
 export default function Form() {
@@ -85,7 +84,7 @@ export default function Form() {
             label={
               <span>
                 客户
-                <em className={styles.optional}>（选填）</em>
+                <em>（选填）</em>
               </span>
             }
             tooltip="目标的服务对象"
@@ -98,7 +97,7 @@ export default function Form() {
             label={
               <span>
                 邀评人
-                <em className={styles.optional}>（选填）</em>
+                <em>（选填）</em>
               </span>
             }
             name="invites"
@@ -109,7 +108,7 @@ export default function Form() {
             label={
               <span>
                 权重
-                <em className={styles.optional}>（选填）</em>
+                <em>（选填）</em>
               </span>
             }
             name="weight"

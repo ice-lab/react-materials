@@ -1,19 +1,14 @@
 import * as React from 'react';
 import { Card } from 'antd';
-import { Chart, Geom } from 'bizcharts';
 import mock from './mock';
 import styles from './index.module.css';
-
-interface ChartItem {
-  date?: string;
-  value?: number;
-}
+import { TinyColumn } from '@ant-design/charts';
 
 interface CardConfig {
   title?: string | React.ReactNode;
   subTitle?: string | React.ReactNode;
   value?: string;
-  chartData?: ChartItem[];
+  chartData?: number[];
   des?: string;
   rate?: number;
   chartHeight?: number;
@@ -44,20 +39,11 @@ const CardBarChart: React.FunctionComponent<CardBarChartProps> = (props: CardBar
       <div className={styles.cardSubTitle}>{subTitle}</div>
       <div className={styles.cardValue}>{value}</div>
       <div className={styles.cardDes}>{des}<span>{rate}↑</span></div>
-      <Chart
+      <TinyColumn
+        data={chartData!}
         width={10}
         height={chartHeight}
-        data={chartData}
-        scale={{
-          date: {
-            range: [0, 1],
-          },
-        }}
-        forceFit
-        padding={['auto', '16']}
-      >
-        <Geom type="interval" position="date*value" color="#29A5FF" />
-      </Chart>
+      />
     </Card>
   );
 };

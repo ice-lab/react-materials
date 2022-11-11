@@ -1,8 +1,5 @@
 export default {
   value: '82,234',
-  saleList: [
-    { type: 'a', value: 3 },
-    { type: 'b', value: 9 },
-  ],
+  salePercent: 0.7,
   dailySale: '10',
 };

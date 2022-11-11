@@ -7,13 +7,13 @@
   transition: all 0.3s;
 
 
- &:hover {
-  background: rgba(0, 0, 0, 0.025);
-}
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
 
-&:global(.opened) {
-  background: rgba(0, 0, 0, 0.025);
-}
+  &:global(.opened) {
+    background: rgba(0, 0, 0, 0.025);
+  }
 }
 
 .action > span {

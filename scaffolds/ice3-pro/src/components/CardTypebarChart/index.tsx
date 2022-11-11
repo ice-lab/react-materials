@@ -1,28 +1,23 @@
 import * as React from 'react';
 import { Card } from 'antd';
-import { Chart, Geom, Coord } from 'bizcharts';
+import { RingProgress } from '@ant-design/charts';
 import mock from './mock';
 import styles from './index.module.css';
-
-interface ChartItem {
-  date?: string;
-  value?: number;
-}
 
 interface CardConfig {
   title?: string | React.ReactNode;
   subTitle?: string | React.ReactNode;
   value?: string;
-  chartData?: ChartItem[];
+  chartData?: number;
   des?: string;
   rate?: string;
   chartHeight?: number;
 }
 
 const DEFAULT_DATA: CardConfig = {
-  subTitle: '门店量',
+  subTitle: '商品销售',
   value: mock.value,
-  chartData: mock.saleList,
+  chartData: mock.salePercent,
   des: '周同比:',
   rate: '10.1',
   chartHeight: 100,
@@ -37,28 +32,20 @@ const CardTypebarChart: React.FunctionComponent<CardTypebarChartProps> = (props:
     cardConfig = DEFAULT_DATA,
   } = props;
 
-  const { title, subTitle, value, chartData, des, rate, chartHeight } = cardConfig;
+  const { title, subTitle, value, des, rate, chartHeight, chartData } = cardConfig;
 
   return (
     <Card title={title}>
       <div className={styles.cardSubTitle}>{subTitle}</div>
       <div className={styles.cardValue}>{value}</div>
       <div className={styles.cardDes}>{des}<span>{rate}↑</span></div>
-      <Chart
-        width={10}
+      <RingProgress
+        percent={chartData!}
         height={chartHeight}
-        data={chartData}
-        scale={{
-          date: {
-            range: [0, 1],
-          },
-        }}
-        forceFit
-        padding={['auto', 'auto']}
-      >
-        <Coord transpose />
-        <Geom type="interval" position="type*value" color={['type', ['#096DD9', '#209BFA']]} />
-      </Chart>
+        width={10}
+        color={['#5B8FF9', '#E8EDF3']}
+        progressStyle={{ width: 30 }}
+      />
     </Card>
   );
 };

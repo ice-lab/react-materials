@@ -1,22 +1,15 @@
 import * as React from 'react';
 import { Radio, Card } from 'antd';
 import type { RadioChangeEvent } from 'antd';
-import { Chart, Geom, Coord, Axis, Legend, Guide } from 'bizcharts';
+import { Pie } from '@ant-design/charts';
 import styles from './index.module.css';
 
 const { useState } = React;
-const { Html } = Guide;
-
-interface ChartItem {
-  type?: string;
-  value?: number;
-  title?: string;
-}
 
 interface CardConfig {
   title?: string;
   value?: number;
-  chartData?: ChartItem[];
+  chartData?: Array<Record<string, any>>;
   chartHeight?: number;
 }
 
@@ -25,29 +18,29 @@ const DEFAULT_DATA: CardConfig = {
   value: 183112,
   chartData: [
     {
-      type: '类别一事例一',
+      type: '事例一',
       value: 40,
-      title: '类别一事例一 | 40.00%     ¥4,544',
+      title: '事例一 | 40.00%     ¥4,544',
     },
     {
-      type: '类别一事例二',
+      type: '事例二',
       value: 21,
-      title: '类别一事例二 | 22.12%     ¥2,344',
+      title: '事例二 | 22.12%     ¥2,344',
     },
     {
-      type: '类别一事例三',
+      type: '事例三',
       value: 17,
-      title: '类别一事例三 | 16.59%     ¥3,512',
+      title: '事例三 | 16.59%     ¥3,512',
     },
     {
-      type: '类别一事例四',
+      type: '事例四',
       value: 13,
-      title: '类别一事例四 | 13.11%     ¥2,341',
+      title: '事例四 | 13.11%     ¥2,341',
     },
     {
-      type: '类别一事例五',
+      type: '事例五',
       value: 9,
-      title: '类别一事例五 |  9.29%     ¥1,231',
+      title: '事例五 |  9.29%     ¥1,231',
     },
   ],
   chartHeight: 500,
@@ -62,7 +55,7 @@ const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.
     cardConfig = DEFAULT_DATA,
   } = props;
 
-  const { title, value, chartData, chartHeight } = cardConfig;
+  const { title, chartData, chartHeight } = cardConfig;
 
   const [type, setType] = useState('one');
   const changeType = (e: RadioChangeEvent) => {
@@ -87,38 +80,55 @@ const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.
           类目三
         </Radio>
       </Radio.Group>
-      <Chart width={10} height={chartHeight} forceFit data={chartData} padding={['auto', 'auto']}>
-        <Coord type="theta" radius={0.75} innerRadius={0.6} />
-        <Axis name="percent" />
-        <Legend
-          position="bottom"
-          layout="vertical"
-          offsetY={-30}
-          textStyle={{
-            fill: '#666',
-            fontSize: 14,
-          }}
-          itemMarginBottom={24}
-        />
-        <Guide>
-          <Html
-            position={['50%', '50%']}
-            // eslint-disable-next-line max-len
-            html={`<div style='color:#333;font-size:16px;text-align: center;width: 113px;'>销售额<br><span style='color:#333;font-family: Roboto-Bold;font-size:24px'>¥ ${value}</span></div>`}
-            alignX="middle"
-            alignY="middle"
-          />
-        </Guide>
-        <Geom
-          type="intervalStack"
-          position="value"
-          color="title"
-          style={{
-            lineWidth: 1,
-            stroke: '#fff',
-          }}
-        />
-      </Chart>
+      <Pie
+        data={chartData!}
+        angleField="value"
+        colorField="type"
+        appendPadding={10}
+        legend={{
+          position: 'bottom',
+        }}
+        height={chartHeight}
+        label={{
+          type: 'inner',
+          offset: '-50%',
+          autoRotate: false,
+          style: { textAlign: 'center' },
+          formatter: ({ percent }) => `${(percent * 100).toFixed(0)}%`,
+        }}
+        radius={1}
+        innerRadius={0.64}
+        meta={{
+          value: {
+            formatter: (v) => `¥ ${v}`,
+          },
+        }}
+        statistic={{
+          title: {
+            offsetY: -8,
+          },
+          content: {
+            offsetY: -4,
+          },
+        }}
+        interactions={[
+          { type: 'element-selected' },
+          { type: 'element-active' },
+          {
+            type: 'pie-statistic-active',
+            cfg: {
+              start: [
+                { trigger: 'element:mouseenter', action: 'pie-statistic:change' },
+                { trigger: 'legend-item:mouseenter', action: 'pie-statistic:change' },
+              ],
+              end: [
+                { trigger: 'element:mouseleave', action: 'pie-statistic:reset' },
+                { trigger: 'legend-item:mouseleave', action: 'pie-statistic:reset' },
+              ],
+            },
+          },
+        ]}
+      />
     </Card>
   );
 };

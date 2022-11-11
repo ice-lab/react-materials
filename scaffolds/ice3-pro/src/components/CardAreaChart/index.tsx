@@ -1,26 +1,20 @@
-/* eslint-disable react/no-unused-prop-types */
 import * as React from 'react';
 import { Card } from 'antd';
-import { Chart, Geom } from 'bizcharts';
+import { TinyArea } from '@ant-design/charts';
 import mock from './mock';
 import styles from './index.module.css';
 
-interface ChartItem {
-  date?: string | number;
-  value?: number;
+interface CardConfig {
+  title: string | React.ReactNode;
+  subTitle: string | React.ReactNode;
+  value: string;
+  chartData: number[];
+  des: string;
+  rate: string;
+  chartHeight: number;
 }
 
-interface CardAreaChartProps {
-  title?: string | React.ReactNode;
-  subTitle?: string | React.ReactNode;
-  value?: string;
-  chartData?: ChartItem[];
-  des?: string;
-  rate?: string;
-  chartHeight?: number;
-}
-
-const DEFAULT_DATA: CardAreaChartProps = {
+const DEFAULT_DATA: CardConfig = {
   title: '',
   subTitle: '访问量',
   value: mock.value,
@@ -30,30 +24,36 @@ const DEFAULT_DATA: CardAreaChartProps = {
   chartHeight: 100,
 };
 
-const CardAreaChart: React.FunctionComponent<CardAreaChartProps> = (props = DEFAULT_DATA): JSX.Element => {
-  const { title, subTitle, value, chartData, des, rate, chartHeight } = { ...DEFAULT_DATA, ...props };
+interface CardAreaChartProps {
+  cardConfig?: CardConfig;
+}
+
+const CardAreaChart: React.FunctionComponent<CardAreaChartProps> = (props): JSX.Element => {
+  const {
+    cardConfig = DEFAULT_DATA,
+  } = props;
+  const { title, subTitle, value, chartData, des, rate, chartHeight } = cardConfig;
 
   return (
     <Card title={title} className={styles.areaChart}>
       <div className={styles.cardSubTitle}>{subTitle}</div>
       <div className={styles.cardValue}>{value}</div>
       <div className={styles.cardDes}>{des}<span>{rate}↑</span></div>
-      <Chart
+      <TinyArea
+        data={chartData!}
         width={10}
         height={chartHeight}
-        data={chartData}
-        scale={{
-          date: {
-            range: [0, 1],
-          },
+        smooth
+        line={{
+          size: 2,
+          color: '#00D6CB',
         }}
-        forceFit
-        padding={['auto', '0']}
-      >
-        <Geom type="line" position="date*value" color="#00D6CB" shape="smooth" opacity={1} />
-        <Geom type="area" position="date*value" color="#00D6CB" shape="smooth" opacity={0.1} />
-
-      </Chart>
+        areaStyle={{
+          lineWidth: 10,
+          fill: '#00D6CB',
+          fillOpacity: 0.2,
+        }}
+      />
     </Card>
   );
 };
