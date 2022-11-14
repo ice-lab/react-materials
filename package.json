@@ -13,7 +13,7 @@
     "eslint": "eslint --cache --ext .ts,.tsx ./",
     "eslint:fix": "npm run eslint -- --fix",
     "stylelint": "stylelint \"**/*.{css,scss,less}\"",
-    "stylelint:fix": "npm run  stylelint -- --fix",
+    "stylelint:fix": "npm run stylelint -- --fix",
     "prepublishOnly": "npm run generate"
   },
   "files": [
