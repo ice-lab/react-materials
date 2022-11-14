@@ -6,6 +6,7 @@
     "src/",
     "public/",
     "_gitignore",
+    ".browserslistrc",
     "ice.config.mts",
     "tsconfig.json"
   ],
