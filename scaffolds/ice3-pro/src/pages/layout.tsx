@@ -5,6 +5,7 @@ import AvatarDropdown from '@/components/AvatarDropdown';
 import store from '@/store';
 import logo from '@/assets/logo.png';
 import styles from './layout.module.css';
+import Footer from '@/components/Footer';
 
 export default function Layout() {
   const location = useLocation();
@@ -34,6 +35,7 @@ export default function Layout() {
         }
         return <Link to={item.path}>{defaultDom}</Link>;
       }}
+      footerRender={() => <Footer />}
     >
       <Outlet />
     </ProLayout>

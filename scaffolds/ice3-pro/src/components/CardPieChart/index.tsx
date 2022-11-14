@@ -46,11 +46,11 @@ const DEFAULT_DATA: CardConfig = {
   chartHeight: 500,
 };
 
-export interface CardLineChartProps {
+export interface CardPieChartProps {
   cardConfig?: CardConfig;
 }
 
-const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.Element => {
+const CardPieChart: React.FunctionComponent<CardPieChartProps> = (props): JSX.Element => {
   const {
     cardConfig = DEFAULT_DATA,
   } = props;
@@ -69,6 +69,7 @@ const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.
         value={type}
         onChange={changeType}
         className={styles.radioGroup}
+        optionType="button"
       >
         <Radio value="one" className={styles.radioFlex}>
           类目一
@@ -133,4 +134,4 @@ const CardLineChart: React.FunctionComponent<CardLineChartProps> = (props): JSX.
   );
 };
 
-export default CardLineChart;
+export default CardPieChart;

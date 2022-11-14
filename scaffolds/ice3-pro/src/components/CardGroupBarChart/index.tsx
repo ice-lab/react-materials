@@ -43,7 +43,7 @@ const CardGroupBarChart: React.FunctionComponent<CardGroupBarChartProps> = (prop
   const { title, chartData, chartHeight } = cardConfig;
 
   return (
-    <Card title={title} bordered={false} className={styles.cardGroupBarChart}>
+    <Card title={title} className={styles.cardGroupBarChart}>
       <Column
         data={chartData!}
         xField="category"

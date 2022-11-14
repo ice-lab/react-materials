@@ -31,7 +31,7 @@ export const request = defineRequestConfig(() => ({
   baseURL: '/api',
 }));
 
-export const getAppData: GetAppData = async (ctx) => {
+export const getAppData: GetAppData = async () => {
   const userInfo = await getUserInfo();
 
   return {

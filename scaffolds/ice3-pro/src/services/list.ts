@@ -1,5 +1,3 @@
-import type { Request, Response } from 'express';
-
 const repos = [
   {
     id: 1,
@@ -73,13 +71,13 @@ const repos = [
   },
 ];
 
-export default {
-  'GET /api/repos': (req: Request, res: Response) => {
-    res.send({
-      data: repos,
-      page: 1,
-      success: true,
-      total: 10,
-    });
-  },
-};
+export async function getRepos(params: Record<string, any>) {
+  // return await request.get('/repos');
+  console.log(params);
+  return {
+    data: repos,
+    page: 1,
+    success: true,
+    total: 10,
+  };
+}

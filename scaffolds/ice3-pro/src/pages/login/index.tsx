@@ -7,7 +7,6 @@ import styles from './index.module.css';
 import type { LoginParams, LoginResult } from '@/interfaces/user';
 import { login, fetchUserInfo } from '@/services/user';
 import store from '@/store';
-import { setCookie } from '@/utils/cookie';
 import logo from '@/assets/logo.png';
 
 const LoginMessage: React.FC<{
@@ -40,7 +39,6 @@ const Login: React.FC = () => {
       const result = await login(values);
       if (result.success) {
         message.success('登录成功！');
-        setCookie('ice_user_type', result.userType!, { path: '/', 'max-age': 60 * 60 * 24 * 365 });
         setAuth({
           admin: result.userType === 'admin',
           user: result.userType === 'user',
@@ -63,7 +61,7 @@ const Login: React.FC = () => {
       <LoginForm
         title="ICE Pro"
         logo={<img alt="logo" src={logo} />}
-        subTitle="基于 React 的应用研发框架，开箱即用，同时支持移动端和桌面端"
+        subTitle="基于 ice.js 3 开箱即用的中后台模板"
         onFinish={async (values) => {
           await handleSubmit(values as LoginParams);
         }}

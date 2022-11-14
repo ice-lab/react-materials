@@ -1,10 +1,11 @@
-import { defineGetConfig, request } from 'ice';
+import { defineGetConfig } from 'ice';
 import { PlusOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import React, { useRef } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import ProTable from '@ant-design/pro-table';
+import { getRepos } from '@/services/list';
 
 interface GithubRepoItem {
   url: string;
@@ -64,13 +65,9 @@ const TableList: React.FC = () => {
         columns={columns}
         actionRef={actionRef}
         cardBordered
-        request={async (params = {}, sort, filter) => {
+        request={(params = {}, sort, filter) => {
           console.log(sort, filter);
-          return request<{
-            data: GithubRepoItem[];
-          }>('/repos', {
-            params,
-          });
+          return getRepos(params);
         }}
         editable={{
           type: 'multiple',

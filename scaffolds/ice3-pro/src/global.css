@@ -1,9 +1,17 @@
 @import 'antd/dist/antd.css';
 
-body {
-  .ant-pro-page-container-children-content {
-    padding-block: 0 !important;
-    padding-inline: 0 !important;
-    margin: 24px;
-  }
+.ant-page-header {
+  background: white;
+}
+
+.ant-pro .ant-pro-layout .ant-pro-layout-content {
+  background: #f0f2f5;
+  min-height: calc(100vh - 56px - 124px);
+}
+
+.ant-pro-layout 
+.ant-pro-layout-content 
+.ant-pro-page-container 
+.ant-pro-page-container-children-content {
+  padding-block: 24px;
 }
