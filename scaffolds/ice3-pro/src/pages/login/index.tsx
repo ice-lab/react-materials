@@ -45,7 +45,7 @@ const Login: React.FC = () => {
         });
         await updateUserInfo();
         const urlParams = new URL(window.location.href).searchParams;
-        history?.push(urlParams.get('redirect') || '/');
+        history?.push(urlParams.get('redirect') || '/dashboard');
         return;
       }
       console.log(result);
