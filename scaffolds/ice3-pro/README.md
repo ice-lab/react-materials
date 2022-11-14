@@ -18,14 +18,18 @@ $ npm start
 ├── public
 │   ├── favicon.ico   
 ├── src
-│   ├── app.ts                      # The app entry
-│   ├── assets
-│   │   └── logo.png
-│   ├── document.tsx
-│   ├── pages                       # Pages directory
-│   │   ├── index.css
-│   │   └── index.tsx               # Index page entry
-│   └── typings.d.ts
+|  ├── app.ts                       # App entry
+|  ├── assets
+|  ├── components                   # Common component
+|  ├── document.tsx
+|  ├── global.css                   # Global style
+|  ├── interfaces
+|  ├── menuConfig.tsx               # Layout menus
+|  ├── models
+|  ├── pages                        # Pages directory
+|  ├── services
+|  ├── store.ts                     # App store
+|  └── typings.d.ts
 └── tsconfig.json
 ```
 
