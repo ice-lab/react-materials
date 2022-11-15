@@ -1,4 +1,4 @@
-import { defineGetConfig } from 'ice';
+import { definePageConfig } from 'ice';
 import { PlusOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import React, { useRef } from 'react';
@@ -116,7 +116,7 @@ const TableList: React.FC = () => {
 
 export default TableList;
 
-export const getConfig = defineGetConfig(() => {
+export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin'],
   };

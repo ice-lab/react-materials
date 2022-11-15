@@ -1,4 +1,4 @@
-import { defineGetConfig, ClientOnly } from 'ice';
+import { definePageConfig, ClientOnly } from 'ice';
 import { Row, Col } from 'antd';
 import { lazy, Suspense } from 'react';
 
@@ -46,7 +46,7 @@ export default function Dashboard() {
   );
 }
 
-export const getConfig = defineGetConfig(() => {
+export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin', 'user'],
   };

@@ -1,4 +1,4 @@
-import { defineAppConfig, history, GetAppData } from 'ice';
+import { defineAppConfig, history, defineDataLoader } from 'ice';
 import { fetchUserInfo } from './services/user';
 import { defineAuthConfig } from '@ice/plugin-auth/esm/types';
 import { defineStoreConfig } from '@ice/plugin-store/esm/types';
@@ -6,7 +6,7 @@ import { defineRequestConfig } from '@ice/plugin-request/esm/types';
 
 export default defineAppConfig({});
 
-export const auth = defineAuthConfig(async (appData) => {
+export const authConfig = defineAuthConfig(async (appData) => {
   const { userInfo = {} } = appData;
   return {
     initialAuth: {
@@ -16,7 +16,7 @@ export const auth = defineAuthConfig(async (appData) => {
   };
 });
 
-export const store = defineStoreConfig(async (appData) => {
+export const storeConfig = defineStoreConfig(async (appData) => {
   const { userInfo = {} } = appData;
   return {
     initialStates: {
@@ -31,13 +31,13 @@ export const request = defineRequestConfig(() => ({
   baseURL: '/api',
 }));
 
-export const getAppData: GetAppData = async () => {
+export const dataLoader = defineDataLoader(async () => {
   const userInfo = await getUserInfo();
-
+  console.log('==========>');
   return {
     userInfo,
   };
-};
+});
 
 async function getUserInfo() {
   try {

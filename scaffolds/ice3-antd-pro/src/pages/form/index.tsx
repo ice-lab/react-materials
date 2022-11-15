@@ -10,7 +10,7 @@ import ProForm, {
   ProFormTextArea,
 } from '@ant-design/pro-form';
 import { submitForm } from '@/services/form';
-import { defineGetConfig } from 'ice';
+import { definePageConfig } from 'ice';
 
 export default function Form() {
   const onFinish = async (values: Record<string, any>) => {
@@ -178,7 +178,7 @@ export default function Form() {
   );
 }
 
-export const getConfig = defineGetConfig(() => {
+export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin', 'user'],
   };
