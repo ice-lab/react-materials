@@ -33,7 +33,6 @@ export const request = defineRequestConfig(() => ({
 
 export const dataLoader = defineDataLoader(async () => {
   const userInfo = await getUserInfo();
-  console.log('==========>');
   return {
     userInfo,
   };
