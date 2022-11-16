@@ -22,3 +22,7 @@ screenshot.png
 .ice
 .history
 .faas_debug_tmp
+
+# yalc
+.yalc
+yalc.lock

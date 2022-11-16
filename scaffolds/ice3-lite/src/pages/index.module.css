@@ -19,6 +19,10 @@ p {
   text-align: center;
 }
 
+a {
+  font-size: 16px;
+}
+
 button {
   outline: none;
   border: none;

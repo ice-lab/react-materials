@@ -1,17 +1,14 @@
 {
-  "name": "ice-scaffold-simple",
-  "version": "1.0.5",
-  "description": "使用 TypeScript，未使用任何 UI 库。",
+  "name": "@ice/lite-scaffold",
+  "version": "1.0.0",
+  "description": "ice.js 3 lite 模板",
   "files": [
     "src/",
-    "build/",
     "public/",
-    "tests/",
     "_gitignore",
+    ".browserslistrc",
     "ice.config.mts",
-    "screenshot.png",
-    "tsconfig.json",
-    "jsconfig.json"
+    "tsconfig.json"
   ],
   "dependencies": {
     "@ice/runtime": "release",
@@ -29,11 +26,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scaffoldConfig": {
-    "name": "Simple",
-    "title": "Simple",
-    "category": "Basic",
-    "screenshot": "https://img.alicdn.com/tfs/TB1qdRsv.Y1gK0jSZFCXXcwqXXa-2878-1590.png"
   }
 }
