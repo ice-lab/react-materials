@@ -8,14 +8,14 @@ export default function Home() {
 
   return (
     <div className={styles.app}>
-      <header className={styles.appHeader}>
-        <img src={logo} alt="logo" className={styles.logo} />
-        <p className={styles.title}>
+      <header>
+        <img src={logo} alt="logo" />
+        <p>
           Hello ice.js 3
         </p>
       </header>
-      <div className={styles.body}>
-        <button type="button" onClick={updateCount}>
+      <main>
+        <button className={styles.button} type="button" onClick={updateCount}>
           👍🏻 {count}
         </button>
         <p>
@@ -23,6 +23,7 @@ export default function Home() {
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.link}
           >
             Learn React
           </a>
@@ -31,11 +32,12 @@ export default function Home() {
             href="https://v3.ice.work/"
             target="_blank"
             rel="noopener noreferrer"
+            className={styles.link}
           >
             Learn ice.js
           </a>
         </p>
-      </div>
+      </main>
     </div>
   );
 }
