@@ -1,0 +1,51 @@
+page {
+  --primary: black;
+  --bg-primary: white;
+  --link: #2a0b0b;
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 35px;
+  background: #3178f6;
+  box-shadow: 0 5px 10px 0 #ddd;
+  color: white;
+  font-size: calc(10px + 2vmin);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.appHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary, #282c34);
+  color: var(--primary);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.title {
+  font-size: 80rpx;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 10px;
+}

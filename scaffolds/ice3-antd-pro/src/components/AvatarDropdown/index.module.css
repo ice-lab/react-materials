@@ -1,0 +1,31 @@
+.action {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.025);
+  }
+
+  &:global(.opened) {
+    background: rgba(0, 0, 0, 0.025);
+  }
+}
+
+.action > span {
+  vertical-align: middle;
+}
+
+.account > .avatar {
+  margin-right: 8px;
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.menu {
+  min-width: 160px;
+}

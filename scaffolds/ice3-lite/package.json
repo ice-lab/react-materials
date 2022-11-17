@@ -1,0 +1,30 @@
+{
+  "name": "@ice/lite-scaffold",
+  "version": "1.0.1",
+  "description": "ice.js 3 lite 模板",
+  "files": [
+    "src/",
+    "public/",
+    "_gitignore",
+    ".browserslistrc",
+    "ice.config.mts",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@ice/runtime": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@ice/app": "^3.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
+  },
+  "scripts": {
+    "start": "ice start",
+    "build": "ice build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
