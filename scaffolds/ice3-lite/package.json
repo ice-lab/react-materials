@@ -1,6 +1,6 @@
 {
   "name": "@ice/lite-scaffold",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ice.js 3 lite 模板",
   "files": [
     "src/",
@@ -11,12 +11,12 @@
     "tsconfig.json"
   ],
   "dependencies": {
-    "@ice/runtime": "release",
+    "@ice/runtime": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ice/app": "release",
+    "@ice/app": "^3.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0"
   },

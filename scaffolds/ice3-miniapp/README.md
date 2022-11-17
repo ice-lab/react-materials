@@ -1,4 +1,4 @@
-# ice.js 3 Lite Scaffold
+# ice.js 3 Miniapp Scaffold
 
 ## Usage
 
