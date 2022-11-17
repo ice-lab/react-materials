@@ -10,4 +10,8 @@ export default defineConfig({
     store(),
     auth(),
   ],
+  server: {
+    bundle: true,
+    format: 'cjs',
+  },
 });

@@ -15,6 +15,7 @@ $ npm start
 ├── README.md
 ├── ice.config.mts                  # The project config
 ├── package.json
+├── .browserslistrc                 # Browsers that we support
 ├── public
 │   ├── favicon.ico   
 ├── src
@@ -23,7 +24,7 @@ $ npm start
 │   │   └── logo.png
 │   ├── document.tsx
 │   ├── pages                       # Pages directory
-│   │   ├── index.css
+│   │   ├── index.module.css
 │   │   └── index.tsx               # Index page entry
 │   └── typings.d.ts
 └── tsconfig.json
