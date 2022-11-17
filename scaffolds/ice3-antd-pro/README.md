@@ -15,6 +15,7 @@ $ npm start
 ├── README.md
 ├── ice.config.mts                  # The project config
 ├── package.json
+├── .browserslistrc                 # Browsers that we support
 ├── public
 │   ├── favicon.ico   
 ├── src
