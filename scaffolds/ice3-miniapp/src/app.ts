@@ -8,6 +8,6 @@ export default defineAppConfig({
 // MiniappManifest, see https://v3.ice.work/docs/guide/miniapp/app-config
 export const miniappManifest = {
   routes: [
-    'index'
+    'index',
   ],
 };
