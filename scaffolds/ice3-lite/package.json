@@ -1,6 +1,6 @@
 {
   "name": "@ice/lite-scaffold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ice.js 3 lite 模板",
   "files": [
     "src/",
