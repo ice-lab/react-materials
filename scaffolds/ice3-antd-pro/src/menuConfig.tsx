@@ -4,7 +4,7 @@ import type { MenuDataItem } from '@ant-design/pro-layout';
 const asideMenuConfig: MenuDataItem[] = [
   {
     name: '工作台',
-    path: '/dashboard',
+    path: '/',
     icon: <DashboardOutlined />,
   },
   {
