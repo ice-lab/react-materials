@@ -4,7 +4,7 @@ import store from '@ice/plugin-store';
 import auth from '@ice/plugin-auth';
 
 // The project config, see https://v3.ice.work/docs/guide/basic/config
-export default defineConfig({
+export default defineConfig(() => ({
   ssr: false,
   ssg: false,
   plugins: [
@@ -12,4 +12,4 @@ export default defineConfig({
     store(),
     auth(),
   ],
-});
+}));
