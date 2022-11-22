@@ -1,0 +1,115 @@
+.hisMap {
+  width: 100%;
+  height: 345px;
+  background: url(https://img.alicdn.com/imgextra/i1/O1CN01FjHZo31W10rlpgULD_!!6000000002727-2-tps-700-348.png) 50% 50% no-repeat;
+  background-size: contain;
+}
+
+.histogram {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.histogram .hisTitle {
+  color: #999;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.histogram .hisBody {
+  height: 20px;
+}
+
+.histogram .hisRate {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.card {
+  height: 100%;
+  background-color: #fff;
+  border-radius: px;
+}
+
+.card .title {
+  margin-top: 24px;
+  margin-left: 24px;
+  color: #333;
+  font-weight: bold;
+}
+
+.card .titleDiv {
+  margin-bottom: 0;
+}
+
+.subCard {
+  display: flex;
+  height: 100%;
+}
+
+.subCard .subDiv {
+  height: 100%;
+  margin: 0;
+}
+
+.subCard .subFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.subCard .subFooter div:first-child {
+  color: rgba(153, 153, 153, 1);
+}
+
+.subCard .subFooter div:nth-child(2) {
+  color: rgba(54, 207, 201, 1);
+  font-size: 32px;
+}
+
+.subCard .subBody {
+  width: 100%;
+}
+
+.subCard .subBody .subName {
+  color: #222;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.subCard .subBody .subName+div {
+  width: 100%;
+  margin-top: 0;
+}
+
+.subCard .subMain {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subCard .subMain .subTypeName {
+  color: rgba(153, 153, 153, 1);
+  font-size: 12px;
+}
+
+.subCard .subMain .subMainDiv {
+  height: 20px;
+}
+
+.subCard .subMain .subTypeValue {
+  font-weight: bold;
+  font-size: 20px;
+}

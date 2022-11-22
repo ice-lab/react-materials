@@ -1,0 +1,37 @@
+{
+  "name": "@ice/fusion-pro-scaffold",
+  "version": "1.0.6",
+  "description": "ice.js 3 Pro 模板（基于 Fusion Design）",
+  "files": [
+    "src/",
+    "public/",
+    "_gitignore",
+    ".browserslistrc",
+    "ice.config.mts",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.26.8",
+    "@alifd/theme-design-pro": "^0.8.0",
+    "@ice/runtime": "^1.0.0",
+    "moment": "^2.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@ice/app": "^3.0.0",
+    "@ice/plugin-auth": "^1.0.0",
+    "@ice/plugin-request": "^1.0.0",
+    "@ice/plugin-store": "^1.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "start": "ice start",
+    "build": "ice build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
