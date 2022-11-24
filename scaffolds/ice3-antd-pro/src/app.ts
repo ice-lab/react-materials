@@ -8,6 +8,11 @@ export default defineAppConfig({});
 
 export const authConfig = defineAuthConfig(async (appData) => {
   const { userInfo = {} } = appData;
+  
+  if (userInfo.error) {
+    history?.push(`/login?redirect=${window.location.pathname}`);
+  }
+
   return {
     initialAuth: {
       admin: userInfo.userType === 'admin',
@@ -43,7 +48,8 @@ async function getUserInfo() {
     const userInfo = await fetchUserInfo();
     return userInfo;
   } catch (error) {
-    history?.push(`/login?redirect=${window.location.pathname}`);
+    return {
+      error
+    }
   }
-  return undefined;
 }
