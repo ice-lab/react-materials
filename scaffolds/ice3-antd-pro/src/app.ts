@@ -49,7 +49,7 @@ async function getUserInfo() {
     return userInfo;
   } catch (error) {
     return {
-      error
+      error,
     };
   }
 }
