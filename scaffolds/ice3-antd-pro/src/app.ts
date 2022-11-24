@@ -8,7 +8,7 @@ export default defineAppConfig({});
 
 export const authConfig = defineAuthConfig(async (appData) => {
   const { userInfo = {} } = appData;
-  
+
   if (userInfo.error) {
     history?.push(`/login?redirect=${window.location.pathname}`);
   }
@@ -50,6 +50,6 @@ async function getUserInfo() {
   } catch (error) {
     return {
       error
-    }
+    };
   }
 }
