@@ -18,7 +18,7 @@ export default function FormBasic() {
       <Cell colSpan={12}>
         <PageHeader
           title="单列基础表单"
-          description="单列基础表单"
+          description="单列基础表单描述信息"
           breadcrumbs={[{ name: '表单页面' }, { name: '单列基础表单' }]}
         />
       </Cell>

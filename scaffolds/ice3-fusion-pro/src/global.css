@@ -4,3 +4,7 @@
 body {
   -webkit-font-smoothing: antialiased;
 }
+
+.next-loading {
+  position: unset;
+}

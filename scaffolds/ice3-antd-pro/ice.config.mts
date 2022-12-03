@@ -12,4 +12,5 @@ export default defineConfig(() => ({
     store(),
     auth(),
   ],
+  compileDependencies: false,
 }));

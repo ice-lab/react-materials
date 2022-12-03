@@ -2,7 +2,7 @@ import { history } from 'ice';
 import { Button, Result } from 'antd';
 import React from 'react';
 
-const NoFoundPage: React.FC = () => (
+const NotFoundPage: React.FC = () => (
   <Result
     status="404"
     title="404"
@@ -15,4 +15,4 @@ const NoFoundPage: React.FC = () => (
   />
 );
 
-export default NoFoundPage;
+export default NotFoundPage;
