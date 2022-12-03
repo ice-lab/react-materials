@@ -34,8 +34,8 @@ export async function login(data: LoginParams): Promise<LoginResult> {
 export async function fetchUserInfo() {
   // return await request.get('/user');
   return {
-    name: 'Admin',
-    avatar: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
+    name: 'ICE',
+    avatar: 'https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png',
     userid: '00000001',
     userType: 'admin',
   };

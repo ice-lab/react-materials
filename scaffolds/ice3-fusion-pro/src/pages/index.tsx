@@ -1,12 +1,4 @@
 import { definePageConfig } from 'ice';
-// import { Row, Col } from 'antd';
-// import CardBarChart from '@/components/CardBarChart';
-// import CardAreaChart from '@/components/CardAreaChart';
-// import CardTypebarChart from '@/components/CardTypebarChart';
-// import CardLineChart from '@/components/CardLineChart';
-// import CardRankChart from '@/components/CardRankChart';
-// import CardPieChart from '@/components/CardPieChart';
-// import CardGroupBarChart from '@/components/CardGroupBarChart';
 
 export default function Dashboard() {
   return (

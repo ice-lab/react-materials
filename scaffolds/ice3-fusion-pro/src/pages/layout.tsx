@@ -1,46 +1,45 @@
+import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'ice';
 import { Shell, ConfigProvider } from '@alifd/next';
-
-import { asideMenuConfig } from '@/menuConfig';
-import AvatarDropdown from '@/components/AvatarDropdown';
 import store from '@/store';
 import logo from '@/assets/logo.png';
-import styles from './layout.module.css';
 import Footer from '@/components/Footer';
-import Logo from './components/Logo';
+import PageNav from '@/components/PageNav';
+import HeaderAvatar from '@/components/HeaderAvatar';
+import Notice from '@/components/Notice';
+import GlobalSearch from '@/components/GlobalSearch';
+import Logo from '@/components/Logo';
+
+
+interface IGetDevice {
+  (width: number): 'phone' | 'tablet' | 'desktop';
+}
+const getDevice: IGetDevice = (width) => {
+  const isPhone =
+    typeof navigator !== 'undefined' &&
+    navigator &&
+    navigator.userAgent.match(/phone/gi);
+
+  if (width < 680 || isPhone) {
+    return 'phone';
+  } else if (width < 1280 && width > 680) {
+    return 'tablet';
+  } else {
+    return 'desktop';
+  }
+};
 
 export default function Layout() {
   const location = useLocation();
-  const [userState] = store.useModel('user');
+  const [device, setDevice] = useState(getDevice(NaN));
 
+  const [userState] = store.useModel('user');
+  console.log('userState===>', userState);
   if (['/login'].includes(location.pathname)) {
     return <Outlet />;
   }
 
   return (
-    // <ProLayout
-    //   menu={{ defaultOpenAll: true }}
-    //   className={styles.layout}
-    //   logo={<img src={logo} alt="logo" />}
-    //   title="ICE Pro"
-    //   location={{
-    //     pathname: location.pathname,
-    //   }}
-    //   layout="mix"
-    //   rightContentRender={() => (
-    //     <AvatarDropdown avatar={userState.currentUser.avatar} name={userState.currentUser.name} />
-    //   )}
-    //   menuDataRender={() => asideMenuConfig}
-    //   menuItemRender={(item, defaultDom) => {
-    //     if (!item.path) {
-    //       return defaultDom;
-    //     }
-    //     return <Link to={item.path}>{defaultDom}</Link>;
-    //   }}
-    //   footerRender={() => <Footer />}
-    // >
-    //   <Outlet />
-    // </ProLayout>
     <ConfigProvider device={device}>
       <Shell
         style={{
@@ -51,8 +50,8 @@ export default function Layout() {
       >
         <Shell.Branding>
           <Logo
-            image="https://img.alicdn.com/tfs/TB1.ZBecq67gK0jSZFHXXa9jVXa-904-826.png"
-            text="Logo"
+            image={logo}
+            text="ICE Pro"
           />
         </Shell.Branding>
         <Shell.Navigation
@@ -65,14 +64,17 @@ export default function Layout() {
         </Shell.Navigation>
         <Shell.Action>
           <Notice />
-          <SolutionLink />
-          <HeaderAvatar />
+          <HeaderAvatar
+            name={userState.currentUser.name}
+            avatar={userState.currentUser.avatar}
+          />
         </Shell.Action>
         <Shell.Navigation>
           <PageNav />
         </Shell.Navigation>
-
-        <Shell.Content>{children}</Shell.Content>
+        <Shell.Content>
+          <Outlet />
+        </Shell.Content>
         <Shell.Footer>
           <Footer />
         </Shell.Footer>
