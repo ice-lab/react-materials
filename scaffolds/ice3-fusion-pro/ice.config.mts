@@ -12,5 +12,8 @@ export default defineConfig(() => ({
     store(),
     auth(),
   ],
+  routes: {
+    ignoreFiles: ['**/components/**'],
+  },
   compileDependencies: false,
 }));

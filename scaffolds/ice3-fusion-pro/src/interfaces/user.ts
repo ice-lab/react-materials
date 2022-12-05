@@ -5,8 +5,11 @@ export interface UserInfo {
 }
 
 export interface LoginParams {
-  username: string;
-  password: string;
+  username?: string;
+  password?: string;
+  autoLogin?: boolean;
+  phone?: string;
+  code?: string;
 }
 
 export interface LoginResult {

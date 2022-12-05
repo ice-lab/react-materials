@@ -2,6 +2,7 @@ import * as React from 'react';
 import { ResponsiveGrid } from '@alifd/next';
 import PageHeader from '@/components/PageHeader';
 import Exception from '@/components/Exception';
+import { definePageConfig } from 'ice';
 
 const { Cell } = ResponsiveGrid;
 
@@ -30,5 +31,11 @@ const FeedbackNotFound = () => {
     </ResponsiveGrid>
   );
 };
+
+export const pageConfig = definePageConfig(() => {
+  return {
+    title: '404',
+  };
+});
 
 export default FeedbackNotFound;

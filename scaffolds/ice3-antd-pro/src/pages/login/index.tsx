@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { history, useAuth } from 'ice';
+import { definePageConfig, history, useAuth } from 'ice';
 import { message, Alert } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
         });
         await updateUserInfo();
         const urlParams = new URL(window.location.href).searchParams;
-        history?.push(urlParams.get('redirect') || '/dashboard');
+        history?.push(urlParams.get('redirect') || '/');
         return;
       }
       console.log(result);
@@ -120,10 +120,10 @@ const Login: React.FC = () => {
   );
 };
 
-export const getConfig = () => {
+export const pageConfig = definePageConfig(() => {
   return {
     title: '登录',
   };
-};
+});
 
 export default Login;

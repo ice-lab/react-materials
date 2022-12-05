@@ -1,30 +1,12 @@
 .container {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   height: 100vh;
-  overflow: auto;
+  background-image: url('https://img.alicdn.com/tfs/TB1L.owp1H2gK0jSZJnXXaT1FXa-2880-1770.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.container :global {
-  .ant-pro-form-login-container {
-    padding-top: 200px;
-  }
-
-  .ant-pro-form-login-logo {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
-    background-repeat: no-repeat;
-    background-position: center 110px;
-    background-size: 100%;
-  }
-
-  .content {
-    padding: 32px 0 24px;
-  }
+.content {
+  width: 100%;
 }

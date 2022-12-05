@@ -111,10 +111,10 @@ const MultiColFilterTable: React.FC = () => {
       <Card free>
         <Card.Content>
           <Form className="filter-form" responsive fullWidth labelAlign="top" field={field}>
-            <FormItem colSpan={3} label="ID:">
-              <Input name="id" />
+            <FormItem colSpan={3} label="ID：">
+              <Input name="id" placeholder="请输入" />
             </FormItem>
-            <FormItem colSpan={3} label="性别:" defaultValue="all" required requiredMessage="必填">
+            <FormItem colSpan={3} label="性别：" defaultValue="all" required requiredMessage="必填">
               <Select
                 name="gender"
                 dataSource={[
@@ -133,15 +133,15 @@ const MultiColFilterTable: React.FC = () => {
                 ]}
               />
             </FormItem>
-            <FormItem colSpan={3} label="邮箱:">
-              <Input name="email" />
+            <FormItem colSpan={3} label="邮箱：">
+              <Input name="email" placeholder="请输入" />
             </FormItem>
             {!state.expandStatus ? null : (
               <>
-                <FormItem colSpan={3} label="手机号:">
-                  <Input name="phone" />
+                <FormItem colSpan={3} label="手机号：">
+                  <Input name="phone" placeholder="请输入" />
                 </FormItem>
-                <FormItem colSpan={3} label="国家:" defaultValue={[]}>
+                <FormItem colSpan={3} label="国家：" defaultValue={[]}>
                   <Select
                     name="nat"
                     hasClear

@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { history } from 'ice';
 import { LogoutOutlined } from '@ant-design/icons';
-import { Dropdown, Menu, Avatar } from 'antd';
+import { Dropdown, Avatar } from 'antd';
 import type { MenuInfo } from 'rc-menu/lib/interface';
 import styles from './index.module.css';
 import { logout } from '@/services/user';

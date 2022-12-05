@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet, Link, useLocation } from 'ice';
+import { Outlet, useLocation } from 'ice';
 import { Shell, ConfigProvider } from '@alifd/next';
 import store from '@/store';
 import logo from '@/assets/logo.png';
@@ -33,8 +33,16 @@ export default function Layout() {
   const location = useLocation();
   const [device, setDevice] = useState(getDevice(NaN));
 
+  if (typeof window !== 'undefined') {
+    window.addEventListener('optimizedResize', (e) => {
+      const deviceWidth =
+        (e && e.target && (e.target as Window).innerWidth) || NaN;
+      setDevice(getDevice(deviceWidth));
+    });
+  }
+
   const [userState] = store.useModel('user');
-  console.log('userState===>', userState);
+
   if (['/login'].includes(location.pathname)) {
     return <Outlet />;
   }

@@ -32,5 +32,6 @@ export default function Dashboard() {
 export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin', 'user'],
+    title: '工作台',
   };
 });

@@ -32,5 +32,6 @@ export default TableList;
 export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin'],
+    title: '列表页',
   };
 });

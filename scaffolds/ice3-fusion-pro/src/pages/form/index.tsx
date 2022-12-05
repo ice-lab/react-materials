@@ -1,4 +1,4 @@
-import BasicForm from '@/components/BasicForm';
+import BasicForm from './components/BasicForm';
 import PageHeader from '@/components/PageHeader';
 import { submitForm } from '@/services/form';
 import { Message, ResponsiveGrid } from '@alifd/next';
@@ -33,5 +33,6 @@ export default function FormBasic() {
 export const pageConfig = definePageConfig(() => {
   return {
     auth: ['admin', 'user'],
+    title: '表单页',
   };
 });

@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Message, ResponsiveGrid, Input, Form, Box, Button, Card, DatePicker, Radio, Upload } from '@alifd/next';
+import { Message, Input, Form, Box, Button, Card, DatePicker, Radio, Upload } from '@alifd/next';
 import type { UploadProps } from '@alifd/next/types/upload';
 import { Moment } from 'moment';
 import styles from './index.module.css';
-
-const { Cell } = ResponsiveGrid;
 
 const FormItem = Form.Item;
 

@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { Icon, Badge, Overlay, Avatar, Message, List } from '@alifd/next';
 import styles from './index.module.css';
 
-export interface INotcieItem {
+const { Popup } = Overlay;
+
+export interface INoticeItem {
   id: number;
   name: string;
   message: string;
   avatar: string;
 }
 
-const { Popup } = Overlay;
-const defaultNoticeList: INotcieItem[] = [
+const defaultNoticeList: INoticeItem[] = [
   {
     id: 1,
     name: 'Aric',
@@ -25,7 +26,7 @@ const defaultNoticeList: INotcieItem[] = [
   },
 ];
 export interface NoticeProps {
-  noticeList?: INotcieItem[];
+  noticeList?: INoticeItem[];
 }
 
 const Notice: React.FC<NoticeProps> = ({ noticeList }) => {
@@ -38,7 +39,7 @@ const Notice: React.FC<NoticeProps> = ({ noticeList }) => {
   }
 
   function clearNotice() {
-    const noticeIds = (noticeList as INotcieItem[]).map((item) => item.id);
+    const noticeIds = (noticeList as INoticeItem[]).map((item) => item.id);
     setBageCount(0);
     setReadList(noticeIds);
   }
@@ -47,7 +48,7 @@ const Notice: React.FC<NoticeProps> = ({ noticeList }) => {
     Message.success('点击了查看更多操作');
   }
 
-  const renderList = (noticeList as INotcieItem[]).filter((item) => readList.indexOf(item.id) === -1);
+  const renderList = (noticeList as INoticeItem[]).filter((item) => readList.indexOf(item.id) === -1);
   return (
     <Popup
       trigger={(
@@ -75,7 +76,7 @@ const Notice: React.FC<NoticeProps> = ({ noticeList }) => {
           </div>
         )}
       >
-        {renderList.map((noticeItem: INotcieItem) => {
+        {renderList.map((noticeItem: INoticeItem) => {
           const { id, name, avatar, message } = noticeItem;
           return (
             <List.Item

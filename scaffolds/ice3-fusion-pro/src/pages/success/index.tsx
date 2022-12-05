@@ -1,6 +1,7 @@
 import PageHeader from '@/components/PageHeader';
 import SuccessDetail from '@/components/SuccessDetail';
 import { ResponsiveGrid } from '@alifd/next';
+import { definePageConfig } from 'ice';
 
 const { Cell } = ResponsiveGrid;
 
@@ -25,3 +26,9 @@ export default function Success() {
     </ResponsiveGrid>
   );
 }
+
+export const pageConfig = definePageConfig(() => {
+  return {
+    title: '成功页',
+  };
+});
