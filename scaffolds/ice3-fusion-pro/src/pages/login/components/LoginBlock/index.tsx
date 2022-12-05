@@ -2,11 +2,13 @@ import { useState } from 'react';
 import type { FunctionComponent } from 'react';
 import { useAuth, history } from 'ice';
 import { Input, Message, Form, Divider, Checkbox, Icon } from '@alifd/next';
-import { useInterval } from './utils';
+import { useInterval } from '@/hooks/useInterval';
 import styles from './index.module.css';
 import { fetchUserInfo, login } from '@/services/user';
 import store from '@/store';
 import { LoginParams, LoginResult } from '@/interfaces/user';
+import Logo from '@/components/Logo';
+import logo from '@/assets/logo.png';
 
 const { Item } = Form;
 
@@ -167,13 +169,12 @@ const LoginBlock: FunctionComponent<LoginProps> = (
   return (
     <div className={styles.loginBlock}>
       <div className={styles.innerBlock}>
-        <a href="#">
-          <img
-            className={styles.logo}
-            src="https://img.alicdn.com/tfs/TB1KtN6mKH2gK0jSZJnXXaT1FXa-1014-200.png"
-            alt="logo"
-          />
-        </a>
+        <Logo
+          image={logo}
+          text="ICE Pro"
+          imageStyle={{ height: 48 }}
+          textStyle={{ color: '#000', fontSize: 24 }}
+        />
         <div className={styles.desc}>
           <span onClick={byAccount} className={isPhone ? undefined : styles.active}>
             账户密码登录
@@ -206,6 +207,7 @@ const LoginBlock: FunctionComponent<LoginProps> = (
 
           <Item style={{ marginBottom: 10 }}>
             <Form.Submit
+              htmlType="submit"
               type="primary"
               onClick={handleSubmit}
               className={styles.submitBtn}

@@ -2,7 +2,7 @@ import { definePageConfig } from 'ice';
 import { ResponsiveGrid } from '@alifd/next';
 import React from 'react';
 import PageHeader from '@/components/PageHeader';
-import MultiColFilterTable from '@/components/MultiColFilterTable';
+import MultiColFilterTable from './components/MultiColFilterTable';
 
 const { Cell } = ResponsiveGrid;
 

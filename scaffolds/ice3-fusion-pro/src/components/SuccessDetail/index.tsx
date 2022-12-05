@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { Button, Message, Card } from '@alifd/next';
 import styles from './index.module.css';
+import { useInterval } from '@/hooks/useInterval';
+
+const { useState } = React;
 
 interface DetailProcessFunc {
   (): any;
@@ -16,7 +19,7 @@ export interface SuccessDetailProps {
   onButtonBack?: DetailProcessFunc;
   onButtonContinue?: DetailProcessFunc;
 }
-const { useState } = React;
+
 export default function SuccessDetail(props: SuccessDetailProps) {
   const {
     statusCode = '提交成功',
@@ -31,7 +34,7 @@ export default function SuccessDetail(props: SuccessDetailProps) {
 
   const [second, setSecond] = useState(countDownSeconds);
 
-  const gobackHandle = () => {
+  const goBackHandle = () => {
     if (onButtonBack) {
       onButtonBack();
     } else {
@@ -47,6 +50,13 @@ export default function SuccessDetail(props: SuccessDetailProps) {
     }
   };
 
+  useInterval(() => {
+    setSecond(second - 1);
+    if (second <= 0) {
+      goBackHandle();
+    }
+  }, second >= 0 ? 1000 : null);
+
   return (
     <Card free className={styles.successDetail}>
       <div>
@@ -54,7 +64,7 @@ export default function SuccessDetail(props: SuccessDetailProps) {
         <h1 className={styles.statusCode}>{statusCode}</h1>
         <div className={styles.description}>{`${second > 0 ? second : 0}${description}`}</div>
         <div className={styles.operationWrap}>
-          <Button type="primary" onClick={gobackHandle} className={styles.mainAction}>{buttonBackDesc}</Button>
+          <Button type="primary" onClick={goBackHandle} className={styles.mainAction}>{buttonBackDesc}</Button>
           <Button onClick={goContinueHandle}>{buttonContinueDesc}</Button>
         </div>
       </div>

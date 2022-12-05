@@ -58,7 +58,7 @@ const HeaderAvatar = (props: Props) => {
           <span style={{ marginLeft: 10 }}>{name}</span>
         </div>
       }
-      triggerType="click"
+      triggerType="hover"
     >
       <div className={styles.avatarPopup}>
         <UserProfile name={name} mail={mail} avatar={avatar} />
