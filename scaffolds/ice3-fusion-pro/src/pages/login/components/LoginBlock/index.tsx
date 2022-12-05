@@ -83,7 +83,11 @@ const LoginBlock: FunctionComponent<LoginProps> = (
     userDispatcher.updateCurrentUser(userInfo);
   }
 
-  const handleSubmit = async (values: LoginParams) => {
+  const handleSubmit = async (values: LoginParams, errors: any) => {
+    if (errors) {
+      console.log('errors', errors);
+      return;
+    }
     try {
       const result = await login(values);
       if (result.success) {
