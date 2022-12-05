@@ -2,25 +2,20 @@ import * as React from 'react';
 import { Card } from '@alifd/next';
 import { Chart, Geom } from 'bizcharts';
 import mock from './mock.js';
-
 import styles from './index.module.css';
 
-interface ChartItem {
-  date?: string | number;
-  value?: number;
+
+interface CardConfig {
+  title: string | React.ReactNode;
+  subTitle: string | React.ReactNode;
+  value: string;
+  chartData: number[];
+  des: string;
+  rate: string;
+  chartHeight: number;
 }
 
-interface FusionCardAreaChartProps {
-  title?: string | React.ReactDOM;
-  subTitle?: string | React.ReactDOM;
-  value?: string;
-  chartData?: ChartItem[];
-  des?: string;
-  rate?: string;
-  chartHeight?: number;
-}
-
-const DEFAULT_DATA: FusionCardAreaChartProps = {
+const DEFAULT_DATA: CardConfig = {
   title: '',
   subTitle: '访问量',
   value: mock.value,
@@ -29,9 +24,14 @@ const DEFAULT_DATA: FusionCardAreaChartProps = {
   rate: '12.0',
   chartHeight: 100,
 };
-
+interface FusionCardAreaChartProps {
+  cardConfig?: CardConfig;
+}
 const FusionCardAreaChart: React.FunctionComponent<FusionCardAreaChartProps> = (props = DEFAULT_DATA): JSX.Element => {
-  const { title, subTitle, value, chartData, des, rate, chartHeight } = { ...DEFAULT_DATA, ...props };
+  const {
+    cardConfig = DEFAULT_DATA,
+  } = props;
+  const { title, subTitle, value, chartData, des, rate, chartHeight } = cardConfig;
 
   return (
     <Card free className={styles.areaChart}>
