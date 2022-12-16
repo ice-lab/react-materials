@@ -1,7 +1,8 @@
 export interface UserInfo {
   name: string;
   avatar: string;
-  id: string;
+  userid: string;
+  userType: 'admin' | 'user';
 }
 
 export interface LoginParams {
