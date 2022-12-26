@@ -17,7 +17,7 @@ export default function Home() {
     <div className={styles.app}>
       <header className={styles.header}>
         <img src="https://gw.alicdn.com/imgextra/i4/O1CN01HbIC0T1q41hcKQCL1_!!6000000005441-55-tps-842-595.svg" className={styles.logo} alt="logo" />
-        <p>Hello ice.js Vite mode + icestark + React!</p>
+        <p>Hello ice.js + icestark + React!</p>
         <p className={styles.links}>
           <a
             className={styles.link}

@@ -6,5 +6,5 @@ export default defineConfig(() => ({
   ssg: false,
   plugins: [
     icestark({ type: 'child' }),
-  ]
+  ],
 }));

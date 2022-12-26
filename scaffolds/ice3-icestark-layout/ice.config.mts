@@ -13,5 +13,5 @@ export default defineConfig(() => ({
       },
     }),
     icestark({ type: 'framework' }),
-  ]
+  ],
 }));
