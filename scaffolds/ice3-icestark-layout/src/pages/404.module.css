@@ -1,0 +1,19 @@
+.exceptioncontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+}
+.imgException {
+  max-width: 260px;
+  margin-right: 50px;
+}
+.title {
+  margin: 20px 0;
+  color: #333;
+  font-size: 24px;
+}
+.description {
+  color: #666;
+  font-size: 16px;
+}

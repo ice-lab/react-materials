@@ -24,7 +24,7 @@ export const icestark = defineFrameworkConfig(() => ({
   }]),
   appRouter: {
     LoadingComponent: PageLoading,
-  }
+  },
 }));
 
 export default defineAppConfig(() => ({
