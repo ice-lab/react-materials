@@ -1,0 +1,54 @@
+{
+  "name": "@icedesign/stark-child",
+  "version": "1.0.0",
+  "description": "微前端方案 icestark 的子应用模板，用于快速初始化微应用",
+  "homepage": "https://icestark-react.surge.sh/seller",
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "mock/",
+    "tests/",
+    "_gitignore",
+    "_editorconfig",
+    "ice.config.mts",
+    "screenshot.png",
+    "tsconfig.json"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.x",
+    "@alifd/theme-design-pro": "^0.x",
+    "@ice/runtime": "^1.0.0",
+    "moment": "^2.24.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@ice/app": "^3.0.0",
+    "@ice/plugin-icestark": "^1.0.0",
+    "@ice/stark-app": "^1.5.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/node": "^18.0.0"
+  },
+  "scripts": {
+    "start": "ice start",
+    "build": "ice build",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scaffoldConfig": {
+    "name": "stark-child",
+    "title": "icestark 子应用",
+    "categories": [
+      "icestark"
+    ],
+    "screenshot": "https://img.alicdn.com/tfs/TB1X5.paYr1gK0jSZFDXXb9yVXa-2480-1200.png"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ice-lab/react-materials/tree/master/scaffolds/icestark-child"
+  }
+}
