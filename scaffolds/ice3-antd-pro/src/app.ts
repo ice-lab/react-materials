@@ -1,8 +1,8 @@
 import { defineAppConfig, history, defineDataLoader } from 'ice';
 import { fetchUserInfo } from './services/user';
-import { defineAuthConfig } from '@ice/plugin-auth/esm/types';
-import { defineStoreConfig } from '@ice/plugin-store/esm/types';
-import { defineRequestConfig } from '@ice/plugin-request/esm/types';
+import { defineAuthConfig } from '@ice/plugin-auth/types';
+import { defineStoreConfig } from '@ice/plugin-store/types';
+import { defineRequestConfig } from '@ice/plugin-request/types';
 
 // App config, see https://v3.ice.work/docs/guide/basic/app
 export default defineAppConfig(() => ({
