@@ -1,6 +1,6 @@
 {
   "name": "@ice/fusion-pro-scaffold",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ice.js 3 Pro 模板（基于 Fusion Design）",
   "files": [
     "src/",
@@ -35,5 +35,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": "git@github.com:ice-lab/react-materials.git"
 }
