@@ -3,7 +3,6 @@ import icestark from '@ice/plugin-icestark';
 import fusion from '@ice/plugin-fusion';
 
 export default defineConfig(() => ({
-  ssr: false,
   ssg: false,
   plugins: [
     fusion({
