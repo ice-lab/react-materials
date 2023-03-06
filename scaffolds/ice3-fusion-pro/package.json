@@ -1,6 +1,6 @@
 {
   "name": "@ice/fusion-pro-scaffold",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ice.js 3 Pro 模板（基于 Fusion Design）",
   "files": [
     "src/",
