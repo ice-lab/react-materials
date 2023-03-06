@@ -1,6 +1,6 @@
 {
   "name": "@ice/lite-scaffold",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ice.js 3 lite 模板",
   "files": [
     "src/",
@@ -27,5 +27,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": "git@github.com:ice-lab/react-materials.git"
 }
