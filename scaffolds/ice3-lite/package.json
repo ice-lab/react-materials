@@ -1,6 +1,6 @@
 {
   "name": "@ice/lite-scaffold",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "ice.js 3 lite 模板",
   "files": [
     "src/",
@@ -8,6 +8,7 @@
     "_gitignore",
     ".browserslistrc",
     "ice.config.mts",
+    "ice.config.mts.ejs",
     "tsconfig.json"
   ],
   "dependencies": {
@@ -19,7 +20,8 @@
     "@ice/app": "^3.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/node": "^18.11.17"
+    "@types/node": "^18.11.17",
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "ice start",
