@@ -6,7 +6,7 @@ import { defineRequestConfig } from '@ice/plugin-request/types';
 
 // App config, see https://v3.ice.work/docs/guide/basic/app
 export default defineAppConfig(() => ({
-<% if (appConfig && appConfig.configStr) { _%>
+<% if (locals?.appConfig?.configStr) { _%>
   <%- appConfig.configStr %>
 <% } _%>
 }));

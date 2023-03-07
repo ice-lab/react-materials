@@ -1,5 +1,5 @@
 import { defineConfig } from '@ice/app';
-<% if (iceConfig && iceConfig.importDeclarationsStr) { _%>
+<% if (locals?.iceConfig?.importDeclarationsStr) { _%>
   <%- iceConfig.importDeclarationsStr %>
 <% } _%>
 
@@ -12,7 +12,7 @@ export default defineConfig(() => ({
     onDemand: true,
     format: 'esm',
   },
-<% if (iceConfig && iceConfig.optionsStr) { _%>
+<% if (locals?.iceConfig?.optionsStr) { _%>
   <%- iceConfig.optionsStr %>
 <% } _%>
 }));
