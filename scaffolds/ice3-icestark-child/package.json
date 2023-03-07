@@ -24,17 +24,24 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@applint/spec": "^1.2.3",
     "@ice/app": "^3.0.0",
     "@ice/plugin-icestark": "^1.0.0",
     "@ice/stark-app": "^1.5.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/node": "^18.0.0"
+    "@types/node": "^18.0.0",
+    "eslint": "^8.35.0",
+    "stylelint": "^15.2.0",
+    "typescript": "^4.8.4"
   },
   "scripts": {
     "start": "ice start",
     "build": "ice build",
-    "prepublishOnly": "npm run build"
+    "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
+    "stylelint:fix": "npm run stylelint -- --fix"
   },
   "publishConfig": {
     "access": "public"

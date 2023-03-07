@@ -18,10 +18,14 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@applint/spec": "^1.2.3",
     "@ice/app": "^3.0.0",
     "@ice/plugin-miniapp": "^1.0.0",
     "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0"
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.35.0",
+    "stylelint": "^15.2.0",
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "ice start",
@@ -29,7 +33,11 @@
     "start:ali": "ice start --target ali-miniapp",
     "build": "ice build",
     "build:wechat": "ice build --target wechat-miniprogram",
-    "build:ali": "ice build --target ali-miniapp"
+    "build:ali": "ice build --target ali-miniapp",
+    "eslint": "eslint ./src --cache --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": "npm run eslint -- --fix",
+    "stylelint": "stylelint \"src/**/*.{css,scss,less}\" --cache",
+    "stylelint:fix": "npm run stylelint -- --fix"
   },
   "publishConfig": {
     "access": "public"

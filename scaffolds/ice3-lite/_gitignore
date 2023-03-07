@@ -23,3 +23,7 @@ pnpm-debug.log*
 
 # tmp
 .ice
+
+# cache
+.eslintcache
+.stylelintcache

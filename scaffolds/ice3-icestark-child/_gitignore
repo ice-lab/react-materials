@@ -20,3 +20,7 @@ yarn-error.log*
 
 # tmp
 .ice
+
+# cache
+.eslintcache
+.stylelintcache
