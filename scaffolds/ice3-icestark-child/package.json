@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-child",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "微前端方案 icestark 的子应用模板，用于快速初始化微应用",
   "homepage": "https://icestark-react.surge.sh/seller",
   "files": [
@@ -12,7 +12,7 @@
     "_gitignore",
     "_editorconfig",
     "ice.config.mts",
-    "screenshot.png",
+    "_*",
     "tsconfig.json"
   ],
   "dependencies": {

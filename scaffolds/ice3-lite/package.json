@@ -9,6 +9,7 @@
     ".browserslistrc",
     "ice.config.mts",
     "ice.config.mts.ejs",
+    "_*",
     "tsconfig.json"
   ],
   "dependencies": {
