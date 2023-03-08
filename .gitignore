@@ -8,6 +8,7 @@ yarn.lock
 yarn-error.log
 coverage/
 .eslintcache
+.stylelintcache
 .vscode/
 .tmp/
 

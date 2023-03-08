@@ -23,5 +23,7 @@ pnpm-debug.log*
 
 # tmp
 .ice
-.faas_debug_tmp
-.severless
+
+# cache
+.eslintcache
+.stylelintcache
