@@ -2,7 +2,7 @@ import { defineConfig } from '@ice/app';
 import request from '@ice/plugin-request';
 import store from '@ice/plugin-store';
 import auth from '@ice/plugin-auth';
-<% if (locals?.iceConfig?.importDeclarationsStr) { _%>
+<% if (locals.iceConfig?.importDeclarationsStr) { _%>
   <%- iceConfig.importDeclarationsStr %>
 <% } _%>
 
@@ -15,7 +15,7 @@ export default defineConfig(() => ({
     request(),
     store(),
     auth(),
-    <% if (locals?.iceConfig?.options?.pluginItemsStr) { _%>
+    <% if (locals.iceConfig?.options?.pluginItemsStr) { _%>
       <%- iceConfig.options.pluginItemsStr %>
     <% } _%>
   ],

@@ -1,6 +1,6 @@
 {
   "name": "@ice/antd-pro-scaffold",
-  "version": "1.1.0-beta.6",
+  "version": "1.1.0",
   "description": "ice.js 3 Pro 模板（基于 Ant Design）",
   "files": [
     "src/",
