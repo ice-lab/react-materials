@@ -1,3 +1,7 @@
+/*
+ * Style in CSS Modules.
+ */
+
 .app {
   display: flex;
   flex-direction: column;
