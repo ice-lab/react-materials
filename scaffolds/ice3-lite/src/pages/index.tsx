@@ -2,7 +2,7 @@ import { useState } from 'react';
 import logo from '@/assets/logo.png';
 import styles from './index.module.css';
 
-export default function Home() {
+export default function IndexPage() {
   const [count, setCount] = useState(1);
   const updateCount = () => setCount((c) => c + 1);
 
