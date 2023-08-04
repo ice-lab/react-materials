@@ -12,6 +12,7 @@
     "noImplicitThis": true,
     "noImplicitAny": false,
     "importHelpers": true,
+    "resolveJsonModule": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
