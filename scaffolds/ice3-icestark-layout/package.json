@@ -1,6 +1,6 @@
 {
   "name": "@icedesign/stark-layout",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "微前端方案 icestark 的主应用模板，用于快速初始化主应用",
   "homepage": "https://icestark-react.surge.sh",
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@ice/antd-pro-scaffold",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "ice.js 3 Pro 模板（基于 Ant Design）",
   "files": [
     "src/",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@applint/spec": "^1.2.3",
-    "@ice/app": "^3.3.0",
+    "@ice/app": "^3.4.0",
     "@ice/plugin-auth": "^1.0.0",
     "@ice/plugin-request": "^1.0.0",
     "@ice/plugin-store": "^1.0.0",
