@@ -8,6 +8,9 @@ export const icestark = defineFrameworkConfig(() => ({
   getApps: () => ([{
     path: '/seller',
     title: '商家平台',
+    // Important!!
+    // Use loadScriptMode: 'fetch' to load child app source code when child app is not build by vite.
+    // Visit https://micro-frontends.ice.work/docs/api/ice-stark/#loadscriptmode- to get more details.
     loadScriptMode: 'import',
     entry: 'https://iceworks.oss-cn-hangzhou.aliyuncs.com/icestark/child-seller-ice-vite/index.html',
   }, {
