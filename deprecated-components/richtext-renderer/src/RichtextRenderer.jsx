@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DOMPurify from "dompurify";
 
 export default class RichtextRenderer extends Component {
 
@@ -9,7 +10,7 @@ export default class RichtextRenderer extends Component {
       <div
         {...others}
         className={(className ? className + ' ' : '') + 'ice-richtext'}
-        dangerouslySetInnerHTML={{__html: html}}
+        dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(html) }}
       />
     );
   }

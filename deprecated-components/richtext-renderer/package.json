@@ -30,7 +30,9 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dompurify": "^3.0.8"
+  },
   "devDependencies": {
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
