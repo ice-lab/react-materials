@@ -1,6 +1,6 @@
 {
   "name": "@ice/antd-pro-scaffold",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "ice.js 3 Pro 模板（基于 Ant Design）",
   "files": [
     "src/",
@@ -18,7 +18,7 @@
     "@ant-design/pro-form": "^2.2.8",
     "@ant-design/pro-layout": "^7.1.6",
     "@ant-design/pro-table": "^3.0.17",
-    "@ice/runtime": "^1.2.7",
+    "@ice/runtime": "^1.4.0",
     "antd": "^4.24.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
